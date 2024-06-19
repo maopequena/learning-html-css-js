@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/style.css">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Elementos semânticos">
+        <meta name="author" content="Lizandra Silva (@maopequena)">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Elementos semânticos</title>
+    </head>
+    <body>
+        <p>São elementos que exibem seu significado claramente para o navegador e o desenvolvedor. Os elementos semânticos proporcionam uma Web semântica, o que possibilita que os dados sejam compartilhados e reutilizados entre aplicativos, empresas e comunidades.</p>
+        <p>P. ex. <code id="code">&lt;div&gt;</code> e <code id="code">&lt;span&gt;</code> não informam qual é seu conteúdo; no entanto <code id="code">&lt;form&gt;</code>, <code id="code">&lt;table&gt;</code> e <code id="code">&lt;article&gt;</code>, sim.</p>
+        
+        <h3>Uso do elemento "section"</h3>
+        <p>O elemento <code id="code">&lt;section&gt;</code> define uma seção em um documento, que pode ser definida como "um agrupamento temático de conteúdo, geralmente com um cabeçalho".</p>
+        <p>Exemplos de uso para o elemento <code id="code">&lt;section&gt;</code>:</p>
+        <ul class="list-square">
+            <li>Capítulos</li>
+            <li>Introdução</li>
+            <li>Informações de contato</li>
+            <li>Novos itens</li>
+        </ul>
+        <p>Uma página da Web geralmente apresenta as três primeiras seções mencionadas acima.</p>
+
+        <section class="section">
+            <h4>WWF</h4>
+            <p>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.</p>
+        </section>
+            
+        <section class="section">
+            <h4>WWF's Panda symbol</h4>
+            <p>The Panda has become the symbol of WWF. The well-known panda logo of WWF originated from a panda named Chi Chi that was transferred from the Beijing Zoo to the London Zoo in the same year of the establishment of WWF.</p>
+        </section>
+
+        <h3>Uso do elemento "article"</h3>
+        <p>O elemento <code id="code">&lt;article&gt;</code> define um conteúdo independente e autocontido. O que está contido nesta tag deve fazer sentido por si só, e deve poder ser distribuído independentemente do restante do site.</p>
+        <p>Exemplos de uso para este elemento:</p>
+        <ul class="list-square">
+            <li>Postagens em fóruns</li>
+            <li>Postagens em blogs</li>
+            <li>Comentários de usuários</li>
+            <li>Cartões de produtos</li>
+            <li>Artigos de jornais e revistas</li>
+        </ul>
+
+        <article class="article">
+            <h2>Google Chrome</h2>
+            <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+        </article>
+            
+        <article class="article">
+            <h2>Mozilla Firefox</h2>
+            <p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second most popular web browser since January, 2018.</p>
+        </article>
+            
+        <article class="article">
+            <h2>Microsoft Edge</h2>
+            <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge replaced Internet Explorer.</p>
+        </article>
+
+        <h3>Elemento <code id="code">&lt;header&gt;</code></h3>
+        <p>Esse elemento representa um contêiner para um conteúdo introdutório ou um conjunto de links de navegação.</p>
+        <p>Um elemento <code id="code">&lt;header&gt;</code> geralmente contém:</p>
+        <ul class="list-square">
+            <li>Um ou mais elementos de cabeçalho (<code id="code">&lt;h1&gt;</code>-<code id="code">&lt;h6&gt;</code>)</li>
+            <li>Um logotipo ou um ícone</li>
+            <li>Informações sobre o autor</li>
+        </ul>
+        <p>Pode haver vários elementos <code id="code">&lt;header&gt;</code> em um documento HTML, porém ele não pode ser aninhado nos seguintes elementos: <code id="code">&lt;footer&gt;</code>, <code id="code">&lt;address&gt;</code> ou outro <code id="code">&lt;header&gt;</code>.</p>
+
+            <h4>Elemento "header" dentro de um "article"</h4>
+
+            <article>
+                <header style="background-color: teal;color: violet;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    <h1>What Does WWF Do?</h1>
+                    <p>WWF's mission:</p>
+                </header>
+                <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.</p>
+            </article>
+
+        <h3>Uso do elemento "nav"</h3>
+        <p>Esse elemento define um conjunto de links de navegação. NEM TODOS os links de um documento devem ser colocados no elemento <code id="code">&lt;nav&gt;</code>. Ele deve ser usado apenas para os principais blocos de links de navegação. Navegadores e leitores de tela para usuários com alguma deficiência podem usar este elemento para determinar se devem omitir o processamento inicial deste conteúdo.</p>
+
+        <nav class="navigation">
+            <a href="/html/">HTML</a> |
+            <a href="/css/">CSS</a> |
+            <a href="/js/">JavaScript</a> |
+            <a href="/jquery/">jQuery</a>
+        </nav>
+
+        <h3>Uso do elemento "aside"</h3>
+        <p>Esse elemento define um conteúdo ao lado do conteúdo em que está aninhado, como uma barra lateral. O conteúdo de <code id="code">&lt;aside&gt;</code> deve estar indiretamente relacionado ao conteúdo que o rodeia.</p>
+
+            <p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+            <aside class="aside">
+                <p>The Epcot center is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+            </aside>
+            <p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+            <p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+
+        <h3>Uso dos elementos "figure" e "figcaption"</h3>
+        <p>A tag <code id="code">&lt;figure&gt;</code> define um conteúdo autocontido, como ilustrações, diagramas, fotos, listagens de código, etc. A tag <code id="code">&lt;figcaption&gt;</code> define uma legenda para um elemento <code id="code">&lt;figure&gt;</code> e pode ser colocado como o primeiro ou o último filho de um elemento <code id="code">&lt;figure&gt;</code>. O elemento <code id="code">&lt;img&gt;</code> define a imagem/ilustração em si.</p>
+        <figure>
+            <img src="../img/decorative-lunch.jpeg" alt="Decorative lunch">
+            <figcaption>Fig1. - A decorative lunch.</figcaption>
+        </figure>
+
+        <h3>Uso do elemento "footer"</h3>
+        <p>Esse elemento define o rodapé de um documento ou uma seção.</p>
+        <p>Um elemento <code id="code">&lt;footer&gt;</code> geralmente contém:</p>
+        <ul class="list-square">
+            <li>Informações sobre o autor</li>
+            <li>Informações de copyright</li>
+            <li>Informações de contato</li>
+            <li>Um mapa do site</li>
+            <li>Links para voltar ao topo da página</li>
+            <li>Documentos relacionados</li>
+        </ul>
+        <p>Pode haver vários elementos <code id="code">&lt;footer&gt;</code> em um documento HTML.</p>
+        <footer class="footer">
+            <code id="code">&lt;footer&gt;</code><p>Author: Hege Refsnes</p>
+            <p><a href="mailto:hege@example.com">hege@example.com</a></p><code id="code">&lt;/footer&gt;</code>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/Link-colors.css">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Links e âncoras">
+        <meta name="author" content="Lizandra Silva (@maopequena)">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Links e âncoras</title>
+    </head>
+    <body>
+        <p id="estilCSS">Os links desta página foram estilizados com CSS, através do arquivo <a href="../css/Link-colors.css">Link-colors.css</a>.</p>
+
+        <br>
+        <p>Links HTML, também chamados de hiperlinks, possibilitam que o usuário navegue entre as páginas do site. Ao clicar em um link, o usuário é enviado para outro documento HTML, ou outra página. Ao passar o mouse sobre um link, a seta se transforma em uma mãozinha. Um link não precisa ser um texto, pode ser uma imagem ou qualquer outro elemento HTML.</p>
+        <p>Sintaxe: <code id="code">&lt;a href="url"&gt;texto do link&lt;/a&gt;</code>. <code id="code">href</code> é o atributo mais importante da tag <code id="code">&lt;a&gt;</code>, já que é ele que contém o destino do link. O "texto do link" é o que fica visível para o usuário final.</p>
+        <p><a href="https://www.w3schools.com/">Visite a W3Schools.com!</a></p>
+        <br>
+        <p>Cores padrão dos links (mas isso pode ser alterado no CSS ou com o atributo <code id="code">style</code>):</p>
+        <ul class="list-square">
+            <li style="color: blue;text-decoration: underline;">Links não visitados aparecem sublinhados e em azul</li>
+            <li style="color: purple;text-decoration: underline;">Links visitados aparecem sublinhados e em roxo</li>
+            <li style="color: red;text-decoration: underline;">Links ativos aparecem sublinhados e em vermelho</li>
+        </ul>
+        <br>
+
+        <h3>Atributo <code id="code">target</code></h3>
+        <p>Por padrão, ao ser clicado, o link abre na janela ou aba atual. Este atributo altera esse comportamento com os seguintes valores:</p>
+
+        <ul class="list-square">
+            <li><code id="code">_self</code>: mantém o comportamento padrão, abrir na aba atual. <a href="https://www.w3schools.com/" target="_self">Visite a W3Schools.com!</a></li>
+            <li><code id="code">_blank</code>: abre em uma nova janela ou aba. <a href="https://www.w3schools.com/" target="_blank">Visite a W3Schools.com!</a></li>
+            <li><code id="code">_parent</code>: abre no frame pai. <a href="https://www.w3schools.com/" target="_parent">Visite a W3Schools.com!</a></li>
+            <li><code id="code">_top</code>: abre no corpo cheio da janela. <a href="https://www.w3schools.com/" target="_top">Visite a W3Schools.com!</a></li>
+        </ul>
+        
+        <br>
+        <h3>Imagem como URL</h3>
+            <p>Para usar imagens como links, coloque a tag <code id="code">&lt;img&gt;</code> dentro da tag <code id="code">&lt;a&gt;</code>.</p>
+            <p>
+                <a href="../HTML/Atributos.html">
+                    <img src="../img/img_girl.jpg" alt="Atributos HTML, imagem de garota com jaqueta" style="width:42px;height:42px;">
+                </a>
+            </p>
+
+        <p>É possível usar URLs absolutos ou relativos no atributo <code id="code">href</code>. URLs absolutos são o endereço completo, URLs relativos não têm o <code id="code">http(s)://www</code> e pertencem ao mesmo domínio da página atual.</p>
+        
+        <h3>URLs absolutos</h3>
+            <p><a href="https://www.w3.org/">W3C</a></p>
+            <p><a href="https://www.google.com/">Google</a></p>
+            
+        <h3>URLs relativos</h3>
+            <p><a href="Atributos.html">Atributos HTML</a></p>
+            <p><a href="../css/CSS.css">Arquivo CSS</a></p>
+        
+        
+        
+        <h3>Link para e-mail</h3>
+            <p>Também é possível usar a sintaxe <code id="code">&lt;a href="mailto:e-mail"&gt;texto do link&lt;/a&gt;</code> para abrir o programa de email do usuário, para que ele possa enviar um email para alguém.</p>
+            <p>
+                <a href="mailto:lizandra.c.s@gmail.com">Envie um e-mail para @maopequena!</a>
+            </p>
+        
+        <h3>Botão como link</h3>
+            <p>Para usar um botão HTML como link, é preciso usar código JavaScript, que possibilita especificar o que acontece quando ocorre determinado evento, como ao clicar em um botão.</p>
+            <p>
+                <button class=button onclick="document.location='../HTML/Estilos.html'">Estilos</button>
+            </p>
+        
+        <h3>Atributo <code id="code">title</code></h3>
+            <p>Este atributo define informações adicionais sobre um elemento. Geralmente o conteúdo desse atributo é exibido como uma dica ao passar o mouse sobre o elemento.</p>
+            <p>
+                <a href="https://www.w3schools.com/html/" title="Acesse a seção HTML do site da W3Schools">Visite o tutorial de HTML! Link com dica</a>
+            </p>
+
+        <h3>Âncoras para a mesma página com "id"</h3>
+            <p>Usando o atributo <code id="code">id</code> é possível criar âncoras para texto na mesma página. Ou use a sintaxe <code id="code">href="nome_da_página.html#id</code> para adicionar um link para um <code id="code">id</code> em outra página.</p>
+            <p>Os links "Formulários" e "Tipos de 'input' de formulários" acima apresentam exemplos do uso de âncoras. Dê uma olhada!</p>
+            <p>
+                <a href="#estilCSS">Link para o aviso sobre estilização com CSS usando "#id" em "href"</a>
+            </p>
+
+        <h3>Link em iframe</h3>
+            <p>Também é possível usar um nome especificado de um <code id="code">iframe</code> para abrir o link em um quadro na página. Esse quadro deve ser definido logo abaixo do elemento <code id="code">&lt;a&gt;</code> como <code id="code">&lt;iframe src="link para o nome do arquivo a abrir" width=porcentagem name="nome definido no elemento&gt;</code>.</p>
+            <p>Esta página está sendo exibida em um iframe!</p>
+            <p>
+                <a href="https://www.w3schools.com/html/" target="iframe_w3">Visite o tutorial de HTML!</a>
+                <p><iframe src="../HTML/links-e-ancoras.html" width=60% name="iframe_w3"></p>
+            </p>
+
+        <a href="https://www.youtube.com/watch?v=HA6bByKdAQM&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=14">Tutorial em vídeo sobre links</a>
+    </body>
+</html>

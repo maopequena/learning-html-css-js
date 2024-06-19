@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/style.css">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="iframes">
+        <meta name="author" content="Lizandra Silva (@maopequena)">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iframes</title>
+        <style>
+            .paragraph {
+                font-family: "Dosis", sans-serif;
+                font-size: 20px;
+                font-style: oblique;
+            }
+            .list {
+                font-family: fantasy;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Use iframes para exibir uma página da Web dentro da página aberta.</p>
+
+        <h3>Sintaxe</h3>
+        <p>A tag HTML <code id="code">&lt;iframe&gt;</code> define um quadro alinhado à página, que é usado para incorporar outro documento no documento HTML atual.</p>
+        <p>Recomenda-se sempre incluir o atributo <code id="code">title</code> no iframe, para que leitores de tela saibam qual é o conteúdo do quadro.</p>
+        <p>Use os atributos <code id="code">height</code> e <code id="code">width</code> (em pixels, por padrão) para especificar o tamanho do quadro. Ou use <code id="code">style="height: Npx;width: Npx;"</code>. Também é possível usar porcentagem para a largura e a altura.</p>
+        <p>Por padrão, um iframe apresenta uma borda. Para removê-la, use o atributo <code id="code">style</code> com a propriedade CSS <code id="code">border:none</code>. Também é possível alterar outras propriedades CSS, como <code id="code">border:2px solid red</code>.</p>
+        <p>Um iframe pode ser o <code id="code">target</code> de um link, usando o atributo <code id="code">name</code> do iframe:</p>
+
+        <pre>
+            <code id="code">
+                &lt;iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"&gt;&lt;/iframe&gt;
+                &lt;p&gt;&lt;a href="https://www.w3schools.com" target="iframe_a"&gt;W3Schools.com&lt;/a&gt;&lt;/p&gt;
+            </code>
+        </pre>
+
+        <p class="paragraph">Um exemplo do uso de iframes está na página <a href="/index.html">index.html</a>, ou seja, a página em que estamos!<br>Se você clicar no link, abrirá um menu de navegação abaixo do menu de navegação! &#128514;</p>
+        <p class="paragraph">Este texto está sendo exibido em um iframe!</p>
+        <p class="paragraph">Estamos usando a classe "paragraph" para estilizar o texto:
+            <ul class="list" style="list-style-type: circle;">
+                <li><code id="code">font-family dosis sans-serif</code></li>
+                <li><code id="code">font-size 20px</code></li>
+                <li><code id="code">font-style oblique</code></li>
+            </ul>
+        </p>
+        <p class="paragraph">E a lista está utilizando a classe "list" para estilizar seu texto:
+            <ul class="list" style="list-style-type: square;">
+                <li><code id="code">font-family fantasy</code></li>
+            </ul>
+        </p>
+
+        <a href="https://www.youtube.com/watch?v=qP23O70ve7k&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=19">Tutorial em vídeo sobre iframes</a>
+    </body>
+</html>

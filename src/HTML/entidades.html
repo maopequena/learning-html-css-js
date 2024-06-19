@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/style.css">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Entidades de caracteres">
+        <meta name="author" content="Lizandra Silva (@maopequena)">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Entidades de caracteres</title>
+    </head>
+    <body>
+        <p>Caracteres reservados no HTML, como <code id="code">&lt;</code> e <code id="code">&gt;</code> devem ser substituídos por nomes ou números de entidades, como <code id="code">&amp;lt;</code> e <code id="code">&amp;gt;</code> ou <code id="code">&amp;#60;</code>.</p>
+        <p><b>&nome_da_entidade; ou &#número_da_entidade;</b>: NOTE A HASHTAG! Os nomes são mais fáceis de lembrar do que os números. Nomes de entidades diferenciam maiúsculas de minúsculas.</p>
+
+        <h3>Non-breaking space</h3>
+        <p>Um "non-breaking space", <code id="code">&amp;nbsp;</code>, é um caractere de espaço muito usado e que não quebra uma nova linha. Duas palavras separadas por essa entidade ficarão grudadas, e não serão separadas por uma nova linha. Isso é útil quando separar as palavras pode prejudicar a compreensão do texto, como em <code id="code">§ 10</code>, <code id="code">10 km/h</code> ou <code id="code">10 PM</code>.</p>
+        <p>Ele também impede que os navegadores trunquem os espaços em páginas HTML. Se você digitar 10 espaços em um texto, o navegador removerá 9 deles. Use essa entidade para manter todos os espaços desejados. O "non-breaking hyphen" (<code id="code">&amp;#8209;</code>) é usado para definir um caractere de hífen (<code id="code">‑</code>) que não quebra em uma nova linha.</p>
+
+        <img src="../img/useful-entities.png" />
+
+        <p>Outro tipo de entidade são os acentos. Alguns exemplos:</p>
+        
+        <img style="margin: 5px;" src="../img/acentos.png" />
+        <br>
+        <img style="margin: 5px;" src="../img/math-symbols.png" />
+        <br>
+        <img style="margin: 5px;" src="../img/greek-letters.png" />
+        <br>
+        <img style="margin: 5px;" src="../img/other-symbols.png" />
+        <br>
+        <img style="margin: 5px;" src="../img/emojis.png" />
+        <br>
+
+        <br>
+        
+        <h3>Exemplos de como escrever entidades de caracteres em HTML</h3>
+
+        <p style="font-size: 30px">&lt; | &amp; | &pound; | &reg; | a&#770; | O&#768; | n&#771; | &exist; | &sum; | &alpha; | &epsilon; | &uarr; | &clubs; | &#128514; | &#128512;</p>
+
+        <code style="font-size: 20px">&amp;lt; | &amp;amp; | &amp;pound; | &amp;reg; | a&amp;#770; | O&amp;#768; | n&amp;#771; | &amp;exist; | &amp;sum; | &amp;alpha; | &amp;epsilon; | &amp;uarr; | &amp;clubs; | &amp;#128514; | &amp;#128512;</code>
+
+        <p><a href="https://www.w3schools.com/charsets/ref_utf_math.asp">Lista completa de símbolos matemáticos</a></p>
+
+        <p><a href="https://www.w3schools.com/charsets/ref_utf_greek.asp">Lista completa de letras gregas</a></p>
+
+        <p><a href="https://www.w3schools.com/charsets/ref_utf_currency.asp">Lista completa de moedas</a></p>
+
+        <p><a href="https://www.w3schools.com/charsets/ref_utf_arrows.asp">Lista completa de setas</a></p>
+
+        <p><a href="https://www.w3schools.com/charsets/ref_utf_symbols.asp">Lista completa de símbolos</a></p>
+
+        <p><a href="https://www.w3schools.com/charsets/ref_emoji_smileys.asp">Lista completa de emojis</a></p>
+
+        <p><a href="https://www.w3schools.com/charsets/ref_utf_basic_latin.asp">Lista completa de caracteres latinos e seus códigos</a></p>
+    </body>
+</html>

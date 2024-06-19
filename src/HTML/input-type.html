@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <link rel="icon" type="image/x-icon" href="/src/img/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/style.css">
+        <meta name="keywords" content="HTML, CSS, JavaScript"> <!-- define palavras-chave para mecanismos de pesquisa -->
+        <meta name="description" content="Tipos de 'input': índice"> <!-- define uma descrição para a página -->
+        <meta name="author" content="Lizandra Silva (@maopequena)"> <!-- define o autor da página -->
+        <!-- <meta http-equiv="refresh" content="60">  <-- recarrega a página a cada 60 segundos -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- define o viewport para qualquer dispositivo -->
+        <title>Tipos de "input": atributos</title>
+    </head>
+    <body>
+        <h3>Tipos do atributo <code id="code">&lt;type&gt;</code></h3>
+        <br>
+        <ul class="list-square">
+            <li><code id="code">&lt;input type="button"&gt;</code>: define um botão.</li>
+            <li><code id="code">&lt;input type="checkbox"&gt;</code>: define uma caixa de seleção e possibilita escolher ZERO ou MAIS opções entre as opções disponíveis.</li>
+            <li><code id="code">&lt;input type="color"&gt;</code>: usado para campos de inserção que devem conter cores. Dependendo do suporte do navegador, pode exibir um seletor de cores.</li>
+            <li><code id="code">&lt;input type="date"&gt;</code>: usado para campos de inserção que devem conter uma data. Dependendo do suporte do navegador, pode exibir um seletor de datas. Use os atributos <code id="code">min</code> e <code id="code">max</code> para restringir das datas.</li>
+            <li><code id="code">&lt;input type="datetime-local"&gt;</code>: define um campo de inserção de data e hora, sem fuso horário. Dependendo do suporte do navegador, pode exibir um seletor de datas.</li>
+            <li><code id="code">&lt;input type="email"&gt;</code>: usado para campos de texto que devem conter um endereço de e-mail. Dependendo do suporte do navegador, o endereço de e-mail pode ser validado automaticamente após o envio. Alguns smartphones reconhecem esse tipo e adicionam ".com" ao teclado.</li>
+            <li><code id="code">&lt;input type="file"&gt;</code>: define um campo de seleção de arquivo e um botão "Navegar" para carregar arquivos.</li>
+            <li><code id="code">&lt;input type="hidden"&gt;</code>: define um campo de inserção oculto, que não fica visível para o usuário. Assim, os desenvolvedores podem incluir dados que não pode ser visto ou alterado pelos usuários ao enviar o formulário. Esse tipo de campo geralmente armazena qual registro de banco de dados precisa ser atualizado ao enviar o formulário. <b>Apesar de o valor não ser exibido para o usuário no conteúdo da página, ele ainda fica visível, e pode ser editado, usando as ferramentas de desenvolvedor do navegador ou o recurso "Exibir código fonte". Não use esse tipo como forma de segurança!</b></li>
+            <li><code id="code">&lt;input type="image"&gt;</code>: define uma imagem como o botão de envio. O caminho para a imagem deve ser definido no atributo <code id="code">src</code>.</li>
+            <li><code id="code">&lt;input type="month"&gt;</code>: possibilita selecionar um mês e um ano. Dependendo do suporte do navegador, pode exibir um seletor de datas.</li>
+            <li><code id="code">&lt;input type="number"&gt;</code>: define um campo de inserção numérico. Também é possível definir restrições para os números aceitos.</li>
+            <li><code id="code">&lt;input type="password"&gt;</code>: define um campo de senha.</li>
+            <li><code id="code">&lt;input type="radio"&gt;</code>: define um botão de opção. Esse tipo possibilita escolher APENAS UMA opção entre as opções disponíveis.</li>
+            <li><code id="code">&lt;input type="range"&gt;</code>: define um controle para inserir um número, cujo valor exato não é importante (como um slider). O intervalo padrão é 0 a 100, no entanto é possível definir restrições para quais números serão aceitos com os atributos <code id="code">min</code>, <code id="code">max</code> e <code id="code">step</code>.</li>
+            <li><code id="code">&lt;input type="reset"&gt;</code>: define um botão para redefinir todos os valores do formulário ao valor original.</li>
+            <li><code id="code">&lt;input type="search"&gt;</code>: usado para campos de pesquisa; comporta-se como um campo de texto comum.</li>
+            <li><code id="code">&lt;input type="submit"&gt;</code>: define um botão para enviar os dados do formulário a um manipulador, que geralmente é uma página no servidor com um script para processar os dados inseridos. Especifique o manipulador no atributo <code id="code">action</code>.</li>
+            <li><code id="code">&lt;input type="tel"&gt;</code>: usado para campos de inserção que devem  conter números de telefone.</li>
+            <li><code id="code">&lt;input type="text"&gt;</code>: valor padrão, define um campo de texto com uma única linha.</li>
+            <li><code id="code">&lt;input type="time"&gt;</code>: possibilita selecionar uma hora, sem fuso horário. Dependendo do suporte do navegador, pode exibir um seletor de horas.</li>
+            <li><code id="code">&lt;input type="url"&gt;</code>: usado para campos que precisam conter um endereço de URL. Dependendo do suporte do navegador, o endereço do URL pode ser validado automaticamente após o envio. Alguns smartphones reconhecem esse tipo e adicionam ".com" ao teclado. Precisa inserir <code id="code">http(s)://</code> antes do endereço.</li>
+            <li><code id="code">&lt;input type="week"</code>: possibilita selecionar uma semana e um ano. Dependendo do suporte do navegador, pode exibir um seletor de datas.</li>
+        </ul>
+
+        <br>
+        <h3>Outros atributos de <code id="code">&lt;input&gt;</code></h3>
+        <ul class="list-square">
+            <li><code id="code">value</code>: define o valor inicial de um campo de inserção.</li>
+            <li><code id="code">readonly</code>: define que um campo de inserção é somente leitura e não pode ser alterado. Porém, ao usar a tecla "tab", o usuário passa pelo campo, també é possível realçá-lo e copiar o texto contido nele. O valor de um campo somente leitura será enviado com o formulário.</li>
+            <li><code id="code">disabled</code>: define que um campo de inserção deve ser desativado. Com isso ele não pode ser clicado e fica inutilizável. Com esse atributo, o valor do campo NÃO é enviado com o formulário.</li>
+            <li><code id="code">size</code>: define a largura visível de um campo, em caracteres. O valor padrão é 20. Funciona com os seguintes tipos de campo: <code id="code">text</code>, <code id="code">search</code>, <code id="code">tel</code>, <code id="code">url</code>, <code id="code">email</code> e </code>password</code>. Esse é só o tamanho do campo na tela, não impede o usuário de digitar além desse valor.</li>
+            <li><code id="code">maxlength</code>: define a quantidade máxima de caracteres permitida em um campo. <b>Ao definir esse atributo, o campo de inserção não aceitará mais do que a quantidade especificada de caracteres. Entretanto, este atributo não retorna qualquer feedback, então, para alertar o usuário, crie um código JavaScript.</b> Esse atributo IMPEDE digitar mais caracteres do que o definido.</li>
+            <li><code id="code">min</code> e <code id="code">max</code>: definem os valores mínimo e máximo de um campo. Funcionam com os seguintes tipos: <code id="code">number</code>, <code id="code">range</code>, <code id="code">date</code>, <code id="code">datetime-local</code>, <code id="code">month</code>, <code id="code">time</code> e <code id="code">week</code>. Use esses atributos juntos para criar um intervalo de valores possíveis.</li>
+            <li><code id="code">multiple</code>: define que o usuário pode inserir mais de um valor em um campo. Funciona com os seguintes tipos: <code id="code">email</code> e <code id="code">file</code>.</li>
+            <li><code id="code">pattern</code>: define uma expressão regular (regex) para validar a inserção no campo ao enviar o formulário. Funciona com os seguintes tipos: <code id="code">text</code>, <code id="code">date</code>, <code id="code">search</code>, <code id="code">url</code>, <code id="code">tel</code>, <code id="code">email</code> e <code id="code">password</code>. <b>Use o atributo global <code id="code">title</code> para descrever o padrão, a fim de ajudar o usuário.</b></li>
+            <li><code id="code">placeholder</code>: define uma breve dica que descreve o valor esperado para o campo, isto é, uma amostra do formato esperado. Essa dica é exibida no campo antes de o usuário inserir o valor. Funciona com os seguintes tipos: <code id="code">text</code>, <code id="code">search</code>, <code id="code">url</code>, <code id="code">number</code>, <code id="code">tel</code>, <code id="code">email</code> e <code id="code">password</code>.</li>
+            <li><code id="code">required</code>: define um campo obrigatório. Funciona com os seguintes tipos: <code id="code">text</code>, <code id="code">search</code>, <code id="code">url</code>, <code id="code">tel</code>, <code id="code">email</code>, <code id="code">password</code>, seletores de data e hora, <code id="code">number</code>, <code id="code">checkbox</code>, <code id="code">radio</code> e <code id="code">file</code>.</li>
+            <li><code id="code">step</code>: define um intervalo válido para um campo. <b>Use com <code id="code">max</code> e <code id="code">min</code> para definir um intervalo de valores válidos.</b> Funciona com os seguintes tipos: <code id="code">number</code>, <code id="code">range</code>, <code id="code">date</code>, <code id="code">datetime-local</code>, <code id="code">month</code>, <code id="code">time</code> e <code id="code">week</code>.</li>
+            <li><code id="code">autofocus</code>: define que um campo deve ser selecionado automaticamente quando a página carrega.</li>
+            <li><code id="code">height</code> e <code id="code">width</code>: definem a altura e a largura de um elemento <code id="code">&lt;input type="image"&gt;</code>. <b>Sempre define esses atributos para imagens, porque assim o espaço necessário para a imagem é reservado quando a página carrega. Sem eles, o navegador não sabe o tamanho da imagem e não pode reservar o espaço apropriado para ela e, assim, o layout da página pode mudar durante o carregamento.</b></li>
+            <li><code id="code">list</code>: refere-se ao elemento <code id="code">&lt;datalist&gt;</code>, que contém opções pré-definidas para o elemento <code id="code">&lt;input&gt;</code>.</li>
+            <li><code id="code">autocomplete</code>: define se um formulário ou campo deve ou não ter a opção de preenchimento automático. Isso possibilita que o navegador preveja o valor. Quando o usuário começa a digitar em um campo, o navegador exibe  opções para preencher o campo com base em valores digitados anteriormente. Funciona com <code id="code">&lt;form&gt;</code> e os seguintes tipos de <code id="code">&lt;input&gt;</code>: <code id="code">text</code>, <code id="code">search</code>, <code id="code">url</code>, <code id="code">tel</code>, <code id="code">email</code>, <code id="code">password</code>, seletores de data e hora, <code id="code">range</code> e <code id="code">color</code>.</li>
+        </ul>
+        <br>
+        <a href="https://www.w3schools.com/html/html_form_attributes_form.asp">Mais atributos</a>
+        <br>
+        
+        <br>
+        <p id="submit" style="font-weight: 200;">Todos os exemplos abaixo contêm o tipo "submit", que é o botão Enviar</h3>
+        <p id="reset" style="font-weight: 200;">Todos os exemplos abaixo contêm o tipo "reset", que é o botão Redefinir</h3>
+        
+        <br>
+        <br>
+        <h3 id="text">Campo de texto simples, sobrenome com "readonly" e nome com "autofocus"</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="fname">Nome:</label><br>
+            <input type="text" id="fname" name="fname" value="Digite seu nome" autofocus><br>
+            <label for="lname">Sobrenome:</label><br>
+            <input type="text" id="lname" name="lname" value="Digite seu sobrenome" readonly><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="password">Nome de usuário e senha, nome com "size" e senha com "maxlength"</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="username">Nome de usuário:</label><br>
+            <input type="text" id="username" name="username" value="Digite seu nome de usuário" size="10"><br>
+            <label for="pwd">Senha:</label><br>
+            <input type="password" id="pwd" name="pwd" value="Digite sua senha" maxlength="6"><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="radio">Botões de opção</h3>
+        <br>
+        <p>Escolha sua linguagem Web favorita:</p>
+        <form action="/src/img/well-done.gif">
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">HTML</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">CSS</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">JavaScript</label><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="checkbox">Caixas de seleção</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <input type="checkbox" id="veiculo1" name="veiculo1" value="Bicicleta">
+            <label for="vehicle1"> Eu tenho uma bicicleta</label><br>
+            <input type="checkbox" id="veiculo2" name="veiculo2" value="Carro">
+            <label for="vehicle2"> Eu tenho um carro</label><br>
+            <input type="checkbox" id="veiculo3" name="veiculo3" value="Barco">
+            <label for="vehicle3"> Eu tenho um barco</label><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="button">Botão</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <input type="button" onclick="alert('Olá, Mundo!')" value="Clique aqui!">
+        </form>
+
+        <br>
+        <h3 id="color">Seletor de cores</h3>
+        <br>
+        <form>
+            <label for="favcolor">Selecione sua cor favorita:</label>
+            <input type="color" id="favcolor" name="favcolor"><br>
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="date">Seletor de datas</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="birthday">Selecione sua data de nascimento:</label>
+            <input type="date" id="birthday" name="birthday"><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="restriction">Seletor de datas com restrição usando "min" e "max"</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="datemax">Selecione uma data anterior a 01/01/1980:</label>
+            <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+            <label for="datemin">Selecione uma data posterior a 01/01/2000:</label>
+            <input type="date" id="datemin" name="datemin" min="2000-01-02"><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="datetime-local">Seletor de data e hora, sem fuso horário</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="birthdaytime">Nascimento (data e hora):</label>
+            <input type="datetime-local" id="birthdaytime" name="birthdaytime"><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="email">Campo de e-mail</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="email">Digite seu e-mail:</label>
+            <input type="email" id="email" name="email"><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="image">Botão de envio com imagem</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <input type="image" src="/src/img/homer.gif" alt="Enviar" width="48" height="48"><br>
+        </form>
+
+        <h3 id="file">Seletor de arquivos, com "multiple"</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="myfile">Selecione os arquivos para enviar:</label><br>
+            <input style="margin: 10px 0;" type="file" id="myfile" name="myfile" multiple><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="hidden">Tipo oculto: visualizar no F12, nome com "required"</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="fname">First name*:</label>
+            <input type="text" id="fname" name="fname" required><br><br>
+            <input type="hidden" id="custId" name="custId" value="3487">
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="month">Seletor de mês e ano</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="bdaymonth">Nascimento (mês e ano):</label>
+            <input type="month" id="bdaymonth" name="bdaymonth">
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="number">Campo de inserção numérico, com restrições e intervalo de 3</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="quantity">Quantidade (entre 0 and 99, somente múltiplos de 3):</label>
+            <input type="number" id="quantity" name="quantity" min="0" max="99" step="3">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="range">Slider de intervalo sem restrições</h3>
+        <br>
+        <form>
+            <label for="vol">Volume (entre 0 and 50):</label>
+            <input type="range" id="vol" name="vol" min="0" max="50">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="search">Campo de pesquisa, aceita "Enter", com "autocomplete"</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="gsearch">Search Google:</label>
+            <input type="search" id="gsearch" name="gsearch">
+            <input style="margin: 10px 0;" type="submit" value="Pesquisar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="tel">Números de telefone, residencial está com "disabled"</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="phone">Digite seu número de celular:</label>
+            <input type="tel" id="phone" name="phone" pattern="[1-9]{2}[0-9]{5}[0-9]{4}" title="Obrigatório 11 números"><br>
+            <label for="phone">Digite seu número de telefone residencial:</label>
+            <input type="tel" id="phone" name="phone" pattern="[1-9]{2}[0-9]{5}[0-9]{4}" disabled><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="time">Seletor de horas</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="appt">Selecione uma hora:</label>
+            <input type="time" id="appt" name="appt"><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="url">Campo de inserção de URL, com "placeholder"</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="homepage">Digite um URL:</label>
+            <input type="url" id="homepage" name="homepage" placeholder="Não esqueça de http(s)://"><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="week">Seletor de semana</h3>
+        <br>
+        <form action="/src/img/well-done.gif">
+            <label for="week">Selecione uma semana:</label>
+            <input type="week" id="week" name="week"><br>
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+
+        <h3 id="pattern">Campo com o atributo "pattern"</h3>
+        <br>
+        <form>
+            <label for="country_code">Código do país:</label>
+            <input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{3}" title="Código de país com três letras">
+            <input style="margin: 10px 0;" type="submit" value="Enviar">
+            <input style="margin: 10px 0;" type="reset" value="Redefinir">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/style.css">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Atributo 'id'">
+        <meta name="author" content="Lizandra Silva (@maopequena)">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atributo "id"</title>
+        <style>
+            #myHeader {
+                background-color: lightblue;
+                color: black;
+                padding: 40px;
+                text-align: center;
+            }
+            </style>
+    </head>
+    <body>
+        <p>O atributo HTML <code id="code">id</code> é usado para definir uma identificação exclusiva para um elemento HTML. Esse atributo deve ser exclusivo dentro de um documento HTML, isto é, os elementos não podem compartilhar um mesmo <code id="code">id</code>.</p>
+        <p>Ele é usado para apontar para uma determinada declaração de estilo em uma folha de estilo e pelo JavaScript para acessat e manipular o elemento com a identificação especificada.</p>
+        <p>A sintaxe deste atributo é: uma hashtag (<code id="code">#</code>) seguida do nome da <code id="code">id</code>. Em seguida, use chaves <code id="code">{}</code> para definir as propriedades de CSS.</p>
+        <p>O nome da id diferencia maiúsculas de minúsculas, deve conter ao menos um caractere, não pode começar com um número e não deve conter espaços em branco (espaços, tabulações, etc.).</p>
+        
+        <h3>Diferença entre <code id="code">class</code> e <code id="code">id</code></h3>
+        <p>Um nome de classe pode ser usado por vários elementos HTML, uma identificação deve ser usada por apenas um elemento HTML na página.</p>
+
+        <h3>Âncoras com o atributo <code id="code">id</code> (see also <a href="../HTML/links-e-ancoras.html">Links e âncoras</a>)</h3>
+        <p>Use âncoras HTML para possibilitar que os leitores "pulem" para determinadas partes de uma página da Web. Isso pode ser útil se a página é muito longa.</p>
+        <p>Para isso, primeiro crie a âncora com o atributo <code id="code">id</code> no elemento desejado, depois adicione um link para ela com <code id="code">&lt;a href="#id"&gt;Pular para a id definida&lt;/a&gt;</code>. Ao clicar no link, a página rola para o local da âncora.</p>
+        
+        <h3>Exemplo de elemento H4 com id "myHeader", que será estilizado com a definição #myHeader na seção "head"</h3>
+        
+            <p>Foi definido o seguinte:
+                <ul style="list-style-type: square;">
+                    <li>background-color lightblue</li>
+                    <li>color black</li>
+                    <li>padding 40px</li>
+                    <li>text-align center</li>
+                </ul>
+            </p>
+                <h4 id="myHeader">My Header</h4>
+        
+        <h3>Atributo <code id="code">id</code> com JavaScript</h3>
+        <p>Você também pode usar o atributo <code id="code">id</code> com o JavaScript para executar algumas tarefas para um elemento específico. O JavaScript pode acessar o elemento com determinada <code id="code">id</code> usando o método <code id="code">getElementById()</code>.</p>
+
+        <script>
+            function displayResult() {
+                document.getElementById("myHeader").innerHTML = "Tenha um ótimo dia!";
+            }
+        </script>
+
+        <a href="https://www.youtube.com/watch?v=rZ0k516qZmc&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=18">Tutorial em vídeo sobre o atributo "id"</a>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+* {
+    font-family: "Raleway", Helvetica, sans-serif; 
+}
+
+.list-square {
+    list-style: square;
+}
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.button { /* Esta estilização usa o atributo "class" para definir o estilo do botão na página Links.html */
+    background-color: #f44336;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#code {
+    color: rgb(141, 59, 218);
+}
