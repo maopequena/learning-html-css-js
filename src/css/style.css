@@ -3,6 +3,10 @@
     background-color: #b3b3b3;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .list-square {
     list-style: square;
     margin-left: 5px;
