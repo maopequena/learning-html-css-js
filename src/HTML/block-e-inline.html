@@ -27,18 +27,18 @@
         <p>Se um elemento <code id="code">&lt;div&gt;</code> não ocupa 100% da largura, é possível centralizá-lo definindo a propriedade CSS <code id="code">margin</code> como <code id="code">auto</code>.</p>
         <p>Uma página pode conter vários elementos <code id="code">&lt;div&gt;</code>.</p>
 
-            <div style="background-color:black;color:white;padding:20px;margin: auto;width: 300px;">
-                <h5>Londres</h2>
-                    <p>Londres é a capital da Inglaterra. É a cidade mais populosa do Reino Unido, com uma área metropolitana de mais de 13 milhões de habitantes.</p>
+            <div class="black-div">
+                <h5 style="background-color: black;">Londres</h2>
+                    <p style="background-color: black;">Londres é a capital da Inglaterra. É a cidade mais populosa do Reino Unido, com uma área metropolitana de mais de 13 milhões de habitantes.</p>
             </div>
-            <div style="background-color: navy;color: khaki;">
-                <h5>Oslo</h5>
-                    <p>Oslo é a capital da Noruega e tem mais de 600.000 habitantes.</p>
+            <div class="blue-div">
+                <h5 style="background-color: navy;color: khaki;">Oslo</h5>
+                    <p style="background-color: navy;color: khaki;">Oslo é a capital da Noruega e tem mais de 600.000 habitantes.</p>
             </div>
             
-            <div style="background-color: maroon; color: lawngreen;">
-                <h5>Rome</h5>
-                    <p>Roma é a capital da Itália e tem quase 3 milhões de habitantes.</p>
+            <div class="maroon-div">
+                <h5 style="background-color: maroon; color: lawngreen;">Rome</h5>
+                    <p style="background-color: maroon; color: lawngreen;">Roma é a capital da Itália e tem quase 3 milhões de habitantes.</p>
             </div>
             
             <h4>Exemplo de div no meio da frase</h4>
@@ -55,43 +55,46 @@
             <h4>Com float</h4>
             <p>A propriedade CSS <code id="code">float</code> tem sido usada para alinhar elementos <code id="code">&lt;div&gt;</code> há vários anos, apesar de originalmente não ser destinada a isso. Essa propriedade é usada para posicionar e formatar o conteúdo, e possibilita que os elementos "flutuem" um ao lado do outro, em vez de um em cima do outro.</p>
 
-                <div style="width: 33%;float: left;background-color: #f5f7b0;">
-                    <h2>London</h2>
-                    <p>London is the capital city of England.</p>
-                    <p>London has over 13 million inhabitants.</p>
+                <div class="light-yellow1">
+                    <h2 style="width: 33%;background-color: #f5f7b0;">London</h2>
+                    <p style="width: 33%;background-color: #f5f7b0;">London is the capital city of England.</p>
+                    <p style="width: 33%;background-color: #f5f7b0;">London has over 13 million inhabitants.</p>
                 </div>
                 
-                <div style="width: 33%;float: left;background-color: #f7b0eb;">
-                    <h2>Oslo</h2>
-                    <p>Oslo is the capital city of Norway.</p>
-                    <p>Oslo has over 600.000 inhabitants.</p>
+                <div class="light-pink1">
+                    <h2 style="width: 33%;background-color: #f7b0eb;">Oslo</h2>
+                    <p style="width: 33%;background-color: #f7b0eb;">Oslo is the capital city of Norway.</p>
+                    <p style="width: 33%;background-color: #f7b0eb;">Oslo has over 600.000 inhabitants.</p>
                 </div>
                 
-                <div style="width: 33%;float: left;background-color: #b0f7d4;">
-                    <h2>Rome</h2>
-                    <p>Rome is the capital city of Italy.</p>
-                    <p>Rome has almost 3 million inhabitants.</p>
+                <div class="light-green1">
+                    <h2 style="width: 33%;background-color: #b0f7d4;">Rome</h2>
+                    <p style="width: 33%;background-color: #b0f7d4;">Rome is the capital city of Italy.</p>
+                    <p style="width: 33%;background-color: #b0f7d4;">Rome has almost 3 million inhabitants.</p>
                 </div>
+
+            <br>
             <br>
             <br>
             <h4>Com inline-block</h4>
             <p>Ao alterar a propriedade <code id="code">display</code> do elemento <code id="code">&lt;div&gt;</code> para <code id="code">inline-block</code>, ele não mais adicionará uma quebra de linha antes e depois do elemento, e será exibido lado a lado, em vez de um em cima do outro.</p>
-                <div style="width: 30%;background-color: #f5f7b0;display: inline-block;">
-                    <h2>London</h2>
-                    <p>London is the capital city of England.</p>
-                    <p>London has over 13 million inhabitants.</p>
+                
+            <div class="light-yellow2">
+                    <h2 style="width: 30%;background-color: #f5f7b0;">London</h2>
+                    <p style="width: 30%;background-color: #f5f7b0;">London is the capital city of England.</p>
+                    <p style="width: 30%;background-color: #f5f7b0;">London has over 13 million inhabitants.</p>
                 </div>
                 
-                <div style="width: 30%;background-color: #f7b0eb;display: inline-block;">
-                    <h2>Oslo</h2>
-                    <p>Oslo is the capital city of Norway.</p>
-                    <p>Oslo has over 600.000 inhabitants.</p>
+                <div class="light-pink2">
+                    <h2 style="width: 30%;background-color: #f7b0eb;">Oslo</h2>
+                    <p style="width: 30%;background-color: #f7b0eb;">Oslo is the capital city of Norway.</p>
+                    <p style="width: 30%;background-color: #f7b0eb;">Oslo has over 600.000 inhabitants.</p>
                 </div>
                 
-                <div style="width: 30%;background-color: #b0f7d4;display: inline-block;">
-                    <h2>Rome</h2>
-                    <p>Rome is the capital city of Italy.</p>
-                    <p>Rome has almost 3 million inhabitants.</p>
+                <div class="light-green2">
+                    <h2 style="width: 30%;background-color: #b0f7d4;">Rome</h2>
+                    <p style="width: 30%;background-color: #b0f7d4;">Rome is the capital city of Italy.</p>
+                    <p style="width: 30%;background-color: #b0f7d4;">Rome has almost 3 million inhabitants.</p>
                 </div>
             
             <h4>Com flex</h4>
@@ -99,44 +102,44 @@
 
                 <div style="display: flex;">
                     <div style="background-color: #f5f7b0;">
-                        <h2>London</h2>
-                        <p>London is the capital city of England.</p>
-                        <p>London has over 13 million inhabitants.</p>
+                        <h2 style="background-color: #f5f7b0;">London</h2>
+                        <p style="background-color: #f5f7b0;">London is the capital city of England.</p>
+                        <p style="background-color: #f5f7b0;">London has over 13 million inhabitants.</p>
                     </div>
                     
                     <div style="background-color: #f7b0eb;">
-                        <h2>Oslo</h2>
-                        <p>Oslo is the capital city of Norway.</p>
-                        <p>Oslo has over 600.000 inhabitants.</p>
+                        <h2 style="background-color: #f7b0eb;">Oslo</h2>
+                        <p style="background-color: #f7b0eb;">Oslo is the capital city of Norway.</p>
+                        <p style="background-color: #f7b0eb;">Oslo has over 600.000 inhabitants.</p>
                     </div>
                     
                     <div style="background-color: #b0f7d4;">
-                        <h2>Rome</h2>
-                        <p>Rome is the capital city of Italy.</p>
-                        <p>Rome has almost 3 million inhabitants.</p>
+                        <h2 style="background-color: #b0f7d4;">Rome</h2>
+                        <p style="background-color: #b0f7d4;">Rome is the capital city of Italy.</p>
+                        <p style="background-color: #b0f7d4;">Rome has almost 3 million inhabitants.</p>
                     </div>
                 </div>
             
             <h4>Com grid e grid-template-columns a 33%</h4>
             <p>o módulo de layout "grid" do CSS oferece um sistema baseado em grades, com linhas e colunas, simplificando o design de páginas da Web sem ter que usar flutuação ou posicionamento. Parece quase idêntico ao "flex", mas tem a capacidade de definir mais de uma linha e posicioná-las individualmente. Esse método requer dois elementos <code id="code">&lt;div&gt;</code> aninhados, com o primeiro com status de contêiner "grid", é é precido definir a largura de cada coluna.</p>
             
-                <div style="display: grid;grid-template-columns: 33% 33% 33%;">
+                <div class="display333">
                     <div style="background-color: #f5f7b0;">
-                        <h2>London</h2>
-                        <p>London is the capital city of England.</p>
-                        <p>London has over 13 million inhabitants.</p>
+                        <h2 style="background-color: #f5f7b0;">London</h2>
+                        <p style="background-color: #f5f7b0;">London is the capital city of England.</p>
+                        <p style="background-color: #f5f7b0;">London has over 13 million inhabitants.</p>
                     </div>
                     
                     <div style="background-color: #f7b0eb;">
-                        <h2>Oslo</h2>
-                        <p>Oslo is the capital city of Norway.</p>
-                        <p>Oslo has over 600.000 inhabitants.</p>
+                        <h2 style="background-color: #f7b0eb;">Oslo</h2>
+                        <p style="background-color: #f7b0eb;">Oslo is the capital city of Norway.</p>
+                        <p style="background-color: #f7b0eb;">Oslo has over 600.000 inhabitants.</p>
                     </div>
                     
                     <div style="background-color: #b0f7d4;">
-                        <h2>Rome</h2>
-                        <p>Rome is the capital city of Italy.</p>
-                        <p>Rome has almost 3 million inhabitants.</p>
+                        <h2 style="background-color: #b0f7d4;">Rome</h2>
+                        <p style="background-color: #b0f7d4;">Rome is the capital city of Italy.</p>
+                        <p style="background-color: #b0f7d4;">Rome has almost 3 million inhabitants.</p>
                     </div>
                 </div>
                 <br>

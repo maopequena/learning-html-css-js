@@ -84,18 +84,18 @@
         <p>E para garantir que o elemento inteiro sempre esteja coberto, usar <code id="code">background-attachment: fixed</code> no elemento <code id="code">&lt;style&gt;</code> da seção <code id="code">&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
         <p><code id="code">background-size: 100% 100%</code> estica a imagem e se adéqua ao redimensionamento da janela.</p>
 
-        <div style="background-image: url(../img/fundo-base.jpg); width: 300px; height: 300px; background-attachment:local;background-size: cover;">
-            <p style="color: azure; font-size: 20px;">Elemento <code>&lt;div&gt;</code> com imagem de fundo e <code>background-attachment: local</code> e <code>background-size: cover</code></p>
+        <div class="div-local">
+            <p>Elemento <code id="code">&lt;div&gt;</code> com imagem de fundo e <code id="code">background-attachment: local</code> e <code id="code">background-size: cover</code></p>
         </div>
 
-        <div style="background-image: url(../img/fundo-base.jpg); width: 300px; height: 300px; background-attachment:fixed;background-size: cover;">
-            <p style="color: azure; font-size: 20px;">Elemento <code>&lt;div&gt;</code> com imagem de fundo e <code>background-attachment: fixed</code> e <code>background-size: cover</code></p>
+        <div class="div-fixed">
+            <p>Elemento <code id="code">&lt;div&gt;</code> com imagem de fundo e <code id="code">background-attachment: fixed</code> e <code id="code">background-size: cover</code></p>
         </div>
 
         <br>
         
         <h3>Elemento "picture"</h3>
-        <p>O elemento HTML <code id="code">&lt;picture&gt;</code> fornece mais flexibilidade ao especificar recursos de imagem. Ele contém um ou mais elementos <code id="code">&lt;source&gt;</code>, cada um específico a diferentes imagens no atributo <code id="code">srcset</code>. Assim, o navegador pode escolher a imagem que melhor se ajusta à visualização atual e/ou ao dispositivo. Cada elemento <code id="code">&lt;source&gt;</code> recebe um atributo <code id="code">media</code> que define quando a imagem é mais adequada.</p>
+        <p style="color: none;">O elemento HTML <code id="code">&lt;picture&gt;</code> fornece mais flexibilidade ao especificar recursos de imagem. Ele contém um ou mais elementos <code id="code">&lt;source&gt;</code>, cada um específico a diferentes imagens no atributo <code id="code">srcset</code>. Assim, o navegador pode escolher a imagem que melhor se ajusta à visualização atual e/ou ao dispositivo. Cada elemento <code id="code">&lt;source&gt;</code> recebe um atributo <code id="code">media</code> que define quando a imagem é mais adequada.</p>
         <p>Com este elemento, o navegador procura pelo primeiro elemento <code id="code">source</code> em que há correspondência do tamanho da mídia em relação à largura do dispositivo atual, e busca a imagem especificada no atributo <code id="code">srcset</code>. O elemento <code id="code">img</code> é OBRIGATÓRIO como a última tag do bloco de declaração da imagem, e é usado para fornecer retrocompatibilidade para navegadores que não oferecem suporte ao elemento <code id="code">picture</code>, ou se nenhuma das tags <code id="code">source</code> corresponder.</p>
 
         <p>Redimensione a janela para ver esta imagem mudar:<br>
@@ -117,7 +117,7 @@
         <br>
         
         <h3>Imagem com o atributo "float" de "style"</h3>
-        <p>O atributo CSS <code id="code">float</code> coloca a imagem ao lado do texto, à esquerda (<code id="code">float: left</code>) ou à direita (<code id="code">float: right</code>). <b>PESQUISAR:</b> Opções de float: <code id="code">inline-end</code>, <code id="code">inline-start</code>, <code id="code">none</code>, <code id="code">inherit</code>, <code id="code">initial</code>, <code id="code">unset</code>.</p>
+        <p>O atributo CSS <code id="code">float</code> coloca a imagem ao lado do texto, à esquerda (<code id="code">float: left</code>) ou à direita (<code id="code">float: right</code>).</p>
             <p>
                 <img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="float: left;">
             Float left</p>
