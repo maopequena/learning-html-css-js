@@ -3,6 +3,17 @@
     background-color: #b3b3b3;
 }
 
+<<<<<<< Updated upstream
+=======
+.navigation {
+    text-decoration: wavy;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+>>>>>>> Stashed changes
 .list-square {
     list-style: square;
     margin-left: 5px;
@@ -28,10 +39,6 @@
     float: right;
     font-style: italic;
     background-color: wheat;
-}
-
-.navigation {
-    text-decoration: wavy;
 }
 
 .city {

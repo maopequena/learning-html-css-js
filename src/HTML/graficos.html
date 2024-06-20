@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <link rel="icon" type="image/x-icon" href="/src/img/favicon.ico">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/src/css/style.css">
-        <meta name="keywords" content="HTML, CSS, JavaScript"> <!-- define palavras-chave para mecanismos de pesquisa -->
-        <meta name="description" content="Gráficos"> <!-- define uma descrição para a página -->
-        <meta name="author" content="Lizandra Silva (@maopequena)"> <!-- define o autor da página -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- define o viewport para qualquer dispositivo -->
-        <title>Gráficos</title>
-    </head>
-    <body>
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/src/img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript"> <!-- define palavras-chave para mecanismos de pesquisa -->
+    <meta name="description" content="Gráficos"> <!-- define uma descrição para a página -->
+    <meta name="author" content="Lizandra Silva (@maopequena)"> <!-- define o autor da página -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- define o viewport para qualquer dispositivo -->
+    <title>Gráficos</title>
+</head>
+
+<body>
+    <section>
         <h3><code id="code">&lt;canvas&gt;</code></h3>
-        <p>Este elemento é usado para desenhar gráficos via JavaScript. Ele é apenas um contêiner para os gráficos, é preciso usar JavaScript para desenhá-los. Há vários métodos para desenhar caminhos, caixas, círculos, texto e adicionar imagens. A maioria dos navegadores oferece suporte para este elemento.</p>
+        <p>Este elemento é usado para desenhar gráficos via JavaScript. Ele é apenas um contêiner para os gráficos, é
+            preciso usar JavaScript para desenhá-los. Há vários métodos para desenhar caminhos, caixas, círculos, texto
+            e adicionar imagens. A maioria dos navegadores oferece suporte para este elemento.</p>
         <p>É uma área retangular em uma página HTML. Por padrão, não tem borda, nem conteúdo.</p>
-        <br>
+    </section>
+
+    <section>
         <h3><code id="code">SVG</code></h3>
-        <p>SVG = Scalable Vector Graphics. Defines gráficos baseados em vetores para XML, e podem ser incorporados diretamente em páginas HTML. São escalonáveis e não perdem a qualidade com zoom ou redimensionamento. A maioria dos navegadores oferece suporte para SVG. Para usar gráficos desse tipo, use o elemento <code id="code">&lt;svg&gt;</code>.</p>
+        <p>SVG = Scalable Vector Graphics. Defines gráficos baseados em vetores para XML, e podem ser incorporados
+            diretamente em páginas HTML. São escalonáveis e não perdem a qualidade com zoom ou redimensionamento. A
+            maioria dos navegadores oferece suporte para SVG. Para usar gráficos desse tipo, use o elemento <code
+                id="code">&lt;svg&gt;</code>.</p>
         <p>Cada elemento e atributo de arquivos SVG pode ser animado.</p>
         <p>Integra-se a outros padrões, como CSS, DOM, XSL and JavaScript.</p>
-        <br>
+    </section>
+
+    <section>
         <h3>Diferenças entre SVG e Canvas</h3>
         <ul style="list-style-type: disc;">
-            <li>SVG é uma linguagem para descrever gráficos 2D em XML, enquanto Canvas desenha gráficos 2D com JavaScript.</li>
-            <li>SVG é baseado em XML, o que significa que cada elemento está disponível no SVG DOM. É possível vincular manipuladores de evento JavaScript a gráficos SVG.</li>
-            <li>Em SVG, cada forma desenhada é armazenada como um objeto. Se os atributos de um objeto SVG forem alterados, o navegador pode processar imediatamente a imagem.</li>
-            <li>Canvas é processado pixel por pixel. Quando o gráfico é desenhado, o navegador o esquece imediatamente. Se sua posição mudar, ele precisa ser redesenhado do zero, incluindo quaisuqer objetos que possam ter sido coberto pelo gráfico.</li>
+            <li>SVG é uma linguagem para descrever gráficos 2D em XML, enquanto Canvas desenha gráficos 2D com
+                JavaScript.</li>
+            <li>SVG é baseado em XML, o que significa que cada elemento está disponível no SVG DOM. É possível vincular
+                manipuladores de evento JavaScript a gráficos SVG.</li>
+            <li>Em SVG, cada forma desenhada é armazenada como um objeto. Se os atributos de um objeto SVG forem
+                alterados, o navegador pode processar imediatamente a imagem.</li>
+            <li>Canvas é processado pixel por pixel. Quando o gráfico é desenhado, o navegador o esquece imediatamente.
+                Se sua posição mudar, ele precisa ser redesenhado do zero, incluindo quaisuqer objetos que possam ter
+                sido coberto pelo gráfico.</li>
         </ul>
         <br>
         <img src="../img/svg-versus-canvas.png" />
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Exemplo de "canvas" com borda para indicar o espaço ocupado e JS de uma linha</h3>
         <br>
         <canvas id="canvas1" width="200" height="100" style="border: 3px red solid;"></canvas>
@@ -44,9 +63,9 @@
             ctx.lineTo(200, 100);
             ctx.stroke();
         </script>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Exemplo de "canvas" com borda para indicar o espaço ocupado e JS de um círculo</h3>
         <br>
         <canvas id="canvas2" width="200" height="100" style="border: 1px red dotted;"></canvas>
@@ -57,9 +76,9 @@
             ctx.arc(95, 50, 40, 0, 2 * Math.PI);
             ctx.stroke();
         </script>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Exemplo de "canvas" com borda para indicar o espaço ocupado e JS de texto</h3>
         <br>
         <canvas id="canvas3" width="200" height="100" style="border: 1px red solid;"></canvas>
@@ -69,9 +88,9 @@
             ctx.font = "30px Arial";
             ctx.fillText("Hello World", 10, 50);
         </script>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Exemplo de "canvas" com borda para indicar o espaço ocupado e JS de texto vazado</h3>
         <br>
         <canvas id="canvas4" width="200" height="100" style="border: 1px red solid;"></canvas>
@@ -81,28 +100,28 @@
             ctx.font = "30px Arial";
             ctx.strokeText("Hello World", 10, 50);
         </script>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Exemplo de "canvas" sem borda e JS de gradiente linear</h3>
         <br>
         <canvas id="canvas5" width="200" height="100"></canvas>
         <script>
             var c = document.getElementById("canvas5");
             var ctx = c.getContext("2d");
-            
+
             // Create gradient
             var grd = ctx.createLinearGradient(0, 0, 200, 0);
             grd.addColorStop(0, "red");
             grd.addColorStop(1, "white");
-            
+
             // Fill with gradient
             ctx.fillStyle = grd;
             ctx.fillRect(10, 10, 150, 80);
         </script>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Exemplo de "canvas" sem borda e JS de gradiente circular</h3>
         <br>
         <canvas id="canvas6" width="200" height="100"></canvas>
@@ -119,9 +138,9 @@
             ctx.fillStyle = grd;
             ctx.fillRect(10, 10, 150, 80)
         </script>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Exemplo de "canvas" com borda e JS de imagem</h3>
         <br>
         <canvas id="canvas7" width="600" height="600" style="border: 5px dotted yellow;"></canvas>
@@ -132,55 +151,57 @@
             var img = document.getElementById("homer");
             ctx.drawImage(img, 10, 10);
         </script>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Exemplo de círculo em SVG</h3>
         <br>
         <svg width="100" height="100" style="border: 1px solid red;">
             <circle cx="50" cy="50" r="40" stroke="blue" stroke-width="4" fill="yellow" />
         </svg>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Exemplo de retângulo em SVG</h3>
         <br>
         <svg width="400" height="120" style="border: 1px solid red;">
             <rect x="10" y="10" width="200" height="100" stroke="red" stroke-width="6" fill="grey" />
         </svg>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Com opacidade e cantos arredondados</h3>
         <br>
         <svg width="400" height="180">
             <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
-            style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
         </svg>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Estrela</h3>
         <br>
         <svg width="300" height="200">
             <polygon points="100,10 40,198 190,78 10,78 160,198"
-            style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+                style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
         </svg>
-        <br>
-        
-        <br>
+    </section>
+
+    <section>
         <h3>Elipse com gradiente e texto</h3>
         <br>
         <svg height="130" width="500">
             <defs>
-            <linearGradient id="grad1">
-                <stop offset="0%" stop-color="yellow" />
-                <stop offset="100%" stop-color="red" />
-            </linearGradient>
+                <linearGradient id="grad1">
+                    <stop offset="0%" stop-color="yellow" />
+                    <stop offset="100%" stop-color="red" />
+                </linearGradient>
             </defs>
             <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
             <text fill="#ffffff" font-size="45" font-family="Verdana" x="31" y="86">TEXTO</text>
             Infelizmente seu navegador não é compatível com SVG incorporado.
         </svg>
-    </body>
+    </section>
+</body>
+
 </html>

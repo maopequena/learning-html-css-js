@@ -1,32 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <meta charset="utf-8">
-    <head>
-        <link rel="icon" type="image/x-icon" href="../favicon.ico">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/style.css">
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <meta name="description" content="Elementos de bloco e inline">
-        <meta name="author" content="Lizandra Silva (@maopequena)">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Elementos de bloco e inline</title>
-    </head>
-    <body>
-        <p>Todo elemento HTML tem um valor de exibição padrão, dependendo do tipo de elemento. Os dois valores de exibição mais comuns são <b>block</b> e <b>inline</b>.</p>
-        <p>Um elemento de nível "block" sempre começa em uma nova linha, e os navegadores automaticamente adicionam espaço (uma margem) antes e depois dele. Ele sempore ocupa toda a largura disponível, esticando-se para a esquerda e a direita o máximo possível. Os dois elementos "block" mais conhecidos são: <code id="code">&lt;p&gt;</code> e <code id="code">&lt;div&gt;</code>, que definem, respectivamente, um parágrafo e uma divisão, ou seção, em um documento HTML.</p>
-        <p>Outros elementos "block": <code id="code">&lt;address&gt;</code>, <code id="code">&lt;article&gt;</code>, <code id="code">&lt;aside&gt;</code>, <code id="code">&lt;blockquote&gt;</code>, <code id="code">&lt;canvas&gt;</code>, <code id="code">&lt;dd&gt;</code>, <code id="code">&lt;dl&gt;</code>, <code id="code">&lt;dt&gt;</code>, <code id="code">&lt;fieldset&gt;</code>, <code id="code">&lt;figcaption&gt;</code>, <code id="code">&lt;figure&gt;</code>, <code id="code">&lt;footer&gt;</code>, <code id="code">&lt;form&gt;</code>, <code id="code">&lt;h1&gt;-&lt;h6&gt;</code>, <code id="code">&lt;header&gt;</code>, <code id="code">&lt;hr&gt;</code>, <code id="code">&lt;li&gt;</code>, <code id="code">&lt;main&gt;</code>, <code id="code">&lt;nav&gt;</code>, <code id="code">&lt;noscript&gt;</code>, <code id="code">&lt;ol&gt;</code>, <code id="code">&lt;pre&gt;</code>, <code id="code">&lt;section&gt;</code>, <code id="code">&lt;table&gt;</code>, <code id="code">&lt;tfoot&gt;</code>, <code id="code">&lt;ul&gt;</code> e <code id="code">&lt;video&gt;</code>.</p>
+
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Elementos de bloco e inline">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos de bloco e inline</title>
+</head>
+
+<body>
+    <section>
+        <h1>Elementos de bloco e inline</h1>
+        <p>Todo elemento HTML tem um valor de exibição padrão, dependendo do tipo de elemento. Os dois valores de
+            exibição mais comuns são <b>block</b> e <b>inline</b>.</p>
+        <p>Um elemento de nível "block" sempre começa em uma nova linha, e os navegadores automaticamente adicionam
+            espaço (uma margem) antes e depois dele. Ele sempore ocupa toda a largura disponível, esticando-se para a
+            esquerda e a direita o máximo possível. Os dois elementos "block" mais conhecidos são: <code
+                id="code">&lt;p&gt;</code> e <code id="code">&lt;div&gt;</code>, que definem, respectivamente, um
+            parágrafo e uma divisão, ou seção, em um documento HTML.</p>
+        <p>Outros elementos "block": <code id="code">&lt;address&gt;</code>, <code id="code">&lt;article&gt;</code>,
+            <code id="code">&lt;aside&gt;</code>, <code id="code">&lt;blockquote&gt;</code>, <code
+                id="code">&lt;canvas&gt;</code>, <code id="code">&lt;dd&gt;</code>, <code id="code">&lt;dl&gt;</code>,
+            <code id="code">&lt;dt&gt;</code>, <code id="code">&lt;fieldset&gt;</code>, <code
+                id="code">&lt;figcaption&gt;</code>, <code id="code">&lt;figure&gt;</code>, <code
+                id="code">&lt;footer&gt;</code>, <code id="code">&lt;form&gt;</code>, <code
+                id="code">&lt;h1&gt;-&lt;h6&gt;</code>, <code id="code">&lt;header&gt;</code>, <code
+                id="code">&lt;hr&gt;</code>, <code id="code">&lt;li&gt;</code>, <code id="code">&lt;main&gt;</code>,
+            <code id="code">&lt;nav&gt;</code>, <code id="code">&lt;noscript&gt;</code>, <code
+                id="code">&lt;ol&gt;</code>, <code id="code">&lt;pre&gt;</code>, <code id="code">&lt;section&gt;</code>,
+            <code id="code">&lt;table&gt;</code>, <code id="code">&lt;tfoot&gt;</code>, <code
+                id="code">&lt;ul&gt;</code> e <code id="code">&lt;video&gt;</code>.</p>
         <p>Um elemento "inline" não inicia uma nova linha e ocupa apenas a largura necessária.</p>
-        <p>Elementos "inline": <code id="code">&lt;span&gt;</code>, <code id="code">&lt;a&gt;</code>, <code id="code">&lt;abbr&gt;</code>, <code id="code">&lt;acronym&gt;</code>, <code id="code">&lt;b&gt;</code>, <code id="code">&lt;bdo&gt;</code>, <code id="code">&lt;big&gt;</code>, <code id="code">&lt;br&gt;</code>, <code id="code">&lt;button&gt;</code>, <code id="code">&lt;cite&gt;</code>, <code id="code">&lt;code&gt;</code>, <code id="code">&lt;dfn&gt;</code>, <code id="code">&lt;em&gt;</code>, <code id="code">&lt;i&gt;</code>, <code id="code">&lt;img&gt;</code>, <code id="code">&lt;input&gt;</code>, <code id="code">&lt;kbd&gt;</code>, <code id="code">&lt;label&gt;</code>, <code id="code">&lt;map&gt;</code>, <code id="code">&lt;object&gt;</code>, <code id="code">&lt;output&gt;</code>, <code id="code">&lt;q&gt;</code>, <code id="code">&lt;samp&gt;</code>, <code id="code">&lt;script&gt;</code>, <code id="code">&lt;select&gt;</code>, <code id="code">&lt;small&gt;</code>, <code id="code">&lt;span&gt;</code>, <code id="code">&lt;strong&gt;</code>, <code id="code">&lt;sub&gt;</code>, <code id="code">&lt;sup&gt;</code>, <code id="code">&lt;textarea&gt;</code>, <code id="code">&lt;time&gt;</code>, <code id="code">&lt;tt&gt;</code> e <code id="code">&lt;var&gt;</code>.</p>
-        <p style="font-size: larger;font-weight: bold;">Um elemento inline NÃO pode conter um elemento block, mas o inverso pode acontecer.</p>
+        <p>Elementos "inline": <code id="code">&lt;span&gt;</code>, <code id="code">&lt;a&gt;</code>, <code
+                id="code">&lt;abbr&gt;</code>, <code id="code">&lt;acronym&gt;</code>, <code id="code">&lt;b&gt;</code>,
+            <code id="code">&lt;bdo&gt;</code>, <code id="code">&lt;big&gt;</code>, <code id="code">&lt;br&gt;</code>,
+            <code id="code">&lt;button&gt;</code>, <code id="code">&lt;cite&gt;</code>, <code
+                id="code">&lt;code&gt;</code>, <code id="code">&lt;dfn&gt;</code>, <code id="code">&lt;em&gt;</code>,
+            <code id="code">&lt;i&gt;</code>, <code id="code">&lt;img&gt;</code>, <code id="code">&lt;input&gt;</code>,
+            <code id="code">&lt;kbd&gt;</code>, <code id="code">&lt;label&gt;</code>, <code
+                id="code">&lt;map&gt;</code>, <code id="code">&lt;object&gt;</code>, <code
+                id="code">&lt;output&gt;</code>, <code id="code">&lt;q&gt;</code>, <code id="code">&lt;samp&gt;</code>,
+            <code id="code">&lt;script&gt;</code>, <code id="code">&lt;select&gt;</code>, <code
+                id="code">&lt;small&gt;</code>, <code id="code">&lt;span&gt;</code>, <code
+                id="code">&lt;strong&gt;</code>, <code id="code">&lt;sub&gt;</code>, <code id="code">&lt;sup&gt;</code>,
+            <code id="code">&lt;textarea&gt;</code>, <code id="code">&lt;time&gt;</code>, <code
+                id="code">&lt;tt&gt;</code> e <code id="code">&lt;var&gt;</code>.</p>
+        <p style="font-size: larger;font-weight: bold;">Um elemento inline NÃO pode conter um elemento block, mas o
+            inverso pode acontecer.</p>
+    </section>
 
+    <section>
         <h3>Elemento "div" com alinhamento centralizado usando "margin: auto; width: 300px;"</h3>
-        <p>O elemento <code id="code">&lt;div&gt;</code> geralmente é usado como contêiner para outros elementos HTML e não tem atributos obrigatórios, mas é comum usar os atributos <code id="code">style</code>, <code id="code">class</code> e <code id="code">id</code>. Junto ao CSS, esse elemento pode ser usado para estilizar blocos de conteúdo.</p>
-        <p>O elemento <code id="code">&lt;div&gt;</code> geralmente é usado como contêiner para outros elementos HTML. Por padrão, esse é um elemento de bloco, quer dizer, ocupa toda a largura disponível da página, e apresenta quebras de linha antes e depois dele. <b>Ele é usado para agrupar seções de uma página da Web.</b></p>
-        <p>Se um elemento <code id="code">&lt;div&gt;</code> não ocupa 100% da largura, é possível centralizá-lo definindo a propriedade CSS <code id="code">margin</code> como <code id="code">auto</code>.</p>
+        <p>O elemento <code id="code">&lt;div&gt;</code> geralmente é usado como contêiner para outros elementos HTML e
+            não tem atributos obrigatórios, mas é comum usar os atributos <code id="code">style</code>, <code
+                id="code">class</code> e <code id="code">id</code>. Junto ao CSS, esse elemento pode ser usado para
+            estilizar blocos de conteúdo.</p>
+        <p>O elemento <code id="code">&lt;div&gt;</code> geralmente é usado como contêiner para outros elementos HTML.
+            Por padrão, esse é um elemento de bloco, quer dizer, ocupa toda a largura disponível da página, e apresenta
+            quebras de linha antes e depois dele. <b>Ele é usado para agrupar seções de uma página da Web.</b></p>
+        <p>Se um elemento <code id="code">&lt;div&gt;</code> não ocupa 100% da largura, é possível centralizá-lo
+            definindo a propriedade CSS <code id="code">margin</code> como <code id="code">auto</code>.</p>
         <p>Uma página pode conter vários elementos <code id="code">&lt;div&gt;</code>.</p>
+        <br>
+        <div class="black-div">
+            <h5 style="background-color: black;">Londres</h2>
+                <p style="background-color: black;">Londres é a capital da Inglaterra. É a cidade mais populosa do Reino
+                    Unido, com uma área metropolitana de mais de 13 milhões de habitantes.</p>
+        </div>
+        <div class="blue-div">
+            <h5 style="background-color: navy;color: khaki;">Oslo</h5>
+            <p style="background-color: navy;color: khaki;">Oslo é a capital da Noruega e tem mais de 600.000
+                habitantes.</p>
+        </div>
 
+<<<<<<< Updated upstream
             <div style="background-color:black;color:white;padding:20px;margin: auto;width: 300px;">
                 <h5>Londres</h2>
                     <p>Londres é a capital da Inglaterra. É a cidade mais populosa do Reino Unido, com uma área metropolitana de mais de 13 milhões de habitantes.</p>
@@ -43,18 +98,41 @@
             
             <h4>Exemplo de div no meio da frase</h4>
                 <p>Exemplo de um parágrafo<div>que contém um div</div>inserido no meio.</p>
+=======
+        <div class="maroon-div">
+            <h5 style="background-color: maroon; color: lawngreen;">Rome</h5>
+            <p style="background-color: maroon; color: lawngreen;">Roma é a capital da Itália e tem quase 3 milhões de
+                habitantes.</p>
+        </div>
+    </section>
+>>>>>>> Stashed changes
 
-        
+    <section>
+        <h4>Exemplo de div no meio da frase</h4>
+        <p>Exemplo de um parágrafo
+        <div>que contém um div</div>inserido no meio.</p>
+    </section>
+
+    <section>
         <h3>Elemento "span"</h3>
-        <p>O elemento <code id="code">&lt;span&gt;</code> é um contêiner inline usado para marcar parte de um texto ou de um documento. Esse elemento não tem atributos obrigatórios, mas é comum usar os atributos <code id="code">style</code>, <code id="code">class</code> e <code id="code">id</code>. Junto ao CSS, esse elemento pode ser usado para estilizar partes do texto.</p>
+        <p>O elemento <code id="code">&lt;span&gt;</code> é um contêiner inline usado para marcar parte de um texto ou
+            de um documento. Esse elemento não tem atributos obrigatórios, mas é comum usar os atributos <code
+                id="code">style</code>, <code id="code">class</code> e <code id="code">id</code>. Junto ao CSS, esse
+            elemento pode ser usado para estilizar partes do texto.</p>
 
-            <p>Minha mãe tem olhos <span style="color:blue;font-weight:bold;">azuis</span><br>
+        <p>Minha mãe tem olhos <span style="color:blue;font-weight:bold;">azuis</span><br>
             e meu pai tem olhos <span style="color:darkolivegreen;font-weight:bold;">verde escuro</span>.</p>
+    </section>
 
+    <section>
         <h3>Elementos div lado a lado</h3>
-            <h4>Com float</h4>
-            <p>A propriedade CSS <code id="code">float</code> tem sido usada para alinhar elementos <code id="code">&lt;div&gt;</code> há vários anos, apesar de originalmente não ser destinada a isso. Essa propriedade é usada para posicionar e formatar o conteúdo, e possibilita que os elementos "flutuem" um ao lado do outro, em vez de um em cima do outro.</p>
+        <h4>Com float</h4>
+        <p>A propriedade CSS <code id="code">float</code> tem sido usada para alinhar elementos <code
+                id="code">&lt;div&gt;</code> há vários anos, apesar de originalmente não ser destinada a isso. Essa
+            propriedade é usada para posicionar e formatar o conteúdo, e possibilita que os elementos "flutuem" um ao
+            lado do outro, em vez de um em cima do outro.</p>
 
+<<<<<<< Updated upstream
                 <div style="width: 33%;float: left;background-color: #f5f7b0;">
                     <h2>London</h2>
                     <p>London is the capital city of England.</p>
@@ -142,4 +220,111 @@
                 <br>
         <a href="https://www.youtube.com/watch?v=M4n-WSkehmI&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=16">Tutorial em vídeo sobre elementos em bloco e em linha</a>
     </body>
+=======
+        <div class="light-yellow1">
+            <h2 style="width: 33%;background-color: #f5f7b0;">London</h2>
+            <p style="width: 33%;background-color: #f5f7b0;">London is the capital city of England.</p>
+            <p style="width: 33%;background-color: #f5f7b0;">London has over 13 million inhabitants.</p>
+        </div>
+
+        <div class="light-pink1">
+            <h2 style="width: 33%;background-color: #f7b0eb;">Oslo</h2>
+            <p style="width: 33%;background-color: #f7b0eb;">Oslo is the capital city of Norway.</p>
+            <p style="width: 33%;background-color: #f7b0eb;">Oslo has over 600.000 inhabitants.</p>
+        </div>
+
+        <div class="light-green1">
+            <h2 style="width: 33%;background-color: #b0f7d4;">Rome</h2>
+            <p style="width: 33%;background-color: #b0f7d4;">Rome is the capital city of Italy.</p>
+            <p style="width: 33%;background-color: #b0f7d4;">Rome has almost 3 million inhabitants.</p>
+        </div>
+    </section>
+
+    <section>
+        <h4>Com inline-block</h4>
+        <p>Ao alterar a propriedade <code id="code">display</code> do elemento <code id="code">&lt;div&gt;</code> para
+            <code id="code">inline-block</code>, ele não mais adicionará uma quebra de linha antes e depois do elemento,
+            e será exibido lado a lado, em vez de um em cima do outro.</p>
+
+        <div class="light-yellow2">
+            <h2 style="width: 30%;background-color: #f5f7b0;">London</h2>
+            <p style="width: 30%;background-color: #f5f7b0;">London is the capital city of England.</p>
+            <p style="width: 30%;background-color: #f5f7b0;">London has over 13 million inhabitants.</p>
+        </div>
+
+        <div class="light-pink2">
+            <h2 style="width: 30%;background-color: #f7b0eb;">Oslo</h2>
+            <p style="width: 30%;background-color: #f7b0eb;">Oslo is the capital city of Norway.</p>
+            <p style="width: 30%;background-color: #f7b0eb;">Oslo has over 600.000 inhabitants.</p>
+        </div>
+
+        <div class="light-green2">
+            <h2 style="width: 30%;background-color: #b0f7d4;">Rome</h2>
+            <p style="width: 30%;background-color: #b0f7d4;">Rome is the capital city of Italy.</p>
+            <p style="width: 30%;background-color: #b0f7d4;">Rome has almost 3 million inhabitants.</p>
+        </div>
+    </section>
+
+    <section>
+        <h4>Com flex</h4>
+        <p>o módulo de layout "flexbox" do CSS possibilita criar uma estrutura de layout responsiva e flexível sem usar
+            os elementos de flutuação ou posicionamento acima. Para que esse método funcione, coloque os elementos <code
+                id="code">&lt;div&gt;</code> que deseja alinhar dentro de outro elemento <code
+                id="code">&lt;div&gt;</code> e dê ao primeiro elemento div o status de contêiner flexível.</p>
+
+        <div style="display: flex;">
+            <div style="background-color: #f5f7b0;">
+                <h2 style="background-color: #f5f7b0;">London</h2>
+                <p style="background-color: #f5f7b0;">London is the capital city of England.</p>
+                <p style="background-color: #f5f7b0;">London has over 13 million inhabitants.</p>
+            </div>
+
+            <div style="background-color: #f7b0eb;">
+                <h2 style="background-color: #f7b0eb;">Oslo</h2>
+                <p style="background-color: #f7b0eb;">Oslo is the capital city of Norway.</p>
+                <p style="background-color: #f7b0eb;">Oslo has over 600.000 inhabitants.</p>
+            </div>
+
+            <div style="background-color: #b0f7d4;">
+                <h2 style="background-color: #b0f7d4;">Rome</h2>
+                <p style="background-color: #b0f7d4;">Rome is the capital city of Italy.</p>
+                <p style="background-color: #b0f7d4;">Rome has almost 3 million inhabitants.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h4>Com grid e grid-template-columns a 33%</h4>
+        <p>o módulo de layout "grid" do CSS oferece um sistema baseado em grades, com linhas e colunas, simplificando o
+            design de páginas da Web sem ter que usar flutuação ou posicionamento. Parece quase idêntico ao "flex", mas
+            tem a capacidade de definir mais de uma linha e posicioná-las individualmente. Esse método requer dois
+            elementos <code id="code">&lt;div&gt;</code> aninhados, com o primeiro com status de contêiner "grid", é é
+            precido definir a largura de cada coluna.</p>
+
+        <div class="display333">
+            <div style="background-color: #f5f7b0;">
+                <h2 style="background-color: #f5f7b0;">London</h2>
+                <p style="background-color: #f5f7b0;">London is the capital city of England.</p>
+                <p style="background-color: #f5f7b0;">London has over 13 million inhabitants.</p>
+            </div>
+
+            <div style="background-color: #f7b0eb;">
+                <h2 style="background-color: #f7b0eb;">Oslo</h2>
+                <p style="background-color: #f7b0eb;">Oslo is the capital city of Norway.</p>
+                <p style="background-color: #f7b0eb;">Oslo has over 600.000 inhabitants.</p>
+            </div>
+
+            <div style="background-color: #b0f7d4;">
+                <h2 style="background-color: #b0f7d4;">Rome</h2>
+                <p style="background-color: #b0f7d4;">Rome is the capital city of Italy.</p>
+                <p style="background-color: #b0f7d4;">Rome has almost 3 million inhabitants.</p>
+            </div>
+        </div>
+        <br>
+        <a href="https://www.youtube.com/watch?v=M4n-WSkehmI&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=16">Tutorial
+            em vídeo sobre elementos em bloco e em linha</a>
+    </section>
+</body>
+
+>>>>>>> Stashed changes
 </html>

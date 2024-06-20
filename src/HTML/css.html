@@ -13,7 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cores</title>
         <style>
-            body {background-color: powderblue}
+            body {background-color: powderblue;}
             p {background-color: powderblue;}
             ul {background-color: powderblue;}
             li {background-color: powderblue;}
@@ -22,43 +22,54 @@
         </style>
     </head>
     <body>
+    <section style="background-color: powderblue; margin-left: 10px;">
         <p>Esta página foi estilizada com CSS!</p>
-
+        <br>
         <p>CSS = Cascading Style Sheets (folhas de estilo em cascata). Ele economiza muito trabalho, porque pode controlar o layout de várias páginas da Web ao mesmo tempo.</p>
         <p>Com CSS é possível controlar a cor, a fonte, o tamanho do texto, o espaçamento entre os elementos, como os elementos são posicionados na tela, quais imagens ou cores de fundo usar, diferentes exibições para cada dispositivo e tamanho de tela, e muito mais!</p>
         <p>"Em cascata" significa que um estilo aplicado a um elemento pai também será aplicado a todos os elementos filhos dentro do pai. Então, ao definir a cor do texto do corpo como "blue", todos os cabeçalhos, parágrafos e outros elementos de texto dentro do corpo também receberão a mesma cor, a menos que seja especificado algo diferente.</p>
         <br>
         <p>Há 3 maneiras de usar o CSS em documentos HTML:</p>
+        <br>
         <ul class="list-square">
-            <li>Inline, usando o atributo <code id="code">style</code> em elementos HTML</li>
-            <li>Internal, usando o elemento <code id="code">&lt;style&gt;</code> na seção <code id="code">&lt;head&gt;</code></li>
-            <li>External, usando um elemento <code id="code">&lt;link&gt;</code> para vincular um arquivo CSS externo</li>
+            <li>Inline, usando o atributo <code id="code" style="background-color: powderblue;">style</code> em elementos HTML</li>
+            <li>Internal, usando o elemento <code id="code" style="background-color: powderblue;">&lt;style&gt;</code> na seção <code id="code" style="background-color: powderblue;">&lt;head&gt;</code></li>
+            <li>External, usando um elemento <code id="code" style="background-color: powderblue;">&lt;link&gt;</code> para vincular um arquivo CSS externo</li>
         </ul>
+    </section>
 
+    <section style="background-color: powderblue; margin-left: 10px;">
         <h3>CSS Inline</h2>
-            <p>O CSS inline é usado para aplicar um estilo único a um único elemento HTML. Ele usa o atributo <code id="code">style</code> de um elemento HTML.</p>
+            <p>O CSS inline é usado para aplicar um estilo único a um único elemento HTML. Ele usa o atributo <code id="code" style="background-color: powderblue;">style</code> de um elemento HTML.</p>
 
             <h3 style="color:blue;">Cabeçalho em blue</h3>
             <p style="color:goldenrod;">Parágrafo em Golden Rod.</p>
+    </section>
 
+    <section style="background-color: powderblue; margin-left: 10px;">
         <h3>CSS Internal</h3>
-        <p>O CSS internal é usado para definir um estilo para uma única página HTML. Ele é definido na seção <code id="code">&lt;head&gt;</code> de uma página HTML, com um elemento <code id="code">&lt;style&gt;</code>.</p>
+        <p>O CSS internal é usado para definir um estilo para uma única página HTML. Ele é definido na seção <code id="code" style="background-color: powderblue;">&lt;head&gt;</code> de uma página HTML, com um elemento <code id="code" style="background-color: powderblue;">&lt;style&gt;</code>.</p>
         <p>O fundo da página em powderblue é o Internal, definido na seção "head".</p>
+    </section>
 
+    <section style="background-color: powderblue; margin-left: 10px;">
         <h3>CSS external</h3>
-        <p>O CSS external é um arquivo de folha de estilo, com extensão <code id="code">.css</code>, usado para definir o estilo de várias páginas HTML ao mesmo tempo. Para tanto é necessário usar o elemento <code id="code">link</code> na seção <code id="code">&lt;head&gt;</code> de cada página HTML. Esse arquivo CSS não deve conter HTML.</p>
-
+        <p>O CSS external é um arquivo de folha de estilo, com extensão <code id="code" style="background-color: powderblue;">.css</code>, usado para definir o estilo de várias páginas HTML ao mesmo tempo. Para tanto, é necessário usar o elemento <code id="code" style="background-color: powderblue;">&lt;link&gt;</code> na seção <code id="code" style="background-color: powderblue;">&lt;head&gt;</code> de cada página HTML. Esse arquivo CSS não deve conter HTML.</p>
+        <br>
         <p>Consultar <a href="../css/style.css">style.css</a></p>
+    </section>
 
+    <section style="background-color: powderblue; margin-left: 10px;">
         <h3>Cores, fontes e tamanhos no CSS</h3>
-        <p>As seguintes propriedades CSS definem, em ordem, a cor do texto, a fonte e o tamanho da fonte: <code id="code">color</code>, <code id="code">font-family</code> e <code id="code">font-size</code>.</p>
-        <p>A propriedade <code id="code">border</code> define uma borda ao redor de um elemento HTML. P.ex.: <code id="code">border: 2px solid powderblue;</code></p>
-        <p>A propriedade <code id="code">padding</code> define um espaço entre o texto e a borda.</p>
-        <p>A propriedade <code id="code">margin</code> define um espaço fora da borda.</p>
-        <p>O elemento <code id="code">&lt;link&gt;</code> aceita o caminho do arquivo CSS localmente (ou em um servidor) ou um URL.</p>
+        <p>As seguintes propriedades CSS definem, em ordem, a cor do texto, a fonte e o tamanho da fonte: <code id="code" style="background-color: powderblue;">color</code>, <code id="code" style="background-color: powderblue;">font-family</code> e <code id="code" style="background-color: powderblue;">font-size</code>.</p>
+        <p>A propriedade <code id="code" style="background-color: powderblue;">border</code> define uma borda ao redor de um elemento HTML. P.ex.: <code id="code" style="background-color: powderblue;">border: 2px solid powderblue;</code></p>
+        <p>A propriedade <code id="code" style="background-color: powderblue;">padding</code> define um espaço entre o texto e a borda.</p>
+        <p>A propriedade <code id="code" style="background-color: powderblue;">margin</code> define um espaço fora da borda.</p>
+        <p>O elemento <code id="code" style="background-color: powderblue;">&lt;link&gt;</code> aceita o caminho do arquivo CSS localmente (ou em um servidor) ou um URL.</p>
         <p><a href="https://www.w3schools.com/w3css/default.asp">W3.CSS</a> é um framework de CSS moderno que oferece suporte para desktops, tablets e dispositivos móveis por padrão. Ele é menor e mais rápido que outros frameworks de CSS e foi projetado para trabalhar independentemente do jQuery ou de outras bibliotecas JavaScript.</p>
         <p>Outro framework muito utilizado é o <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">Bootstrap</a>.</p>
-        
+        <br>
         <a href="https://www.youtube.com/watch?v=cZHp-Oozg6I&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=13">Tutorial em vídeo sobre CSS no HTML</a>
+    </section>
     </body>
 </html>
