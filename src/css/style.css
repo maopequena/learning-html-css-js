@@ -1,6 +1,18 @@
 * {
     font-family: "Raleway", Helvetica, sans-serif; 
     background-color: #b3b3b3;
+    font-size: 1rem;
+}
+
+#myHeader {
+    background-color: lightblue;
+    color: black;
+    padding: 1em 0;
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    width: 80vw;
+
 }
 
 .navigation {
@@ -26,13 +38,13 @@ html {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rebeccapurple;
     background-color: salmon;
-    margin: 2;
+    margin: 2px;
 }
 
 .aside {
     width: 30%;
-    padding-left: 15px;
-    margin-left: 15px;
+    padding-left: 15rem;
+    margin-left: 15rem;
     float: right;
     font-style: italic;
     background-color: wheat;
@@ -49,16 +61,11 @@ html {
     color: white;
     border: 2px solid black;
     margin: 20px;
-    padding: 20px;
+    padding: 20rem;
 }
 
 .note {
-font-size: 120%;
 color: red;
-}
-
-.main {
-    font-size: 70px;
 }
 
 a:link {

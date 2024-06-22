@@ -1,19 +1,20 @@
 <!DOCTYPE html> <!-- Define o tipo de documento da página como HTML -->
 <html lang="pt-BR"> <!-- Para exibir a página com o idioma Português (brasileiro) corretamente -->
 <meta charset="utf-8"> <!-- Para exibir corretamente os caracteres especiais -->
-    <head>
-        <link rel="icon" type="image/x-icon" href="../favicon.ico">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/style.css">
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <meta name="description" content="Introdução">
-        <meta name="author" content="Lizandra Silva (@maopequena)">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Introdução</title>
-    </head>
-    <body>
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Introdução">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução</title>
+</head>
+<body>
+    <main>
         <hr>
         <h3>TAREFAS PENDENTES:</h3>
         <form>
@@ -37,104 +38,123 @@
             <label for="attrevents"><a href="https://www.w3schools.com/tags/ref_eventattributes.asp" target="_blank">Ler sobre eventos de atributos</a></label><br>
             <input type="checkbox" name="githubacct" id="githubacct">
             <label for="githubacct" style="color: rgb(141, 59, 218);font-weight: bold;">Criar conta lizandrasilva no github, deixar maopequena para uso pessoal!</a></label>
+            <input type="checkbox" name="lesscss" id="lesscss">
+            <label for="lesscss"><a href="https://lesscss.org" target="_blank">Ler sobre Less CSS</a></label><br>
+            <input type="checkbox" name="sasscss" id="sasscss">
+            <label for="sasscss"><a href="https://sass-lang.com/guide/" target="_blank">Ler sobre Sass CSS</a></label><br>
+            <input type="checkbox" name="styluscss" id="styluscss">
+            <label for="styluscss"><a href="https://stylus-lang.com" target="_blank">Ler sobre Stylus CSS</a></label><br>
+            <input type="checkbox" name="postcss" id="postcss">
+            <label for="postcss"><a href="https://postcss.org" target="_blank">Ler sobre PostCSS</a></label><br>
+            <input type="checkbox" name="tailwindcss" id="tailwindcss">
+            <label for="tailwindcss"><a href="https://tailwindcss.com" target="_blank">Ler sobre Tailwind</a></label><br>
         </form>
         <hr>
         <a href="https://www.w3schools.com/html/html5_syntax.asp" target="_blank">GUIA DE ESTILO</a>
         <br>
         <a href="https://www.w3schools.com/tags/default.asp" target="_blank">LISTA ALFABÉTICA DE TAGS HTML</a>
+        <hr>
+
+        <header>
+            <h1>Introdução</h1>
+            <p>HTML = Hyper Text Markup Language. É a linguagem de marcação padrão para criar páginas da Web. O HTML descreve a estrutura de uma página da Web e consiste ofde vários elementos, que informam ao navegador como exibir o conteúdo. Os elementos HTML rotulam os pedaços do conteúdo, como "isto é um cabeçalho", "isto é um parágrafo", "isto é um link", etc.</p>
+            <p>XHTML = EXtensible HyperText Markup Language. É uma versão de HTML mais restrita, mais baseada em XML. O XHTML é HTML definido como um aplicativo XML. A maioria dos navegadores oferece suporte para XHTML.</p>
+            <p font-size="2rem">Esta página é um exemplo de um documento HTML simples.</p>
+        </header>
         
-        <h1>Introdução</h1>
-        <p>HTML = Hyper Text Markup Language. É a linguagem de marcação padrão para criar páginas da Web. O HTML descreve a estrutura de uma página da Web e consiste ofde vários elementos, que informam ao navegador como exibir o conteúdo. Os elementos HTML rotulam os pedaços do conteúdo, como "isto é um cabeçalho", "isto é um parágrafo", "isto é um link", etc.</p>
-        <p>XHTML = EXtensible HyperText Markup Language. É uma versão de HTML mais restrita, mais baseada em XML. O XHTML é HTML definido como um aplicativo XML. A maioria dos navegadores oferece suporte para XHTML.</p>
-        <h4>Esta página é um exemplo de um documento HTML simples.</h4>
-        
-        <h1>Isto é um cabeçalho H1</h1>
-        <p>Isto é um parágrafo.</p>
+        <section>
+            <h1>Isto é um cabeçalho H1</h1>
+            <p>Isto é um parágrafo.</p>
 
-        <h2>Meu primeiro cabeçalho H2</h1>
-        <p>Meu primeiro parágrafo.</p>
+            <h2>Meu primeiro cabeçalho H2</h1>
+            <p>Meu primeiro parágrafo.</p>
+        </section>
 
-        <p>A declaração <code id="code">&lt;!DOCTYPE html&gt;</code> define que este é um documento HTML5.</p>
-        <p>O elemento <code id="code">&lt;html&gt;</code> <code id="code">&lt;/html&gt;</code> é o elemento raiz de uma página HTML. Este elemento é obrigatório.</p>
-        <p>O elemento <code id="code">&lt;head&gt;</code> <code id="code">&lt;/head&gt;</code> contém meta-informações sobre a página HTML.</p>
-        <p>O elemento <code id="code">&lt;title&gt;</code> <code id="code">&lt;/title&gt;</code> especifica um título para a página HTML, que será exibido na barra de título do navegador ou na aba da página.</p>
-        <p>O elemento <code id="code">&lt;body&gt;</code> <code id="code">&lt;/body&gt;</code> define o corpo do documento, e é um contêiner para todo o conteúdo visível da página, como cabeçalhos, parágrafos, imagens, hiperlinks, tabelas, listas, etc.</p>
-        <p>O elemento <code id="code">&lt;h1&gt;</code> <code id="code">&lt;/h1&gt;</code> define um cabeçalho grande.</p>
-        <p>O elemento <code id="code">&lt;p&gt;</code> <code id="code">&lt;/p&gt;</code>define um parágrafo.</p>
+        <section>
+            <p>A declaração <code id="code">&lt;!DOCTYPE html&gt;</code> define que este é um documento HTML5.</p>
+            <p>O elemento <code id="code">&lt;html&gt;</code> <code id="code">&lt;/html&gt;</code> é o elemento raiz de uma página HTML. Este elemento é obrigatório.</p>
+            <p>O elemento <code id="code">&lt;head&gt;</code> <code id="code">&lt;/head&gt;</code> contém meta-informações sobre a página HTML.</p>
+            <p>O elemento <code id="code">&lt;title&gt;</code> <code id="code">&lt;/title&gt;</code> especifica um título para a página HTML, que será exibido na barra de título do navegador ou na aba da página.</p>
+            <p>O elemento <code id="code">&lt;body&gt;</code> <code id="code">&lt;/body&gt;</code> define o corpo do documento, e é um contêiner para todo o conteúdo visível da página, como cabeçalhos, parágrafos, imagens, hiperlinks, tabelas, listas, etc.</p>
+            <p>O elemento <code id="code">&lt;h1&gt;</code> <code id="code">&lt;/h1&gt;</code> define um cabeçalho grande.</p>
+            <p>O elemento <code id="code">&lt;p&gt;</code> <code id="code">&lt;/p&gt;</code>define um parágrafo.</p>
+        </section>
 
-        <br>
+        <section>
+            <h3>O que é um elemento HTML?</h3>
+            <p>Ele consiste da tag de abertura, da tag de fechamento e do seu conteúdo. <code id="code">elemento = &lt;tag&gt;Todo o Conteúdo&lt;/tag&gt;</code>. <b>Observação:</b> alguns elementos HTML não têm conteúdo (como o elemento <code id="code">&lt;br&gt;</code>). Esses elementos são chamados de "elementos vazios" e não têm uma tag de fechamento!</p>
+            <p>Porém, se o conteúdo da página será lido por XML, recomenda-se usar a sintaxe <code id="code">&lt;tag atributo="" /&gt;</code>.</p>
+            <br>
+            <img src='../img/HTML-page-structure.png' alt='Estrutura de uma página HTML'>
+            <br>
+            <p>As versões mais importantes do HTML desde 1989 são:</p>
+            <ul class="list-square">
+                <li>1991: invention of HTML</li>
+                <li>2000: XHTML 1.0</li>
+                <li>2014: HTML5</li>
+                <li>atual, HTML 5.2</li>
+            </ul>
+            <p>Quando um URL não define um nome de arquivo no final (como "https://www.w3schools.com/"), o servidor apenas adiciona um nome de arquivo padrão, como "index.html", "index.htm", "default.html" ou "default.htm". Se seu servidor estiver configurado apenas com "index.html" como o nome de arquivo padrão, seu arquivo deve se chamar "index.html", e não "default.html". Entretanto, é possível configurar um servidor com mais de um nome de arquivo padrão; geralmente quantos desejar.</p>
+            <a href="https://www.youtube.com/watch?v=it1rTvBcfRg&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s" target="_blank">Tutorial inicial em vídeo</a>
+        </section>
 
-        <h3>O que é um elemento HTML?</h3>
-        <p>Ele consiste da tag de abertura, da tag de fechamento e do seu conteúdo. <code id="code">elemento = &lt;tag&gt;Todo o Conteúdo&lt;/tag&gt;</code>. <b>Observação:</b> alguns elementos HTML não têm conteúdo (como o elemento <code id="code">&lt;br&gt;</code>). Esses elementos são chamados de "elementos vazios" e não têm uma tag de fechamento!</p>
-        <p>Porém, se o conteúdo da página será lido por XML, recomenda-se usar a sintaxe <code id="code">&lt;tag atributo="" /&gt;</code>.</p>
+        <section>
+            <h3>Editores HTML</h3>
+            <p style="font-size: larger;">Uma página HTML pode ter as seguintes extensões: `.html` ou `.htm`.</p>
+            <p>UTF-8 é a codificação preferida para páginas HTML.</p>
+            <a href="https://www.youtube.com/watch?v=bBP0ckEln4Y&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=2" target="_blank">Tutorial sobre editores HTML em vídeo</a>
+        </section>
 
-        <br>
-        <img src='../img/HTML-page-structure.png' alt='Estrutura de uma página HTML'>
-        <br>
+        <section>
+            <h3>Exemplos básicos</h3>
+            <p>Todos os documentos HTML devem começar com uma declaração do tipo de documento: <code id="code">&lt;!DOCTYPE html&gt;</code>. Isso representa o tipo de documento e ajuda os navegadores a exibirem corretamente as páginas da web. Essa declaração só deve aparecer uma vez, no início da página e antes de qualquer tag HTML. Aqui, não importa a capitalização.</p>
+            <p>O documento HTML em si começa com a tag <code id="code">&lt;html&gt;</code> e termina com a tag <code id="code">&lt;/html&gt;</code>.</p>
+            <p>A parte visível do documento HTML fica entre as tags <code id="code">&lt;body&gt;</code> e <code id="code">&lt;/body&gt;</code>.</p>
+            <p>Títulos usam as tags <code id="code">&lt;h1&gt;</code> a <code id="code">&lt;h6&gt;</code>.</p>
+            <p>Links usam a tag <code id="code">&lt;a&gt;</code> <code id="code">&lt;/a&gt;</code>. Para especificar o destino do link, usa-se o atributo <code id="code">href=""</code>.</p>
+            <p>Usa-se a tag <code id="code">&lt;img&gt;</code> para definir imagens no HTML. Alguns atributos das imagens são: <code id="code">src=""</code> (que define a origem da imagem, i.e. um caminho ou um link), <code id="code">alt=""</code> (OBRIGATÓRIO, que define o texto alternativo, caso a imagem não seja exibida ou para leitores de tela), <code id="code">width="XXpx"</code> (para definir a largura) e <code id="code">height="XXpx"</code> (para definir a altura).</p>
+            <p>É possível aninhar elementos HTML, isto é, os elementos podem conter outros elementos. Todos os documentos HTML consistem de elementos HTML aninhados. P.ex.: <code id="code">&lt;h1&gt;</code> está aninhado em <code id="code">&lt;body&gt;</code>, que está aninhado em <code id="code">&lt;head&gt;</code>, que está aninhado em <code id="code">&lt;html&gt;</code>. Ao aninhar é recomendado indentar os elementos aninhados para melhor visualização do código, mas isso não interfere na visualização da página no navegador.</p>
+            <p>Alguns elementos HTML podem ser exibidos corretamente mesmo se a tag de fechamento não existir. Porém, não se deve confiar nisso! Podem ocorrer erros inesperados ao esquecer a tag de fechamento!</p>
+            <p>A tag <code id="code">&lt;br&gt;</code> define uma quebra de linha e é um elemento vazio, i.e. não tem tag de fechamento.</p>
+            <p>Tags HTML não diferenciam maiúsculas de minúsculas: <code id="code">&lt;P&gt;</code> é o mesmo que <code id="code">&lt;p&gt;</code>. O padrão HTML não requer tags em minúsculas, mas recomenda-se usar minúsculas no HTML, e tipos de documentos mais restritos, como XHTML, exigem as minúsculas.</p>
+            <br>
+            <a href="https://www.youtube.com/watch?v=vIoO52MdZFE&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=3" target="_blank">Tutorial em vídeo sobre elementos</a>
+        </section>
 
-        <p>As versões mais importantes do HTML desde 1989 são:</p>
-        <ul class="list-square">
-            <li>1991: invention of HTML</li>
-            <li>2000: XHTML 1.0</li>
-            <li>2014: HTML5</li>
-            <li>atual, HTML 5.2</li>
-        </ul>
-        <br>
+        <section>
+            <h3>Título da página</h3>
+            <p>Use o elemento <code id="code">&lt;title&gt;</code> na seção <code id="code">&lt;head&gt;</code> para dar um título à página. Isso será exibido na aba do navegador.</p>
+            <p>Ele deve descrever o conteúdo e o significado da página e é usado para SEO (search engine optimization). Recomenda-se que um título tenha, no máximo, 64 caracteres de comprimento.</p>
+            <p>Esse elemento:</p>
+                <ul class="list-square">
+                    <li>define um título na barra do navegador</li>
+                    <li>fornece um título para a página adicionada aos favoritos</li>
+                    <li>exibe um título para a página em resultados de mecanismos de pesquisa</li>
+                </ul>
+        </section>
 
-        <p>Quando um URL não define um nome de arquivo no final (como "https://www.w3schools.com/"), o servidor apenas adiciona um nome de arquivo padrão, como "index.html", "index.htm", "default.html" ou "default.htm". Se seu servidor estiver configurado apenas com "index.html" como o nome de arquivo padrão, seu arquivo deve se chamar "index.html", e não "default.html". Entretanto, é possível configurar um servidor com mais de um nome de arquivo padrão; geralmente quantos desejar.</p>
+        <section>
+            <h3>Caminhos de arquivos</h3>
 
-        <a href="https://www.youtube.com/watch?v=it1rTvBcfRg&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s" target="_blank">Tutorial inicial em vídeo</a>
+            <img src="../img/file-paths.png" alt="Caminhos de arquivos">
+        </section>
 
-        <br>
+        <section>
+            <h3>Elemento <code id="code">&lt;head&gt;</code></h3>
+            <p>O elemento <code id="code">&lt;head&gt;</code> é um contêiner de metadados e pode conter os seguintes elementos:</p>
+                <ul class="list-square">
+                    <li><code id="code">&lt;title&gt;</code> define o título do documento, deve conter somente texto e é exibido na aba da janela ou na barra de título do navegador. Também é um elemento obrigatório e é usado para SEO.</li>
+                    <li><code id="code">&lt;style&gt;</code> define as informações de estilo de uma página HTML.</li>
+                    <li><code id="code">&lt;link&gt;</code> define a relação entre o documento atual e um recurso externo, geralmente uma folha de estilo, mas também fontes e JS.</li>
+                    <li><code id="code">&lt;meta&gt;</code> especifica o conjunto de caracteres (p. ex. "UTF-8"), uma descrição da página, palavras-chave, o autor do documento e configurações de exibição para diferentes dispositivos (viewport). Os metadados não são exibidos na página, mas são usados por navegadores, mecanismos de pesquisa e outros serviços da Web.</li>
+                    <li><code id="code">&lt;script&gt;</code> define JS no lado do cliente, conforme discutido acima na AULA 24.</li>
+                    <li><code id="code">&lt;base&gt;</code> define o URL base e/ou o destino para todos os URLs relativos de uma página. Essa tag deve conter um atributo <code id="code">href</code>, um atributo <code id="code">target</code> ou ambos. <b>Só pode have um elemento desse no documento!</b></li>
+                </ul>
+            <p>O "viewport" é a área de uma página Web que fica visível para o usuário. Ele varia de acordo com o dispositivo, e será menor em dispositivos móveis do que na tela de um computador. Inclua <code id="code">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> em todas as páginas Web, para que o navegador receba instruções sobre como controlar as dimensões e o escalonamento da página. <code id="code">width=device-width</code> define a largura da página para seguir a largura da tela do dispositivo, o que varia. <code id="code">initial-scale=1.0</code> define o nível de zoom inicial ao carregar a página pela primeira vez.</p>
+            <p>Ao definir <code id="code">font-size</code> com a unidade <code id="code">vw</code>, o texto se adéqua ao viewport!</p>
 
-        <h3>Editores HTML</h3>
-        <p style="font-size: larger;">Uma página HTML pode ter as seguintes extensões: `.html` ou `.htm`.</p>
-        <p>UTF-8 é a codificação preferida para páginas HTML.</p>
-        <a href="https://www.youtube.com/watch?v=bBP0ckEln4Y&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=2" target="_blank">Tutorial sobre editores HTML em vídeo</a>
-
-        <br>
-
-        <h3>Exemplos básicos</h3>
-        <p>Todos os documentos HTML devem começar com uma declaração do tipo de documento: <code id="code">&lt;!DOCTYPE html&gt;</code>. Isso representa o tipo de documento e ajuda os navegadores a exibirem corretamente as páginas da web. Essa declaração só deve aparecer uma vez, no início da página e antes de qualquer tag HTML. Aqui, não importa a capitalização.</p>
-        <p>O documento HTML em si começa com a tag <code id="code">&lt;html&gt;</code> e termina com a tag <code id="code">&lt;/html&gt;</code>.</p>
-        <p>A parte visível do documento HTML fica entre as tags <code id="code">&lt;body&gt;</code> e <code id="code">&lt;/body&gt;</code>.</p>
-        <p>Títulos usam as tags <code id="code">&lt;h1&gt;</code> a <code id="code">&lt;h6&gt;</code>.</p>
-        <p>Links usam a tag <code id="code">&lt;a&gt;</code> <code id="code">&lt;/a&gt;</code>. Para especificar o destino do link, usa-se o atributo <code id="code">href=""</code>.</p>
-        <p>Usa-se a tag <code id="code">&lt;img&gt;</code> para definir imagens no HTML. Alguns atributos das imagens são: <code id="code">src=""</code> (que define a origem da imagem, i.e. um caminho ou um link), <code id="code">alt=""</code> (OBRIGATÓRIO, que define o texto alternativo, caso a imagem não seja exibida ou para leitores de tela), <code id="code">width="XXpx"</code> (para definir a largura) e <code id="code">height="XXpx"</code> (para definir a altura).</p>
-        <p>É possível aninhar elementos HTML, isto é, os elementos podem conter outros elementos. Todos os documentos HTML consistem de elementos HTML aninhados. P.ex.: <code id="code">&lt;h1&gt;</code> está aninhado em <code id="code">&lt;body&gt;</code>, que está aninhado em <code id="code">&lt;head&gt;</code>, que está aninhado em <code id="code">&lt;html&gt;</code>. Ao aninhar é recomendado indentar os elementos aninhados para melhor visualização do código, mas isso não interfere na visualização da página no navegador.</p>
-        <p>Alguns elementos HTML podem ser exibidos corretamente mesmo se a tag de fechamento não existir. Porém, não se deve confiar nisso! Podem ocorrer erros inesperados ao esquecer a tag de fechamento!</p>
-        <p>A tag <code id="code">&lt;br&gt;</code> define uma quebra de linha e é um elemento vazio, i.e. não tem tag de fechamento.</p>
-        <p>Tags HTML não diferenciam maiúsculas de minúsculas: <code id="code">&lt;P&gt;</code> é o mesmo que <code id="code">&lt;p&gt;</code>. O padrão HTML não requer tags em minúsculas, mas recomenda-se usar minúsculas no HTML, e tipos de documentos mais restritos, como XHTML, exigem as minúsculas.</p>
-        <br>
-        <a href="https://www.youtube.com/watch?v=vIoO52MdZFE&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=3" target="_blank">Tutorial em vídeo sobre elementos</a>
-
-        <h3>Título da página</h3>
-        <p>Use o elemento <code id="code">&lt;title&gt;</code> na seção <code id="code">&lt;head&gt;</code> para dar um título à página. Isso será exibido na aba do navegador.</p>
-        <p>Ele deve descrever o conteúdo e o significado da página e é usado para SEO (search engine optimization). Recomenda-se que um título tenha, no máximo, 64 caracteres de comprimento.</p>
-        <p>Esse elemento:</p>
-        <ul class="list-square">
-            <li>define um título na barra do navegador</li>
-            <li>fornece um título para a página adicionada aos favoritos</li>
-            <li>exibe um título para a página em resultados de mecanismos de pesquisa</li>
-        </ul>
-
-        <h3>Caminhos de arquivos</h3>
-
-        <img src="../img/file-paths.png" alt="Caminhos de arquivos">
-
-        <h3>Elemento <code id="code">&lt;head&gt;</code></h3>
-        <p>O elemento <code id="code">&lt;head&gt;</code> é um contêiner de metadados e pode conter os seguintes elementos:</p>
-        <ul class="list-square">
-            <li><code id="code">&lt;title&gt;</code> define o título do documento, deve conter somente texto e é exibido na aba da janela ou na barra de título do navegador. Também é um elemento obrigatório e é usado para SEO.</li>
-            <li><code id="code">&lt;style&gt;</code> define as informações de estilo de uma página HTML.</li>
-            <li><code id="code">&lt;link&gt;</code> define a relação entre o documento atual e um recurso externo, geralmente uma folha de estilo, mas também fontes e JS.</li>
-            <li><code id="code">&lt;meta&gt;</code> especifica o conjunto de caracteres (p. ex. "UTF-8"), uma descrição da página, palavras-chave, o autor do documento e configurações de exibição para diferentes dispositivos (viewport). Os metadados não são exibidos na página, mas são usados por navegadores, mecanismos de pesquisa e outros serviços da Web.</li>
-            <li><code id="code">&lt;script&gt;</code> define JS no lado do cliente, conforme discutido acima na AULA 24.</li>
-            <li><code id="code">&lt;base&gt;</code> define o URL base e/ou o destino para todos os URLs relativos de uma página. Essa tag deve conter um atributo <code id="code">href</code>, um atributo <code id="code">target</code> ou ambos. <b>Só pode have um elemento desse no documento!</b></li>
-        </ul>
-        <p>O "viewport" é a área de uma página Web que fica visível para o usuário. Ele varia de acordo com o dispositivo, e será menor em dispositivos móveis do que na tela de um computador. Inclua <code id="code">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> em todas as páginas Web, para que o navegador receba instruções sobre como controlar as dimensões e o escalonamento da página. <code id="code">width=device-width</code> define a largura da página para seguir a largura da tela do dispositivo, o que varia. <code id="code">initial-scale=1.0</code> define o nível de zoom inicial ao carregar a página pela primeira vez.</p>
-        <p>Ao definir <code id="code">font-size</code> com a unidade <code id="code">vw</code>, o texto se adéqua ao viewport!</p>
-
-        <a href="https://www.youtube.com/watch?v=WeuVX5x2MJE&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=21" target="_blank">Tutorial em vídeo sobre o elemento "head"</a>
-    </body>
+            <a href="https://www.youtube.com/watch?v=WeuVX5x2MJE&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=21" target="_blank">Tutorial em vídeo sobre o elemento "head"</a>
+        </section>
+    </main>
+</body>
 </html>

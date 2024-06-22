@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <meta charset="utf-8">
-    <head>
-        <link rel="icon" type="image/x-icon" href="../favicon.ico">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/style.css">
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <meta name="description" content="Formatação">
-        <meta name="author" content="Lizandra Silva (@maopequena)">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formatação</title>
-    </head>
-    <body>
-        <p>O HTML oferece vários elementos para definir o texto com um significado especial. Esses elementos são chamados de "elementos de formatação". Eis alguns:</p>
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Formatação">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatação</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Formatação</h1>
+            <p>O HTML oferece vários elementos para definir o texto com um significado especial. Esses elementos são chamados de "elementos de formatação". Eis alguns:</p>
 
-        <ul class="list-square">
-            <li><b>Texto em negrito</b>, <code id="code">&lt;b&gt;</code>.</li>
-            <li><strong>Texto importante</strong>, <code id="code">&lt;strong&gt;</code>.</li>
-            <li><i>Texto em itálico</i>, <code id="code">&lt;i&gt;</code>.</li>
-            <li><em>Texto com ênfase</em>, <code id="code">&lt;em&gt;</code>. Um leitor de tela pronunciará as palavras dentro desse elemento com ênfase, dando mais importância para esse texto.</li>
-            <li><small>Texto menor</small>, <code id="code">&lt;small&gt;</code>.</li>
-            <li><mark>Texto realçado</mark>, <code id="code">&lt;mark&gt;</code>.</li>
-            <li><del>Texto excluído</del>, <code id="code">&lt;del&gt;</code>. "Strike-through".</li>
-            <li><ins>Texto inserido</ins>, <code id="code">&lt;ins&gt;</code>. Fica sublinhado.</li>
-            <li>H<sub>2</sub>O, texto subscrito. <code id="code">&lt;sub&gt;</code>. Aparece como meio caractere, abaixo da linha normal, e geralmente com uma fonte menor. Este texto pode ser usado para fórmulas químicas.</li>
-            <li>WWW<sup>[1]</sup>, texto superescrito. <code id="code">&lt;sup&gt;</code>. Aparece como meio caractere, acima da linha normal, e geralmente com uma fonte menor. Este texto pode ser usado para notas de rodapé.</li>
-        </ul>
+            <ul class="list-square">
+                <li><b>Texto em negrito</b>, <code id="code">&lt;b&gt;</code>.</li>
+                <li><strong>Texto importante</strong>, <code id="code">&lt;strong&gt;</code>.</li>
+                <li><i>Texto em itálico</i>, <code id="code">&lt;i&gt;</code>.</li>
+                <li><em>Texto com ênfase</em>, <code id="code">&lt;em&gt;</code>. Um leitor de tela pronunciará as palavras dentro desse elemento com ênfase, dando mais importância para esse texto.</li>
+                <li><small>Texto menor</small>, <code id="code">&lt;small&gt;</code>.</li>
+                <li><mark>Texto realçado</mark>, <code id="code">&lt;mark&gt;</code>.</li>
+                <li><del>Texto excluído</del>, <code id="code">&lt;del&gt;</code>. "Strike-through".</li>
+                <li><ins>Texto inserido</ins>, <code id="code">&lt;ins&gt;</code>. Fica sublinhado.</li>
+                <li>H<sub>2</sub>O, texto subscrito. <code id="code">&lt;sub&gt;</code>. Aparece como meio caractere, abaixo da linha normal, e geralmente com uma fonte menor. Este texto pode ser usado para fórmulas químicas.</li>
+                <li>WWW<sup>[1]</sup>, texto superescrito. <code id="code">&lt;sup&gt;</code>. Aparece como meio caractere, acima da linha normal, e geralmente com uma fonte menor. Este texto pode ser usado para notas de rodapé.</li>
+            </ul>
 
-        <a href="https://www.youtube.com/watch?v=7FqQLqNIEY8&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=8" target="_blank">Tutorial em vídeo sobre formatação de texto</a>
-
+            <a href="https://www.youtube.com/watch?v=7FqQLqNIEY8&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=8" target="_blank">Tutorial em vídeo sobre formatação de texto</a>
+        </header>
+        
+        <section>
         <h3>Comentários</h3>
             <p>Comentários HTML não aparecem no navegador, mas podem ajudar com o código-fonte.</p>
             <p>Para inserir comentários no código, use a seguinte sintaxe: <code id="code">&lt;!-- Comentário aqui! --&gt;</code>. O ponto de exclamação no início é obrigatório. É possível ocultar várias linhas ao mesmo tempo.</p>
             <p>Use comentários para adicionar avisos ou lembretes, ocultar texto permanente ou temporariamente ou fazer depuração do código, já que se pode ocultar linha por linha até achar o problema.</p>
             <p><code id="code">&lt;!-- AVISO: --&gt;</code> Este parágrafo contém um comentário!</p>
             <p>No código, tudo o que está entre &lt; e &gt; aparece em cinza, e fica oculto da página da Web.</p>
-            
+            <br>
             <a href="https://www.youtube.com/watch?v=229HYq40vaA&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=10" target="_blank">Tutorial em vídeo sobre comentários</a>
+        </section>
 
-        <h3>Códigos de computador e digitação do usuário</h3>
-            <h4>Elemento <code id="code">&lt;kbd&gt;</code></h4>
+        <section>
+            <h3>Códigos de computador e digitação do usuário</h3>
+                <h4>Elemento <code id="code">&lt;kbd&gt;</code></h4>
                 <p>Esse elemento define uma digitação pelo teclado (keyboard input). O conteúdo nessa tag é exibido com uma fonte monoespaçada padrão no navegador.<br>P. ex. <code id="code">&lt;kbd&gt;</code><kbd>Ctrl + S</kbd><code id="code">&lt;/kbd&gt;</code>.</p>
             
-            <h4>Elemento <code id="code">&lt;samp&gt;</code></h4>
+                <h4>Elemento <code id="code">&lt;samp&gt;</code></h4>
                 <p>Esse elemento define o resultado de um programa executado no computador. O conteúdo nessa tag é exibido com uma fonte monoespaçada padrão no navegador.<br>P. ex. <code id="code">&lt;samp&gt;</code><samp>Arquivo não encontrado.<br>Pressione F1 para continuar.</samp><code id="code">&lt;/samp&gt;</code>.</p>
 
-            <h4>Elemento <code id="code">&lt;code&gt;</code></h4>
+                <h4>Elemento <code id="code">&lt;code&gt;</code></h4>
                 <p>Esse elemento define um pedaço de código. O conteúdo nessa tag é exibido com uma fonte monoespaçada padrão no navegador.<br>P. ex. <code id="code">&lt;code&gt;</code><code id="code">x = 5; y = 6; z = x + y print(z)</code><code id="code">&lt;/code&gt;</code>.</p>
                 <p>Esse elemento não preserva espaços adicionais em branco ou quebras de linhas. Para corrigir isso, aninhe o elemento <code id="code">&lt;code&gt;</code> em um elemento <code id="code">&lt;pre&gt;</code>:</p>
                 <code id="code">&lt;pre&gt;</code><pre>
-                    <code id="code">&lt;code&gt;</code><code id="code">x = 5;
-                    y = 6;
-                    z = x + y;
-                    </code><code id="code">&lt;/code&gt;</code>
+                <code id="code">&lt;code&gt;</code><code id="code">x = 5;
+                y = 6;
+                z = x + y;
+                </code><code id="code">&lt;/code&gt;</code>
                 </pre><code id="code">&lt;/pre&gt;</code>
             
-            <h4>Elemento <code id="code">&lt;var&gt;</code> para variáveis</h4>
+                <h4>Elemento <code id="code">&lt;var&gt;</code> para variáveis</h4>
                 <p>Esse elemento define uma variável de progração ou de uma expressão matemática. O conteúdo nessa tag é exibido em itálico.<br>P. ex. The area of a triangle is:<br>1/2 x <code id="code">&lt;var&gt;</code><var>b</var><code id="code">&lt;/var&gt;</code> x <code id="code">&lt;var&gt;</code><var>h</var><code id="code">&lt;/var&gt;</code>,<br>where <code id="code">&lt;var&gt;</code><var>b</var><code id="code">&lt;/var&gt;</code> is the base, and <code id="code">&lt;var&gt;</code><var>h</var><code id="code">&lt;/var&gt;</code> is the vertical height.</p>
-    </body>
+        </section>
+    </main>
+</body>
 </html>

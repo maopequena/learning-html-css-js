@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <meta charset="utf-8">
-    <head>
-        <link rel="icon" type="image/x-icon" href="../favicon.ico">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/src/css/style.css">
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <meta name="description" content="Formulários">
-        <meta name="author" content="Lizandra Silva (@maopequena)">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formulários</title>
-    </head>
-    <body>
-        <p>Use um formulário HTML para coletar dados do usuário. Os dados coletados geralmente são enviados a um servidor para processamento.</p>
-        <p>Use o elemento <code id="code">&lt;form&gt;</code> para criar o formulário. Esse elemento pode conter diferentes tipos de elementos de inserção, como campos de texto, caixas de seleção, botões de opção, botões para enviar, etc. </p>
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Formulários">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Formulários</h1>
+            <p>Use um formulário HTML para coletar dados do usuário. Os dados coletados geralmente são enviados a um servidor para processamento.</p>
+            <p>Use o elemento <code id="code">&lt;form&gt;</code> para criar o formulário. Esse elemento pode conter diferentes tipos de elementos de inserção, como campos de texto, caixas de seleção, botões de opção, botões para enviar, etc. </p>
+        </header>
 
-        
-        <br>
+        <article>
+            <h2><a href="https://www.w3schools.com/html/html_form_elements.asp">Elementos de formulário</a></h2>
+            <p>O elemento de formulário mais utilizado é o <code id="code">&lt;input&gt;</code>, que pode ser exibido de várias maneiras, de acordo com o atributo <code id="code">type</code>.</p>
+            <br>
+            <a href="https://www.w3schools.com/html/html_form_input_types.asp">Tipos de campos de inserção de formulário</a>
+            <br>
 
-        <a href="https://www.w3schools.com/html/html_form_elements.asp">Elementos de formulário</a>
+            <p><code id="code">&lt;input type="text"&gt;</code> define um campo com uma única linha para inserção de texto.</p>
+            <p><code id="code">&lt;label&gt;</code> define um rótulo para vários elementos de formulário e é útil para leitores de tela, que leem este campo quando o usuário coloca o mouse no elemento de inserção. Esse elemento também ajuda os usuários que têm dificuldade de clicar em regiões pequenas da tela (como botões de opção ou caixas de seleção), porque ao clicar no texto do elemento <code id="code">&lt;label&gt;</code>, ele alterna o botão de opção ou a caixa de seleção. <b>O atributo <code id="code">for</code> dessa tag deve ser igual ao atributo <code id="code">id</code> do elemento <code id="code">&lt;input&gt;</code> para que ambos sejam vinculados</b>.</p>
+            <p><code id="code">&lt;input type="radio"&gt;</code> define um botão de opção, que permite ao usuário selecionar UMA das opções disponíveis.</p>
+            <p><code id="code">&lt;input type="checkbox"&gt;</code> define uma caixa de seleção, que permite ao usuário selecionar ZERO ou MAIS das opções disponíveis.</p>
+            <p><code id="code">&lt;input type="submit"&gt;</code> define um botão para enviar os dados do formulário para um manipulador de formulários. Esse manipulador geralmente é um arquivo no servidor com um script para processar dados inseridos. O manipulador deve ser especificado no atributo <code id="code">action</code>.</p>
+            <p>Cada campo de inserção deve ter um atributo <code id="code">name</code>. Se este atributo não existir, o valor do campo não será enviado. </p>
+        </article>
 
-        <br>
-
-        <p>O elemento de formulário mais utilizado é o <code id="code">&lt;input&gt;</code>, que pode ser exibido de várias maneiras, de acordo com o atributo <code id="code">type</code>.</p>
-
-        <br>
-
-        <a href="https://www.w3schools.com/html/html_form_input_types.asp">Tipos de campos de inserção de formulário</a>
-
-        <br>
-
-        <p><code id="code">&lt;input type="text"&gt;</code> define um campo com uma única linha para inserção de texto.</p>
-        <p><code id="code">&lt;label&gt;</code> define um rótulo para vários elementos de formulário e é útil para leitores de tela, que leem este campo quando o usuário coloca o mouse no elemento de inserção. Esse elemento também ajuda os usuários que têm dificuldade de clicar em regiões pequenas da tela (como botões de opção ou caixas de seleção), porque ao clicar no texto do elemento <code id="code">&lt;label&gt;</code>, ele alterna o botão de opção ou a caixa de seleção. <b>O atributo <code id="code">for</code> dessa tag deve ser igual ao atributo <code id="code">id</code> do elemento <code id="code">&lt;input&gt;</code> para que ambos sejam vinculados</b>.</p>
-        <p><code id="code">&lt;input type="radio"&gt;</code> define um botão de opção, que permite ao usuário selecionar UMA das opções disponíveis.</p>
-        <p><code id="code">&lt;input type="checkbox"&gt;</code> define uma caixa de seleção, que permite ao usuário selecionar ZERO ou MAIS das opções disponíveis.</p>
-        <p><code id="code">&lt;input type="submit"&gt;</code> define um botão para enviar os dados do formulário para um manipulador de formulários. Esse manipulador geralmente é um arquivo no servidor com um script para processar dados inseridos. O manipulador deve ser especificado no atributo <code id="code">action</code>.</p>
-        <p>Cada campo de inserção deve ter um atributo <code id="code">name</code>. Se este atributo não existir, o valor do campo não será enviado. </p>
-
-        <h3>Atributos de <code id="code">&lt;form&gt;</code></h3>
-            <h4><code id="code">&lt;action&gt;</code></h4>
+        <section>
+            <h3>Atributos de <code id="code">&lt;form&gt;</code></h3>
+                <h4><code id="code">&lt;action&gt;</code></h4>
                 <p>Este atributo define qual ação realizar ao enviar o formulário. Geralmente, os dados do formulário são enviados para um arquivo no servidor. <b>Se omitir este atributo, a ação fica definida como a página atual.</b></p>
-            <h4><code id="code">&lt;target&gt;</code></h4>
+                <h4><code id="code">&lt;target&gt;</code></h4>
                 <p>Este atributo define onde exibir a resposta recebida após enviar o formulário, e pode ter um dos seguintes valores:</p>
-                <dl>
-                    <dt><code id="code">_blank</code></dt>
-                    <dd>A resposta abre em uma nova janela ou aba</dd>
-                    <dt><code id="code">_self</code></dt>
-                    <dd>Valor padrão, a resposta abre na janela atual</dd>
-                    <dt><code id="code">_parent</code></dt>
-                    <dd>A resposta abre no quadro pai</dd>
-                    <dt><code id="code">_top</code></dt>
-                    <dd>A resposta abre no corpo inteiro da janela</dd>
-                    <dt><code id="code">nome-do-iframe</code></dt>
-                    <dd>A resposta abre no iframe nomeado</dd>
-                </dl>
-            <h4><code id="code">&lt;method&gt;</code></h4>
+                    <dl>
+                        <dt><code id="code">_blank</code></dt>
+                        <dd>A resposta abre em uma nova janela ou aba</dd>
+                        <dt><code id="code">_self</code></dt>
+                        <dd>Valor padrão, a resposta abre na janela atual</dd>
+                        <dt><code id="code">_parent</code></dt>
+                        <dd>A resposta abre no quadro pai</dd>
+                        <dt><code id="code">_top</code></dt>
+                        <dd>A resposta abre no corpo inteiro da janela</dd>
+                        <dt><code id="code">nome-do-iframe</code></dt>
+                        <dd>A resposta abre no iframe nomeado</dd>
+                    </dl>
+                <h4><code id="code">&lt;method&gt;</code></h4>
                 <p>Este atributo define o método HTTP a usar ao enviar os dados do formulário. Esses dados podem ser enviados como variáveis de URL (com <code id="code">método="get"</code>) ou como pós-transações HTTP (com <code id="code">método="post"</code>). O padrão é GET.</p>
                 <p>Observações sobre GET:</p>
                     <ul class="list-square">
@@ -74,163 +72,186 @@
                         <li>Envios com POST não podem ser favoritados.</li>
                         <li>SEMPRE use POST para dados confidenciais!</li>
                     </ul>
-            <h4><code id="code">&lt;novalidate&gt;</code></h4>
+                <h4><code id="code">&lt;novalidate&gt;</code></h4>
                 <p>Este atributo é um booleano. Quando presente, define que os dados inseridos no formulário não devem ser validados após o envio.</p>
-            <h4>Outros atributos:</h4>
+                <h4>Outros atributos:</h4>
+                    <dl>
+                        <dt><code id="code">accept-charset</code></dt>
+                        <dd>Define a codificação de caracteres a ser usada no envio</dd>
+                        <dt><code id="code">autocomplete</code></dt>
+                        <dd>Define se o formulário terá o preenchimento automático ativado ou desativado</dd>
+                        <dt><code id="code">enctype</code></dt>
+                        <dd>Define como os dados serão codificados ao enviá-los para o servidor, apenas para <code id="code">method="post"</code></dd>
+                        <dt><code id="code">name</code></dt>
+                        <dd>Define o nome do formulário</dd>
+                        <dt><code id="code">rel</code></dt>
+                        <dd>Define a relação entre um recurso vinculado e o documento atual</dd>
+                    </dl>
+        </section>
+
+        <section>
+            <h3>Validação de formulários</h3>
+            <p>Há diferentes tipos de validação de formulários:</p>
                 <dl>
-                    <dt><code id="code">accept-charset</code></dt>
-                    <dd>Define a codificação de caracteres a ser usada no envio</dd>
-                    <dt><code id="code">autocomplete</code></dt>
-                    <dd>Define se o formulário terá o preenchimento automático ativado ou desativado</dd>
-                    <dt><code id="code">enctype</code></dt>
-                    <dd>Define como os dados serão codificados ao enviá-los para o servidor, apenas para <code id="code">method="post"</code></dd>
-                    <dt><code id="code">name</code></dt>
-                    <dd>Define o nome do formulário</dd>
-                    <dt><code id="code">rel</code></dt>
-                    <dd>Define a relação entre um recurso vinculado e o documento atual</dd>
+                    <dt><b>Validação no servidor (Server-side validation)</b>:</dt>
+                        <dd>Ocorre quando os dados são enviados para outra máquina, geralmente um servidor. Exemplo: um formulário de login, que aceita a digitação do nome de usuário e da senha, e envia os dados para que o servidor verifique se está correto.</dd>
+                    <dt><b>Validação no cliente (Client-side validation)</b>:</dt>
+                    <dd>Ocorre ao verificar os dados no lado do cliente, isto é, no navegador. Essa verificação ocorre antes que os dados sejam enviados para o servidor. Diferentes navegadores implementam a validação de formulários de forma diferente, mas o resultado é o mesmo.</dd>
                 </dl>
+            <p>Os diferentes navegadores têm uma coisa em comum: os benefícios de usar a validação do lado do cliente que o HTML5 oferece. Isso economiza o tempo de ter que enviar as informações para o servidor e aguardar a resposta com a confirmação ou a rejeição dos dados. Isso também pode ajudar a proteger o servidor de códigos maliciosos ou dados de um usuário malicioso. E ainda proporciona aos usuários um feedback rápido para campos específicos, em vez de fazê-los preencher o formulário novamente se os dados inseridos forem rejeitados.</p>
+        </section>
+
+        <section>
+            <h3>Elementos de formulário</h3>
+            <p>O elemento HTML <code id="code">&lt;form&gt;</code> pode conter um ou mais dos seguintes elementos de formulário:</p>
+                <ul class="list-square">
+                    <li><code id="code">&lt;input&gt;</code>: um dos elementos mais usados. Esse elemento pode ser exibido de várias maneiras, dependendo do atributo <code id="code">type</code>.</li>
+                    <li><code id="code">&lt;label&gt;</code>: define um rótulo para vários elementos do formulário. O atributo <code id="code">for</code> deve ser igual ao atributo <code id="code">id</code> do elemento </code>&lt;input&gt;</code> para que os dois sejam vinculados.</li>
+                    <li><code id="code">&lt;select&gt;</code>: define uma lista suspensa e deve aninhar o elemento <code id="code">&lt;option&gt;</code> com as opções que aparecerão na lista suspensa. Use o atributo <code id="code">size</code> para definir a quantidade de valores que ficam visíveis. Por padrão, o primeiro item da lista aparece selecionado; para alterar isso, use o atributo <code id="code">selected</code> na opção desejada; este atributo não aceita valores, mas aparece por si só (<code id="code">&lt;option value="fiat" selected&gt;Fiat&lt;/option&gt;</code>). Use o atributo <code id="code">multiple</code> para que o usuário possa escolher mais de um valor.</li>
+                    <li><code id="code">&lt;textarea&gt;</code>: define um campo de texto com várias linhas, isto é, uma área de texto. O atributo <code id="code">rows</code> define a quantidade visível de linhas e o atributo <code id="code">cols</code>, a largura da área de texto. Também é possível definir esse tamanho usando CSS: <code id="code">style="width:200px; height:600px;"</code>.</li>
+                    <li><code id="code">&lt;button&gt;</code>: defines um botão que pode ser clicado. SEMPRE defina o atributo <code id="code">type</code> para este elemento. Diferentes navegadores podem usar padrões distintos para este elemento.</li>
+                    <li><code id="code">&lt;fieldset&gt;</code>: usado para agrupar dados relacionados em um formulário.</li>
+                    <li><code id="code">&lt;legend&gt;</code>: define uma legenda para o elemento <code id="code">&lt;fieldset&gt;</code>.</li>
+                    <li><code id="code">&lt;datalist&gt;</code>: define uma lista de opções pré-definidas para um elemento <code id="code">&lt;input&gt;</code>. Os usuários verão uma lista suspensa de opções pré-definidas ao inserirem os dados. O atributo <code id="code">list</code> do elemento <code id="code">&lt;input&gt;</code> deve se referir ao atributo <code id="code">id</code> do elemento <code id="code">&lt;datalist&gt;</code>.</li>
+                    <li><code id="code">&lt;output&gt;</code>: representa o resultado de um cálculo, como um realizado por um script.</li>
+                    <li><code id="code">&lt;option&gt;</code>: define uma opção em uma lista suspensa. Usado com <code id="code">&lt;select&gt;</code>, <code id="code">&lt;optgroup&gt;</code> e <code id="code">&lt;datalist&gt;</code>.</li>
+                    <li><code id="code">&lt;optgroup&gt;</code>: define um grupo de opções relacionadas em uma lista suspensa.</li>
+                </ul>
+        </section>
+
+        <section>
+            <h3 id="simples">Formulário simples</h3>
+                <form action="/src/img/well-done.gif">
+                    <label for="fname">Nome:</label><br>
+                    <input type="text" id="fname" name="fname" value="Digite seu nome"><br>
+                    <label for="lname">Sobrenome:</label><br>
+                    <input type="text" id="lname" name="lname" value="Digite seu sobrenome"><br><br>
+                    <input style="margin: 10px 0;" type="submit" value="Enviar"> <!-- Esse é o botão Enviar, que abre a "action" deste formulário -->
+                </form>
+        </section>
+
+        <section>
+            <h3 id="radio">Botões de opção</h3>
+                <p>Escolha sua linguagem Web favorita:</p>
+                <form action="/src/img/well-done.gif">
+                    <input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">HTML</label><br>
+                    <input type="radio" id="css" name="fav_language" value="CSS">
+                    <label for="css">CSS</label><br>
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                    <label for="javascript">JavaScript</label><br>
+                    <input style="margin: 10px 0;" type="submit" value="Enviar">    
+                </form>
+        </section>
+
+        <section>
+            <h3 id="checkbox">Caixas de seleção</h3>
+                <form action="/src/img/well-done.gif">
+                    <input type="checkbox" id="veiculo1" name="veiculo1" value="Bicicleta">
+                    <label for="vehicle1"> Eu tenho uma bicicleta</label><br>
+                    <input type="checkbox" id="veiculo2" name="veiculo2" value="Carro">
+                    <label for="vehicle2"> Eu tenho um carro</label><br>
+                    <input type="checkbox" id="veiculo3" name="veiculo3" value="Barco">
+                    <label for="vehicle3"> Eu tenho um barco</label><br>
+                    <input style="margin: 10px 0;" type="submit" value="Enviar">
+                </form>
+        </section>
+
+        <section>
+            <h3 id="lista-suspensa">Lista suspensa com 3 itens visíveis e opção "multiple"</h3>
+                <form action="/src/img/well-done.gif">
+                    <label for="carros" style="margin-bottom: 10px;">Escolha um carro:</label><br>
+                        <select id="carros" name="carros" size="4" multiple>
+                            <option value="toyota" selected>Toyota</option>
+                            <option value="ford">Ford</option>
+                            <option value="volkswagen">Volkswagen</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="chrysler">Chrysler</option>
+                            <option value="jeep">Jeep</option>
+                        </select><br>
+                    <input style="margin: 10px 0;" type="submit" value="Enviar">
+                </form>
+        </section>
+
+        <section>
+            <h3 id="textarea">Área de texto</h3>
+                <form action="/src/img/well-done.gif">
+                    <textarea name="message" rows="30" cols="100">Digite um texto.</textarea><br>
+                    <input style="margin: 10px 0;" type="submit" value="Enviar">
+                </form>
+        </section>
+
+        <section>
+            <h3 id="button">Botão</h3>
+                <form action="/src/img/well-done.gif">
+                    <button type="button" onclick="alert('Olá, Mundo!')">Clique aqui!</button>
+                </form>
+        </section>
+
+        <section>
+            <h3 id="fieldset">Conjunto de campos</h3>
+                <form action="/src/img/well-done.gif">
+                    <fieldset>
+                        <legend>Informações adicionais:</legend>
+                        <label for="fname">Idade:</label><br>
+                        <input type="text" id="fname" name="fname" value=""><br>
+                        <label for="lname">Cidade:</label><br>
+                        <input type="text" id="lname" name="lname" value=""><br><br>
+                        <input type="submit" value="Enviar">
+                    </fieldset>
+                </form>
+        </section>
+
+        <section>
+            <h3 id="datalist">Lista de dados</h3>
+                <form action="/src/img/well-done.gif">
+                    <input list="navegadores">
+                        <datalist id="navegadores">
+                            <option value="Edge">
+                            <option value="Firefox">
+                            <option value="Chrome">
+                            <option value="Opera">
+                            <option value="Safari">
+                        </datalist>
+                    <input type="submit" value="Enviar">
+                </form>
+        </section>
+
+        <section>
+            <h3 id="output">Resultados</h3>
+                <form action="/src/img/well-done.gif"
+                    oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                    0
+                    <input type="range"  id="a" name="a" value="50">
+                    100 +
+                    <input type="number" id="b" name="b" value="50">
+                    =
+                    <output name="x" for="a b"></output>
+                    <br><br>
+                    <input type="submit">
+                </form>
+        </section>
+
+        <section>
+            <h3 id="optgroup">Lista suspensa com "optgroup"</h3>
+                <label for="carros">Escolha um carro:</label>
+                    <select  name="carros" id="carros">
+                        <optgroup label="Grupo 1">
+                            <option value="toyota">Toyota</option>
+                            <option value="ford">Ford</option>
+                        </optgroup>
+                        <optgroup label="Grupo 2">
+                            <option value="volkswagen">Volkswagen</option>
+                            <option value="fiat">Fiat</option>
+                        </optgroup>
+                        <optgroup label="Grupo 3">
+                            <option value="chrysler">Chrysler</option>
+                            <option value="jeep">Jeep</option>
+                        </optgroup>
+                    </select>        
         <br>
-        <h3>Validação de formulários</h3>
-        <p>Há diferentes tipos de validação de formulários:</p>
-            <dl>
-                <dt><b>Validação no servidor (Server-side validation)</b>:</dt>
-                    <dd>Ocorre quando os dados são enviados para outra máquina, geralmente um servidor. Exemplo: um formulário de login, que aceita a digitação do nome de usuário e da senha, e envia os dados para que o servidor verifique se está correto.</dd>
-                <dt><b>Validação no cliente (Client-side validation)</b>:</dt>
-                <dd>Ocorre ao verificar os dados no lado do cliente, isto é, no navegador. Essa verificação ocorre antes que os dados sejam enviados para o servidor. Diferentes navegadores implementam a validação de formulários de forma diferente, mas o resultado é o mesmo.</dd>
-            </dl>
-        <p>Os diferentes navegadores têm uma coisa em comum: os benefícios de usar a validação do lado do cliente que o HTML5 oferece. Isso economiza o tempo de ter que enviar as informações para o servidor e aguardar a resposta com a confirmação ou a rejeição dos dados. Isso também pode ajudar a proteger o servidor de códigos maliciosos ou dados de um usuário malicioso. E ainda proporciona aos usuários um feedback rápido para campos específicos, em vez de fazê-los preencher o formulário novamente se os dados inseridos forem rejeitados.</p>
-        <br>
-        <h3>Elementos de formulário</h3>
-        <p>O elemento HTML <code id="code">&lt;form&gt;</code> pode conter um ou mais dos seguintes elementos de formulário:</p>
-        <ul class="list-square">
-            <li><code id="code">&lt;input&gt;</code>: um dos elementos mais usados. Esse elemento pode ser exibido de várias maneiras, dependendo do atributo <code id="code">type</code>.</li>
-            <li><code id="code">&lt;label&gt;</code>: define um rótulo para vários elementos do formulário. O atributo <code id="code">for</code> deve ser igual ao atributo <code id="code">id</code> do elemento </code>&lt;input&gt;</code> para que os dois sejam vinculados.</li>
-            <li><code id="code">&lt;select&gt;</code>: define uma lista suspensa e deve aninhar o elemento <code id="code">&lt;option&gt;</code> com as opções que aparecerão na lista suspensa. Use o atributo <code id="code">size</code> para definir a quantidade de valores que ficam visíveis. Por padrão, o primeiro item da lista aparece selecionado; para alterar isso, use o atributo <code id="code">selected</code> na opção desejada; este atributo não aceita valores, mas aparece por si só (<code id="code">&lt;option value="fiat" selected&gt;Fiat&lt;/option&gt;</code>). Use o atributo <code id="code">multiple</code> para que o usuário possa escolher mais de um valor.</li>
-            <li><code id="code">&lt;textarea&gt;</code>: define um campo de texto com várias linhas, isto é, uma área de texto. O atributo <code id="code">rows</code> define a quantidade visível de linhas e o atributo <code id="code">cols</code>, a largura da área de texto. Também é possível definir esse tamanho usando CSS: <code id="code">style="width:200px; height:600px;"</code>.</li>
-            <li><code id="code">&lt;button&gt;</code>: defines um botão que pode ser clicado. SEMPRE defina o atributo <code id="code">type</code> para este elemento. Diferentes navegadores podem usar padrões distintos para este elemento.</li>
-            <li><code id="code">&lt;fieldset&gt;</code>: usado para agrupar dados relacionados em um formulário.</li>
-            <li><code id="code">&lt;legend&gt;</code>: define uma legenda para o elemento <code id="code">&lt;fieldset&gt;</code>.</li>
-            <li><code id="code">&lt;datalist&gt;</code>: define uma lista de opções pré-definidas para um elemento <code id="code">&lt;input&gt;</code>. Os usuários verão uma lista suspensa de opções pré-definidas ao inserirem os dados. O atributo <code id="code">list</code> do elemento <code id="code">&lt;input&gt;</code> deve se referir ao atributo <code id="code">id</code> do elemento <code id="code">&lt;datalist&gt;</code>.</li>
-            <li><code id="code">&lt;output&gt;</code>: representa o resultado de um cálculo, como um realizado por um script.</li>
-            <li><code id="code">&lt;option&gt;</code>: define uma opção em uma lista suspensa. Usado com <code id="code">&lt;select&gt;</code>, <code id="code">&lt;optgroup&gt;</code> e <code id="code">&lt;datalist&gt;</code>.</li>
-            <li><code id="code">&lt;optgroup&gt;</code>: define um grupo de opções relacionadas em uma lista suspensa.</li>
-        </ul>
-
-
-        <h3 id="simples">Formulário simples</h3>
-        <form action="/src/img/well-done.gif">
-            <label for="fname">Nome:</label><br>
-            <input type="text" id="fname" name="fname" value="Digite seu nome"><br>
-            <label for="lname">Sobrenome:</label><br>
-            <input type="text" id="lname" name="lname" value="Digite seu sobrenome"><br><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar"> <!-- Esse é o botão Enviar, que abre a "action" deste formulário -->
-        </form>
-
-        <h3 id="radio">Botões de opção</h3>
-        <p>Escolha sua linguagem Web favorita:</p>
-            <form action="/src/img/well-done.gif">
-                <input type="radio" id="html" name="fav_language" value="HTML">
-                <label for="html">HTML</label><br>
-                <input type="radio" id="css" name="fav_language" value="CSS">
-                <label for="css">CSS</label><br>
-                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                <label for="javascript">JavaScript</label><br>
-                <input style="margin: 10px 0;" type="submit" value="Enviar">    
-            </form>
-
-        <h3 id="checkbox">Caixas de seleção</h3>
-        <form action="/src/img/well-done.gif">
-            <input type="checkbox" id="veiculo1" name="veiculo1" value="Bicicleta">
-            <label for="vehicle1"> Eu tenho uma bicicleta</label><br>
-            <input type="checkbox" id="veiculo2" name="veiculo2" value="Carro">
-            <label for="vehicle2"> Eu tenho um carro</label><br>
-            <input type="checkbox" id="veiculo3" name="veiculo3" value="Barco">
-            <label for="vehicle3"> Eu tenho um barco</label><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-        </form>
-
-        <h3 id="lista-suspensa">Lista suspensa com 3 itens visíveis e opção "multiple"</h3>
-        <form action="/src/img/well-done.gif">
-            <label for="carros" style="margin-bottom: 10px;">Escolha um carro:</label><br>
-                <select id="carros" name="carros" size="4" multiple>
-                    <option value="toyota" selected>Toyota</option>
-                    <option value="ford">Ford</option>
-                    <option value="volkswagen">Volkswagen</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="chrysler">Chrysler</option>
-                    <option value="jeep">Jeep</option>
-                </select><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-        </form>
-
-        <h3 id="textarea">Área de texto</h3>
-        <form action="/src/img/well-done.gif">
-            <textarea name="message" rows="30" cols="100">Digite um texto.</textarea><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-        </form>
-
-        <h3 id="button">Botão</h3>
-        <form action="/src/img/well-done.gif">
-            <button type="button" onclick="alert('Olá, Mundo!')">Clique aqui!</button>
-        </form>
-
-        <h3 id="fieldset">Conjunto de campos</h3>
-        <form action="/src/img/well-done.gif">
-            <fieldset>
-                <legend>Informações adicionais:</legend>
-                <label for="fname">Idade:</label><br>
-                <input type="text" id="fname" name="fname" value=""><br>
-                <label for="lname">Cidade:</label><br>
-                <input type="text" id="lname" name="lname" value=""><br><br>
-                <input type="submit" value="Enviar">
-            </fieldset>
-        </form>
-
-        <h3 id="datalist">Lista de dados</h3>
-        <form action="/src/img/well-done.gif">
-            <input list="navegadores">
-                <datalist id="navegadores">
-                    <option value="Edge">
-                    <option value="Firefox">
-                    <option value="Chrome">
-                    <option value="Opera">
-                    <option value="Safari">
-                </datalist>
-            <input type="submit" value="Enviar">
-        </form>
-
-        <h3 id="output">Resultados</h3>
-        <form action="/src/img/well-done.gif"
-            oninput="x.value=parseInt(a.value)+parseInt(b.value)">
-            0
-            <input type="range"  id="a" name="a" value="50">
-            100 +
-            <input type="number" id="b" name="b" value="50">
-            =
-            <output name="x" for="a b"></output>
-            <br><br>
-            <input type="submit">
-        </form>
-
-        <h3 id="optgroup">Lista suspensa com "optgroup"</h3>
-        <label for="carros">Escolha um carro:</label>
-            <select  name="carros" id="carros">
-                <optgroup label="Grupo 1">
-                    <option value="toyota">Toyota</option>
-                    <option value="ford">Ford</option>
-                </optgroup>
-                <optgroup label="Grupo 2">
-                    <option value="volkswagen">Volkswagen</option>
-                    <option value="fiat">Fiat</option>
-                </optgroup>
-                <optgroup label="Grupo 3">
-                    <option value="chrysler">Chrysler</option>
-                    <option value="jeep">Jeep</option>
-                </optgroup>
-            </select>
-        
-        <br>
-        <hr>
-        <a href="https://www.youtube.com/watch?v=VLeERv_dR6Q&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=24">Tutorial em vídeo sobre formulários</a>
-    </body>
+            <a href="https://www.youtube.com/watch?v=VLeERv_dR6Q&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=24">Tutorial em vídeo sobre formulários</a>
+        </section>
+    </main>
+</body>
 </html>

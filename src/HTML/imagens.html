@@ -1,143 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <meta charset="utf-8">
-    <head>
-        <link rel="icon" type="image/x-icon" href="../favicon.ico">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/style.css">
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <meta name="description" content="Imagens e favicons">
-        <meta name="author" content="Lizandra Silva (@maopequena)">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Imagens e favicons</title>
-        <style>
-            img {
-                width: 250px;
-            }
-        </style>
-    </head>
-    <body>
-    <section>
-        <p>As imagens não são exatamente inseridas na página Web, elas são vinculadas às páginas. A tag <code id="code">&lt;img&gt;</code> cria um espaço reservado para a imagem vinculada.</p>
-        <p>Os atributos <code id="code">src=</code> e <code id="code">alt=</code> são obrigatórios no elemento <code id="code">&lt;img&gt;</code>. "src" recebe o link, absoluto ou relativo, para a imagem (o local da imagem), "alt" recebe o texto que aparecerá na tela caso a imagem não seja carregada por qualquer motivo e é usado por leitores de tela.</p>
-    <br>
-        <h3>Imagem Bike Flesh</h3>
-            <p><img src="../img/bike-flesh.jpeg" alt="Bike Flesh"></p>
-        
-        <h3>Imagem Decorative Lunch</h3>
-            <p><img src="../img/decorative-lunch.jpeg" alt="Decorative Lunch"></p>
-        
-        <h3>Imagem Decorative Lunch com link quebrado</h3>
-            <p><img src="../img/almoço-decorativo.jpeg" alt="Decorative Lunch com link quebrado"></p>
-    </section>
-    
-    <section>
-        <p>Os atributos <code id="code">width</code> e <code id="code">height</code> definem, respectivamente, a largura e a altura da imagem a ser exibida. Ao definir <code id="code">width=100%</code>, a imagem se torna responsiva de acordo com o dispositivo, e se adéqua ao tamanho da tela em que a imagem é exibida.</p>
-        <p>Os atributos <code id="code">width</code>, <code id="code">height</code> e <code id="code">style=width:XXpx;height:XXpx"</code> são todos válidos, porém recomenda-se usar <code id="code">style</code> para que folhas de estilo CSS e a tag <code id="code">&lt;style&gt;</code> de <code id="code">&lt;head&gt;</code> não alterem o tamanho das imagens.</p>
-    <br>
-        <h3>Imagem Goat Tip com os atributos width 500px e height 130px, sem style e com link para a página Links e âncoras</h3>
-            <p><a href="../HTML/links-e-ancoras.html"><img src="../img/goat-tip.jpeg" alt="Goat Tip" width="500px" height="130px"></a></p>
-
-        <h3>Imagem Goat Tip com os atributos width 500px e height 130px, com style e link absoluto</h3>
-            <p><a href="https://www.google.com/search?client=opera-gx&q=goat+tip&sourceid=opera&ie=UTF-8&oe=UTF-8"><img src="../img/goat-tip.jpeg" alt="Goat Tip" style="width:500px;height:130px"></a></p>
-    </section>
-
-    <section>
-        <p>Também é possível vincular um URL absoluto no atributo <code id="code">src</code>, como um link para um site externo (ex. "https://mechguru.com/wp-content/uploads/2014/11/Thick-Cylinder-Typical-Radial-and-Circumferential-Forces.png"). Sempre verificar o status de copyright de uma imagem externa antes de usá-la.</p>
-        
-        <h3>Exemplo de imagem com URL absoluto</h3>
-            <p><img src="https://mechguru.com/wp-content/uploads/2014/11/Thick-Cylinder-Typical-Radial-and-Circumferential-Forces.png" alt="URL absoluto em site externo"></p>
-
-        <p>Também é possível usar GIFs como imagens, localmente ou com URL absoluto.</p>
-        
-        <h3>GIF com URL absoluto</h3>
-            <p><img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWg3d2Jhb3AxMG5nbDZoaDEzeDU3N3Y5eGF6ZHE1Z2VrY3Y5Nmp1dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3HBbltOYjoNq/giphy.gif" alt="GIF Minions"></p>
-
-        <h3>GIFs com URLs relativos</h3>
-            <p><img src="../img/homer.gif" alt="GIF Homer"></p>
-            <p><img src="../img/patrick-pooh.gif" alt="GIF Patrick-Pooh"></p>
-    </section>
-
-    <section>
-        <h3>Mapa de imagem</h3>
-        <p>A tag HTML <code id="code">&lt;map&gt;</code> define um mapa de imagem, que é uma imagem com áreas clicáveis. Essas áreas são definidas com uma ou mais tags <code id="code">&lt;area&gt;</code>.</p>
-            <p>Clique no canto superior esquerdo da imagem:<br>
-                <img src="../img/tick-cylinder.jpeg" alt="Tick Cylinder" usemap="#tickcylinder">
-                    <map name="tickcylinder">
-                        <area shape="rect" coords="10, 20, 35, 45" href="../HTML/formatacao.html" alt="Mapa">
-                    </map>
-            </p>
-        <br>
-        <h4>Como funciona o <code id="code">&lt;map&gt;</code>?</h4>
-        <p>Um mapa de imagem possibilita realizar diferentes ações dependendo da área clicada na imagem. Para criá-lo são necessários uma imagem e o código HTML que descreve as áreas clicáveis.</p>
-        <p>Insira a imagem com a tag <code id="code">&lt;img&gt;</code>, usando o atributo <code id="code">usemap</code>. O valor de <code id="code">usemap</code> recebe uma hash tag (<code id="code">#</code>) seguida do nome do mapa de imagem, e é usado como um link de âncora, para criar um relacionamento entre a imagem e o mapa. </p>
-        <p>Em seguida, adiciona-se o elemento <code id="code">&lt;map&gt;</code>, que é usado para criar um mapa da imagem e é vinculado à imagem com o atributo chamado <code id="code">usemap</code>.</p>
-        <p>Depois, adiciona-se as áreas clicáveis com o elemento <code id="code">&lt;area&gt;</code>. <code id="code">area:c</code> define um círculo, <code id="code">area:d</code> define o padrão, toda a região da imagem, <code id="code">area:p</code> define uma região poligonal e <code id="code">area:r</code> define um retângulo; essas opções também podem ser adicionadas com o atributo <code id="code">shape="rect"</code> (ou <code id="code">circle</code>, <code id="code">poly</code>, <code id="code">default</code>).</p>
-        <p>As coordenadas (atributo <code id="code">coords=""</code>) de <code id="code">rect</code> vêm em pares, p.ex. <code id="code">34, 44, 270, 350</code> significa que o retângulo começa a 34 pixels da margem esquerda da imagem e a 44 pixels da magem superior, termina em 270 pixels da margem esquerda e a 350 pixels da margem superior. O último atributo é <code id="code">href=</code> que vincula a um URL.</p>
-        <p><code id="code">circle</code> precisa das coordenadas do centro do círculo e do raio, p.ex. <code id="code">337, 300, 44</code>.</p>
-        <p><code id="code">poly</code> precisa de vários pontos de coordenadas, formando um polígono. Para cada ponto da área clicável da imagem, é necessário descobrir o X e o Y. Ex.:<br><img src="../img/croissant-coords.jpg" alt="Imagem croissant-coords.jpg" style="width: 500px; height: 400 px;"></p>
-        <p>Uma área clicável também pode acionar uma função JavaScript. Adiciona-se um evento <code id="code">click</code> ao elemento <code id="code">&lt;area&gt;</code> para executar a função.</p>
-    </section>
-
-    <section>
-        <h3>Imagens de fundo</h3>
-        <p>Qualquer elemento HTML pode ter uma imagem de fundo. Para fazer isso, use o atributo <code id="code">style</code> com a propriedade <code id="code">background-image</code> ou no elemento <code id="code">&lt;style&gt;</code> da seção <code id="code">&lt;head&gt;</code> da página. Se toda a página deve ter uma imagem de fundo, especifique-a no elemento <code id="code">&lt;body&gt;</code>.</p>
-        <p>Para evitar que a imagem se repita por ser menor que a altura ou a largura da página, usar <code id="code">background-repeat: no-repeat</code> no elemento <code id="code">&lt;style&gt;</code> da seção <code id="code">&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
-        <p>Para que a imagem de fundo cubra todo o elemento (página, div, caixa, etc.), definir <code id="code">background-size: cover</code> no elemento <code id="code">&lt;style&gt;</code> da seção <code id="code">&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
-        <p>E para garantir que o elemento inteiro sempre esteja coberto, usar <code id="code">background-attachment: fixed</code> no elemento <code id="code">&lt;style&gt;</code> da seção <code id="code">&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
-        <p><code id="code">background-size: 100% 100%</code> estica a imagem e se adéqua ao redimensionamento da janela.</p>
-
-        <div style="background-image: url(../img/fundo-base.jpg); width: 300px; height: 300px; background-attachment:local;background-size: cover;">
-            <p style="color: azure; font-size: 20px;">Elemento <code>&lt;div&gt;</code> com imagem de fundo e <code>background-attachment: local</code> e <code>background-size: cover</code></p>
-        </div>
-
-        <div style="background-image: url(../img/fundo-base.jpg); width: 300px; height: 300px; background-attachment:fixed;background-size: cover;">
-            <p style="color: azure; font-size: 20px;">Elemento <code>&lt;div&gt;</code> com imagem de fundo e <code>background-attachment: fixed</code> e <code>background-size: cover</code></p>
-        </div>
-    </section>
-
-    <section>
-        <h3>Elemento "picture"</h3>
-        <p>O elemento HTML <code id="code">&lt;picture&gt;</code> fornece mais flexibilidade ao especificar recursos de imagem. Ele contém um ou mais elementos <code id="code">&lt;source&gt;</code>, cada um específico a diferentes imagens no atributo <code id="code">srcset</code>. Assim, o navegador pode escolher a imagem que melhor se ajusta à visualização atual e/ou ao dispositivo. Cada elemento <code id="code">&lt;source&gt;</code> recebe um atributo <code id="code">media</code> que define quando a imagem é mais adequada.</p>
-        <p>Com este elemento, o navegador procura pelo primeiro elemento <code id="code">source</code> em que há correspondência do tamanho da mídia em relação à largura do dispositivo atual, e busca a imagem especificada no atributo <code id="code">srcset</code>. O elemento <code id="code">img</code> é OBRIGATÓRIO como a última tag do bloco de declaração da imagem, e é usado para fornecer retrocompatibilidade para navegadores que não oferecem suporte ao elemento <code id="code">picture</code>, ou se nenhuma das tags <code id="code">source</code> corresponder.</p>
-
-        <p>Redimensione a janela para ver esta imagem mudar:<br>
-            <picture>
-                <source media="(min-width: 650px)" srcset="../img/colorfull-bird.jpg">
-                <source media="(min-width: 465px)" srcset="../img/bike-flesh.jpeg">
-                <img src="../img/colorfull-bird.jpg" style="width: auto;">
-            </picture>
-        </p>
-        
-        <br>
-
-        <h4>Quando usar o elemento <code id="code">picture</code>?</h4>
-        <ol>
-            <li>Se o dispositivo apresenta uma tela pequena, não é necessário carregar um arquivo de imagem grande. O navegador usará o primeiro elemento <code id="code">&lt;source&gt;</code> que corresponder aos valores do atributo, e ignorará os elementos seguintes.</li>
-            <li>Alguns navegadores ou dispositivos podem não oferecer suporte a todos os formatos de imagem. Usando o elemento <code id="code">&lt;picture&gt;</code> é possível adicionar imagens para todos os formatos e o navegador usará o primeiro formato que reconhecer, ignorando os restantes.</li>
-        </ol>
-    </section>
-
-    <section>
-        <h3>Imagem com o atributo "float" de "style"</h3>
-        <p>O atributo CSS <code id="code">float</code> coloca a imagem "flutuando" ao lado do texto, à esquerda (<code id="code">float: left</code>) ou à direita (<code id="code">float: right</code>).</p>
-            <div>
-                <img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="float: left; text-align: left;">
-            </div>
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Imagens e favicons">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens e favicons</title>
+    <style>
+        img {
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Imagens e favicons</h1>
+            <p>As imagens não são exatamente inseridas na página Web, elas são vinculadas às páginas. A tag <code id="code">&lt;img&gt;</code> cria um espaço reservado para a imagem vinculada.</p>
+            <p>Os atributos <code id="code">src=</code> e <code id="code">alt=</code> são obrigatórios no elemento <code id="code">&lt;img&gt;</code>. "src" recebe o link, absoluto ou relativo, para a imagem (o local da imagem), "alt" recebe o texto que aparecerá na tela caso a imagem não seja carregada por qualquer motivo e é usado por leitores de tela.</p>
             <br>
-            <div>
-                <img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="float: right;" text-align="right">
-            </div>
-    </section>
+            <h3>Imagem Bike Flesh</h3>
+                <img src="../img/bike-flesh.jpeg" alt="Bike Flesh">
+            
+            <h3>Imagem Decorative Lunch</h3>
+                <img src="../img/decorative-lunch.jpeg" alt="Decorative Lunch">
+            
+            <h3>Imagem Decorative Lunch com link quebrado</h3>
+                <img src="../img/almoço-decorativo.jpeg" alt="Decorative Lunch com link quebrado">
+        </header>
+    
+        <section>
+            <p>Os atributos <code id="code">width</code> e <code id="code">height</code> definem, respectivamente, a largura e a altura da imagem a ser exibida. Ao definir <code id="code">width=100%</code>, a imagem se torna responsiva de acordo com o dispositivo, e se adéqua ao tamanho da tela em que a imagem é exibida.</p>
+            <p>Os atributos <code id="code">width</code>, <code id="code">height</code> e <code id="code">style=width:XXpx;height:XXpx"</code> são todos válidos, porém recomenda-se usar <code id="code">style</code> para que folhas de estilo CSS e a tag <code id="code">&lt;style&gt;</code> de <code id="code">&lt;head&gt;</code> não alterem o tamanho das imagens.</p>
+            <br>
+            <h3>Imagem Goat Tip com os atributos width 500px e height 130px, sem style e com link para a página Links e âncoras</h3>
+                <a href="../HTML/links-e-ancoras.html"><img src="../img/goat-tip.jpeg" alt="Goat Tip" width="500px" height="130px"></a>
 
-    <section>
-        <h3>Favicon</h3>
-        <p>Um favicon é uma imagem pequena, portanto deve ser simples e ter alto contraste.</p>
-        <p>Para usá-lo, adicione um elemento <code id="code">&lt;link&gt;</code> à página <code id="code">index.html</code> após o elemento <code id="code">&lt;title&gt;</code> ou coloque o favicon na raiz do projeto, junto com o arquivo <code id="code">index.html</code>.</p>
-        <br>
-        <a href="https://www.youtube.com/watch?v=FmoYRiepmOE&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=13">Tutorial em vídeo sobre Imagens</a>
-    </section>
-    </body>
+            <h3>Imagem Goat Tip com os atributos width 500px e height 130px, com style e link absoluto</h3>
+                <a href="https://www.google.com/search?client=opera-gx&q=goat+tip&sourceid=opera&ie=UTF-8&oe=UTF-8"><img src="../img/goat-tip.jpeg" alt="Goat Tip" style="width:500px;height:130px"></a>
+        </section>
+
+        <section>
+            <p>Também é possível vincular um URL absoluto no atributo <code id="code">src</code>, como um link para um site externo (ex. "https://mechguru.com/wp-content/uploads/2014/11/Thick-Cylinder-Typical-Radial-and-Circumferential-Forces.png"). Sempre verificar o status de copyright de uma imagem externa antes de usá-la.</p>
+            
+            <h3>Exemplo de imagem com URL absoluto</h3>
+                <img src="https://mechguru.com/wp-content/uploads/2014/11/Thick-Cylinder-Typical-Radial-and-Circumferential-Forces.png" alt="URL absoluto em site externo">
+        </section>
+
+        <section>
+            <p>Também é possível usar GIFs como imagens, localmente ou com URL absoluto.</p>
+            
+            <h3>GIF com URL absoluto</h3>
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWg3d2Jhb3AxMG5nbDZoaDEzeDU3N3Y5eGF6ZHE1Z2VrY3Y5Nmp1dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3HBbltOYjoNq/giphy.gif" alt="GIF Minions">
+
+            <h3>GIFs com URLs relativos</h3>
+                <img src="../img/homer.gif" alt="GIF Homer">
+                <img src="../img/patrick-pooh.gif" alt="GIF Patrick-Pooh">
+        </section>
+
+        <section>
+            <h3>Mapa de imagem</h3>
+            <p>A tag HTML <code id="code">&lt;map&gt;</code> define um mapa de imagem, que é uma imagem com áreas clicáveis. Essas áreas são definidas com uma ou mais tags <code id="code">&lt;area&gt;</code>.</p>
+                <p>Clique no canto superior esquerdo da imagem:</p>
+                    <img src="../img/tick-cylinder.jpeg" alt="Tick Cylinder" usemap="#tickcylinder">
+                        <map name="tickcylinder">
+                            <area shape="rect" coords="10, 20, 35, 45" href="../HTML/formatacao.html" alt="Mapa">
+                        </map>
+            <br>
+                <h4>Como funciona o <code id="code">&lt;map&gt;</code>?</h4>
+                <p>Um mapa de imagem possibilita realizar diferentes ações dependendo da área clicada na imagem. Para criá-lo são necessários uma imagem e o código HTML que descreve as áreas clicáveis.</p>
+                <p>Insira a imagem com a tag <code id="code">&lt;img&gt;</code>, usando o atributo <code id="code">usemap</code>. O valor de <code id="code">usemap</code> recebe uma hash tag (<code id="code">#</code>) seguida do nome do mapa de imagem, e é usado como um link de âncora, para criar um relacionamento entre a imagem e o mapa. </p>
+                <p>Em seguida, adiciona-se o elemento <code id="code">&lt;map&gt;</code>, que é usado para criar um mapa da imagem e é vinculado à imagem com o atributo chamado <code id="code">usemap</code>.</p>
+                <p>Depois, adiciona-se as áreas clicáveis com o elemento <code id="code">&lt;area&gt;</code>. <code id="code">area:c</code> define um círculo, <code id="code">area:d</code> define o padrão, toda a região da imagem, <code id="code">area:p</code> define uma região poligonal e <code id="code">area:r</code> define um retângulo; essas opções também podem ser adicionadas com o atributo <code id="code">shape="rect"</code> (ou <code id="code">circle</code>, <code id="code">poly</code>, <code id="code">default</code>).</p>
+                <p>As coordenadas (atributo <code id="code">coords=""</code>) de <code id="code">rect</code> vêm em pares, p.ex. <code id="code">34, 44, 270, 350</code> significa que o retângulo começa a 34 pixels da margem esquerda da imagem e a 44 pixels da magem superior, termina em 270 pixels da margem esquerda e a 350 pixels da margem superior. O último atributo é <code id="code">href=</code> que vincula a um URL.</p>
+                <p><code id="code">circle</code> precisa das coordenadas do centro do círculo e do raio, p.ex. <code id="code">337, 300, 44</code>.</p>
+                <p><code id="code">poly</code> precisa de vários pontos de coordenadas, formando um polígono. Para cada ponto da área clicável da imagem, é necessário descobrir o X e o Y. Ex.:<br><img src="../img/croissant-coords.jpg" alt="Imagem croissant-coords.jpg" style="width: 500px; height: 400 px;"></p>
+                <p>Uma área clicável também pode acionar uma função JavaScript. Adiciona-se um evento <code id="code">click</code> ao elemento <code id="code">&lt;area&gt;</code> para executar a função.</p>
+        </section>
+
+        <section>
+            <h3>Imagens de fundo</h3>
+            <p>Qualquer elemento HTML pode ter uma imagem de fundo. Para fazer isso, use o atributo <code id="code">style</code> com a propriedade <code id="code">background-image</code> ou no elemento <code id="code">&lt;style&gt;</code> da seção <code id="code">&lt;head&gt;</code> da página. Se toda a página deve ter uma imagem de fundo, especifique-a no elemento <code id="code">&lt;body&gt;</code>.</p>
+            <p>Para evitar que a imagem se repita por ser menor que a altura ou a largura da página, usar <code id="code">background-repeat: no-repeat</code> no elemento <code id="code">&lt;style&gt;</code> da seção <code id="code">&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
+            <p>Para que a imagem de fundo cubra todo o elemento (página, div, caixa, etc.), definir <code id="code">background-size: cover</code> no elemento <code id="code">&lt;style&gt;</code> da seção <code id="code">&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
+            <p>E para garantir que o elemento inteiro sempre esteja coberto, usar <code id="code">background-attachment: fixed</code> no elemento <code id="code">&lt;style&gt;</code> da seção <code id="code">&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
+            <p><code id="code">background-size: 100% 100%</code> estica a imagem e se adéqua ao redimensionamento da janela.</p>
+
+            <div style="background-image: url(../img/fundo-base.jpg); width: 300px; height: 300px; background-attachment:local;background-size: cover;">
+                <p style="color: azure; font-size: 20px;">Elemento <code>&lt;div&gt;</code> com imagem de fundo e <code>background-attachment: local</code> e <code>background-size: cover</code></p>
+            </div>
+
+            <div style="background-image: url(../img/fundo-base.jpg); width: 300px; height: 300px; background-attachment:fixed;background-size: cover;">
+                <p style="color: azure; font-size: 20px;">Elemento <code>&lt;div&gt;</code> com imagem de fundo e <code>background-attachment: fixed</code> e <code>background-size: cover</code></p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Elemento "picture"</h3>
+            <p>O elemento HTML <code id="code">&lt;picture&gt;</code> fornece mais flexibilidade ao especificar recursos de imagem. Ele contém um ou mais elementos <code id="code">&lt;source&gt;</code>, cada um específico a diferentes imagens no atributo <code id="code">srcset</code>. Assim, o navegador pode escolher a imagem que melhor se ajusta à visualização atual e/ou ao dispositivo. Cada elemento <code id="code">&lt;source&gt;</code> recebe um atributo <code id="code">media</code> que define quando a imagem é mais adequada.</p>
+            <p>Com este elemento, o navegador procura pelo primeiro elemento <code id="code">source</code> em que há correspondência do tamanho da mídia em relação à largura do dispositivo atual, e busca a imagem especificada no atributo <code id="code">srcset</code>. O elemento <code id="code">img</code> é OBRIGATÓRIO como a última tag do bloco de declaração da imagem, e é usado para fornecer retrocompatibilidade para navegadores que não oferecem suporte ao elemento <code id="code">picture</code>, ou se nenhuma das tags <code id="code">source</code> corresponder.</p>
+
+            <p>Redimensione a janela para ver esta imagem mudar:<br>
+                <picture>
+                    <source media="(min-width: 650px)" srcset="../img/colorfull-bird.jpg">
+                    <source media="(min-width: 465px)" srcset="../img/bike-flesh.jpeg">
+                    <img src="../img/colorfull-bird.jpg" style="width: auto;">
+                </picture>
+            </p>
+            <br>
+                <h4>Quando usar o elemento <code id="code">picture</code>?</h4>
+                    <ol>
+                        <li>Se o dispositivo apresenta uma tela pequena, não é necessário carregar um arquivo de imagem grande. O navegador usará o primeiro elemento <code id="code">&lt;source&gt;</code> que corresponder aos valores do atributo, e ignorará os elementos seguintes.</li>
+                        <li>Alguns navegadores ou dispositivos podem não oferecer suporte a todos os formatos de imagem. Usando o elemento <code id="code">&lt;picture&gt;</code> é possível adicionar imagens para todos os formatos e o navegador usará o primeiro formato que reconhecer, ignorando os restantes.</li>
+                    </ol>
+        </section>
+
+        <section>
+            <h3>Imagem com o atributo "float" de "style"</h3>
+            <p>O atributo CSS <code id="code">float</code> coloca a imagem "flutuando" ao lado do texto, à esquerda (<code id="code">float: left</code>) ou à direita (<code id="code">float: right</code>).</p>
+                <div>
+                    <img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="float: left; text-align: left;">
+                </div>
+                <br>
+                <div>
+                    <img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="float: right;" text-align="right">
+                </div>
+        </section>
+
+        <section>
+            <h3>Favicon</h3>
+            <p>Um favicon é uma imagem pequena, portanto deve ser simples e ter alto contraste.</p>
+            <p>Para usá-lo, adicione um elemento <code id="code">&lt;link&gt;</code> à página <code id="code">index.html</code> após o elemento <code id="code">&lt;title&gt;</code> ou coloque o favicon na raiz do projeto, junto com o arquivo <code id="code">index.html</code>.</p>
+            <br>
+            <a href="https://www.youtube.com/watch?v=FmoYRiepmOE&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=13">Tutorial em vídeo sobre Imagens</a>
+        </section>
+    </main>
+</body>
 </html>

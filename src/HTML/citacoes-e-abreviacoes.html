@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <meta charset="utf-8">
-    <head>
-        <link rel="icon" type="image/x-icon" href="../favicon.ico">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/style.css">
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <meta name="description" content="Citações e abreviações">
-        <meta name="author" content="Lizandra Silva (@maopequena)">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Citações e abreviações</title>
-    </head>
-    <body>
-        <h3>Citação com "blockquote"</h3>
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Citações e abreviações">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citações e abreviações</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Citações e abreviações</h1>
+            <p>Há vários elementos para lidar com casos em que é preciso citar uma seção de uma fonte, um autor, uma obra, etc.</p>
+        </header>
+        <section>
+            <h3>Citação com "blockquote"</h3>
             <p>O elemento HTML <code id="code">&lt;blockquote&gt;</code> define uma seção citada de outra fonte. Os navegadores geralmente exibem esses elementos com indentação.</p>
             <br>
             <p>Here is a quote from WWF's website:</p>
             <blockquote cite="http://www.worldwildlife.org/who/index.html">
             For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation organization, WWF works in nearly 100 countries. At every level, we collaborate with people around the world to develop and deliver innovative solutions that protect communities, wildlife, and the places in which they live.
             </blockquote>
-        
-        <h3>Citação curta com "q"</h3>
+        </section>
+    
+        <section>
+            <h3>Citação curta com "q"</h3>
             <p>Há também o elemento <code id="code">&lt;q&gt;</code> para citações curtas. Os navegadores geralmente colocam aspas em volta da citação.</p>
             <br>
             <p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+        </section>
 
-        <h3>Abreviações com "abbr"</h3>
+        <section>
+            <h3>Abreviações com "abbr"</h3>
             <p>O elemento HTML <code id="code">&lt;abbr&gt;</code> define uma abreviação ou um acrônimo, como "HTML", "CSS", "Sr.", "Dr.", "ASAP", "ATM". Marcar as abreviações pode fornecer informações úteis para navegadores, sistemas de tradução e mecanismos de pesquisa. Use o atributo global <code id="code">title</code> para exibir uma descrição da abreviação/do acrônimo ao passar o mouse sobre o elemento.</p>
             <br>
             <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+        </section>
 
-        <h3>Informações de contato com "address"</h3>
+        <section>
+            <h3>Informações de contato com "address"</h3>
             <p>O elemento HTML <code id="code">&lt;address&gt;</code> define as informações de contato do autor/proprietário de um documento ou artigo. Essas informações podem ser um endereço de email, um URL, um endereço físico, um número de telefone, informações de redes sociais, etc. O texto nesse elemento geralmente é exibido em itálico, e os navegadores sempre adicionarão uma quebra de linha antes e depois da tag <code id="code">&lt;address&gt;</code>.</p>
             <br>
             <address>
@@ -42,15 +54,21 @@
             Box 564, Disneyland<br>
             USA
             </address>
+        </section>
 
-        <h3>Título de obra com "cite"</h3>
+        <section>
+            <h3>Título de obra com "cite"</h3>
             <p>O elemento HTML <code id="code">&lt;cite&gt;</code> define o título de uma obra criativa (p.ex. um livro, um poema, uma música, um filme, uma pintura, uma escultura, etc.). O nome de uma pessoa não é um título de obra. O texto nesse elemento geralmente é exibido em itálico.</p>
             <br>
             <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+        </section>
 
-        <h3>Alteração bidirecional com "bdo"</h3>
+        <section>
+            <h3>Alteração bidirecional com "bdo"</h3>
             <p>BDO significa Bi-Directional Override (substituição bidirecional). O elemento HTML <code id="code">&lt;bdo&gt;</code> é usado para alterar a direção do texto atual.</p>
             <br>
             <p><bdo dir="rtl">Este texto aparece escrito da direita para a esquerda.</bdo></p>
-    </body>
+        </section>
+    </main>
+</body>
 </html>
