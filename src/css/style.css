@@ -38,6 +38,12 @@ html {
     background-color: wheat;
 }
 
+.hearticle {
+    background-color: teal;
+    color: violet;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .city {
     background-color: tomato;
     color: white;
