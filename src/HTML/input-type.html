@@ -117,177 +117,214 @@
             </form>
         </section>
 
-        <h3 id="checkbox">Caixas de seleção</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <input type="checkbox" id="veiculo1" name="veiculo1" value="Bicicleta">
-            <label for="vehicle1"> Eu tenho uma bicicleta</label><br>
-            <input type="checkbox" id="veiculo2" name="veiculo2" value="Carro">
-            <label for="vehicle2"> Eu tenho um carro</label><br>
-            <input type="checkbox" id="veiculo3" name="veiculo3" value="Barco">
-            <label for="vehicle3"> Eu tenho um barco</label><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="checkbox">Caixas de seleção</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <input type="checkbox" id="veiculo1" name="veiculo1" value="Bicicleta">
+                <label for="vehicle1"> Eu tenho uma bicicleta</label><br>
+                <input type="checkbox" id="veiculo2" name="veiculo2" value="Carro">
+                <label for="vehicle2"> Eu tenho um carro</label><br>
+                <input type="checkbox" id="veiculo3" name="veiculo3" value="Barco">
+                <label for="vehicle3"> Eu tenho um barco</label><br>
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="button">Botão</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <input type="button" onclick="alert('Olá, Mundo!')" value="Clique aqui!">
-        </form>
+        <section>
+            <h3 id="button">Botão</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <input type="button" onclick="alert('Olá, Mundo!')" value="Clique aqui!">
+            </form>
+        </section>
 
-        <br>
-        <h3 id="color">Seletor de cores</h3>
-        <br>
-        <form>
-            <label for="favcolor">Selecione sua cor favorita:</label>
-            <input type="color" id="favcolor" name="favcolor"><br>
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="color">Seletor de cores</h3>
+            <br>
+            <form>
+                <label for="favcolor">Selecione sua cor favorita:</label>
+                <input type="color" id="favcolor" name="favcolor"><br>
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="date">Seletor de datas</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="birthday">Selecione sua data de nascimento:</label>
-            <input type="date" id="birthday" name="birthday"><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="date">Seletor de datas</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="birthday">Selecione sua data de nascimento:</label>
+                <input type="date" id="birthday" name="birthday"><br>
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="restriction">Seletor de datas com restrição usando "min" e "max"</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="datemax">Selecione uma data anterior a 01/01/1980:</label>
-            <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
-            <label for="datemin">Selecione uma data posterior a 01/01/2000:</label>
-            <input type="date" id="datemin" name="datemin" min="2000-01-02"><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="restriction">Seletor de datas com restrição usando "min" e "max"</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="datemax">Selecione uma data anterior a 01/01/1980:</label>
+                <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+                <label for="datemin">Selecione uma data posterior a 01/01/2000:</label>
+                <input type="date" id="datemin" name="datemin" min="2000-01-02"><br>
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="datetime-local">Seletor de data e hora, sem fuso horário</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="birthdaytime">Nascimento (data e hora):</label>
-            <input type="datetime-local" id="birthdaytime" name="birthdaytime"><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="datetime-local">Seletor de data e hora, sem fuso horário</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="birthdaytime">Nascimento (data e hora):</label>
+                <input type="datetime-local" id="birthdaytime" name="birthdaytime"><br>
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="email">Campo de e-mail</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="email">Digite seu e-mail:</label>
-            <input type="email" id="email" name="email"><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="email">Campo de e-mail</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="email">Digite seu e-mail:</label>
+                <input type="email" id="email" name="email"><br>
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="image">Botão de envio com imagem</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <input type="image" src="/src/img/homer.gif" alt="Enviar" width="48" height="48"><br>
-        </form>
+        <section>
+            <h3 id="image">Botão de envio com imagem</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <input type="image" src="/src/img/homer.gif" alt="Enviar" width="48" height="48"><br>
+            </form>
+        </section>
 
-        <h3 id="file">Seletor de arquivos, com "multiple"</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="myfile">Selecione os arquivos para enviar:</label><br>
-            <input style="margin: 10px 0;" type="file" id="myfile" name="myfile" multiple><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="file">Seletor de arquivos, com "multiple"</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="myfile">Selecione os arquivos para enviar:</label><br>
+                <input style="margin: 10px 0;" type="file" id="myfile" name="myfile" multiple><br>
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="hidden">Tipo oculto: visualizar no F12, nome com "required"</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="fname">First name*:</label>
-            <input type="text" id="fname" name="fname" required><br><br>
-            <input type="hidden" id="custId" name="custId" value="3487">
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="hidden">Tipo oculto: visualizar no F12, nome com "required"</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="fname">First name*:</label>
+                <input type="text" id="fname" name="fname" required><br><br>
+                <input type="hidden" id="custId" name="custId" value="3487">
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="month">Seletor de mês e ano</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="bdaymonth">Nascimento (mês e ano):</label>
-            <input type="month" id="bdaymonth" name="bdaymonth">
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="month">Seletor de mês e ano</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="bdaymonth">Nascimento (mês e ano):</label>
+                <input type="month" id="bdaymonth" name="bdaymonth">
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="number">Campo de inserção numérico, com restrições e intervalo de 3</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="quantity">Quantidade (entre 0 and 99, somente múltiplos de 3):</label>
-            <input type="number" id="quantity" name="quantity" min="0" max="99" step="3">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="number">Campo de inserção numérico, com restrições e intervalo de 3</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="quantity">Quantidade (entre 0 and 99, somente múltiplos de 3):</label>
+                <input type="number" id="quantity" name="quantity" min="0" max="99" step="3">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="range">Slider de intervalo sem restrições</h3>
-        <br>
-        <form>
-            <label for="vol">Volume (entre 0 and 50):</label>
-            <input type="range" id="vol" name="vol" min="0" max="50">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="range">Slider de intervalo sem restrições</h3>
+            <br>
+            <form>
+                <label for="vol">Volume (entre 0 and 50):</label>
+                <input type="range" id="vol" name="vol" min="0" max="50">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="search">Campo de pesquisa, aceita "Enter", com "autocomplete"</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="gsearch">Search Google:</label>
-            <input type="search" id="gsearch" name="gsearch">
-            <input style="margin: 10px 0;" type="submit" value="Pesquisar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="search">Campo de pesquisa, aceita "Enter", com "autocomplete"</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="gsearch">Search Google:</label>
+                <input type="search" id="gsearch" name="gsearch">
+                <input style="margin: 10px 0;" type="submit" value="Pesquisar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="tel">Números de telefone, residencial está com "disabled"</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="phone">Digite seu número de celular:</label>
-            <input type="tel" id="phone" name="phone" pattern="[1-9]{2}[0-9]{5}[0-9]{4}" title="Obrigatório 11 números"><br>
-            <label for="phone">Digite seu número de telefone residencial:</label>
-            <input type="tel" id="phone" name="phone" pattern="[1-9]{2}[0-9]{5}[0-9]{4}" disabled><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="tel">Números de telefone, residencial está com "disabled"</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="phone">Digite seu número de celular:</label>
+                <input type="tel" id="phone" name="phone" pattern="[1-9]{2}[0-9]{5}[0-9]{4}" title="Obrigatório 11 números"><br>
+                <label for="phone">Digite seu número de telefone residencial:</label>
+                <input type="tel" id="phone" name="phone" pattern="[1-9]{2}[0-9]{5}[0-9]{4}" disabled><br>
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="time">Seletor de horas</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="appt">Selecione uma hora:</label>
-            <input type="time" id="appt" name="appt"><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="time">Seletor de horas</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="appt">Selecione uma hora:</label>
+                <input type="time" id="appt" name="appt"><br>
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="url">Campo de inserção de URL, com "placeholder"</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="homepage">Digite um URL:</label>
-            <input type="url" id="homepage" name="homepage" placeholder="Não esqueça de http(s)://"><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="url">Campo de inserção de URL, com "placeholder"</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="homepage">Digite um URL:</label>
+                <input type="url" id="homepage" name="homepage" placeholder="Não esqueça de http(s)://"><br>
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="week">Seletor de semana</h3>
-        <br>
-        <form action="/src/img/well-done.gif">
-            <label for="week">Selecione uma semana:</label>
-            <input type="week" id="week" name="week"><br>
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="week">Seletor de semana</h3>
+            <br>
+            <form action="/src/img/well-done.gif">
+                <label for="week">Selecione uma semana:</label>
+                <input type="week" id="week" name="week"><br>
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
 
-        <h3 id="pattern">Campo com o atributo "pattern"</h3>
-        <br>
-        <form>
-            <label for="country_code">Código do país:</label>
-            <input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{3}" title="Código de país com três letras">
-            <input style="margin: 10px 0;" type="submit" value="Enviar">
-            <input style="margin: 10px 0;" type="reset" value="Redefinir">
-        </form>
+        <section>
+            <h3 id="pattern">Campo com o atributo "pattern"</h3>
+            <br>
+            <form>
+                <label for="country_code">Código do país:</label>
+                <input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{3}" title="Código de país com três letras">
+                <input style="margin: 10px 0;" type="submit" value="Enviar">
+                <input style="margin: 10px 0;" type="reset" value="Redefinir">
+            </form>
+        </section>
     </main>
 </body>
 </html>

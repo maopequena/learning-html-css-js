@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <link rel="icon" type="image/x-icon" href="/src/img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/style.css">
     <meta name="keywords" content="HTML, CSS, JavaScript"> <!-- define palavras-chave para mecanismos de pesquisa -->
     <meta name="description" content="Multimídia"> <!-- define uma descrição para a página -->
@@ -17,66 +15,54 @@
 </head>
 
 <body>
-    <section>
-        <p>Multimídia é um termo que abrange sons, músicas, vídeos, filmes e animações.</p>
-        <p>Há vários formatos de mídia. Multimídia pode ser quase qualquer coisa que você vê ou ouve, como imagens,
-            músicas, sons, vídeos, gravações, filmes, animações e muito mais.</p>
-        <p>As páginas da Web geralmente apresentam elementos multimídia de diferentes tipos e formatos.</p>
-    </section>
+    <main>
+        <header>
+            <h1>Multimídia</h1>
+            <p>Multimídia é um termo que abrange sons, músicas, vídeos, filmes e animações.</p>
+            <p>Há vários formatos de mídia. Multimídia pode ser quase qualquer coisa que você vê ou ouve, como imagens, músicas, sons, vídeos, gravações, filmes, animações e muito mais.</p>
+            <p>As páginas da Web geralmente apresentam elementos multimídia de diferentes tipos e formatos.</p>
+        </header>
 
-    <section>
-        <h3>Formatos de multimídia</h3>
-        <p>Elementos multimídia (como áudio ou vídeo) são armazenados em arquivos de mídia.</p>
-        <p>A maneira mais comum de descobrir o tipo de um arquvio, é olhar sua extensão.</p>
-        <p>Arquivos multimídia têm formatos e extensões como: <code id="code">.wav</code>, <code id="code">.mp3</code>,
-            <code id="code">.mp4</code>, <code id="code">.mpg</code>, <code id="code">.wmv</code> e <code
-                id="code">.avi</code>.
-        </p>
-    </section>
+        <section>
+            <h3>Formatos de multimídia</h3>
+            <p>Elementos multimídia (como áudio ou vídeo) são armazenados em arquivos de mídia.</p>
+            <p>A maneira mais comum de descobrir o tipo de um arquvio, é olhar sua extensão.</p>
+            <p>Arquivos multimídia têm formatos e extensões como: <code id="code">.wav</code>, <code id="code">.mp3</code>, <code id="code">.mp4</code>, <code id="code">.mpg</code>, <code id="code">.wmv</code> e <code id="code">.avi</code>.</p>
+        </section>
 
-    <section>
-        <h4>Formatos de vídeo mais comuns</h4>
-        <p>Há muitos formatos de vídeo disponíveis.</p>
-        <p>O HTML oferece suporte aos formatos MP4, WebM e Ogg.</p>
-        <p>O formato MP4 é o recomendado pelo YouTube.</p>
+        <section>
+            <h4>Formatos de vídeo mais comuns</h4>
+            <p>Há muitos formatos de vídeo disponíveis.</p>
+            <p>O HTML oferece suporte aos formatos MP4, WebM e Ogg.</p>
+            <p>O formato MP4 é o recomendado pelo YouTube.</p>
+            <br>
+            <img src="../img/video-formats.png" alt="Formatos de vídeo" />
+            <br>
+            <p><b>Apenas os formatos de vídeo MP4, WebM e Ogg são compatíveis com o padrão HTML.</b></p>
+        </section>
 
-        <br>
+        <section>
+            <h4>Formatos de áudio mais comuns</h4>
+            <p>MP3 é o melhor formato para áudio. O termo MP3 se tornou um sinônimo para áudio digital.</p>
+            <p>Se seu site fala sobre gravações musicais, escolha o MP3.</p>
+            <br>
+            <img src="../img/audio-formats.png" alt="Formatos de áudio">
+            <br>
+            <p><b>Apenas os formatos de áudio MP3, WAV e Ogg são compatíveis com o padrão HTML.</b></p>
+        </section>
 
-        <img src="../img/video-formats.png" alt="Formatos de vídeo" />
-
-        <br>
-
-        <p><b>Apenas os formatos de vídeo MP4, WebM e Ogg são compatíveis com o padrão HTML.</b></p>
-    </section>
-
-    <section>
-        <h4>Formatos de áudio mais comuns</h4>
-        <p>MP3 é o melhor formato para áudio. O termo MP3 se tornou um sinônimo para áudio digital.</p>
-        <p>Se seu site fala sobre gravações musicais, escolha o MP3.</p>
-
-        <br>
-
-        <img src="../img/audio-formats.png" alt="Formatos de áudio">
-
-        <br>
-
-        <p><b>Apenas os formatos de áudio MP3, WAV e Ogg são compatíveis com o padrão HTML.</b></p>
-    </section>
-
-    <section>
-        <h3>Vídeo HTML</h3>
-        <p>Para exibir um vídeo em uma página da Web, use o elemento HTML <code id="code">&lt;video&gt;</code>.</p>
-
-        <br>
-        <video style="margin-left: 10px;" width="400" controls>
-            <source src="../img/video/HTML - Introduction - W3Schools.com.mp4" type="video/mp4">
-            <source src="mov_bbb.ogg" type="video/ogg"> <!-- Outro formato como backup -->
-            Your browser does not support HTML video.<!-- Caso vídeo não toque no navegador do usuário -->
-        </video>
-        <br>
-
-        <h4>Código do vídeo acima:</h4>
-        <pre>
+        <section>
+            <h3>Vídeo HTML</h3>
+            <p>Para exibir um vídeo em uma página da Web, use o elemento HTML <code id="code">&lt;video&gt;</code>.</p>
+            <br>
+            <video style="margin-left: 10px;" width="400" controls>
+                <source src="../img/video/HTML - Introduction - W3Schools.com.mp4" type="video/mp4">
+                <source src="mov_bbb.ogg" type="video/ogg"> <!-- Outro formato como backup -->
+                Your browser does not support HTML video.<!-- Caso vídeo não toque no navegador do usuário -->
+            </video>
+            <br>
+            <h4>Código do vídeo acima:</h4>
+            <pre>
                 <code id="code">&lt;video width="320" height="240" controls&gt;
                 &lt;source src="movie.mp4" type="video/mp4"&gt;
                 &lt;source src="movie.ogg" type="video/ogg"&gt;
@@ -84,190 +70,159 @@
                 &lt;/video&gt;</code>
             </pre>
 
-        <h4>Como funciona?</h4>
-        <p>O atributo <code id="code">controls</code> exibe os controles do vídeo, como <b>Reproduzir</b>, <b>Pausar</b>
-            e <b>Volume</b>.</p>
-        <p>Recomenda-se sempre incluir os atributos <code id="code">width</code> e <code id="code">height</code>. Se não
-            forem definidos, a página poderá "piscar" quando o vídeo carregar.</p>
-        <p>O elemento <code id="code">&lt;source&gt;</code> possibilita definir arquivos de vídeo alternativos para o
-            navegador escolher. O navegador usará o primeiro formato reconhecido.</p>
-        <p>O texto entre as tags <code id="code">&lt;video&gt;</code> e <code id="code">&lt;/video&gt;</code> só será
-            exibido em navegadores que não oferecem suporte para o elemento <code id="code">&lt;video&gt;</code>.</p>
-        <p>O elemento <code id="code">&lt;track&gt;</code> define trilhas de texto em reprodutores de mídia.</p>
+                <h4>Como funciona?</h4>
+                <p>O atributo <code id="code">controls</code> exibe os controles do vídeo, como <b>Reproduzir</b>, <b>Pausar</b> e <b>Volume</b>.</p>
+                <p>Recomenda-se sempre incluir os atributos <code id="code">width</code> e <code id="code">height</code>. Se não forem definidos, a página poderá "piscar" quando o vídeo carregar.</p>
+                <p>O elemento <code id="code">&lt;source&gt;</code> possibilita definir arquivos de vídeo alternativos para o navegador escolher. O navegador usará o primeiro formato reconhecido.</p>
+                <p>O texto entre as tags <code id="code">&lt;video&gt;</code> e <code id="code">&lt;/video&gt;</code> só será exibido em navegadores que não oferecem suporte para o elemento <code id="code">&lt;video&gt;</code>.</p>
+                <p>O elemento <code id="code">&lt;track&gt;</code> define trilhas de texto em reprodutores de mídia.</p>
 
-        <h4>O atributo <code id="code">autoplay</code></h4>
-        <p>Use este atributo para começar a reproduzir o vídeo automaticamente.</p>
+                <h4>O atributo <code id="code">autoplay</code></h4>
+                <p>Use este atributo para começar a reproduzir o vídeo automaticamente.</p>
+                <pre>
+                <code id="code">&lt;video width="320" height="240" autoplay&gt;&lt;/video&gt;</code>
+                </pre>
+                <p><b>Observação</b>: na maioria dos casos, navegadores baseados em Chromium não permitem o uso do <code id="code">autoplay</code>. Entretanto, a reprodução automática com o vídeo no mudo é sempre permitida. Então adicione <code id="code">muted</code> após <code id="code">autoplay</code> para que seu vídeo comece a reproduzir automaticamente, apesar de emudecido:</p>
+                <pre>
+                    <code id="code">&lt;video width="320" height="240" autoplay muted&gt;&lt;/video&gt;</code>
+                </pre>
 
-        <pre>
-                        <code id="code">&lt;video width="320" height="240" autoplay&gt;&lt;/video&gt;</code>
-                    </pre>
+                <h4>Métodos, propriedades e eventos</h4>
+                <p>O DOM do HTML define os métodos, as propriedades e os eventos do elemento <code id="code">&lt;video&gt;</code>.</p>
+                <p>Isso nos permite carregar, reproduzir e pausar vídeos, além de definir a duração e o volume.</p>
+                <p>Também há eventos DOM que podem notificar o usuário quando o vídeo começa a reproduzir, é pausado, etc.</p>
+                <p>Exemplo usando JavaScript:</p>
+                    <div style="text-align:center">
+                        <button onclick="playPause()">Play/Pause</button>
+                        <button onclick="makeBig()">Big</button>
+                        <button onclick="makeSmall()">Small</button>
+                        <button onclick="makeNormal()">Normal</button>
+                        <br><br>
+                        <video id="video1" width="420">
+                        <source src="../img/video/HTML - Introduction - W3Schools.com.mp4" type="video/mp4">
+                        Your browser does not support HTML video.
+                        </video>
+                    </div>
 
-        <p><b>Observação</b>: na maioria dos casos, navegadores baseados em Chromium não permitem o uso do <code
-                id="code">autoplay</code>. Entretanto, a reprodução automática com o vídeo no mudo é sempre permitida.
-            Então adicione <code id="code">muted</code> após <code id="code">autoplay</code> para que seu vídeo comece a
-            reproduzir automaticamente, apesar de emudecido:</p>
+                    <script>
+                        var myVideo = document.getElementById("video1");
 
-        <pre>
-                        <code id="code">&lt;video width="320" height="240" autoplay muted&gt;&lt;/video&gt;</code>
-                    </pre>
+                        // Function to play or pause the video based on its current state.
+                        function playPause() {
+                            if (myVideo.paused)
+                                myVideo.play();
+                            else
+                                myVideo.pause();
+                        }
 
-        <h4>Métodos, propriedades e eventos</h4>
-        <p>O DOM do HTML define os métodos, as propriedades e os eventos do elemento <code
-                id="code">&lt;video&gt;</code>.</p>
-        <p>Isso nos permite carregar, reproduzir e pausar vídeos, além de definir a duração e o volume.</p>
-        <p>Também há eventos DOM que podem notificar o usuário quando o vídeo começa a reproduzir, é pausado, etc.</p>
+                        // Sets the width of the video element with the id "myVideo" to 560 pixels.
+                        function makeBig() {
+                            myVideo.width = 560;
+                        }
 
-        <p>Exemplo usando JavaScript:</p>
-        <div style="text-align:center">
-            <button onclick="playPause()">Play/Pause</button>
-            <button onclick="makeBig()">Big</button>
-            <button onclick="makeSmall()">Small</button>
-            <button onclick="makeNormal()">Normal</button>
-            <br><br>
-            <video id="video1" width="420">
-                <source src="../img/video/HTML - Introduction - W3Schools.com.mp4" type="video/mp4">
-                Your browser does not support HTML video.
-            </video>
-        </div>
+                        // Set the width of the video to 320 when the makeSmall function is called.
+                        function makeSmall() {
+                            myVideo.width = 320;
+                        }
 
-        <script>
-            var myVideo = document.getElementById("video1");
+                        // Sets the width of the video element with the id "myVideo" to 420 pixels.
+                        function makeNormal() {
+                            myVideo.width = 420;
+                        } 
+                    </script>
+                    <br>
+                    <a href="https://www.w3schools.com/tags/ref_av_dom.asp" target="_blank">Lista completa de referências de DOM para áudio e vídeo</a>
+        </section>
 
-            // Function to play or pause the video based on its current state.
-            function playPause() {
-                if (myVideo.paused)
-                    myVideo.play();
-                else
-                    myVideo.pause();
-            }
-
-        // Sets the width of the video element with the id "myVideo" to 560 pixels.
-            function makeBig() {
-                myVideo.width = 560;
-            }
-
-            // Set the width of the video to 320 when the makeSmall function is called.
-            function makeSmall() {
-                myVideo.width = 320;
-            }
-
-        // Sets the width of the video element with the id "myVideo" to 420 pixels.
-            function makeNormal() {
-                myVideo.width = 420;
-            } 
-        </script>
-        <br>
-        <a href="https://www.w3schools.com/tags/ref_av_dom.asp" target="_blank">Lista completa de referências de DOM para áudio e
-            vídeo</a>
-    </section>
-
-    <section>
-        <h3>Áudio HTML</h3>
-        <p>Para reproduzir um áudio em uma página da Web, use o elemento <code id="code">&lt;audio&gt;</code>.</p>
-
-        <br>
-        <audio controls>
-            <source src="../img/audio/24 - Vale Decem.mp3" type="audio/mp3">
-            <source src="../img/audio/05 - O Circo Místico.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-
-        <br>
-
-        <h4>Código do áudio acima:</h4>
-        <pre>
-                    <code id="code">&lt;audio controls&gt;
+        <section>
+            <h3>Áudio HTML</h3>
+            <p>Para reproduzir um áudio em uma página da Web, use o elemento <code id="code">&lt;audio&gt;</code>.</p>
+            <br>
+            <audio controls>
+                <source src="../img/audio/24 - Vale Decem.mp3" type="audio/mp3">
+                <source src="../img/audio/05 - O Circo Místico.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <br>
+                <h4>Código do áudio acima:</h4>
+                    <pre>
+                        <code id="code">&lt;audio controls&gt;
                         &lt;source src="../img/audio/23 - I Finally Found Someone.mp3" type="audio/mp3"&gt;
                         &lt;source src="../img/audio/24 - Vale Decem.mp3" type="audio/mp3"&gt;
                         Your browser does not support the audio element.
-                    &lt;/audio&gt;</code>
+                        &lt;/audio&gt;</code>
+                    </pre>
+
+                <h4>Como funciona?</h4>
+                <p>O atributo <code id="code">controls</code> exibe controles de áudio, como <b>Reproduzir</b>, <b>Pausar</b> e <b>Volume</b>.</p>
+                <p>O elemento <code id="code">&lt;source&gt;</code> possibilita definir arquivos de áudio alternativos para o navegador escolher. O navegador usará o primeiro formato reconhecido.</p>
+                <p>O texto entre as tags <code id="code">&lt;audio&gt;</code> e <code id="code">&lt;/audio&gt;</code> só será exibido em navegadores que não oferecem suporte para o elemento <code id="code">&lt;audio&gt;</code>.</p>
+
+                <h4>O atributo <code id="code">autoplay</code></h4>
+                <p>Use este atributo para começar a reproduzir o áudio automaticamente.</p>
+
+                    <pre>
+                        <code id="code">&lt;audio controls autoplay&gt;&lt;/audio&gt;</code>
+                    </pre>
+
+                <p><b>Observação</b>: na maioria dos casos, navegadores baseados em Chromium não permitem o uso do <code id="code">autoplay</code>. Entretanto, a reprodução automática com o áudio no mudo é sempre permitida. Então adicione <code id="code">muted</code> após <code id="code">autoplay</code> para que seu áudio comece a reproduzir automaticamente, apesar de emudecido:</p>
+
+                    <pre>
+                        <code id="code">&lt;audio autoplay muted&gt;&lt;/audio&gt;</code>
+                    </pre>
+
+                <h4>Métodos, propriedades e eventos</h4>
+                <p>O DOM do HTML define os métodos, as propriedades e os eventos do elemento <code id="code">&lt;audio&gt;</code>.</p>
+                <p>Isso nos permite carregar, reproduzir e pausar áudios, além de definir a duração e o volume.</p>
+                <p>Também há eventos DOM que podem notificar o usuário quando o áudio começa a reproduzir, é pausado, etc.</p>
+        </section>
+
+        <section>
+            <h3>Plug-ins HTML</h3>
+            <p>Plug-ins são programas de computador que ampliam as funcionalidades padrão dos navegadores.</p>
+            <p>Há plug-ins para os mais diferentes tipos de propósitos:</p>
+                <ul>
+                    <li>Exibir mapas</li>
+                    <li>Procurar por vírus</li>
+                    <li>Verificar uma identidade bancária</li>
+                </ul>
+        </section>
+
+        <section>
+            <h3>O elemento <code id="code">&lt;object&gt;</code></h3>
+            <p>Todos os navegadores oferecem suporte a este elemento.</p>
+            <p>Ele defines um objeto incorporado em um documento HTML.</p>
+            <p>Ele foi projetado para incorporar plug-ins (como applets Java, leitores de PDF e reprodutores de Flash) em páginas da Web, mas também pode ser usado para inserir HTML em HTML.<br>P. ex.: <code id="code">&lt;object width="100%" height="500px" data="snippet.html"&gt;&lt;/object&gt;</code></p>
+            <p>Ou imagens: <code id="code">&lt;object data="audi.jpeg"&gt;&lt;/object&gt;</code></p>
+
+            <h3>O elemento <code id="code">&lt;embed&gt;</code></h3>
+            <p>Os principais navegadores oferecem suporte a este elemento. Ele também define um objeto incorporado em um documento HTML e pode incorporar qualquer conteúdo multimídia, incluindo áudio, vídeo e gifs de qualquer fonte.</p>
+            <p>Os navegadores oferecem suporte a este elemento há muito tempo, no entanto, ele não era parte das especificações de HTML antes do HTML5.</p>
+            <p>Exemplos:<br><code id="code">&lt;embed src="audi.jpeg"&gt;</code><br><code id="code">&lt;embed width="100%" height="500px" src="snippet.html"&gt;</code></p>
+            <br>
+            <p>O elemento <code id="code">&lt;embed&gt;</code> é um elemento vazio, isto é, não tem uma tag de fechamento e não oferece um texto alternativo (<code id="code"><i>alt</i>=""</code>).</p>
+            <p><b>Observação</b>: já não se recomenda usar este elemento para incorporar conteúdo multimídia, mas ele ainda pode ser usado para incorporar outros tipos de elementos vindos de fontes externas (URLs absolutos).</p>
+        </section>
+
+        <section>
+            <h3>Vídeos do YouTube</h3>
+            <p>A forma mais fácil de reproduzir vídeo em HTML é usando o YouTube.</p>
+            <p>Para reproduzir um vídeo do YouTube em uma página da Web, faça o seguinte:</p>
+            <ul>
+                <li>Anote a URL do vídeo do YouTube localizada na barra de endereços do navegador (como "<i>https://www.youtube.com/watch?v=tgbNymZ7vqY</i>")</li>
+                <li>Crie um elemento <code id="code">&lt;iframe&gt;</code> na página</li>
+                <li>Define o atributo <code id="code">src</code> para apontar para o URL do vídeo</li>
+                <li>Use os atributos <code id="code">&lt;width&gt;</code> e <code id="code">&lt;height&gt;</code> para definir as dimensões do reprodutor</li>
+                <li>Adicione outros parâmetros ao URL, como <code id="code">autoplay=1</code> (0 não reproduz automaticamente), <code id="code">mute=1</code> (0 não coloca o vídeo no mudo), <code id="code">loop=1</code> (0 não coloca o vídeo em loop) e <code id="code">controls=1</code> (0 não exibe os controles).</li>
+            </ul>
+            <p>Exemplo:</p>
+                <pre>
+                    <code id="code">&lt;iframe width="420" height="315"
+                    src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1&loop=0&controls=1"&gt;
+                    &lt;/iframe&gt;</code>
                 </pre>
-
-        <h4>Como funciona?</h4>
-        <p>O atributo <code id="code">controls</code> exibe controles de áudio, como <b>Reproduzir</b>, <b>Pausar</b> e
-            <b>Volume</b>.
-        </p>
-        <p>O elemento <code id="code">&lt;source&gt;</code> possibilita definir arquivos de áudio alternativos para o
-            navegador escolher. O navegador usará o primeiro formato reconhecido.</p>
-        <p>O texto entre as tags <code id="code">&lt;audio&gt;</code> e <code id="code">&lt;/audio&gt;</code> só será
-            exibido em navegadores que não oferecem suporte para o elemento <code id="code">&lt;audio&gt;</code>.</p>
-
-        <h4>O atributo <code id="code">autoplay</code></h4>
-        <p>Use este atributo para começar a reproduzir o áudio automaticamente.</p>
-
-        <pre>
-                    <code id="code">&lt;audio controls autoplay&gt;&lt;/audio&gt;</code>
-                </pre>
-
-        <p><b>Observação</b>: na maioria dos casos, navegadores baseados em Chromium não permitem o uso do <code
-                id="code">autoplay</code>. Entretanto, a reprodução automática com o áudio no mudo é sempre permitida.
-            Então adicione <code id="code">muted</code> após <code id="code">autoplay</code> para que seu áudio comece a
-            reproduzir automaticamente, apesar de emudecido:</p>
-
-        <pre>
-                <code id="code">&lt;audio autoplay muted&gt;&lt;/audio&gt;</code>
-            </pre>
-
-        <h4>Métodos, propriedades e eventos</h4>
-        <p>O DOM do HTML define os métodos, as propriedades e os eventos do elemento <code
-                id="code">&lt;audio&gt;</code>.</p>
-        <p>Isso nos permite carregar, reproduzir e pausar áudios, além de definir a duração e o volume.</p>
-        <p>Também há eventos DOM que podem notificar o usuário quando o áudio começa a reproduzir, é pausado, etc.</p>
-    </section>
-
-    <section>
-        <h3>Plug-ins HTML</h3>
-        <p>Plug-ins são programas de computador que ampliam as funcionalidades padrão dos navegadores.</p>
-        <p>Há plug-ins para os mais diferentes tipos de propósitos:</p>
-        <ul>
-            <li>Exibir mapas</li>
-            <li>Procurar por vírus</li>
-            <li>Verificar uma identidade bancária</li>
-        </ul>
-    </section>
-
-    <section>
-        <h4>O elemento <code id="code">&lt;object&gt;</code></h4>
-        <p>Todos os navegadores oferecem suporte a este elemento.</p>
-        <p>Ele defines um objeto incorporado em um documento HTML.</p>
-        <p>Ele foi projetado para incorporar plug-ins (como applets Java, leitores de PDF e reprodutores de Flash) em
-            páginas da Web, mas também pode ser usado para inserir HTML em HTML.<br>P. ex.: <code
-                id="code">&lt;object width="100%" height="500px" data="snippet.html"&gt;&lt;/object&gt;</code></p>
-        <p>Ou imagens: <code id="code">&lt;object data="audi.jpeg"&gt;&lt;/object&gt;</code></p>
-
-        <h4>O elemento <code id="code">&lt;embed&gt;</code></h4>
-        <p>Os principais navegadores oferecem suporte a este elemento. Ele também define um objeto incorporado em um documento HTML e pode incorporar qualquer conteúdo multimídia, incluindo áudio, vídeo e gifs de qualquer fonte.</p>
-        <p>Os navegadores oferecem suporte a este elemento há muito tempo, no entanto, ele não era parte das especificações de HTML antes do HTML5.</p>
-        <p>Exemplos:<br><code id="code">&lt;embed src="audi.jpeg"&gt;</code><br><code
-                id="code">&lt;embed width="100%" height="500px" src="snippet.html"&gt;</code></p>
-        <br>
-        <p>O elemento <code id="code">&lt;embed&gt;</code> é um elemento vazio, isto é, não tem uma tag de fechamento e não oferece um texto alternativo (<code id="code"><i>alt</i>=""</code>).</p>
-        <p><b>Observação</b>: já não se recomenda usar este elemento para incorporar conteúdo multimídia, mas ele ainda pode ser usado para incorporar outros tipos de elementos vindos de fontes externas (URLs absolutos).</p>
-    </section>
-
-    <section>
-        <h3>Vídeos do YouTube</h3>
-        <p>A forma mais fácil de reproduzir vídeo em HTML é usando o YouTube.</p>
-        <p>Para reproduzir um vídeo do YouTube em uma página da Web, faça o seguinte:</p>
-        <ul>
-            <li>Anote a URL do vídeo do YouTube localizada na barra de endereços do navegador (como
-                "<i>https://www.youtube.com/watch?v=tgbNymZ7vqY</i>")</li>
-            <li>Crie um elemento <code id="code">&lt;iframe&gt;</code> na página</li>
-            <li>Define o atributo <code id="code">src</code> para apontar para o URL do vídeo</li>
-            <li>Use os atributos <code id="code">&lt;width&gt;</code> e <code id="code">&lt;height&gt;</code> para
-                definir as dimensões do reprodutor</li>
-            <li>Adicione outros parâmetros ao URL, como <code id="code">autoplay=1</code> (0 não reproduz
-                automaticamente), <code id="code">mute=1</code> (0 não coloca o vídeo no mudo), <code
-                    id="code">loop=1</code> (0 não coloca o vídeo em loop) e <code id="code">controls=1</code> (0 não
-                exibe os controles).</li>
-        </ul>
-        <p>Exemplo:</p>
-        <pre>
-                <code id="code">&lt;iframe width="420" height="315"
-                src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1&loop=0&controls=1"&gt;
-                &lt;/iframe&gt;</code>
-            </pre>
-    </section>
+        </section>
+    </main>
 </body>
 
 </html>

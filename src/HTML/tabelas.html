@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <meta charset="utf-8">
-
 <head>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,192 +14,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelas</title>
 </head>
-
 <body>
-    <section>
-        <p>As tags para definir tabelas são as seguintes:</p>
-        <dl>
-            <dt><code id="code">&lt;table&gt; &lt;/table&gt;</code></dt>
-            <dd>Abre e fecha o elemento completo de tabela.</dd>
-            <dt><code id="code">&lt;th&gt; &lt;/th&gt;</code></dt>
-            <dd><span style="font-weight: bold;">T</span>able <span style="font-weight: bold;">H</span>eader: abre e
-                fecha a linha de cabeçalho da tabela, se houver cabeçalho. Por padrão, o texto neste elemento aparece em
-                negrito e centralizado, mas é possível alterar isso com CSS.</dd>
-            <dt><code id="code">&lt;tr&gt; &lt;/tr&gt;</code></dt>
-            <dd><span style="font-weight: bold;">T</span>able <span style="font-weight: bold;">R</span>ow: abre e fecha
-                uma linha da tabela. É possível adicionar quantas linhas quiser a uma tabela, mas a quantidade de
-                células deve ser a mesma em cada linha.</dd>
-            <dt><code id="code">&lt;td&gt; &lt;/td&gt;</code></dt>
-            <dd><span style="font-weight: bold;">T</span>able <span style="font-weight: bold;">D</span>ata: abre e fecha
-                uma célula da tabela.</dd>
-        </dl>
+    <main>
+        <header>
+            <h1>Tabelas</h1>
+            <p>As tags para definir tabelas são as seguintes:</p>
+            <dl>
+                <dt><code id="code">&lt;table&gt; &lt;/table&gt;</code></dt>
+                <dd>Abre e fecha o elemento completo de tabela.</dd>
+                <dt><code id="code">&lt;th&gt; &lt;/th&gt;</code></dt>
+                <dd><span style="font-weight: bold;">T</span>able <span style="font-weight: bold;">H</span>eader: abre e
+                    fecha a linha de cabeçalho da tabela, se houver cabeçalho. Por padrão, o texto neste elemento aparece em
+                    negrito e centralizado, mas é possível alterar isso com CSS.</dd>
+                <dt><code id="code">&lt;tr&gt; &lt;/tr&gt;</code></dt>
+                <dd><span style="font-weight: bold;">T</span>able <span style="font-weight: bold;">R</span>ow: abre e fecha
+                    uma linha da tabela. É possível adicionar quantas linhas quiser a uma tabela, mas a quantidade de
+                    células deve ser a mesma em cada linha.</dd>
+                <dt><code id="code">&lt;td&gt; &lt;/td&gt;</code></dt>
+                <dd><span style="font-weight: bold;">T</span>able <span style="font-weight: bold;">D</span>ata: abre e fecha
+                    uma célula da tabela.</dd>
+            </dl>
+            <p>Para usar a primeira coluna como cabeçalho, defina a primeira célula de cada linha com um elemento <code id="code">&lt;th&gt;</code>.</p>
+            <p>Uma célula de tabela pode conter vários tipos de elementos HTML: texto, imagens, listas, links, outras tabelas, etc.</p> Outros elementos de tabela: <code id="code">&lt;caption&gt;</code>, <code id="code">&lt;colgroup&gt;</code>, <code id="code">&lt;col&gt;</code>, <code id="code">&lt;thead&gt;</code> (agrupa o conteúdo da seção <code id="code">head</code> em uma tabela), <code id="code">&lt;tbody&gt;</code> (idem, mas para o corpo), <code id="code">&lt;tfoot&gt;</code> (idem, mas para o rodapé).
+        </header>
+
+        <section>    
+            <h3>Tabela de exemplo</h3>
+            <table id="tabela">
+                <tbody>
+                    <caption>Título da tabela</caption>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Cidade</th>
+                    </tr>
+                    <tr>
+                        <td>Lizandra</td>
+                        <td>44</td>
+                        <td>Piracaia</td>
+                    </tr>
+                    <tr>
+                        <td>Annetta</td>
+                        <td>35</td>
+                        <td>Livorno</td>
+                    </tr>
+                    <tr>
+                        <td>Linus</td>
+                        <td>53</td>
+                        <td>Grande Prairie</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+        <p>Algumas células podem se estender entre colunas ou linhas (span). Para a célula se estender por várias colunas, usar <code id="code">colspan="N"</code>, em que N é um número de colunas. Para a célula se estender por várias linhas, usar <code id="code">rowspan="N"</code>, em que N é um número de linhas.</p>
         <br>
-        <p>Para usar a primeira coluna como cabeçalho, defina a primeira célula de cada linha com um elemento <code
-                id="code">&lt;th&gt;</code>.</p>
-        <p>Uma célula de tabela pode conter vários tipos de elementos HTML: texto, imagens, listas, links, outras
-            tabelas, etc.</p>
-        Outros elementos de tabela: <code id="code">&lt;caption&gt;</code>, <code id="code">&lt;colgroup&gt;</code>,
-        <code id="code">&lt;col&gt;</code>, <code id="code">&lt;thead&gt;</code> (agrupa o conteúdo da seção <code
-            id="code">head</code> em uma tabela), <code id="code">&lt;tbody&gt;</code> (idem, mas para o corpo), <code
-            id="code">&lt;tfoot&gt;</code> (idem, mas para o rodapé).
-    </section>
-
-    <section>
-        <h3>Tabela de exemplo</h3>
-        <table id="tabela">
-            <tbody>
-                <caption>Título da tabela</caption>
-                <tr>
-                    <th>Nome</th>
-                    <th>Idade</th>
-                    <th>Cidade</th>
-                </tr>
-                <tr>
-                    <td>Lizandra</td>
-                    <td>44</td>
-                    <td>Piracaia</td>
-                </tr>
-                <tr>
-                    <td>Annetta</td>
-                    <td>35</td>
-                    <td>Livorno</td>
-                </tr>
-                <tr>
-                    <td>Linus</td>
-                    <td>53</td>
-                    <td>Grande Prairie</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section>
-        <p>Algumas células podem se estender entre colunas ou linhas (span). Para a célula se estender por várias
-            colunas, usar <code id="code">colspan="N"</code>, em que N é um número de colunas. Para a célula se estender
-            por várias linhas, usar <code id="code">rowspan="N"</code>, em que N é um número de linhas.</p>
-
         <h3>Tabela com "rowspan"</h3>
-        <p>Para que o cabeçalho avance entre várias linhas, use <code id="code">rowspan="N"</code> no elemento <code
-                id="code">&lt;th&gt;</code>, em que "N" é um número de colunas.</p>
-        <table id="tabela">
-            <tr>
-                <th>Name</th>
-                <td>Jill</td>
-            </tr>
-            <tr>
-                <th rowspan="2">Phone</th>
-                <td>555-1234</td>
-            </tr>
-            <tr>
-                <td>555-8745</td>
-            </tr>
-        </table>
+        <p>Para que o cabeçalho avance entre várias linhas, use <code id="code">rowspan="N"</code> no elemento <code id="code">&lt;th&gt;</code>, em que "N" é um número de colunas.</p>
+            <table id="tabela">
+                <tr>
+                    <th>Name</th>
+                    <td>Jill</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">Phone</th>
+                    <td>555-1234</td>
+                </tr>
+                <tr>
+                    <td>555-8745</td>
+                </tr>
+            </table>
         <br>
         <h3>Tabela com "colspan"</h3>
-        <p>Para que o cabeçalho avance entre várias colunas, use <code id="code">colspan="N"</code> no elemento <code
-                id="code">&lt;th&gt;</code>, em que "N" é um número de colunas.</p>
-        <table id="tabela">
-            <tr>
-                <th colspan="2">Name</th>
-                <th>Age</th>
-            </tr>
-            <tr>
-                <td>Jill</td>
-                <td>Smith</td>
-                <td>43</td>
-            </tr>
-            <tr>
-                <td>Eve</td>
-                <td>Jackson</td>
-                <td>57</td>
-            </tr>
-        </table>
-    </section>
+        <p>Para que o cabeçalho avance entre várias colunas, use <code id="code">colspan="N"</code> no elemento <code id="code">&lt;th&gt;</code>, em que "N" é um número de colunas.</p>
+            <table id="tabela">
+                <tr>
+                    <th colspan="2">Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>43</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>57</td>
+                </tr>
+            </table>
+        </section>
 
-    <section>
-        <p>Para adicionar bordas, usar o elemento <code id="code">&lt;style&gt;</code> na seção <code
-                id="code">&lt;head&gt;</code> ou usar CSS. Sintaxe correta: <code
-                id="code">border {border: solid 2px hotpink;}</code>. Usar <code
-                id="code">border-collapse: collapse;</code> para que a borda não fique duplicada e <code
-                id="code">text-align: center;</code> para centralizar o texto nas células. Também é possível definir a
-            cor de fundo das células.</p>
-        <p><code id="code">border-radius</code> arredonda as bordas da tabela. <code id="code">border-style</code>, com
-            suas opções <code id="code">dotted</code>, <code id="code">dashed</code>, <code id="code">solid</code>,
-            <code id="code">double</code>, <code id="code">groove</code>, <code id="code">ridge</code>, <code
-                id="code">inset</code>, <code id="code">outset</code>, <code id="code">none</code>, <code
-                id="code">hidden</code>. <code id="code">border-color</code> para definir a cor da borda.</p>
-        <br>
-        <p>Cada coluna, linha ou a tabela toda pode ter tamanhos diferentes. Para alterar os tamanhos, usar o atributo
-            <code id="code">style</code> com as propriedades <code id="code">width</code> e <code
-                id="code">height</code> nas tags para linha, coluna ou cabeçalho ou usar CSS. Os valores podem ser em
-            pixels ou porcentagens, 100% pega toda a largura ou altura da janela, o que é bom ao redimensionar a janela
-            ou em dispositivos com telas pequenas.</p>
-        <br>
-        <p>Cell padding é o espaço entre as bordas da célula e seu conteúdo. O valor padrão é 0. Para alterar isso, use
-            a propriedade CSS <code id="code">padding</code> e suas variações <code id="code">padding-top</code>, <code
-                id="code">padding-bottom</code>, <code id="code">padding-left</code> e <code
-                id="code">padding-right</code>.</p>
-        <p>Cell spacing é o espaço entre cada célula. O valor padrão é 2 pixels. Para alterar isso, use a propriedade
-            CSS <code id="code">border-spacing</code> no elemento <code id="code">&lt;table&gt;</code>.</p>
-        <br>
-        <p>Para estilizar every 2 rows com cores diferentes, usar o seletor <code id="code">:nth-child(even)</code> para
-            o elemento <code id="code">&lt;tr&gt;</code>.
+        <section>
+        <p>Para adicionar bordas, usar o elemento <code id="code">&lt;style&gt;</code> na seção <code id="code">&lt;head&gt;</code> ou usar CSS. Sintaxe correta: <code id="code">border {border: solid 2px hotpink;}</code>. Usar <code id="code">border-collapse: collapse;</code> para que a borda não fique duplicada e <code id="code">text-align: center;</code> para centralizar o texto nas células. Também é possível definir a cor de fundo das células.</p>
+        <p><code id="code">border-radius</code> arredonda as bordas da tabela. <code id="code">border-style</code>, com suas opções <code id="code">dotted</code>, <code id="code">dashed</code>, <code id="code">solid</code>, <code id="code">double</code>, <code id="code">groove</code>, <code id="code">ridge</code>, <code id="code">inset</code>, <code id="code">outset</code>, <code id="code">none</code>, <code id="code">hidden</code>. <code id="code">border-color</code> para definir a cor da borda.</p>
+        <p>Cada coluna, linha ou a tabela toda pode ter tamanhos diferentes. Para alterar os tamanhos, usar o atributo <code id="code">style</code> com as propriedades <code id="code">width</code> e <code id="code">height</code> nas tags para linha, coluna ou cabeçalho ou usar CSS. Os valores podem ser em pixels ou porcentagens, 100% pega toda a largura ou altura da janela, o que é bom ao redimensionar a janela ou em dispositivos com telas pequenas.</p>
+        <p>Cell padding é o espaço entre as bordas da célula e seu conteúdo. O valor padrão é 0. Para alterar isso, use a propriedade CSS <code id="code">padding</code> e suas variações <code id="code">padding-top</code>, <code id="code">padding-bottom</code>, <code id="code">padding-left</code> e <code id="code">padding-right</code>.</p>
+        <p>Cell spacing é o espaço entre cada célula. O valor padrão é 2 pixels. Para alterar isso, use a propriedade CSS <code id="code">border-spacing</code> no elemento <code id="code">&lt;table&gt;</code>.</p>
+        <p>Para estilizar every 2 rows com cores diferentes, usar o seletor <code id="code">:nth-child(even)</code> para o elemento <code id="code">&lt;tr&gt;</code>.
         <p><code id="code">even</code> = linhas pares<br><code id="code">odd</code> = linhas ímpares.</p>
-        <p>Para estilizar every 2 columns com cores diferentes, usar o seletor <code id="code">:nth-child(even)</code>
-            para o elemento <code id="code">&lt;td&gt;</code>.</p>
-        <p>Ao colocar o seletor <code id="code">:nth-child()</code> em ambos os elementos <code
-                id="code">&lt;th&gt;</code> e <code id="code">&lt;td&gt;</code>, a estilização ocorre para cabeçalhos e
-            células da tabela.</p>
-        <p>É possível combinar as duas estilizações acima para ter linhas e colunas alteradas com cores. Ao usar uma cor
-            transparente, se obtém um efeito sobreposto.<br>Ex.:
-        <pre>
-            <code id="code">tr:nth-child(even) {</code>
-            <code id="code">background-color: rgba(150, 212, 212, 0.4);</code>
-            <code id="code">}</code>
-        </pre>
-        <pre>
-            <code id="code">th:nth-child(even),td:nth-child(even) {</code>
-            <code id="code">background-color: rgba(150, 212, 212, 0.4);</code>
-            <code id="code">}`</code>
-        </pre>
-        </p>
-        <br>
-        <p>Também é possível usar <code id="code">border-bottom=Npx solid #color</code> ou <code
-                id="code">border-top</code> no elemento <code id="code">&lt;tr&gt;</code> para colocar bordas apenas
-            embaixo ou em cima das células, dando a impressão de réguas divisoras.</p>
-        <p>O seletor <code id="code">:hover</code> em </code>&lt;tr&gt;</code> realça a cor de uma linha ao passar o
-            mouse, idem para colunas.</p>
-    </section>
+        <p>Para estilizar every 2 columns com cores diferentes, usar o seletor <code id="code">:nth-child(even)</code> para o elemento <code id="code">&lt;td&gt;</code>.</p>
+        <p>Ao colocar o seletor <code id="code">:nth-child()</code> em ambos os elementos <code id="code">&lt;th&gt;</code> e <code id="code">&lt;td&gt;</code>, a estilização ocorre para cabeçalhos e células da tabela.</p>
+        <p>É possível combinar as duas estilizações acima para ter linhas e colunas alteradas com cores. Ao usar uma cor transparente, se obtém um efeito sobreposto.<br>Ex.:</p>
+            <pre>
+                <code id="code">tr:nth-child(even) {</code>
+                <code id="code">background-color: rgba(150, 212, 212, 0.4);</code>
+                <code id="code">}</code>
+            </pre>
+            <pre>
+                <code id="code">th:nth-child(even),td:nth-child(even) {</code>
+                <code id="code">background-color: rgba(150, 212, 212, 0.4);</code>
+                <code id="code">}`</code>
+            </pre>
+        <p>Também é possível usar <code id="code">border-bottom=Npx solid #color</code> ou <code id="code">border-top</code> no elemento <code id="code">&lt;tr&gt;</code> para colocar bordas apenas embaixo ou em cima das células, dando a impressão de réguas divisoras.</p>
+        <p>O seletor <code id="code">:hover</code> em </code>&lt;tr&gt;</code> realça a cor de uma linha ao passar o mouse, idem para colunas.</p>
+        </section>
 
-    <section>
-        <p>Use o elemento <code id="code">&lt;colgroup&gt;</code> para estilizar colunas específicas de uma tabela. Esse
-            elemento deve ser usado como contêiner para as especificações de coluna. Cada "grupo" é definido com um
-            elemento <code id="code">&lt;col&gt;</code>. O atributo <code id="code">span="N"</code> define quantas
-            colunas recebem o estilo. O atributo <code id="code">style=background-color: #cor</code> define o estilo
-            aplicado às colunas. A tag <code id="code">&lt;colgroup&gt;</code> deve estar aninhada em <code
-                id="code">&lt;table&gt;</code> e deve vir antes de qualquer outro elemento da tabela, como <code
-                id="code">&lt;thead&gt;</code>, <code id="code">&lt;tr&gt;</code>, <code id="code">&lt;td&gt;</code>,
-            etc., mas após o elemento <code id="code">&lt;caption&gt;</code>, caso esteja presente.</p>
-        <p>Apenas as seguintes propriedades de CSS podem ser usadas com <code id="code">&lt;colgroup&gt;</code>, o resto
-            das propriedades não funcionará.</p>
-        <ul class="list-square">
-            <li><code id="code">&lt;width&gt;</code></li>
-            <li><code id="code">&lt;visibility&gt;</code></li>
-            <li><code id="code">&lt;background&gt;</code></li>
-            <li><code id="code">&lt;border&gt;</code></li>
-        </ul>
-        <p>Para estilizar mais colunas, com diferentes estilos, use mais elementos <code id="code">&lt;col&gt;</code>
-            dentro de <code id="code">&lt;colgroup&gt;</code>.</p>
-        <p>Para estilizar colunas no meio da tabela, usar um elemento <code id="code">&lt;col&gt;</code> vazio (sem
-            definição de estilo) nas colunas anteriores.</p>
+        <section>
+        <p>Use o elemento <code id="code">&lt;colgroup&gt;</code> para estilizar colunas específicas de uma tabela. Esse elemento deve ser usado como contêiner para as especificações de coluna. Cada "grupo" é definido com um elemento <code id="code">&lt;col&gt;</code>. O atributo <code id="code">span="N"</code> define quantas colunas recebem o estilo. O atributo <code id="code">style=background-color: #cor</code> define o estilo aplicado às colunas. A tag <code id="code">&lt;colgroup&gt;</code> deve estar aninhada em <code id="code">&lt;table&gt;</code> e deve vir antes de qualquer outro elemento da tabela, como <code id="code">&lt;thead&gt;</code>, <code id="code">&lt;tr&gt;</code>, <code id="code">&lt;td&gt;</code>, etc., mas após o elemento <code id="code">&lt;caption&gt;</code>, caso esteja presente.</p>
+        <p>Apenas as seguintes propriedades de CSS podem ser usadas com <code id="code">&lt;colgroup&gt;</code>, o resto das propriedades não funcionará.</p>
+            <ul class="list-square">
+                <li><code id="code">&lt;width&gt;</code></li>
+                <li><code id="code">&lt;visibility&gt;</code></li>
+                <li><code id="code">&lt;background&gt;</code></li>
+                <li><code id="code">&lt;border&gt;</code></li>
+            </ul>
+        <p>Para estilizar mais colunas, com diferentes estilos, use mais elementos <code id="code">&lt;col&gt;</code> dentro de <code id="code">&lt;colgroup&gt;</code>.</p>
+        <p>Para estilizar colunas no meio da tabela, usar um elemento <code id="code">&lt;col&gt;</code> vazio (sem definição de estilo) nas colunas anteriores.</p>
         <p><code id="code">visibility:collapse</code> oculta colunas.</p>
-
+        <br>
         <a href="https://www.w3schools.com/html/html_table_colgroup.asp" target="_blank">Exemplos de estilização de colunas</a>
         <br>
-        <br>
-        <a href="https://www.youtube.com/watch?v=e62D-aayveY&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=14" target="_blank">Tutorial
-            em vídeo sobre tabelas</a>
-    </section>
+        <a href="https://www.youtube.com/watch?v=e62D-aayveY&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=14" target="_blank">Tutorial em vídeo sobre tabelas</a>
+        </section>
+    </main>
 </body>
-
 </html>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <meta charset="utf-8">
-
 <head>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,98 +14,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listas</title>
 </head>
-
 <body>
-    <section>
-        <p>Listas podem ser não ordenadas (bullet points) ou ordenadas (numeradas).</p>
-    </section>
+    <main>
+        <header>
+            <h1>Listas</h1>
+            <p>Listas podem ser não ordenadas (bullet points) ou ordenadas (numeradas).</p>
+        </header>
 
-    <section>
-        <h3>Exemplo de lista não ordenada</h3>
-        <p>Uma lista não ordenada começa com a tag <code id="code">&lt;ul&gt;</code> e cada item da lista começa com a
-            tag <code id="code">&lt;li&gt;</code>.</p>
-        <p>É possível definir o estilo do marcador dessa lista como: <code id="code">disc</code>, <code
-                id="code">circle</code>, <code id="code">square</code> ou <code id="code">none</code>.</p>
-        <ul style="list-style-type: circle;">
-            <li>Café</li>
-            <li>Chá</li>
-            <li>Leite</li>
-        </ul>
-    </section>
+        <section>
+            <h3>Exemplo de lista não ordenada</h3>
+            <p>Uma lista não ordenada começa com a tag <code id="code">&lt;ul&gt;</code> e cada item da lista começa com a tag <code id="code">&lt;li&gt;</code>.</p>
+            <p>É possível definir o estilo do marcador dessa lista como: <code id="code">disc</code>, <code id="code">circle</code>, <code id="code">square</code> ou <code id="code">none</code>.</p>
+            <ul style="list-style-type: circle;">
+                <li>Café</li>
+                <li>Chá</li>
+                <li>Leite</li>
+            </ul>
+        </section>
 
-    <section>
-        <h3>Exemplo de lista ordenada</h3>
-        <p>Uma lista ordenada começa com a tag <code id="code">&lt;ol&gt;</code> e cada item da lista começa com a tag
-            <code id="code">&lt;li&gt;</code>.</p>
-        <p>É possível definir o estilo do marcador com o atributo <code id="code">type="N"</code>, em que N é um dos
-            seguintes: <code id="code">1</code> (padrão, números), <code id="code">A</code> (letras maiúsculas), <code
-                id="code">a</code> (letras minúsculas), <code id="code">I</code> (números romanos maiúsculos) ou <code
-                id="code">i</code> (números romanos minúsculos).</p>
-        <p>Por padrão, as listas ordenadas começam a contar do "1". Para alterar isso, use o atributo <code
-                id="code">start="N"</code>, em que N é o número inicial.</p>
-        <ol type="i">
-            <li>Café</li>
-            <li>Chá</li>
-            <li>Leite</li>
-        </ol>
-    </section>
+        <section>
+            <h3>Exemplo de lista ordenada</h3>
+            <p>Uma lista ordenada começa com a tag <code id="code">&lt;ol&gt;</code> e cada item da lista começa com a tag <code id="code">&lt;li&gt;</code>.</p>
+            <p>É possível definir o estilo do marcador com o atributo <code id="code">type="N"</code>, em que N é um dos seguintes: <code id="code">1</code> (padrão, números), <code id="code">A</code> (letras maiúsculas), <code id="code">a</code> (letras minúsculas), <code id="code">I</code> (números romanos maiúsculos) ou <code id="code">i</code> (números romanos minúsculos).</p>
+            <p>Por padrão, as listas ordenadas começam a contar do "1". Para alterar isso, use o atributo <code id="code">start="N"</code>, em que N é o número inicial.</p>
+            <ol type="i">
+                <li>Café</li>
+                <li>Chá</li>
+                <li>Leite</li>
+            </ol>
+        </section>
 
-    <section>
-        <h3>Exemplo de lista de descrição</h3>
-        <p>Também é possível criar listas de descrição, que são listas de termos com uma descrição de cada termo. A tag
-            <code id="code">&lt;dl&gt;</code> define esse tipo de lista, a tag <code id="code">&lt;dt&gt;</code> define
-            o termo (o nome) e a tag <code id="code">&lt;dd&gt;</code> descreve cada termo.</p>
-        <dl>
-            <dt>Café</dt>
-            <dd>- bebida quente e escura</dd>
-            <dt>Leite</dt>
-            <dd>- bebida clara e fria</dd>
-        </dl>
-    </section>
+        <section>
+            <h3>Exemplo de lista de descrição</h3>
+            <p>Também é possível criar listas de descrição, que são listas de termos com uma descrição de cada termo. A tag <code id="code">&lt;dl&gt;</code> define esse tipo de lista, a tag <code id="code">&lt;dt&gt;</code> define o termo (o nome) e a tag <code id="code">&lt;dd&gt;</code> descreve cada termo.</p>
+            <dl>
+                <dt>Café</dt>
+                <dd>- bebida quente e escura</dd>
+                <dt>Leite</dt>
+                <dd>- bebida clara e fria</dd>
+            </dl>
+        </section>
 
-    <section>
-        <p>É possível aninhar uma lista em outra.</p>
-        <p>Um item de lista (<code id="code">&lt;li&gt;</code>) pode conter uma nova lista ou outros elementos HTML,
-            como imagens, links, etc.</p>
+        <section>
+            <p>É possível aninhar uma lista em outra.</p>
+            <p>Um item de lista (<code id="code">&lt;li&gt;</code>) pode conter uma nova lista ou outros elementos HTML, como imagens, links, etc.</p>
 
-        <h3>Exemplo de lista não ordenada aninhada</h3>
-        <ul style="list-style-type: square;">
-            <li>Coffee</li>
-            <li>Tea
-                <ul style="list-style-type: disc;">
-                    <li>Black tea</li>
-                    <li>Green tea</li>
+            <h3>Exemplo de lista não ordenada aninhada</h3>
+                <ul style="list-style-type: square;">
+                    <li>Coffee</li>
+                    <li>Tea
+                        <ul style="list-style-type: disc;">
+                            <li>Black tea</li>
+                            <li>Green tea</li>
+                        </ul>
+                    </li>
+                    <li>Milk</li>
                 </ul>
-            </li>
-            <li>Milk</li>
-        </ul>
-        <br>
-        <h3>Exemplo de lista ordenada aninhada</h3>
-        <ol type="A">
-            <li>Coffee</li>
-            <li>Tea
-                <ol type="a">
-                    <li>Black tea</li>
-                    <li>Green tea</li>
+            <br>
+            <h3>Exemplo de lista ordenada aninhada</h3>
+                <ol type="A">
+                    <li>Coffee</li>
+                    <li>Tea
+                        <ol type="a">
+                            <li>Black tea</li>
+                            <li>Green tea</li>
+                        </ol>
+                    </li>
+                    <li>Milk</li>
                 </ol>
-            </li>
-            <li>Milk</li>
-        </ol>
-    </section>
+        </section>
 
-    <section>
-        <h3>Estilização de listas</h3>
-        <p>É possível estilizar listas HTML não ordenadas de várias formas usando CSS. P.ex.: estilizar horizontalmente
-            para criar um menu de navegação.</p>
-        <br>
-        <a href="../HTML/lista-como-menu-de-navegacao.html">Exemplo de lista estilizada horizontalmente como menu de
-            navegação</a>
-        <br>
-        <a href="https://www.youtube.com/watch?v=-QuK8taGLCs&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=15">Tutorial
-            em vídeo sobre listas</a>
-    </section>
-
-
+        <section>
+            <h3>Estilização de listas</h3>
+            <p>É possível estilizar listas HTML não ordenadas de várias formas usando CSS. P.ex.: estilizar horizontalmente
+                para criar um menu de navegação.</p>
+            <br>
+            <a href="../HTML/lista-como-menu-de-navegacao.html">Exemplo de lista estilizada horizontalmente como menu de
+                navegação</a>
+            <br>
+            <a href="https://www.youtube.com/watch?v=-QuK8taGLCs&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=15">Tutorial
+                em vídeo sobre listas</a>
+        </section>
+    </main>
 </body>
-
 </html>
