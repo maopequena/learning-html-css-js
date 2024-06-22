@@ -133,6 +133,7 @@
         <script>
             var myVideo = document.getElementById("video1");
 
+            // Function to play or pause the video based on its current state.
             function playPause() {
                 if (myVideo.paused)
                     myVideo.play();
@@ -140,115 +141,27 @@
                     myVideo.pause();
             }
 
+        // Sets the width of the video element with the id "myVideo" to 560 pixels.
             function makeBig() {
                 myVideo.width = 560;
             }
 
+            // Set the width of the video to 320 when the makeSmall function is called.
             function makeSmall() {
                 myVideo.width = 320;
             }
 
+        // Sets the width of the video element with the id "myVideo" to 420 pixels.
             function makeNormal() {
                 myVideo.width = 420;
             } 
         </script>
         <br>
-        <a href="https://www.w3schools.com/tags/ref_av_dom.asp">Lista completa de referências de DOM para áudio e
+        <a href="https://www.w3schools.com/tags/ref_av_dom.asp" target="_blank">Lista completa de referências de DOM para áudio e
             vídeo</a>
     </section>
 
-<<<<<<< Updated upstream
-            <h4>Métodos, propriedades e eventos</h4>
-                <p>O DOM do HTML define os métodos, as propriedades e os eventos do elemento <code id="code">&lt;video&gt;</code>.</p>
-                <p>Isso nos permite carregar, reproduzir e pausar vídeos, além de definir a duração e o volume.</p>
-                <p>Também há eventos DOM que podem notificar o usuário quando o vídeo começa a reproduzir, é pausado, etc.</p>
-
-        <br>
-
-                <p>Exemplo usando JavaScript:</p>
-                <div style="text-align:center"> 
-                    <button onclick="playPause()">Play/Pause</button> 
-                    <button onclick="makeBig()">Big</button>
-                    <button onclick="makeSmall()">Small</button>
-                    <button onclick="makeNormal()">Normal</button>
-                    <br><br>
-                    <video id="video1" width="420">
-                        <source src="../img/video/Big Buck Bunny.mp4" type="video/mp4">
-                        Your browser does not support HTML video.
-                    </video>
-                </div> 
-                
-                <script> 
-                    var myVideo = document.getElementById("video1"); 
-                
-                    function playPause() { 
-                        if (myVideo.paused) 
-                        myVideo.play(); 
-                        else 
-                        myVideo.pause(); 
-                    } 
-                
-                    function makeBig() { 
-                        myVideo.width = 560; 
-                    } 
-                
-                    function makeSmall() { 
-                        myVideo.width = 320; 
-                    } 
-                
-                    function makeNormal() { 
-                        myVideo.width = 420; 
-                    } 
-                </script>
-
-                <br>
-
-                <pre>
-                    <code id="code">&lt;div style="text-align:center"&gt;</code>
-                        <code id="code">&lt;button onclick="playPause()"&gt;Play/Pause&lt;/button&gt;</code>
-                        <code id="code">&lt;button onclick="makeBig()"&gt;Big&lt;/button&gt;</code>
-                        <code id="code">&lt;button onclick="makeSmall()"&gt;Small&lt;/button&gt;</code>
-                        <code id="code">&lt;button onclick="makeNormal()"&gt;Normal&lt;/button&gt;</code>
-                    <code id="code">&lt;br&gt;&lt;br&gt;</code>
-                        <code id="code">&lt;video id="video1" width="420"&gt;</code>
-                        <code id="code">&lt;source src="mov_bbb.mp4" type="video/mp4"&gt;</code>
-                        <code id="code">&lt;source src="mov_bbb.ogg" type="video/ogg"&gt;</code>
-                        <code id="code">Your browser does not support HTML video.</code>
-                        <code id="code">&lt;/video&gt;</code>
-                    <code id="code">&lt;/div&gt;</code>
-                    
-                    <code id="code">&lt;script&gt;</code>
-                        <code id="code">var myVideo = document.getElementById("video1");</code>
-                    
-                        <code id="code">function playPause() {</code>
-                            <code id="code">if (myVideo.paused)</code>
-                                <code id="code">myVideo.play();</code>
-                            <code id="code">else</code>
-                                <code id="code">myVideo.pause();</code>
-                        <code id="code">}</code>
-                    
-                        <code id="code">function makeBig() {</code>
-                            <code id="code">myVideo.width = 560;</code>
-                        <code id="code">}</code>
-                    
-                        <code id="code">function makeSmall() {</code>
-                            <code id="code">myVideo.width = 320;</code>
-                        <code id="code">}</code>
-                    
-                        <code id="code">function makeNormal() {</code>
-                            <code id="code">myVideo.width = 420;</code>
-                        <code id="code">}</code>
-                    <code id="code">&lt;/script&gt;</code>
-                </pre>
-
-        <br>
-                <a href="https://www.w3schools.com/tags/ref_av_dom.asp">Lista completa de referências de DOM para áudio e vídeo</a>
-
-        <br>
-
-=======
     <section>
->>>>>>> Stashed changes
         <h3>Áudio HTML</h3>
         <p>Para reproduzir um áudio em uma página da Web, use o elemento <code id="code">&lt;audio&gt;</code>.</p>
 
