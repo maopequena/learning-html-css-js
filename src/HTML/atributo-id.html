@@ -16,7 +16,7 @@
 </head>
 <body>
     <main>
-        <div id="div-main">
+        <div id="interface">
         <header>
             <h1>Atributo "id"</h1>
             <p>O atributo HTML <code id="code">id</code> é usado para definir uma identificação exclusiva para um elemento HTML. Esse atributo deve ser exclusivo dentro de um documento HTML, isto é, os elementos não podem compartilhar um mesmo <code id="code">id</code>.</p>
@@ -35,7 +35,7 @@
             <p>Use âncoras HTML para possibilitar que os leitores "pulem" para determinadas partes de uma página da Web. Isso pode ser útil se a página é muito longa.</p>
             <p>Para isso, primeiro crie a âncora com o atributo <code id="code">id</code> no elemento desejado, depois adicione um link para ela com <code id="code">&lt;a href="#id"&gt;Pular para a id definida&lt;/a&gt;</code>. Ao clicar no link, a página rola para o local da âncora.</p>
 
-            <h3>Exemplo de elemento H4 com id "myHeader", que será estilizado com a definição #myHeader</h3>
+            <h3>Exemplo de elemento H4 com id "myHeader", que será estilizado com a definição h4#myHeader</h3>
 
             <p>Foi definido o seguinte:</p>
             <ul style="list-style-type: square;">
@@ -45,6 +45,10 @@
                 <li>text-align center</li>
             </ul>
             <h4 id="myHeader">My Header</h4>
+            <p>O cabeçalho acima está estilizado no arquivo "style.css". <a href="../css/style.css" target="iframe">Dê uma olhada</a>!</p>
+            <p>Para estilizar o atributo "id" no CSS, a sintaxe é a seguinte (sem os espaços):</p>
+            <p><code id="code"><b>nome_do_atributo &#35; nome_da_id</b></code></p>
+            </p>
         </section>
 
         <section>
@@ -57,7 +61,7 @@
                 }
             </script>
             <br>
-            <a href="https://www.youtube.com/watch?v=rZ0k516qZmc&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=18" target="_blank">Tutorial em vídeo sobre o atributo "id"</a>
+            <a href="https://www.youtube.com/watch?v=rZ0k516qZmc&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=18" target="_blank" id="gen-links"/>Tutorial em vídeo sobre o atributo "id"</a>
         </section>
         </div>
     </main>

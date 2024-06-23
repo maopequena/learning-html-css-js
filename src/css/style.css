@@ -1,52 +1,75 @@
+@charset "utf-8";
+
 * {
     font-family: "Raleway", Helvetica, sans-serif; 
     font-size: 1rem;
 }
 
-#myHeader {
-    background-color: lightblue;
-    color: black;
-    padding: 1em 0;
-    margin: auto;
-    text-align: center;
-    border-radius: 5px;
-    width: 80vw;
-
-}
-
 html {
     scroll-behavior: smooth;
-    background-image: linear-gradient(to right bottom, #7c7484, #867e8e, #8f8797, #9991a1, #a39bab, #aea6b5, #b8b0c0, #c3bbca, #d1cad7, #dfd9e4, #eee8f1, #fcf7ff);
+    background-color: #7C7484;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+div#interface {
+    background-color: #a3a3a3;
+    width: 80%;
+    margin: auto;
+}
+
 h1 {
     font-size: 2rem;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 h2 {
     font-size: 1.7rem;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 h3 {
     font-size: 1.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 h4 {
     font-size: 1.2rem;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h4#myHeader {
+    background-color: lightblue;
+    color: black;
+    padding: 1.2em 0;
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    width: 80vw;
 }
 
 p {
     font-size: 1rem;
     text-align: justify;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.navigation {
-    text-decoration: wavy;
+img {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.list-square {
+form {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+ul.list-square {
     list-style: square;
     margin-left: 5px;
     text-align: justify;
@@ -80,28 +103,45 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.city {
+div.city {
     background-color: tomato;
     color: white;
     border: 2px solid black;
     margin: 20px;
-    padding: 20rem;
+    padding: 20px;
 }
 
-.note {
-color: red;
+div.main {
+    background-color: tomato;
+    color: blue;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+}
+
+span.note {
+    color: red;
+    font-size: 2ch;
 }
 
 a:link {
     color: #8D3BDA; /* Cor hex antiga que gerou o gradiente: #8D3BDA, #845EC2 */
+    font-size: 1.5ch;
 }
 
 a:visited {
     color: #4B4453;
+    font-size: 1.5ch;
 }
 
 a:hover {
     color: #FF8066;
+    font-size: 1.5ch;
+}
+
+a#gen-links {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #code {

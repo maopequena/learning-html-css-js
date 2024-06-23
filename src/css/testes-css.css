@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+* {
+    font-family: "Raleway", Helvetica, sans-serif; 
+    font-size: 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: rgb(238,130,238);
+    background: linear-gradient(133deg, rgba(238,130,238,1) 0%, rgba(141,59,218,1) 25%, rgba(124,116,132,1) 75%, rgba(252,247,255,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div#interface {
+    background-color: #f2efeb;
+    width: 80%;
+    margin: auto;
+}
