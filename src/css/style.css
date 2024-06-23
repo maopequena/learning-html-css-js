@@ -1,6 +1,5 @@
 * {
     font-family: "Raleway", Helvetica, sans-serif; 
-    background-color: #b3b3b3;
     font-size: 1rem;
 }
 
@@ -15,17 +14,42 @@
 
 }
 
-.navigation {
-    text-decoration: wavy;
-}
-
 html {
     scroll-behavior: smooth;
+    background-image: linear-gradient(to right bottom, #7c7484, #867e8e, #8f8797, #9991a1, #a39bab, #aea6b5, #b8b0c0, #c3bbca, #d1cad7, #dfd9e4, #eee8f1, #fcf7ff);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.navigation {
+    text-decoration: wavy;
 }
 
 .list-square {
     list-style: square;
     margin-left: 5px;
+    text-align: justify;
 }
 
 .section {
@@ -69,20 +93,22 @@ color: red;
 }
 
 a:link {
-    color: rgb(141, 59, 218);
+    color: #8D3BDA; /* Cor hex antiga que gerou o gradiente: #8D3BDA, #845EC2 */
 }
 
 a:visited {
-    color: darkmagenta;
+    color: #4B4453;
 }
 
 a:hover {
-    color: aqua;
+    color: #FF8066;
 }
 
 #code {
-    color: rgb(141, 59, 218);
+    color: #8D3BDA;
     list-style-type: square;
+    font-size: 1.8ch;
+    background-color: #b6b6b688;
 }
 
 .tabela {
@@ -94,13 +120,13 @@ a:hover {
 
 th {
     border: solid 1px white;
-    background-color: rgba(141, 59, 218, 0.5);
+    background-color: rgba(141, 59, 218, 0.5); /* Cor hex sem alpha: #8D3BDA */
     border-collapse: collapse;
     text-align: center;
 }
 
 tr, td {
-    background-color: rgba(238, 130, 238, 0.5);
+    background-color: rgba(238, 130, 238, 0.5); /* Cor hex sem alpha: #EE82EE */
     border: solid 1px white;
 }
 
@@ -113,5 +139,5 @@ tr, td {
 }*/ /* If I comment out the previous 2 styles, this becomes active. even=linhas pares odd=linhas ímpares */
 
 caption {
-    color: darkmagenta;
+    color: #8D3BDA;
 }
