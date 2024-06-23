@@ -26,44 +26,46 @@
 </head>
 <body>
     <main>
-    <header>
-        <h1>iframes</h1>
-        <p>Use iframes para exibir uma página da Web dentro da página aberta.</p>
-    </header>
+        <div id="div-main">
+        <header>
+            <h1>iframes</h1>
+            <p>Use iframes para exibir uma página da Web dentro da página aberta.</p>
+        </header>
 
-    <section>
-        <h2>Sintaxe</h2>
-            <p>A tag HTML <code id="code">&lt;iframe&gt;</code> define um quadro alinhado à página, que é usado para incorporar outro documento no documento HTML atual.</p>
-            <p>Recomenda-se sempre incluir o atributo <code id="code">title</code> no iframe, para que leitores de tela saibam qual é o conteúdo do quadro.</p>
-            <p>Use os atributos <code id="code">height</code> e <code id="code">width</code> (em pixels, por padrão) para especificar o tamanho do quadro. Ou use <code id="code">style="height: Npx;width: Npx;"</code>. Também é possível usar porcentagem para a largura e a altura.</p>
-            <p>Por padrão, um iframe apresenta uma borda. Para removê-la, use o atributo <code id="code">style</code> com a propriedade CSS <code id="code">border:none</code>. Também é possível alterar outras propriedades CSS, como <code id="code">border:2px solid red</code>.</p>
-            <p>Um iframe pode ser o <code id="code">target</code> de um link, usando o atributo <code id="code">name</code> do iframe:</p>
+        <section>
+            <h2>Sintaxe</h2>
+                <p>A tag HTML <code id="code">&lt;iframe&gt;</code> define um quadro alinhado à página, que é usado para incorporar outro documento no documento HTML atual.</p>
+                <p>Recomenda-se sempre incluir o atributo <code id="code">title</code> no iframe, para que leitores de tela saibam qual é o conteúdo do quadro.</p>
+                <p>Use os atributos <code id="code">height</code> e <code id="code">width</code> (em pixels, por padrão) para especificar o tamanho do quadro. Ou use <code id="code">style="height: Npx;width: Npx;"</code>. Também é possível usar porcentagem para a largura e a altura.</p>
+                <p>Por padrão, um iframe apresenta uma borda. Para removê-la, use o atributo <code id="code">style</code> com a propriedade CSS <code id="code">border:none</code>. Também é possível alterar outras propriedades CSS, como <code id="code">border:2px solid red</code>.</p>
+                <p>Um iframe pode ser o <code id="code">target</code> de um link, usando o atributo <code id="code">name</code> do iframe:</p>
 
-            <pre>
-                <code id="code">
-                    &lt;iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"&gt;&lt;/iframe&gt;
-                    &lt;p&gt;&lt;a href="https://www.w3schools.com" target="iframe_a"&gt;W3Schools.com&lt;/a&gt;&lt;/p&gt;
-                </code>
-            </pre>
-    </section>
+                <pre>
+                    <code id="code">
+                        &lt;iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"&gt;&lt;/iframe&gt;
+                        &lt;p&gt;&lt;a href="https://www.w3schools.com" target="iframe_a"&gt;W3Schools.com&lt;/a&gt;&lt;/p&gt;
+                    </code>
+                </pre>
+        </section>
 
-    <section>
-        <p class="paragraph">Um exemplo do uso de iframes está na página <a href="/index.html">index.html</a>, ou seja, a página em que estamos!<br>Se você clicar no link, abrirá um menu de navegação abaixo do menu de navegação! &#128514;</p>
-        <p class="paragraph">Este texto está sendo exibido em um iframe!</p>
-        <p class="paragraph">Estamos usando a classe "paragraph" para estilizar o texto com as seguintes propriedades:</p>
-            <ul class="list" style="list-style-type: circle;">
-                <li><code id="code">font-family dosis sans-serif</code></li>
-                <li><code id="code">font-size 20px</code></li>
-                <li><code id="code">font-style oblique</code></li>
-            </ul>
-        <br>
-        <p class="paragraph">E a lista está utilizando a classe "list" para estilizar seu texto:</p>
-            <ul class="list" style="list-style-type: square;">
-                <li><code id="code">font-family fantasy</code></li>
-            </ul>
-        <br>
-        <a href="https://www.youtube.com/watch?v=qP23O70ve7k&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=19">Tutorial em vídeo sobre iframes</a>
-    </section>
+        <section>
+            <p class="paragraph">Um exemplo do uso de iframes está na página <a href="/index.html">index.html</a>, ou seja, a página em que estamos!<br>Se você clicar no link, abrirá um menu de navegação abaixo do menu de navegação! &#128514;</p>
+            <p class="paragraph">Este texto está sendo exibido em um iframe!</p>
+            <p class="paragraph">Estamos usando a classe "paragraph" para estilizar o texto com as seguintes propriedades:</p>
+                <ul class="list" style="list-style-type: circle;">
+                    <li><code id="code">font-family dosis sans-serif</code></li>
+                    <li><code id="code">font-size 20px</code></li>
+                    <li><code id="code">font-style oblique</code></li>
+                </ul>
+            <br>
+            <p class="paragraph">E a lista está utilizando a classe "list" para estilizar seu texto:</p>
+                <ul class="list" style="list-style-type: square;">
+                    <li><code id="code">font-family fantasy</code></li>
+                </ul>
+            <br>
+            <a href="https://www.youtube.com/watch?v=qP23O70ve7k&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=19">Tutorial em vídeo sobre iframes</a>
+        </section>
+        </div>
     </main>
 </body>
 </html>

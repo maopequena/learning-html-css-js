@@ -20,34 +20,36 @@
 </head>
 <body>
     <main>
-    <header>
-        <h1>JavaScript</h1>
-        <p>O JavaScript deixa a página mais dinâmica e interativa.</p>
-        <p>Usos comuns do JavaScript são manipulação de imagens, validação de formulários (p. ex. login) e alterações dinâmicas no conteúdo.</p>
-        <p>Para selecionar um elemento HTML, o JavaScript geralmente usa o método <code id="code">document.getElementById()</code>.</p>
-    </header>
+        <div id="div-main">
+        <header>
+            <h1>JavaScript</h1>
+            <p>O JavaScript deixa a página mais dinâmica e interativa.</p>
+            <p>Usos comuns do JavaScript são manipulação de imagens, validação de formulários (p. ex. login) e alterações dinâmicas no conteúdo.</p>
+            <p>Para selecionar um elemento HTML, o JavaScript geralmente usa o método <code id="code">document.getElementById()</code>.</p>
+        </header>
 
-    <section>
-        <h3>A tag <code id="code">&lt;script&gt;</code></h3>
-        <p>Use essa tag HTML para definir um script no lado do cliente, isto é no JavaScript. Esse elemento conterá declarações de script ou apontará para um arquivo de scripts externo usando o atributo <code id="code">src</code>.</p>
-        <p>A tag HTML <code id="code">&lt;noscript&gt;</code> define um conteúdo alternativo a ser exibido para usuários que desativarem scripts no navegador ou que usam um navegador que não oferece suporte para scripts.</p>
-    </section>
+        <section>
+            <h3>A tag <code id="code">&lt;script&gt;</code></h3>
+            <p>Use essa tag HTML para definir um script no lado do cliente, isto é no JavaScript. Esse elemento conterá declarações de script ou apontará para um arquivo de scripts externo usando o atributo <code id="code">src</code>.</p>
+            <p>A tag HTML <code id="code">&lt;noscript&gt;</code> define um conteúdo alternativo a ser exibido para usuários que desativarem scripts no navegador ou que usam um navegador que não oferece suporte para scripts.</p>
+        </section>
 
-    <section>
-        <p>Este exemplo de JavaScript escreve "Hello, JavaScript!" em um elemento HTML que contém <code id="code">id="demo"</code>.<br>Originalmente não há nada escrito no parágrafo a seguir, mas o JS pega o texto, o tamanho da fonte, a cor da fonte e a cor de fundo e aplica ao parágrafo.</p>
-        <p id="demo"></p>
+        <section>
+            <p>Este exemplo de JavaScript escreve "Hello, JavaScript!" em um elemento HTML que contém <code id="code">id="demo"</code>.<br>Originalmente não há nada escrito no parágrafo a seguir, mas o JS pega o texto, o tamanho da fonte, a cor da fonte e a cor de fundo e aplica ao parágrafo.</p>
+            <p id="demo"></p>
 
-        <script>
-            document.getElementById("demo").innerHTML = "Hello, JavaScript!";
-            document.getElementById("demo").style.fontSize = "25px";
-            document.getElementById("demo").style.color = "red";
-            document.getElementById("demo").style.backgroundColor = "yellow";
-        </script>
-        <noscript>Infelizmente seu navegador não aceita JavaScript!</noscript>
-        <br>
-        <a href="https://www.youtube.com/watch?v=uSgcWDkwc3U&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=20" target="_blank">Tutorial
-            em vídeo sobre JavaScript</a>
-    </section>
+            <script>
+                document.getElementById("demo").innerHTML = "Hello, JavaScript!";
+                document.getElementById("demo").style.fontSize = "25px";
+                document.getElementById("demo").style.color = "red";
+                document.getElementById("demo").style.backgroundColor = "yellow";
+            </script>
+            <noscript>Infelizmente seu navegador não aceita JavaScript!</noscript>
+            <br>
+            <a href="https://www.youtube.com/watch?v=uSgcWDkwc3U&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=20" target="_blank">Tutorial
+                em vídeo sobre JavaScript</a>
+        </section>
+        </div>
     </main>
 </body>
 </html>
