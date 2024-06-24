@@ -14,7 +14,7 @@ background-size: cover;
 
 div#interface {
 background-image: linear-gradient(to left bottom, #e4e1dc, #c9c6c1, #b0ada8, #96938e, #7e7b76);
-width: 85%;
+width: 1400px;
 height: 100%;
 margin-block: -10px;
 margin-inline: auto;
@@ -40,7 +40,19 @@ font-weight: bold;
 }
 
 header#cabecalho button {
-padding: 10px;
+border: #4b4453 solid 1px;
+border-radius: 5px;
+background-color: #96938e;
+padding: 5px;
+margin-left: 1200px;
+margin-bottom: 5px;
+color: #8D3BDA;
+font-weight: bold;
+text-decoration: none;
+}
+
+header#cabecalho button:hover {
+background-color: #7e7b76;
 }
 
 nav#menu {
@@ -53,7 +65,7 @@ text-transform: uppercase;
 color: #e4e1dc;
 position: absolute;
 top: -18px;
-right: 175px;
+right: 230px;
 }
 
 nav#menu li {
@@ -71,8 +83,94 @@ background-color: #7e7b76;
 
 nav#menu a {
 text-decoration: none;
-color: #8D3BDA  ;
+color: #8D3BDA;
 font-weight: bold;
+}
+
+section#corpo {
+display: block;
+width: 960px;
+float: left;
+border-right: #4b4453 solid 1.5px;
+padding-right: 20px;
+}
+
+table#tabela {
+border: #4b4453 solid 2px;
+border-spacing: 0px;
+padding: 5px;
+border-collapse: collapse;
+margin-bottom: 10px;
+vertical-align: middle;
+}
+
+table#tabela th {
+border: #4b4453 solid 1.5px;
+padding: 5px;
+}
+
+table#tabela th.cab {
+font-weight: bold;
+font-style: oblique;
+text-align: center;
+}
+
+table#tabela td {
+border: #4b4453 dotted 1px;
+padding: 5px;
+}
+
+table#tabela td.ce {
+text-align: right;
+}
+
+table#tabela td.cc {
+text-align: center;
+}
+
+table#tabela td.cd {
+text-align: left;
+}
+
+table#tabela caption {
+font-size: 15pt;
+font-weight: bolder;
+}
+
+table#tabela caption span {
+display: block;
+position: relative;
+float: right;
+font-style: italic;
+font-size: 7pt;
+margin-top: 10px;
+}
+
+aside#lateral {
+display: block;
+position: relative;
+width: 400px;
+float: right;
+}
+
+footer#rodape {
+clear: both;
+text-align: center;
+padding: 0px;
+border-top: #4b4453 solid 1.5px;
+}
+
+footer#rodape p {
+text-align: center;
+font-style: italic;
+padding-top: 10px;
+padding-bottom: 10px;
+margin: 0px;
+}
+
+footer#rodape a {
+text-decoration: none;
+color: #8D3BDA;
 }
 /* Animação de fundo 1
 html {
