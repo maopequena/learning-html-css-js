@@ -12,6 +12,9 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 
+body h3 {
+background-color: #c69dec;
+}
 div#interface {
 background-image: linear-gradient(to left bottom, #e4e1dc, #c9c6c1, #b0ada8, #96938e, #7e7b76);
 width: 1400px;
@@ -95,6 +98,10 @@ border-right: #4b4453 solid 1.5px;
 padding-right: 20px;
 }
 
+section#corpo ul {
+list-style: square;
+}
+
 table#tabela {
 border: #4b4453 solid 2px;
 border-spacing: 0px;
@@ -152,6 +159,28 @@ position: relative;
 width: 400px;
 float: right;
 }
+
+aside#lateral video {
+display: block;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+}
+
+aside#lateral audio {
+display: block;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+}
+
+aside#lateral svg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30px;
+    float: right;
+    opacity: 0.65;
+    }
 
 footer#rodape {
 clear: both;
