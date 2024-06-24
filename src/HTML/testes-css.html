@@ -1,12 +1,18 @@
 <!DOCTYPE html> <!-- Define o tipo de documento da página como HTML -->
 <html lang="pt-BR"> <!-- Para exibir a página com o idioma Português (brasileiro) corretamente -->
 <meta charset="utf-8"> <!-- Para exibir corretamente os caracteres especiais -->
+<!-- Para Animação de fundo 1
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+</div> -->
+
 <head>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/testes-css.css">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="description" content="Testes CSS">
     <meta name="author" content="Lizandra Silva (@maopequena)">
@@ -16,15 +22,18 @@
 <body>
     <main>
         <div id="interface">
-        <header>
+        <header id="cabecalho">
             <h1>Testes CSS</h1>
             <p>Essa página não contém informações úteis, ela está sendo usada somente para testes com configurações de CSS, para que eu não destrua nenhuma das outras páginas.</p>
+            <form action="/index.html">
+                <button type="button">Voltar à página inicial</button>
+            </form>
         </header>
         
         <section>
             <p><a href="https://www.w3schools.com">Visite a W3Schools</a></p>
-            <p><img src="../img/img_girl.jpg" width="500" height="600"></p></p>
-            <p title="Esta é uma dica">Isto é um parágrafo.</p>
+            <p><img src="../img/img_girl.jpg" width="300px"></p></p>
+            <p title="Esta é uma dica">Isto é um parágrafo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quisquam voluptatibus dicta est veniam voluptates praesentium qui ullam culpa at reiciendis labore quis, harum doloremque nam? Nisi odio rerum reiciendis! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit saepe quam autem eius nesciunt quae accusamus dicta cupiditate facilis ex, eligendi dolorem sapiente ducimus. Dolorem animi dolore eum labore sunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quia aliquam ex, amet ad reiciendis voluptatum deleniti illum quos magnam, provident cupiditate fugiat quisquam voluptatem recusandae quod, delectus nulla harum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, harum delectus deleniti quam suscipit recusandae placeat. Exercitationem, autem dicta dignissimos perferendis sunt velit aspernatur tempore cumque error totam quis! Mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, autem ipsam? Provident asperiores labore minima quas cum, mollitia excepturi ducimus eaque, nihil deleniti magni, laboriosam molestiae. Tempora ipsa consectetur error. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore harum eligendi voluptatem nostrum aperiam, dolores sapiente facere libero. Impedit cum quia magnam beatae nihil eos aspernatur voluptatem, asperiores expedita molestiae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus eveniet iste, provident corrupti vitae ipsa harum nisi quis! Eos quis, debitis molestiae dicta obcaecati tenetur eius minus vitae nobis sequi! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At excepturi fuga saepe reiciendis. Sint, cupiditate, eum magni consequuntur officia placeat officiis dolor delectus quos maiores quis rerum. Culpa, adipisci nostrum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam autem provident et tempore voluptatem sapiente saepe qui amet, necessitatibus id cupiditate vero, libero nostrum voluptates dolores eveniet laboriosam enim quas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut at magnam nam, necessitatibus doloribus ipsam totam beatae autem, reprehenderit accusantium maiores quo enim mollitia veritatis dolorum, incidunt molestias molestiae. Obcaecati?</p>
         </section>
 
         <section>
@@ -62,11 +71,13 @@
                 <p>The Epcot center is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
             </aside>
             <br>
-            <nav>
-                <a href="/html/">HTML</a> |
-                <a href="/css/">CSS</a> |
-                <a href="/js/">JavaScript</a> |
-                <a href="/jquery/">jQuery</a>
+            <nav id="menu">
+                <ul>
+                    <li><a href="/html/">HTML</a></li>
+                    <li><a href="/css/">CSS</a></li>
+                    <li><a href="/js/">JavaScript</a></li>
+                    <li><a href="/jquery/">jQuery</a></li>
+                </ul>
             </nav>
             <br>
             <figure>
