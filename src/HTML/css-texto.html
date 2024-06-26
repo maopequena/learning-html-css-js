@@ -1,0 +1,116 @@
+<!DOCTYPE html> <!-- Define o tipo de documento da página como HTML -->
+<html lang="pt-BR"> <!-- Para exibir a página com o idioma Português (brasileiro) corretamente -->
+<meta charset="utf-8"> <!-- Para exibir corretamente os caracteres especiais -->
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Texto no CSS">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto no CSS</title>
+</head>
+<body>
+    <main>
+        <div id="interface">
+            <header>
+                <h1>Texto no CSS</h1>
+                <p>Use as propriedades a seguir para estilizar o texto via CSS.</p>
+            </header>
+
+            <section>
+                <h3>Cor</h3>
+                <p><code id="code">color</code> para mudar a cor do texto.</p>
+                <p><code id="code">background-color</code> para mudar a cor do fundo.</p>
+                <p><b>Observação</b>: o alto contraste é muito importante para pessoas com deficiências visuais, portanto certifique-se de ter um bom contraste entre a cor do texto e a cor (ou imagem) do fundo!</p>
+                <h3>Alinhamento e direção</h3>
+                <p><code id="code">text-align</code> para alterar o alinhamento horizontal do texto.</p>
+                <p><code id="code">text-align-last</code> para alterar o alinhamento da última linha do texto.</p>
+                <p><code id="code">direction</code> e <code id="code">unicode-bidi</code> (igual a <code id="code">bdo</code>) para alterar a direção de escrita do texto. Devem ser usadas juntas.</p>
+                <p><code id="code">vertical-align</code> para alterar o alinhamento vertical do texto.</p>
+                <h3>Estilo</h3>
+                <p><code id="code">text-decoration-line</code> para colocar linhas acima, abaixo ou através do texto.</p>
+                <p><code id="code">text-decoration-color</code> para definir a cor das linhas acima, abaixo ou através do texto.</p>
+                <p><code id="code">text-decoration-style</code> para definir o estilo das linhas acima, abaixo ou através do texto, como wavy, dotted, etc.</p>
+                <p><code id="code">text-decoration-thickness</code> para definir a largura das linhas acima, abaixo ou através do texto.</p>
+                <h3>Transformação</h3>
+                <p><code id="code">text-transform</code> para alterar as letras todas para maiúsculas (uppercase), todas para minúsculas (lowercase) ou somente a primeira letra de cada palavra em maiúsculas (capitalize).</p>
+                <h3>Espaçamento</h3>
+                <p><code id="code">text-indent</code> para definir a indentação da primeira linha do texto.</p>
+                <p><code id="code">letter-spacing</code> para definir o espaçamento entre os caracteres do texto. Pode ser um número negativo para diminuir o espaçamento.</p>
+                <p><code id="code">line-height</code> para definir a altura entre as linhas do texto.</p>
+                <p><code id="code">word-spacing</code> para definir o espaçamento entre as palavras do texto. Pode ser um número negativo para diminuir o espaçamento.</p>
+                <p><code id="code">white-spacing</code> para definir as quebras de linha do texto. <code id="code">nowrap</code> impede a quebra do texto, <code id="code">pre</code> age como o elemento &lt;pre&gt; e <code id="code">pre-line</code> preserva todas as quebras de linha.</p>
+                <h3>Sombra</h3>
+                <p><code id="code">text-shadow</code> para definir a sombra do texto.</p>
+                <p>Sua sintaxe é a seguinte:</p>
+                <pre>
+                    <code id="code">text-shadow: sombra-h sombra-v raio-dispersão cor;</code>
+                </pre>
+                <p>Por exemplo: <span style="text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); color: #000000;">Este texto tem sombra 5px, 5px, 5px e preta com alpha 0.5</span> e este tem um <span style="text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;">toque de neon</span>, com duas sombras diferentes aplicadas.</p>
+
+                <h2>Fontes</h2>
+                <p>Escolher a fonte certa tem enorme impacto em como os visitantes veem um site.</p>
+                <p>A fonte certa pode criar uma identidade para sua marca.</p>
+                <p>É importante escolher uma fonte fácil de ler, com a cor e o tamanho certos.</p>
+                <p>Há cinco famílias de fontes genéricas:</p>
+                <ul>
+                    <li>Fontes com serifa</li>
+                    <li>Fontes sem serifa</li>
+                    <li>Fontes monoespaçadas</li>
+                    <li>Fontes cursivas</li>
+                    <li>Fontes de fantasia</li>
+                </ul>
+                <figure>
+                    <img src="../img/serif-difference.gif" alt="Diferença entre fontes com ou sem serifa">
+                    <figcaption>Diferença entre fontes com ou sem serifa.</figcaption>
+                </figure>
+                <br>
+                <figure>
+                    <img src="../img/exemplo-fontes.png" alt="Exemplos de fontes de cada família genérica"/>
+                    <figcaption>Exemplos de fontes de cada família genérica.</figcaption>
+                </figure>
+                <p>Use a propriedade <code id="code">font-family</code> para definir a fonte de um elemento HTML. Use aspas em volta do nome da fonte.</p>
+                <p><em>Para garantir a compatibilidade entre os vários navegadores, adicione vários nomes de fonte separados por vírgulas. Comece pela fonte desejada e termine com uma família genérica. P.ex.: <code id="code">font-family: "Times New Roman", Times, serif;</code>.</em></p>
+                <p>As seguintes fontes são recomendadas: Arial, Verdana, Tahoma, Trebuchet MS, Times New Roman, Georgia, Garamond, Courier New e Brush Script MT.</p>
+                <p>É possível usar fontes do <a href="https://fonts.google.com" target="_blank">Google</a> nas páginas. Para tanto, após escolher uma fonte, copie o link fornecido em "Get font" > "Get embed code" > guia "Web" > "Embed code in the &lt;head&gt; of your html", e cole na área <code id="code">&lt;head&gt;</code> do documento HTML. Importe a fonte para o CSS usando a sintaxe recomendada na mesma janela do Google (com <code id="code">@font-face</code>; em "src", adicionar url('Nome da fonte')) logo no início do documento CSS. <a href="https://www.w3schools.com/howto/howto_google_fonts.asp" target="_blank" rel="noopener noreferrer">Saiba mais</a>.</p>
+                <h3>Regras de combinação de fontes</h3>
+                <p><b>Complementar</b>: as fontes não devem ser nem muito iguais, nem muito diferentes, e devem harmonizar entre si.</p>
+                <p><b>Superfamílias</b>: são fontes projetadas para terem boa aparência juntas. P. ex.: A superfamília Lucida contém as seguintes fontes: Lucida Sans, Lucida Serif, Lucida Typewriter Sans, Lucida Typewriter Serif e Lucida Math.</p>
+                <p><b>Contraste</b>: as fontes devem ser diferentes o suficiente para dar boa aparência ao site, mas sem serem muito diferentes. Uma dica é combinar fontes com e sem serifa na mesma página.</p>
+                <p><b>Só deve haver uma rainha</b>: uma fonte deve ser a "rainha", e estabelecer a hierarquia para as fontes da página. Mude o peso, o tamanho e a cor dessa fonte para diversificar.</p>
+                <p><b>Exemplos de boas combinações</b> (a primeira fonte é para títulos e a segunda, para textos):</p>
+                <ul>
+                    <li>Georgia e Verdana*</li>
+                    <li>Helvetica e Garamond</li>
+                    <li>Merriweather e Open Sans*</li>
+                    <li>Ubuntu e Lora</li>
+                    <li>Abril Fatface e Poppins*</li>
+                    <li>Cinzel e Fauna One*</li>
+                    <li>Fjalla One e Libre Baskerville</li>
+                    <li>Space Mono e Muli</li>
+                    <li>Spectral e Rubik*</li>
+                    <li>Oswald e Noto Sans</li>
+                </ul>
+                <p>As propriedades <code id="code">font-style</code> (obrigatória), <code id="code">font-variant</code> (que define a exibição em small caps), <code id="code">font-weight</code>, <code id="code">font-size  (obrigatória)/line-height</code> e <code id="code">font-family</code> podem ser combinadas usando-se <code id="code">font</code> para economizar tempo e digitação.</p>
+
+                <h3>Tamanhos de fontes</h3>
+                <p>A propriedade <code>font-size</code> define o tamanho do texto.</p>
+                <p>É importante organizar o tamanho do texto. No entanto, não se deve usar ajustes de tamanho de fonte para criar parágrafos que se parecem com cabeçalhos, ou vice-versa. Use sempre as tags HTML apropriadas, como <code>&gt;h1&lt;</code>-<code>&lt;h&gt;</code> para cabeçalhos e <code>&gt;p&lt;</code> para parágrafos.</p>
+                <p>O valor de <code>font-size</code> pode ser absoluto ou relativo.</p>
+                <p> O tamanho absoluto define o texto com um tamanho específico e não permite que o usuário altere o tamanho do texto em todos os navegadores (o que é péssimo para questões de acessibilidade), mas é útil quando se sabe o tamanho físico do resultado final.</p>
+                <p>O tamanho relativo define o tamanho do texto relativo aos elementos à sua volta e permite que o usuário altere o tamanho do texto em navegadores.</p>
+                <p>Se não for definido um tamanho de fonte, será usado o tamanho de texto normal, que é de 16px (16px = 1em).</p>
+                <p>Definir o texto em pixels proporciona controle total sobre o texto.</p>
+                <p>Porém, para que os usuários possam redimensionar o texto no menu do navegador, muitos desenvolvedores usam a unidade <b>em</b> em vez de pixels. 1em é igual ao tamanho da fonte atual. O tamanho de texto padrão em navegadores é de 16px. Então o valor padrão de 1em é 16px.</p>
+                <p>Para calcular o valor de pixels para em, use a seguinte fórmula: pixels/16=em.</p>
+                <p>Valores em em ainda podem ser exibidos incorretamente em navegadores mais antigos. A solução, nesses casos, é combinar em e porcentagens. Definir o valor de <code>font-size</code> para o elemento <code>&lt;body&gt;</code> como porentagem é uma solução que funciona em todos os navegadores.</p>
+                <p>É possível, ainda, definir o valor com a unidade <code>vw</code>, que significa "viewport width". Dessa forma, o texto segue o tamanho da janela do navegador, isto é, fica mais responsivo. 1vw = 1% da largura da janela do navegador. Se a janela tem 50cm de largura, 1vw é 0.5cm.</p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

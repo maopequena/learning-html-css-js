@@ -57,15 +57,15 @@
             <p>Para exibir um vídeo em uma página da Web, use o elemento HTML <code id="code">&lt;video&gt;</code>.</p>
             <br>
             <video style="margin-left: 10px;" width="400" controls>
-                <source src="../img/video/HTML - Introduction - W3Schools.com.mp4" type="video/mp4">
+                <source src="../img/video/HTML - Introduction - W3Schools.com.mp4" type="video/mp4" poster="../img/video/poster for the video.png">
                 <source src="mov_bbb.ogg" type="video/ogg"> <!-- Outro formato como backup -->
                 Your browser does not support HTML video.<!-- Caso vídeo não toque no navegador do usuário -->
             </video>
             <br>
             <h4>Código do vídeo acima:</h4>
             <pre>
-                <code id="code">&lt;video width="320" height="240" controls&gt;
-                &lt;source src="movie.mp4" type="video/mp4"&gt;
+                <code id="code">&lt;video style="margin-left: 10px;" width="400" controls&gt;
+                &lt;source src="movie path/movie file.mp4" type="video/mp4" poster="poster path/poster file.png"&gt;
                 &lt;source src="movie.ogg" type="video/ogg"&gt;
                 Your browser does not support the video tag.
                 &lt;/video&gt;</code>
@@ -76,10 +76,11 @@
                 <p>Recomenda-se sempre incluir os atributos <code id="code">width</code> e <code id="code">height</code>. Se não forem definidos, a página poderá "piscar" quando o vídeo carregar.</p>
                 <p>O elemento <code id="code">&lt;source&gt;</code> possibilita definir arquivos de vídeo alternativos para o navegador escolher. O navegador usará o primeiro formato reconhecido.</p>
                 <p>O texto entre as tags <code id="code">&lt;video&gt;</code> e <code id="code">&lt;/video&gt;</code> só será exibido em navegadores que não oferecem suporte para o elemento <code id="code">&lt;video&gt;</code>.</p>
+                <p>Também é possível adicionar uma imagem <code id="code">.png</code> como pôster para o vídeo usando o atributo <code id="code">poster=""</code>.</p>
                 <p>O elemento <code id="code">&lt;track&gt;</code> define trilhas de texto em reprodutores de mídia.</p>
 
                 <h4>O atributo <code id="code">autoplay</code></h4>
-                <p>Use este atributo para começar a reproduzir o vídeo automaticamente.</p>
+                <p>Use este atributo para começar a reproduzir o vídeo automaticamente. P.ex.:</p>
                 <pre>
                 <code id="code">&lt;video width="320" height="240" autoplay&gt;&lt;/video&gt;</code>
                 </pre>

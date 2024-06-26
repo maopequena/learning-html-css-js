@@ -1,0 +1,53 @@
+<!DOCTYPE html> <!-- Define o tipo de documento da página como HTML -->
+<html lang="pt-BR"> <!-- Para exibir a página com o idioma Português (brasileiro) corretamente -->
+<meta charset="utf-8"> <!-- Para exibir corretamente os caracteres especiais -->
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Margens e padding no CSS">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margens e padding no CSS</title>
+</head>
+<body>
+    <main>
+        <div id="interface">
+            <header>
+                <h1>Margens no CSS</h1>
+                <p>A margem é o valor fora da borda do objeto, e é definida por valores absolutos em pixels.</p>
+                
+                <h1>Padding no CSS</h1>
+                <p>Padding é o valor dentro da borda do objeto, e é definida por valores absolutos em pixels.</p>
+            </header>
+            <section>
+                <p>As propriedades de margem podem ter os seguintes valores:</p>
+                <ul class="list-square">
+                    <li><b>auto</b>: o navegador calcula a margem</li>
+                    <li><b>length</b>: define a margem em px, pt, cm, etc.</li>
+                    <li><b>%</b>: define a margem em % da largura do elemento que a contém</li>
+                    <li><b>inherit</b>: define que a margem deve ser herdada do elemento pai</li>
+                </ul>
+                <p>Algumas vezes as margens superior e inferior se juntam em uma em que o valor é o maior entre as duas margens. Isso se chama "margin collapse".</p>
+                <p>As propriedades de padding podem ter os seguintes valores:</p>
+                <ul class="list-square">
+                    <li><b>length</b>: define o padding em px, pt, cm, etc.</li>
+                    <li><b>%</b>: define o padding em % da largura do elemento que o contém</li>
+                    <li><b>inherit</b>: define que o padding deve ser herdado do elemento pai</li>
+                </ul>
+                <p>Se o padding for definido com a propriedade <code id="code">width</code>, será preciso ajustar seu comportamento com a propriedade <code id="code">box-sizing</code>, já que o tamanho do elemento será o da largura + o padding. Com <code id="code">box-sizing: border-box</code>, a largura do elemento não muda.</p>
+                <p><b>Observação</b></p>: as propriedades <code id="code">height</code> e <code id="code">width</code> não incluem padding, bordas ou margens! Elas definem a altura e a largura da área dentro do padding, borda e margem do elemento!
+                <p>Use <code id="code">max-width/max-height</code> ou <code id="code">min-width/min-height</code> para melhorar a visualização de elementos em telas menores ou maiores, respectivamente. Quando <code id="code">width</code> é maior que <code id="code">max-width</code> no mesmo elemento, max-width é usada e width ignorada.</p>
+
+                <h2>O modelo de caixa</h2>
+                <img src="../img/box-model.png" alt="Modelo de caixa">
+                <p>Ao definir as propriedades de altura e largura de um elemento com CSS, esses valores mudam apenas a área de conteúdo. Para definir corretamente a altura e a largura de elementos em um site, é preciso compreender como funciona este modelo e incluir os valores de padding e bordas.</p>
+                <p>Consulte também: <a href="https://www.w3schools.com/css/css_outline.asp">Outline</a>.</p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

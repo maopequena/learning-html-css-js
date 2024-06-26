@@ -1,10 +1,13 @@
+/* Define o conjunto de caracteres como UTF-8 */
 @charset "utf-8";
 
+/* Define o tipo de fonte como Raleway e o tamanho da fonte como 1rem para todos os itens do site*/
 * {
     font-family: "Raleway", Helvetica, sans-serif; 
     font-size: 1rem;
 }
 
+/* Define o comportamento de rolagem como suave e o fundo como cinza claro */
 html {
     scroll-behavior: smooth;
     background-color: #7C7484;
@@ -12,12 +15,14 @@ html {
     background-size: cover;
 }
 
+/* Define o fundo do site como cinza escuro e as margens como automáticas */
 div#interface {
     background-color: #a3a3a3;
     width: 80%;
     margin: auto;
 }
 
+/* Define o tamanho da fonte como 2rem para o elemento h1, 1.7rem para o elemento h2, 1.5rem para o elemento h3, 1.2rem para o elemento h4 e 1rem para o elemento p */
 h1 {
     font-size: 2rem;
     margin-left: 10px;
@@ -59,16 +64,19 @@ p {
     margin-right: 10px;
 }
 
+/* Define as margens de imagens */
 img {
     margin-left: 10px;
     margin-right: 10px;
 }
 
+/* Define as margens de formulários */
 form {
     margin-left: 10px;
     margin-right: 10px;
 }
 
+/* Define o estilo das listas */
 ul.list-square {
     list-style: square;
     margin-left: 5px;
@@ -181,3 +189,4 @@ tr, td {
 caption {
     color: #8D3BDA;
 }
+

@@ -31,6 +31,21 @@
             <p>CSS = Cascading Style Sheets (folhas de estilo em cascata). Ele economiza muito trabalho, porque pode controlar o layout de várias páginas da Web ao mesmo tempo.</p>
             <p>Com CSS é possível controlar a cor, a fonte, o tamanho do texto, o espaçamento entre os elementos, como os elementos são posicionados na tela, quais imagens ou cores de fundo usar, diferentes exibições para cada dispositivo e tamanho de tela, e muito mais!</p>
             <p>"Em cascata" significa que um estilo aplicado a um elemento pai também será aplicado a todos os elementos filhos dentro do pai. Então, ao definir a cor do texto do corpo como "blue", todos os cabeçalhos, parágrafos e outros elementos de texto dentro do corpo também receberão a mesma cor, a menos que seja especificado algo diferente.</p>
+            <p>Uma regra de CSS consiste de um seletor e um bloco de declarações.</p>
+            <img src="../img/css-syntax.gif" alt="Sintaxe do CSS">
+            <p>O seletor aponta para o elemento HTML que se deseja estilizar.</p>
+            <p>O bloco de declaração contém uma ou mais declarações, separadas por ponto-e-vírgula.</p>
+            <p>Cada declaração inclui um nome de propriedade do CSS e um valor, separados por dois-pontos.</p>
+            <p>As várias declarações de CSS são separadas por ponto-e-vírgula, e os blocos de declarações são envoltos em chaves.</p>
+            <h2>Ordem do estilo em cascata</h2>
+            <p><b>Qual estilo será usado quando houver mais de um estilo especificado para um elemento HTML?</b></p>
+            <p>Todos os estilos na página serão aplicados em "cascata" em uma nova folha de estilo "virtual" de acordo com as regras a seguir, respectivamente:</p>
+            <ol style="list-style: 1;">
+                <li>Estilo da linha (dentro do elemento HTML)</li>
+                <li>Folhas de estilo externa e interna (na área <code id="code">&lt;head&gt;</code>)</li>
+                <li>Padrão do navegador</li>
+            </ol>
+            <p>Assim, o estilo da linha tem a prioridade mais alta e substituirá as folhas de estilo externa e interna e os padrões do navegador.</p>
         </header>
 
         <section>
@@ -47,7 +62,8 @@
             <p>O CSS inline (em linha, aplicado ao elemento) é usado para aplicar um estilo único a um único elemento HTML. Ele usa o atributo <code id="code" style="background-color: powderblue;">style</code> de um elemento HTML. O cabeçalho e o parágrafo coloridos abaixo são exemplos de "inline".</p>
 
             <h3 style="color:blue;">Cabeçalho em blue</h3>
-            <p style="color:goldenrod;">Parágrafo em Golden Rod.</p>
+            <p style="color:goldenrod;font-size: 15pt;">Parágrafo em Golden Rod com letra tamanho 15pt.</p>
+            <p><b>Observação</b>: ao usar valores numéricos, não se deve separar o número da unidade com um espaço. O correto é <code id="code">font-size: 15pt</code> e não <code id="code">font-size: 15 pt</code>.</p>
         </section>
 
         <section style="background-color: powderblue; margin-left: 10px;">
@@ -63,6 +79,10 @@
             <p>Consultar <a href="../css/style.css">style.css</a></p>
         </section>
 
+        <section>
+            <p>É possível fazer comentários no arquivo de CSS usando os caracteres <code id="code" style="background-color: powderblue;">/*</code> e <code id="code" style="background-color: powderblue;">*/</code>. Consulte o arquivo <a href="../css/style.css">style.css</a> para ver alguns.</p>
+        </section>
+
         <section style="background-color: powderblue; margin-left: 10px;">
             <h3>Cores, fontes e tamanhos no CSS</h3>
             <p>As seguintes propriedades CSS definem, em ordem, a cor do texto, a fonte e o tamanho da fonte: <code id="code" style="background-color: powderblue;">color</code>, <code id="code" style="background-color: powderblue;">font-family</code> e <code id="code" style="background-color: powderblue;">font-size</code>.</p>
@@ -75,6 +95,8 @@
             <p>Novos frameworks estão surgindo conforme a necessidade. Alguns frameworks recomendados: <a href="https://lesscss.org" target="_blank">Less</a>, <a href="https://sass-lang.com/guide/" target="_blank">Sass/Scss</a>, <a href="https://stylus-lang.com" target="_blank">Stylus</a>, <a href="https://postcss.org" target="_blank">PostCSS</a></p> e <a href="https://tailwindcss.com" target="_blank">Tailwind</a>.
             <br>
             <a href="https://www.youtube.com/watch?v=cZHp-Oozg6I&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=13">Tutorial em vídeo sobre CSS no HTML</a>
+            <br>
+            <a href="https://www.w3schools.com/cssref/css4_pr_accent-color.php">Lista explicativa de todas as propriedades de CSS</a>
         </section>
         </div>
     </main>
