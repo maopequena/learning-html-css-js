@@ -1,4 +1,4 @@
-* {
+/* * {
     font-family: "Raleway", Helvetica, sans-serif; 
 }
 
@@ -28,10 +28,10 @@ a:active {
     color: yellow;
     background-color: transparent;
     text-decoration: underline;
-}
+} */
 
-.button { /* Esta estilização usa o atributo "class" para definir o estilo do botão na página Links.html */
-    background-color: #f44336;
+/* ..button { */ /* Esta estilização usa o atributo "class" para definir o estilo do botão na página Links.html */
+    /* background-color: #f44336;
     color: white;
     padding: 15px 25px;
     text-align: center;
@@ -41,4 +41,4 @@ a:active {
 
 #code {
     color: rgb(141, 59, 218);
-}
+} */

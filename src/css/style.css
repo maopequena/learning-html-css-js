@@ -1,5 +1,5 @@
 /* Define o conjunto de caracteres como UTF-8 */
-@charset "utf-8";
+/* @charset "utf-8";
 
 :root {
   --red: #ff0000;
@@ -16,18 +16,18 @@
   --violet: #ee82ee;
   --tomato: #ff6347;
   --blue: #0000ff;
-  --white: #fff;
-  --link-color: #8d3bda; /* Cor hex antiga que gerou o gradiente: #8D3BDA, #845EC2 */
-  --link-visited: #4b4453;
+  --white: #fff; */
+  /* --link-color: #8d3bda; */ /* Cor hex antiga que gerou o gradiente: #8D3BDA, #845EC2 */
+  /*--link-visited: #4b4453;
   --link-hover: #ff8066;
   --code: #ef1caf;
   --code-bg: #b6b6b688;
   --code-line: #b6b6b6;
-  --code-line-bg: #b6b6b6;
-  --th-bg: rgba(141, 59, 218, 0.5); /* Cor hex sem alpha: #8D3BDA */
-  --tr-td-bg: rgba(238, 130, 238, 0.5); /* Cor hex sem alpha: #EE82EE */
-  --aquamarine: #7fffd4;
-}
+  --code-line-bg: #b6b6b6; */
+  /* --th-bg: rgba(141, 59, 218, 0.5); */ /* Cor hex sem alpha: #8D3BDA */
+  /* --tr-td-bg: rgba(238, 130, 238, 0.5); */ /* Cor hex sem alpha: #EE82EE */
+  /*--aquamarine: #7fffd4;
+} */
 /* Define o tipo de fonte como Raleway e o tamanho da fonte como 1rem para todos os itens do site*/
 * {
   font-family: "Raleway", Helvetica, sans-serif;
@@ -37,20 +37,23 @@
 /* Define o comportamento de rolagem como suave e o fundo como cinza claro */
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-grey);
+  background-color: #000000; /* var(--bg-grey) */
+  color: #c2c2c2;
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 10px 0px;
+  line-height: 1.5;
 }
 
 /* Define o fundo do site como cinza escuro e as margens como automáticas */
-div#interface {
+/* div#interface {
   background-color: var(--bg-light-gray);
   width: 80%;
   margin: auto;
-}
+} */
 
 /* Define o tamanho da fonte como 2rem para o elemento h1, 1.7rem para o elemento h2, 1.5rem para o elemento h3, 1.2rem para o elemento h4 e 1rem para o elemento p */
-h1 {
+/* h1 {
   font-size: 2rem;
   margin-left: 10px;
   margin-right: 10px;
@@ -89,22 +92,22 @@ p {
   text-align: justify;
   margin-left: 10px;
   margin-right: 10px;
-}
+} */
 
 /* Define as margens de imagens */
-img {
+/* img {
   margin-left: 10px;
   margin-right: 10px;
-}
+} */
 
 /* Define as margens de formulários */
-form {
+/* form {
   margin-left: 10px;
   margin-right: 10px;
-}
+} */
 
 /* Define o estilo das listas */
-ul.list-square {
+/* ul.list-square {
   list-style: square;
   margin-left: 5px;
   text-align: justify;
@@ -162,9 +165,9 @@ span.note {
 
 a:link {
   color: var(
-    --link-color
-  ); /* Cor hex antiga que gerou o gradiente: #8D3BDA, #845EC2 */
-  font-size: 1.5ch;
+    --link-color */
+/*  ); */ /* Cor hex antiga que gerou o gradiente: #8D3BDA, #845EC2 */
+  /* font-size: 1.5ch;
 }
 
 a:visited {
@@ -197,17 +200,17 @@ a#gen-links {
 }
 
 th {
-  border: solid 1px var(--white);
-  background-color: var(--th-bg); /* Cor hex sem alpha: #8D3BDA */
-  border-collapse: collapse;
+  border: solid 1px var(--white); */
+/*  background-color: var(--th-bg); */ /* Cor hex sem alpha: #8D3BDA */
+  /* border-collapse: collapse;
   text-align: center;
 }
 
 tr,
-td {
-  background-color: var(--tr-td-bg); /* Cor hex sem alpha: #EE82EE */
-  border: solid 1px var(--white);
-}
+td { */
+/*  background-color: var(--tr-td-bg); */ /* Cor hex sem alpha: #EE82EE */
+  /* border: solid 1px var(--white);
+} */
 
 /*tr:nth-child(even) {
   background-color: var(--aquamarine);
@@ -217,7 +220,7 @@ td {
   background-color: var(--aquamarine);
 }*/ /* If I comment out the previous 2 styles, this becomes active. even=linhas pares odd=linhas ímpares */
 
-caption {
+/* caption {
   color: var(--link-color);
 }
 
@@ -240,4 +243,4 @@ caption {
   content: "";
   clear: both;
   display: table;
-}
+} */
