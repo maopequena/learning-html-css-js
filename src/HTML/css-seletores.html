@@ -120,7 +120,7 @@ background-color: yellow;
             </pre>
             
             <h3>Irmão geral (~)</h3>
-            <p>Seleciona todos os elementos que são os próximos irmãos de um elementos especificado. P.ex.:</p>
+            <p>Seleciona todos os elementos que são os irmãos próximos de um elementos especificado. P.ex.:</p>
             <pre>
 <code id="code">div ~ p {
 background-color: yellow;
@@ -327,6 +327,60 @@ background-color: blue;
                 <li><code id="code">::selection</code>, estiliza uma parte selecionada do texto: color, background, cursor, outline</li>
             </ul>
             <p>Também é possível combinar pseudo-elementos a classes com a sintaxe <code id="code">elemento.classe::pseudo-elemento {propriedade: valor;}</code>.</p>
+        </section>
+
+        <section>
+          <h2>Seletores de atributos</h2>
+          <p>Usados com elementos que têm determinado atributo HTML ou que têm um determinado valor de atributo. Para usá-lo envolva o seletor entre colchetes (<code>[ ]</code>). P.ex.:</p>
+
+          <pre>
+            [data-type='primary'] {
+            color: red;
+            }
+          </pre>
+
+          <p>Esta regra procura por todos os elementos que têm o atributo <code>data-type</code> com o valor <code>primary</code>, como este: <code>&lt;div data-type="primary"&gt;</div></code>.</p>
+          <p>Também é possível procurar somente pela propriedade, sem  um valor definido:</p>
+
+          <pre>
+            [data-type] {
+              color: red;
+            }
+
+            <code>&lt;div data-type="primary"&gt;</code>
+            <code>&lt;div data-type="secondary"&gt;</code>
+          </pre>
+
+          <p>Também é possível usar seletores de atributos diferenciando as maiúsculas de minúsculas com o operador <code>s</code>. Isso significa que se houver um elemento HTML com <code>data-type: Primary;</code>, em vez de <code>primary</code>, ele não receberá o que foi definido na regra. Para fazer o oposto, isto é, selecionar minúsculas em vez de maiúsculas, use o operador <code>i</code>. Por exemplo:</p>
+
+          <pre>
+            [data-type='primary' s] {
+              color: red;
+            }
+
+            [data-type='Primary' i] {
+              color: red;
+            }
+          </pre>
+
+          <p>Além disso, há operadores que correspondem a partes de cadeias de caracteres dentro dos valores dos atributos. Por exemplo:</p>
+
+          <pre>
+            <code>/* A href that contains "example.com" */
+            [href*='example.com'] {
+              color: red;
+            }
+
+            /* A href that starts with https */
+            [href^='https'] {
+              color: green;
+            }
+
+            /* A href that ends with .com */
+            [href$='.com'] {
+              color: blue;
+            }</code>
+          </pre>
         </section>
         </div>
 </body>

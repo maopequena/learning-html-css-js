@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<!-- Define o tipo de documento da página como HTML -->
+<html lang="pt-BR">
+  <!-- Para exibir a página com o idioma Português (brasileiro) corretamente -->
+  <meta charset="utf-8" />
+  <!-- Para exibir corretamente os caracteres especiais -->
+  <head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="description" content="Layout" />
+    <meta name="author" content="Lizandra Silva (@maopequena)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <style>
+      .of-vis {
+        background-color: coral;
+        width: 200px;
+        height: 65px;
+        border: 1px solid black;
+        overflow: visible;
+        margin-left: 10px;
+      }
+
+      .of-hid {
+        background-color: cadetblue;
+        width: 200px;
+        height: 65px;
+        border: 1px solid black;
+        overflow: hidden;
+        margin-top: 100px;
+        margin-left: 10px;
+      }
+      .of-scr {
+        background-color: chartreuse;
+        width: 200px;
+        height: 100px;
+        border: 1px solid black;
+        overflow: scroll;
+        margin-left: 10px;
+      }
+
+      .of-aut {
+        background-color: crimson;
+        width: 200px;
+        height: 65px;
+        border: 1px solid black;
+        overflow: auto;
+        margin-left: 10px;
+      }
+      .of-xy {
+        background-color: cornsilk;
+        width: 200px;
+        height: 65px;
+        border: 1px solid black;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Layout</h1>
+        <p>
+          A seguir trataremos de propriedades do CSS que configuram o layout da
+          página HTML.
+        </p>
+      </header>
+      <section>
+        <article>
+          <h2>
+            As propriedades <code>width</code>, <code>max-width</code> e
+            <code>margin: auto</code>.
+          </h2>
+          <p>
+            Já sabemos que um elemento de bloco ocupa toda a largura disponível
+            da página.
+          </p>
+          <p>
+            Definir a propriedade <code>width</code> de um elemento de bloco
+            impedirá que ele se estique até as margens de seu contêiner. Definir
+            as margens como automáticas centraliza o elemento horizontalmente
+            nesse contêiner.
+          </p>
+          <p>
+            Porém, quando a largura da tela é menor que a largura definida, o
+            navegador adiciona barras de rolagem à página e o contêiner pode
+            ficar maior que a tela, vazando nas laterais. Para solucionar esse
+            problema, defina a propriedade <code>max-width</code>.
+          </p>
+
+          <h4>Exemplo</h4>
+          <div style="width: 500px; margin: auto; border: 3px solid red">
+            Este elemento div tem width de 500px.
+          </div>
+          <br />
+          <div style="max-width: 500px; margin: auto; border: 3px solid red">
+            Este elemento div tem max-width de 500px.
+          </div>
+          <p>
+            Arraste a janela do navegador para menos de 500px de largura para
+            ver a diferença entre os dois divs.
+          </p>
+        </article>
+
+        <article>
+          <h2>A propriedade <code>position</code></h2>
+          <p>
+            Especifica o tipo de posicionamento de um elemento
+            (<code>static</code>, <code>relative</code>, <code>fixed</code>,
+            <code>absolute</code> ou <code>sticky</code>). Depois, os elementos
+            são posicionados usando as propridades <code>top</code>,
+            <code>bottom</code>, <code>left</code> e <code>right</code>. Essas
+            propridades, entretanto, funcionam de forma diferente dependendo do
+            valor da propriedade <code>position</code>.
+          </p>
+          <p>
+            <strong>Lembre-se:</strong> essa propriedade define o posicionamento
+            de acordo com o contêiner pai do objeto definido. Isto é, se o
+            elemento estiver dentro de um contêiner, o posicionamento do
+            elemento será relativo ao contêiner.
+          </p>
+
+          <h3><code>position: static</code></h3>
+          <p>
+            Todos os elementos têm essa posição definida por padrão e não são
+            afetados pelas propriedades <code>top</code>, <code>bottom</code>,
+            <code>left</code> e <code>right</code>. Isso define o elemento de
+            acordo com o fluxo normal da página.
+          </p>
+
+          <h4>Exemplo</h4>
+          <div style="position: static; border: 3px solid red">
+            Este elemento div tem <code>position: static;</code>.
+          </div>
+
+          <h3><code>position: relative</code></h3>
+          <p>
+            Um elemento com esta propriedade será posicionado de forma relativa
+            ao seu contêiner, e as propriedades <code>top</code>,
+            <code>bottom</code>, <code>left</code> e <code>right</code> alteram
+            a posição do elemento.
+          </p>
+
+          <h4>Exemplo</h4>
+          <div
+            style="
+              position: relative;
+              left: 70px;
+              border: 3px solid red;
+              width: 50%;
+            "
+          >
+            Este elemento div tem <code>position: relative;</code> e
+            <code>left: 70px;</code>.
+          </div>
+
+          <h3><code>position: fixed</code></h3>
+          <p>
+            Um elemento com esta propriedade é posicionado relativamente ao
+            viewport, isto é, sempre fica no mesmo lugar ao rolar a página. Use
+            <code>top</code>, <code>bottom</code>, <code>left</code> e
+            <code>right</code> para controlar o posicionamento do elemento.
+          </p>
+          <p>
+            O local na página em que o elemento ficaria não tem espaço em
+            branco.
+          </p>
+          <p>
+            Note o elemento fixo no canto direito inferior da página! Veja que
+            ele não ocupa espaço aqui.
+          </p>
+
+          <h4>Exemplo</h4>
+          <div
+            style="
+              position: fixed;
+              bottom: 0;
+              right: 0;
+              width: 300px;
+              border: 3px solid red;
+            "
+          >
+            Este elemento div tem <code>position: fixed;</code> e
+            <code>bottom: 0;</code> e <code>right: 0;</code>.
+          </div>
+
+          <h3><code>position: absolute</code></h3>
+          <p>
+            Um elemento com esta propriedade é posicionado relativamente ao
+            ancestral mais próximo, em vez de relativamente ao viewport, como o
+            elemento <code>fixed</code>. Entretanto, se o elemento absoluto não
+            tiver ancestrais, ele usará o corpo do documento e se movimentará na
+            página com a rolagem.
+          </p>
+          <p>
+            <b>Observação</b>: elementos com posição absoluta são removidos do
+            fluxo normal da página e pode ficar sobrepostos a outros elementos.
+          </p>
+
+          <h4>Exemplo</h4>
+          <div
+            style="
+              position: relative;
+              width: 400px;
+              height: 200px;
+              border: 3px solid red;
+            "
+          >
+            Este elemento div tem <code>position: relative;</code>
+            <div
+              style="
+                position: absolute;
+                top: 80px;
+                right: 0;
+                width: 200px;
+                height: 100px;
+                border: 3px solid green;
+              "
+            >
+              Este elemento div tem <code>position: absolute;</code>
+            </div>
+          </div>
+
+          <h3><code>position: sticky</code></h3>
+          <p>
+            Esta propriedade posiciona o elemento com base na rolagem da página.
+            Esta propriedade alterna o estado entre "relative" e "fixed": o
+            elemento fica relativo até atingir a posição definida, depois fica
+            fixo.
+          </p>
+          <p>
+            <b>Observação</b>: elementos com posição fixa não são removidos do
+            fluxo normal da página e podem ficar sobrepostos a outros elementos.
+          </p>
+          <p>
+            <b>Observação</b>: elementos com posição fixa não tem ancestrais.
+          </p>
+
+          <h4>Exemplo</h4>
+          <a
+            href="https://www.w3schools.com/css/css_positioning.asp#:~:text=Try%20it%20Yourself%20%C2%BB-,position%3A%20sticky%3B,-An%20element%20with"
+            target="_blank"
+            >Exemplo de posicionamento sticky</a
+          >
+        </article>
+
+        <article>
+          <h3>Posicionamento de texto em imagens</h3>
+          <p>
+            Também é possível definir o posicionamento do texto em uma imagem e
+            o formato de uma imagem.
+          </p>
+          <a
+            href="https://www.w3schools.com/css/css_positioning.asp#:~:text=Positioning%20Text%20In%20an%20Image"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Exemplo de posicionamento de textos em uma imagem</a
+          >
+          <a
+            href="https://www.w3schools.com/css/tryit.asp?filename=trycss_clip"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Exemplo de imagem formatada com posicionamento e a propriedade
+            <code>clip</code></a
+          >
+        </article>
+
+        <article>
+          <h3>As propriedades <code>clip</code> e <code>clip-path</code></h3>
+          <p>
+            A propridade <code>clip</code> possibilita definir um retângulo para
+            "recortar" um elemento com posição absoluta. Para tanto, defina as
+            coordenadas dos quatro cantos do retângulo.
+          </p>
+          <p>
+            <b>Observação</b>: essa propriedade não funciona se o
+            "overflow:visible".
+          </p>
+          <a
+            href="https://www.w3schools.com/cssref/playdemo.php?filename=playcss_clip"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Exemplo da propriedade clip</a
+          >
+          <p>
+            A propridade <code>clip-path</code> possibilita definir uma forma
+            básica ou fonte SVG para "recortar" um elemento com posição
+            absoluta.
+          </p>
+          <p>
+            <b>Observação</b>: essa propriedade substitui a propridade
+            <code>clip</code>.
+          </p>
+          <h4>Valores da propridade <code>clip-path</code></h4>
+          <table class="ws-table-all notranslate">
+            <tbody>
+              <tr>
+                <th style="width: 140px">Value</th>
+                <th>Description</th>
+                <th>Demo</th>
+              </tr>
+              <tr>
+                <td><em>clip-source</em></td>
+                <td>Defines a URL to an SVG &lt;clipPath&gt; element</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><i>basic-shape</i></td>
+                <td>
+                  Clips an element to a basic shape: circle, ellipse, polygon or
+                  inset
+                </td>
+                <td>
+                  <a
+                    target="_blank"
+                    class="ws-btn btnsmall"
+                    href="playdemo.php?filename=playcss_clip-path&amp;preval=circle(40%)"
+                    >Demo ❯</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>margin-box</td>
+                <td>Uses the margin box as the reference box</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>border-box</td>
+                <td>Uses the border box as the reference box</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>padding-box</td>
+                <td>Uses the padding box as the reference box</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>content-box</td>
+                <td>Uses the content box as the reference box</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>fill-box</td>
+                <td>Uses the object bounding box as reference box</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>stroke-box</td>
+                <td>Uses the stroke bounding box as reference box</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>view-box</td>
+                <td>Uses the SVG viewport as reference box</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>none</td>
+                <td>This is default. No clipping is done</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>initial</td>
+                <td>
+                  Sets this property to its default value.
+                  <a href="css_initial.php">Read about <em>initial</em></a>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>inherit</td>
+                <td>
+                  Inherits this property from its parent element.
+                  <a href="css_inherit.php">Read about <em>inherit</em></a>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article>
+          <h3>A propriedade <code>z-index</code></h3>
+          <p>
+            Define a ordem de empilhamento de um elemento e quais elementos
+            sobreporão outros. A ordem pode ser positiva ou negativa, isto é,
+            quais ficarão na frente e quais, atrás.
+          </p>
+          <h4>Exemplo</h4>
+          <p>
+            Como a imagem tem um índice-z de 0, fica na frente do div central da
+            página.
+          </p>
+          <img
+            src="../img/img_tree.png"
+            style="position: relative; z-index: 0"
+          />
+        </article>
+
+        <article>
+          <h3>A propriedade <code>overflow</code></h3>
+          <p>
+            Define se um conteúdo deve ser cortado e se serão exibidas barras de
+            rolagem no caso de o conteúdo ser maior que a área definida para o
+            elemento.
+          </p>
+          <h4>Valores da propriedade <code>overflow</code></h4>
+          <ul>
+            <li>
+              <b>visible</b>: padrão. o conteúdo que sobra não é cortado e é
+              processado fora da caixa do elemento.
+            </li>
+            <li>
+              <b>hidden</b>: o conteúdo que sobra é cortado e o restante fica
+              invisível.
+            </li>
+            <li>
+              <b>scroll</b>: o conteúdo que sobra é cortado e são exibidas
+              barras de rolagem para o restante.
+            </li>
+            <li>
+              <b>auto</b>: similar a <code>scroll</code>, mas as barras de
+              rolagem aparecem conforme necessário.
+            </li>
+          </ul>
+          <p>
+            <b>Observação</b>: essa propriedade só funciona para elementos com
+            uma altura definida.
+          </p>
+          <h4>Exemplos</h4>
+          <div class="of-vis">
+            Overflow: visible. You can use the overflow property when you want
+            to have better control of the layout. The overflow property
+            specifies what happens if content overflows an element's box.
+          </div>
+          <br />
+          <div class="of-hid">
+            Overflow: hidden. You can use the overflow property when you want to
+            have better control of the layout. The overflow property specifies
+            what happens if content overflows an element's box.
+          </div>
+          <br />
+          <div class="of-scr">
+            Overflow: scroll. You can use the overflow property when you want to
+            have better control of the layout. The overflow property specifies
+            what happens if content overflows an element's box.
+          </div>
+          <br />
+          <div class="of-aut">
+            Overflow: auto. You can use the overflow property when you want to
+            have better control of the layout. The overflow property specifies
+            what happens if content overflows an element's box.
+          </div>
+
+          <h4>overflow-x e overflow-y</h4>
+          <p>
+            Definem o que acontece com os eixos horizontal e vertical,
+            respectivamente, do elemento em questão.
+          </p>
+
+          <div class="of-xy">
+            overflow-x: hidden specifies what to do with the left/right edges of
+            the content. overflow-y: scroll specifies what to do with the
+            top/bottom edges of the content.
+          </div>
+
+          <h4>overflow: wrap</h4>
+          <p>overflow-wrap: normal|anywhere|break-word|initial|inherit;</p>
+          <p>
+            Define se o navegador pode ou não quebrar linhas se o conteúdo for
+            muito grande para o contêiner.
+          </p>
+          <a
+            href="https://www.w3schools.com/cssref/playdemo.php?filename=playcss_overflow-wrap"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Demonstração</a
+          >
+        </article>
+
+        <article>
+          <h3>As propriedades <code>float</code> e <code>clear</code></h3>
+          <p>
+            <code>float</code> define como o elemento deve flutuar na página e
+            <code>clear</code> define quais elementos podem flutuar ao lado do
+            elemento com esta propridade e em qual lado.
+          </p>
+          <p>
+            O uso mais simples de <code>float</code> é fazer o texto se adequar
+            em volta de uma imagem.
+          </p>
+          <p>Valores de float: left, right, none e inherit.</p>
+          <p>
+            clear deve corresponder ao float usado, isto é, se o elemento tiver
+            um float: left, o clear deve ser o mesmo.
+          </p>
+          <p>Valores de clear: left, right, none, both e inherit.</p>
+          <p>
+            Consulte também:
+            <a
+              href="https://www.w3schools.com/css/css_float_clear.asp#:~:text=Try%20it%20Yourself%20%C2%BB-,The%20clearfix%20Hack,-If%20a%20floated"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Cleafix Hack</a
+            >
+            e
+            <a
+              href="https://www.w3schools.com/css/css_float_examples.asp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Exemplos de float</a
+            >.
+          </p>
+          <img
+            src="../img/all-float-properties.png"
+            alt="Todas as propridades de float"
+          />
+        </article>
+
+        <article>
+          <h3>display: inline-block</h3>
+          <p>
+            Em comparação com o elemento <code>display: inline</code>, a
+            principal diferença é que
+            <code>display: inline-block</code> possibilita definir a largura e a
+            altura do elemento. Além disso, com
+            <code>display: inline-block</code>, as margens e paddings superior e
+            inferior são respeitadas, o que não acontece com
+            <code>display: inline</code>.
+          </p>
+          <p>
+            Em comparação com <code>display: block</code>, a principal diferença
+            é que <code>display: inline-block</code> não adiciona uma quebra de
+            linha após o elemento, então um elemento fica grudado aos que estão
+            ao lado dele.
+          </p>
+          <p>
+            O exemplo a seguir mostra a diferença de comportamento de
+            <code>display: inline</code>, <code>display: inline-block</code> e
+            <code>display: block</code>.
+          </p>
+
+          <a
+            href="https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_span1"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Demonstração</a
+          >
+
+          <p>
+            Um uso comum para esta propriedade é posicionar itens
+            horizontalmente, por exemplo para criar um menu de navegação.
+          </p>
+
+          <a
+            href="https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_nav"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Demonstração</a
+          >
+        </article>
+
+        <article>
+          <h3>Alinhamento horizontal e vertical de elementos</h3>
+          <p>
+            Para centralizar um elemento de bloco horizontalmente (como
+            <code>&lt;div&gt;</code>), use <code>margin: auto;</code>. Defina a
+            largura do elemento para que ele não se estique para as bordas de
+            seu contêiner. Dessa forma, o elemento tomará a largura especificada
+            e o restante do espaço será dividido igualmente entre as duas
+            margens. Por exemplo:
+          </p>
+
+          <div id="layout-centered-div">
+            Este div está centralizado horizontalmente usando
+            <code>margin: auto;</code>.
+          </div>
+
+          <p>
+            <b>Observação</b>: se a largura do elemento não for definida, a
+            centralização não funcionará.
+          </p>
+        </article>
+
+        <article>
+          <h3>Alinhamento horizontal e vertical de texto</h3>
+          <p>
+            Para centralizar o texto dentro de um elemento, use
+            <code>text-align: center;</code>. Por exemplo:
+          </p>
+
+          <p style="text-align: center; color: red">
+            <i>Este texto está centralizado horizontalmente.</i>
+          </p>
+        </article>
+
+        <article>
+          <h3>Alinhamento horizontal e vertical de imagens</h3>
+          <p>
+            Para centralizar uma imagem, defina as margens esquerda e direita
+            como <code>auto</code> e defina-a com <code>display: block;</code>.
+            Por exemplo:
+          </p>
+
+          <img
+            src="../img/paris.jpg"
+            alt="Paris"
+            style="margin: 0 auto; display: block"
+          />
+        </article>
+
+        <article>
+          <h3>
+            Alinhamento horizontal de elementos usando <code>position</code>
+          </h3>
+          <p>
+            É possível alinhar elementos à esquerda ou à direita usando a
+            propriedade <code>position</code>. Por exemplo:
+          </p>
+          <div
+            style="
+              position: absolute;
+              right: 400px;
+              width: 300px;
+              border: 3px solid red;
+              padding: 10px;
+            "
+          >
+            <p style="text-align: left">
+              <b>Com position: absolute, right: 400px.</b><br />
+              In my younger and more vulnerable years my father gave me some
+              advice that I've been turning over in my mind ever since.
+            </p>
+          </div>
+
+          <p>
+            <b>Observação</b>: Elementos com posição absoluta são removidos do
+            fluxo normal da página e pode sobrepor outros elementos.
+          </p>
+        </article>
+
+        <article>
+          <h3>Alinhamento horizontal de elementos usando <code>float</code></h3>
+          <p>
+            Outro método de alinhar elementos é usando a propriedade
+            <code>float</code>. Por exemplo:
+          </p>
+
+          <div
+            style="
+              float: right;
+              margin-right: 400px;
+              margin-top: 50px;
+              width: 300px;
+              border: 3px solid red;
+              padding: 10px;
+            "
+          >
+            <p>
+              <b>Com float: right, margin-right: 400px.</b><br />
+              In my younger and more vulnerable years my father gave me some
+              advice that I've been turning over in my mind ever since.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <h3>Clearfix!</h3>
+          <p>
+            Se um elemento for mais alto que o elemento que o contém e
+            aplicarmos a propridade <code>float</code> a ele, ele ficará para
+            fora de seu contêiner. É possível consertar isso com o a
+            pseudoclasse <code>clearfix</code>. Por exemplo:
+          </p>
+
+          <h4>Without Clearfix</h4>
+          <p>
+            This image is floated to the right. It is also taller than the
+            element containing it, so it overflows outside of its container:
+          </p>
+
+          <div style="border: 3px solid red; padding: 10px; width: 500px">
+            <img
+              class="img1"
+              src="../img/pineapple.jpg"
+              alt="Pineapple"
+              width="170"
+              height="170"
+            />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            imperdiet...
+          </div>
+
+          <h4 style="clear: right">With New Modern Clearfix</h4>
+          <p>
+            Add the clearfix hack to the containing element, to fix this
+            problem:
+          </p>
+
+          <div
+            style="border: 3px solid red; padding: 10px; width: 500px"
+            class="clearfix"
+          >
+            <img
+              class="img2"
+              src="../img/pineapple.jpg"
+              alt="Pineapple"
+              width="170"
+              height="170"
+            />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            imperdiet...
+          </div>
+        </article>
+
+        <article>
+          <h3>Centralizar verticalmente usando padding</h3>
+          <p>
+            Uma solução simples para centralizar elementos verticalmente é usar
+            <code>padding</code> em <code>top</code> e <code>bottom</code>. Para
+            centralizar horizontal e verticalmente, use <code>padding</code> e
+            <code>text-align</code>.
+          </p>
+
+          <div style="padding: 70px 0; border: 3px solid red; width: 500px">
+            <p>Texto centralizado verticalmente com padding.</p>
+          </div>
+
+          <div
+            style="
+              padding: 70px 0;
+              border: 3px solid red;
+              width: 500px;
+              text-align: center;
+              margin-top: 10px;
+            "
+          >
+            <p>
+              Texto centralizado vertical e horizontalmente com padding e
+              text-align.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <h3>Centralizar verticalmente usando <code>line-height</code></h3>
+          <p></p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
