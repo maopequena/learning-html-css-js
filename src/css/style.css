@@ -32,15 +32,16 @@
 * {
   font-family: "Raleway", Helvetica, sans-serif;
   font-size: 1rem;
+  color-scheme: light dark;
 }
 
 /* Define o comportamento de rolagem como suave e o fundo como cinza claro */
 html {
   scroll-behavior: smooth;
-  background-color: #000000; /* var(--bg-grey) */
-  color: #c2c2c2;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-color: #000000; */ /* var(--bg-grey) */
+  /*color: #c2c2c2; */
+  /* background-repeat: no-repeat;
+  background-size: cover; */
   margin: 10px 0px;
   line-height: 1.5;
 }

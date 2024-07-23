@@ -511,14 +511,14 @@
               target="_blank"
               rel="noopener noreferrer"
               >Cleafix Hack</a
-            >
-            e
+            >, 
             <a
               href="https://www.w3schools.com/css/css_float_examples.asp"
               target="_blank"
               rel="noopener noreferrer"
               >Exemplos de float</a
-            >.
+            > e 
+            <a href="https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/" target="_blank" rel="noopener noreferrer">The end of the clearfix hack?</a>.
           </p>
           <img
             src="../img/all-float-properties.png"
@@ -753,7 +753,42 @@
 
         <article>
           <h3>Centralizar verticalmente usando <code>line-height</code></h3>
-          <p></p>
+          <p>Outro truque é usar a propridade <code>line-height</code> para centralizar verticalmente, com um valor igual à propriedade <code>height</code>.</p>
+
+          <div style="line-height:200px; height:200px; border:3px solid red; text-align:center;">
+            <p style="line-height:1.5; display:inline-block; vertical-align:middle;">I am vertically and horizontally centered.</p>
+          </div>
+        </article>
+
+        <article>
+          <h3>Centralizar verticalmente usando <code>position</code> e <code>transform</code></h3>
+          <p>Se não é possível usar <code>padding</code> e <code>line-height</code>, uma solução é usar o posicionamento e a propriedade <code>transform</code>:</p>
+
+          <div style="height:200px; border:3px solid red; position: relative;">
+            <p style="margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%,-50%); transform: translate(-50%,-50%);">I am vertically and horizontally centered.</p>
+          </div>
+        </article>
+
+        <article>
+          <h3>Centralizar verticalmente usando <code>flexbox</code></h3>
+          <p>A propriedade <code>flexbox</code> também centraliza os elementos, mas não é compatível com o Internet Explorer v.10 ou versões mais antigas.</p>
+
+          <div style="display: flex; justify-content: center; align-items: center; height: 200px; border: 3px solid red;">
+            <p>I am vertically and horizontally centered.</p>
+          </div>
+        </article>
+
+        <article>
+          <h3>Layout de páginas da Web</h3>
+          
+          <img src="../img/website-layout.png" alt="Layout de páginas da Web">
+
+          <p>O cabeçalho geralmente fica no topo da página (ou logo abaixo do menu de navegação) e costuma apresentar um logotipo e o nome do site.</p>
+          <p>A barra de navegação contém uma lista de links para ajudar os visitantes a navegar pelo site.</p>
+          <p>O layout da seção de conteúdo geralmente depende dos usuários que se deseja atrair com o site. Os layouts mais comuns são de 1 (para navegadores móveis), 2 (para tablets e laptops) ou 3 (para desktops apenas) colunas. Uma dessas colunas pode ocupar 50% da largura disponível, exibindo o conteúdo principal, deixando os outros 50% para serem divididos entre outras duas colunas (cada uma com 25%).</p>
+          <p>O rodapé fica no final da página e geralmente apresenta informações como copyright e de contato.</p>
+
+          <p>Para saber mais e ver exemplos, clique <a href="https://www.w3schools.com/css/css_website_layout.asp" target="_blank">aqui</a>.</p>
         </article>
       </section>
     </main>

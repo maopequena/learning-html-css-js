@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8" />
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css" />
+  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="description" content="Unidades" />
+  <meta name="author" content="Lizandra Silva (@maopequena)" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unidades de tamanho</title>
+</head>
+
+<body>
+  <header>
+    <h1>Unidades de CSS</h1>
+    <p>O CSS tem várias unidades que expressam comprimento. Muitas propriedades do CSS usam valores de "comprimento", como <code>width</code>, <code>margin</code>, <code>padding</code>, <code>font-size</code>, etc. O comprimento é representado por um número seguido de uma unidade, como <code>10px</code>, <code>2em</code>, etc. É possível, ainda, usar valores negativos para algumas propriedades.</p>
+
+    <p><strong>Observação</strong>: NÃO USE espaço entre o número e a unidade. Porém, se o valor é <code>0</code>, você pode omitir a unidade.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Categorias de comprimento</h2>
+      <p>Há cinco categorias de unidades de comprimento: números, porcentagens, dimensões absolutas, dimensões relativas e ângulos.</p>
+
+      <h3>Comprimentos numéricos</h3>
+      <p>Números são usados para definir <code>opacity</code>, <code>line-height</code> e, até, os valores dos canais de cores para <code>rgb</code>. Eles podem ser inteiros (1, 2, 3, 100) ou decimais (.1, .2, .3), e não apresentam uma unidade.</p>
+      <p>O significado dos números depende de seu contexto. Por exemplo, ao definir <code>line-height</code>, um número representa uma fração se não tiver unidade:</p>
+
+      <pre>
+        <code>
+          p {
+            font-size: 24px;
+            line-height: 1.5;
+          }
+        </code>
+      </pre>
+
+      <p>O código acima define a altura da linha com base em um fonte com tamanho de <code>24px</code>, então <code>1.5</code> calcula um valor de <code>36px</code> (24 * 1,5 = 36).</p>
+
+      <p><strong>Observação</strong>: recomenda-se usar um valor sem unidade para <code>line-height</code>. Como o tamanho da fonte pode ser herdado, definir a altura da linha sem a unidade faz com que ela seja relativa ao tamanho da fonte, o que proporciona uma experiência melhor do que defini-la explicitamente e pode fazer com que tenha uma aparência desagradável com certos tamanhos de fonte.</p>
+
+      <p>Você também pode usar números nos seguintes:</p>
+      <ul>
+      <li>Ao definir valores para filtros: <code>filter: sepia(0.5)</code> aplica um filtro de sépia a 50% ao elemento.</li>
+      <li>Ao definir a opacidade: <code>opacity: 0.5</code> aplica uma transparência de 50%.</li>
+      <li>Em canais de cores: em <code>rgb(50, 50, 50)</code> aceita-se valores de 0 a 255 sem unidades para definir a cor.</li>
+      <li>Para transformar um elemento: <code>transform: scale(1.2)</code> escalona o elemento em 120% de seu tamanho inicial.</li>
+      </ul>
+
+      <h3>Comprimentos percentuais</h3>
+      <p>Ao usar porcentagens no CSS, é preciso saber como calculá-la. Por exemplo, <code>width</code> é calculada como uma porcentagem da largura disponível no elemento pai.</p>
+      
+      <h3>Dimensões absolutas</h3>
+      <p>Ao usar uma unidade com o valor, esse conjunto é chamado de "dimensão". Há dois tipos de dimensão: absoluta e relativa.</p>
+      <p>As unidades de comprimento absolutas são fixas e o comprimento aparece exatamente como o tamanho definido por elas, o que as torna bem previsíveis. Não se recomenda usar unidades de comprimento absolutas em telas, porque os tamanhos de telas podem variar. Entretanto, recomenda-se seu uso quando se sabe qual é o meio de saída, como um layout de impressão.</p>
+
+      <img src="../img/absolute-units.png" alt="Unidades de comprimento absolutas">
+
+      <p>* Pixels (px) são relativos ao dispositivo de exibição. Para dispositivos com baixo DPI, 1px é UM pixel do dispositivo (dot) da tela. Para impressoras e telas de alta resolução, 1px implica em vários pixels do dispositivo.</p>
+      <p>Também é possível usar a unidade <code>dpi</code> (dots per inch) para definir, por exemplo, uma media query para telas com altíssima resolução, que oferece uma imagem com resolução mais alta para telas como Retina displays. </p>
+
+      <h3>Dimensões relativas</h3>
+      <p>Unidades de comprimento relativas definem um comprimento relativo a outra propriedade de comprimento, de forma muito similar às porcentagens. As unidades relativas se adaptam melhor aos diferentes meios de processamento.</p>
+
+      <img src="../img/font-size-relative-units.png" alt="Unidades de comprimento relativas ao tamanho da fonte">
+
+      <p><strong>Observação</strong>: as unidades <code>em</code> e <code>rem</code> são extremamente úteis para criar um layout escalonável!</p>
+
+      <img src="../img/viewport-size-relative-units.png" alt="Unidades de comprimento relativas ao tamanho da tela">
+
+      <p>* Viewport = o tamanho da janela do navegador. Se o viewport tem 50 cm de largura, 1 vw = 0,5 cm.</p>
+
+      <h3>Ângulos</h3>
+      <p>No <a href="https://web.dev/learn/css/color" target="_blank">módulo sobre cores</a>, vimos algumas unidades com ângulos, que são úteis para definir valores em graus, como o tom (H) do <code>hsl</code>. Elas também são úteis para girar elementos com a função <code>transform</code>.</p>
+      <p>As unidades de ângulo são <strong>rad</strong> (radians), <strong>grad</strong> (gradians) e <strong>turn</strong>, que representa parte de um ângulo, em que 1turn = 360deg e 0.5turn = 180deg.</p>
+
+      <p>Calcula-se dimensões absolutas com base em um único valor base compartilhado, mas calcula-se dimensões relativas com base em um valor variável.</p>
+    </section>
+  </main>
+  </body>
+</html>
