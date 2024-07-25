@@ -3,9 +3,6 @@
 <meta charset="utf-8" />
 <head>
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../css/style.css" />
   <meta name="keywords" content="HTML, CSS, JavaScript" />
   <meta name="description" content="Barras de navegação" />
@@ -83,83 +80,91 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Barras de navegação</h1>
-    <p>Ter uma navegação fácil de usar é importante para qualquer site. Com o CSS é possível transformar menus HTML enfadonhos em belas barras de navegação.</p>
-    <p>Basicamente, uma barra de navegação é uma lista de links, portanto é preciso usar os elementos <code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code> para, depois, estilizá-los conforme desejado.</p>
-  </header>
+  <main>
+    <header>
+      <h1>Barras de navegação</h1>
+      <p>Ter uma navegação fácil de usar é importante para qualquer site. Com o CSS é possível transformar menus HTML enfadonhos em belas barras de navegação.</p>
+      <p>Basicamente, uma barra de navegação é uma lista de links, portanto é preciso usar os elementos <code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code> para, depois, estilizá-los conforme desejado.</p>
+    </header>
 
-  <section>
-    <h3>Exemplo</h3>
-    <p>Os links da lista a seguir não estão definidos e, portanto, não levam a nenhuma página. Porém, vamos estilizar a lista para que se pareça com uma barra de navegação.</p>
-    <p>Para criar uma barra de navegação, estilize os elementos <code>&lt;a&gt;</code> dentro da lista, além dos elementos <code>&lt;li&gt;</code> e <code>&lt;ul&gt;</code>.</p>
+    <section>
+      <h3>Exemplo</h3>
+      <p>Os links da lista a seguir não estão definidos e, portanto, não levam a nenhuma página. Porém, vamos estilizar a lista para que se pareça com uma barra de navegação.</p>
+      <p>Para criar uma barra de navegação, estilize os elementos <code>&lt;a&gt;</code> dentro da lista, além dos elementos <code>&lt;li&gt;</code> e <code>&lt;ul&gt;</code>.</p>
 
-    <ul>
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#novidades">Novidades</a></li>
-      <li><a href="#contato">Contato</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-    </ul>
-
-    <p>O segundo passo é remover os marcadores, as margens e os paddings:</p>
-
-    <div class="passo-2">
       <ul>
         <li><a href="#inicio">Início</a></li>
         <li><a href="#novidades">Novidades</a></li>
         <li><a href="#contato">Contato</a></li>
         <li><a href="#sobre">Sobre</a></li>
       </ul>
-    </div>
 
-    <p><code>list-style-type: none;</code> remove os marcadores e definir <code>margin: 0;</code> e <code>padding: 0;</code> remove as configurações padrão do navegador.</p>
-    <p>O terceiro passo é definir a propriedade <code>display</code> como <code>inline</code>, a <code>gap</code> como <code>10px</code> e remover as decorações do texto:</p>
+      <p>O segundo passo é remover os marcadores, as margens e os paddings:</p>
 
-    <div id="passo-3">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#novidades">Novidades</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-      </ul>
-    </div>
+      <div class="passo-2">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#novidades">Novidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+      </div>
 
-    <p>Em seguida, alteramos o padding, colocamos uma cor de fundo, a borda e uma cor de texto:</p>
+      <p><code>list-style-type: none;</code> remove os marcadores e definir <code>margin: 0;</code> e <code>padding: 0;</code> remove as configurações padrão do navegador.</p>
+      <p>O terceiro passo é definir a propriedade <code>display</code> como <code>inline</code>, a <code>gap</code> como <code>10px</code> e remover as decorações do texto:</p>
 
-    <div class="passo-4">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#novidades">Novidades</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-      </ul>
-    </div>
+      <div id="passo-3">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#novidades">Novidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+      </div>
 
-    <p>A última etapa é definir o seletor <code>&#58hover</code> para alterar a cor do link selecionado</p>
+      <p>Em seguida, alteramos o padding, colocamos uma cor de fundo, a borda e uma cor de texto:</p>
 
-    <div class="passo-5">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#novidades">Novidades</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-      </ul>
-    </div>
+      <div class="passo-4">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#novidades">Novidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+      </div>
 
-    <p class="inicio-exemplo">Você também pode adicionar uma classe chamada "active" ao link atual e estilizá-la para que o usuário saiba em que página ele está.</p>
+      <p>A última etapa é definir o seletor <code>&#58hover</code> para alterar a cor do link selecionado</p>
 
-    <div class="passo-6">
-      <ul>
-        <li><a class="active" href="#inicio">Início</a></li>
-        <li><a href="#novidades">Novidades</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-      </ul>
-    </div>
-  </section>
+      <div class="passo-5">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#novidades">Novidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+      </div>
 
-  <section>Podemos ainda, criar barras de navegação verticais ou "fixadas" na lateral da tela. Para ver como, siga <a href="https://www.w3schools.com/css/css_navbar_vertical.asp" target="_blank">este link</a>. Para saber mais sobre barras de navegação horizontais, siga <a href="https://www.w3schools.com/css/css_navbar_horizontal.asp" target="_blank">este link</a>.</section>
+      <p class="inicio-exemplo">Você também pode adicionar uma classe chamada "active" ao link atual e estilizá-la para que o usuário saiba em que página ele está.</p>
 
-  <section>Para criar uma lista suspensa na barra de navegação, ou para criar outros itens suspensos, consulte <a href="https://www.w3schools.com/css/css_dropdowns.asp" target="_blank">este link</a>.</section>
+      <div class="passo-6">
+        <ul>
+          <li><a class="active" href="#inicio">Início</a></li>
+          <li><a href="#novidades">Novidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <p>Podemos ainda, criar barras de navegação verticais ou "fixadas" na lateral da tela.</p>
+      <p>Para ver como, siga <a href="https://www.w3schools.com/css/css_navbar_vertical.asp" target="_blank">este link</a>.</p>
+      <p>Para saber mais sobre barras de navegação horizontais, siga <a href="https://www.w3schools.com/css/css_navbar_horizontal.asp" target="_blank">este link</a>.</p>
+    </section>
+
+    <section>
+      <p>Para criar uma lista suspensa na barra de navegação, ou para criar outros itens suspensos, consulte <a href="https://www.w3schools.com/css/css_dropdowns.asp" target="_blank">este link</a>.</p>
+    </section>
+  </main>
 </body>
 </html>

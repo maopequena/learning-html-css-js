@@ -3,9 +3,6 @@
 <meta charset="utf-8" />
 <head>
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../css/style.css" />
   <meta name="keywords" content="HTML, CSS, JavaScript" />
   <meta name="description" content="Opacidade e transparência" />
@@ -34,36 +31,38 @@
 </head>
 
 <body>
-  <header>
-    <h1>Opacidade/Transparência</h1>
-    <p>A propriedade <code>opacity</code> define a opacidade (ou transparência) de um elemento. Ela recebe um valor de <code>0.0</code> a <code>1.0</code>, do mais ao menos transparente. Por exemplo:</p>
+  <main>
+    <header>
+      <h1>Opacidade/Transparência</h1>
+      <p>A propriedade <code>opacity</code> define a opacidade (ou transparência) de um elemento. Ela recebe um valor de <code>0.0</code> a <code>1.0</code>, do mais ao menos transparente. Por exemplo:</p>
 
-    <div class="div1">
-    <img src="../img/img_forest.jpg" alt="Floresta com 0.2 de transparência" style="opacity: 0.2; width: 250px;" title="Floresta com 0.2 de transparência">
-    <img src="../img/img_forest.jpg" alt="Floresta com 0.5 de transparência" style="opacity: 0.5; width: 250px;"  title="Floresta com 0.5 de transparência">
-    <img src="../img/img_forest.jpg" alt="Floresta com 1.0 de transparência" style="opacity: 1.0; width: 250px;"  title="Floresta com 1.0 de transparência">
-    </div>
-  </header>
+      <div class="div1">
+      <img src="../img/img_forest.jpg" alt="Floresta com 0.2 de transparência" style="opacity: 0.2; width: 250px;" title="Floresta com 0.2 de transparência">
+      <img src="../img/img_forest.jpg" alt="Floresta com 0.5 de transparência" style="opacity: 0.5; width: 250px;"  title="Floresta com 0.5 de transparência">
+      <img src="../img/img_forest.jpg" alt="Floresta com 1.0 de transparência" style="opacity: 1.0; width: 250px;"  title="Floresta com 1.0 de transparência">
+      </div>
+    </header>
 
-  <section>
-    <p>Usa-se essa propriedade frequentemente com o seletor <code>&#58;hover</code> para alterar a opacidade ao passar o mouse:</p>
+    <section>
+      <p>Usa-se essa propriedade frequentemente com o seletor <code>&#58;hover</code> para alterar a opacidade ao passar o mouse:</p>
 
-    <div class="div1">
-      <img src="../img/img_forest.jpg" alt="Floresta com 0.5 de transparência" class="img-hover-sect1">
-      <img src="../img/img_forest.jpg" alt="Floresta com 0.5 de transparência" class="img-hover-sect2">
-    </div>
-  </section>
+      <div class="div1">
+        <img src="../img/img_forest.jpg" alt="Floresta com 0.5 de transparência" class="img-hover-sect1">
+        <img src="../img/img_forest.jpg" alt="Floresta com 0.5 de transparência" class="img-hover-sect2">
+      </div>
+    </section>
 
-  <section>
-    <p>Os elementos filhos de um elemento com a propriedade <code>opacity</code> herdam a opacidade, então o texto de uma imagem ou caixa transparente pode ser difícil de ler.</p>
+    <section>
+      <p>Os elementos filhos de um elemento com a propriedade <code>opacity</code> herdam sua opacidade, então o texto de uma imagem ou caixa transparente pode ser difícil de ler.</p>
 
-    <div style="opacity: 0.3; background-color: red; width: 300px;height: 100px;">Texto em caixa com opacidade 0.3</div>
+      <div style="opacity: 0.3; background-color: red; width: 300px;height: 100px;">Texto em caixa com opacidade 0.3</div>
 
-    <p>Se não quiser alterar a opacidade dos elementos filhos, use o valor de cor RGBA. Por exemplo:</p>
+      <p>Se não quiser alterar a opacidade dos elementos filhos, use o valor de cor RGBA. Por exemplo:</p>
 
-    <div style="background-color: rgba(255, 0, 0, 0.3); width: 300px;height: 100px;">Texto em caixa com valor de cor RGBA vermelho e alpha 0.3</div>
+      <div style="background-color: rgba(255, 0, 0, 0.3); width: 300px;height: 100px;">Texto em caixa com valor de cor RGBA vermelho e alpha 0.3</div>
 
-    <p>Também é possível adicionar imagens de fundo a um <code>&lt;div&gt;</code> (ou à página) e colocar outro elemento com transparência, para que o fundo apareça.</p>
-  </section>
+      <p>Também é possível adicionar imagens de fundo a um <code>&lt;div&gt;</code> (ou à página) e colocar outro elemento com transparência, para que o fundo apareça.</p>
+    </section>
+  </main>
 </body>
 </html>

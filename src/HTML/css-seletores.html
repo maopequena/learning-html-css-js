@@ -3,9 +3,7 @@
 <meta charset="utf-8">
 <head>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fcd7dd333f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="description" content="Seletores do CSS">
@@ -20,11 +18,11 @@
         <h1>Seletores do CSS</h1>
         <p>Há 5 categorias de seletores:</p>
         <ul class="list-square">
-          <li><b>Seletores simples</b>: seleciona elementos com base no nome, na id ou na classe.</li>
-          <li><b><a href="https://www.w3schools.com/css/css_combinators.asp" target="_blank">Seletores combinados</a></b>: seleciona elementos com base em um relacionamento específico entre eles.</li>
-          <li><b><a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">Seletores de pseudo-classe</a></b>: seleciona elementos com base em um estado ou comportamento.</li>
-          <li><b><a href="https://www.w3schools.com/css/css_pseudo_elements.asp" target="_blank">Seletores de pseudo-elemento</a></b>: seleciona e estiliza uma parte de um elemento.</li>
-          <li><b><a href="https://www.w3schools.com/css/css_attribute_selectors.asp" target="_blank">Seletores de atributos</a></b>: seleciona elementos com base em um atributo ou valor de atributo.</li>
+          <li><strong>Seletores simples</strong>: seleciona elementos com base no nome, na id ou na classe.</li>
+          <li><strong><a href="https://www.w3schools.com/css/css_combinators.asp" target="_blank">Seletores combinados</a></strong>: seleciona elementos com base em um relacionamento específico entre eles. <a href="#combinados"><i class="fa-solid fa-anchor"></i></a></li>
+          <li><strong><a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">Seletores de pseudo-classe</a></strong>: seleciona elementos com base em um estado ou comportamento. <a href="#pseudo-classe"><i class="fa-solid fa-anchor"></i></a></li>
+          <li><strong><a href="https://www.w3schools.com/css/css_pseudo_elements.asp" target="_blank">Seletores de pseudo-elemento</a></strong>: seleciona e estiliza uma parte de um elemento. <a href="#pseudo-elemento"><i class="fa-solid fa-anchor"></i></a></li>
+          <li><strong><a href="https://www.w3schools.com/css/css_attribute_selectors.asp" target="_blank">Seletores de atributos</a></strong>: seleciona elementos com base em um atributo ou valor de atributo. <a href="#atributos"><i class="fa-solid fa-anchor"></i></a></li>
         </ul>
       </header>
 
@@ -91,8 +89,8 @@
           }</code>
         </pre>
 
-        <h2>Seletores combinados</h2>
-        <p>Um seletor CSS pode conter mais de um seletor simples. E podemos usar os quatro combinadores a seguir para uni-los:</p>
+        <h2 id="combinados">Seletores combinados</h2>
+        <p>Um seletor pode conter mais de um seletor simples. E podemos usar os quatro combinadores a seguir para uni-los:</p>
 
         <h3>Descendente (espaço)</h3>
         <p>Corresponde todos os elementos que são descendentes do elemento especificado. P.ex.:</p>
@@ -127,7 +125,7 @@
           }</code>
         </pre>
 
-        <h2>Seletores de pseudo-classe</h2>
+        <h2 id="pseudo-classe">Seletores de pseudo-classe</h2>
         <p>Seletores de pseudo-classe permitem estilizar elementos usando um determinado estado desse elemento. Por exemplo:</p>
         <ul>
             <li>Estilizar um elemento ao passar o mouse sobre ele (<code>:hover</code>)</li>
@@ -140,7 +138,7 @@
           background-color: yellow;
           }</code>
         </pre>
-        <p><b>Observação</b>: <code>a:hover</code> DEVE vir após <code>a:link</code> e <code>a:visited</code> nas definições do CSS para funcionar! <code>a:active</code> DEVE vir após <code>a:hover</code> para funcionar! Os nomes de pseudo-classes não diferenciam maiúsculas de minúsculas.</p>
+        <p><strong>Observação</strong>: <code>a:hover</code> DEVE vir após <code>a:link</code> e <code>a:visited</code> nas definições do CSS para funcionar! <code>a:active</code> DEVE vir após <code>a:hover</code> para funcionar! Os nomes de pseudo-classes não diferenciam maiúsculas de minúsculas.</p>
         <p>Também é possível combinar pseudo-classe e ids ou classes. P.ex.:</p>
         <pre>
           <code>a#myId:first-child {
@@ -317,9 +315,9 @@
           </tbody>
         </table>
 
-        <p><b>Observação</b>: O símbolo de dois-pontos duplo (::) é o que diferencia um pseudo-elemento de uma pseudo-classe, mas como essa distinção não estava presente em versões mais antigas das especificações do CSS, os navegadores oferecem suporte a único dois-pontos para os pseudo-elementos originais, como <code>:before</code> e <code>:after</code> para ajudar com a retrocompatibilidade em navegadores antigos como o IE8.</p>
+        <p><strong>Observação</strong>: O símbolo de dois-pontos duplo (::) é o que diferencia um pseudo-elemento de uma pseudo-classe, mas como essa distinção não estava presente em versões mais antigas das especificações do CSS, os navegadores oferecem suporte a único dois-pontos para os pseudo-elementos originais, como <code>:before</code> e <code>:after</code> para ajudar com a retrocompatibilidade em navegadores antigos como o IE8.</p>
 
-        <h2>Seletores de pseudo-elemento</h2>
+        <h2 id="pseudo-elemento">Seletores de pseudo-elemento</h2>
         <p>Usados para estilizar partes de um elemento. Por exemplo, a primeira letra ou linha de um elemento, ou inserir conteúdo antes ou depois de um elemento.</p>
         <p>Use dois dois-pontos (<code>::</code>) para definir um pseudo-elemento.</p>
         <p>A lista a seguir apresenta alguns dos pseudo-elementos e suas propriedades de CSS correspondentes:</p>
@@ -335,7 +333,7 @@
     </section>
 
     <section>
-        <h2>Seletores de atributos</h2>
+        <h2 id="atributos">Seletores de atributos</h2>
         <p>Usados com elementos que têm determinado atributo HTML ou que têm um determinado valor de atributo. Para usá-lo envolva o seletor entre colchetes (<code>[ ]</code>). P.ex.:</p>
 
         <pre>
@@ -344,7 +342,7 @@
           }
         </pre>
 
-        <p>Esta regra procura por todos os elementos que têm o atributo <code>data-type</code> com o valor <code>primary</code>, como este: <code>&lt;div data-type="primary"&gt;</div></code>.</p>
+        <p>Esta regra procura por todos os elementos que têm o atributo <code>data-type</code> com o valor <code>primary</code>, como este: <code>&lt;div data-type="primary"&gt;&lt;/div&gt;</code>.</p>
         <p>Também é possível procurar somente pela propriedade, sem um valor definido:</p>
 
         <pre>

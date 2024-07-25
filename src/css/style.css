@@ -1,7 +1,26 @@
 /* Define o conjunto de caracteres como UTF-8 */
-/* @charset "utf-8";
+/* @charset "utf-8"; */
 
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+}
+
+@font-face {
+  font-family: "Adventure";
+  src: url(../fonts/Adventure.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Bowhouse";
+  src: url(../fonts/Bowhouse-Black.otf) format("opentype");
+}
+
+/* :root {
   --red: #ff0000;
   --bg-grey: #7c7484;
   --bg-light-gray: #a3a3a3;
@@ -30,7 +49,7 @@
 } */
 /* Define o tipo de fonte como Raleway e o tamanho da fonte como 1rem para todos os itens do site*/
 * {
-  font-family: "Raleway", Helvetica, sans-serif;
+  font-family: 'Red Hat Display', system-ui, sans-serif;
   font-size: 1rem;
   color-scheme: light dark;
 }
@@ -44,6 +63,70 @@ html {
   background-size: cover; */
   margin: 10px 0px;
   line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  color: #ff9655;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+h4 {
+  font-size: 1rem;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+p {
+  font-size: 1rem;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: justify;
+}
+
+a {
+  color: #ff9655;
+}
+
+code {
+  font-family: 'Spline Sans Mono',monospace;
+  font-size: 0.9em;
+  color: #52afa5;
+}
+
+ul.list-square {
+  list-style: square;
+  text-align: justify;
+}
+
+span.note {
+  color: red;
+  font-size: 2ch;
+}
+
+strong {
+  font-weight: 800;
+}
+
+em {
+  font-style: italic;
+  font-weight: 600;
 }
 
 /* Define o fundo do site como cinza escuro e as margens como automáticas */
@@ -112,7 +195,7 @@ p {
   list-style: square;
   margin-left: 5px;
   text-align: justify;
-}
+} */
 
 .section {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -129,8 +212,8 @@ p {
 
 .aside {
   width: 30%;
-  padding-left: 15rem;
-  margin-left: 15rem;
+  padding-left: 5px;
+  margin-left: 25px;
   float: right;
   font-style: italic;
   background-color: var(--wheat);
@@ -143,7 +226,11 @@ p {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-div.city {
+.footer {
+  font-size: 0.8rem;
+}
+
+/* div.city {
   background-color: var(--tomato);
   color: var(--white);
   border: 2px solid var(--black);

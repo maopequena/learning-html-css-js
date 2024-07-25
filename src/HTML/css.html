@@ -3,9 +3,6 @@
 <meta charset="utf-8">
 <head>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="description" content="CSS">
@@ -13,235 +10,232 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS (Cascading Style Sheets)</title>
     <style>
-        * {background-color: powderblue;}
+        * {
+          background-color: powderblue;
+          color-scheme: light;
+        }
     </style>
 </head>
 <body>
-    <main>
-        <div>
-        <header>
-          <h1>CSS (Cascading Style Sheets)</h1>
-          <p>Esta página foi estilizada com CSS!</p>
-          <p>CSS = Cascading Style Sheets (folhas de estilo <em>em cascata</em>). Ele economiza muito trabalho, porque pode controlar o layout de várias páginas da Web ao mesmo tempo.</p>
-          <p>Com CSS é possível controlar a cor, a fonte, o tamanho do texto, o espaçamento entre os elementos, como os elementos são posicionados na tela, quais imagens ou cores de fundo usar, diferentes exibições para cada dispositivo e tamanho de tela, e muito mais!</p>
-          <p>"Em cascata" significa que um estilo aplicado a um elemento pai também será aplicado a todos os elementos filhos dentro do pai. Então, ao definir a cor do texto do corpo como "blue", todos os cabeçalhos, parágrafos e outros elementos de texto dentro do corpo também receberão a mesma cor, a menos que seja especificado algo diferente posteriormente.</p>
-          <p>Uma regra de CSS consiste de um seletor e um bloco de declarações.</p>
-          <img src="../img/css-syntax.gif" alt="Sintaxe do CSS">
-          <p>O seletor aponta para o elemento HTML que se deseja estilizar.</p>
-          <p>O bloco de declaração contém uma ou mais declarações, separadas por ponto-e-vírgula.</p>
-          <p>Cada declaração inclui um nome de propriedade do CSS e um valor, separados por dois-pontos.</p>
-          <p>As várias declarações de CSS são separadas por ponto-e-vírgula, e os blocos de declarações são envoltos em chaves.</p>
-          
-          <h2>Ordem do estilo em cascata</h2>
-          <p><b>Qual estilo será usado quando houver mais de um estilo especificado para um elemento HTML?</b></p>
-          <p>Todos os estilos na página serão aplicados em "cascata" em uma nova folha de estilo "virtual" de acordo com as regras a seguir, respectivamente:</p>
-          <ol style="list-style: 1;">
-            <li>Estilo em linha (dentro do elemento HTML)</li>
-            <li>Folhas de estilo externa e interna (na área <code>&lt;head&gt;</code>)</li>
-            <li>Padrão do navegador</li>
-          </ol>
-          <p>Assim, o estilo em linha tem a prioridade mais alta e substituirá as folhas de estilo externa e interna e os padrões do navegador.</p>
-          <p><strong>Observação</strong>: é possível declarar a mesma propriedade duas vezes com valores diferentes, para que os navegadores que não reconhecem um valor possam ignorá-lo e usar o outro. Diferente de outras linguagens de programação, o CSS não emitirá um erro ou quebrará a execução da página ao detectar uma linha que não consegue interpretar; o valor não interpretado será considerado inválido e, portanto, será ignorado e o navegador continua a processar o restante do CSS.</p>
-        </header>
+  <main>
+    <header>
+      <h1>CSS (Cascading Style Sheets)</h1>
+      <p>Esta página foi estilizada com CSS!</p>
+      <p>CSS = Cascading Style Sheets (folhas de estilo <em>em cascata</em>). Ele economiza muito trabalho, porque pode controlar o layout de várias páginas da Web ao mesmo tempo.</p>
+      <p>Com CSS é possível controlar a cor, a fonte, o tamanho do texto, o espaçamento entre os elementos, como os elementos são posicionados na tela, quais imagens ou cores de fundo usar, diferentes exibições para cada dispositivo e tamanho de tela, e muito mais!</p>
+      <p>"Em cascata" significa que um estilo aplicado a um elemento pai também será aplicado a todos os elementos filhos dentro do pai. Então, ao definir a cor do texto do corpo como "blue", todos os cabeçalhos, parágrafos e outros elementos de texto dentro do corpo também receberão a mesma cor, a menos que seja especificado algo diferente posteriormente.</p>
+      <p>Uma regra de CSS consiste de um seletor e um bloco de declarações.</p>
+      <img src="../img/css-syntax.gif" alt="Sintaxe do CSS">
+      <p>O seletor aponta para o elemento HTML que se deseja estilizar.</p>
+      <p>O bloco de declaração contém uma ou mais declarações, separadas por ponto-e-vírgula.</p>
+      <p>Cada declaração inclui um nome de propriedade do CSS e um valor, separados por dois-pontos.</p>
+      <p>As várias declarações de CSS são separadas por ponto-e-vírgula, e os blocos de declarações são envoltos em chaves.</p>
+    </header>
 
-        <section id="position-and-order">
-          <p>Há 3 maneiras de usar o CSS em documentos HTML:</p>
-          <ul>
-              <li>Inline (em linha), usando o atributo <code>style</code> em elementos HTML.</li>
-              <li>Internal (interno), usando o elemento <code>&lt;style&gt;</code> na seção <code>&lt;head&gt;</code>.</li>
-              <li>External (externo), usando um elemento <code>&lt;link&gt;</code> para vincular a um arquivo CSS externo.</li>
-          </ul>
-        </section>
+    <section>
+      <h2>Ordem do estilo em cascata</h2>
+      <p><b>Qual estilo será usado quando houver mais de um estilo especificado para um elemento HTML?</b></p>
+      <p>Todos os estilos na página serão aplicados em "cascata" em uma nova folha de estilo "virtual" de acordo com as regras a seguir, respectivamente:</p>
+      <ol style="list-style: 1;">
+        <li>Estilo em linha (dentro do elemento HTML)</li>
+        <li>Folhas de estilo externa e interna (na área <code>&lt;head&gt;</code>)</li>
+        <li>Padrão do navegador</li>
+      </ol>
+      <p>Assim, o estilo em linha tem a prioridade mais alta e substituirá as folhas de estilo externa e interna e os padrões do navegador.</p>
+      <p><strong>Observação</strong>: é possível declarar a mesma propriedade duas vezes com valores diferentes, para que os navegadores que não reconhecem um valor possam ignorá-lo e usar o outro. Diferente de outras linguagens de programação, o CSS não emitirá um erro ou quebrará a execução da página ao detectar uma linha que não consegue interpretar; o valor não interpretado será considerado inválido e, portanto, será ignorado e o navegador continua a processar o restante do CSS.</p>
+    </section>
 
-        <section>
-          <h3>CSS Inline</h2>
-          <p>O CSS em linha, que é aplicado ao elemento, é usado para aplicar um estilo único a um único elemento HTML. Ele usa o atributo <code>style</code> em um elemento HTML. O cabeçalho e o parágrafo coloridos abaixo são exemplos de "inline".</p>
+    <section>
+      <p>Há 3 maneiras de usar o CSS em documentos HTML:</p>
+      <ul class="list-square">
+        <li>Inline (em linha), usando o atributo <code>style</code> em elementos HTML.</li>
+        <li>Internal (interno), usando o elemento <code>&lt;style&gt;</code> na seção <code>&lt;head&gt;</code>.</li>
+        <li>External (externo), usando um elemento <code>&lt;link&gt;</code> para vincular a um arquivo CSS externo.</li>
+      </ul>
+    
+      <h3>CSS Inline</h2>
+      <p>O CSS em linha, que é aplicado ao elemento, é usado para aplicar um estilo único a um único elemento HTML. Ele usa o atributo <code>style</code> em um elemento HTML. O cabeçalho e o parágrafo coloridos abaixo são exemplos de "inline".</p>
 
-          <h3 style="color:blue;">Cabeçalho em blue</h3>
-          <p style="color:goldenrod;font-size: 15pt;">Parágrafo em Golden Rod com letra tamanho 15pt.</p>
-          <p><b>Observação</b>: ao usar valores numéricos, não se deve separar o número da unidade com um espaço. O correto é <code>font-size: 15pt</code> e não <code>font-size: 15 pt</code>.</p>
-        </section>
+      <h4 style="color:blue;">Cabeçalho em blue</h4>
+      <p style="color:goldenrod;font-size: 15pt;">Parágrafo em Golden Rod com letra tamanho 15pt.</p>
+      <p><b>Observação</b>: ao usar valores numéricos, não se deve separar o número da unidade com um espaço. O correto é <code>font-size: 15pt</code> e não <code>font-size: 15 pt</code>.</p>
+    
+      <h3>CSS Internal</h3>
+      <p>O CSS interno é usado para definir um estilo para uma única página HTML. Ele é definido na seção <code>&lt;head&gt;</code> de uma página HTML, com um elemento <code>&lt;style&gt;</code>.</p>
+      <p>O fundo da página em powderblue é o CSS interno, definido na seção "head".</p>
+    
+      <h3>CSS external</h3>
+      <p>O CSS externo é um arquivo de folha de estilo, com extensão <code>.css</code>, usado para definir o estilo de várias páginas HTML ao mesmo tempo. Para tanto, é necessário usar o elemento <code>&lt;link&gt;</code> na seção <code>&lt;head&gt;</code> de cada página HTML. Esse arquivo CSS não deve conter HTML.</p>
+      <p>Consultar <a href="../css/style.css">style.css</a></p>
+    </section>
 
-        <section>
-          <h3>CSS Internal</h3>
-          <p>O CSS interno é usado para definir um estilo para uma única página HTML. Ele é definido na seção <code>&lt;head&gt;</code> de uma página HTML, com um elemento <code>&lt;style&gt;</code>.</p>
-          <p>O fundo da página em powderblue é o CSS interno, definido na seção "head".</p>
-        </section>
+    <section>
+      <p>É possível fazer comentários no arquivo de CSS usando os caracteres <code>/*</code> e <code>*/</code>. Consulte o arquivo <a href="../css/style.css">style.css</a> para ver alguns.</p>
+    </section>
 
-        <section>
-          <h3>CSS external</h3>
-          <p>O CSS externo é um arquivo de folha de estilo, com extensão <code>.css</code>, usado para definir o estilo de várias páginas HTML ao mesmo tempo. Para tanto, é necessário usar o elemento <code>&lt;link&gt;</code> na seção <code>&lt;head&gt;</code> de cada página HTML. Esse arquivo CSS não deve conter HTML.</p>
-          <p>Consultar <a href="../css/style.css">style.css</a></p>
-        </section>
+    <section>
+      <h2>Cores, fontes e tamanhos no CSS</h2>
+      <p>As seguintes propriedades CSS definem, em ordem, a cor do texto, a fonte e o tamanho da fonte: <code>color</code>, <code>font-family</code> e <code>font-size</code>.</p>
+      <p>A propriedade <code>border</code> define uma borda ao redor de um elemento HTML. P.ex.: <code>border: 2px solid powderblue;</code></p>
+      <p>A propriedade <code>padding</code> define um espaço entre o texto e a borda.</p>
+      <p>A propriedade <code>margin</code> define um espaço fora da borda.</p>
+      <p>O elemento <code>&lt;link&gt;</code> aceita o caminho do arquivo CSS localmente (ou em um servidor) ou um URL.</p>
+      <p><a href="https://www.w3schools.com/w3css/default.asp">W3.CSS</a> é um framework de CSS moderno que oferece suporte para desktops, tablets e dispositivos móveis por padrão. Ele é menor e mais rápido que outros frameworks de CSS e foi projetado para trabalhar independentemente do jQuery ou de outras bibliotecas JavaScript.</p>
+      <p>Outro framework muito utilizado é o <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">Bootstrap</a>.</p>
+      <p>Novos frameworks estão surgindo conforme a necessidade. Alguns frameworks recomendados: <a href="https://lesscss.org" target="_blank">Less</a>, <a href="https://sass-lang.com/guide/" target="_blank">Sass/Scss</a>, <a href="https://stylus-lang.com" target="_blank">Stylus</a>, <a href="https://postcss.org" target="_blank">PostCSS</a> e <a href="https://tailwindcss.com" target="_blank">Tailwind</a>.</p>
+      <a href="https://www.youtube.com/watch?v=cZHp-Oozg6I&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=13">Tutorial em vídeo sobre CSS no HTML</a>
+      <br>
+      <a href="https://www.w3schools.com/cssref/css4_pr_accent-color.php">Lista explicativa de todas as propriedades de CSS</a>
+    </section>
 
-        <section>
-          <p>É possível fazer comentários no arquivo de CSS usando os caracteres <code>/*</code> e <code>*/</code>. Consulte o arquivo <a href="../css/style.css">style.css</a> para ver alguns.</p>
-        </section>
+    <section>
+      <h2 id="box-model2">O modelo de caixa</h2>
+      <p>Veja também: <a href="../HTML/css-margens.html#box-model1">Margens e padding no CSS</a></p>
+      <p>O modelo de caixa é uma definição fundamental do CSS. Entender como ele funciona, como é afetado por outros aspectos do CSS e, mais importante, como ele os controla. pode ajudá-lo a gerar um CSS mais previsível.</p>
+      <p>É importante lembrar que TUDO que é exibido pelo CSS é uma caixa, mesmo que seja apenas texto ou que tenha um <code>border-radius</code> que a faça parecer um círculo.</p>
+      <p>As caixas apresentam diferentes comportamentos com base no valor definido para a propriedade <code>display</code>, suas dimensões e seu conteúdo. Esse conteúdo pode ser apenas texto ou mais caixas geradas pelos elementos filhos. De qualquer forma,o conteúdo afeta o tamanho da caixa por padrão.</p>
+      <p>Você pode controlar isto com o tamanho extrínseco, ou pode usar o tamanho intrínseco para deixar que o navegador decida o que fazer com base no tamanho do conteúdo da caixa.</p>
+      <p>Isso faz com que a propriedade <code>overflow</code> não seja tão usada pelo navegador, já que a caixa é redimensionada de acordo com o conteúdo.</p>
+      <p>Lembre-se: o tamanho intrínseco é o comportamento padrão do navegador e geralmente proporciona mais flexibilidade do que o tamanho extrínseco.</p>
+      <img src="../img/box-model (2).png" alt="O modelo de caixa">
+      <p>Uma propriedade definida pelos navegadores define a exibição padrão de uma caixa. Por exemplo, normalmente o valor de exibição padrão de um elemento <code>&lt;div&gt;</code> é <code>block</code>, o de <code>&lt;li&gt;</code> é <code>list-item</code> e o de <code>&lt;span&gt;</code> é é <code>inline</code>.</p>
+      <p>Um elemento com o valor <code>inline</code> tem uma margem de bloco, mas os outros elementos não respeitam isso. Com <code>inline-block</code>, os outros elementos passam a respeitar a margem de bloco, mas o primeiro elemento mantém a maioria dos mesmos comportamentos que tinha quando ainda era um elemento <code>inline</code>. Um item de bloco preenche o espaço restante disponível na linha por padrão, enquanto os elementos <code>inline</code> e <code>inline-block</code> ficam tão grandes quanto seu conteúdo.</p>
+        
+      <p>A folha de estilo do "user-agent" do navegador também define a propriedade <code>box-sizing</code>, que informa à caixa como calcular seu tamanho. Por padrão, todos os elementos têm o seguinte estilo: <code>box-sizing: content-box;</code>. Isso significa que ao definir as dimensões de largura e altura, essas dimensões são aplicadas à caixa de conteúdo. Se, posteriormente, você definir <code>padding</code> e <code>border</code>, esses valores serão adicionados ao tamanho da caixa de conteúdo. Por exemplo, se tivermos uma declaração como a seguinte:</p>
 
-        <section>
-          <h3>Cores, fontes e tamanhos no CSS</h3>
-          <p>As seguintes propriedades CSS definem, em ordem, a cor do texto, a fonte e o tamanho da fonte: <code>color</code>, <code>font-family</code> e <code>font-size</code>.</p>
-          <p>A propriedade <code>border</code> define uma borda ao redor de um elemento HTML. P.ex.: <code>border: 2px solid powderblue;</code></p>
-          <p>A propriedade <code>padding</code> define um espaço entre o texto e a borda.</p>
-          <p>A propriedade <code>margin</code> define um espaço fora da borda.</p>
-          <p>O elemento <code>&lt;link&gt;</code> aceita o caminho do arquivo CSS localmente (ou em um servidor) ou um URL.</p>
-          <p><a href="https://www.w3schools.com/w3css/default.asp">W3.CSS</a> é um framework de CSS moderno que oferece suporte para desktops, tablets e dispositivos móveis por padrão. Ele é menor e mais rápido que outros frameworks de CSS e foi projetado para trabalhar independentemente do jQuery ou de outras bibliotecas JavaScript.</p>
-          <p>Outro framework muito utilizado é o <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">Bootstrap</a>.</p>
-          <p>Novos frameworks estão surgindo conforme a necessidade. Alguns frameworks recomendados: <a href="https://lesscss.org" target="_blank">Less</a>, <a href="https://sass-lang.com/guide/" target="_blank">Sass/Scss</a>, <a href="https://stylus-lang.com" target="_blank">Stylus</a>, <a href="https://postcss.org" target="_blank">PostCSS</a></p> e <a href="https://tailwindcss.com" target="_blank">Tailwind</a>.
-          <br>
-          <a href="https://www.youtube.com/watch?v=cZHp-Oozg6I&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=13">Tutorial em vídeo sobre CSS no HTML</a>
-          <br>
-          <a href="https://www.w3schools.com/cssref/css4_pr_accent-color.php">Lista explicativa de todas as propriedades de CSS</a>
-        </section>
+      <pre>
+        .my-box {
+          width: 200px;
+          border: 10px solid;
+          padding: 20px;
+        }
+      </pre>
 
-        <section>
-          <h3>O modelo de caixa</h3>
-          <p>O modelo de caixa é uma definição fundamental do CSS. Entender como ele funciona, como é afetado por outros aspectos do CSS e, mais importante, como ele os controla. pode ajudá-lo a gerar um CSS mais previsível.</p>
-          <p>É importante lembrar que TUDO que é exibido pelo CSS é uma caixa, mesmo que seja apenas texto ou que tenha um <code>border-radius</code> que a faça parecer um círculo.</p>
-          <p>As caixas apresentam diferentes comportamentos com base no valor definido para a propridade <code>display</code>, suas dimensões e seu conteúdo. Esse conteúdo pode ser apenas texto ou mais caixas geradas pelos elementos filhos. De qualquer forma,o conteúdo afeta o tamanho da caixa por padrão.</p>
-          <p>Você pode controlar isto com o tamanho extrínseco, ou pode usar o tamanho intrínseco para deixar que o navegador decida o que fazer com base no tamanho do conteúdo da caixa.</p>
-          <p>Isso faz com que a propriedade <code>overflow</code> não seja tão usada pelo navegador, já que a caixa é redimensionada de acordo com o conteúdo.</p>
-          <p>Lembre-se: o tamanho intrínseco é o comportamento padrão do navegador e geralmente proporciona mais flexibilidade do que o tamanho extrínseco.</p>
-          <img src="../img/box-model (2).png" alt="O modelo de caixa">
-          <p>Uma propridade definida pelos navegadores define a exibição padrão de uma caixa. Por exemplo, normalmente o valor de exibição padrão de um elemento <code>&lt;div&gt;</code> é <code>block</code>, o de <code>&lt;li&gt;</code> é <code>list-item</code> e o de <code>&lt;span&gt;</code> é é <code>inline</code>.</p>
-          <p>Um elemento com o valor <code>inline</code> tem uma margem de bloco, mas os outros elementos não respeitam isso. Com <code>inline-block</code>, os outros elementos passam a respeitar a margem de bloco, mas o primeiro elemento mantém a maioria dos mesmos comportamentos que tinha quando ainda era um elemento <code>inline</code>. Um item de bloco preenche o espaço restante disponível na linha por padrão, enquanto os elementos <code>inline</code> e <code>inline-block</code> ficam tão grandes quanto seu conteúdo.</p>
-            
-          <p>A folha de estilo do "user-agent" do navegador também define a propriedade <code>box-sizing</code>, que informa à caixa como calcular seu tamanho. Por padrão, todos os elementos têm o seguinte estilo: <code>box-sizing: content-box;</code>. Isso significa que ao definir as dimensões de largura e altura, essas dimensões são aplicadas à caixa de conteúdo. Se, posteriormente, você definir <code>padding</code> e <code>border</code>, esses valores serão adicionados ao tamanho da caixa de conteúdo. Por exemplo, se tivermos uma declaração como a seguinte:</p>
+      <p>a caixa terá 260px de largura total: 200px (largura definida para a caixa) + 20px (borda esquerda) + 20px (borda direita) + 10px (padding à esquerda) + 10px (padding à direita) = 260px. Ao mudar a propridade <code>box-sizing</code> para <code>border-box</code>, a largura da caixa se mantém em 200px, porque o <code>padding</code> e a <code>border</code> são <em>empurrados</em> para dentro.</p>
 
-          <pre>
-            .my-box {
-              width: 200px;
-              border: 10px solid;
-              padding: 20px;
-            }
-          </pre>
+      <pre>
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+      </pre>
 
-          <p>a caixa terá 260px de largura total: 200px (largura definida para a caixa) + 20px (borda esquerda) + 20px (borda direita) + 10px (padding à esquerda) + 10px (padding à direita) = 260px. Ao mudar a propridade <code>box-sizing</code> para <code>border-box</code>, a largura da caixa se mantém em 200px, porque o <code>padding</code> e a <code>border</code> são <em>empurrados</em> para dentro.</p>
+      <p>A regra de CSS acima seleciona todos os elementos no documento e todos os pseudo-elementos <code>::before</code> e <code>::after</code> e aplica a propriedade <code>box-sizing: border-box</code>. Assim, todos os elementos usarão esse modelo de caixa alternativo.</p>
 
-          <pre>
-            *,
-            *::before,
-            *::after {
-              box-sizing: border-box;
-            }
-          </pre>
+      <p>Como o modelo alternativo pode ser mais previsível, os desenvolvedores geralmente adicionam esta regra a redefinições e normalizadores, <a href="https://piccalil.li/blog/a-modern-css-reset" target="_blank" rel="noopener noreferrer">como este</a>.</p>
+    </section>
 
-          <p>A regra de CSS acima seleciona todos os elementos no documento e todos os pseudo-elementos <code>::before</code> e <code>::after</code> e aplica a propriedade <code>box-sizing: border-box</code>. Assim, todos os elementos usarão esse modelo de caixa alternativo.</p>
+    <section>
+      <h2>O modelo de cascata</h2>
+      <p>Entender o algoritmo de cascata nos ajuda a compreender como o navegador resolve os conflitos de CSS. Esse algoritmo está dividido em quatro etapas distintas:</p>
+      <ol>
+        <li><em>Posição e ordem de exibição</em>: a ordem em que as regras de CSS aparecem.</li>
+        <li><em>Especificidade</em>: um algoritmo que determina quais seletores de CSS têm a melhor correspondência.</li>
+        <li><em>Origem</em>: a ordem de quando o CSS aparece e de onde ele vem, a folha de estilo do navegador, CSS de uma extensão do navegador ou CSS criado pelo usuário.</li>
+        <li><em>Importância</em>: algumas regras de CSS têm peso maior do que outras, especialmente se tiverem o tipo de regra <code>!important</code>.</li>
+      </ol>
 
-          <p>Como o modelo alternativo pode ser mais previsível, os desenvolvedores geralmente adicionam esta regra a redefinições e normalizadores, <a href="https://piccalil.li/blog/a-modern-css-reset" target="_blank" rel="noopener noreferrer">como este</a>.</p>
-        </section>
+      <h3>Posição e ordem de exibição: consulte a seção sobre <a href="#position-and-order" target="_parent">posição e ordem de exibição</a>.</h3>
 
-        <section>
-          <h3>O modelo de cascata</h3>
-          <p>Entender o algoritmo de cascata nos ajuda a compreender como o navegador resolve os conflitos de CSS. Esse algoritmo está dividido em quatro etapas distintas:</p>
-          <ol>
-            <li><em>Posição e ordem de exibição</em>: a ordem em que as regras de CSS aparecem.</li>
-            <li><em>Especificidade</em>: um algoritmo que determina quais seletores de CSS têm a melhor correspondência.</li>
-            <li><em>Origem</em>: a ordem de quando o CSS aparece e de onde ele vem, a folha de estilo do navegador, CSS de uma extensão do navegador ou CSS criado pelo usuário.</li>
-            <li><em>Importância</em>: algumas regras de CSS têm peso maior do que outras, especialmente se tiverem o tipo de regra <code>!important</code>.</li>
-          </ol>
+      <h3>Especificidade:</h3>
+      <p>É um algoritmo que determina qual seletor de CSS é mais específico, de acordo com um sistema de classificação. Ao criar uma regra de CSS mais específica, ela será aplicada mesmo se houver outras regras que correspondem ao seletor e que aparecem posteriormente no CSS. Por exemplo: uma regra para uma classe em um elemento será mais específica e, portanto, vista como mais importante do que uma regra somente para o elemento. Isso significa que no CSS a seguir o elemento <code>h1</code> terá a cor vermelha mesmo que ambas as regras correspondam e que a regra de seletor venha posteriormente na folha de estilo.</p>
 
-          <h4>Posição e ordem de exibição: consulte a seção sobre <a href="#position-and-order" target="_parent">posição e ordem de exibição</a>.</h4>
+      <pre>
+        <code>
+        &lt;h1 class="my-element"&gt;Heading&lt;/h1&gt;
 
-          <h4>Especificidade:</h4>
-          <p>É um algoritmo que determina qual seletor de CSS é mais específico, de acordo com um sistema de classificação. Ao criar uma regra de CSS mais específica, ela será aplicada mesmo se houver outras regras que correspondem ao seletor e que aparecem posteriormente no CSS. Por exemplo: uma regra para uma classe em um elemento será mais específica e, portanto, vista como mais importante do que uma regra somente para o elemento. Isso significa que no CSS a seguir o elemento <code>h1</code> terá a cor vermelha mesmo que ambas as regras correspondam e que a regra de seletor venha posteriormente na folha de estilo.</p>
+        .my-element {
+          color: red;
+        }
 
-          <pre>
-            <code>
-            &lt;h1 class="my-element"&gt;Heading&lt;/h1&gt;
+        h1 {
+          color: blue;
+        }
+        </code>
+      </pre>
 
-            .my-element {
-              color: red;
-            }
+      <p>A <code>id</code> é ainda mais específica, então os estilos aplicados a ela substituirão outros. É por isso que não se recomenda estilizar uma <code>id</code>, já que pode ser difícil substituir esse estilo.</p>
 
-            h1 {
-              color: blue;
-            }
-            </code>
-          </pre>
+      <p><strong>Observação</strong>: a especificidade é cumulativa. Um elemento estilizado com <code>a.my-class.another-class[href]:hover</code> pode ser muito específico e pode prejudicar o estilo aplicado por outros elementos da página. Assim, recomenda-se manter as regras de CSS o mais simples possível.</p>
 
-          <p>A <code>id</code> é ainda mais específica, então os estilos aplicados a ela substituirão outros. É por isso que não se recomenda estilizar uma <code>id</code>, já que pode ser difícil substituir esse estilo.</p>
+      <h3>Origem:</h3>
+      <p>O CSS que você cria não é o único aplicado à página. A cascata leva em conta a origem do CSS, que pode incluir a folha de estilo interna do navegador, estilos adicionados por extensões do navegador ou pelo sistema operacional e o CSS que você criou. A ordem de especificidade dessas origens, de menos para a mais específica, é a seguinte:</p>
 
-          <p><strong>Observação</strong>: a especificidade é cumulativa. Um elemento estilizado com <code>a.my-class.another-class[href]:hover</code> pode ser muito específico e pode prejudicar o estilo aplicado por outros elementos da página. Assim, recomenda-se manter as regras de CSS o mais simples possível.</p>
+      <picture>
+        <img src="../img/specificity-origin.png" alt="Ordem da origem de especificidade do CSS">
+        <figcaption>Ordem da origem de especificidade do CSS</figcaption>
+      </picture>
 
-          <h4>Origem:</h4>
-          <p>O CSS que você cria não é o único aplicado à página. A cascata leva em conta a origem do CSS, que pode incluir a folha de estilo interna do navegador, estilos adicionados por extensões do navegador ou pelo sistema operacional e o CSS que você criou. A ordem de especificidade dessas origens, de menos para a mais específica, é a seguinte:</p>
+      <ol>
+        <li><strong>Estilos baseados no <code>user-agent</code></strong>: estilos que o navegador aplica aos elementos HTML por padrão.</li>
+        <li><strong>Estilos locais do usuário</strong>: que podem ser aplicados pelo sistema operacional, como um tamanho de fonte básico, ou uma preferência de mobilidade reduzida. Também podem vir de uma extensão do navegador, como uma que permita o usuário criar seu próprio CSS personalizado.</li>
+        <li><strong>O CSS criado</strong>: o CSS que você criou.</li>
+        <li><strong><code>!important</code></strong>: quaisquer tags <code>!important</code> adicionadas às declarações que você criou.</li>
+        <li><strong>estilos locais do usuário com a tag <code>!important</code></strong>: quaisquer tags <code>!important</code> que vêm do sistema operacional ou de extensões do navegador.</li>
+        <li><strong>Tags <code>!important</code> do user-agent</strong>: quaisquer tags <code>!important</code> definidas no CSS padrão fornecido pelo navegador.</li>
+      </ol>
 
-          <picture>
-            <img src="../img/specificity-origin.png" alt="Ordem da origem de especificidade do CSS">
-            <figcaption>Ordem da origem de especificidade do CSS</figcaption>
-          </picture>
+      <h3>Importância:</h3>
+      <p>A ordem de importância dos estilos de CSS, da menos para a mais importante, é a seguinte:</p>
 
-          <ol>
-            <li><strong>Estilos baseados no <code>user-agent</code></strong>: estilos que o navegador aplica aos elementos HTML por padrão.</li>
-            <li><strong>Estilos locais do usuário</strong>: que podem ser aplicados pelo sistema operacional, como um tamanho de fonte básico, ou uma preferência de mobilidade reduzida. Também podem vir de uma extensão do navegador, como uma que permita o usuário criar seu próprio CSS personalizado.</li>
-            <li><strong>O CSS criado</strong>: o CSS que você criou.</li>
-            <li><strong><code>!important</code></strong>: quaisquer tags <code>!important</code> adicionadas às declarações que você criou.</li>
-            <li><strong>estilos locais do usuário com a tag <code>!important</code></strong>: quaisquer tags <code>!important</code> que vêm do sistema operacional ou de extensões do navegador.</li>
-            <li><strong>Tags <code>!important</code> do user-agent</strong>: quaisquer tags <code>!important</code> definidas no CSS padrão fornecido pelo navegador.</li>
-          </ol>
+      <ol>
+        <li>Uma regra normal, como tamanho de fonte, plano de fundo ou cor.</li>
+        <li>Uma regra de animação.</li>
+        <li>Uma regra com a tag <code>!important</code>, seguindo a mesma ordem da origem.</li>
+        <li>Uma regra de transição.</li>
+      </ol>
+        
+      <p>Regras de animação e transição ativas têm maior importância do que regras normais. Transições são mais importantes do que a tag <code>!important</code>. Isso ocorre porque ao ativar uma animação ou transição, o comportamento esperado é a mudança do estado visual.</p>  
+    </section>
 
-          <h4>Importância:</h4>
-          <p>A ordem de importância dos estilos de CSS, da menos para a mais importante, é a seguinte:</p>
+    <section>
+      <h2>Como usar o DevTools para descobrir porque uma regra de CSS não funciona</h2>
 
-          <ol>
-            <li>Uma regra normal, como tamanho de fonte, plano de fundo ou cor.</li>
-            <li>Uma regra de animação.</li>
-            <li>Uma regra com a tag <code>!important</code>, seguindo a mesma ordem da origem.</li>
-            <li>Uma regra de transição.</li>
-          </ol>
-            
-          <p>Regras de animação e transição ativas têm maior importância do que regras normais. Transições são mais importantes do que a tag <code>!important</code>. Isso ocorre porque ao ativar uma animação ou transição, o comportamento esperado é a mudança do estado visual.</p>  
-        </section>
+      <p>As ferramentas de desenvolvedor do navegador geralmente mostram todas as regras de CSS que correspondem a um elemento, e as que não estão sendo usadas aparecem riscadas.</p>
 
-        <section>
-          <h3>Como usar o DevTools para descobrir porque uma regra de CSS não funciona</h3>
+      <img src="../img/dev-tools.png" alt="CSS no DevTools" width="800px">
 
-          <p>As ferramentas de desenvolvedor do navegador geralmente mostram todas as regras de CSS que correspondem a um elemento, e as que não estão sendo usadas aparecem riscadas.</p>
+      <p>Se a regra que você procura não aparece, é porque não correspondeu ao elemento. Nesse caso, procure por um erro de digitação no nome da classe ou do elemento, por exemplo.</p>
+    </section>
 
-          <img src="../img/dev-tools.png" alt="CSS no DevTools">
+    <section>
+      <h2>Herança</h2>
+      <p>Os seguintes elementos HTML herdam propriedades CSS por padrão:</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/azimuth">azimuth</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/border-collapse">border-collapse</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/border-spacing">border-spacing</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/caption-side">caption-side</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/color">color</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/cursor">cursor</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/direction">direction</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/empty-cells">empty-cells</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/font-family">font-family</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/font-size">font-size</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/font-style">font-style</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/font-variant">font-variant</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/font-weight">font-weight</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/font">font</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/letter-spacing">letter-spacing</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/line-height">line-height</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/list-style-image">list-style-image</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/list-style-position">list-style-position</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/list-style-type">list-style-type</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/list-style">list-style</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/orphans">orphans</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/quotes">quotes</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/text-align">text-align</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/text-indent">text-indent</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/text-transform">text-transform</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/visibility">visibility</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/white-space">white-space</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/widows">widows</a></li>
+        <li><a href="https://developer.mozilla.org/docs/Web/CSS/word-spacing">word-spacing</a></li>
+        </ul>
 
-          <p>Se a regra que você procura não aparece, é porque não correspondeu ao elemento. Nesse caso, procure por um erro de digitação no nome da classe ou do elemento, por exemplo.</p>
-        </section>
-
-        <section>
-          <h3>Herança</h3>
-          <p>Os seguintes elementos HTML herdam propriedades CSS por padrão:</p>
-          <ul>
-            <li><a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/azimuth">azimuth</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/border-collapse">border-collapse</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/border-spacing">border-spacing</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/caption-side">caption-side</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/color">color</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/cursor">cursor</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/direction">direction</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/empty-cells">empty-cells</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/font-family">font-family</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/font-size">font-size</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/font-style">font-style</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/font-variant">font-variant</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/font-weight">font-weight</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/font">font</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/letter-spacing">letter-spacing</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/line-height">line-height</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/list-style-image">list-style-image</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/list-style-position">list-style-position</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/list-style-type">list-style-type</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/list-style">list-style</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/orphans">orphans</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/quotes">quotes</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/text-align">text-align</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/text-indent">text-indent</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/text-transform">text-transform</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/visibility">visibility</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/white-space">white-space</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/widows">widows</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS/word-spacing">word-spacing</a></li>
-            </ul>
-
-            <p>É possível também usar o valor de propriedade <code>initial</code> para voltar a usar o valor padrão. Se a propriedade não estiver sendo herdada, o valor <code>unset</code> significa o mesmo que <code>initial</code>.</p>
-        </section>
-        </div>
-    </main>
+        <p>É possível também usar o valor de propriedade <code>initial</code> para voltar a usar o valor padrão. Se a propriedade não estiver sendo herdada, o valor <code>unset</code> significa o mesmo que <code>initial</code>.</p>
+    </section>
+  </main>
 </body>
 </html>
