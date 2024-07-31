@@ -129,6 +129,10 @@ em {
   font-weight: 600;
 }
 
+.important-info {
+  background-color: rgba(250, 30, 0, 0.4);
+}
+
 /* Define o fundo do site como cinza escuro e as margens como automáticas */
 /* div#interface {
   background-color: var(--bg-light-gray);

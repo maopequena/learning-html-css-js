@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8" />
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="description" content="Layout: grid" />
+  <meta name="author" content="Lizandra Silva (@maopequena)" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout: grid</title>
+</head>
+<body>
+  <header>
+    <h1>Layout flexível com <code>grid</code></h1>
+
+    <p>Um layout muito comum em web design é ter um cabeçalho, uma barra lateral, um corpo e um rodapé, com a barra lateral e o corpo em formato de duas colunas. Ao longo dos anos, se usou muitos métodos para formatar esse layout, mas com <code>grid</code> isso ficou mais fácil e temos muito mais opções. O grid simplifica combinar o controle que os tamanhos extrínsecos oferecem e a flexibilidade dos tamanhos intrínsecos, o que o torna ideal para esse tipo de layout, porque é um método projetado para conteúdo bidimensional, isto é, posicionar as coisas em linhas e colunas ao mesmo tempo.</p>
+    <p>Ao criar um layout com <code>grid</code>, você define uma grade com linhas e colunas e coloca os itens nessas células.</p>
+  </header>
+
+  <section>
+    <h2>Visão geral</h2>
+    <p>O que se pode fazer com <code>grid</code>? Vejamos alguns dos recursos possíveis:</p>
+    <ol>
+      <li>Definir linhas e colunas em uma grade. É possível escolher o tamanho das trilhas das linhas e das colunas, e como reagem ao tamanho do conteúdo.</li>
+      <li>Os filhos diretos do contêiner de grade serão posicionados automaticamente na grade.</li>
+      <li>Ou podemos posicioná-los com precisão, conforme desejarmos.</li>
+      <li>As linhas e áreas da grade podem ter nomes, para que o posicionamento fique ainda mais fácil.</li>
+      <li>Qualquer espaço livre no contêiner da grade pode ser distribuído entre as trilhas.</li>
+      <li>Os itens podem ser alinhados nessas áreas.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Terminologia</h2>
+    <ul>
+      <li><strong>Linhas</strong>: a grade é composta de linhas horizontais e verticais. Se a grade tem quatro colunas, terá cinco linhas, incluindo aquela após a última coluna. A numeração das linhas começa em "1", e segue o modo de escrita ("rtl" ou "ltr") e a direção do texto do componente. Iso significa que a coluna1, linha1 fica à esquerda em um idioma "ltr" e à direita em um idioma "rtl".</li>
+      <li><strong>Trilhas</strong>: a trilha é o espaço entre duas linhas da grade. A "trilha de linha" é o espaço entre dias linhas e a "trilha de coluna" é o espaço entre duas colunas. Ao criar uma grade, essas trilhas recebem um tamanho. O tamanho das trilhas é <code>auto</code> por padrão.</li>
+      <li><strong>Célula</strong>: a célula da grade é o menor espaço em uma grade, definido pela intersecção das trilhas de linhas e de colunas. Se os itens não forem posicionados ao definir uma grade, eles serão colocados automaticamente em cada célula da grade definida.</li>
+      <li><strong>Área</strong>: um conjunto de várias células. Cria-se áreas posicionando um item em várias trilhas.</li>
+      <li><strong>Gaps</strong>: um espaço entre as trilhas. Para fins de dimensionamento, as gaps agem como uma trilha. Não é possível posicionar conteúdo em uma gap, mas os itens podem ocupar várias gaps.</li>
+      <li><strong>Contêiner</strong>: O elemento HTML que recebeu a propriedade <code>display: grid</code> e, portanto, cria um novo contexto de formatação em grade para seus filhos diretos.</li>
+      <li><strong>Item</strong>: um item que é filho direto do contêiner de grade.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Dimensionamento da grade</h2>
+    <p>Além das dimensões mencionadas em <a href="../HTML/css-units.html">Unidades de tamanho</a>, as trilhas da grade podem usar palavras-chaves de tamanho como:</p>
+
+    <ul>
+      <li><strong><code>min-content</code></strong>: faz a trilha ficar com o tamanho mínimo possível, sem extravasar o conteúdo. Isso significa que a largura total das colunas será a do maior conteúdo da trilha.</li>
+      <li><strong><code>max-content</code></strong>: tem o efeito oposto. A trilha fica o mais larga possível, para que todo o conteúdo seja exibido em uma única linha não quebrada. Isso pode fazer com que o conteúdo extravase, já que não quebra.</li>
+      <li><strong><code>fit-content()</code></strong>: esta função age como <code>max-content</code>. No entanto, quando a trilha alcança o tamanho definido na função, ele começa a quebrar. Assim, <code>fit-content(10em)</code> cria uma trilha menor que 10em, se o conteúdo não ultrapassar esse valor.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 id="fr-unit">A unidade <code>fr</code></h2>
+    <p>Esta unidade de dimensionamento funciona apenas com o layout de grade. Esta unidade flexível descreve uma parte do espaço disponível no contêiner de grade.</p>
+    <p>Essa unidade funciona de forma similar a usar a propriedade <code>flex: auto</code>, isto é, distribui o espaço após os itens serem posicionados. Assim, para ter três colunas que compartilham o mesmo espaço, use:</p>
+
+    <pre>
+      <code>
+        .container {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      </code>
+    </pre>
+
+    <p>Como essa unidade compartilha o espaço disponível, podemos combiná-la com uma gap de tamanho fixo ou trilhas de tamanho fixo. Diferentes valores desta unidade compartilharão o espaço de acordo com uma proporção: valores maiores recebem mais do espaço disponível.</p>
+  </section>
+
+  <section>
+    <h2>A função <code>minmax()</code></h2>
+    <p>Esta função define um tamanho mínimo e máximo para uma trilha, o que pode ser muito útil. O exemplo acima, com a unidade <code>fr</code>, que distribui o espaço restante, pode ser escrito usando esta função, como <code>minmax(auto, 1fr)</code>. O layout de grade analisa o tamanho intrínseco do conteúdo e distribui o espaço disponível após dar espaço suficiente ao conteúdo. Isso significa que nem todas as trilhas terão uma parte igual de todo o espaço disponível no contêiner de grade.</p>
+    <p>Para forçar uma trilha a ocupar uma parcela igual do espaço no contêiner de grade, menos as gaps, use <code>minmax</code>. Substitua <code>1fr</code> como o tamanho da trilha por <code>minmax(0, 1fr)</code>. Isso fará com que o tamanho mínimo da trilha seja <code>0</code> e não o tamanho mínimo do conteúdo. O layout de grade então pegará todo o espaço disponível no contêiner, deduzirá o tamanho necessário para as gaps e distribuirá o restante de acordo com as unidades <code>fr</code>.</p>
+
+    <h3>A notação <code>repeat()</code></h3>
+    <p>Se quiser criar uma grade com 12 colunas iguais, use o seguinte CSS:</p>
+
+    <pre>
+      <code>
+        .container {
+          display: grid;
+          grid-template-columns:
+            minmax(0,1fr),
+            minmax(0,1fr),
+            minmax(0,1fr),
+            minmax(0,1fr),
+            minmax(0,1fr),
+            minmax(0,1fr),
+            minmax(0,1fr),
+            minmax(0,1fr),
+            minmax(0,1fr),
+            minmax(0,1fr),
+            minmax(0,1fr),
+            minmax(0,1fr);
+      }
+      </code>
+    </pre>
+
+    <p>Ou use a função <code>repeat()</code>:</p>
+
+    <pre>
+      <code>
+        .container {
+          display: grid;
+          grid-template-columns: repeat(12, minmax(0,1fr));
+      }
+      </code>
+    </pre>
+
+    <p>Essa função repete qualquer seção da lista de trilhas. Por exemplo, é possível repetir um padrão de trilhas. Também é possível criar trilhas comuns e uma seção com repetições:</p>
+
+    <pre>
+      <code>
+        .container {
+          display: grid;
+          grid-template-columns: 200px repeat(2, 1fr 2fr) 200px; /*creates 6 tracks*/
+      }
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2><code>auto-fill</code> e <code>auto-fit</code></h2>
+    <p>Podemos combinar tudo o que aprendemos sobre tamanho de trilhas, <code>minmax()</code> e <code>repeat()</code> para criar um layout de grade com um padrão útil. Talvez você não queira especificar o número de colunas, e queira usar quantas colunas caberem no contêiner.</p>
+    <p>Para fazer isso, use <code>repeat()</code> e as opções <code>auto-fill</code> ou <code>auto-fit</code>. Com isso, obtemos o máximo de trilhas que couberem no viewport, porém elas não são flexíveis. Ao combinar também a função <code>minmax()</code>, é possível conter tantas trilhas de determinado tamanho máximo quantas couberem no contêiner com 1fr; e o layout de grade então distribui o espaço restante entre as trilhas.</p>
+    <p>Isso cria um layout responsivo bidirecional (para as linhas e as colunas) sem a necessidade de media queries. <a href="https://codepen.io/web-dot-dev/pen/OJWbRax" target="_blank" rel="noopener noreferrer">Exemplo</a>.</p>
+    <p>Há uma diferença sutil entre as opções <code>auto-fill</code> e <code>auto-fit</code>. <strong>Auto-fit</strong> preenche todo o espaço disponível, caso haja poucas trilhas de colunas, o que não ocorre com <strong>auto-fill</strong>. Entretanto, após a primeira trilha estar preenchida, as duas opções apresentam o mesmo comportamento.</p>
+  </section>
+
+  <section>
+    <h2>Disposição dos itens</h2>
+    <h3>Em colunas</h3>
+    <p>O comportamento padrão do layout de grade é colocar os itens nas linhas. Entretanto, é possível colocá-los em colunas usando a propriedade <code>grid-auto-flow: column</code>. É preciso definir as trilhas de linhas, caso contrário os itens criarão trilhas de colunas intrínsecas e ficarão todos em uma única linha longa.</p>
+    <p>Esses valores estão relacionados ao modo de escrita do documento. Uma linha sempre corre na direção de uma sentença do modo de escrita do documento ou componente.</p>
+    <h3>Percorrer trilhas</h3>
+    <p>Também é possível fazer com que os itens em um layout automático percorram mais de uma trilha, usando a palavra-chave <code>span</code> e a quantidade de linhas ou colunas a percorrer como um valor para as propriedades <code>grid-column-end</code> ou <code>grid-row-end</code>.</p>
+  </section>
+
+  <section>
+    <p>Já vimos vários recursos do layout de grade. Agora, vejamos como posicionar os itens na grade que criamos.</p>
+
+    <p>Primeiro precisamos lembrar que este layout é baseado em uma grade de linhas numeradas. A forma mais simples de dispor os itens nessa grade é colocá-los uma linha depois da outra.</p>
+    <p>As propriedades usadas para dispor os itens de acordo com as linhas numeradas são:</p>
+
+    <ul>
+      <li>grid-column</li>
+      <ul>
+        <li>grid-column-start</li>
+        <li>grid-column-end</li>
+      </ul>
+      <li>grid-row</li>
+      <ul>
+        <li>grid-row-start</li>
+        <li>grid-row-end</li>
+      </ul>
+    </ul>
+
+    <p>Para posicionar um item, defina as linhas inicial e final da área da grade em que o item deve estar.</p>
+    <p>A numeração das linhas segue o modo de escrita e a direção do componente.</p>
+  </section>
+
+  <section>
+    <h2>Empilhar itens</h2>
+    <p>Usando o posicionamento em linhas, é possível colocar os itens na mesma célula da grade, isto é, podemos empilhá-los, ou fazer com que um item sobreponha parcialmente outro. Os itens posteriores no código-fonte serão exibidos sobre os itens anteriores. Para alterar isso, use <code>z-index</code>.</p>
+  </section>
+
+  <section>
+    <h2>Linhas de grade nomeadas</h2>
+    <p>Talvez seja mais fácil posicionar itens em um layout se as linhas tiverem um nome, ao invés de um número. Você pode nomear qualquer linha da grade adicionando uma sequência de caracteres entre colchetes. Dentro dos colchetes, é possível adicionar vários nomes separados por um espaço. Após nomear as linhas, use os nomes ao invés dos números.</p>
+    <p>Também é possível nomear áreas e posicionar os itens nelas. Essa técnica é ótima, já que permite ver a aparência do componente diretamente no CSS. Esse nome pode ser qualquer coisa, exceto <code>span</code> e <code>auto</code>. Após nomeá-las, use a propriedade <code>grid-template-areas</code> para definir quais células da grade cada item ocupará. Cada linha é definida entre aspas duplas. Por exemplo:</p>
+
+    <pre>
+      <code>
+        .container {
+          display: grid;
+          grid-template-columns: repeat(4,1fr);
+          grid-template-areas:
+              "header header header header"
+              "sidebar content content content"
+              "....... footer footer footer";
+      }
+      </code>
+    </pre>
+
+    <p>Ao usar <code>grid-template-areas</code>, é preciso respeitar três regras:</p>
+
+    <ul>
+      <li>O valor deve ser uma grade completa, sem células vazias.</li>
+      <li>Para percorrer mais de uma trilha, repita o nome do item.</li>
+      <li>As áreas criadas pela repetição do nome devem ser retangulares e não poderão ser desconectadas.</li>
+    </ul>
+
+    <p>Se uma dessas regras não for respeitada, o valor é considerado inválido e descartado. Para deixar espaço em branco em uma grade, use um ou vários <code>.</code> (ponto-final) sem espaços entre eles.</p>
+  </section>
+  <section>
+    <h2><code>grid-template</code> e <code>grid</code></h2>
+    <p>Essas duas propriedades resumem as propriedades mencionadas anteriormente. Elas podem ser um pouco confusas, mas podemos ver como funcionam juntas ao detalharmos as duas.</p>
+
+    <h3><code>grid-template</code></h3>
+    <p>A propriedade <code>grid-template</code> resume as propriedades <code>grid-template-rows</code>, <code>grid-template-columns</code> e <code>grid-template-areas</code>. Define-se as linhas primeiro com o valor de <code>grid-template-areas</code>. O tamanho da coluna vem em seguida, separado por uma <code>/</code> (barra).</p>
+
+    <h3><code>grid</code></h3>
+    <p>Da mesma forma, a propriedade <code>grid</code> também é um resumo. Quando usada dessa maneira, ela redefine quaisquer outras propriedades <code>grid</code> para seus valores iniciais. São elas:</p>
+
+    <ul>
+      <li><code>grid-template-rows</code></li>
+      <li><code>grid-template-columns</code></li>
+      <li><code>grid-template-areas</code></li>
+      <li><code>grid-auto-rows</code></li>
+      <li><code>grid-auto-columns</code></li>
+      <li><code>grid-auto-flow</code></li>
+    </ul>
+  </section>
+  
+  <section>
+    <h2>Alinhamento</h2>
+    <p>O layout de grade usa as mesmas propriedades de alinhamento que o flexbox. Essas propriedades, que começam com <code>justify-</code> sempre afetam o eixo em linha, isto é, a direção eixo principal do modo de escrita (eixo horizontal).</p>
+    <p>As propriedades que começam com <code>align-</code> são usadas no eixo do bloco, isto é, a direção do eixo cruzado no modo de escrita (eixo vertical).</p>
+
+    <ul>
+      <li><code>justify-content</code> e <code>align-content</code>: distribuem o espaço adicional no contêiner de grade entre as trilhas.</li>
+      <li><code>justify-self</code> e <code>align-self</code>: aplicam-se ao item da grade para movê-lo dentro da área da grade em que está posicionado.</li>
+      <li><code>justify-items</code> e <code>align-items</code>: aplicam-se ao contêiner da grade para definir todas as propriedades de <code>justify-self</code> nos itens.</li>
+    </ul>
+
+    <p>O valor inicial de <code>justify-self</code> e <code>align-self</code> é <code>stretch</code>. Porém, se o item é uma imagem, ou algo com uma razão de aspecto intrínseca, o valor inicial será <code>start</code> em vez de <code>stretch</code> para impedir que o item fique distorcido.</p>
+  </section>
+</body>
+</html>

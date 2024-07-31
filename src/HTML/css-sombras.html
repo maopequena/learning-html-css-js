@@ -1,0 +1,149 @@
+<!DOCTYPE html> <!-- Define o tipo de documento da página como HTML -->
+<html lang="pt-BR"> <!-- Para exibir a página com o idioma Português (brasileiro) corretamente -->
+<meta charset="utf-8"> <!-- Para exibir corretamente os caracteres especiais -->
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="description" content="Sombras">
+  <meta name="author" content="Lizandra Silva (@maopequena)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sombras</title>
+  <style>
+    .shadow {
+      font-size: large;
+    }
+
+    .shadowbox {
+      background-color: lightseagreen;
+      width: 350px;
+      height: 100px;
+      border: 1px solid whitesmoke;
+      margin-inline-start: 10px;
+    }
+
+    .card {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    text-align: center;
+    display: block;
+    unicode-bidi: isolate;
+    }
+
+    .header {
+      height: 150px;
+      display: block;
+      margin-block-start: 0.67em;
+      margin-inline-start: 0px;
+      font-weight: bold;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 40px;
+      unicode-bidi: isolate;
+    }
+
+    .header p {
+      font-family: Geneva, Verdana, sans-serif;
+      font-size: 1.7em;
+      text-align: center;
+      margin-block-start: 0.3em;
+      margin-inline-start: auto;
+    }
+
+    .container {
+      padding: 10px;
+    }
+
+    .container p {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sombras</h1>
+    <p>Com o CSS é possível adicionar sombras a elementos. Há três tipos de sombras:</p>
+
+    <ul>
+      <li><code>text-shadow</code></li>
+      <li><code>box-shadow</code></li>
+      <li><code>drop-shadow</code></li>
+    </ul>
+  </header>
+
+  <section>
+    <h2>Sombra em textos</h2>
+    <p>Use a propriedade <code>text-shadow</code> para aplicar sombras a textos. Em sua forma mais simples, adiciona-se sombras ao eixo horizontal e ao eixo vertical. Por exemplo:</p>
+
+    <p class="shadow" style="text-shadow: 2px 2px;">Efeito de sombra no texto</p>
+
+    <p>O próximo valor é a difusão da sombra:</p>
+
+    <p class="shadow" style="text-shadow: 2px 2px 3px;">Efeito de sombra no texto</p>
+
+    <p>Em seguida, aplica-se a cor:</p>
+
+    <p class="shadow" style="text-shadow: 2px 2px 3px rgb(69, 250, 69);">Efeito de sombra no texto</p>
+
+    <p class="shadow" style="color: black; text-shadow: 0 0 10px #f00;">Texto em preto com sombra vermelha</p>
+
+    <p>É possível adicionar várias sombras:</p>
+
+    <p class="shadow" style="text-shadow: 2px 2px 3px red, -2px -2px 3px yellow;">Texto com duas sombras</p>
+
+    <p class="shadow" style="text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px orangered;">Outro texto com duas sombras</p>
+
+    <p>Se o texto for semi-transparente, a sombra pode ser vista através do texto:</p>
+
+    <p class="shadow" style="color: rgba(255, 255, 255, 0.5); text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px orangered;">Texto semi-transparente</p>
+  </section>
+
+  <section>
+    <h2>Sombra em elementos</h2>
+    <p>Use <code>box-shadow</code> para aplicar uma ou mais sombras a elementos de bloco. Em sua forma mais simples, adiciona-se sombras aos eixos horizontal e vertical. Por exemplo:</p>
+
+    <div class="shadowbox" style="box-shadow: 5px 5px #fff;">Efeito de sombra no elemento</div>
+
+    <p>O próximo valor é a difusão da sombra:</p>
+
+    <div class="shadowbox" style="box-shadow: 5px 5px 5px #fff;">Efeito de sombra no elemento</div>
+
+    <p>Em seguida, aplica-se a cor:</p>
+
+    <div class="shadowbox" style="box-shadow: 5px 5px 5px #aaa;">Efeito de sombra no elemento</div>
+
+    <p>No caso de <code>box-shadow</code>, há ainda mais um valor que fica entre a cor e a difusão: o raio de espalhamento. Veja:</p>
+
+    <div class="shadowbox" style="box-shadow: 5px 5px 5px 10px #aaa;">Efeito de sombra no elemento com raio de espalhamento de 10 px</div>
+
+    <p>O parâmetro <code>inset</code> altera a posição da sombra para dentro do elemento:</p>
+
+    <div class="shadowbox" style="box-shadow: 10px 10px 5px #aaa inset;">Efeito de sombra no elemento</div>
+
+    <p>Assim como os textos, elementos também podem ter várias sombras. Adicionar sombras a cartões faz com que pareçam um pedaço de papel colado à tela. Exemplo:</p>
+
+    <div class="card">
+      <div class="header">
+        <p>1</p>
+      </div>
+    
+      <div class="container">
+        <p>1º de janeiro de 2024</p>
+      </div>
+    </div>
+
+    <p>As propriedades <code>border-radius</code> e <code>overflow: hidden</code> também afetam a sombra do elemento.</p>
+  </section>
+
+  <section>
+    <h2>O filtro <code>drop-shadow()</code></h2>
+    <p>Para adicionar uma sombra a um objeto que não seja uma caixa, por exemplo, uma imagem, use o filtro <code>drop-shadow()</code>. Com isso a sombra segue as possíveis curvas de uma imagem. Essa sombra é aplicada a uma máscara alpha. Exemplo:</p>
+
+    <img src="../img/isolated-tshirt.png" alt="Camiseta pendurada em um cabide" width="300" format="png" quality="60" style="filter: drop-shadow(0px 0px 10px rgba(255 255 255 / 70%));">
+
+    <p>Diferente de <code>box-shadow</code>, este filtro não aceita os valores <code>inset</code> e de espalhamento.</p>
+    <p>É possível adicionar quantas sombras quiser, com várias ocorrências de <code>drop-shadow</code>. Cada sombra usará a anterior como referência para sua posição.</p>
+  </section>
+</body>
+</html>

@@ -9,6 +9,41 @@
   <meta name="author" content="Lizandra Silva (@maopequena)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Texto no CSS</title>
+  <style>
+    div.overflow {
+      white-space: nowrap; 
+      width: 200px; 
+      overflow: hidden; 
+      border: 1px solid #fff;
+    }
+    div.overflow:hover {
+      overflow: visible;
+    }
+
+    p.expialidocious1 {
+      width: 11em;
+      border: 1px solid #fff;
+      word-wrap: normal;
+    }
+
+    p.expialidocious2 {
+      width: 11em;
+      border: 1px solid #fff;
+      word-wrap: break-word;
+    }
+
+    p.break1 {
+      width: 130px; 
+      border: 1px solid #fff;
+      word-break: keep-all;
+    }
+
+    p.break2 {
+      width: 130px; 
+      border: 1px solid #fff;
+      word-break: break-all;
+    }
+  </style>
 </head>
 <body>
   <main>
@@ -21,7 +56,7 @@
       <h2>Cor</h2>
       <p><code>color</code> para mudar a cor do texto.</p>
       <p><code>background-color</code> para mudar a cor do fundo.</p>
-      <p><strong>Observação</strong>: o alto contraste é muito importante para pessoas com deficiências visuais, portanto certifique-se de ter um bom contraste entre a cor do texto e a cor (ou imagem) do fundo!</p>
+      <p class="important-info"><strong>Observação</strong>: o alto contraste é muito importante para pessoas com deficiências visuais, portanto certifique-se de ter um bom contraste entre a cor do texto e a cor (ou imagem) do fundo!</p>
     </section>
 
     <section>
@@ -65,6 +100,42 @@
     </section>
 
     <section>
+      <h2>Outros efeitos de texto</h2>
+
+      <h3><code>text-overflow</code></h3>
+      <p>Define como o conteúdo extravasado é exibido. Ele pode ser cortado (<code>text-overflow: clip</code>) ou mostrar reticências (<code>text-overflow: ellipsis</code>).</p>
+
+      <div class="overflow" style="text-overflow: clip;">This is some long text that will not fit in the box</div>
+
+      <br>
+
+      <div class="overflow" style="text-overflow: ellipsis;">This is some long text that will not fit in the box</div>
+
+      <p>Passe o mouse sobre as caixas acima para ver o restante do texto.</p>
+
+      <h3><code>word-wrap</code></h3>
+      <p>Define como palavras longas são exibidas, se podem ser quebradas para a próxima linha.</p>
+
+      <p class="expialidocious1">Por exemplo, nesta sentença a palavra "Supercalifragilisticexpialidocious" é muito longa e extravasa o espaço definido para o parágrafo.</p>
+
+      <p class="expialidocious2">Porém, com <code>word-wrap</code>, ela quebra, mesmo se não houver hífens ou a tag <code>&lt;wbr&gt;</code>. "Supercalifragilisticexpialidocious".</p>
+
+      <h3><code>word-break</code></h3>
+      <p>Define as regras para quebras de linha.</p>
+
+      <p class="break1">This paragraph contains some text. This line will-break-at-hyphens.</p>
+
+      <p class="break2">This paragraph contains some text. The lines will break at any character.</p>
+
+      <h3><code>writing-mode</code></h3>
+      <p>Define o modo de escrita vertical ou horizontal.</p>
+      <p>As opções são <code>horizontal-tb</code>, <code>vertical-rl</code> e <code>vertical-lr</code>.</p>
+
+      <h3><code>text-justify</code></h3>
+      <p>Define o alinhamento e o espaçamento do texto.</p>
+    </section>
+
+    <section>
       <h2 id="fontes">Fontes</h2>
       <p>Escolher a fonte certa tem enorme impacto em como os visitantes veem um site.</p>
       <p>A fonte certa pode criar uma identidade para sua marca.</p>
@@ -73,7 +144,7 @@
       <ul class="list-square">
         <li>Fontes com serifa</li>
         <li>Fontes sem serifa</li>
-        <li>Fontes monoespaçadas</li>
+        <li>Fontes mono-espaçadas</li>
         <li>Fontes cursivas</li>
         <li>Fontes de fantasia</li>
       </ul>
@@ -91,6 +162,19 @@
       <p>As seguintes fontes são recomendadas: Arial, Verdana, Tahoma, Trebuchet MS, Times New Roman, Georgia, Garamond, Courier New e Brush Script MT.</p>
       <p>É possível usar fontes do <a href="https://fonts.google.com" target="_blank">Google</a> nas páginas. Para tanto, após escolher uma fonte, copie o link fornecido em "Get font" > "Get embed code" > guia "Web" > "Embed code in the &lt;head&gt; of your html", e cole na área <code>&lt;head&gt;</code> do documento HTML. Importe a fonte para o CSS usando a sintaxe recomendada na mesma janela do Google (com <code>@font-face</code>; em "src", adicionar url('Nome da fonte')) logo no início do documento CSS. <a href="https://www.w3schools.com/howto/howto_google_fonts.asp" target="_blank" rel="noopener noreferrer">Saiba mais</a>.</p>
       <p>Também existe o site <a href="https://modernfontstacks.com" target="_blank" rel="noreferrer">Modern Font Stacks</a>, que simplifica a escolha de famílias de fontes.</p>
+
+      <figure>
+      <img src="../img/descritores-font-face.png" alt="Descritores para a regra @font-face">
+      <figcaption>Descritores para a regra <em>@font-face</em></figcaption>
+      </figure>
+
+      <h3>Diferentes formatos de fontes</h3>
+      <p><strong>TrueType Fonts (TTF)</strong>: padrão desenvolvido no final dos anos 80 pela Apple e Microsoft. É o formato mais comum para Mac OS e Windows.</p>
+      <p><strong>OpenType Fonts (OTF)</strong>: usado para fontes de computador escalonáveis. Criado com base no TrueType e é marca registrada da Microsoft. Esse formato é usado na maioria das plataformas dos computadores.</p>
+      <p><strong>Web Open Font Format (WOFF)</strong>: para uso em páginas da Web. Desenvolvida em 2009 e recomendada pelo W3C. É, essencialmente, uma fonte OpenType ou TrueType com compressão e metadados adicionais. O objetivo dela é oferecer suporte à distribuição de fontes a partir de um servidor para um cliente através de redes com restrições de largura de banda.</p>
+      <p><strong>Web Open Font Format 2 (WOFF2)</strong>: igual ao formato mencionado acima, mas com melhor compressão.</p>
+      <p><strong>Fontes e formas SVG</strong>: podem ser usadas como glifos para exibir texto. A especificação SVG 1.1 define um módulo de fonte que possibilita criar fontes dentro de um documento SVG. Também podemos aplicar CSS e a regra <code>@font-face</code> a documentos SVG.</p>
+      <p><strong>Embeded Open Type (EOT)</strong>: formato compacto de fontes OpenType projetadas pela Microsoft para uso como fontes integradas em páginas da Web.</p>
     </section>
 
     <section>

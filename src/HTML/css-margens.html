@@ -14,8 +14,9 @@
   <main>
     <header>
       <h1>Margens e padding no CSS</h1>
-      <p>A margem é o valor fora da borda do objeto, e é definida por valores absolutos em pixels.</p>
-      <p>Padding é o valor dentro da borda do objeto, e é definida por valores absolutos em pixels.</p>
+      <p>A margem é o valor fora da borda do objeto, e pode ser definida por valores absolutos em pixels.</p>
+      <p>Padding é o valor dentro da borda do objeto, e pode ser definida por valores absolutos em pixels.</p>
+      <p>As margens podem ter valores negativos. O padding, não.</p>
     </header>
     <section>
       <p>As propriedades de margem podem ter os seguintes valores:</p>
@@ -25,14 +26,15 @@
         <li><code>%</code>: define a margem em % da largura do elemento que a contém</li>
         <li><code>inherit</code>: define que a margem deve ser herdada do elemento pai</li>
       </ul>
-      <p>Algumas vezes as margens superior e inferior se juntam em uma em que o valor é o maior entre as duas margens. Isso se chama "margin collapse".</p>
+      <p>Algumas vezes as margens superior e inferior se juntam em uma em que o valor é o maior entre as duas margens. Isso se chama "margin collapse". Veja a seção <a href="#margin-collapse" target="_blank" rel="noopener noreferrer">Margin collapse</a>.</p>
+      
       <p>As propriedades de padding podem ter os seguintes valores:</p>
       <ul class="list-square">
           <li><code>length</code>: define o padding em px, pt, cm, etc.</li>
           <li><code>%</code>: define o padding em % da largura do elemento que o contém</li>
           <li><code>inherit</code>: define que o padding deve ser herdado do elemento pai</li>
       </ul>
-      <p>Se o padding for definido com a propriedade <code>width</code>, será preciso ajustar seu comportamento com a propriedade <code>box-sizing</code>, já que o tamanho do elemento será o da largura + o padding. Com <code>box-sizing: border-box</code>, a largura do elemento não muda.</p>
+      <p>Se o padding for definido com a propriedade <code>width</code>, será preciso ajustar seu comportamento com a propriedade <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-box-sizing" target="_blank" rel="noopener noreferrer">box-sizing</a></code>, já que o tamanho do elemento será o da largura + o padding. Com <code>box-sizing: border-box</code>, a largura do elemento não muda.</p>
       <p><strong>Observação</strong>: as propriedades <code>height</code> e <code>width</code> não incluem padding, bordas ou margens! Elas definem a altura e a largura da área dentro do padding, borda e margem do elemento!</p>
       <p>Use <code>max-width/max-height</code> ou <code>min-width/min-height</code> para melhorar a visualização de elementos em telas menores ou maiores, respectivamente. Quando <code>width</code> é maior que <code>max-width</code> no mesmo elemento, max-width é usada e width ignorada.</p>
 
@@ -41,6 +43,18 @@
       <p>Ao definir as propriedades de altura e largura de um elemento com CSS, esses valores mudam apenas a área de conteúdo. Para definir corretamente a altura e a largura de elementos em um site, é preciso compreender como funciona este modelo e incluir os valores de padding e bordas.</p>
       <p>Consulte também: <a href="https://www.w3schools.com/css/css_outline.asp">Outline</a>.</p>
       <p>Veja também: <a href="../HTML/css.html#box-model2">CSS (Cascading Style Sheets)</a></p>
+    </section>
+
+    <section>
+      <h2 id="margin-collapse">Margin collapse</h2>
+      <p>O "margin collapse" seleciona o maior valor entre dois elementos adjacentes com margem vertical definida nos lados adjacentes (por exemplo, a margem inferior de um H1 e a margem superior de um parágrafo). É importante notar que apenas margens de bloco (verticais) têm esse comportamento, não as de linha (horizontais).</p>
+      <p><strong>Observação</strong>: esse comportamento vem da época em que a Internet consistia principalmente de documentos. Esse ajuste das margens ajudava a garantir um espaçamento consistente entre os elementos, sem criar enormes espaços entre os elementos que tinham margens definidas.</p>
+      <p>O "margin collapse" também ajuda com elementos vazios. Se tivermos um parágrafo com margens superior e inferior de 20px, isso gera 20px de espaço, não 40px. No entanto, se <em>qualquer coisa</em> for adicionada dentro desse elemento, inclusive o padding, a margem não reduzirá mais e o parágrafo será tratado como qualquer caixa com conteúdo.</p>
+      <p>É possível impedir esse comportamento com as propriedades <code>position: absolute</code> e <code>float</code>. Além disso, dois elementos com margem que têm um elemento sem margem entre eles também ignoram esse comportamento, porque as margens de bloco dos elementos externos já não são mais adjacentes.</p>
+      <p>Aprendemos que contêineres flexíveis e de grade são muito similares a contêineres de bloco, mas lidam com seus elementos filhos de forma muito diferente. O margin collapse também é assim.</p>
+      <p>Em um contêiner flexível com direção de coluna, as margens se combinam.</p>
+
+      <p>Consulte também <a href="https://www.smashingmagazine.com/2019/07/margins-in-css/" target="_blank" rel="noopener noreferrer">este artigo</a> para saber mais sobre margens.</p>
     </section>
   </main>
 </body>

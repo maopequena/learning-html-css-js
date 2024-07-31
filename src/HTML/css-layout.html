@@ -64,7 +64,7 @@
       </header>
       <section>
         <article>
-          <h2>As propriedades <code>width</code>, <code>max-width</code> e <code>margin: auto</code>.</h2>
+          <h2>As propriedades <code>width</code>, <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-max-width" target="_blank" rel="noopener noreferrer">max-width</a></code> e <code>margin: auto</code>.</h2>
           <p>Já sabemos que um elemento de bloco ocupa toda a largura disponível da página.</p>
           <p>Definir a propriedade <code>width</code> de um elemento de bloco impedirá que ele se estique até as margens de seu contêiner. Definir as margens como automáticas centraliza o elemento horizontalmente nesse contêiner.</p>
           <p>Porém, quando a largura da tela é menor que a largura definida, o navegador adiciona barras de rolagem à página e o contêiner pode ficar maior que a tela, vazando nas laterais. Para solucionar esse problema, defina a propriedade <code>max-width</code>.</p>
@@ -77,7 +77,7 @@
         </article>
 
         <article>
-          <h2>A propriedade <code>position</code></h2>
+          <h2>A propriedade <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-position" target="_blank" rel="noopener noreferrer">position</a></code></h2>
           <p>Especifica o tipo de posicionamento de um elemento (<code>static</code>, <code>relative</code>, <code>fixed</code>, <code>absolute</code> ou <code>sticky</code>). Depois, os elementos são posicionados usando as propriedades <code>top</code>, <code>bottom</code>, <code>left</code> e <code>right</code>. Essas propriedades, entretanto, funcionam de forma diferente dependendo do valor da propriedade <code>position</code>.</p>
           <p> <strong>Lembre-se:</strong> essa propriedade define o posicionamento de acordo com o contêiner pai do objeto definido. Isto é, se o elemento estiver dentro de um contêiner, o posicionamento do elemento será relativo ao contêiner.</p>
 
@@ -124,24 +124,34 @@
 
           <h4>Exemplo</h4>
           <a href="https://www.w3schools.com/css/css_positioning.asp#:~:text=Try%20it%20Yourself%20%C2%BB-,position%3A%20sticky%3B,-An%20element%20with" target="_blank">Exemplo de posicionamento sticky</a>
+
+          <p>Ao definir um valor para <code>position</code> diferente de <code>static</code>, é possível separar os elementos com as propriedades <code>top</code>, <code>right</code>, <code>bottom</code> e <code>left</code>. Porém esses valores de direção comportam-se de forma diferente:</p>
+
+          <ul>
+            <li>Com <code>position: relative</code>, o elemento mantém seu lugar no fluxo do documento, mesmo ao definir esses valores. Os valores serão relativos à posição do elemento.</li>
+            <li>Com <code>position: absolute</code>, o elemento baseia os valores de direção na posição relativa de seu pai.</li>
+            <li>Com <code>position: fixed</code>, o elemento baseia os valores de direção no viewport.</li>
+            <li>Com <code>position: sticky</code>, o elemento aplica os valores de direção quando está em seu estado "grudado/fixado".</li>
+          </ul>
         </article>
 
         <article>
           <h2>Posicionamento de texto em imagens</h2>
           <p>Também é possível definir o posicionamento do texto em uma imagem e o formato de uma imagem.</p>
           <a href="https://www.w3schools.com/css/css_positioning.asp#:~:text=Positioning%20Text%20In%20an%20Image" target="_blank" rel="noopener noreferrer">Exemplo de posicionamento de textos em uma imagem</a>
-          <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_clip" target="_blank" rel="noopener noreferrer">Exemplo de imagem formatada com posicionamento e a propriedade <code>clip</code></a>
+          <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_clip" target="_blank" rel="noopener noreferrer">Exemplo de imagem formatada com posicionamento e a propriedade <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip" target="_blank" rel="noopener noreferrer">clip</a></code></a>
         </article>
 
         <article>
           <h2>As propriedades <code>clip</code> e <code>clip-path</code></h2>
-          <p>A propridade <code>clip</code> possibilita definir um retângulo para "recortar" um elemento com posição absoluta. Para tanto, defina as coordenadas dos quatro cantos do retângulo.</p>
+          <h4><strong>Observação</strong>: já não se recomenda mais o uso da propriedade <code>clip</code>. Apesar de alguns navegadores ainda oferecerem suporte, ela pode já ter sido removida dos padrões da Web e será descontinuada, ou será mantida apenas por motivos de compatibilidade. Evite usá-la e atualize o código existente, se possível. Consulte a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip#browser_compatibility" target="_blank" rel="noopener noreferrer">tabela de compatibilidade</a> para se orientar. Este recurso pode parar de funcionar a qualquer momento.</h4>
+          <p>A propriedade <code>clip</code> possibilita definir um retângulo para "recortar" um elemento com posição absoluta. Para tanto, defina as coordenadas dos quatro cantos do retângulo.</p>
           <p><strong>Observação</strong>: essa propriedade não funciona se o elemento tiver a propriedade "overflow:visible".</p>
           <a href="https://www.w3schools.com/cssref/playdemo.php?filename=playcss_clip" target="_blank" rel="noopener noreferrer">Exemplo da propriedade clip</a>
-          <p>A propridade <code>clip-path</code> possibilita definir uma forma básica ou fonte SVG para "recortar" um elemento com posição absoluta.</p>
+          <p>A propriedade <code>clip-path</code> possibilita definir uma forma básica ou fonte SVG para "recortar" um elemento com posição absoluta.</p>
           <p><strong>Observação</strong>: essa propriedade substitui a propriedade <code>clip</code>.</p>
-          <h4>Valores da propridade <code>clip-path</code></h4>
-          <table class="ws-table-all notranslate">
+          <h4>Valores da propriedade <code>clip-path</code></h4>
+          <table>
             <tbody>
               <tr>
                 <th style="width: 140px">Value</th>
@@ -213,7 +223,7 @@
         </article>
 
         <article>
-          <h2>A propriedade <code>z-index</code></h2>
+          <h2>A propriedade <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-z-index" target="_blank" rel="noopener noreferrer">z-index</a></code></h2>
           <p>Define a ordem de empilhamento de um elemento e quais elementos sobreporão outros. A ordem pode ser positiva ou negativa, isto é, quais ficarão na frente e quais, atrás.</p>
           
           <h4>Exemplo</h4>
@@ -222,7 +232,7 @@
         </article>
 
         <article>
-          <h2>A propriedade <code>overflow</code></h2>
+          <h2>A propriedade <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-overflow" target="_blank" rel="noopener noreferrer">overflow</a></code></h2>
           <p>Define se um conteúdo deve ser cortado e se serão exibidas barras de rolagem no caso de o conteúdo ser maior que a área definida para o elemento.</p>
           
           <h3>Valores da propriedade <code>overflow</code></h3>
@@ -258,13 +268,13 @@
         </article>
 
         <article>
-          <h2>As propriedades <code>float</code> e <code>clear</code></h2>
+          <h2>As propriedades <code>float</code> e <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-clear" target="_blank" rel="noopener noreferrer">clear</a></code></h2>
           <p><code>float</code> define como o elemento deve flutuar na página e <code>clear</code> define quais elementos podem flutuar ao lado do elemento com esta propriedade e em qual lado.</p>
           <p>O uso mais simples de <code>float</code> é fazer o texto se adequar em volta de uma imagem.</p>
           <p>Valores de <code>float</code>: <code>left</code>, <code>right</code>, <code>none</code> e <code>inherit</code>.</p>
           <p><code>clear</code> deve corresponder ao <code>float</code> usado, isto é, se o elemento tiver <code>float: left</code>, o <code>clear</code> deve ser o mesmo.</p>
           <p>Valores de <code>clear</code>: <code>left</code>, <code>right</code>, <code>none</code>, <code>both</code> e <code>inherit</code>.</p>
-          <p>Consulte também: <a href="https://www.w3schools.com/css/css_float_clear.asp#:~:text=Try%20it%20Yourself%20%C2%BB-,The%20clearfix%20Hack,-If%20a%20floated" target="_blank" rel="noopener noreferrer">Cleafix Hack</a>, <a href="https://www.w3schools.com/css/css_float_examples.asp" target="_blank" rel="noopener noreferrer">Exemplos de float</a> e <a href="https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/" target="_blank" rel="noopener noreferrer">The end of the clearfix hack?</a>.</p>
+          <p>Consulte também: <a href="https://www.w3schools.com/css/css_float_clear.asp#:~:text=Try%20it%20Yourself%20%C2%BB-,The%20clearfix%20Hack,-If%20a%20floated" target="_blank" rel="noopener noreferrer">Clearfix Hack</a>, <a href="https://www.w3schools.com/css/css_float_examples.asp" target="_blank" rel="noopener noreferrer">Exemplos de float</a> e <a href="https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/" target="_blank" rel="noopener noreferrer">The end of the clearfix hack?</a>.</p>
           <img src="../img/all-float-properties.png" alt="Todas as propriedades de float"/>
         </article>
 
@@ -292,7 +302,7 @@
 
         <article>
           <h2>Alinhamento horizontal e vertical de texto</h2>
-          <p>Para centralizar o texto dentro de um elemento, use <code>text-align: center;</code>. Por exemplo:</p>
+          <p>Para centralizar o texto dentro de um elemento, use <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-text-align" target="_blank" rel="noopener noreferrer">text-align</a>: center;</code>. Por exemplo:</p>
 
           <p style="text-align: center; color: #52afa5"><em>Este texto está centralizado horizontalmente.</em></p>
         </article>
@@ -348,7 +358,7 @@
 
         <article>
           <h2>Centralizar verticalmente usando padding</h2>
-          <p>Uma solução simples para centralizar elementos verticalmente é usar <code>padding</code> em <code>top</code> e <code>bottom</code>. Para centralizar horizontal e verticalmente, use <code>padding</code> e <code>text-align</code>.</p>
+          <p>Uma solução simples para centralizar elementos verticalmente é usar <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-padding" target="_blank" rel="noopener noreferrer">padding</a></code> em <code>top</code> e <code>bottom</code>. Para centralizar horizontal e verticalmente, use <code>padding</code> e <code>text-align</code>.</p>
 
           <div style="padding: 70px 0; border: 3px solid #52afa5; width: 500px">
             <p>Texto centralizado verticalmente com padding.</p>
@@ -360,7 +370,7 @@
         </article>
 
         <article>
-          <h2>Centralizar verticalmente usando <code>line-height</code></h2>
+          <h2>Centralizar verticalmente usando <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-line-height" target="_blank" rel="noopener noreferrer">line-height</a></code></h2>
           <p>Outro truque é usar a propriedade <code>line-height</code> para centralizar verticalmente, com um valor igual à propriedade <code>height</code>.</p>
 
           <div style="line-height:200px; height:200px; border:3px solid #52afa5; text-align:center;">
@@ -369,7 +379,7 @@
         </article>
 
         <article>
-          <h2>Centralizar verticalmente usando <code>position</code> e <code>transform</code></h2>
+          <h2>Centralizar verticalmente usando <code>position</code> e <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-transform" target="_blank" rel="noopener noreferrer">transform</a></code></h2>
           <p>Se não é possível usar <code>padding</code> e <code>line-height</code>, uma solução é usar o posicionamento e a propriedade <code>transform</code>:</p>
 
           <div style="height:200px; border:3px solid #52afa5; position: relative;">
@@ -378,8 +388,8 @@
         </article>
 
         <article>
-          <h2>Centralizar verticalmente usando <code>flexbox</code></h2>
-          <p>A propriedade <code>flexbox</code> também centraliza os elementos, mas não é compatível com o Internet Explorer v.10 ou versões mais antigas.</p>
+          <h2>Centralizar verticalmente usando <code>flex</code></h2>
+          <p>A propriedade <code>flex</code> também centraliza os elementos, mas não é compatível com o Internet Explorer v.10 ou versões mais antigas.</p>
 
           <div style="display: flex; justify-content: center; align-items: center; height: 200px; border: 3px solid #52afa5;">
             <p>I am vertically and horizontally centered.</p>
@@ -397,6 +407,74 @@
           <p>O rodapé fica no final da página e geralmente apresenta informações como copyright e de contato.</p>
 
           <p>Para saber mais e ver exemplos, clique <a href="https://www.w3schools.com/css/css_website_layout.asp" target="_blank">aqui</a>.</p>
+        </article>
+
+        <article>
+          <h2>Propriedades lógicas</h2>
+
+          <h3>A propriedade <code>writing-mode</code></h3>
+          <p>O texto flui na direção determinada pelo modo de escrita do documento (<strong>fluxo de bloco</strong>: <em>vertical</em> e <strong>fluxo de linha</strong>: <em>horizontal</em>). Você pode alterar isso com a propriedade <code>writing-mode</code>. Ela pode ser aplicada a todo o documento ou a elementos específicos.</p>
+
+          <h4>Fluxo relativo</h4>
+          <p>No CSS, propriedades como <code>margin</code> e <code>padding</code> são relativas ao lado nomeado, como <code>margin-top</code>, que refere-se ao lado superior de um elemento. Com propriedades lógicas, <code>margin-top</code> torna-se <code>margin-block-start</code>. Quer dizer, independentemente do idioma e da direção do texto, o fluxo do bloco terá as regras de margem apropriadas.</p>
+          <p>Isso também serve para a propriedade <code>padding</code>.</p>
+
+          <figure>
+            <img src="../img/box-model (3).png" alt="Modelo de caixa com propriedades lógicas">
+            <figcaption>Modelo de caixa com propriedades lógicas</figcaption>
+          </figure>
+
+          <p>Veja também: <a href="../HTML/css.html#box-model2">CSS (Cascading Style Sheets)</a> e <a href="../HTML/css-margens.html#box-model1">Margens e padding no CSS</a>.</p>
+
+          <h3>Tamanho relativo</h3>
+          <p>Para impedir que um elemento exceda determinada largura ou altura, costumamos usar as propriedades <code>max-width</code> e <code>max-height</code>. Suas contrapartes lógicas são <code>max-inline-size</code> e <code>max-block-size</code>. E para <code>min-width</code> e <code>min-height</code>, <code>min-inline-size</code> e <code>min-block-size</code>.</p>
+
+          <h3>Início e fim</h3>
+          <p>Ao invés de usar direções, como <code>top</code>, <code>right</code>, <code>bottom</code> e <code>left</code>, use <code>start</code> e <code>end</code>, que possibilita aplicar propriedades do CSS que respondem a alterações no modo de escrita.</p>
+          <p>Por exemplo, ao invés de usar <code>text-align: right</code>, use <code>text-align: end</code>.</p>
+
+          <h3>Espaçamento e posicionamento</h3>
+          <p>Usar propriedades lógicas para margem, padding e inset facilita posicionar os elementos e determinar como os elementos interagem entre si e com o modo de escrita. As propriedades relacionadas à margem e ao padding ainda são mapeamentos para direções, porém a principal diferença é que quando o modo de escrita mudar, elas também mudarão. Por exemplo, ao invés de usar:</p>
+
+          <pre>
+            <code>
+              .my-element {
+                padding-top: 2em;
+                padding-bottom: 2em;
+                margin-left: 2em;
+                position: relative;
+                top: 0.2em;
+              }
+            </code>
+          </pre>
+
+          <p>Podemos usar:</p>
+
+          <pre>
+            <code>
+              .my-element {
+                padding-block-start: 2em;
+                padding-block-end: 2em;
+                margin-inline-start: 2em;
+                position: relative;
+                inset-block-start: 0.2em;
+              }
+            </code>
+          </pre>
+
+          <h3>Bordas</h3>
+          <p>Também há propriedades lógicas para bordas. Por exemplo: <code>border-block-end</code>, <code>border-inline-end</code> e <code>border-end-end-radius</code>. Esta última define o fim do bloco <em>e</em> da linha.</p>
+
+          <h3 id="logical-units">Unidades</h3>
+          <p>As propriedades lógicas nos dão duas novas unidades: <code>vi</code> e <code>vb</code>. A unidade <code>vi</code> é 1% do tamanho do viewport na direção da linha (horizontal) e é equivalente à propriedade não-lógica <code>vw</code>. A unidade <code>vb</code> é 1% do viewport na direção do bloco (vertical) e é equivalente à propriedade não-lógica <code>vh</code>.</p>
+          <p>Essas unidades sempre se relacionarão à direção do modo de escrita. Por exemplo, se quiser que um elemento tome 80% do espaço de linha disponível no viewport, use a unidade <code>vi</code> para alternar automaticamente esse tamanho para ser <code>top</code> e <code>bottom</code> se o modo de escrita é vertical.</p>
+
+          <h3>Usar as propriedades lógicas de forma pragmática</h3>
+          <p>As propriedades lógicas e o modo de escrita não servem apenas para internacionalização. Também é possível usá-las para criar uma interface de usuário mais versátil.</p>
+          <p>Por exemplo, um gráfico que contém legendas nos dois eixos, X e Y, pode exibir a legenda do eixo Y verticalmente com as mesmas margens do eixo X se você usar propriedades lógicas.</p>
+
+          <p>Usando propriedades lógicas, por exemplo, é possível posicionar um ícone e seu texto correspondente com margens corretas independentemente do modo ou da direção de escrita.</p>
+
         </article>
       </section>
     </main>

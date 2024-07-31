@@ -1,0 +1,221 @@
+<!DOCTYPE html> <!-- Define o tipo de documento da página como HTML -->
+<html lang="pt-BR"> <!-- Para exibir a página com o idioma Português (brasileiro) corretamente -->
+<meta charset="utf-8"> <!-- Para exibir corretamente os caracteres especiais -->
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="description" content="Gradientes">
+  <meta name="author" content="Lizandra Silva (@maopequena)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradientes</title>
+  <style>
+    #grad1 {
+      height: 200px;
+      width: 400px;
+      background-color: rgb(255, 0, 0); /* For browsers that do not support gradients */
+      background-image: linear-gradient(rgb(255, 0, 0), rgb(255, 255, 0)); /* For browsers that don't support lch */
+      background-image: linear-gradient(in lch, rgb(255, 0, 0), rgb(255, 255, 0));
+    }
+
+    #grad2 {
+      height: 200px;
+      width: 400px;
+      background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, rgb(0, 0, 255), rgb(0, 255, 0));
+    }
+
+    #grad3 {
+      height: 200px;
+      width: 400px;
+      background-color: rgb(255, 0, 0); /* For browsers that do not support gradients */
+      background-image: linear-gradient(to bottom left, rgb(255, 0, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 0, 255)); /* For browsers that don't support lch */
+      color: #444;
+      font-weight: 700;
+    }
+
+    #grad4 {
+      height: 200px;
+      width: 400px;
+      background-color: rgb(255, 115, 0); /* For browsers that do not support gradients */
+      background-image: linear-gradient(97deg, rgb(255, 115, 0), rgb(115, 255, 0)); /* For browsers that don't support lch */
+      color: #444;
+      font-weight: 700;
+    }
+
+    #grad5 {
+      height: 200px;
+      width: 400px;
+      background-image: linear-gradient(to left, rgba(0, 255, 149, 1), rgba(0, 255, 149, 0.1));
+    }
+
+    #grad6 {
+      height: 200px;
+      width: 400px;
+      background-image: radial-gradient(rgb(255, 0, 0), rgb(255, 255, 0), rgb(0, 255, 0));
+    }
+
+    #grad7 {
+      height: 200px;
+      width: 400px;
+      background-image: radial-gradient(rgb(245, 0, 0) 20%, rgb(230, 0, 220) 10%, rgb(0, 210, 190) 50%);
+    }
+
+    #grad8 {
+      height: 200px;
+      width: 400px;
+      background-image: radial-gradient(circle, rgb(235, 137, 0), rgb(180, 0, 175), rgb(0, 150, 147));
+    }
+
+    #grad9 {
+      height: 200px;
+      width: 400px;
+      background-image: radial-gradient(closest-side at 20% 25%, rgb(122, 118, 0), rgb(109, 0, 91), rgb(0, 86, 74));
+    }
+
+    #grad10 {
+      height: 200px;
+      width: 400px;
+      background-image: radial-gradient(farthest-side at 70% 85%, rgb(65, 53, 0), rgb(49, 0, 32), rgb(0, 27, 15));
+    }
+
+    #grad11 {
+      height: 200px;
+      width: 400px;
+      background-image: conic-gradient(rgb(6, 14, 0), rgb(20, 0, 33), rgb(0, 48, 56));
+    }
+
+    #grad12 {
+      height: 200px;
+      width: 400px;
+      background-image: conic-gradient(rgb(67, 75, 0), rgb(81, 0, 94), rgb(0, 109, 117), rgb(128, 135, 0), rgb(0, 142, 155));
+    }
+
+    #grad13 {
+      height: 200px;
+      width: 400px;
+      background-image: conic-gradient(rgb(168, 176, 0) 45deg, rgb(182, 0, 195) 90deg, rgb(0, 200, 218) 210deg);
+    }
+
+    #grad14 {
+      height: 200px;
+      width: 400px;
+      background-image: conic-gradient(rgb(229, 237, 0) 45deg, rgb(243, 0, 255) 90deg, rgb(0, 241, 239) 210deg);
+      border-radius: 30%;
+    }
+
+    #grad15 {
+      height: 200px;
+      width: 200px;
+      background-image: conic-gradient(rgb(220, 218, 0) 45deg, rgb(194, 0, 186) 90deg, rgb(0, 171, 169) 210deg);
+      border-radius: 50%;
+    }
+
+    #grad16 {
+      height: 200px;
+      width: 200px;
+      background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);
+      border-radius: 50%;
+    }
+
+    #grad17 {
+      height: 200px;
+      width: 200px;
+      background-image: conic-gradient(from 90deg, red, yellow, green);
+      border-radius: 50%;
+    }
+
+    #grad18 {
+      height: 200px;
+      width: 200px;
+      background-image: conic-gradient(at 60% 45%, red, yellow, green);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h1>Gradientes</h1>
+    <p>Há três tipos de gradientes no CSS:</p>
+
+    <ul>
+      <li>Linear: de cima para baixo, da esquerda para a direita, na diagonal</li>
+      <li>Radial: definido pelo centro</li>
+      <li>Cônico: giram a partir de um ponto central</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Linear</h2>
+    <p>Para criar um gradiente linear, defina ao menos duas cores. É possível definir também um ponto inicial e uma direção (ou ângulo) para o gradiente.</p>
+    <p>Sintaxe: <code>background-image: linear-gradient(direção, cor1, cor2, ...);</code>. Adicione "<a href="https://youtube.com/shorts/_W6jFTcqyig?si=Pr6iMQJmpaaymYke" target="_blank" rel="noopener noreferrer">in lch, </a>" após o parêntese de abertura para suavizar o gradiente e deixar as cores mais vívidas.</p>
+
+    <p>Exemplo:</p>
+    <div id="grad1"></div>
+
+    <h3>Da esquerda para a direita</h3>
+    <div id="grad2"></div>
+
+    <h3>Diagonal</h3>
+    <div id="grad3">Com várias cores</div>
+
+    <h3>Usando ângulos</h3>
+    <p>Sintaxe: <code>background-image: linear-gradient(ângulo, cor1, cor2);</code></p>
+    <div id="grad4">Ângulo de 97deg</div>
+
+    <h3>Com transparência</h3>
+    <p>Use <code>rgba()</code> para as cores do gradiente para definir uma transparência.</p>
+    <div id="grad5"></div>
+  </section>
+
+  <section>
+    <h2>Radial</h2>
+    <p>Para criar um gradiente radial, defina ao menos duas cores. É preciso definir também o centro.</p>  
+    <p>Sintaxe: <code>background-image: radial-gradient(<em>tamanho forma</em> at <em>posição</em>, corInicial, ..., corFinal);</code>.</p>
+    <p>Por padrão, <em>forma</em> é "ellipse", <em>tamanho</em> é "farthest-corner" e <em>posição</em> é "center".</p>
+    <p>Exemplo:</p>
+
+    <div id="grad6"></div>
+
+    <p>Também é possível definir o espaçamento das cores no gradiente radial com porcentagens. Exemplo:</p>
+
+    <div id="grad7"></div>
+
+    <p>Os valores para "forma" são <code>ellipse</code> e <code>circle</code>.</p>
+
+    <div id="grad8"></div>
+
+    <p>O parâmetro "tamanho" aceita os seguintes valores: <code>closest-side</code>, <code>farthest-side</code>, <code>closest-corner</code> e <code>farthest-corner</code>. Exemplos:</p>
+
+    <div id="grad9"></div>
+
+    <div id="grad10"></div>
+  </section>
+
+  <section>
+    <h2>Cônico</h2>
+    <p>As transições de cores do gradiente cônico giram em torno de um ponto central. É preciso definir ao menos duas cores.</p>
+    <p>Sintaxe: <code>background-image: conic-gradient([from angle] [at position,] color [degree], color [degree], ...);</code>. Por padrão o ângulo é 0deg e a posição é "center". Se não for definido um valor em graus para as cores, elas serão distribuídas igualmente em volta do centro. Exemplo:</p>
+
+    <div id="grad11">Com três cores</div>
+
+    <div id="grad12">Com cinco cores</div>
+
+    <div id="grad13">Definindo os graus</div>
+
+    <div id="grad14">Definindo o border-radius em 30%</div>
+
+    <div id="grad15">Definindo o border-radius em 50% com largura e altura iguais para dar a impressão de um gráfico de pizza</div>
+
+    <div id="grad16">Com as cores bem definidas por graus</div>
+
+    <div id="grad17">Com o "from angle" definido</div>
+
+    <div id="grad18">Com a "posição" definida</div>
+
+    <p>Podemos também animar uma borda com gradientes, veja como:</p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ezP4kbOvs_E?si=LgnxagHhGR1STidF" title="Learn CSS Border Animations in 6 minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </section>
+</body>
+</html>

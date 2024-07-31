@@ -12,395 +12,491 @@
     <title>Seletores do CSS</title>
 </head>
 <body>
-    <main>
-      <div>
-      <header>
-        <h1>Seletores do CSS</h1>
-        <p>Há 5 categorias de seletores:</p>
-        <ul class="list-square">
-          <li><strong>Seletores simples</strong>: seleciona elementos com base no nome, na id ou na classe.</li>
-          <li><strong><a href="https://www.w3schools.com/css/css_combinators.asp" target="_blank">Seletores combinados</a></strong>: seleciona elementos com base em um relacionamento específico entre eles. <a href="#combinados"><i class="fa-solid fa-anchor"></i></a></li>
-          <li><strong><a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">Seletores de pseudo-classe</a></strong>: seleciona elementos com base em um estado ou comportamento. <a href="#pseudo-classe"><i class="fa-solid fa-anchor"></i></a></li>
-          <li><strong><a href="https://www.w3schools.com/css/css_pseudo_elements.asp" target="_blank">Seletores de pseudo-elemento</a></strong>: seleciona e estiliza uma parte de um elemento. <a href="#pseudo-elemento"><i class="fa-solid fa-anchor"></i></a></li>
-          <li><strong><a href="https://www.w3schools.com/css/css_attribute_selectors.asp" target="_blank">Seletores de atributos</a></strong>: seleciona elementos com base em um atributo ou valor de atributo. <a href="#atributos"><i class="fa-solid fa-anchor"></i></a></li>
-        </ul>
-      </header>
+  <main>
+    <header>
+      <h1>Seletores do CSS</h1>
+      <p>Há 5 categorias de seletores:</p>
+      <ul class="list-square">
+        <li><strong>Seletores simples</strong>: seleciona elementos com base no nome, na id ou na classe.</li>
+        <li><strong><a href="https://www.w3schools.com/css/css_combinators.asp" target="_blank">Seletores combinados</a></strong>: seleciona elementos com base em um relacionamento específico entre eles. <a href="#combinados"><i class="fa-solid fa-anchor"></i></a></li>
+        <li><strong><a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">Seletores de pseudo-classe</a></strong>: seleciona elementos com base em um estado ou comportamento. <a href="#pseudo-classe"><i class="fa-solid fa-anchor"></i></a></li>
+        <li><strong><a href="https://www.w3schools.com/css/css_pseudo_elements.asp" target="_blank">Seletores de pseudo-elemento</a></strong>: seleciona e estiliza uma parte de um elemento. <a href="#pseudo-elemento"><i class="fa-solid fa-anchor"></i></a></li>
+        <li><strong><a href="https://www.w3schools.com/css/css_attribute_selectors.asp" target="_blank">Seletores de atributos</a></strong>: seleciona elementos com base em um atributo ou valor de atributo. <a href="#atributos"><i class="fa-solid fa-anchor"></i></a></li>
+      </ul>
+    </header>
 
-      <section>
-        <h2>Seletores simples</h2>
-        <p>Os seletores simples são os mais comuns e usados. Pode-se usar o nome, id ou classe para selecionar elementos.</p>
-        <p>Os seletores simples de id usam o atributo para estilizar um único elemento nas páginas do site, já que o atributo id deve ser exclusivo.</p>
-        <p>Para selecionar um elemento com uma id específica, use o caractere cerquilha (<code>#</code>) e o nome da id do elemento. P.ex.:</p>
-        <pre>
-          <code>#myId {
-          text-align: center;
-          color: red;
-          }</code>
-        </pre>
-        <p>O seletor de classe estiliza elementos HTML com um atributo de classe específico.</p>
-        <p>Para selecionar elementos com uma classe especifica, digite um ponto (<code>.</code>) e o nome da classe do elemento. P.ex.:</p>
-        <pre>
-          <code>.myClass {
-          font-size: 18pt;
-          color: blue;
-          }</code>
-        </pre>
-        <p>Também é possível definir que apenas alguns elementos HTML devem ser afetados por uma classe:</p>
-        <pre>
-          <code>p.myClass {
-          margin-left: 10px;
-          font-family: Arial, Helvetica, sans-serif;
-          }</code>
-        </pre>
-        <p>Ou, ainda, um elemento pode ter mais de uma classe:</p>
-        <pre>
-          <code>&lt;html&gt;
-          &lt;head&gt;
-          &lt;style&gt;
-          p.center {
-          text-align: center;
-          color: red;
-          }
+    <section>
+      <h2>Seletores simples</h2>
+      <p>Os seletores simples são os mais comuns e usados. Pode-se usar o tipo, a id ou a classe para selecionar elementos.</p>
+      <p>Os seletores simples de id usam o atributo para estilizar um único elemento nas páginas do site, já que o atributo id deve ser exclusivo.</p>
+      <p>Para selecionar um elemento com uma id específica, use o caractere cerquilha (<code>#</code>) e o nome da id do elemento. P.ex.:</p>
+      <pre>
+        <code>#myId {
+        text-align: center;
+        color: red;
+        }</code>
+      </pre>
+      <p>O seletor de classe estiliza elementos HTML com um atributo de classe específico.</p>
+      <p>Para selecionar elementos com uma classe especifica, digite um ponto (<code>.</code>) e o nome da classe do elemento. P.ex.:</p>
+      <pre>
+        <code>.myClass {
+        font-size: 18pt;
+        color: blue;
+        }</code>
+      </pre>
+      <p>Também é possível definir que apenas alguns elementos HTML devem ser afetados por uma classe:</p>
+      <pre>
+        <code>p.myClass {
+        margin-left: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        }</code>
+      </pre>
+      <p>Ou, ainda, um elemento pode ter mais de uma classe:</p>
+      <pre>
+        <code>&lt;html&gt;
+        &lt;head&gt;
+        &lt;style&gt;
+        p.center {
+        text-align: center;
+        color: red;
+        }
 
-          p.large {
-          font-size: 300%;
-          }
-          &lt;/style&gt;
-          &lt;/head&gt;
-          &lt;body&gt;
+        p.large {
+        font-size: 300%;
+        }
+        &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
 
-          &lt;h1 class="center"&gt;This heading will not be affected&lt;/h1&gt;
-          &lt;p class="center"&gt;This paragraph will be red and center-aligned.&lt;/p&gt;
-          &lt;p class="center large"&gt;This paragraph will be red, center-aligned, and in a large font-size.&lt;/p&gt;
-          &lt;/body&gt;</code>
-        </pre>
-        <p>Também podemos usar o seletor universal (<code>*</code>) para selecionar todos os elementos na página.</p>
-        <pre>
-          <code>* {
-          font-size: 18pt;
-          color: blue;
-          }</code>
-        </pre>
-        <p>E é possível, ainda, agrupar elementos que têm o mesmo estilo usando vírgulas. Este exemplo coloca tamanho de fonte de 18 pontos e a cor azul em cabeçalhos h1, h2 e parágrafos:</p>
-        <pre>
-          <code>h1, h2, p {
-          font-size: 18pt;
-          color: blue;
-          }</code>
-        </pre>
+        &lt;h1 class="center"&gt;This heading will not be affected&lt;/h1&gt;
+        &lt;p class="center"&gt;This paragraph will be red and center-aligned.&lt;/p&gt;
+        &lt;p class="center large"&gt;This paragraph will be red, center-aligned, and in a large font-size.&lt;/p&gt;
+        &lt;/body&gt;</code>
+      </pre>
+      <p>Também podemos usar o seletor universal (<code>*</code>) para selecionar todos os elementos na página.</p>
+      <pre>
+        <code>* {
+        font-size: 18pt;
+        color: blue;
+        }</code>
+      </pre>
+      <p>E é possível, ainda, agrupar elementos que têm o mesmo estilo usando vírgulas (o que é chamado de "lista"). Este exemplo coloca tamanho de fonte de 18 pontos e a cor azul em cabeçalhos h1, h2 e parágrafos:</p>
+      <pre>
+        <code>h1, h2, p {
+        font-size: 18pt;
+        color: blue;
+        }</code>
+      </pre>
 
-        <h2 id="combinados">Seletores combinados</h2>
-        <p>Um seletor pode conter mais de um seletor simples. E podemos usar os quatro combinadores a seguir para uni-los:</p>
+      <p class="important-info"><strong>Observação</strong>: ao agrupar seletores dessa forma, se a sintaxe de um dos seletores for inválida, toda a regra será ignorada!</p>
 
-        <h3>Descendente (espaço)</h3>
-        <p>Corresponde todos os elementos que são descendentes do elemento especificado. P.ex.:</p>
-        <pre>
-          <code>div p {
-          background-color: yellow;
-          }</code>
-        </pre>
+      <h2 id="combinados">Seletores combinados</h2>
+      <p>Um seletor pode conter mais de um seletor simples. E podemos usar os quatro combinadores a seguir para uni-los:</p>
 
-        <h3>Filho (>)</h3>
-        <p>Corresponde todos os elementos que são filhos do elemento especificado. P.ex.:</p>
-        <pre>
-          <code>div > p {
-          background-color: yellow;
-          }</code>
-        </pre>
-            
-        <h3>Adjacentes (+)</h3>
-        <p>Seleciona um elemento que está diretamente a seguir do elemento especificado. P.ex.:</p>
-        <pre>
-          <code>div + p {
-          background-color: yellow;
-          }</code>
-        </pre>
-        <p>Os elementos adjacentes devem ter o mesmo pai. Muito usado para adicionar espaço entre os parágrafos ou itens de lista <em>somente</em> se um elemento é um <strong>irmão</strong> próximo de outro elemento pai.</p>
-            
-        <h3>Irmão geral (~)</h3>
-        <p>Seleciona todos os elementos que são os irmãos próximos de um elementos especificado. P.ex.:</p>
-        <pre>
-          <code>div ~ p {
-          background-color: yellow;
-          }</code>
-        </pre>
+      <h3>Descendente (espaço)</h3>
+      <p>Corresponde todos os elementos que são descendentes do elemento especificado. P.ex.:</p>
+      <pre>
+        <code>div p {
+        background-color: yellow;
+        }</code>
+      </pre>
 
-        <h2 id="pseudo-classe">Seletores de pseudo-classe</h2>
-        <p>Seletores de pseudo-classe permitem estilizar elementos usando um determinado estado desse elemento. Por exemplo:</p>
-        <ul>
-            <li>Estilizar um elemento ao passar o mouse sobre ele (<code>:hover</code>)</li>
-            <li>Estilizar os links de forma diferente caso já tenham sido clicados (<code>:visited</code>)</li>
-            <li>Estilizar um elemento quando recebe o foco (<code>:focus</code>)</li>
-        </ul>
-        <p>Use dois-pontos (<code>:</code>) para definir uma pseudo-classe.</p>
-        <pre>
-          <code>a:hover {
-          background-color: yellow;
-          }</code>
-        </pre>
-        <p><strong>Observação</strong>: <code>a:hover</code> DEVE vir após <code>a:link</code> e <code>a:visited</code> nas definições do CSS para funcionar! <code>a:active</code> DEVE vir após <code>a:hover</code> para funcionar! Os nomes de pseudo-classes não diferenciam maiúsculas de minúsculas.</p>
-        <p>Também é possível combinar pseudo-classe e ids ou classes. P.ex.:</p>
-        <pre>
-          <code>a#myId:first-child {
-          background-color: yellow;
-          }
-          p.myClass:hover {
-          background-color: blue;
-          }</code>
-        </pre>
+      <h3>Filho (>)</h3>
+      <p>Corresponde todos os elementos que são filhos do elemento especificado. P.ex.:</p>
+      <pre>
+        <code>div > p {
+        background-color: yellow;
+        }</code>
+      </pre>
+          
+      <h3>Adjacentes (+)</h3>
+      <p>Seleciona um elemento que está diretamente a seguir do elemento especificado. P.ex.:</p>
+      <pre>
+        <code>div + p {
+        background-color: yellow;
+        }</code>
+      </pre>
+      <p>Os elementos adjacentes devem ter o mesmo pai. Muito usado para adicionar espaço entre os parágrafos ou itens de lista <em>somente</em> se um elemento é um <strong>irmão</strong> próximo de outro elemento pai.</p>
+          
+      <h3>Irmão geral (~)</h3>
+      <p>Seleciona todos os elementos que são os irmãos próximos de um elementos especificado. P.ex.:</p>
+      <pre>
+        <code>div ~ p {
+        background-color: yellow;
+        }</code>
+      </pre>
 
-        <p>Exemplos de pseudo-classes:</p>
-        <table>
-          <tbody>
-            <tr>
-            <th style="width:20%">Selector</th>
-            <th style="width:20%">Example</th>
-            <th>Example description</th>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_active.asp">:active</a></td>
-            <td class="notranslate">a:active</td>
-            <td>Selects the active link</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_checked.asp">:checked</a></td>
-            <td class="notranslate">input:checked</td>
-            <td>Selects every checked &lt;input&gt; element</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_disabled.asp">:disabled</a></td>
-            <td class="notranslate">input:disabled</td>
-            <td>Selects every disabled &lt;input&gt; element</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_empty.asp">:empty</a></td>
-            <td class="notranslate">p:empty</td>
-            <td>Selects every &lt;p&gt; element that has no children</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_enabled.asp">:enabled</a></td>
-            <td class="notranslate">input:enabled</td>
-            <td>Selects every enabled &lt;input&gt; element</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_firstchild.asp">:first-child</a></td>
-            <td class="notranslate">p:first-child</td>
-            <td>Selects every &lt;p&gt; elements that is the first child of its parent</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_first-of-type.asp">:first-of-type</a></td>
-            <td class="notranslate">p:first-of-type</td>
-            <td>Selects every &lt;p&gt; element that is the first &lt;p&gt; element of its parent</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_focus.asp">:focus</a></td>
-            <td class="notranslate">input:focus</td>
-            <td>Selects the &lt;input&gt; element that has focus</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_hover.asp">:hover</a></td>
-            <td class="notranslate">a:hover</td>
-            <td>Selects links on mouse over</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_in-range.asp">:in-range</a></td>
-            <td class="notranslate">input:in-range</td>
-            <td>Selects &lt;input&gt; elements with a value within a specified range</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_invalid.asp">:invalid</a></td>
-            <td class="notranslate">input:invalid</td>
-            <td>Selects all &lt;input&gt; elements with an invalid value</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_lang.asp">:lang(<i>language</i>)</a></td>
-            <td class="notranslate">p:lang(it)</td>
-            <td>Selects every &lt;p&gt; element with a lang attribute value starting with "it"</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_last-child.asp">:last-child</a></td>
-            <td class="notranslate">p:last-child</td>
-            <td>Selects every &lt;p&gt; elements that is the last child of its parent</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_last-of-type.asp">:last-of-type</a></td>
-            <td class="notranslate">p:last-of-type</td>
-            <td>Selects every &lt;p&gt; element that is the last &lt;p&gt; element of its parent</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_link.asp">:link</a></td>
-            <td class="notranslate">a:link</td>
-            <td>Selects all unvisited links</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_not.asp">:not(selector)</a></td>
-            <td class="notranslate">:not(p)</td>
-            <td>Selects every element that is not a &lt;p&gt; element</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_nth-child.asp">:nth-child(n)</a></td>
-            <td class="notranslate">p:nth-child(2)</td>
-            <td>Selects every &lt;p&gt; element that is the second child of its parent</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_nth-last-child.asp">:nth-last-child(n)</a></td>
-            <td class="notranslate">p:nth-last-child(2)</td>
-            <td>Selects every &lt;p&gt; element that is the second child of its parent, counting from the last child</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_nth-last-of-type.asp">:nth-last-of-type(n)</a></td>
-            <td class="notranslate">p:nth-last-of-type(2)</td>
-            <td>Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent, counting from the last child</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_nth-of-type.asp">:nth-of-type(n)</a></td>
-            <td class="notranslate">p:nth-of-type(2)</td>
-            <td>Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_only-of-type.asp">:only-of-type</a></td>
-            <td class="notranslate">p:only-of-type</td>
-            <td>Selects every &lt;p&gt; element that is the only &lt;p&gt; element of its parent</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_only-child.asp">:only-child</a></td>
-            <td class="notranslate">p:only-child</td>
-            <td>Selects every &lt;p&gt; element that is the only child of its parent</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_optional.asp">:optional</a></td>
-            <td class="notranslate">input:optional</td>
-            <td>Selects &lt;input&gt; elements with no "required" attribute</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_out-of-range.asp">:out-of-range</a></td>
-            <td class="notranslate">input:out-of-range</td>
-            <td>Selects &lt;input&gt; elements with a value outside a specified range</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_read-only.asp">:read-only</a></td>
-            <td class="notranslate">input:read-only</td>
-            <td>Selects &lt;input&gt; elements with a "readonly" attribute specified</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_read-write.asp">:read-write</a></td>
-            <td class="notranslate">input:read-write</td>
-            <td>Selects &lt;input&gt; elements with no "readonly" attribute</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_required.asp">:required</a></td>
-            <td class="notranslate">input:required</td>
-            <td>Selects &lt;input&gt; elements with a "required" attribute specified</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_root.asp">:root</a></td>
-            <td class="notranslate">root</td>
-            <td>Selects the document's root element</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_target.asp">:target</a></td>
-            <td class="notranslate">#news:target</td>
-            <td>Selects the current active #news element (clicked on a URL containing that anchor name)</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_valid.asp">:valid</a></td>
-            <td class="notranslate">input:valid</td>
-            <td>Selects all &lt;input&gt; elements with a valid value</td>
-            </tr>
-            <tr>
-            <td><a href="/cssref/sel_visited.asp">:visited</a></td>
-            <td class="notranslate">a:visited</td>
-            <td>Selects all visited links</td>
-            </tr>
-          </tbody>
-        </table>
+      <h2 id="pseudo-classe">Seletores de pseudo-classe</h2>
+      <p>Seletores de pseudo-classe permitem estilizar elementos usando um determinado estado desse elemento. Por exemplo:</p>
+      <ul>
+          <li>Estilizar um elemento ao passar o mouse sobre ele (<code>:hover</code>)</li>
+          <li>Estilizar os links de forma diferente caso já tenham sido clicados (<code>:visited</code>)</li>
+          <li>Estilizar um elemento quando recebe o foco (<code>:focus</code>)</li>
+      </ul>
+      <p>Use dois-pontos (<code>:</code>) para definir uma pseudo-classe.</p>
+      <pre>
+        <code>a:hover {
+        background-color: yellow;
+        }</code>
+      </pre>
+      <p class="important-info"><strong>Observação</strong>: <code>a:hover</code> DEVE vir após <code>a:link</code> e <code>a:visited</code> nas definições do CSS para funcionar! <code>a:active</code> DEVE vir após <code>a:hover</code> para funcionar! Os nomes de pseudo-classes não diferenciam maiúsculas de minúsculas.</p>
+      <p>Também é possível combinar pseudo-classe e ids ou classes. P.ex.:</p>
+      <pre>
+        <code>a#myId:first-child {
+        background-color: yellow;
+        }
+        p.myClass:hover {
+        background-color: blue;
+        }</code>
+      </pre>
 
-        <p><strong>Observação</strong>: O símbolo de dois-pontos duplo (::) é o que diferencia um pseudo-elemento de uma pseudo-classe, mas como essa distinção não estava presente em versões mais antigas das especificações do CSS, os navegadores oferecem suporte a único dois-pontos para os pseudo-elementos originais, como <code>:before</code> e <code>:after</code> para ajudar com a retrocompatibilidade em navegadores antigos como o IE8.</p>
+      <p>Mais informações sobre pseudo-classes em <a href="https://web.dev/learn/css/pseudo-classes" target="_blank" rel="noopener noreferrer">Web.dev</a>.</p>
 
-        <h2 id="pseudo-elemento">Seletores de pseudo-elemento</h2>
-        <p>Usados para estilizar partes de um elemento. Por exemplo, a primeira letra ou linha de um elemento, ou inserir conteúdo antes ou depois de um elemento.</p>
-        <p>Use dois dois-pontos (<code>::</code>) para definir um pseudo-elemento.</p>
-        <p>A lista a seguir apresenta alguns dos pseudo-elementos e suas propriedades de CSS correspondentes:</p>
-        <ul>
-          <li><code>::first-line</code>, estiliza a primeira linha de um texto: font properties, color properties, background properties, word-spacing, letter-spacing, text-decoration, vertical-align, text-transform, line-height, clear.</li>
-          <li><code>::first-letter</code> estiliza a primeira letra de um texto: font properties, color properties, background properties, margin properties, padding properties, border properties, text-decoration, vertical-align (apenas se "float: none"), text-transform, line-height, float, clear.</li>
-          <li><code>::before</code>, insere conteúdo antes do elemento ao qual foi aplicado.</li>
-          <li><code>::after</code>, insere conteúdo depois do elemento ao qual foi aplicado.</li>
-          <li><code>::marker</code>, estiliza os marcadores de uma lista.</li>
-          <li><code>::selection</code>, estiliza uma parte selecionada do texto: color, background, cursor, outline.</li>
-        </ul>
-        <p>Também é possível combinar pseudo-elementos a classes com a sintaxe <code>elemento.classe::pseudo-elemento {propriedade: valor;}</code>.</p>
+      <p>Exemplos de pseudo-classes:</p>
+      <p>Consulte a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:active" target="_blank" rel="noopener noreferrer">lista de pseudo-classes</a> no MDN para saber mais.</p>
+      <table>
+        <tbody>
+          <tr>
+          <th style="width:20%">Selector</th>
+          <th style="width:20%">Example</th>
+          <th>Example description</th>
+          </tr>
+          <tr>
+          <td>:active</td>
+          <td>a:active</td>
+          <td>Selects the active link</td>
+          </tr>
+          <tr>
+          <td>:checked</td>
+          <td>input:checked</td>
+          <td>Selects every checked &lt;input&gt; element</td>
+          </tr>
+          <tr>
+          <td>:disabled</td>
+          <td>input:disabled</td>
+          <td>Selects every disabled &lt;input&gt; element</td>
+          </tr>
+          <tr>
+          <td>:empty</td>
+          <td>p:empty</td>
+          <td>Selects every &lt;p&gt; element that has no children</td>
+          </tr>
+          <tr>
+          <td>:enabled</td>
+          <td>input:enabled</td>
+          <td>Selects every enabled &lt;input&gt; element</td>
+          </tr>
+          <tr>
+          <td>:first-child</td>
+          <td>p:first-child</td>
+          <td>Selects every &lt;p&gt; elements that is the first child of its parent</td>
+          </tr>
+          <tr>
+          <td>:first-of-type</td>
+          <td>p:first-of-type</td>
+          <td>Selects every &lt;p&gt; element that is the first &lt;p&gt; element of its parent</td>
+          </tr>
+          <tr>
+          <td>:focus</td>
+          <td>input:focus</td>
+          <td>Selects the &lt;input&gt; element that has focus</td>
+          </tr>
+          <tr>
+          <td>:hover</td>
+          <td>a:hover</td>
+          <td>Selects links on mouse over</td>
+          </tr>
+          <tr>
+          <td>:in-range</td>
+          <td>input:in-range</td>
+          <td>Selects &lt;input&gt; elements with a value within a specified range</td>
+          </tr>
+          <tr>
+          <td>:invalid</td>
+          <td>input:invalid</td>
+          <td>Selects all &lt;input&gt; elements with an invalid value</td>
+          </tr>
+          <tr>
+          <td>:lang(<em>language</em>)</td>
+          <td>p:lang(it)</td>
+          <td>Selects every &lt;p&gt; element with a lang attribute value starting with "it"</td>
+          </tr>
+          <tr>
+          <td>:last-child</td>
+          <td>p:last-child</td>
+          <td>Selects every &lt;p&gt; elements that is the last child of its parent</td>
+          </tr>
+          <tr>
+          <td>:last-of-type</td>
+          <td>p:last-of-type</td>
+          <td>Selects every &lt;p&gt; element that is the last &lt;p&gt; element of its parent</td>
+          </tr>
+          <tr>
+          <td>:link</td>
+          <td>a:link</td>
+          <td>Selects all unvisited links</td>
+          </tr>
+          <tr>
+          <td>:not(selector)</td>
+          <td>:not(p)</td>
+          <td>Selects every element that is not a &lt;p&gt; element</td>
+          </tr>
+          <tr>
+          <td>:nth-child(n)</td>
+          <td>p:nth-child(2)</td>
+          <td>Selects every &lt;p&gt; element that is the second child of its parent</td>
+          </tr>
+          <tr>
+          <td>:nth-last-child(n)</td>
+          <td>p:nth-last-child(2)</td>
+          <td>Selects every &lt;p&gt; element that is the second child of its parent, counting from the last child</td>
+          </tr>
+          <tr>
+          <td>:nth-last-of-type(n)</td>
+          <td>p:nth-last-of-type(2)</td>
+          <td>Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent, counting from the last child</td>
+          </tr>
+          <tr>
+          <td>:nth-of-type(n)</td>
+          <td>p:nth-of-type(2)</td>
+          <td>Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent</td>
+          </tr>
+          <tr>
+          <td>:only-of-type</td>
+          <td>p:only-of-type</td>
+          <td>Selects every &lt;p&gt; element that is the only &lt;p&gt; element of its parent</td>
+          </tr>
+          <tr>
+          <td>:only-child</td>
+          <td>p:only-child</td>
+          <td>Selects every &lt;p&gt; element that is the only child of its parent</td>
+          </tr>
+          <tr>
+          <td>:optional</td>
+          <td>input:optional</td>
+          <td>Selects &lt;input&gt; elements with no "required" attribute</td>
+          </tr>
+          <tr>
+          <td>:out-of-range</td>
+          <td>input:out-of-range</td>
+          <td>Selects &lt;input&gt; elements with a value outside a specified range</td>
+          </tr>
+          <tr>
+          <td>:read-only</td>
+          <td>input:read-only</td>
+          <td>Selects &lt;input&gt; elements with a "readonly" attribute specified</td>
+          </tr>
+          <tr>
+          <td>:read-write</td>
+          <td>input:read-write</td>
+          <td>Selects &lt;input&gt; elements with no "readonly" attribute</td>
+          </tr>
+          <tr>
+          <td>:required</td>
+          <td>input:required</td>
+          <td>Selects &lt;input&gt; elements with a "required" attribute specified</td>
+          </tr>
+          <tr>
+          <td>:root</td>
+          <td>root</td>
+          <td>Selects the document's root element</td>
+          </tr>
+          <tr>
+          <td>:target</td>
+          <td>#news:target</td>
+          <td>Selects the current active #news element (clicked on a URL containing that anchor name)</td>
+          </tr>
+          <tr>
+          <td>:valid</td>
+          <td>input:valid</td>
+          <td>Selects all &lt;input&gt; elements with a valid value</td>
+          </tr>
+          <tr>
+          <td>:visited</td>
+          <td>a:visited</td>
+          <td>Selects all visited links</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="important-info"><strong>Observação</strong>: O símbolo de dois-pontos duplo (::) é o que diferencia um pseudo-elemento de uma pseudo-classe, mas como essa distinção não estava presente em versões mais antigas das especificações do CSS, os navegadores oferecem suporte a único dois-pontos para os pseudo-elementos originais, como <code>:before</code> e <code>:after</code> para ajudar com a retrocompatibilidade em navegadores antigos como o IE8.</p>
+
+      <h2 id="pseudo-elemento">Seletores de pseudo-elemento</h2>
+      <p>Consulte a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after" target="_blank" rel="noopener noreferrer">lista de pseudo-elementos</a> no MDN para saber mais.</p>
+      <p>Usados para estilizar partes de um elemento. Por exemplo, a primeira letra ou linha de um elemento, ou inserir conteúdo antes ou depois de um elemento.</p>
+      <p>Use dois dois-pontos (<code>::</code>) para definir um pseudo-elemento.</p>
+      <p>A lista a seguir apresenta alguns dos pseudo-elementos e suas propriedades de CSS correspondentes:</p>
+      <ul>
+        <li><code>::first-line</code>, estiliza a primeira linha de um texto: font properties, color properties, background properties, word-spacing, letter-spacing, text-decoration, vertical-align, text-transform, line-height, clear.</li>
+        <li><code>::first-letter</code> estiliza a primeira letra de um texto: font properties, color properties, background properties, margin properties, padding properties, border properties, text-decoration, vertical-align (apenas se "float: none"), text-transform, line-height, float, clear.</li>
+        <li><code>::before</code>, insere conteúdo antes do elemento ao qual foi aplicado.</li>
+        <li><code>::after</code>, insere conteúdo depois do elemento ao qual foi aplicado.</li>
+        <li><code>::marker</code>, estiliza os marcadores de uma lista.</li>
+        <li><code>::selection</code>, estiliza uma parte selecionada do texto: color, background, cursor, outline.</li>
+        <li><code>::placeholder</code>, estiliza o texto de um campo de entrada.</li>
+        <li><code>::backdrop</code>, para estilizar o espaço entre o elemento e o restante da página de elementos que aparecem em tela cheia, como <code>dialog</code> ou <code>video</code>, isto é, estiliza o plano de fundo.</li>
+      </ul>
+      <p>Também é possível combinar pseudo-elementos a classes com a sintaxe <code>elemento.classe::pseudo-elemento {propriedade: valor;}</code>.</p>
+      
+      <p>Mais informações sobre pseudo-elementos em <a href="web.dev/learn/css/pseudo-elements" target="_blank" rel="noopener noreferrer">Web.dev</a>.</p>
     </section>
 
     <section>
-        <h2 id="atributos">Seletores de atributos</h2>
-        <p>Usados com elementos que têm determinado atributo HTML ou que têm um determinado valor de atributo. Para usá-lo envolva o seletor entre colchetes (<code>[ ]</code>). P.ex.:</p>
+      <h2 id="atributos">Seletores de atributos</h2>
+      <p>Usados com elementos que têm determinado atributo HTML ou que têm um determinado valor de atributo. Para usá-lo envolva o seletor entre colchetes (<code>[ ]</code>). P.ex.:</p>
 
-        <pre>
-          [data-type='primary'] {
+      <pre>
+        [data-type='primary'] {
+        color: red;
+        }
+      </pre>
+
+      <p>Esta regra procura por todos os elementos que têm o atributo <code>data-type</code> com o valor <code>primary</code>, como este: <code>&lt;div data-type="primary"&gt;&lt;/div&gt;</code>.</p>
+      <p>Também é possível procurar somente pela propriedade, sem um valor definido:</p>
+
+      <pre>
+        [data-type] {
           color: red;
-          }
-        </pre>
+        }
 
-        <p>Esta regra procura por todos os elementos que têm o atributo <code>data-type</code> com o valor <code>primary</code>, como este: <code>&lt;div data-type="primary"&gt;&lt;/div&gt;</code>.</p>
-        <p>Também é possível procurar somente pela propriedade, sem um valor definido:</p>
+        <code>&lt;div data-type="primary"&gt;</code>
+        <code>&lt;div data-type="secondary"&gt;</code>
+      </pre>
 
-        <pre>
-          [data-type] {
-            color: red;
-          }
+      <p>Também é possível usar seletores de atributos diferenciando as maiúsculas de minúsculas com o operador <code>s</code>. Isso significa que se houver um elemento HTML com <code>data-type: Primary;</code>, em vez de <code>primary</code>, ele não receberá o que foi definido na regra. Para fazer o oposto, isto é, selecionar minúsculas em vez de maiúsculas, use o operador <code>i</code>. Por exemplo:</p>
 
-          <code>&lt;div data-type="primary"&gt;</code>
-          <code>&lt;div data-type="secondary"&gt;</code>
-        </pre>
+      <pre>
+        [data-type='primary' s] {
+          color: red;
+        }
 
-        <p>Também é possível usar seletores de atributos diferenciando as maiúsculas de minúsculas com o operador <code>s</code>. Isso significa que se houver um elemento HTML com <code>data-type: Primary;</code>, em vez de <code>primary</code>, ele não receberá o que foi definido na regra. Para fazer o oposto, isto é, selecionar minúsculas em vez de maiúsculas, use o operador <code>i</code>. Por exemplo:</p>
+        [data-type='Primary' i] {
+          color: red;
+        }
+      </pre>
 
-        <pre>
-          [data-type='primary' s] {
-            color: red;
-          }
+      <p>Além disso, há operadores que correspondem a partes de cadeias de caracteres dentro dos valores dos atributos. Por exemplo:</p>
 
-          [data-type='Primary' i] {
-            color: red;
-          }
-        </pre>
+      <pre>
+        <code>/* An href that contains "example.com". The value does not have to be a whole word! */
+        [href*='example.com'] {
+          color: red;
+        }
 
-        <p>Além disso, há operadores que correspondem a partes de cadeias de caracteres dentro dos valores dos atributos. Por exemplo:</p>
+        /* An href that starts with https */
+        [href^='https'] {
+          color: green;
+        }
 
-        <pre>
-          <code>/* An href that contains "example.com". The value does not have to be a whole word! */
-          [href*='example.com'] {
-            color: red;
-          }
+        /* An href that ends with .com */
+        [href$='.com'] {
+          color: blue;
+        }
 
-          /* An href that starts with https */
-          [href^='https'] {
-            color: green;
-          }
+        /* A title that contains a space-separated list of words, one of which is "flower". This will match elements with title="flower", title="summer flower", and title="flower new", but not title="my-flower" or title="flowers". */
+        [title~="flower"] {
+          border: 5px solid yellow;
+        }
 
-          /* An href that ends with .com */
-          [href$='.com'] {
-            color: blue;
-          }
+        /* A class that contains "top" or "top-" */
+        [class|="top"] {
+          background: yellow;
+        }
+        </code>
+      </pre>
 
-          /* A title that contains a space-separated list of words, one of which is "flower". This will match elements with title="flower", title="summer flower", and title="flower new", but not title="my-flower" or title="flowers". */
-          [title~="flower"] {
-            border: 5px solid yellow;
-          }
+      <p>Seletores de atributo são úteis para estilizar formulários que não têm classes ou IDs.</p>
 
-          /* A class that contains "top" or "top-" */
-          [class|="top"] {
-            background: yellow;
-          }
-          </code>
-        </pre>
-
-        <p>Seletores de atributo são úteis para estilizar formulários que não têm classes ou IDs.</p>
-
-        <h3>Resumo:</h3>
-        <img src="../img/attribute-selectors.png" alt="Todos os seletores de atributos">
+      <h3>Resumo:</h3>
+      <img src="../img/attribute-selectors.png" alt="Todos os seletores de atributos">
     </section>
-    </div>
+
+    <section>
+      <h2>Especificidade</h2>
+      <p>Se mais de uma regra de CSS aponta para o mesmo elemento, o seletor com maior valor de especificidade ganha e sua declaração de estilo será aplicada ao elemento.</p>
+      <p>Todo seletor tem seu lugar na hierarquia de especificidade. Há quatro categorias que definem o nível de especificidade de um seletor:</p>
+
+      <ol>
+        <li>Estilos em linha. Por exemplo <code>&lt;h1 style="color: red;"&gt;</code>.</li>
+        <li>IDs. Exemplo: <code>#navbar</code>.</li>
+        <li>Classes, pseudo-classes, seletores de atributos. Exemplo: <code>.btn</code>, <code>:hover</code>, [href*='example.com'].</li>
+        <li>Elementos e pseudo-elementos. Exemplo: <code>h1</code>, <code>::before</code>.</li>
+      </ol>
+
+      <h3>Como calcular a especificidade</h3>
+      <p>Comece com 0, adicione 100 para cada ID, adicione 10 para cada classe (ou pseudo-classe ou seletor de atributo), adicione 1 para cada elemento ou pseudo-elemento.</p>
+      <p class="important-info"><strong>Observação</strong>: o estilo em linha recebe um valor de especificidade de 1000 e tem sempre a maior prioridade. Há apenas uma exceção para esta regra: se for usada a regra <code>!important</code>, que sobrepõe qualquer outro estilo.</p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Selector</th>
+            <th>Specificity Value</th>
+            <th>Calculation</th>
+          </tr>
+          <tr>
+            <td>p</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>p.test</td>
+            <td>11</td>
+            <td>1 + 10</td>
+          </tr>
+          <tr>
+            <td>p#demo</td>
+            <td>101</td>
+            <td>1 + 100</td>
+          </tr>
+          <tr>
+            <td>&lt;p style="color: pink;"&gt;</td>
+            <td>1000</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <td>#demo</td>
+            <td>100</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>.test</td>
+            <td>10</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>p.test1.test2</td>
+            <td>21</td>
+            <td>1 + 10 + 10</td>
+          </tr>
+          <tr>
+            <td>#navbar p#demo</td>
+            <td>201</td>
+            <td>100 + 1 + 100</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>0</td>
+            <td>0 (the universal selector is ignored)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Em caso de especificidades com valor igual, a regra mais posterior é aplicada. O estilo aplicado à seção <code>&lt;style&gt;</code> do arquivo HTML tem maior especificidade do que o aplicado via folha de estilo (arquivo CSS). Os valores herdados e o seletor universal (*) têm especificidade de 0 e são ignorados.</p>
+    </section>
+
+    <section>
+      <h2>A regra <code>!important</code></h2>
+      <p>Esta regra é usada para dar mais importância a uma propriedade ou um valor. Se for usada, ela sobrepões TODAS as outras regras de estilo para o elemento em questão!</p>
+      <p>A única maneira de substituir a regra <code>!important</code> é definir outra regra do mesmo tipo em uma declaração com especificidade maior ou igual. E aqui temos um problema: isso torna o código do CSS confuso e fica mais difícil solucionar problemas, especialmente se a folha de estilo é grande!</p>
+      <p>Não se recomenda usar essa regra a menos que seja <strong><em>absolutamente</em></strong> necessário.</p>
+      <p>Dois casos em que se <strong><em>pode</em></strong> usar essa regra:</p>
+
+      <ul>
+        <li>Se estiver trabalhando em um CMS (Content Management System) e não conseguir editar o código CSS, é possível definir estilos personalizados que sobrepõem o estilo do CMS.</li>
+        <li>Se um elemento estiver dentro de outro com especificidade maior e seu estilo estiver sendo substituído, use esta regra para forçá-lo a ter o mesmo estilo.</li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>

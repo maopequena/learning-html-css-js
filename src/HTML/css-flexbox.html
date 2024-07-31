@@ -17,7 +17,7 @@
     <h2>O que se pode fazer com um layout flexível?</h2>
     <p>Layouts flexíveis apresentam os seguintes recursos:</p>
 
-    <ul>
+    <ul class="list-square">
       <li>Podem ser exibidos como uma linha ou uma coluna.</li>
       <li>Respeitam o modo de escrita do documento.</li>
       <li>São exibidos como uma única linha por padrão, mas podem ser exibidos em várias linhas.</li>
@@ -31,7 +31,7 @@
   <main>
     <section>
       <h2>O eixo principal e o eixo cruzado</h2>
-      <p>A chave para entender o "flexbox" é entender o conceito de "eixo principal" e "eixo cruzado". O <em>eixo principal</em> é aquele definido pela propridade <code>flex-direction</code>. Se a definição for <code>row</code> o eixo principal é a linha (ou eixo X), se for <code>column</code>, é a coluna (ou eixo Y).</p>
+      <p>A chave para entender o "flexbox" é entender o conceito de "eixo principal" e "eixo cruzado". O <em>eixo principal</em> é aquele definido pela propridade <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-flex-direction" target="_blank" rel="noopener noreferrer">flex-direction</a></code>. Se a definição for <code>row</code> o eixo principal é a linha (ou eixo X), se for <code>column</code>, é a coluna (ou eixo Y).</p>
       <p>Itens flexíveis se movem como um grupo no eixo principal. Lembre-se: há várias coisas e queremos ter o melhor layout para todas as coisas <em>no grupo</em>.</p>
       <p>O "eixo cruzado" fica perpendicular ao eixo principal, então se a <code>flex-direction</code> é <code>row</code>, o eixo cruzado é a coluna.</p>
       <p>No eixo cruzado é possível fazer duas coisas: mover os itens individualmente ou como um grupo, de forma que se alinhem uns aos outros e ao contêiner flexível. Além disso, se há quebras de linhas flexíveis, você pode tratá-las como um grupo para controlar como o espaço é distribuído.</p>
@@ -43,24 +43,24 @@
       <p>Usando o código a seguir, vejamos como o flexbox se comporta:</p>
 
       <pre>
-        <code>
-          &lt;div class="container" id="container"&gt;
-          &lt;div&gt;One&lt;/div&gt;
-          &lt;div&gt;Item two&lt;/div&gt;
-          &lt;div&gt;The item we will refer to as three&lt;/div&gt;
-          &lt;/div&gt;
-        </code>
+  <code>
+    &lt;div class="container" id="container"&gt;
+    &lt;div&gt;One&lt;/div&gt;
+    &lt;div&gt;Item two&lt;/div&gt;
+    &lt;div&gt;The item we will refer to as three&lt;/div&gt;
+    &lt;/div&gt;
+  </code>
 
-        <code>
-          .container {
-            display: flex;
-          }
-        </code>
+  <code>
+    .container {
+      display: flex;
+    }
+  </code>
       </pre>
 
       <p>Isso cria uma caixa com nível de bloco e filhos flexíveis. Os itens flexíveis imediatamente começam a exibir o comportamento do flexbox, usando seu valor inicial. O valor inicial significa que:</p>
 
-      <ul>
+      <ul class="list-square">
         <li>Os itens são exibidos como linha.</li>
         <li>Os itens não "quebram" a linha (don't wrap).</li>
         <li>Os itens não "crescem" para preencher o contêiner.</li>
@@ -73,7 +73,7 @@
 
       <p>Apesar de ainda não termos adicionado a propriedade <code>flex-direction</code>, os itens são exibidos como uma linha porque o valor inicial de <code>flex-direction</code> é <code>row</code>. Se é isto que você quer, não precisa fazer mais nada. Para mudar a direção, adicione a propriedade e um de seus quatro valores:</p>
 
-      <ul>
+      <ul class="list-square">
         <li><code>row</code>: os itens são exibidos como uma linha.</li>
         <li><code>row-reverse</code>: os itens são exibidos como uma linha que começa no final do contêiner flexível.</li>
         <li><code>column</code>: os itens são exibidos como uma coluna.</li>
@@ -85,7 +85,7 @@
 
     <section>
       <h2>Como "quebrar" os itens flexíveis</h2>
-      <p>O valor inicial da propriedade <code>flex-wrap</code> é <code>nowrap</code>, isto é, se não há espaço suficiente no contêiner, os itens extravasam.</p>
+      <p>O valor inicial da propriedade <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-flex-wrap" target="_blank" rel="noopener noreferrer">flex-wrap</a></code> é <code>nowrap</code>, isto é, se não há espaço suficiente no contêiner, os itens extravasam.</p>
       <p>Os itens que usam o valor inicial se reduzem o máximo possível, até o tamanho de <code>min-content</code> antes de extravasarem do contêiner.</p>
       <p>Para que os itens quebrem, use a propriedade <code>flex-wrap: wrap;</code> no contêiner flexível. Por exemplo: o primeiro conjunto de caixas abaixo tem <code>flex-wrap: nowrap;</code>, e o segundo tem <code>flex-wrap: wrap;</code>. </p>
 
@@ -112,12 +112,12 @@
       <p>Ao quebrar, o contêiner flexível cria várias linhas flexíveis. Isto é, cada linha age como um novo contêiner flexível em termos de distribuição de espaço. Assim, se estamos quebrando linhas, não é possível alinhas itens da linha 2 com os da linha 1. É por isso que dizemos que o flexbox é monodimensional: é possível controlar o alinhamento em um eixo (a coluna ou a linha), mas não em ambos, como se faz com <code>grid</code>.</p>
 
       <h3>Controlar o espaço dentro de itens flexíveis</h3>
-      <p>Presumindo que o contêiner com o qual estamos trabalhando tem mais espaço do que o necessário para exibir os itens, esses alinham-se no início do contêiner e não se expandem para preencher o espaço. Eles param de se expandir no valor de <code>max-content</code>. Isso ocorre porque o valor inicial das propriedades <code>flex-</code> é:</p>
+      <p>Presumindo que o contêiner com o qual estamos trabalhando tem mais espaço do que o necessário para exibir os itens, esses alinham-se no início do contêiner e não se expandem para preencher o espaço. Eles param de se expandir no máximo de conteúdo. Isso ocorre porque o valor inicial das propriedades <code>flex-</code> é:</p>
 
-      <ul>
-        <li><code>flex-grow: 0</code>: os itens não se expandem.</li>
-        <li><code>flex-shrink: 1</code>: os itens podem se encolher para ficarem menores do que a <code>flex-basis</code>.</li>
-        <li><code>flex-basis: auto</code>: os itens têm um tamanho base de <code>auto</code>.</li>
+      <ul class="list-square">
+        <li><code><a href="../HTML/fontes-de-aprendizado.html#ref-p-flex-grow" target="_blank" rel="noopener noreferrer">flex-grow</a>: 0</code>: os itens não se expandem.</li>
+        <li><code><a href="../HTML/fontes-de-aprendizado.html#ref-p-flex-shrink" target="_blank" rel="noopener noreferrer">flex-shrink</a>: 1</code>: os itens podem se encolher para ficarem menores do que a <code>flex-basis</code>.</li>
+        <li><code><a href="../HTML/fontes-de-aprendizado.html#ref-p-flex-basis" target="_blank" rel="noopener noreferrer">flex-basis</a>: auto</code>: os itens têm um tamanho base de <code>auto</code>.</li>
       </ul>
 
       <p>Isso pode ser resumido com <code>flex: initial</code>. Essa propriedade resumida, ou os valores completos com <code>flex-grow</code>, <code>flex-shrink</code> e <code>flex-basis</code>, são aplicados aos filhos do contêiner flexível.</p>
@@ -130,6 +130,30 @@
 
     <section>
       <h2>Como reordenar os itens flexíveis</h2>
+      <p>É possível reordenar os itens no contêiner flexível usando a propriedade <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-order" target="_blank" rel="noopener noreferrer">order</a></code>, que possibilita reorganizá-los em grupos ordinais. Os itens são exibidos na direção determinada pela propriedade <code>flex-direction</code>, com os valores menores primeiro. Se mais de um item tem o mesmo valor, eles serão exibidos juntos.</p>
+      <p><strong>Observação</strong>: usar esta propriedade gera os mesmos problemas que usar as propriedades <code>row-reverse</code> e <code>column-reverse</code> de <code>flex-direction</code>. Com ela é muito fácil criar uma experiência desconexa para alguns usuários. Não use <code>order</code> para corrigir a ordem de itens no documento. Se os itens precisam estar em uma ordem lógica específica, altere o HTML!</p>
+    </section>
+
+    <section>
+      <h2>Visão geral sobre alinhamento com flexbox</h2>
+      <p>O flexbox oferece um conjunto de propriedades para alinhar itens e distribuir o espaço entre eles. Essas propriedades são tão úteis, que já foram movidas para uma especificação própria, que também está disponível no layout com <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-grid" target="_blank" rel="noopener noreferrer">grid</a></code>. Vejamos agora como elas funcionam com o flexbox.</p>
+      <p>Há dois grupos de propriedades:</p>
+      <ul class="list-square">
+        <li>As de distribuição de espaço:</li>
+          <ul style="list-style-type: circle;">
+            <li><strong><code><a href="../HTML/fontes-de-aprendizado.html#ref-p-justify-content" target="_blank" rel="noopener noreferrer">justify-content</a></code></strong>: distribui o espaço no eixo principal.</li>
+            <li><strong><code><a href="../HTML/fontes-de-aprendizado.html#ref-p-align-content" target="_blank" rel="noopener noreferrer">align-content</a></code></strong>: distribui o espaço no eixo cruzado.</li>
+            <li><strong><code><a href="../HTML/fontes-de-aprendizado.html#ref-p-place-content" target="_blank" rel="noopener noreferrer">place-content</a></code></strong>: abreviação para definir as duas propriedades acima.</li>
+          </ul>
+        <li>As de alinhamento:</li>
+          <ul style="list-style-type: circle;">
+            <li><strong><code><a href="../HTML/fontes-de-aprendizado.html#ref-p-align-self" target="_blank" rel="noopener noreferrer">align-self</a></code></strong>: alinha um único item no eixo cruzado.</li>
+            <li><strong><code><a href="../HTML/fontes-de-aprendizado.html#ref-p-align-items" target="_blank" rel="noopener noreferrer">align-items</a></code></strong>: alinha todos os itens como um grupo no eixo cruzado.</li>
+          </ul>
+      </ul>
+      <p>Note que se estamos trabalhando com o eixo principal, as propriedades começam com <code>justify-</code> e no eixo cruzado, começam com <code>align-</code>.</p>
+
+      <p><a href="https://web.dev/learn/css/flexbox#distributing_space_on_the_main_axis" target="_blank">Mais informações sobre o flexbox</a></p>
     </section>
   </main>
 </body>
