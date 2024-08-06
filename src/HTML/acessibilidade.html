@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/src/img/favicon.ico" />
+  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="description" content="Acessibilidade e inclusão" />
+  <meta name="author" content="Lizandra Silva (@maopequena)" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Acessibilidade e inclusão</title>
+</head>
+<body>
+  <header>
+    <h1>Acessibilidade e inclusão</h1>
+    <!-- <p>Parte do trabalho do desenvolvedor Web é tornar um site acessível e inclusivo para todos. Uma das coisas que ajuda nesta tarefa é gerar foco no item que é selecionado via teclado, com a tecla <code>Tab</code>.</p>
+    <p>Os estilo de focalização ajudam pessoas que usam um teclado ou outro dispositivo de controle para navegar, e que interagem com um site. Se um elemento está em foco e não há uma indicação visual, o usuário pode se perder na página. Isso pode gerar problemas de navegação e comportamentos inesperados se, por exemplo, o usuário clicar no link errado.</p>
+    <p><strong>Observação</strong>: saiba mais sobre a importância do foco para a acessibilidade em <a href="https://web.dev/learn/accessibility/focus" target="_blank" rel="noopener noreferrer">Acessibilidade: foco</a> e sobre como gerenciar o foco no HTML em <a href="https://web.dev/learn/html/focus" target="_blank" rel="noopener noreferrer">HTML: foco</a>.</p> -->
+  </header>
+
+  <section>
+    <h2>O que é acessibilidade digital e por que é importante?</h2>
+    <p>Criar produtos digitais totalmente inclusivos requer:</p>
+
+    <ul>
+      <li>Conhecimento especializado dos vários padrões de acessibilidade.</li>
+      <li>Compreensão dos fundamentos sobre designs e códigos acessíveis.</li>
+      <li>Compreensão da importância de usar várias técnicas e ferramentas de teste.</li>
+    </ul>
+
+    <p>E o mais importante: pessoas com deficiências devem ser parte de todo o ciclo de vida do produto: do planejamento, do projeto, da codificação, etc.</p>
+    <p>A acessibilidade digital, que pode ser abreviada como <em>a11y</em>, consiste em projetar e criar produtos digitais, incluindo sites e aplicativos, que possam ser usados por pessoas com deficiências de forma significativa e inclusiva.</p>
+    <p>As práticas recomendadas para acessibilidade são diferentes dependendo da deficiência em questão. É importante compreender os usuários e obter feedback de pessoas com deficiências, pedindo que lhe digam do que eles precisam.</p>
+  </section>
+  
+  <section>
+    <h3>Tipos de deficiências e pontos problemáticos para sites acessíveis</h3>
+    <p><strong><em>Visual</em></strong>: produtos digitais que não funcionam com leitores de tela, sites ou aplicativos móveis que não ampliam o zoom, gráficos e imagens complexos que são diferenciados apenas por cores, contraste de cores que dificulta a leitura do texto na tela.</p>
+    <p><strong><em>Mobilidade</em></strong>: elementos projetados para funcionar apenas com o mouse.</p>
+    <p><strong><em>Audição</em></strong>: conteúdo de áudio sem transcrição do texto, vídeo sem legendas sincronizadas.</p>
+    <p><strong><em>Cognitiva</em></strong>: interfaces muito cheias de coisas, que dificultam se concentrar em uma única tarefa, parágrafos ou textos longos, com poucos espaços em branco, texto justificado e fontes pequenas ou de difícil leitura.</p>
+    <p><strong><em>Desordens vestibulares e convulsões</em></strong>: vídeos que reproduzem automaticamente, conteúdo visual que pisca, efeitos do tipo <a href="https://www.w3schools.com/howto/howto_css_parallax.asp" target="_blank" rel="noopener noreferrer">parallax</a> (de ilusão de ótica ou de movimento), animações ativadas pela rolagem da tela.</p>
+    <p><strong><em>Fala</em></strong>: tecnologias ativadas por voz.</p>
+    <p><strong><em>Linguagem</em></strong>: pessoas que não são fluentes no idioma da página podem precisar de mais tempo para ler o conteúdo da página ou ver as imagens na tela.</p>
+    <p><strong><em>Idade</em></strong>: pessoas de idade podem não conhecer a tecnologia oferecida pelo site ou aplicativo, podem precisar de óculos para ler, ou precisar de botões e links com áreas de toque maiores para interagir.</p>
+    <p><em><strong><abbr title="Search Engine Optimization">SEO</abbr></strong> (Search Engine Optimization)</em>: bots de <abbr title="Search Engine Optimization">SEO</abbr> não veem ou ouvem, então navegam apenas pelo teclado. Seus sites serão rastreados com mais eficácia se forem acessíveis.</p>
+  </section>
+
+  <section>
+    <h2>Testes de acessibilidade</h2>
+    <p>Há várias maneiras de testar se um produto digital é acessível. Uma abordagem fundamental é avaliar o produto em relação a padrões de acessibilidade.</p>
+    <p>Geralmente sua indústria, o tipo de produto, as leis e políticas locais/regionais/federais ou metas gerais de acessibilidade ditam quais diretrizes seguir. Se não há obrigatoriedade de padrão para o seu projeto, a recomendação é seguir a versão mais recente das <a href="https://web.dev/learn/accessibility/measure#wcag" target="_blank" rel="noopener noreferrer">Web Content Accessibility Guidelines (WCAG, Diretrizes de acessibilidade do conteúdo na Web)</a> do W3C.</p>
+    <p>Esses testes geralmente são conhecidos como "<a href="https://www.w3.org/WAI/test-evaluate/" target="_blank" rel="noopener noreferrer"></a>auditoria de acessibilidade</a>", e usam várias metodologias, técnicas e ferramentas, inclusive de design, automatização, manuais e tecnologias assistivas (AT).</p>
+    <p>Execute vários desses testes durante todo o ciclo de vida do projeto.</p>
+  </section>
+
+  <section>
+    <h2>Princípios de acessibilidade</h2>
+    <p>Os critérios de sucesso das <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> são orientações detalhadas e muito importantes, que informam designers e desenvolvedores sobre como criar sites e aplicativos acessíveis. Compreender essas orientações é essencial para lidar com problemas que possam surgir em testes de conformidade de acessibilidade.</p>
+    <p>Se esta área é novidade para você, comece com os princípios das <abbr title="Web Content Accessibility Guidelines">WCAG</abbr>, o POUR: Perceivable, Operable, Understandable, and Robust (Percepção, Operação, Compreensão e Robustez). Aplicando esses princípios aos seus produtos digitais, você determina como eles serão usados por seres humanos reais, inclusive por pessoas com deficiências.</p>
+
+    <h3>Percepção</h3>
+    <p>Determina que os usuários devem ser capazes de perceber todas as informações essenciais na tela, usando todo e qualquer sentido.</p>
+    <p>Exemplos: adicionar textos alternativos a imagens e ícones essenciais, adicionar legendas, transcrições e descrições de áudio a vídeos, garantir que a cor não seja o único meio de compreensão de itens na tela.</p>
+
+    <h3>Operação</h3>
+    <p>Determina que os usuários devem ser capazes de operar a interface do produto digital, isto é, a <abbr title="Interface de Usuário">IU</abbr> não pode exigir uma interação que um usuário não pode executar.</p>
+    <p>Exemplos: adicionar suporte a telas de toque e teclado a todos os elementos ativos, garantir que apresentações e vídeos tenham todos os controles necessários, dar aos usuários tempo suficiente para preencher formulários ou proporcionar uma maneira de oferecer mais tempo.</p>
+
+    <h3>Compreensão</h3>
+    <p>Determina que os usuários devem ser capazes de compreender as informações e a operação da interface de usuário.</p>
+    <p>Exemplos: escreva com simplicidade, não use palavras complexas, certifique-se de que a navegação é previsível, certifique-se de que as mensagens de erro são claras e fáceis de resolver.</p>
+
+    <h3>Robustez</h3>
+    <p>Este princípio concentra-se em oferecer tecnologias assistivas e garantir que, conforme os dispositivos e agentes de usuário evoluem, o produto digital permaneça acessível.</p>
+    <p>Exemplos: testar a navegação pelo teclado, testar o produto digital com diferentes leitores de tela, garantir que todo o conteúdo e os recursos possam ser acessados, independentemente do tamanho ou da orientação do dispositivo.</p>
+  </section>
+  
+  <section>
+    <h2>ARIA e HTML</h2>
+    <p>O HTML e a <a href="https://developer.mozilla.org/pt-BR/docs/Web/Accessibility/ARIA" target="_blank" rel="noopener noreferrer">ARIA</a> são essenciais para tornar os produtos digitais acessíveis, especialmente quando se trata de tecnologias assistivas (AT, assistive technologies), como leitores de tela. Ambos são usados para converter o conteúdo em um formato alternativo, como Braille ou Texto em Fala (TTS, Text-to-Speech).</p>
+    <p>A <abbr title="Accessible Rich Internet Applications">ARIA</abbr> não é exatamente uma linguagem de programação; é um conjunto de atributos que pode ser adicionado a elementos HTML para melhorar sua acessibilidade. Esses atributos comunicam a função, o estado e propriedades para tecnologias assistivas por meio de APIs de acessibilidade presentes nos navegadores modernos. Essa comunicação ocorre por meio da <em>árvore de acessibilidade</em>.</p>
+
+    <h3>A árvore de acessibilidade</h3>
+    <p>A <abbr title="Accessible Rich Internet Applications">ARIA</abbr> modifica um código incorreto ou incompleto para gerar uma experiência mais adequada para quem usa <abbr title="Assistive technologies">AT</abbr>s, alterando, expondo e aprimorando partes da árvore de acessibilidade.</p>
+    <p>A árvore de acessibilidade é criada pelo navegador, e baseia-se na árvore padrão do Document Object Model (DOM, Modelo de objetos do documento). Assim como a árvore do <abbr title="Document Object Model">DOM</abbr>, a árvore de acessibilidade contém objetos que representam todos os elementos de marcação, atributos e nós de texto. Ela também é usada por <abbr title="Application Programming Interface">API</abbr>s de acessibilidade específicas de cada plataforma para proporcionar uma representação que as tecnologias assistivas possam compreender.</p>
+    <p>A <abbr title="Accessible Rich Internet Applications">ARIA</abbr> sozinha não altera a funcionalidade ou a aparência dos elementos, isto é, apenas usuários de <abbr title="Assistive technologies">AT</abbr>s notarão as diferenças entre um produto digital com ARIA e um sem. Isso também significa que apenas os desenvolvedores são responsáveis por adequar o código e fazer mudanças de estilo que tornem um elemento o mais acessível possível.</p>
+    <p>Os três principais recursos da <abbr title="Accessible Rich Internet Applications">ARIA</abbr> são <em>funções</em>, <em>propriedades</em> e <em>estados/valores</em>.</p>
+    <p>As <em>funções</em> definem o que é um elemento ou o que ele faz na página ou no aplicativo.</p>
+
+    <p>&lt;div role="button"&gt;Self-destruct&lt;/div&gt;</p>
+
+    <p>As <em>propriedades</em> expressam características ou relacionamentos com um objeto.</p>
+
+    <pre>
+      &lt;div role="button" aria-describedby="more-info"&gt;Self-destruct&lt;/div&gt;
+
+      &lt;div id="more-info"&gt;This page will self-destruct in 10 seconds.&lt;/div&gt;
+    </pre>
+
+    <p>Os <em>estados/valores</em> definem as condições ou valores de dados atuais associados ao elemento.</p>
+
+    <pre>
+      &lt;div role="button" aria-describedby="more-info" aria-pressed="false"&gt;
+        Self-destruct
+      &lt;/div&gt;
+      
+      &lt;div id="more-info"&gt;
+        This page will self-destruct in 10 seconds.
+      &lt;/div&gt;
+    </pre>
+
+    <p>Apesar de ser possível usar todos os três elementos da <abbr title="Accessible Rich Internet Applications">ARIA</abbr> em uma linha de código, isso não é obrigatório. Em vez disso, use as funções, propriedades e estados/valores até atingir seu objetivo de acessibilidade. Incorporar corretamente a <abbr title="Accessible Rich Internet Applications">ARIA</abbr> na base do código garante que usuários de <abbr title="Assistive technologies">AT</abbr>s tenham todas as informações de que precisam para usar seu site, app ou outro produto digital com sucesso e igualitariamente.</p>
+    <p>As Ferramentas de Desenvolvedor (DevTools) do Chrome oferecem uma maneira de <a href="https://developer.chrome.com/blog/full-accessibility-tree" target="_blank" rel="noopener noreferrer">ver a árvore de acessibilidade completa</a>, o que simplifica a compreensão de como o código têm impacto na acessibilidade.</p>
+  </section>
+
+  <section>
+    <h2>Quando usar a ARIA?</h2>
+    <p>Com os <a href="../HTML/elementos-semanticos.html" target="_blank" rel="noopener noreferrer">elementos semânticos</a>, há menos necessidade de usar as funções, propriedades e estados/valores da <abbr title="Accessible Rich Internet Applications">ARIA</abbr>. Siga estas cinco regras para garantir a conformidade:</p>
+
+    <h3>Regra 1: Não use a ARIA</h3>
+    <p>A ARIA é obrigatória quando um elemento HTML não oferece suporte à acessibilidade, seja porque o design não permite a adição de um elemento HTML semântico ou porque o comportamento/recurso desejado não está disponível no HTML. Essas situações, entretanto, são raras.</p>
+    <p>Por exemplo, use <code>&lt;button&gt;Submit&lt;/button&gt;</code> e não <code>&lt;a role="button"&gt;Submit&lt;/a&gt;</code>.</p>
+    <p>Tente usar os elementos semânticos sempre que possível.</p>
+
+    <h3>Regra 2: Não adicione ARIA ao HTML desnecessariamente</h3>
+    <p>Na maioria dos casos, os elementos HTML funcionam muito bem por si sós e não precisam da ARIA. Na verdade, desenvolvedores que usam a ARIA geralmente precisam adicionar mais código para tornar os elementos funcionais no caso de elementos interativos.</p>
+    <p>Por exemplo, use <code>&lt;div role="tab"&gt;&lt;h2&gt;Heading tab&lt;/h2&gt;&lt;/div&gt;</code> e não <code>&lt;h2 role="tab"&gt;Heading tab&lt;/h2&gt;</code>.</p>
+
+    <h3>Regra 3: Sempre ofereça suporte à navegação pelo teclado</h3>
+    <p>Todos os controles interativos (e não desativados) da ARIA devem ser acessíveis pelo teclado. Adicione <code>tabindex= "0"</code> a qualquer elemento que precisa de foco e que geralmente não é acessado com a tecla <code>Tab</code>. Evite usar índices de tabulação com inteiros positivos sempre que possível, para evitar possíveis problemas de ordem do foco com o teclado.</p>
+    <p>Por exemplo, use <code>&lt;span role="button" tabindex="0"&gt;Submit&lt;/span&gt;</code> e não <code>&lt;span role="button" tabindex="1"&gt;Submit&lt;/span&gt;</code>. E também podemos usar a tag <code>&lt;button&gt;</code> neste caso.</p>
+    <p id="important-info"><strong>Cuidado</strong>: lembre-se que pessoas com e sem deficiências visuais usam a navegação pelo teclado. Não adicione tabulações desnecessárias a cabeçalhos e parágrafos, já que isso pode apresentar desafios adicionais para usuários apenas pelo teclado.</p>
+
+    <h3>Regra 4: Não oculte elementos que devem receber foco</h3>
+    <p>Não adicione <code>role="presentation"</code> ou <code>aria-hidden="true"</code> quando os elementos precisam ter foco com um <code>tabindex="0"</code>. Ao adicionar essas funções/estados aos elementos, o leitor de tela entende que esses elementos não são importantes, e tende a ignorá-los. Isso pode confundir ou interromper os usuários que estão tentando interagir com um elemento.</p>
+    <p>Por exemplo, use <code>&lt;div&gt;&lt;button&gt;Submit&lt;/button&gt;&lt;/div&gt;</code> e não <code>&lt;div aria-hidden="true"&gt;&lt;button&gt;Submit&lt;/button&gt;&lt;/div&gt;</code>.</p>
+
+    <h3>Regra 5: Use nomes acessíveis para elementos interativos</h3>
+    <p>A finalidade de um elemento interativo deve ser informar um usuário sobre um elemento antes que ele interaja com o elemento. Certifique-se de que todos os elementos têm um nome acessível para pessoas que usam leitores de tela. Esses nomes podem ser o conteúdo envolto por um elemento (no caso da tag <code>&lt;a&gt;</code>), um texto alternativo ou um rótulo.</p>
+    <p>Por exemplo:</p>
+
+    <p><em style="font-size: small;">A plain link with text between the link tags.</em></p>
+    <pre>
+      <code>&lt;a href="shoes.html"&gt;Red leather boots&lt;/a&gt;</code></pre>
+
+    <p><em style="font-size: small;">A linked image, where the image has alt text.</em></p>
+      <pre>
+        <code>&lt;a href="shoes.html"&gt;&lt;img src="shoes.png" alt="Red leather boots"&gt;&lt;/a&gt;</code></pre>
+    
+    <p><em style="font-size: small;">A checkbox input with a label.</em></p>
+    <pre>
+    <code>&lt;input type="checkbox" id="shoes"&gt;
+  &lt;label for="shoes"&gt;Red leather boots&lt;/label&gt;
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>ARIA com HTML</h2>
+    <p>A prática recomendada é usar os elementos HTML por si só, porém podemos adicionar elementos ARIA em alguns casos. Por exemplo, combine elementos ARIA com elementos HTML caso precise de maior suporte para leitores de tela devido a restrições ambientais ou como um método alternativo para elementos HTML que não são totalmente suportados por todos os navegadores.</p>
+    <p>Há, claro, recomendações para implementar a ARIA no HTML. E, mais importante, não substitua funções HTML padrão, remova redundâncias e esteja ciente de efeitos adversos.</p>
+    <table style="border-collapse: collapse;">
+      <tbody>
+        <tr>
+          <th style="border: 2px solid #fff;">Correto</th>
+          <th style="border: 2px solid #fff;">Incorreto</th>
+          <th style="border: 2px solid #fff;">Motivo</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #fff; text-align: center;">&lt;a aria-label="Read more about some awesome article title"&gt;Read More&lt;/a&gt;</td>
+          <td style="border: 1px solid #fff; text-align: center;">&lt;a role="heading"&gt;Read more&lt;/a&gt;</td>
+          <td style="border: 1px solid #fff; text-align: center;">Função incorreta atribuída</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #fff; text-align: center;">&lt;ul&gt;...&lt;/ul&gt;</td>
+          <td style="border: 1px solid #fff; text-align: center;">&lt;ul role="list"&gt;...&lt;/ul&gt;</td>
+          <td style="border: 1px solid #fff; text-align: center;">Função redundante</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #fff; text-align: center;">&lt;details&gt;
+            &lt;summary&gt;more information&lt;/summary&gt;
+            ...
+          &lt;/details&gt;</td>
+          <td style="border: 1px solid #fff; text-align: center;">&lt;details&gt;
+            &lt;summary role="button"&gt;more information&lt;/summary&gt;
+            ...
+          &lt;/details&gt;</td>
+          <td style="border: 1px solid #fff; text-align: center;">Possíveis efeitos adversos</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Observação</strong>: um lugar em que a ARIA pode ser especialmente útil é em formulários.</p>
+  </section>
+
+  <section>
+    <h2>Complexidade da ARIA</h2>
+    <p>A ARIA é complexa e você deve sempre ter cuidado ao usá-la. Apesar de os exemplos de código acima serem bem simples, criar padrões personalizados acessíveis pode se tornar muito complicado.</p>
+    <p>É preciso prestar atenção em várias coisas: interações com o teclado, interfaces de toque, suporte a navegadores/ATs, necessidades de idioma/tradução, restrições ambientais, código herdado, preferências do usuário e muito mais. Lembre-se de manter um código simples.</p>
+    <p>Apesar disso, a acessibilidade digital não é uma situação "preto no branco", mas um espectro que proporciona áreas cinzas. Várias soluções de código são tidas como "corretas", dependendo do caso. O importante é continuar aprendendo, testando e estimulando um mundo digital mais livre para todos.</p>
+  </section>
+
+  <section>
+    <h2>Estrutura do conteúdo</h2>
+    <p><strong>Observação</strong>: veja também a página <a href="../HTML/elementos-semanticos.html" target="_blank" rel="noopener noreferrer">Elementos semânticos</a> para saber mais sobre como estruturar adequadamente o conteúdo.</p>
+
+    <p>A tabela a seguir apresenta os elementos semânticos do HTML e seus pares na ARIA.</p>
+
+    <table style="border-collapse: collapse; width: 500px;">
+      <thead>
+        <tr>
+          <th style="border: 2px solid #fff;">HTML landmark element</th>
+          <th style="border: 2px solid #fff;">ARIA landmark role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/HTML/Element/header"><code translate="no" dir="ltr">&lt;header&gt;</code></a></td>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/banner_role">banner</a></td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/HTML/Element/aside"><code translate="no" dir="ltr">&lt;aside&gt;</code></a></td>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/complementary_role">complementary</a></td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/HTML/Element/footer">
+            <code translate="no" dir="ltr">&lt;footer&gt;</code></a></td>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/contentinfo_role">contentinfo</a></td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #fff; text-align: center;">
+            <a href="https://developer.mozilla.org/docs/Web/HTML/Element/nav"><code translate="no" dir="ltr">&lt;nav&gt;</code></a>
+            </td>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/navigation_role">navigation</a></td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/HTML/Element/main"><code translate="no" dir="ltr">&lt;main&gt;</code></a></td>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/main_role">main</a></td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/HTML/Element/form"><code translate="no" dir="ltr">&lt;form&gt;</code></a> <sup>1</sup></td>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/form_role">form</a></td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #fff; text-align: center;">
+            <a href="https://developer.mozilla.org/docs/Web/HTML/Element/section"><code translate="no" dir="ltr">&lt;section&gt;</code></a> <sup>1</sup></td>
+          <td style="border: 1px solid #fff; text-align: center;"><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/region_role">region</a></td>
+        </tr>
+    </tbody>
+    <caption style="caption-side: bottom; padding-top: 10px;">
+      <sup>1</sup> Requires inclusion of the <code>name</code> attribute to be accessible. A <code>section</code> must be <a href="https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/#whatareaccessiblenamesanddescriptions?">accessibly-named</a> for its implicit ARIA role of <a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/region_role"><code>region</code></a> to be visible to assistive technology.
+    </caption>
+  </table>
+
+  <p>Por exemplo, podemos usar os elementos semânticos da seguinte maneira para que sejam considerados acessíveis:</p>
+
+  <pre>
+    <code>
+    &lt;header&gt;
+      &lt;nav&gt;...&lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;section aria-label="Introduction to stamp collecting"&gt;
+      &lt;p&gt;Stamp collecting, also known as philately, is
+      the study of postage stamps, stamped envelopes,
+      postmarks, postcards, and other materials relating
+      to postal delivery.&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+    &lt;p&gt;© 2022 - Stamps R Awesome&lt;/p&gt;
+    &lt;/footer&gt;
+    </code>
+  </pre>
+
+  <p>Os cabeçalhos (&lt;h1&gt; a &lt;h6&gt;) definem um resumo do conteúdo da página. Usá-los na sequência correta em uma página é essencial.</p>
+  </section>
+
+  <section>
+    <h2>O documento HTML</h2>
+    <p>Além da estrutura, há vários elementos HTML que devem ser considerados ao criar uma página acessível. Vejamos alguns.</p>
+
+    <h3>Título</h3>
+    <p>O elemento <code>&lt;title&gt;</code> define o conteúdo da página ou tela que o usuário está exibindo. Ele fica na seção <code>&lt;head&gt;</code> do documento HTML e é equivalente ao elemento <code>&lt;h1&gt;</code> ou ao tópico principal da página. Esse título é exibido na aba do navegador e ajuda os usuários a compreenderem qual página está sendo exibida, mas ele não é exibido no site ou aplicativo em si.</p>
+    <p>Títulos descritivos são ótimos para os usuários e SEO, mas não se deve exagerar e usar um monte de palavras-chave. Como esta é a primeira coisa que um leitor de tela anuncia quando o usuário chega à página, ele deve ser preciso, exclusivo, descritivo e conciso.</p>
+    <p>Por exemplo, se a página fala sobre um episódio de uma temporada de uma série, o ideal é usar:</p>
+    <p><code>&lt;title&gt;Episódio 22 - O Final | Temporada 3 | A Série&lt;/title&gt;</code></p>
+
+    <h3>Idioma</h3>
+    <p>O atributo <code>lang</code> define o idioma padrão de toda a página. Esse atributo deve ser adicionado à tag <code>&lt;html&gt;</code>. Deve haver um código de idioma válido em todas as páginas, porque é ele que indica ao leitor de tela qual idioma usar. Saiba mais em <a href="../HTML/atributos.html#lang-attribute" target="_blank" rel="noopener noreferrer">Atributos: lang</a>.</p>
+    <p>Quando este atributo está totalmente ausente, o leitor de tela usa o idioma padrão definido pelo usuário. Por exemplo, se o leitor estiver definido para espanhol e o usuário visitar uma página em inglês, o leitor de tela tentará ler o texto em inglês com sotaque e cadência do espanhol. Isso pode resultar em um produto digital inutilizável e em um usuário frustrado.</p>
+    <p>Também é possível definir o idioma de uma seção específica em uma página, mesmo que o atributo <code>lang</code> esteja definido na tag <code>&lt;html&gt;</code>. Por exemplo:</p>
+    <pre>
+      <code>
+        &lt;html lang="en"&gt;
+        &lt;body&gt;...
+        &lt;div&gt;
+        &lt;p>While traveling in Estonia this summer, I often asked,
+        &lt;span lang="et"&gt;"Kas sa räägid inglise keelt?"&lt;/span&gt;
+        when I met someone new.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+      </code>
+    </pre>
+
+    <h3>iFrames</h3>
+
+    <p>O elemento <code>&lt;iframe&gt;</code> é usado para hospedar outra página HTML ou conteúdo de terceiros na página. iFrames geralmente são usados para propagandas, vídeos, análises da Web e conteúdo interativo. <a href="../HTML/iframes.html" target="_blank" rel="noopener noreferrer">Saiba mais</a>.</p>
+    <p>Para torná-lo acessível, cada iframe com conteúdo distinto deve incluir um elemento de título dentro da tag pai, pois ele fornece ao leitor de tela mais informações sobre o conteúdo do iframe. Além disso, recomenda-se definir a rolagem da tela para "auto" ou "yes" nas configurações da tag <code>&lt;iframe&gt;</code>. Isso possibilita que pessoas com deficiências visuais consigam rolar para o conteúdo dentro do iframe, que talvez não esteja visível para elas. Recomenda-se também que o contêiner do iframe tenha altura e largura flexíveis.</p>
+    <p>Exemplo:</p>
+    <pre>
+      <code>
+        &lt;iframe title="Google Pixel - Lizzo in Real Tone"
+        src="https://www.youtube.com/embed/3obixhGZ5ds"
+        scrolling="auto"&gt;
+        &lt;/iframe&gt;
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>Foco do teclado</h2>
+    <p>Muitas pessoas usam um teclado como meio de navegação, portanto oferecer suporte à navegação pelo teclado é essencial. Grande parte da acessibilidade do teclado concentra-se no <strong>focus</strong>, que se refere a qual elemento da tela está atualmente selecionado.</p>
+
+    <h3>Ordem do foco</h3>
+    <p></p>
+  </section>
+</body>
+</html>
