@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <meta charset="utf-8" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="description" content="Variáveis no CSS" />
+    <meta name="author" content="Lizandra Silva (@maopequena)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variáveis no CSS</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Variáveis</h1>
+
+      <p>Use a função <code>var()</code> para inserir o valor de uma variável do CSS.</p>
+
+      <p>As variáveis do CSS têm acesso ao DOM, o que significa que podemos criar variáveis com escopos local ou global, alterá-las com JavaScript e alterá-las usando <em>media queries</em>.</p>
+
+      <p>Um exemplo muito útil para as variáveis no CSS são as cores do design do site. Ao invés de copiar e colar as mesmas cores repetidamente, defina-as como variáveis.</p>
+    </header>
+    <section>
+      <p>A forma tradicional de definir cores é a seguinte:</p>
+
+      <pre>
+        <code>
+          body {
+            background-color: #1e90ff;
+          }
+
+          h2 {
+            border-bottom: 2px solid #1e90ff;
+          }
+
+          .container {
+            color: #1e90ff;
+            background-color: #ffffff;
+            padding: 15px;
+          }
+
+          button {
+            background-color: #ffffff;
+            color: #1e90ff;
+            border: 1px solid #1e90ff;
+            padding: 5px;
+          }
+        </code>
+      </pre>
+
+      <p>Porém, usando <code>var(--nome, valor)</code>, podemos fazer o seguinte:</p>
+
+      <pre>
+        <code>
+          :root {
+            --blue: #1e90ff;
+            --white: #ffffff;
+          }
+
+          body {
+            background-color: var(--blue);
+          }
+
+          h2 {
+            border-bottom: 2px solid var(--blue);
+          }
+
+          .container {
+            color: var(--blue);
+            background-color: var(--white);
+            padding: 15px;
+          }
+
+          button {
+            background-color: var(--white);
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            padding: 5px;
+          }
+        </code>
+      </pre>
+
+      <p><code>--nome</code> é obrigatório, <code>valor</code> é opcional e é usado como fallback, caso a variável não seja encontrada. </p>
+      <p class="important-info"><strong>Observação</strong>: o nome da variável deve começar com dois hífens (--) e diferencia maiúsculas de minúsculas!</p>
+    </section>
+
+    <section>
+      <h2>Como funciona a função <code>var()</code></h2>
+
+      <p>Variáveis globais podem ser acessadas/usadas em todo o documento, as locais só podem ser usadas no seletor em que foram declaradas.</p>
+      <p>Para criar uma variável com escopo global, declare-a no seletor :root, que corresponde ao elemento raiz do documento. Para criar uma variável com escopo local, declare-a dentro do seletor em que será usada.</p>
+
+      <p>As vantagens de usar <code>var()</code> são:</p>
+
+        <ul>
+          <li>O código fica mais fácil de ler (isto é, mais compreensível).</li>
+          <li>Fica mais fácil alterar os valores das cores.</li>
+        </ul>
+        
+      <p>No exemplo acima, se quisermos alterar para um azul mais claro, só precisamos alterar o código da cor em um lugar: na variável.</p>
+    </section>
+
+    <section>
+      <p>É possível, ainda, substituir os valores das variáveis globais localmente. Se quisermos um tom de azul diferente somente para os botões, por exemplo, podemos alterar a variável no seletor do botão:</p>
+
+      <pre>
+        <code>
+          :root {
+            --blue: #1e90ff;
+            --white: #ffffff;
+          }
+
+          body {
+            background-color: var(--blue);
+          }
+
+          h2 {
+            border-bottom: 2px solid var(--blue);
+          }
+
+          .container {
+            color: var(--blue);
+            background-color: var(--white);
+            padding: 15px;
+          }
+
+          button {
+            --button-blue: #0000ff; /* local variable will override global */
+            background-color: var(--white);
+            color: var(--blue);
+            border: 1px solid var(--button-blue);
+            padding: 5px;
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Alterar variáveis com JavaScript</h2>
+
+      <p>Como as variáveis têm acesso ao DOM, podemos alterá-las com JavaScript. Eis um exemplo de como criar um script para exibir e alterar a variável <code>--blue</code> do exemplo anterior.</p>
+
+      <pre>
+        <code>
+          &lt;script&gt;
+            // Get the root element
+            var r = document.querySelector(':root');
+
+            // Create a function for getting a variable value
+            function myFunction_get() {
+              // Get the styles (properties and values) for the root
+              var rs = getComputedStyle(r);
+              // Alert the value of the --blue variable
+              alert("The value of --blue is: " + rs.getPropertyValue('--blue'));
+            }
+
+            // Create a function for setting a variable value
+            function myFunction_set() {
+              // Set the value of variable --blue to another value (in this case "lightblue")
+              r.style.setProperty('--blue', 'lightblue');
+            }
+          &lt;/script&gt;
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Alterar variáveis com <em>media queries</em></h2>
+
+      <p>É possível alterar as variáveis globais e locais usando <em>media queries</em>. Podemos alterar uma variável <code>--fontsize</code> ou <code>--nome-da-cor</code> quando a tela atinge determinada largura. Por exemplo, podemos diminuir ou aumentar o tamanho da fonte para telas de celulares ou de desktops. Exemplo de uso:</p>
+
+      <pre>
+        <code>
+          /* Variable declarations */
+          :root {
+            --blue: #1e90ff;
+            --white: #ffffff;
+          }
+
+          .container {
+            --fontsize: 25px;
+          }
+
+          /* Styles */
+          body {
+            background-color: var(--blue);
+          }
+
+          h2 {
+            border-bottom: 2px solid var(--blue);
+          }
+
+          .container {
+            color: var(--blue);
+            background-color: var(--white);
+            padding: 15px;
+            font-size: var(--fontsize);
+          }
+
+          @media screen and (min-width: 450px) {
+            .container {
+              --fontsize: 50px;
+            }
+            :root {
+              --blue: lightblue;
+            }
+          }
+        </code>
+      </pre>
+    </section>
+  </body>
+</html>

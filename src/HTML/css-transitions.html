@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="description" content="Transições no CSS">
+  <meta name="author" content="Lizandra Silva (@maopequena)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transições no CSS</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background: var(--red);
+      transition: width 2s, height 4s;
+      color: var(--black);
+      align-content: center;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    #div1:hover {
+      width: 300px;
+      height: 200px;
+    }
+
+    .div-container {
+      width: 700px;
+      height: 250px;
+      border: 2px solid var(--white);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    #div2 {
+      width: 100px;
+      height: 100px;
+      background: var(--aliceblue);
+      transition: width 2s, height 4s;
+      transition-timing-function: ease;
+      color: var(--black);
+      align-content: center;
+      text-align: center;
+      font-weight: 700;
+      flex-wrap: wrap;
+    }
+
+    #div2:hover {
+      width: 300px;
+      height: 200px;
+    }
+
+    #div3 {
+      width: 100px;
+      height: 100px;
+      background: antiquewhite;
+      transition: width 2s, height 4s;
+      transition-timing-function: ease-in;
+      color: var(--black);
+      align-content: center;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    #div3:hover {
+      width: 300px;
+      height: 200px;
+    }
+
+    #div4 {
+      width: 100px;
+      height: 100px;
+      background: aqua;
+      transition: width 2s, height 4s;
+      transition-timing-function: ease-out;
+      color: var(--black);
+      align-content: center;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    #div4:hover {
+      width: 300px;
+      height: 200px;
+    }
+
+    #div5 {
+      width: 100px;
+      height: 100px;
+      background: var(--aquamarine);
+      transition: width 2s, height 4s;
+      transition-timing-function: ease-in-out;
+      color: black;
+      align-content: center;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    #div5:hover {
+      width: 300px;
+      height: 200px;
+    }
+
+    #div6 {
+      width: 100px;
+      height: 100px;
+      background: azure;
+      transition: width 2s, height 4s;
+      color: var(--black);
+      align-content: center;
+      text-align: center;
+      font-weight: 400;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    #div6:hover {
+      width: 300px;
+      height: 200px;
+    }
+
+    #div7 {
+      width: 100px;
+      height: 100px;
+      background-color: beige;
+      transition: background-color 2s;
+      color: var(--black);
+      align-content: center;
+      text-align: center;
+      font-weight: 700;
+      transition-delay: 2s;
+    }
+
+    #div7:hover {
+      background-color: var(--blue);
+    }
+
+    #div8 {
+      width: 120px;
+      height: 120px;
+      background-color: bisque;
+      transition: background-color 2s;
+      color: var(--black);
+      align-content: center;
+      text-align: center;
+      font-weight: 700;
+      text-wrap: wrap;
+      transition: background-color 2s, transform 2s;
+    }
+
+    #div8:hover {
+      background-color: blueviolet;
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Transições no CSS</h1>
+  </header>
+
+  <section>
+    <p>Transições possibilitam mudar o estado de um elemento em determinado período de tempo.</p>
+
+    <details>
+      <summary>Estas são as propriedades possíveis:</summary>
+      <code>transition</code>, <code>transition-delay</code>, <code>transition-duration</code>, <code>transition-property</code> e <code>transition-timing-function</code>.
+      </details>
+  </section>
+
+  <section>
+    <h2>Como usar transições?</h2>
+
+    <p>Para criar um efeito de transição, é preciso especificar duas coisas:</p>
+    <ul>
+      <li>A propriedade do CSS à qual se deseja adicionar uma transição.</li>
+      <li>A duração do efeito.</li>
+    </ul>
+
+    <p>Se não especificar a duração, a transição não acontecerá, porque o valor padrão é 0.</p>
+
+    <p>O exemplo abaixo altera a largura da caixa durante dois segundos e sua altura durante quatro segundos. O efeito também é suave ao remover o mouse do elemento.</p>
+
+    <div id="div1">Altura e largura</div>
+  </section>
+
+  <section>
+    <h2 id="transition-timing">A propriedade <code>transition-timing-function</code></h2>
+
+    <p>Esta propriedade define a curva de velocidade do efeito de transição. Podemos usar os seguintes valores:</p>
+
+    <ul class="list-square">
+      <li><code>ease</code>: define uma transição iniciando devagar, ficando mais rápida e finalizando devagar. <strong>Este é o padrão.</strong></li>
+      <li><code>linear</code>: define uma transição com a mesma velocidade do início ao fim.</li>
+      <li><code>ease-in</code>: define uma transição que começa devagar.</li>
+      <li><code>ease-out</code>: define uma transição que termina devagar.</li>
+      <li><code>ease-in-out</code>: define uma transição que começa e termina devagar.</li>
+      <li><code>cubic-bezier(n,n,n,n)</code>: possibilita definir seus próprios valores em uma função de curva de Bézier.</li>
+    </ul>
+    <p>As caixas a seguir apresentam as cinco primeiras propriedades.</p>
+
+    <div class="div-container">
+      <div id="div2">ease</div>
+      <div id="div3">ease-in</div>
+      <div id="div4">ease-out</div>
+      <div id="div5">ease-in-out</div>
+      <div id="div6">cubic-bezier(0.075, 0.82, 0.165, 1)</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>A propriedade <code>transition-delay</code></h2>
+    <p>Define um atraso, em segundos, para o efeito de transição. Com dois segundos, por exemplo:</p>
+
+    <div id="div7">transition-delay</div>
+
+    <p>Podemos combinar transições e transformações para alterar os estilos de um elemento:</p>
+
+    <div id="div8">Transição + transformação</div>
+  </section>
+</body>
+</html>

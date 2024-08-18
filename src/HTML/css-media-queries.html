@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="description" content="Media queries">
+  <meta name="author" content="Lizandra Silva (@maopequena)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media queries</title>
+  <style>
+    body {
+      --green: #52afa5;
+      --orange: #ff9655;
+      --dark-orange: #ff7a33;
+      --black: #333;
+    }
+
+    div {
+      background-color: var(--orange);
+      border: 2px solid var(--green);
+      color: var(--black);
+    }
+
+    @media screen and (max-width: 480px) {
+      body {
+        background-color: var(--green);
+      }
+
+      div {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Media queries</h1>
+  </header>
+
+  <section>
+    <p>Com a regra <code>@media</code> é possível definir diferentes regras de estilo para diferentes tipos de mídia. Essa regra não procura somente pelo tipo de dispositivo, mas pelas suas capacidades, por exemplo:</p>
+
+    <ul class="list-square">
+      <li>A largura e a altura do viewport.</li>
+      <li>A orientação do viewport (paisagem ou retrato).</li>
+      <li>A resolução da tela.</li>
+    </ul>
+
+    <p>As media queries são uma ótima maneira de adequar a folha de estilo do seu site a dispositivos diversos, como desktops, laptops, tablets e celulares.</p>
+  </section>
+
+  <section>
+    <h2>Tipos de mídia</h2>
+
+    <p>Os valores aceitos são:</p>
+
+    <ul class="list-square">
+      <li><em>all</em>: usado para todos os tipos de dispositivos.</li>
+      <li><em>print</em>: usado para o modo de visualização de impressão.</li>
+      <li><em>screen</em>: usado para telas de computadores, celulares, etc.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Recursos comuns</h2>
+
+    <p>Este são os recursos alterados por media queries:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Valor</th>
+          <th>Descrição</th>
+        </tr>  
+        <tr>
+          <td>orientation</td>
+          <td>Altera a orientação do viewport: paisagem ou retrato</td>
+        </tr>
+        <tr>
+          <td>max-height</td>
+          <td>Altera a altura máxima do viewport</td>
+          </tr>
+        <tr>
+          <td>min-height</td>
+          <td>Altera a altura mínima do viewport</td>
+        </tr>
+        <tr>
+          <td>height</td>
+          <td>Altera a altura do viewport (inclusive a barra de rolagem)</td>
+        </tr>
+        <tr>
+          <td>max-width</td>
+          <td>Altera a largura máxima do viewport</td>
+        </tr>
+        <tr>
+          <td>min-width</td>
+          <td>Altera a largura mínima do viewport</td>
+        </tr>
+        <tr>
+          <td>width</td>
+          <td>Altera a largura do viewport (inclusive a barra de rolagem)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Sintaxe</h2>
+
+    <p>Uma media query consiste de um tipo de mídia e pode conter um ou mais recursos, que serão verdadeiros ou falsos.</p>
+
+    <pre>
+      <code>
+        @media <strong>not|only</strong> <em>mediatype</em> and (<em>media feature</em>) and (<em>media feature</em>) {
+          propriedade de CSS: valor;
+          propriedade de CSS: valor;
+          propriedade de CSS: valor;
+          ...
+        }
+      </code>
+    </pre>
+
+    <p>O <strong>mediatype</strong> é opcional (se omitido, é definido como <code>all</code>). Entretanto, se forem usadas as palavras-chave <strong>not</strong> ou <strong>only</strong>, é preciso definir o <strong>mediatype</strong>.</p>
+
+    <p>O resultado da consulta é verdadeiro se o tipo de mídia definido corresponder ao tipo de dispositivo em que o documento está sendo exibido e se todos os recursos de mídia da consulta forem verdadeiros. Quando a media query é considerada como verdadeira, as regras de estilo correspondentes são aplicadas seguindo as regras normais da cascata. Consulte <a href="../HTML/css.html#modelo-cascata">O modelo de cascata</a> para ver a ordem correta.</p>
+
+    <p>As palavras-chave têm os seguintes significados:</p>
+
+    <ul class="list-square">
+      <li><strong>not</strong>: inverte o significado de toda a media query.</li>
+      <li><strong>only</strong>: impede que navegadores mais antigos, que não oferecem suporte a media queries, apliquem determinados estilos. Esta palavra-chave não tem efeito em navegadores modernos.</li>
+      <li><strong>and</strong>: combina um tipo de mídia e um ou mais recursos de mídia.</li>
+    </ul>
+
+    <p>Também é possível vincular várias folhas de estilo, dependendo do tipo da mídia ou da largura da janela do navegador (viewport):</p>
+
+    <pre>
+      <code>
+        &lt;link rel="stylesheet" media="print" href="print.css"&gt;
+        &lt;link rel="stylesheet" media="screen" href="screen.css"&gt;
+        &lt;link rel="stylesheet" media="screen and (min-width: 480px)" href="example1.css"&gt;
+        &lt;link rel="stylesheet" media="screen and (min-width: 701px) and (max-width: 900px)" href="example2.css"&gt;
+        etc....
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>Exemplos</h2>
+
+    <p>Reduza a largura da janela do navegador para ver o fundo desta página mudar de cor!</p>
+
+    <p>Um exemplo muito comum para as media queries é deslocar o menu ou a barra de navegação lateral para cima ou para baixo do conteúdo da página quando a tela do dispositivo é pequena. Isso garante que a leitura não seja prejudicada.</p>
+
+    <p>Outro exemplo é ocultar itens em telas pequenas. O <code>&lt;div&gt;
+    </code> abaixo, por exemplo, será ocultado ao reduzir a tela.</p>
+
+    <div>Diminua a tela para ver este elemento desaparecer como mágica!</div>
+
+    <p>As media queries são usadas, principalmente, para tornar um site mais acessível, aumentando o tamanho da fonte, alterando as cores, e muito mais.</p>
+
+    <p>Veja mais exemplos de media queries <a href="https://www.w3schools.com/css/css3_mediaqueries_ex.asp" target="_blank" rel="noopener noreferrer">aqui</a>.</p>
+
+    <p><a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.php" target="_blank" rel="noopener noreferrer">Referência completa sobre media queries no w3schools</a></p>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media" target="_blank" rel="noopener noreferrer">Referência completa sobre media queries no MDN</a></p>
+  </section>
+</body>
+</html>

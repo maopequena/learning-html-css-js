@@ -117,7 +117,7 @@
 
   <section>
     <h2>Quando usar a ARIA?</h2>
-    <p>Com os <a href="../HTML/elementos-semanticos.html" target="_blank" rel="noopener noreferrer">elementos semânticos</a>, há menos necessidade de usar as funções, propriedades e estados/valores da <abbr title="Accessible Rich Internet Applications">ARIA</abbr>. Siga estas cinco regras para garantir a conformidade:</p>
+    <p>Com os <a href="../HTML/elementos-semanticos.html" target="iframe"">elementos semânticos</a>, há menos necessidade de usar as funções, propriedades e estados/valores da <abbr title="Accessible Rich Internet Applications">ARIA</abbr>. Siga estas cinco regras para garantir a conformidade:</p>
 
     <h3>Regra 1: Não use a ARIA</h3>
     <p>A ARIA é obrigatória quando um elemento HTML não oferece suporte à acessibilidade, seja porque o design não permite a adição de um elemento HTML semântico ou porque o comportamento/recurso desejado não está disponível no HTML. Essas situações, entretanto, são raras.</p>
@@ -131,7 +131,7 @@
     <h3>Regra 3: Sempre ofereça suporte à navegação pelo teclado</h3>
     <p>Todos os controles interativos (e não desativados) da ARIA devem ser acessíveis pelo teclado. Adicione <code>tabindex= "0"</code> a qualquer elemento que precisa de foco e que geralmente não é acessado com a tecla <code>Tab</code>. Evite usar índices de tabulação com inteiros positivos sempre que possível, para evitar possíveis problemas de ordem do foco com o teclado.</p>
     <p>Por exemplo, use <code>&lt;span role="button" tabindex="0"&gt;Submit&lt;/span&gt;</code> e não <code>&lt;span role="button" tabindex="1"&gt;Submit&lt;/span&gt;</code>. E também podemos usar a tag <code>&lt;button&gt;</code> neste caso.</p>
-    <p id="important-info"><strong>Cuidado</strong>: lembre-se que pessoas com e sem deficiências visuais usam a navegação pelo teclado. Não adicione tabulações desnecessárias a cabeçalhos e parágrafos, já que isso pode apresentar desafios adicionais para usuários apenas pelo teclado.</p>
+    <p class="important-info"><strong>Cuidado</strong>: lembre-se que pessoas com e sem deficiências visuais usam a navegação pelo teclado. Não adicione tabulações desnecessárias a cabeçalhos e parágrafos, já que isso pode apresentar desafios adicionais para usuários apenas pelo teclado.</p>
 
     <h3>Regra 4: Não oculte elementos que devem receber foco</h3>
     <p>Não adicione <code>role="presentation"</code> ou <code>aria-hidden="true"</code> quando os elementos precisam ter foco com um <code>tabindex="0"</code>. Ao adicionar essas funções/estados aos elementos, o leitor de tela entende que esses elementos não são importantes, e tende a ignorá-los. Isso pode confundir ou interromper os usuários que estão tentando interagir com um elemento.</p>
@@ -203,7 +203,7 @@
 
   <section>
     <h2>Estrutura do conteúdo</h2>
-    <p><strong>Observação</strong>: veja também a página <a href="../HTML/elementos-semanticos.html" target="_blank" rel="noopener noreferrer">Elementos semânticos</a> para saber mais sobre como estruturar adequadamente o conteúdo.</p>
+    <p><strong>Observação</strong>: veja também a página <a href="../HTML/elementos-semanticos.html" target="iframe">Elementos semânticos</a> para saber mais sobre como estruturar adequadamente o conteúdo.</p>
 
     <p>A tabela a seguir apresenta os elementos semânticos do HTML e seus pares na ARIA.</p>
 
@@ -288,7 +288,7 @@
     <p><code>&lt;title&gt;Episódio 22 - O Final | Temporada 3 | A Série&lt;/title&gt;</code></p>
 
     <h3>Idioma</h3>
-    <p>O atributo <code>lang</code> define o idioma padrão de toda a página. Esse atributo deve ser adicionado à tag <code>&lt;html&gt;</code>. Deve haver um código de idioma válido em todas as páginas, porque é ele que indica ao leitor de tela qual idioma usar. Saiba mais em <a href="../HTML/atributos.html#lang-attribute" target="_blank" rel="noopener noreferrer">Atributos: lang</a>.</p>
+    <p>O atributo <code>lang</code> define o idioma padrão de toda a página. Esse atributo deve ser adicionado à tag <code>&lt;html&gt;</code>. Deve haver um código de idioma válido em todas as páginas, porque é ele que indica ao leitor de tela qual idioma usar. Saiba mais em <a href="../HTML/atributos.html#lang-attribute" target="iframe">Atributos: lang</a>.</p>
     <p>Quando este atributo está totalmente ausente, o leitor de tela usa o idioma padrão definido pelo usuário. Por exemplo, se o leitor estiver definido para espanhol e o usuário visitar uma página em inglês, o leitor de tela tentará ler o texto em inglês com sotaque e cadência do espanhol. Isso pode resultar em um produto digital inutilizável e em um usuário frustrado.</p>
     <p>Também é possível definir o idioma de uma seção específica em uma página, mesmo que o atributo <code>lang</code> esteja definido na tag <code>&lt;html&gt;</code>. Por exemplo:</p>
     <pre>
@@ -307,7 +307,7 @@
 
     <h3>iFrames</h3>
 
-    <p>O elemento <code>&lt;iframe&gt;</code> é usado para hospedar outra página HTML ou conteúdo de terceiros na página. iFrames geralmente são usados para propagandas, vídeos, análises da Web e conteúdo interativo. <a href="../HTML/iframes.html" target="_blank" rel="noopener noreferrer">Saiba mais</a>.</p>
+    <p>O elemento <code>&lt;iframe&gt;</code> é usado para hospedar outra página HTML ou conteúdo de terceiros na página. iFrames geralmente são usados para propagandas, vídeos, análises da Web e conteúdo interativo. <a href="../HTML/iframes.html" target="iframe">Saiba mais</a>.</p>
     <p>Para torná-lo acessível, cada iframe com conteúdo distinto deve incluir um elemento de título dentro da tag pai, pois ele fornece ao leitor de tela mais informações sobre o conteúdo do iframe. Além disso, recomenda-se definir a rolagem da tela para "auto" ou "yes" nas configurações da tag <code>&lt;iframe&gt;</code>. Isso possibilita que pessoas com deficiências visuais consigam rolar para o conteúdo dentro do iframe, que talvez não esteja visível para elas. Recomenda-se também que o contêiner do iframe tenha altura e largura flexíveis.</p>
     <p>Exemplo:</p>
     <pre>
@@ -325,7 +325,50 @@
     <p>Muitas pessoas usam um teclado como meio de navegação, portanto oferecer suporte à navegação pelo teclado é essencial. Grande parte da acessibilidade do teclado concentra-se no <strong>focus</strong>, que se refere a qual elemento da tela está atualmente selecionado.</p>
 
     <h3>Ordem do foco</h3>
-    <p></p>
+    <p>Os elementos que os usuários usam para navegar com o teclado são chamados de <em>elementos em foco</em>. A ordem de foco, também chamada de ordem de navegação ou de tabulação, é a ordem em que os elementos recebem o foco. A ordem padrão deve ser lógica, intuitiva e corresponder à ordem visual de uma página.</p>
+
+    <p>Na maioria dos idiomas, a ordem de foco começa no topo da página e termina na parte inferior, indo da esquerda para a direita. Porém, alguns idiomas são lidos da direita para a esquerda, então o idioma principal da página pode pedir uma ordem de foco diferente.</p>
+      
+    <p>Por padrão, essa ordem inclui elementos HTML que entram em foco naturalmente, como links, caixas de seleção e campos de texto. Esses elementos têm suporte incorporado à tabulação e manipulação de eventos do teclado básica.</p>
+      
+    <p>Você pode alterar a ordem de foco para incluir quaisquer elementos que normalmente não recebem foco, como elementos HTML sem interatividade, componentes personalizados ou elementos com ARIA que sobrepõem a semântica natural do foco.</p>
+
+    <p><strong>Observação</strong>: a tecla <code>Tab</code> move o foco para baixo na página, a combinação <code>Shift + Tab</code> move o foco para cima na página.</p>
+
+    <h3>Tabindex</h3>
+
+    <p>A ordem de foco começa com elementos com um atributo <code>tabindex</code> positivo (se houver) e segue para o próximo número positivo, do menor para o maior (como 1, 2, 3). Em seguida, continua passando pelos elementos com um índice de tabulação igual a zero, de acordo com sua ordem no DOM. Quaisquer elementos com um valor de índice de tabulação negativo são removidos da ordem natural de foco.</p>
+
+    <p>Ao aplicar um <code>tabindex="0"</code> a elementos que geralmente não têm foco, eles são adicionados à ordem natural de foco da página, de acordo com a forma em que aparecem no DOM. Entretanto, diferente de elementos que naturalmente têm foco, é preciso definir o suporte adicional ao teclado para que fiquem totalmente acessíveis.</p>
+
+    <p>Da mesma forma, se houver um elemento que normalmente tem foco, mas está inativo, como um botão que não fica disponível até que um campo seja preenchido, é preciso adicionar um tabindex negativo (<code>tabindex="-1"</code>) ao elemento. Esse índice negativo informa à tecnologias auxiliares e a teclados que esse botão deve ser removido da ordem natural de foco. Para retornar o foco ao elemento quando necessário, é possível usar JavaScript.</p>
+
+    <p>In this example, a tabindex attribute was added to elements that do not naturally receive focus. The order of the elements was manipulated using tabindex to illustrate the power it can have on focus order. This is an example of what not to do!</p>
+
+    <p class="important-info"><strong>Cuidado!</strong> Evite usar índices de tabulação positivos. Dar foco a elementos não interativos e interromper o fluxo normal da página pode confundir e frustrar os usuários. São raros os casos em que é necessário adicionar um índice positivo (<code>tabindex= "1"</code>) a um elemento que não tem foco.</p>
+
+    <h3>Links que pulam para o conteúdo</h3>
+
+    <p>Se o seu site tem uma barra de navegação na parte superior, pode ser difícil para usuários com tecnologias auxiliares e teclados navegarem pelo site. Para ignorar áreas redundantes ou grupos de links inúteis, use <a href="https://webaim.org/techniques/skipnav/" target="_blank" rel="noopener noreferrer">links que pulam para o conteúdo</a>.</p>
+
+    <p>Para tanto, use o atributo <code>id</code> para criar uma âncora para o início do conteúdo. Use esta técnica no primeiro elemento em foco da página. O link pode ficar visível para todos ou acessível somente pelo teclado e tecnologias assistivas. Não esqueça de incluir contexto sobre o propósito desse link com <code>aria-label</code>, por exemplo.</p>
+
+    <h3>Indicador de foco</h3>
+
+    <p>Ao definir um estilo adequado para o indicador de foco no arquivo CSS, o desenvolvedor facilita sua visualização na página, melhorando, assim, a acessibilidade, porque impede que o estilo normal do navegador esteja no controle.</p>
+    <p>Não use <code>outline: none</code> ou <code>outline: 0</code> no código, porque isso remove o estilo padrão do navegador e qualquer outro estilo aplicado.</p>
+
+    <p>Exemplo de uso:</p>
+    <pre>
+      <code>
+        a:focus {
+          outline: auto 5px Highlight;
+          outline: auto 5px -webkit-focus-ring-color;
+        }
+      </code>
+    </pre>
+
+    <p>Você pode estilizar o indicador de foco com uma borda, um sublinhado, uma caixa, alterando o plano de fundo ou qualquer outro estilo que seja óbvio e não seja baseado somente em cores, para indicar que o foco do teclado está ativo naquele elemento.</p>
   </section>
 </body>
 </html>

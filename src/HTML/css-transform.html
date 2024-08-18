@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="description" content="Transformações no CSS">
+  <meta name="author" content="Lizandra Silva (@maopequena)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformações no CSS</title>
+</head>
+<body>
+  <header>
+    <h1>Transformações no CSS</h1>
+  </header>
+  <section>
+    <p>Há várias transformações no CSS, que nos permitem mover, girar, redimensionar e inclinar elementos.</p>
+
+    <h2>Transformações 2D</h2>
+    <details>
+    <summary>Estas são as transformações 2D:</summary>
+    <code>translate()</code>, <code>rotate()</code>, <code>scaleX()</code>, <code>scaleY()</code>, <code>scale()</code>, <code>skewX()</code>, <code>skewY()</code>, <code>skew()</code>, <code>matrix()</code>.
+    </details>
+  </section>
+
+  <section>
+    <h3>O método <code>translate()</code></h2>
+    <p>Este método move um elemento de sua posição atual de acordo com os parâmetros fornecidos para os eixos X e Y. O exemplo abaixo move o elemento <code>&lt;div&gt;</code> 50 pixels para a direita e 100 pixels para baixo:</p>
+
+    <pre>
+      <code>
+        div {
+          transform: translate(50px, 100px);
+        }
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h3>O método <code>rotate()</code></h2>
+    <p>Este método gira um elemento nos sentidos horário (com números positivos) ou anti-horário (com números negativos) de acordo com o angulo fornecido. O exemplo abaixo gira o elemento <code>&lt;div&gt;</code> em 20 graus:</p>
+
+    <pre>
+      <code>
+        div {
+          transform: rotate(20deg);
+        }
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h3>Os métodos <code>scale()</code>, <code>scaleX()</code> e <code>scaleY()</code></h2>
+    <p>Estes métodos aumentam ou diminuem o tamanho de um elemento de acordo com os parâmetros fornecidos para largura (eixo X) e altura (eixo Y). Números decimais reduzem o tamanho do elemento. O exemplo abaixo aumenta o elemento <code>&lt;div&gt;</code> para ser 2 vezes maior na largura e 3 vezes maior na altura:</p>
+
+    <pre>
+      <code>
+        div {
+          transform: scale(2, 3);
+        }
+      </code>
+    </pre>
+
+    <p class="important-info"><strong>Observação</strong>: os itens contidos no elemento também são redimensionados de acordo.</p>
+    <p>O exemplo abaixo duplica a largura do elemento:</p>
+
+    <pre>
+      <code>
+        div {
+          transform: scaleX(2);
+        }
+      </code>
+    </pre>
+
+    <p>O exemplo abaixo diminui a altura do elemento pela metade:</p>
+
+    <pre>
+      <code>
+        div {
+          transform: scaleY(0.5);
+        }
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h3>Os métodos <code>skew()</code>, <code>skewX()</code> e <code>skewY()</code></h2>
+    <p>Estes métodos são usados para inclinar elementos ao longo dos eixos X, Y ou ambos de acordo com os ângulos fornecidos. O exemplo abaixo inclina o elemento <code>&lt;div&gt;</code> em 20 graus no eixo X e 10 graus no eixo Y:</p>
+
+    <pre>
+      <code>
+        div {
+          transform: skew(20deg, 10deg);
+        }
+      </code>
+    </pre>
+
+    <p><strong>Observação</strong>: neste método, se o segundo parâmetro não for definido, é considerado como 0, e o elemento só inclina no eixo X.</p>
+
+    <p>O exemplo abaixo inclina o elemento <code>&lt;div&gt;</code> em 20 graus no eixo X:</p>
+
+    <pre>
+      <code>
+        div {
+          transform: skewX(20deg);
+        }
+      </code>
+    </pre>
+
+    <p>O exemplo abaixo inclina o elemento <code>&lt;div&gt;</code> em 30 graus no eixo Y:</p>
+
+    <pre>
+      <code>
+        div {
+          transform: skewY(30deg);
+        }
+      </code>
+    </pre>
+
+    <p>Números negativos inclinam o elemento no sentido contrário.</p>
+  </section>
+
+  <section>
+    <h3>O método <code>matrix()</code></h2>
+    <p>Este método combina todos os métodos 2D. Para usá-lo é preciso definir 6 parâmetros desta forma: <code>matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())</code></p>
+
+    <figure>
+      <img src="../img/transform-css.png" alt="Transformações">
+      <figcaption>Transformações: propriedades e métodos</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Transformações 3D</h2>
+    <details>
+      <summary>Estas são as transformações 3D:</summary>
+      <code>rotateX()</code>, <code>rotateY()</code>, <code>rotateZ()</code>.
+      </details>
+  </section>
+
+  <section>
+    <h3>Os métodos <code>rotateX()</code>, <code>rotateY()</code> e <code>rotateZ()</code></h3>
+    <p>Estes métodos giram um elemento no respectivo eixo, de acordo com o grau definido:</p>
+
+    <pre>
+      <code>
+        #myDiv {
+          transform: rotateX(150deg);
+        }
+
+        #myDiv {
+          transform: rotateY(150deg);
+        }
+
+        #myDiv {
+          transform: rotateZ(90deg);
+        }
+      </code>
+    </pre>
+
+    <p>Os números negativos giram o elemento no sentido contrário.</p>
+
+    <figure>
+      <img src="../img/3d-transform-properties-css.png" alt="Transformações: propriedades">
+      <figcaption>Transformações: propriedades</figcaption>
+    </figure>
+
+    <figure>
+      <img src="../img/3d-transform-methods-css.png" alt="Transformações: métodos">
+      <figcaption>Transformações: propriedades</figcaption>
+    </figure>
+  </section>
+</body>
+</html>

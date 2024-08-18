@@ -38,7 +38,8 @@
       <p>Todos os estilos na página serão aplicados em "cascata" em uma nova folha de estilo "virtual" de acordo com as regras a seguir, respectivamente:</p>
       <ol style="list-style: 1;">
         <li>Estilo em linha (dentro do elemento HTML)</li>
-        <li>Folhas de estilo externa e interna (na área <code>&lt;head&gt;</code>)</li>
+        <li>Folhas de estilo interna (na área <code>&lt;head&gt;</code>)</li>
+        <li>Folha de estilo externa (style.css)</li>
         <li>Padrão do navegador</li>
       </ol>
       <p>Assim, o estilo em linha tem a prioridade mais alta e substituirá as folhas de estilo externa e interna e os padrões do navegador.</p>
@@ -56,7 +57,7 @@
       <h3>CSS Inline</h2>
       <p>O CSS em linha, que é aplicado ao elemento, é usado para aplicar um estilo único a um único elemento HTML. Ele usa o atributo <code>style</code> em um elemento HTML. O cabeçalho e o parágrafo coloridos abaixo são exemplos de "inline".</p>
 
-      <h4 style="color:blue;">Cabeçalho em blue</h4>
+      <h4 style="color:var(--blue);">Cabeçalho em blue</h4>
       <p style="color:goldenrod;font-size: 15pt;">Parágrafo em Golden Rod com letra tamanho 15pt.</p>
       <p><b>Observação</b>: ao usar valores numéricos, não se deve separar o número da unidade com um espaço. O correto é <code>font-size: 15pt</code> e não <code>font-size: 15 pt</code>.</p>
     
@@ -127,7 +128,7 @@
     </section>
 
     <section>
-      <h2>O modelo de cascata</h2>
+      <h2 id="modelo-cascata">O modelo de cascata</h2>
       <p>Entender o algoritmo de cascata nos ajuda a compreender como o navegador resolve os conflitos de CSS. Esse algoritmo está dividido em quatro etapas distintas:</p>
       <ol>
         <li><em>Posição e ordem de exibição</em>: a ordem em que as regras de CSS aparecem.</li>

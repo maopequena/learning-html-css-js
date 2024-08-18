@@ -9,6 +9,41 @@
   <meta name="author" content="Lizandra Silva (@maopequena)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Links no CSS</title>
+  <style>
+    .simple-pagination {
+      display: inline-block;
+    }
+
+    .simple-pagination a {
+      color: var(--white);
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    .active-hover-pagination {
+      display: inline-block;
+    }
+
+    .active-hover-pagination a {
+      color: var(--white);
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color 0.5s;
+    }
+
+    .active-hover-pagination a.active {
+      background-color: var(--orange);
+      color: var(--white);
+      border-radius: 4px;
+    }
+
+    .active-hover-pagination a:hover:not(.active) {
+      background-color: var(--dark-grey);
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
   <main>
@@ -17,7 +52,7 @@
       <p>É possível estilizar os links de várias formas: com bordas, cor de fundo, cor do texto e muito mais.</p>
       <p>Há ainda quatro estados que se pode configurar:</p>
       <ul>
-          <li><code><a href="../HTML/fontes-de-aprendizado.html#ref-pc-link" target="_blank" rel="noopener noreferrer"></a>:link</code></li>
+          <li><code>:link</code></li>
           <li><code>:visited</code></li>
           <li><code>:hover</code></li>
           <li><code>:active</code></li>
@@ -26,13 +61,13 @@
     </header>
 
     <section>
-      <p>A propriedade <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-text-decoration" target="_blank" rel="noopener noreferrer">text-decoration</a></code> geralmente é usada para remover o sublinhado dos links (<code>text-decoration: none</code>).</p>
+      <p>A propriedade <code>text-decoration</code> geralmente é usada para remover o sublinhado dos links (<code>text-decoration: none</code>).</p>
       <p>Usando as propriedades <code>background-color</code>, <code>padding</code> e <code>border/border-radius</code> é possível fazer o link se parecer com um botão ou outros objetos.</p>
       <p>A propriedade <code>display</code> também é importante.</p>
       
-      <p>A propriedade <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-cursor" target="_blank" rel="noopener noreferrer"></a>cursor</code>:</p>
+      <p>A propriedade <code>cursor</code>:</p>
         <p>Passe o mouse sobre as palavras e veja o cursor mudar.</p>
-        <div style="margin-left: 5px;">
+        <div style="margin-left: 15px;">
           <span style="cursor:auto">auto</span><br>
           <span style="cursor:crosshair">crosshair</span><br>
           <span style="cursor:default">default</span><br>
@@ -50,7 +85,44 @@
           <span style="cursor:text">text</span><br>
           <span style="cursor:w-resize">w-resize</span><br>
           <span style="cursor:wait">wait</span><br>
+          <span style="cursor:not-allowed">not-allowed</span><br>
         </div>
+    </section>
+
+    <section>
+      <h2>Paginação com links</h2>
+
+      <p>Em um site com várias páginas, pode ser útil usar links para criar um efeito de paginação, passando de uma página para outra. Vejamos como fazer isso.</p>
+
+      <h3>Exemplo de paginação simples</h3>
+
+      <div class="simple-pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+      </div>
+
+      <h3>Com os seletores <code>active</code> e <code>hover</code></h3>
+
+      <p>Passe o mouse sobre os itens abaixo.</p>
+
+      <div class="active-hover-pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a class="active" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+      </div>
+
+      <a href="https://www.w3schools.com/css/css3_pagination.asp" target="_blank" rel="noopener noreferrer">Mais exemplos de paginação com links</a>
     </section>
   </main>
 </body>

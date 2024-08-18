@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <meta charset="utf-8" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="description" content="Layout de várias colunas" />
+    <meta name="author" content="Lizandra Silva (@maopequena)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout de várias colunas</title>
+    <style>
+      .newspaper {
+        column-count: 3;
+        column-gap: 40px;
+        column-rule-style: solid;
+        column-rule-width: 1px;
+        column-rule-color: var(--table-border);
+        column-span: all;
+        column-width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Layout de várias colunas</h1>
+    </header>
+
+    <section>
+      <h2>Propriedades</h2>
+
+      <p>Estas são as propriedades disponíveis para criar um layout de várias colunas:</p>
+
+      <ul>
+        <li><code>column-count</code>: define a quantidade de colunas que o elemento deve ter.</li>
+        <li><code>column-gap</code>: define o espaço entre as colunas.</li>
+        <li><code>column-rule-style</code>: define o estilo da borda entre as colunas.</li>
+        <li><code>column-rule-width</code>: define a largura da borda entre as colunas.</li>
+        <li><code>column-rule-color</code>: define a cor da borda entre as colunas.</li>
+        <li><code>column-rule</code>: abreviação para as três últimas propriedades.</li>
+        <li><code>column-span</code>: define por quantas colunas um elemento deve se expandir.</li>
+        <li><code>column-width</code>: define a largura ideal de cada coluna, este é um valor sugerido.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Exemplo</h3>
+
+      <div>
+        <p class="newspaper">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla rerum architecto doloribus eos fugit accusamus nihil culpa!</p>
+      </div>
+
+
+      <h3>Propriedades</h3>
+
+      <img src="../img/multi-column-properties.png" alt="Propriedades disponíveis para o layout de várias colunas">
+    </section>
+  </body>
+</html>

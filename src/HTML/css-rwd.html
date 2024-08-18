@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="description" content="Design responsivo">
+  <meta name="author" content="Lizandra Silva (@maopequena)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design responsivo</title>
+</head>
+
+<body>
+  <header>
+    <h1>Design responsivo</h1>
+    <ul>
+      <li><a href="./css-rwd.html#rwd-cab1" target="iframe">O que é design responsivo?</a></li>
+      <li><a href="./css-rwd.html#rwd-cab2" target="iframe">Como projetar a melhor aparência para todos os usuários</a></li>
+      <li><a href="./css-rwd.html#rwd-cab3" target="iframe">O viewport</a></li>
+      <li><a href="./css-rwd.html#rwd-cab4" target="iframe">Como definir o viewport</a></li>
+      <li><a href="./css-rwd.html#rwd-cab5" target="iframe">Alterar o conteúdo de acordo com o viewport</a></li>
+      <li><a href="./css-rwd.html#rwd-cab6" target="iframe">Visualização de grade</a></li>
+      <li><a href="./css-rwd.html#rwd-cab7" target="iframe">Como criar uma visualização em grade responsiva</a></li>
+      <li><a href="./css-rwd.html#rwd-cab8" target="iframe">Usar media queries para criar um ponto de corte</a></li>
+      <li><a href="./css-rwd.html#rwd-cab9" target="iframe">Imagens responsivas</a></li>
+      <li><a href="./css-rwd.html#rwd-cab10" target="iframe">Vídeos responsivos</a></li>
+    </ul>
+  </header>
+
+  <section>
+    <h2 id="rwd-cab1">O que é design responsivo?</h2>
+    <p>A principal função do design responsivo é fazer o seu site ter uma boa aparência em qualquer dispositivo, independentemente do tamanho da tela. Para isso, usamos apenas HTML e CSS.</p>
+  </section>
+
+  <section>
+    <h2 id="rwd-cab2">Como projetar a melhor aparência para todos os usuários</h2>
+    <p>Páginas da Web podem ser exibidas em vários dispositivos diferentes: desktops, tablets e celulares. Seu site deve ter boa aparência e ser fácil de usar, independentemente do dispositivo. As páginas não devem excluir informações para se ajustarem a dispositivos menores, em vez disso devem adaptar seu conteúdo:</p>
+
+    <img src="../img/rwd-devices.png" alt="Dispositivos, design responsivo">
+
+    <p>O design responsivo usa HTML e CSS para redimensionar, ocultar, reduzir, aumentar ou mover o conteúdo, de forma que tenha boa aparência em qualquer tipo de tela.</p>
+  </section>
+
+  <section>
+    <h2 id="rwd-cab3">O viewport</h2>
+    <p>Viewport é a área visível de uma página da Web. Ele varia de acordo com o dispositivo e varies é menor em dispositivos móveis.</p>
+    <p>Antes dos tablets e celulares, as páginas da Web eram projetadas apenas para telas de computadores e costumavam ter um design estático com um tamanho fixo. Quando começamos a navegar pela Internet usando tablets e smartphones, as páginas fixas eram grandes demais para se adequarem ao viewport. Para corrigir isso, os navegadores desses dispositivos reduziam toda a página para ajustar à tela. Isso não era o ideal, mas foi uma solução rápida.</p>
+  </section>
+
+  <section>
+    <h2 id="rwd-cab4">Como definir o viewport</h2>
+    <p>O HTML5 introduziu um método que nos possibilita controlar o viewport: a tag <code>&lt;meta&gt;</code>. Use sempre este elemento para definir o viewport em todos os sites que criar:</p>
+
+    <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+
+    <p>Isso instrui o navegador sobre como controlaras dimensões e o escalonamento da página.</p>
+
+    <p>A parte <code>width=device-width</code> define a largura da página para ser igual à da tela do dispositivo de exibição. A parte <code>initial-scale=1.0</code> define o zoom inicial ao carregar a página pela primeira vez no navegador.</p>
+  </section>
+
+  <section>
+    <h2 id="rwd-cab5">Alterar o conteúdo de acordo com o viewport</h2>
+    <p>Os usuários estão acostumados a rolar as páginas da Web verticalmente tanto no desktop, quanto em dispositivos móveis, mas não horizontalmente! Então, se o usuário for forçado a rolar horizontalmente, ou tiver que reduzir o zoom, para ver toda a página da Web, ele pode não gostar da experiência. Algumas regras a seguir:</p>
+
+    <ol>
+      <li><strong>Não use elementos com largura fixa</strong>: se uma imagem for exibida com uma largura maior do que o viewport, poderá ser preciso rolar a página horizontalmente. Lembre-se de ajustar o conteúdo para se adequar à largura do viewport.</li>
+      <li><strong>Não se apegue a uma largura específica do viewport para que o conteúdo tenha boa aparência</strong>: como as dimensões e a largura das telas em pixels variam muito de acordo com o dispositivo, o conteúdo não deve depender de uma largura específica do viewport para ter boa aparência.</li>
+      <li><strong>Use media queries para aplicar diferentes estilos para telas grandes e pequenas</strong>: definir uma largura absoluta grandepara os elementos da página pode fazer com que esse elementos sejam grandes demais para o viewport em dispositivos menores. Em vez disso, considere usar valores de largura relativos, como <code>width: 100%</code>. Além disso, tenha cuidado ao usar  valores de posicionamento absolutos, já que isso pode fazer com que o elemento fique fora do viewport em dispositivos menores.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2 id="rwd-cab6">Visualização de grade</h2>
+    <p>Muitas páginas da Web baseiam-se em uma visualização de grade, o que significa que ela é dividida em colunas. Essa visualização é útil porque simplifica o posicionamento dos elementos.</p>
+
+    <p>Uma visualização em grade responsiva geralmente apresenta 12 colunas e tem uma largura total de 100%, e se exapnde e reduz ao redimensionar a janela do navegador.</p>
+
+    <p><a href="https://www.w3schools.com/css/tryresponsive_grid.htm" target="_blank" rel="noopener noreferrer">Este exemplo</a> responde ao redimensionamento e sempre ocupa 100% do espaço disponível.</p>
+  </section>
+
+  <section>
+    <h2 id="rwd-cab7"><a href="https://www.w3schools.com/css/css_rwd_grid.asp" target="_blank" rel="noopener noreferrer">Como criar uma visualização em grade responsiva</a></h2>
+    
+    <h2 id="rwd-cab8"><a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp" target="_blank" rel="noopener noreferrer">Usar media queries para adicionar um ponto de corte</a></h2>
+
+    <p>E aqui cabe um aparte ao exemplo: <strong>sempre devemos criar a página primeiro para dispositivos menores</strong>! Podemos adicionar quantos pontos de quebra forem necessários: um para celulares, outro para tablets, e assim por diante. Os pontos de quebra comuns são os seguintes:</p>
+
+    <pre>
+      <code>
+        /* Dispositivos muito pequenos (celulares, <= 600px) */
+        @media only screen and (max-width: 600px) {...}
+
+        /* Dispositivos pequenos (tablets em modo retrato e celulares grandes, >= 600px) */
+        @media only screen and (min-width: 600px) {...}
+
+        /* Dispositivos médios (tablets em modo paisagem, >= 768px) */
+        @media only screen and (min-width: 768px) {...}
+
+        /* Dispositivos grandes (laptops/desktops, >= 992px) */
+        @media only screen and (min-width: 992px) {...}
+
+        /* Dispositivos muito grandes (laptops/desktops, >= 1200px) */
+        @media only screen and (min-width: 1200px) {...}
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2 id="rwd-cab9">Imagens responsivas</h2>
+
+    <p>Para definir uma imagem responsiva, que escalona de acordo com o tamanho da tela, defina <code>width: 100%</code> e <code>height: auto</code>. Se a imagem tiver uma resolução muito alta, use a propriedade <code>max-width</code>.</p>
+
+    <p><a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image3" target="_blank" rel="noopener noreferrer">Neste exemplo</a>, foi adicionada uma imagem responsiva a um site responsivo.</p>
+
+    <h3>Imagens de fundo</h3>
+
+    <p>As imagens do plano de fundo também podem responder ao redimensionamento da janela do navegador. Eis três maneiras de fazer isso:</p>
+
+    <ol>
+      <li>Defina a propriedade <code>background-size</code> como "contain" para o fundo ser redimensionado de acordo com a área do conteúdo. Este método mantém a razão de aspecto (a proporção entre a largura e a altura).</li>
+      <li>Defina <code>background-size</code> como "100% 100%" para o fundo se esticar e cobrir toda a área do conteúdo.</li>
+      <li>Defina <code>background-size</code> como "cover" para o fundo se redimensionar para cobrir toda a área do conteúdo. Este valor mantém a razão de aspecto e parte da imagem pode ser cortada.</code></li>
+    </ol>
+
+    <h3>Imagens diferentes em dispositivos diferentes</h3>
+
+    <p>Use uma consulta de mídia com <code>min-device-width</code>, em vez de <code>min-width</code>, para verificar a largura do dispositivo, em vez da largura do navegador. Dessa forma, a imagem não muda ao redimensionar a janela do navegador.</p>
+
+    <h3>O elemento <code>&lt;picture&gt;</code></h3>
+
+    <p>Esse elemento oferece maior flexibilidade ao escolher recursos de imagem: ao invés de definir somente uma imagem, que é redimensionada com base na largura do viewport, é possível definir várias imagens que se adéquam melhor ao viewport do navegador.</p>
+
+    <p>Com este elemento, definimos várias "sources" e a primeira que se adequar ao viewport atual é exibida. <a href="../HTML/imagens.html#imagens-picture">Saiba mais</a>.</p>
+
+    <p>O atributo <code>srcset</code> é obrigatório e defines a fonte da imagem. O atributo <code>media</code> é opcional e aceita media queries. Também devemos definir um elemento <code>&lt;img&gt;</code> para navegadores que não oferecem suporte ao elemento <code>picture</code>.</p>
+  </section>
+
+  <section>
+    <h2 id="rwd-cab10">Vídeos responsivos</h2>
+
+    <p>Assim como para imagens, há duas maneiras de definir um vídeo responsivo: com a propriedade <code>width: 100%</code> e com a propriedade <code>max-width: 100%</code>.</p>
+
+    <p>Mais informações sobre design responsivo no w3schools:</p>
+
+    <p><a href="https://www.w3schools.com/css/css_rwd_frameworks.asp" target="_blank rel="noopener noreferrer">Frameworks</a></p>
+
+    <p><a href="https://www.w3schools.com/css/css_rwd_templates.asp" target="_blank rel="noopener noreferrer">Modelos e exemplos</a></p>
+
+    <p><a href="https://www.youtube.com/watch?v=0ohtVzCSHqs&list=PL4-IK0AVhVjODqX-gN6KH68Tt_zrYiTwA" target="_blank rel="noopener noreferrer">Playlist de vídeos sobre responsividade com HTML e CSS: Kevin Powell</a></p>
+  </section>
+</body>
+</html>

@@ -14,7 +14,7 @@
       white-space: nowrap; 
       width: 200px; 
       overflow: hidden; 
-      border: 1px solid #fff;
+      border: 1px solid var(--green);
     }
     div.overflow:hover {
       overflow: visible;
@@ -22,25 +22,25 @@
 
     p.expialidocious1 {
       width: 11em;
-      border: 1px solid #fff;
+      border: 1px solid var(--green);
       word-wrap: normal;
     }
 
     p.expialidocious2 {
       width: 11em;
-      border: 1px solid #fff;
+      border: 1px solid var(--green);
       word-wrap: break-word;
     }
 
     p.break1 {
       width: 130px; 
-      border: 1px solid #fff;
+      border: 1px solid var(--green);
       word-break: keep-all;
     }
 
     p.break2 {
       width: 130px; 
-      border: 1px solid #fff;
+      border: 1px solid var(--green);
       word-break: break-all;
     }
   </style>
@@ -118,7 +118,7 @@
 
       <p class="expialidocious1">Por exemplo, nesta sentença a palavra "Supercalifragilisticexpialidocious" é muito longa e extravasa o espaço definido para o parágrafo.</p>
 
-      <p class="expialidocious2">Porém, com <code>word-wrap</code>, ela quebra, mesmo se não houver hífens ou a tag <code>&lt;wbr&gt;</code>. "Supercalifragilisticexpialidocious".</p>
+      <p class="expialidocious2">Porém, com <code>word-wrap</code>, ela quebra, mesmo se não houver hifens ou a tag <code>&lt;wbr&gt;</code>. "Supercalifragilisticexpialidocious".</p>
 
       <h3><code>word-break</code></h3>
       <p>Define as regras para quebras de linha.</p>
@@ -133,6 +133,8 @@
 
       <h3><code>text-justify</code></h3>
       <p>Define o alinhamento e o espaçamento do texto.</p>
+
+      <p>Assista ao vídeo <a href="https://www.youtube.com/watch?v=pbD55DJgOlw" target="_blank" rel="noopener noreferrer">Five easy and fun CSS effects</a>, de Kevin Powell, para saber como estilizar links com gradientes e colocar imagens como plano de fundo de texto.</p>
     </section>
 
     <section>
@@ -160,7 +162,19 @@
       <p>Use a propriedade <code>font-family</code> para definir a fonte de um elemento HTML. Use aspas em volta do nome da fonte.</p>
       <p>Para garantir a compatibilidade entre os vários navegadores, adicione vários nomes de fonte separados por vírgulas. Comece pela fonte desejada e termine com uma família genérica. P.ex.: <code>font-family: "Times New Roman", Times, serif;</code>.</p>
       <p>As seguintes fontes são recomendadas: Arial, Verdana, Tahoma, Trebuchet MS, Times New Roman, Georgia, Garamond, Courier New e Brush Script MT.</p>
-      <p>É possível usar fontes do <a href="https://fonts.google.com" target="_blank">Google</a> nas páginas. Para tanto, após escolher uma fonte, copie o link fornecido em "Get font" > "Get embed code" > guia "Web" > "Embed code in the &lt;head&gt; of your html", e cole na área <code>&lt;head&gt;</code> do documento HTML. Importe a fonte para o CSS usando a sintaxe recomendada na mesma janela do Google (com <code>@font-face</code>; em "src", adicionar url('Nome da fonte')) logo no início do documento CSS. <a href="https://www.w3schools.com/howto/howto_google_fonts.asp" target="_blank" rel="noopener noreferrer">Saiba mais</a>.</p>
+      <p>É possível usar fontes do <a href="https://fonts.google.com" target="_blank">Google</a> nas páginas. Para tanto, após escolher uma fonte, copie o link fornecido em "Get font" > "Get embed code" > guia "Web" > "Embed code in the &lt;head&gt; of your html", e cole na área <code>&lt;head&gt;</code> do documento HTML. Importe a fonte para o CSS usando a sintaxe recomendada na mesma janela do Google (com <code>@font-face</code>; em "src", adicionar "url('Nome da fonte.ext')") logo no início do documento CSS. <a href="https://www.w3schools.com/howto/howto_google_fonts.asp" target="_blank" rel="noopener noreferrer">Saiba mais</a>. Exemplo:</p>
+      <pre>
+        <code>
+          @font-face {
+            font-family: myFirstFont;
+            src: url(sansation_light.woff);
+          }
+          
+          div {
+            font-family: myFirstFont;
+          }
+        </code>
+      </pre>
       <p>Também existe o site <a href="https://modernfontstacks.com" target="_blank" rel="noreferrer">Modern Font Stacks</a>, que simplifica a escolha de famílias de fontes.</p>
 
       <figure>
@@ -174,7 +188,7 @@
       <p><strong>Web Open Font Format (WOFF)</strong>: para uso em páginas da Web. Desenvolvida em 2009 e recomendada pelo W3C. É, essencialmente, uma fonte OpenType ou TrueType com compressão e metadados adicionais. O objetivo dela é oferecer suporte à distribuição de fontes a partir de um servidor para um cliente através de redes com restrições de largura de banda.</p>
       <p><strong>Web Open Font Format 2 (WOFF2)</strong>: igual ao formato mencionado acima, mas com melhor compressão.</p>
       <p><strong>Fontes e formas SVG</strong>: podem ser usadas como glifos para exibir texto. A especificação SVG 1.1 define um módulo de fonte que possibilita criar fontes dentro de um documento SVG. Também podemos aplicar CSS e a regra <code>@font-face</code> a documentos SVG.</p>
-      <p><strong>Embeded Open Type (EOT)</strong>: formato compacto de fontes OpenType projetadas pela Microsoft para uso como fontes integradas em páginas da Web.</p>
+      <p><strong>Embedded Open Type (EOT)</strong>: formato compacto de fontes OpenType projetadas pela Microsoft para uso como fontes integradas em páginas da Web.</p>
     </section>
 
     <section>

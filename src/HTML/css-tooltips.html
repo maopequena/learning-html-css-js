@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="description" content="Dicas de ferramentas com CSS">
+  <meta name="author" content="Lizandra Silva (@maopequena)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dicas de ferramentas com CSS</title>
+  <style>
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted var(--orange);
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: var(--dark-grey);
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 5px;
+
+      /* Position the tooltip */
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      z-index: 1;
+
+      /* Fade in tooltip */
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .tooltiptext::after {
+      content: " ";
+      position: absolute;
+      bottom: 100%; /* At the top of the tooltip */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent #666 transparent;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dicas de ferramentas com CSS</h1>
+  </header>
+
+  <section>
+    <p>Use o CSS para criar dicas de ferramentas com informações adicionais para quando o usuário passar o mouse sobre um elemento. A dica de ferramenta pode ser exibida acima, abaixo, à esquerda ou à direita do elemento.</p>
+
+    <h2>Dica de ferramenta básica</h2>
+    <p>Use dicas de ferramentas para definir informações adicionais sobre algo quando o usuário passar o mouse sobre um elemento. Por exemplo:</p>
+
+    <div class="tooltip">Passe o mouse aqui
+      <span class="tooltiptext">para ver a dica de ferramenta!</span>
+    </div>
+
+    <p><a href="https://www.w3schools.com/css/css_tooltip.asp" target="_blank" rel="noopener noreferrer">Clique aqui</a> para ver mais exemplos de posicionamento de dicas de ferramenta.</p>
+  </section>
+</body>
+</html>

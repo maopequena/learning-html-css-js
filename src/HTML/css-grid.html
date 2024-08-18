@@ -9,6 +9,21 @@
   <meta name="author" content="Lizandra Silva (@maopequena)" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Layout: grid</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      background-color: var(--blue-eyes);
+      padding: 10px;
+    }
+    .grid-item {
+      background-color: var(--lightest-grey);
+      border: 2px solid var(--table-border);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -34,12 +49,12 @@
   <section>
     <h2>Terminologia</h2>
     <ul>
-      <li><strong>Linhas</strong>: a grade é composta de linhas horizontais e verticais. Se a grade tem quatro colunas, terá cinco linhas, incluindo aquela após a última coluna. A numeração das linhas começa em "1", e segue o modo de escrita ("rtl" ou "ltr") e a direção do texto do componente. Iso significa que a coluna1, linha1 fica à esquerda em um idioma "ltr" e à direita em um idioma "rtl".</li>
-      <li><strong>Trilhas</strong>: a trilha é o espaço entre duas linhas da grade. A "trilha de linha" é o espaço entre dias linhas e a "trilha de coluna" é o espaço entre duas colunas. Ao criar uma grade, essas trilhas recebem um tamanho. O tamanho das trilhas é <code>auto</code> por padrão.</li>
+      <li><strong>Linhas</strong>: a grade é composta de linhas horizontais e verticais. Se a grade tem quatro colunas, terá cinco linhas, incluindo aquela após a última coluna. A numeração das linhas começa em "1", e segue o modo de escrita ("rtl" ou "ltr") e a direção do texto do componente. Isso significa que a coluna1, linha1 fica à esquerda em um idioma "ltr" e à direita em um idioma "rtl".</li>
+      <li><strong>Trilhas</strong>: a trilha é o espaço entre duas linhas da grade. A "trilha de linha" é o espaço entre duas linhas e a "trilha de coluna" é o espaço entre duas colunas. Ao criar uma grade, essas trilhas recebem um tamanho. O tamanho das trilhas é <code>auto</code> por padrão.</li>
       <li><strong>Célula</strong>: a célula da grade é o menor espaço em uma grade, definido pela intersecção das trilhas de linhas e de colunas. Se os itens não forem posicionados ao definir uma grade, eles serão colocados automaticamente em cada célula da grade definida.</li>
       <li><strong>Área</strong>: um conjunto de várias células. Cria-se áreas posicionando um item em várias trilhas.</li>
       <li><strong>Gaps</strong>: um espaço entre as trilhas. Para fins de dimensionamento, as gaps agem como uma trilha. Não é possível posicionar conteúdo em uma gap, mas os itens podem ocupar várias gaps.</li>
-      <li><strong>Contêiner</strong>: O elemento HTML que recebeu a propriedade <code>display: grid</code> e, portanto, cria um novo contexto de formatação em grade para seus filhos diretos.</li>
+      <li><strong>Contêiner</strong>: o elemento HTML que recebeu a propriedade <code>display: grid</code> e, portanto, cria um novo contexto de formatação em grade para seus filhos diretos.</li>
       <li><strong>Item</strong>: um item que é filho direto do contêiner de grade.</li>
     </ul>
   </section>
@@ -147,7 +162,7 @@
     <p>Primeiro precisamos lembrar que este layout é baseado em uma grade de linhas numeradas. A forma mais simples de dispor os itens nessa grade é colocá-los uma linha depois da outra.</p>
     <p>As propriedades usadas para dispor os itens de acordo com as linhas numeradas são:</p>
 
-    <ul>
+    <ul class="list-square">
       <li>grid-column</li>
       <ul>
         <li>grid-column-start</li>
@@ -198,13 +213,13 @@
     <p>Se uma dessas regras não for respeitada, o valor é considerado inválido e descartado. Para deixar espaço em branco em uma grade, use um ou vários <code>.</code> (ponto-final) sem espaços entre eles.</p>
   </section>
   <section>
-    <h2><code>grid-template</code> e <code>grid</code></h2>
+    <h2>grid-template e grid</h2>
     <p>Essas duas propriedades resumem as propriedades mencionadas anteriormente. Elas podem ser um pouco confusas, mas podemos ver como funcionam juntas ao detalharmos as duas.</p>
 
-    <h3><code>grid-template</code></h3>
+    <h3>grid-template</h3>
     <p>A propriedade <code>grid-template</code> resume as propriedades <code>grid-template-rows</code>, <code>grid-template-columns</code> e <code>grid-template-areas</code>. Define-se as linhas primeiro com o valor de <code>grid-template-areas</code>. O tamanho da coluna vem em seguida, separado por uma <code>/</code> (barra).</p>
 
-    <h3><code>grid</code></h3>
+    <h3>grid</h3>
     <p>Da mesma forma, a propriedade <code>grid</code> também é um resumo. Quando usada dessa maneira, ela redefine quaisquer outras propriedades <code>grid</code> para seus valores iniciais. São elas:</p>
 
     <ul>
@@ -229,6 +244,179 @@
     </ul>
 
     <p>O valor inicial de <code>justify-self</code> e <code>align-self</code> é <code>stretch</code>. Porém, se o item é uma imagem, ou algo com uma razão de aspecto intrínseca, o valor inicial será <code>start</code> em vez de <code>stretch</code> para impedir que o item fique distorcido.</p>
+  </section>
+
+  <section>
+    <p>Vejamos na prática como funciona o layout de grade. Um layout de grade consiste de um elemento pai com um ou mais elementos filhos:</p>
+
+    <div class="grid-container">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">7</div>
+      <div class="grid-item">8</div>
+      <div class="grid-item">9</div>
+    </div>
+
+    <p>Um elemento HTML se torna um contêiner de grade quando a propriedade <code>display</code> está definida como <code>grid</code> ou <code>inline-grid</code>. Todos os filhos diretos do contêiner de grade se tornam <em>itens de grade</em>.</p>
+
+    <p>As linhas verticais de itens de grade se chamam <em>colunas</em>:</p>
+
+    <img src="../img/grid-columns.png" alt="Colunas da grade">
+
+    <p>As linhas horizontais de itens de grade se chamam <em>linhas</em>:</p>
+
+    <img src="../img/grid-rows.png" alt="Linhas da grade">
+
+    <p>Os espaços entre as colunas e as linhas se chamam <em>gaps</em>:</p>
+
+    <img src="../img/grid-gaps.png" alt="Gaps">
+
+    <p>Para ajustar o tamanho das gaps, podemos usar as seguintes propriedades:</p>
+
+    <ul class="list-square">
+      <li><code>column-gap</code></li>
+      <li><code>row-gap</code></li>
+      <li><code>gap</code></li>
+    </ul>
+
+    <p>Temos ainda as <em>trilhas de colunas</em> e as <em>trilhas de linhas</em>:</p>
+
+    <img src="../img/grid-tracks.png" alt="Trilhas">
+
+    <p>Ao posicionar um item em um contêiner de grade, use os números de trilhas. Por exemplo:</p>
+
+    <pre>
+      <code>
+        .item1 {
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+        
+        .item4 {
+          grid-column-start: 2;
+          grid-column-end: 4;
+        }
+
+        &lt;div class="grid-container"&gt;
+          &lt;div class="item1"&gt;1&lt;/div&gt;
+          &lt;div class="item2"&gt;2&lt;/div&gt;
+          &lt;div class="item3"&gt;3&lt;/div&gt;  
+          &lt;div class="item4"&gt;4&lt;/div&gt;
+          &lt;div class="item5"&gt;5&lt;/div&gt;
+          &lt;div class="item6"&gt;6&lt;/div&gt;
+          &lt;div class="item7"&gt;7&lt;/div&gt;
+          &lt;div class="item8"&gt;8&lt;/div&gt;  
+        &lt;/div&gt;
+      </code>
+    </pre>
+
+    <p>O código acima faz o seguinte com os itens filhos:</p>
+
+    <img src="../img/grid-code-1-4.png" alt="Resultado">
+  </section>
+
+  <section>
+    <h2>Propriedades de grid</h2>
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><a href="/cssref/css3_pr_column-gap.asp">column-gap</a></td>
+          <td>Specifies the gap between the columns</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/css3_pr_gap.asp">gap</a></td>
+          <td>A shorthand property for the <em>row-gap</em> and the <em>column-gap</em> properties</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid.asp">grid</a></td>
+          <td>A shorthand property for the <em>grid-template-rows, 
+          grid-template-columns, grid-template-areas, grid-auto-rows, 
+          grid-auto-columns</em>, and the <em>grid-auto-flow</em> properties</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-area.asp">grid-area</a></td>
+          <td>Either specifies a name for the grid item, or this property is a shorthand property for the <em>grid-row-start</em>, <em>grid-column-start</em>, <em>grid-row-end</em>, and <em>grid-column-end</em> properties</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-auto-columns.asp">grid-auto-columns</a></td>
+          <td>Specifies a default column size</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-auto-flow.asp">grid-auto-flow</a></td>
+          <td>Specifies how auto-placed items are inserted in the grid</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-auto-rows.asp">grid-auto-rows</a></td>
+          <td>Specifies a default row size</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-column.asp">grid-column</a></td>
+          <td>A shorthand property for the <em>grid-column-start</em> and the <em>grid-column-end</em> properties</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-column-end.asp">grid-column-end</a></td>
+          <td>Specifies where to end the grid item</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-column-gap.asp">grid-column-gap</a></td>
+          <td>Specifies the size of the gap between columns</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-column-start.asp">grid-column-start</a></td>
+          <td>Specifies where to start the grid item</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-gap.asp">grid-gap</a></td>
+          <td>A shorthand property for the <em>grid-row-gap</em> and <em>grid-column-gap</em> properties</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-row.asp">grid-row</a></td>
+          <td>A shorthand property for the <em>grid-row-start</em> and the <em>grid-row-end</em> properties</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-row-end.asp">grid-row-end</a></td>
+          <td>Specifies where to end the grid item</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-row-gap.asp">grid-row-gap</a></td>
+          <td>Specifies the size of the gap between rows</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-row-start.asp">grid-row-start</a></td>
+          <td>Specifies where to start the grid item</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-template.asp">grid-template</a></td>
+          <td>A shorthand property for the <em>grid-template-rows</em>, <em>grid-template-columns</em> 
+          and <em>grid-areas</em> properties</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-template-areas.asp">grid-template-areas</a></td>
+          <td>Specifies how to display columns and rows, using named grid items</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-template-columns.asp">grid-template-columns</a></td>
+          <td>Specifies the size of the columns, and how many columns in a grid layout</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/pr_grid-template-rows.asp">grid-template-rows</a></td>
+          <td>Specifies the size of the rows in a grid layout</td>
+        </tr>
+        <tr>
+          <td><a href="/cssref/css3_pr_row-gap.asp">row-gap</a></td>
+          <td>Specifies the gap between the grid rows</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </body>
 </html>

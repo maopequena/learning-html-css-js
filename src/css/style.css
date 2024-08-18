@@ -20,53 +20,81 @@
   src: url(../fonts/Bowhouse-Black.otf) format("opentype");
 }
 
-/* :root {
-  --red: #ff0000;
-  --bg-grey: #7c7484;
-  --bg-light-gray: #a3a3a3;
-  --lightblue: #add8e6;
+:root {
+  --aliceblue: #f0f8ff;
+  --aquamarine: #7fffd4;
   --black: #000;
+  --blanchedalmond: #ffebcd;
+  --blue: #0000ff;
+  --blue-eyes: hsl(240, 100%, 70%);
+  --brown: #a52a2a;
+  --burlywood: #deb887;
+  --cadetblue: #5f9ea0;
+  --chartreuse: #7fff00;
+  --chocolate: #d2691e;
+  --coral: #ff7f50;
+  --cornflower-blue: #6495ed;
+  --cornsilk: #fff8dc;
+  --crimson: #dc143c;
+  --cyan: #00ffff;
+  --dark-blue: #00008b;
+  --dark-cyan: #008b8b;
+  --dark-grey: #777;
+  --darker-grey: #222;
+  --dark-orange: #ff7a33;
+  --green: #52afa5;
+  --green-eyes: hsl(82, 39%, 40%);
+  --important-info: rgba(250, 30, 0, 0.4);
+  --khaki: #f0e68c;
+  --lawngreen: #7cfc00;
+  --light-blue: #add8e6;
+  --light-grey: #999;
+  --light-green: #b0f7d4;
+  --light-pink: #f7b0eb;
+  --light-sea-green: #20b2aa;
+  --light-yellow: #f5f7b0;
+  --lightest-grey: #aaa;
+  --maroon: #800000;
+  --medium-grey: #555;
+  --navy: #000080;
+  --orange: #ff9655;
   --orange-red: #ff4500;
   --plum: #dda0dd;
   --rebecca-purple: #663399;
+  --red: #ff0000;
   --salmon: #fa8072;
-  --wheat: #f5deb3;
   --teal: #008080;
-  --violet: #ee82ee;
   --tomato: #ff6347;
-  --blue: #0000ff;
-  --white: #fff; */
-  /* --link-color: #8d3bda; */ /* Cor hex antiga que gerou o gradiente: #8D3BDA, #845EC2 */
-  /*--link-visited: #4b4453;
-  --link-hover: #ff8066;
-  --code: #ef1caf;
-  --code-bg: #b6b6b688;
-  --code-line: #b6b6b6;
-  --code-line-bg: #b6b6b6; */
-  /* --th-bg: rgba(141, 59, 218, 0.5); */ /* Cor hex sem alpha: #8D3BDA */
-  /* --tr-td-bg: rgba(238, 130, 238, 0.5); */ /* Cor hex sem alpha: #EE82EE */
-  /*--aquamarine: #7fffd4;
-} */
-/* Define o tipo de fonte como Raleway e o tamanho da fonte como 1rem para todos os itens do site*/
+  --violet: #ee82ee;
+  --wheat: #f5deb3;
+  --white: #ccc;
+  --table-border: #ddd;
+  --yellow: #ffff00;
+}
+/* Define a fonte padrão, o tamanho da fonte, o box-sizing e o esquema de cores para todos os itens do site*/
 * {
   font-family: 'Red Hat Display', system-ui, sans-serif;
   font-size: 1rem;
   color-scheme: light dark;
+  box-sizing: border-box;
 }
 
-/* Define o comportamento de rolagem como suave e o fundo como cinza claro */
+/* Define o comportamento de rolagem como suave */
 html {
   scroll-behavior: smooth;
-  /* background-color: #000000; */ /* var(--bg-grey) */
-  /*color: #c2c2c2; */
-  /* background-repeat: no-repeat;
-  background-size: cover; */
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 10px 0px;
   line-height: 1.5;
 }
 
+/* Define o estilo dos elementos de cabeçalho, de parágrafo e de link */
 h1, h2, h3, h4 {
-  color: #ff9655;
+  color: var(--orange);
+}
+
+h5, h6 {
+  color: var(--green);
 }
 
 h1 {
@@ -76,19 +104,31 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-left: 5px;
   margin-right: 5px;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   margin-left: 5px;
   margin-right: 5px;
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.4rem;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+h5 {
+  font-size: 1.2rem;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+h6 {
+  font-size: 1.1rem;
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -101,13 +141,29 @@ p {
 }
 
 a {
-  color: #ff9655;
+  color: var(--orange);
 }
 
+/* Define os estilos de elementos mais específicos */
 code {
   font-family: 'Spline Sans Mono',monospace;
   font-size: 0.9em;
-  color: #52afa5;
+  color: var(--light-grey);
+}
+
+kbd {
+  font-family: 'Spline Sans Mono',monospace;
+  font-size: 0.9em;
+  color: var(--black);
+  border: 1px solid var(--white);
+  padding: 1px 3px 2px 3px;
+  background-color: var(--light-grey);
+}
+
+samp {
+  font-family: 'Spline Sans Mono',monospace;
+  font-size: 0.9em;
+  color: var(--white);
 }
 
 ul.list-square {
@@ -116,7 +172,7 @@ ul.list-square {
 }
 
 span.note {
-  color: red;
+  color: var(--red);
   font-size: 2ch;
 }
 
@@ -130,12 +186,17 @@ em {
 }
 
 .important-info {
-  background-color: rgba(250, 30, 0, 0.4);
+  background-color: var(--important-info);
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border: 2px solid var(--table-border);
 }
 
 /* Define o fundo do site como cinza escuro e as margens como automáticas */
 /* div#interface {
-  background-color: var(--bg-light-gray);
+  background-color: var(--bg-light-grey);
   width: 80%;
   margin: auto;
 } */
@@ -166,7 +227,7 @@ h4 {
 }
 
 h4#myHeader {
-  background-color: var(--lightblue);
+  background-color: var(--light-blue);
   color: var(--black);
   padding: 1.2em 0;
   margin: auto;
@@ -182,11 +243,11 @@ p {
   margin-right: 10px;
 } */
 
-/* Define as margens de imagens */
-/* img {
-  margin-left: 10px;
-  margin-right: 10px;
-} */
+/* Define o estilo das imagens */
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 /* Define as margens de formulários */
 /* form {
@@ -226,8 +287,7 @@ p {
 .hearticle {
   background-color: var(--teal);
   color: var(--violet);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .footer {

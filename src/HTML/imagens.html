@@ -13,6 +13,136 @@
     img {
         width: 250px;
     }
+
+    div.polaroid {
+      width: 250px;
+      background-color: var(--dark-grey);
+      box-shadow: -2px 2px 5px 0 rgba(255, 255, 255, 0.5), 2px -2px 5px 0 rgba(255, 255, 255, 0.5);
+      margin-bottom: 15px;
+    }
+
+    div.container {
+      display: grid;
+      place-items: center;
+      padding: 10px 20px;
+    }
+
+    .container-texto {
+      position: relative;
+    }
+
+    .inferior-esquerda {
+      position: absolute;
+      bottom: 10px;
+      left: 7px;
+      color: white;
+      background-color: var(--dark-grey);
+      padding: 2px;
+    }
+
+    .centro {
+      position: absolute;
+      top: 50%;
+      left: 120px;
+      transform: translate(-50%, -50%);
+      color: white;
+      background-color: var(--dark-grey);
+      padding: 2px;
+    }
+
+    .superior-direita {
+      position: absolute;
+      top: 5px;
+      left: 80px;
+      color: white;
+      background-color: var(--dark-grey);
+      padding: 2px;
+    }
+
+    .container-avatar {
+  position: relative;
+  width: 50%;
+}
+
+.image-avatar {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.fade-in-a-box {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container-avatar:hover .image-avatar {
+  opacity: 0.3;
+}
+
+.container-avatar:hover .fade-in-a-box {
+  opacity: 1;
+}
+
+.text-avatar {
+  background-color: var(--orange);
+  color: var(--white);
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.mask-5terre {
+  -webkit-mask-image: url(../img/transparent-w3-logo.png);
+  mask-image: url(../img/transparent-w3-logo.png);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.mask-text {
+  max-width: 700px;
+  height: 300px;
+  overflow-y: scroll;
+  background: url(../img/siena-italia.jpg) no-repeat;
+  background-size: cover;
+  mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.radial-mask {
+  width: 600px;
+  height: 300px;
+  mask-image: radial-gradient(ellipse, black 80%, rgba(0, 0, 0, 0.5) 50%);
+}
+
+.rainy-weather {
+  width: 600px;
+  mask-image: url(../img/rain.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 80%;
+}
+
+.sunny-weather {
+  width: 600px;
+  mask-image: url(../img/sun.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 80%;
+}
+
+.universe-mask {
+  width: 600px;
+  mask-image: url(../img/star-fall.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 50%;
+}
   </style>
 </head>
 <body>
@@ -74,7 +204,7 @@
       <p>Insira a imagem com a tag <code>&lt;img&gt;</code>, usando o atributo <code>usemap</code>. O valor de <code>usemap</code> recebe uma hash tag (<code>#</code>) seguida do nome do mapa de imagem, e é usado como um link de âncora, para criar um relacionamento entre a imagem e o mapa. </p>
       <p>Em seguida, adiciona-se o elemento <code>&lt;map&gt;</code>, que é usado para criar um mapa da imagem e é vinculado à imagem com o atributo chamado <code>usemap</code>.</p>
       <p>Depois, adiciona-se as áreas clicáveis com o elemento <code>&lt;area&gt;</code>. <code>area:c</code> define um círculo, <code>area:d</code> define o padrão, toda a região da imagem, <code>area:p</code> define uma região poligonal e <code>area:r</code> define um retângulo; essas opções também podem ser adicionadas com o atributo <code>shape="rect"</code> (ou <code>circle</code>, <code>poly</code>, <code>default</code>).</p>
-      <p>As coordenadas (atributo <code>coords=""</code>) de <code>rect</code> vêm em pares, p.ex. <code>34, 44, 270, 350</code> significa que o retângulo começa a 34 pixels da margem esquerda da imagem e a 44 pixels da magem superior, termina em 270 pixels da margem esquerda e a 350 pixels da margem superior. O último atributo é <code>href=</code> que vincula a um URL.</p>
+      <p>As coordenadas (atributo <code>coords=""</code>) de <code>rect</code> vêm em pares, p.ex. <code>34, 44, 270, 350</code> significa que o retângulo começa a 34 pixels da margem esquerda da imagem e a 44 pixels da margem superior, termina em 270 pixels da margem esquerda e a 350 pixels da margem superior. O último atributo é <code>href=</code> que vincula a um URL.</p>
       <p><code>circle</code> precisa das coordenadas do centro do círculo e do raio, p.ex. <code>337, 300, 44</code>.</p>
       <p><code>poly</code> precisa de vários pontos de coordenadas, formando um polígono. Para cada ponto da área clicável da imagem, é necessário descobrir o X e o Y. Ex.:<br><img src="../img/croissant-coords.jpg" alt="Imagem croissant-coords.jpg" style="width: 500px; height: 400 px;"></p>
       <p>Uma área clicável também pode acionar uma função JavaScript. Adiciona-se um evento <code>click</code> ao elemento <code>&lt;area&gt;</code> para executar a função.</p>
@@ -98,7 +228,7 @@
     </section>
 
     <section>
-      <h2>Elemento "picture"</h2>
+      <h2 id="imagens-picture">Elemento "picture"</h2>
       <p>O elemento HTML <code>&lt;picture&gt;</code> fornece mais flexibilidade ao especificar recursos de imagem. Ele contém um ou mais elementos <code>&lt;source&gt;</code>, cada um específico a diferentes imagens no atributo <code>srcset</code>. Assim, o navegador pode escolher a imagem que melhor se ajusta à visualização atual e/ou ao dispositivo. Cada elemento <code>&lt;source&gt;</code> recebe um atributo <code>media</code> que define quando a imagem é mais adequada.</p>
       <p>Com este elemento, o navegador procura pelo primeiro elemento <code>source</code> em que há correspondência do tamanho da mídia em relação à largura do dispositivo atual, e busca a imagem especificada no atributo <code>srcset</code>. O elemento <code>img</code> é OBRIGATÓRIO como a última tag do bloco de declaração da imagem, e é usado para fornecer retrocompatibilidade para navegadores que não oferecem suporte ao elemento <code>picture</code>, ou se nenhuma das tags <code>source</code> corresponder.</p>
 
@@ -111,8 +241,8 @@
       </p>
       <h3>Quando usar o elemento <code>picture</code>?</h3>
         <ol>
-          <li>Se o dispositivo apresenta uma tela pequena, não é necessário carregar um arquivo de imagem grande. O navegador usará o primeiro elemento <code>&lt;source&gt;</code> que corresponder aos valores do atributo, e ignorará os elementos seguintes.</li>
-          <li>Alguns navegadores ou dispositivos podem não oferecer suporte a todos os formatos de imagem. Usando o elemento <code>&lt;picture&gt;</code> é possível adicionar imagens para todos os formatos e o navegador usará o primeiro formato que reconhecer, ignorando os restantes.</li>
+          <li>Se o dispositivo apresenta uma tela pequena, não é necessário carregar um arquivo de imagem grande. O navegador usará o primeiro elemento <code>&lt;source&gt;</code> que corresponder aos valores do atributo, e ignorará os elementos seguintes.</h4>
+          <li>Alguns navegadores ou dispositivos podem não oferecer suporte a todos os formatos de imagem. Usando o elemento <code>&lt;picture&gt;</code> é possível adicionar imagens para todos os formatos e o navegador usará o primeiro formato que reconhecer, ignorando os restantes.</h4>
         </ol>
     </section>
 
@@ -134,6 +264,190 @@
       <p>Para usá-lo, adicione um elemento <code>&lt;link&gt;</code> à página <code>index.html</code> após o elemento <code>&lt;title&gt;</code> ou coloque o favicon na raiz do projeto, junto com o arquivo <code>index.html</code>.</p>
       <br>
       <a href="https://www.youtube.com/watch?v=FmoYRiepmOE&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=13">Tutorial em vídeo sobre Imagens</a>
+    </section>
+    
+    <section>
+      <h2>Estilizar imagens usando CSS</h2>
+      <p>Algumas propriedades do CSS que ajudam a estilizar imagens:</p>
+
+      <h3><code>border-radius</code></h3>
+
+      <figure><img style="border-radius: 5px;" src="../img/bike-flesh.jpeg" alt="bike-flesh">
+      <figcaption>border-radius: 5px</figcaption>
+      </figure>
+
+      <figure><img style="border-radius: 50%;" src="../img/bike-flesh.jpeg" alt="bike-flesh">
+      <figcaption>border-radius: 50%</figcaption></figure>
+
+      <h3><code>border</code></h3>
+
+      <figure><img style="border: 1px solid var(--table-border); border-radius: 4px; padding: 5px; width: 250px; background-color: var(--lightest-grey);" src="../img/colorfull-bird.jpg" alt="colorful-bird">
+      <figcaption>border: 5px solid var(--table-border) with border-radius and background color</figcaption></figure>
+      <p>Para saber mais, clique <a href="https://www.w3schools.com/css/css_border.asp" target="_blank">aqui</a>.</p>
+
+      <h3>Imagem responsiva</h3>
+      <p>Adicionando <code>max-width: 100%;</code> e <code>height: auto;</code> ao código CSS, a imagem reduz quando a tela for menor que sua altura, mas nunca fica maior do que sua largura máxima.</p>
+
+      <h3>Estilo polaroid</h3>
+
+      <div class="polaroid">
+        <img src="../img/decorative-lunch.jpeg" alt="decorative-lunch" style="width:100%">
+        <div class="container">
+        <p>Decorative Lunch</p>
+        </div>
+      </div>
+      
+      <div class="polaroid">
+        <img src="../img/goat-tip.jpeg" alt="goat-tip" style="width:100%">
+        <div class="container">
+        <p>Goat Tip</p>
+        </div>
+      </div>
+
+      <h3>Opacidade</h3>
+
+      <figure><img style="opacity: 0.3; padding: 5px; width: 250px; background-color: var(--dark-grey);" src="../img/img_forest.jpg" alt="img-forest">
+        <figcaption>opacity: 0.3</figcaption></figure>
+
+      <figure><img style="opacity: 0.5; padding: 5px; width: 250px; background-color: var(--dark-grey);" src="../img/img_forest.jpg" alt="img-forest">
+      <figcaption>opacity: 0.5</figcaption></figure>
+
+      <figure><img style="opacity: 0.7; padding: 5px; width: 250px; background-color: var(--dark-grey);" src="../img/img_forest.jpg" alt="img-forest">
+      <figcaption>opacity: 0.7</figcaption></figure>
+
+      <figure><img style="opacity: 1; padding: 5px; width: 250px; background-color: var(--dark-grey);" src="../img/img_forest.jpg" alt="img-forest">
+      <figcaption>opacity: 1</figcaption></figure>
+
+      <h3>Texto</h3>
+
+      <p><div class="container-texto">
+        <img src="../img/img_girl.jpg" alt="img-girl">
+        <div class="inferior-esquerda">Texto inferior à esquerda</div>
+      </div></p>
+
+      <p><div class="container-texto">
+        <img src="../img/img_girl.jpg" alt="img-girl">
+        <div class="centro">Texto centralizado</div>
+      </div></p>
+
+      <p><div class="container-texto">
+        <img src="../img/img_girl.jpg" alt="img-girl">
+        <div class="superior-direita">Texto superior à direita</div>
+      </div></p>
+
+      <h3>Filtros</h3>
+
+      <p>A propriedade <code>filter</code> oferece vários filtros para alterar imagens:</p>
+
+        <h4><code>grayscale</code></h4>
+        <figure><img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: grayscale(70%);">
+        <figcaption>filter: grayscale(70%)</figcaption></figure>
+
+        <h4><code>blur</code></h4>
+
+        <figure><img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: blur(2px);">
+        <figcaption>filter: blur(2px)</figcaption></figure>
+        
+        <h4><code>brightness</code></h4>
+
+        <figure><img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: brightness(1.5);">
+        <figcaption>filter: brightness(1.5)</figcaption></figure>
+
+        <h4><code>contrast</code></h4>
+
+        <figure><img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: contrast(0.5);">
+        <figcaption>filter: contrast(0.5)</figcaption></figure>
+
+        <h4><code>huerotate</code></h4>
+
+        <figure><img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: hue-rotate(250deg);">
+        <figcaption>filter: hue-rotate(250deg)</figcaption></figure>
+
+        <h4><code>invert</code></h4>
+
+        <figure><img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: invert(100%);">
+        <figcaption>filter: invert(100%)</figcaption></figure>
+
+        <h4><code>opacity</code></h4>
+
+        <figure><img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: opacity(0.3);">
+        <figcaption>filter: opacity(0.3)</figcaption></figure>
+
+        <h4><code>saturate</code></h4>
+
+        <figure><img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: saturate(1.5);">
+        <figcaption>filter: saturate(1.5)</figcaption></figure>
+
+        <h4><code>sepia</code></h4>
+
+        <figure><img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: sepia(100%);">
+        <figcaption>filter: sepia(100%)</figcaption></figure>
+
+        <h4><code>shadow</code></h4>
+
+        <figure><img src="../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: drop-shadow(8px 8px 10px var(--orange));">
+        <figcaption>filter: drop-shadow(8px 8px 10px green)</figcaption></figure>
+
+        <h3>Sobreposição (overlay)</h3>
+
+        <p>Exemplos de sobreposição ao passar o mouse:</p>
+
+        <div class="container-avatar">
+          <img src="../img/img_avatar.png" alt="Avatar" class="image-avatar">
+          <div class="fade-in-a-box">
+            <div class="text-avatar">Nome Sobrenome</div>
+          </div>
+        </div>
+
+        <p><a href="https://www.w3schools.com/css/css3_images.asp" target="_blank" rel="noopener noreferrer">Mais exemplos</a></p>
+
+        <h3><code>object-fit</code></h3>
+
+        <p>Esta propriedade define como uma imagem ou um video deve ser redimensionado para adequar-se ao contêiner pai. Ela aceita os seguintes valores:</p>
+
+        <ul>
+          <li><code>fill</code>: <strong>valor padrão</strong>. A imagem redimensiona para preencher todas as dimensões. Se necessário, ela será esticada ou reduzida para caber.</li>
+          <li><code>contain</code>: a imagem mantém a razão de aspecto, mas redimensiona para se adequar às dimensões fornecidas.</li>
+          <li><code>cover</code>: a imagem mantém sua razão de aspecto e preenche as dimensões fornecidas, isso pode ocasionar em um corte da imagem.</li>
+          <li><code>none</code>: a imagem não redimensiona.</li>
+          <li><code>scale-down</code>: a imagem é reduzida para seu menor tamanho: <code>none</code> ou <code>contain</code>.</li>
+        </ul>
+
+        <h3><code>object-position</code></h3>
+
+        <p>Esta propriedade define como uma imagem ou um video deve ser posicionado para adequar-se ao contêiner pai, usando as <strong>coordenadas X e Y em porcentagens</strong>. Ela é ideal para ser usada com a propriedade <code>object-fit</code>, já que proporciona definir qual parte da imagem deve aparecer na área redimensionada.</p>
+
+        <h3>Máscaras</h3>
+
+        <p>É possível criar uma camada de máscara a ser posicionada sobre um elemento para ocultar parcial ou completamente o conteúdo do elemento. Para tanto, use a propriedade <code>mask-image</code>.</p>
+
+        <p>A imagem da camada de máscara pode ser uma imagem PNG, uma imagem SVG, um gradiente de CSS ou um elemento <code>&lt;mask&gt;</code> SVG.</p>
+
+        <p>Para usar uma imagem PNG ou SVG como a camada de máscara, use o valor <code>url()</code> para definir a imagem. Essa imagem precisa ter uma área transparente ou semi-transparente. Por exemplo:</p>
+
+        <img class="mask-5terre" src="../img/img_5terre.jpg" alt="W3 Logo with Cinque Terre background using mask-image layer">
+
+        <p><strong>Observação</strong>: usamos as propriedades <code>-webkit-mask-image</code> e <code>-webkit-mask-repeat</code> para fornecer compatibilidade com navegadores que ainda não suportam <code>mask-image</code>. A propriedade <code>mask-repeat</code> impede a repetição de uma máscara menor.</p>
+
+        <p>É possível, ainda, usar um gradiente e mascarar o texto:</p>
+
+        <div class="mask-text">
+          <p>Siena is a city in Tuscany, Italy. It is the capital of the province of Siena. Siena is the 12th largest city in the region by number of inhabitants.</p>
+          <p>The city is historically linked to commercial and banking activities, having been a major banking center until the 13th and 14th centuries. Siena is also home to the oldest bank in the world, the Monte dei Paschi bank, which has been operating continuously since 1472 (552 years ago). Several significant Renaissance painters were born and worked in Siena, among them Duccio, Ambrogio Lorenzetti, Simone Martini and Sassetta, and influenced the course of Italian and European art. The University of Siena, originally called Studium Senese, was founded in 1240, making it one of the oldest universities in continuous operation in the world.</p>
+          <p>Siena was one of the most important cities in medieval Europe, and its historic centre is a UNESCO World Heritage Site, which contains several buildings from the 13th and 14th centuries. The city is famous for its cuisine, art, museums, medieval cityscape and the Palio, a horse race held twice a year in Piazza del Campo.</p>
+        </div>
+
+        <p>Com um gradiente radial:</p>
+
+        <img class="radial-mask" src="../img/siena-italia.jpg" alt="Siena, Itália">
+
+        <img class="rainy-weather" src="../img/rainy-weather.jpg" alt="Rainy Weather with SVG mask">
+
+        <img class="sunny-weather" src="../img/sunny-weather.jpeg" alt="Sunny Weather with SVG mask">
+
+        <img class="universe-mask" src="../img/universe-galaxy.jpg" alt="Universe galaxy with SVG mask">
+
+        <p>Note que essas máscaras podem ser feitas também com texto usando a propriedade <a href="https://codepen.io/pierrinho/pen/NEYmLO" target="_blank"><code>background-clip: text</code></a>. Outros exemplos do uso de máscaras: <a href="https://www.frontendhero.dev/tutorial/mask-text-with-image/" target="_blank" rel="noopener noreferrer">1</a>, <a href="https://www.youtube.com/watch?v=nstRtC_C8yY" target="_blank" rel="noopener noreferrer">2</a>, <a href="https://youtu.be/FCuNtCq3nRg?si=MhwkMWOqeeyipOTm" target="_blank" rel="noopener noreferrer">3</a>, <a href="https://youtu.be/9Kr3T4Ndl-o?si=16wXdNNObtMsT6Gc">4</a> e <a href="https://youtu.be/dldpud1PuL8?si=a2sqJcFGiOIzvaf6" target="_blank" rel="noopener noreferrer">5</a>.</p>
     </section>
   </main>
 </body>

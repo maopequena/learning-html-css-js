@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="description" content="Animações no CSS">
+  <meta name="author" content="Lizandra Silva (@maopequena)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animações no CSS</title>
+  <style>
+    #div1 {
+      width: 200px;
+      height: 200px;
+      background: var(--blanchedalmond);
+      animation-name: div1;
+      animation-duration: 4s;
+      color: var(--darker-grey);
+      text-align: center;
+      align-content: center;
+      padding: 7px;
+      animation-iteration-count: 3;
+    }
+
+    @keyframes div1 {
+      from {background-color: var(--blanchedalmond);}
+      to {background-color: var(--brown);}
+    }
+
+    #div2 {
+      width: 200px;
+      height: 200px;
+      background: var(--burlywood);
+      animation-name: div2;
+      animation-duration: 4s;
+      color: var(--darker-grey);
+      text-align: center;
+      align-content: center;
+      position: relative;
+      animation-iteration-count: 3;
+    }
+
+    @keyframes div2 {
+      0% {background-color: var(--burlywood); left: 0px;}
+      25% {background-color: var(--cadetblue); left: 50px;}
+      50% {background-color: var(--chartreuse); left: 100px;}
+      75% {background-color: var(--chocolate); left: 150px;}
+      100% {background-color: var(--burlywood); left: 200px;}
+    }
+    
+    #div3 {
+      width: 200px;
+      height: 200px;
+      background: var(--coral);
+      animation-name: div3;
+      animation-duration: 4s;
+      animation-delay: 0.8s;
+      color: var(--darker-grey);
+      text-align: center;
+      align-content: center;
+      animation-iteration-count: 3;
+    }
+
+    @keyframes div3 {
+      from {width: 200px;}
+      to {width: 400px;}
+    }
+
+    #div4 {
+      width: 100px;
+      height: 100px;
+      background-color: var(--cornflower-blue);
+      position: relative;
+      animation-name: div4;
+      animation-duration: 4s;
+      position: relative;
+      color: var(--darker-grey);
+      text-align: center;
+      align-content: center;
+      animation-iteration-count: 3;
+    }
+
+    @keyframes div4 {
+      0%   {background-color:var(--cornflower-blue); left:0px;}
+      50%  {background-color:var(--cornsilk); left:200px;}
+      100% {background-color:var(--cornflower-blue); left:0px;}
+    }
+
+    .div-container {
+      width: 700px;
+      height: 250px;
+      border: 2px solid var(--white);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    #div5 {
+      width: 50px;
+      height: 50px;
+      background-color: var(--crimson);
+      position: relative;
+      animation-name: div5;
+      animation-duration: 4s;
+      position: relative;
+      color: var(--darker-grey);
+      text-align: center;
+      align-content: center;
+      animation-iteration-count: 3;
+      animation-direction: normal;
+    }
+
+    @keyframes div5 {
+      0% {width: 50px; height: 50px;}
+      50% {width: 100px; height: 100px;}
+      100% {width: 50px; height: 50px;}
+    }
+
+    #div6 {
+      width: 50px;
+      height: 50px;
+      background-color: var(--cyan);
+      position: relative;
+      animation-name: div6;
+      animation-duration: 4s;
+      position: relative;
+      color: var(--darker-grey);
+      text-align: center;
+      align-content: center;
+      animation-iteration-count: 3;
+      animation-direction: reverse;
+    }
+
+    @keyframes div6 {
+      0% {width: 50px; height: 50px;}
+      50% {width: 100px; height: 100px;}
+      100% {width: 50px; height: 50px;}
+    }
+
+    #div7 {
+      width: 50px;
+      height: 100px;
+      background-color: var(--dark-blue);
+      position: relative;
+      animation-name: div7;
+      animation-duration: 4s;
+      position: relative;
+      color: var(--medium-grey);
+      text-align: center;
+      align-content: center;
+      animation-iteration-count: 3;
+      animation-direction: alternate;
+    }
+
+    @keyframes div7 {
+      0% {width: 50px; height: 50px;}
+      50% {width: 100px; height: 100px;}
+      100% {width: 50px; height: 50px;}
+    }
+
+    #div8 {
+      width: 100px;
+      height: 100px;
+      background-color: var(--dark-cyan);
+      position: relative;
+      animation-name: div8;
+      animation-duration: 4s;
+      position: relative;
+      color: var(--darker-grey);
+      text-align: center;
+      align-content: center;
+      animation-iteration-count: 3;
+      animation-direction: alternate;
+    }
+
+    @keyframes div8 {
+      0% {width: 50px; height: 50px;}
+      50% {width: 100px; height: 100px;}
+      100% {width: 50px; height: 50px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Animações no CSS</h1>
+  </header>
+
+  <section>
+    <p>Podemos animar elementos sem usar JavaScript, somente com CSS!</p>
+
+    <p>Veremos as seguintes propriedades:</p>
+
+    <ul>
+      <li><code>@keyframes</code></li>
+      <li><code>animation-name</code></li>
+      <li><code>animation-duration</code></li>
+      <li><code>animation-delay</code></li>
+      <li><code>animation-iteration-count</code></li>
+      <li><code>animation-direction</code></li>
+      <li><code>animation-timing-function</code></li>
+      <li><code>animation-fill-mode</code></li>
+      <li><code>animation</code></li>
+    </ul>
+
+    <h2>O que são animações?</h2>
+    <p>Uma animação permite que um elemento mude gradualmente de um estilo para outro. É possível alterar quantas propriedades do CSS desejar. Para usar uma animação, é preciso definir os "keyframes", que contém os estilos que o elemento terá nos diferentes períodos da animação.</p>
+
+    <p>Podemos usar a propriedade abreviada <code>animation</code> da seguinte forma:</p>
+
+    <pre>
+      <code>
+        div {
+          animation: example 5s linear 2s infinite alternate;
+        }
+      </code>
+      <em>animation: name duration timing-function delay iteration-count direction;</em>
+    </pre>
+
+
+  </section>
+
+  <section>
+    <h3>A regra <code>@keyframes</code></h3>
+    <p>Ao definir os estilos CSS na regra <code>@keyframes</code>, a animação gradualmente mudará do estilo atual para o novo estilo nos períodos determinados.</p>
+    <p>Para a animação funcionar, ela deve estar vinculada a um elemento.</p>
+
+    <div id="div1">Animação simples de cor do plano de fundo, com from e to</div>
+
+    <p>Quando a animação termina, o elemento volta ao estilo inicial.</p>
+
+    <p><strong>Observação</strong>: a propriedade <code>animation-duration</code> define quanto tempo uma animação demora para concluir. Se essa propriedade não for definida, a animação não acontece, porque o valor padrão é 0s (0 segundos).</p>
+
+    <p>O exemplo acima define a mudança de estilo com as palavras-chave <code>from</code> (que representa 0%, ou o início) e <code>to</code> (que representa 100%, ou o fim), mas também podemos usar porcentagens para adicionar vários estilos. O exemplo a seguir usa as porcentagens 0, 25%, 50%, 75% e 100%.</p>
+
+    <div id="div2">Animação de plano de fundo e posição com porcentagens</div>
+  </section>
+
+  <section>
+    <h3>A propriedade <code>animation-delay</code></h3>
+
+    <p>Esta propriedade define um atraso para o início da animação.</p>
+
+    <div id="div3">Animação de tamanho com atraso</div>
+
+    <p>Ao usar números negativos com esta propriedade, a animação é executada como se já tivesse começado.</p>
+  </section>
+
+  <section>
+    <h3>A propriedade <code>animation-iteration-count</code></h3>
+
+    <p>Esta propriedade define quantas vezes a animação deve ser repetida. O exemplo a seguir se repetirá três vezes antes de parar.</p>
+
+    <div id="div4">Animação de cor e posição repetida 3 vezes</div>
+
+    <p>Com o valor <code>infinite</code>, a animação se repete infinitamente.</p>
+  </section>
+
+  <section>
+    <h3>A propriedade <code>animation-direction</code></h3>
+
+    <p>Esta propriedade define se a animação deve ser executada normalmente, em ordem inversa ou em ciclos alternados. Ela aceita os seguintes valores:</p>
+
+    <ul>
+      <li><code>normal</code>: a animação executa normalmente, <strong>este é o padrão</strong>.</li>
+      <li><code>reverse</code>: a animação executa em ordem inversa.</li>
+      <li><code>alternate</code>: a animação executa primeiro normalmente, depois em ordem inversa.</li>
+      <li><code>alternate-reverse</code>: a animação executa primeiro em ordem inversa, depois normalmente.</li>
+    </ul>
+
+    <p>Por exemplo:</p>
+
+    <div class="div-container">
+      <div id="div5">normal</div>
+      <div id="div6">reverse</div>
+      <div id="div7">alternate</div>
+      <div id="div8">alternate-reverse</div>
+    </div>
+  </section>
+
+  <section>
+    <h3>A propriedade <code>animation-timing-function</code></h3>
+
+    <p>Esta propriedade define a curva de velocidade da animação e aceita os mesmos valores que a propriedade <code>transition-timing-function</code>: <code>ease</code>, <code>linear</code>, <code>ease-in</code>, <code>ease-out</code>, <code>ease-in-out</code> e <code>cubic-bezier(n,n,n,n)</code>. Consulte a propriedade <a href="../HTML/css-transitions.html#transition-timing">transition-timing-function</a> para saber mais.</p>
+  </section>
+
+  <section>
+    <h3>A propriedade <code>animation-fill-mode</code></h3>
+    <p>As animações do CSS não afetam um elemento antes do primeiro keyframe ser reproduzido ou após o último keyframe ser reproduzido. A propriedade <code>animation-fill-mode</code> pode substituir esse comportamento.</p>
+    <p>Esta propriedade define um estilo para o elemento alvo quando a animação não está sendo reproduzida (antes de começar, após terminar ou ambos). Ela aceita os seguintes valores:</p>
+
+    <ul>
+      <li><code>none</code>: <strong>é o valor padrão</strong>. A animação não aplica nenhum estilo ao elemento antes ou após a sua execução.</li>
+      <li><code>forwards</code>: o elemento mantém os valores de estilo definidos pelo último keyframe, dependendo das propriedades <code>animation-direction</code> e <code>animation-iteration-count</code>. </li>
+      <li><code>backwards</code>: o elemento fica com os valores de estilo definidos pelo primeiro keyframe, dependendo da propriedade <code>animation-direction</code>, e mantém isso durante o período definido em <code>animation-delay</code>.</li>
+      <li><code>both</code>: a animação segue ambas as regras de <code>forwards</code> e <code>backwards</code>, estendendo as propriedades da animação nos dois sentidos.</li>
+    </ul>
+
+    <img src="../img/animation-properties-css.png" alt="Propriedades de animações">
+  </section>
+</body>
+</html>

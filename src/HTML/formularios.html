@@ -9,6 +9,106 @@
   <meta name="author" content="Lizandra Silva (@maopequena)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulários</title>
+  <style>
+    .button {
+      background-color: var(--orange);
+      border: none;
+      color: var(--white);
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1em;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: var(--dark-orange);
+      color: var(--black);
+      box-shadow: 0 0 10px var(--white);
+    }
+
+    .disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .container img {
+      width: 100%;
+      height: auto;
+    }
+
+    .container .btn {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transition: 0.5s;
+      background-color: var(--orange);
+      color: var(--table-border);
+      font-size: 1em;
+      padding: 10px 8px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .container .btn:hover {
+      background-color: var(--dark-orange);
+      color: var(--black);
+    }
+
+    .btn span:after {
+      content: "\00bb";
+      color: var(--black);
+      font-weight: bold;
+      position: absolute;
+      opacity: 0;
+      top: 24%;
+      right: -50px;
+      transition: 0.5s;
+    }
+
+    .btn:hover span {
+      padding-right: 15px;
+    }
+
+    .btn:hover span:after {
+      opacity: 1;
+      right: 5px;
+    }
+
+    .pressed-button {
+      display: inline-block;
+      padding: 10px 8px;
+      font-size: 1em;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: var(--table-border);
+      background-color: var(--orange);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 9px #999;
+    }
+
+    .pressed-button:active {
+      background-color: var(--dark-orange);
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+  </style>
 </head>
 <body>
   <main>
@@ -173,6 +273,13 @@
         <textarea name="message" rows="30" cols="100">Digite um texto.</textarea><br>
         <input style="margin: 10px 0;" type="submit" value="Enviar">
       </form>
+
+      <p>Qualquer elemento aceita a propriedade CSS <code>resize</code>, porém ele é especialmente útil para uma área de texto. Os valores aceitos são: <code>none</code>, <code>both</code>, <code>horizontal</code> e <code>vertical</code>. Por exemplo:</p>
+
+      <form action="/src/img/well-done.gif">
+        <textarea name="message" rows="4" cols="30" resize="both">Esta área de texto tem "resize" definido como "both". Tente redimensioná-la arrastando o canto inferior direito.</textarea><br>
+        <input style="margin: 10px 0;" type="submit" value="Enviar">
+      </form>
     </section>
 
     <section>
@@ -242,12 +349,41 @@
           <option value="chrysler">Chrysler</option>
           <option value="jeep">Jeep</option>
         </optgroup>
-      </select>        
-      <br>
-      <br>
+      </select>
+    </section>
+
+    <section>
+      <h3 id="css-buttons">Exemplos de botões estilizados com CSS</h3>
+
+      <button>Botão padrão</button>
+      <a href="#" class="button">Botão de link</a>
+      <button class="button">Botão</button>
+      <input type="button" class="button" value="Botão de input">
+      <button class="button disabled">Botão desativado</button>
+
+
+      <p>Use as propriedades <code>background-color</code>, <code>font-size</code>, <code>padding</code>, <code>border-radius</code> e <code>border</code> para alterar a aparência de botões.</p>
+      <p>Também podemos usar o seletor <code>:hover</code> para alterar sua aparência ao passar o mouse sobre o botão, com a propriedade <code>transition-duration</code> para definir a velocidade do efeito.</p>
+      <p>Use a propriedade <code>box-shadow</code> para adicionar uma sombra ao botão.</p>
+      <p>Use <code>opacity</code> para adicionar transparência, dando a aparência de que o botão está "desativado". Use com isso a propriedade <code>cursor</code> com o valor "not-allowed", que exibe um círculo de proibido.</p>
+      <p>É possível, ainda, alterar a propriedade <code>width</code> para alterar a largura padrão do botão, que é determinada por seu conteúdo.</p>
+      <p>Ou remova as margens e adicione a propriedade <code>float: left</code> para dar a impressão de um "grupo" de botões. Com <code>display: block</code> o grupo fica na vertical.</p>
+
+      <h4>Botão animado em uma imagem</h4>
+
+      <div class="container">
+        <img src="../img/paris.jpg" alt="Paris" style="width:100%">
+        <button class="btn"><span>Botão animado </span></button>
+      </div>
+
+      <h4>Botão "pressionado"</h4>
+
+      <button class="button pressed-button">Clique aqui!</button>
+      <br><br>
       <a href="https://www.youtube.com/watch?v=VLeERv_dR6Q&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=24">Tutorial em vídeo sobre formulários</a>
       <a href="https://www.youtube.com/watch?v=metoFY-x_yg&list=PLHz_AreHm4dlAnJ_jJtV29RFxnPHDuk9o&index=36">Tutorial do Curso em vídeo, aula 33</a>
       <a href="https://www.youtube.com/watch?v=lwuDJN9Udfc&list=PLHz_AreHm4dlAnJ_jJtV29RFxnPHDuk9o&index=37">Tutorial do Curso em vídeo, aula 34</a>
+      <a href="https://www.w3schools.com/css/css3_buttons.asp" target="_blank" rel="noopener noreferrer">Outros exemplos de botões estilizados com CSS</a>
     </section>
   </main>
 </body>
