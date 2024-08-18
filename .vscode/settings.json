@@ -1,3 +1,9 @@
 {
-  "cSpell.words": ["Lizandra", "maopequena"]
+  "cSpell.words": [
+    "Lizandra",
+    "maopequena"
+  ],
+  "editor.tabSize": 2,
+  "editor.cursorStyle": "block",
+  "editor.insertSpaces": false
 }

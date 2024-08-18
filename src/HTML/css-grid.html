@@ -14,20 +14,106 @@
       display: grid;
       grid-template-columns: auto auto auto;
       background-color: var(--blue-eyes);
-      padding: 10px;
+      padding: 2em;
     }
     .grid-item {
       background-color: var(--lightest-grey);
       border: 2px solid var(--table-border);
-      padding: 20px;
-      font-size: 30px;
+      padding: 1.2em;
+      font-size: 2em;
       text-align: center;
+    }
+
+    .item1 {
+      grid-area: myArea;
+    }
+
+    .grid-container-area {
+      display: grid;
+      grid-template-areas: 'myArea myArea myArea';
+      gap: 10px;
+      background-color: var(--blue-eyes);
+      padding: 2em;
+    }
+
+    .grid-container-area > div {
+      background-color: var(--lightest-grey);
+      text-align: center;
+      padding: 1.2em 0;
+      font-size: 2em;
+    }
+
+    .item1-unamed {
+      grid-area: myArea;
+    }
+
+    .grid-container-unamed {
+      display: grid;
+      grid-template-areas: '. . . myArea myArea';
+      gap: 10px;
+      background-color: var(--blue-eyes);
+      padding: 2em;
+    }
+
+    .grid-container-unamed > div {
+      background-color: var(--lightest-grey);
+      text-align: center;
+      padding: 1.2em 0;
+      font-size: 2em;
+    }
+
+    .item1-layout { grid-area: header; }
+    .item2-layout { grid-area: menu; }
+    .item3-layout { grid-area: main; }
+    .item4-layout { grid-area: right; }
+    .item5-layout { grid-area: footer; }
+
+    .grid-layout-container {
+      display: grid;
+      grid-template-areas:
+        'header header header header header header'
+        'menu main main main right right'
+        'menu footer footer footer footer footer';
+      gap: 10px;
+      background-color: var(--blue-eyes);
+      padding: 2em;
+    }
+
+    .grid-layout-container > div {
+      background-color: var(--lightest-grey);
+      text-align: center;
+      padding: 1.2em 0;
+      font-size: 2em;
+    }
+
+    .grid-container-mq {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 10px;
+      background-color: var(--blue-eyes);
+      padding: 10px;
+    }
+    
+    .grid-container-mq > div {
+      background-color: var(--lightest-grey);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+    
+    @media only screen and (max-width: 900px) {
+      .item1-mq { grid-area: 1 / span 3 / 2 / 4; }
+      .item2-mq { grid-area: 3 / 3 / 4 / 4; }
+      .item3-mq { grid-area: 2 / 1 / 3 / 2; }
+      .item4-mq { grid-area: 2 / 2 / span 2 / 3; }
+      .item5-mq { grid-area: 3 / 1 / 4 / 2; }
+      .item6-mq { grid-area: 2 / 3 / 3 / 4; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Layout flexível com <code>grid</code></h1>
+    <h1>Layout flexível com grid</h1>
 
     <p>Um layout muito comum em web design é ter um cabeçalho, uma barra lateral, um corpo e um rodapé, com a barra lateral e o corpo em formato de duas colunas. Ao longo dos anos, se usou muitos métodos para formatar esse layout, mas com <code>grid</code> isso ficou mais fácil e temos muito mais opções. O grid simplifica combinar o controle que os tamanhos extrínsecos oferecem e a flexibilidade dos tamanhos intrínsecos, o que o torna ideal para esse tipo de layout, porque é um método projetado para conteúdo bidimensional, isto é, posicionar as coisas em linhas e colunas ao mesmo tempo.</p>
     <p>Ao criar um layout com <code>grid</code>, você define uma grade com linhas e colunas e coloca os itens nessas células.</p>
@@ -71,7 +157,7 @@
   </section>
 
   <section>
-    <h2 id="fr-unit">A unidade <code>fr</code></h2>
+    <h2 id="fr-unit">A unidade fr</h2>
     <p>Esta unidade de dimensionamento funciona apenas com o layout de grade. Esta unidade flexível descreve uma parte do espaço disponível no contêiner de grade.</p>
     <p>Essa unidade funciona de forma similar a usar a propriedade <code>flex: auto</code>, isto é, distribui o espaço após os itens serem posicionados. Assim, para ter três colunas que compartilham o mesmo espaço, use:</p>
 
@@ -88,11 +174,11 @@
   </section>
 
   <section>
-    <h2>A função <code>minmax()</code></h2>
+    <h2>A função minmax()</h2>
     <p>Esta função define um tamanho mínimo e máximo para uma trilha, o que pode ser muito útil. O exemplo acima, com a unidade <code>fr</code>, que distribui o espaço restante, pode ser escrito usando esta função, como <code>minmax(auto, 1fr)</code>. O layout de grade analisa o tamanho intrínseco do conteúdo e distribui o espaço disponível após dar espaço suficiente ao conteúdo. Isso significa que nem todas as trilhas terão uma parte igual de todo o espaço disponível no contêiner de grade.</p>
     <p>Para forçar uma trilha a ocupar uma parcela igual do espaço no contêiner de grade, menos as gaps, use <code>minmax</code>. Substitua <code>1fr</code> como o tamanho da trilha por <code>minmax(0, 1fr)</code>. Isso fará com que o tamanho mínimo da trilha seja <code>0</code> e não o tamanho mínimo do conteúdo. O layout de grade então pegará todo o espaço disponível no contêiner, deduzirá o tamanho necessário para as gaps e distribuirá o restante de acordo com as unidades <code>fr</code>.</p>
 
-    <h3>A notação <code>repeat()</code></h3>
+    <h3>A notação repeat()</h3>
     <p>Se quiser criar uma grade com 12 colunas iguais, use o seguinte CSS:</p>
 
     <pre>
@@ -140,7 +226,7 @@
   </section>
 
   <section>
-    <h2><code>auto-fill</code> e <code>auto-fit</code></h2>
+    <h2>auto-fill e auto-fit</h2>
     <p>Podemos combinar tudo o que aprendemos sobre tamanho de trilhas, <code>minmax()</code> e <code>repeat()</code> para criar um layout de grade com um padrão útil. Talvez você não queira especificar o número de colunas, e queira usar quantas colunas caberem no contêiner.</p>
     <p>Para fazer isso, use <code>repeat()</code> e as opções <code>auto-fill</code> ou <code>auto-fit</code>. Com isso, obtemos o máximo de trilhas que couberem no viewport, porém elas não são flexíveis. Ao combinar também a função <code>minmax()</code>, é possível conter tantas trilhas de determinado tamanho máximo quantas couberem no contêiner com 1fr; e o layout de grade então distribui o espaço restante entre as trilhas.</p>
     <p>Isso cria um layout responsivo bidirecional (para as linhas e as colunas) sem a necessidade de media queries. <a href="https://codepen.io/web-dot-dev/pen/OJWbRax" target="_blank" rel="noopener noreferrer">Exemplo</a>.</p>
@@ -417,6 +503,271 @@
         </tr>
       </tbody>
     </table>
+  </section>
+
+  <section>
+    <h3>grid-template-columns</h3>
+    <p>Esta propriedade define a quantidade de colunas no layout de grade e pode definir também a largura de cada coluna. Seu valor deve ser uma lista separada por espaços, em que cada item dessa lista define a largura de uma coluna. Por exemplo, para ter um layout com 4 colunas, especifique a largura de cada uma delas (ou use <code>auto</code> se todas devem ter o mesmo tamanho).</p>
+
+    <pre>
+      <code>
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto auto auto;
+        }
+      </code>
+    </pre>
+
+    <p>Neste caso, se houver mais de quatro itens, a grade adiciona uma nova coluna automaticamente. Também é possível definir a largura das colunas:</p>
+
+    <pre>
+      <code>
+        .grid-container {
+          display: grid;
+          grid-template-columns: 80px 200px auto 40px;
+        }
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h3>grid-template-rows</h3>
+
+    <p>Esta propriedade define a altura de cada linha. Seu valor deve ser uma lista separada por espaços, em que cada item dessa lista define aa altura de uma das linhas. Por exemplo, no caso de duas linhas:</p>
+
+    <pre>
+      <code>
+        .grid-container {
+          display: grid;
+          grid-template-rows: 80px 200px;
+        }
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h3>justify-content e align-content</h3>
+
+    <p>Use <code>justify-content</code> para alinhar <em>horizontalmente</em> toda a grade dentro do contêiner. <strong>Observação</strong>: a largura total da grade deve ser menor que a largura do contêiner para que esta propriedade tenha efeito. Seus valores são: <code>space-evenly</code>, <code>space-around</code>, <code>space-between</code>, <code>center</code>, <code>start</code> e <code>end</code>.</p>
+  
+    <p>Use <code>align-content</code> para alinhar <em>verticalmente</em> toda a grade dentro do contêiner. <strong>Observação</strong>: a altura total da grade deve ser menor que a altura do contêiner para que esta propriedade tenha efeito. Seus valores são: <code>space-evenly</code>, <code>space-around</code>, <code>space-between</code>, <code>center</code>, <code>start</code> e <code>end</code>.</p>
+  </section>
+
+  <section>
+    <h2>Elementos filhos (itens da grade)</h2>
+
+    <p>Um <em>contêiner</em> de grade tem <em>itens</em> de grade. Por padrão, um contêiner tem um item em cada coluna e em cada linha, mas é possível definir os itens de forma que ocupem várias colunas e/ou linhas.</p>
+
+    <h3>grid-column</h3>
+
+    <p>Esta propriedade define defines em qual(is) coluna(s) posicionar um item. Com ela, definimos onde o item começa e onde termina. <strong>Observação</strong>: esta propriedade é uma abreviação para as propriedades <code>grid-column-start</code> e <code>grid-column-end</code>.</p>
+
+    <p>Para posicionar um item, use os números das trilhas (que separam as colunas) e/ou a palavra-chave "<strong>span</strong>" para definir quantas colunas o item deve ocupar:</p>
+
+    <pre>
+      <code>
+        .item1 {
+          grid-column: 1 / 5;
+        }
+
+        .item2 {
+          grid-column: 2 / span 3;
+        }
+      </code>
+    </pre>
+
+    <p>O "item1" acima começa na coluna 1 e termina na 4 (linhas 1 a 5). O "item2" acima começa na coluna 2 e ocupa três colunas.</p>
+
+    <h3>grid-row</h3>
+
+    <p>Esta propriedade define defines em qual linha posicionar um item. Com ela, definimos onde o item começa e onde termina. <strong>Observação</strong>: esta propriedade é uma abreviação para as propriedades <code>grid-row-start</code> e <code>grid-row-end</code>.</p>
+
+    <p>Para posicionar um item, use os números das trilhas (que separam as linhas) e/ou a palavra-chave "<strong>span</strong>" para definir quantas linhas o item deve ocupar:</p>
+
+    <pre>
+      <code>
+        .item1 {
+          grid-column: 1 / 5;
+        }
+
+        .item2 {
+          grid-column: 3 / span 3;
+        }
+      </code>
+    </pre>
+
+    <p>O "item1" acima começa na linha 1 e termina na 4 (trilhas 1 a 5). O "item2" acima começa na linha 3 e ocupa três linhas.</p>
+
+    <h3>grid-area</h3>
+
+    <p>Esta propriedade é uma abreviação das propriedades <code>grid-row-start</code>, <code>grid-column-start</code>, <code>grid-row-end</code> e <code>grid-column-end</code>, isto é de todas as propriedades que vimos acima. Por exemplo:</p>
+
+    <pre>
+      <code>
+        .item8 {
+          grid-area: 1 / 2 / 5 / 6;
+        }
+      </code>
+    </pre>
+
+    <p>O "item8" acima começa na linha 1 e termina na 4 (trilhas 1 a 5), começa na coluna 2 e termina na 5 (trilhas 2 a 6).</p>
+
+    <p>Também podemos usar esta propriedade para atribuir nomes aos itens da grade. Esses itens nomeados podem ser chamados, posteriormente, pela propriedade <code>grid-template-areas</code>. Por exemplo, vejamos o contêiner de grade abaixo e o código usado em seguida:</p>
+
+    <div class="grid-container-area">
+      <div class="item1">1</div>
+      <div class="item2">2</div>
+      <div class="item3">3</div>  
+      <div class="item4">4</div>
+      <div class="item5">5</div>
+      <div class="item6">6</div>
+    </div>
+
+    <pre>
+      <code>
+        .item1 {
+          grid-area: myArea;
+        }
+    
+        .grid-container-area {
+          display: grid;
+          grid-template-areas: 'myArea myArea myArea';
+          gap: 10px;
+          background-color: var(--blue-eyes);
+          padding: 10px;
+        }
+    
+        .grid-container-area > div {
+          background-color: var(--lightest-grey);
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
+        }
+      </code>
+    </pre>
+
+    <p id="apostrofe">Cada linha deve ser definida por apóstrofes (''). Dentro dos apóstrofes, definimos as colunas, separadas por espaços. <span class="important-info">Note que é possível usar um ponto final (.) para uma área que não foi nomeada.</span> Vejamos como isso fica no exemplo acima.</p>
+
+    <div class="grid-container-unamed">
+      <div class="item1-unamed">1</div>
+      <div class="item2-unamed">2</div>
+      <div class="item3-unamed">3</div>  
+      <div class="item4-unamed">4</div>
+      <div class="item5-unamed">5</div>
+      <div class="item6-unamed">6</div>
+    </div>
+
+    <pre>
+      <code>
+        .item1-unamed {
+          grid-area: myArea;
+        }
+    
+        .grid-container-unamed {
+          display: grid;
+          grid-template-areas: '. . . myArea myArea';
+          gap: 10px;
+          background-color: var(--blue-eyes);
+          padding: 10px;
+        }
+    
+        .grid-container-unamed > div {
+          background-color: var(--lightest-grey);
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
+        }
+      </code>
+    </pre>
+
+    <p>Para definir duas linhas, defina a coluna da segunda linha dentro de apóstrofes, separando as "linhas" por um espaço:</p>
+
+    <pre>
+      <code>
+        .grid-container {
+          grid-template-areas: 'myArea1 myArea1 . . .' 'myArea2 myArea2 . . .';
+        }
+      </code>
+    </pre>
+
+    <p>Nomeando toda uma grade, com seis colunas e três linhas, podemos definir o layout ideal de um site:</p>
+
+    <div class="grid-layout-container">
+      <div class="item1-layout">Cabeçalho</div>
+      <div class="item2-layout">Menu de navegação</div>
+      <div class="item3-layout">Área principal</div>  
+      <div class="item4-layout">Links e artigos relacionados</div>
+      <div class="item5-layout">Rodapé</div>
+    </div>
+
+    <pre>
+      <code>
+        .item1-layout { grid-area: header; }
+        .item2-layout { grid-area: menu; }
+        .item3-layout { grid-area: main; }
+        .item4-layout { grid-area: right; }
+        .item5-layout { grid-area: footer; }
+
+        .grid-layout-container {
+          display: grid;
+          grid-template-areas:
+            'header header header header header header'
+            'menu main main main right right'
+            'menu footer footer footer footer footer';
+          gap: 10px;
+          background-color: var(--blue-eyes);
+          padding: 10px;
+        }
+
+        .grid-layout-container > div {
+          background-color: var(--lightest-grey);
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
+        }
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <p>Como vimos <a href="#apostrofe">neste exemplo</a>, os itens podem ser posicionados conforme se desejar, eles não precisam estar na mesma ordem do DOM. Podemos reorganizá-los, até, usando media queries! Reduza a largura da tela para ver isso em ação:</p>
+
+    <div class="grid-container-mq">
+      <div class="item1-mq">1</div>
+      <div class="item2-mq">2</div>
+      <div class="item3-mq">3</div>  
+      <div class="item4-mq">4</div>
+      <div class="item5-mq">5</div>
+      <div class="item6-mq">6</div>
+    </div>
+
+    <pre>
+      <code>
+        .grid-container-mq {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          gap: 10px;
+          background-color: var(--blue-eyes);
+          padding: 10px;
+        }
+        
+        .grid-container-mq > div {
+          background-color: var(--lightest-grey);
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
+        }
+        
+        @media only screen and (max-width: 900px) {
+          .item1-mq { grid-area: 1 / span 3 / 2 / 4; }
+          .item2-mq { grid-area: 3 / 3 / 4 / 4; }
+          .item3-mq { grid-area: 2 / 1 / 3 / 2; }
+          .item4-mq { grid-area: 2 / 2 / span 2 / 3; }
+          .item5-mq { grid-area: 3 / 1 / 4 / 2; }
+          .item6-mq { grid-area: 2 / 3 / 3 / 4; }
+        }
+      </code>
+    </pre>
   </section>
 </body>
 </html>

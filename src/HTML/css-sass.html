@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8" />
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="description" content="SASS" />
+  <meta name="author" content="Lizandra Silva (@maopequena)" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SASS</title>
+  <style>
+    .flex-container {
+      display: flex;
+      max-width: 900px;
+      justify-content: space-evenly;
+    }
+
+    .flex-item {
+      width: 200px;
+      height: auto;
+      margin: 0.5em;
+      padding: 1.2em;
+      font-size: 1.3em;
+      align-items: center;
+      border: 0.5px solid var(--lightest-grey);
+      box-shadow: 1px 1px 2px 1px var(--table-border);
+      text-align: center;
+    }
+
+    .color-1 {
+      background-color: #a2b9bc;
+    }
+
+    .color-2 {
+      background-color: #b2ad7f;
+    }
+
+    .color-3 {
+      background-color: #878f99;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SASS</h1>
+
+    <p>O <abbr title="Syntactically Awesome Stylesheet">SASS</abbr> é um pré-processador de CSS, ele reduz a repetição ao criar folhas de estilo, o que economiza tempo.</p>
+  </header>
+
+  <section>
+    <h2>Introdução</h2>
+
+    <p>O SASS (pronuncia-se [sɛs], extensão de arquivo .scss) funciona como uma extensão do CSS, com todas as suas versões, e é gratuito para baixar e usar.</p>
+
+    <h3>Por que usar SASS?</h3>
+
+    <p>Uma folha de estilo pode ficar muito grande, complexa e difícil de manter, e é nesses casos que o SASS pode ajudar. Ele apresenta recursos que não existem no CSS, como variáveis, regras aninhadas, mixins, importações, herança, funções incorporadas e muito mais.</p>
+
+    <p>Digamos que nosso site usa estas três cores:</p>
+
+    <div class="flex-container colors">
+      <div class="flex-item color-1">#a2b9bc</div>
+      <div class="flex-item color-2">#b2ad7f</div>
+      <div class="flex-item color-3">#878f99</div>
+    </div>
+
+    <p>Quantas vezes precisaríamos digitar esses valores de cores? VÁRIAS! E as variações dessas cores? Pois é. Em vez de digitar essas cores, podemos usar variáveis. Assim, se a cor mudar, só precisamos alterar o valor em um lugar:</p>
+
+    <pre>
+      <code>
+        /* define variables for the primary colors */
+        $primary_1: #a2b9bc;
+        $primary_2: #b2ad7f;
+        $primary_3: #878f99;
+
+        /* use the variables */
+        .main-header {
+          background-color: $primary_1;
+        }
+
+        .menu-left {
+          background-color: $primary_2;
+        }
+
+        .menu-right {
+          background-color: $primary_3;
+        }
+      </code>
+    </pre>
+
+    <p class="important-info"><strong>Observação</strong>: o tutorial do W3 sobre SASS está um pouco desatualizado, já que no momento da criação deste site, já é possível usar variáveis com o CSS normal. Inclusive este site já usa as variáveis "--lightest-grey" e "--table-border", por exemplo, para cores.</p>
+  </section>
+
+  <section>
+    <h2>Como o SASS funciona?</h2>
+
+    <p>Um navegador não entende o código do SASS, portanto é preciso pré-processá-lo para transformar o código SASS em CSS padrão. Esse processo se chama "transpilação" (uma mistura de tradução e compilação). Então precisamos dar a um transpilador (um tipo de programa) o código SASS para obtermos o código CSS de volta.</p>
+
+    <h3>Instalação</h3>
+
+    <p>Requisitos:</p>
+
+    <ul>
+      <li><strong>Sistema operacional</strong>: independe de plataforma.</li>
+      <li><strong>Navegador</strong>: o SASS funciona no Edge/IE (a partir do IE 8), Firefox, Chrome, Safari e Opera.</li>
+      <li><strong>Linguagem de programação</strong>: o SASS é baseado em <a href="https://www.ruby-lang.org/pt/" target="_blank" rel="noopener noreferrer">Ruby</a>.</li>
+    </ul>
+
+    <p>Saiba mais sobre SASS no <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">site oficial</a> e na página sobre <a href="https://sass-lang.com/install/" target="_blank" rel="noopener noreferrer">instalação</a>.</p>
+  </section>
+
+  <section>
+    <h2>Variáveis</h2>
+
+    <p>As variáveis armazenam informações que podem ser reutilizadas posteriormente. As informações que podem ser armazenadas incluem:</p>
+
+    <ul>
+      <li>sequências de caracteres</li>
+      <li>números</li>
+      <li>cores</li>
+      <li>booleanos</li>
+      <li>listas</li>
+      <li>valores nulos</li>
+    </ul>
+
+    <p>Para declarar uma variável, use o cifrão ($) seguido do nome da variável e do valor: <code>$nomevariavel: valor;</code>. Por exemplo:</p>
+
+    <pre>
+      <code>
+        $myFont: Helvetica, sans-serif;
+        $myColor: red;
+        $myFontSize: 18px;
+        $myWidth: 680px;
+
+        body {
+          font-family: $myFont;
+          font-size: $myFontSize;
+          color: $myColor;
+        }
+
+        #container {
+          width: $myWidth;
+        }
+      </code>
+    </pre>
+
+    <p>Após o processamento, o CSS será o seguinte:</p>
+
+    <pre>
+      <code>
+        body {
+          font-family: Helvetica, sans-serif;
+          font-size: 18px;
+          color: red;
+        }
+        
+        #container {
+          width: 680px;
+        }
+      </code>
+    </pre>
+
+    <p>O escopo de uma variável SASS depende do aninhamento. No exemplo a seguir, a cor do <code>&lt;h1&gt;</code> será verde, mas a cor de <code>&lt;p&gt;</code> será vermelha.</p>
+
+    <pre>
+      <code>
+        $myColor: red;
+
+        h1 {
+          $myColor: green;
+          color: $myColor;
+        }
+
+        p {
+          color: $myColor;
+        }
+      </code>
+    </pre>
+
+    <p>Entretanto, podemos usar o comutador <code>!global</code> para definir variáveis globais, mesmo que elas estejam aninhadas em um elemento específico.</p>
+
+    <pre>
+      <code>
+        $myColor: red;
+
+        h1 {
+          $myColor: green !global;
+          color: $myColor;
+        }
+
+        p {
+          color: $myColor;
+        }
+      </code>
+    </pre>
+
+    <p>Dê preferência para definir as variáveis globais fora dos seletores ou, até, em um arquivo próprio, chamado "_globals.scss", que pode ser incluído no arquivo de regras com a palavra-chave <code>@include</code>.</p>
+  </section>
+
+  <section>
+    <h2>Aninhamento</h2>
+
+    <p>Com SASS, é possível aninhar seletores! Isso deixa o código mais limpo e mais fácil de ler. Por exemplo:</p>
+
+    <pre>
+      <code>
+        nav {
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+          }
+          li {
+            display: inline-block;
+          }
+          a {
+            display: block;
+            padding: 6px 12px;
+            text-decoration: none;
+          }
+        }
+      </code>
+    </pre>
+
+    <h3>Propriedades aninhadas</h3>
+
+    <p>Muitas propriedades do CSS têm o mesmo prefixo, como <em>font-</em>family, <em>font-</em>size e <em>font-</em>weight. Com o SASS, podemos agrupá-las:</p>
+
+    <pre>
+      <code>
+        font: {
+          family: Helvetica, sans-serif;
+          size: 18px;
+          weight: bold;
+        }
+        
+        text: {
+          align: center;
+          transform: lowercase;
+          overflow: hidden;
+        }
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    
+  </section>
+</body>
+</html>
