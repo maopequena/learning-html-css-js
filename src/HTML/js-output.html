@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Outputs">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript: outputs</title>
+</head>
+<body>
+	<header>
+		<h1>Outputs</h1>
+	</header>
+
+	<section>
+		<h2>Possibilidades de exibição</h2>
+
+		<p>O JS pode "exibir" dados de diferentes maneiras:</p>
+
+		<ul>
+			<li>Com <code>innerHTML</code> para escrever código dentro do elemento.</li>
+			<li>Com <code>document.write()</code> para escrever código na saída do documento.</li>
+			<li>Com <code>window.alert()</code> para exibir uma caixa de alerta.</li>
+			<li>Com <code>console.log()</code> para exibir uma mensagem no console do navegador.</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>InnerHTML</h2>
+
+		<p>Esta propriedade é muito usada para exibir dados no HTML.</p>
+		<p>Para acessar um elemento HTML, o JavaScript pode usar o método <code>document.getElementById(id)</code>, fornecendo o atributo <code>id</code> que pertence ao elemento HTML que se deseja manipular. Em seguida, a propriedade <code>innerHTML</code> define o conteúdo do documento HTML. Por exemplo:</p>
+
+		<p id="demo1"></p>
+
+		<script>
+		document.getElementById("demo1").innerHTML = 5 + 6;
+		document.getElementById("demo1").style.fontSize = "2em";
+		</script>
+
+		<p>O parágrafo acima, originalmente, não tem conteúdo, porém usamos o método <code>getElementById</code> para adicionar a soma de "5 + 6" e alterar o tamanho da fonte.</p>
+	</section>
+
+	<section>
+		<h2>document.write()</h2>
+
+		<p>Esta função só deve ser usada para fins de teste, porque <span class="important-info">se o documento HTML já tiver sido carregado, ela excluirá todo o conteúdo do documento!</span> Veja exemplos <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_output_write" target="_blank" rel="noopener noreferrer">aqui</a> e <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_output_write_over" target="_blank" rel="noopener noreferrer">aqui</a>.</p>
+	</section>
+
+	<section>
+		<h2>window.alert()</h2>
+
+		<p>Esta função exibe uma caixa de alerta no navegador para fornecer informações. Por exemplo:</p>
+
+		<pre><code>
+			&lt;script&gt;
+			window.alert(5 + 6);
+			&lt;/script&gt;
+		</code></pre>
+
+		<p>exibirá uma caixa com o valor da soma assim que a página carregar, antes de exibir qualquer conteúdo.</p>
+
+		<p>Você pode ocultar a palavra-chave <code>window</code>, já que este é um objeto de escopo global e, portanto, quaisquer variáveis, propriedades e métodos, por padrão, pertencem a esse objeto.</p>
+	</section>
+
+	<section>
+		<h2>console.log()</h2>
+
+		<p>Para fins de depuração, podemos usar este método para exibir dados no console do navegador.</p>
+
+		<h2>"print"</h2>
+
+		<p>O JS não possui métodos ou objetos que "imprimem" informações. A única exceção é o método <code>window.print()</code>, que imprime &#8212; literalmente &#8212; o conteúdo da janela atual. Veja <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_output_print" target="_blank" rel="noopener noreferrer">um exemplo</a>.</p>
+	</section>
+</body>
+</html>

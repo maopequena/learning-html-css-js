@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="JavaScript">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+	<header>
+		<h1>JavaScript</h1>
+
+		<p>O JavaScript é a linguagem de programação mais popular do mundo e é a linguagem de programação da Web. É uma das três principais linguagens que todos os desenvolvedores Web <strong>devem</strong> aprender: HTML, CSS e JavaScript.</p>
+	</header>
+
+	<section>
+		<h2>Introdução</h2>
+
+		<p>O JavaScript é gratuito e não precisa ser baixado ou instalado, ele já está em execução nos navegadores de computadores, tablets, etc.</p>
+
+		<p>JavaScript pode alterar o conteúdo HTML. Um dos muitos métodos do JavaScript é o <code>getElementById()</code>. O exemplo abaixo "localiza" um elemento HTML com a id="demo" e altera seu conteúdo (usando <code>innerHTML</code>) para "Olá JavaScript!".</p>
+
+		<p id="demo-content">JavaScript can change HTML content.</p>
+
+		<button type="button" onclick='document.getElementById("demo-content").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+
+		<p>Podemos usar aspas duplas ou simples em códigos JS, ambas são aceitas.</p>
+
+		<p>O JavaScript também pode alterar o valor de atributos, como <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb" target="_blank" rel="noopener noreferrer">neste exemplo</a>, que altera o atributo <code>src</code> de uma imagem.</p>
+
+		<p>Podemos, ainda, alterar estilos CSS com JS:</p>
+
+		<p id="demo-style">JavaScript can change the style of an HTML element.</p>
+
+		<button type="button" onclick="document.getElementById('demo-style').style.fontSize='35px'">Click Me!</button>
+
+		<p>Podemos também <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_hide" target="_blank" rel="noopener noreferrer">ocultar</a> e <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_show" target="_blank" rel="noopener noreferrer">exibir</a> elementos (usando a propriedade <code>display</code>).</p>
+
+		<p>JavaScript e Java são linguagens completamente diferentes, tanto em questão de conceito, como de design.</p>
+	</section>
+
+	<section>
+		<h2>A tag &lt;script&gt;</h2>
+
+		<p>Para inserir um código JavaScript no documento HTML, use a tag <code>&lt;script&gt;</code>.</p>
+		<p class="important-info"><strong>Observação</strong>: exemplos antigos de JavaScript podem usar um atributo de tipo: <code>&lt;script type="text/javascript"&gt;</code>. Esse atributo não é obrigatório, já que o JS é a linguagem de script padrão para HTML.</p>
+
+		<h3>Onde colocar a tag &lt;script&gt;?</h3>
+
+		<p>Dentro da tag <code>&lt;body&gt;</code> ou dentro da tag <code>&lt;head&gt;</code>? Ambas as opções são aceitas, porém se for no corpo do documento, o ideal é colocar a tag no final do código HTML, porque isso melhora a velocidade de exibição da página.</p>
+		<p>Podemos também criar um arquivo <code>.js</code> externo para conter o código JavaScript. Isso é útil quando um código JS é usado em várias páginas. Nesses arquivos, não se deve usar a tag <code>&lt;script&gt;</code>, somente o código JS.</p>
+		<p>Para usar um arquivo de scripts externo, coloque o nome do arquivo no atributo <code>src</code> da tag <code>&lt;script&gt;</code>: <code>&lt;script src="myScript.js"&gt;&lt;/script&gt;</code>. É possível adicionar várias dessas tags para vários arquivos diferentes.</p>
+		<p>Independentemente de onde o script for colocado, ele se comportará como se estivesse localizado exatamente onde a tag <code>&lt;script&gt;</code> está.</p>
+
+		<h3>Vantagens de um arquivo externo</h3>
+
+		<p>Colocar os scripts em arquivos externos tem algumas vantagens:</p>
+
+		<ul class="list-square">
+			<li>O HTML e o código JS ficam separados.</li>
+			<li>É mais fácil ler e manter ambas as linguagens.</li>
+			<li>Arquivos JS em cache podem acelerar o carregamento e processamento de uma página da Web.</li>
+		</ul>
+
+		<p>Há três maneiras de chamar scripts externos:</p>
+
+		<ul class="list-square">
+			<li>Com um URL completo: <code>&lt;script src="https://www.w3schools.com/js/myScript.js"&gt;&lt;/script&gt;</code>.</li>
+			<li>Com um caminho de arquivo: <code>&lt;script src="/js/myScript.js"&gt;&lt;/script&gt;</code>.</li>
+			<li>Sem qualquer caminho: <code>&lt;script src="myScript.js"&gt;&lt;/script&gt;</code>.'</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Funções e eventos</h2>
+
+		<p>Uma <strong>função</strong> é um bloco de código JS que pode ser executado ao ser chamado. Por exemplo, podemos chamar uma função quando ocorre um evento, como ao clicar em um botão.</p>
+	</section>
+</body>
+</html>
