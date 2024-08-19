@@ -1,13 +1,46 @@
 /* Define o conjunto de caracteres como UTF-8 */
 /* @charset "utf-8"; */
 
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+@font-face {
+	font-family: 'Red Hat Display'; 
+	src: url(../fonts/RedHatDisplay-VariableFont_wght.woff2) format("woff2");
+	font-weight: 200 900;
+}
 
 @font-face {
-  font-family: 'Red Hat Display';
-  src: url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+  font-family: 'Dosis';
+  src: url(../fonts/Dosis-VariableFont_wght.woff2) format("woff2");
+	font-weight: 200 900;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url(../fonts/EBGaramond-VariableFont_wght.ttf) format("ttf");
+	font-weight: 200 900;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url(../fonts/JetBrainsMono[wght].woff2) format("woff2");
+	font-weight: 200 900;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat-VariableFont_wght.woff2) format("woff2");
+	font-weight: 200 900;
+}
+
+@font-face {
+  font-family: 'Spline Sans';
+  src: url(../fonts/SplineSansMono-VariableFont_wght.woff2) format("woff2");
+	font-weight: 200 900;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(../fonts/Raleway-VariableFont_wght.woff2) format("woff2");
+	font-weight: 200 900;
 }
 
 @font-face {
@@ -71,7 +104,7 @@
   --table-border: #ddd;
   --yellow: #ffff00;
 }
-/* Define a fonte padrão, o tamanho da fonte, o box-sizing e o esquema de cores para todos os itens do site*/
+/* Define a fonte padrão, o tamanho da fonte, o box-sizing e o esquema de cores para todos os itens do site */
 * {
   font-family: 'Red Hat Display', system-ui, sans-serif;
   font-size: 1rem;
@@ -169,6 +202,7 @@ samp {
 ul.list-square {
   list-style: square;
   text-align: justify;
+  margin-left: 5px;
 }
 
 span.note {
@@ -192,6 +226,43 @@ em {
 table, th, td {
   border-collapse: collapse;
   border: 2px solid var(--table-border);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: var(--orange-red);
+  background-color: var(--plum);
+}
+
+.article {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: var(--rebecca-purple);
+  background-color: var(--salmon);
+  margin: 2px;
+}
+
+.aside {
+  width: 30%;
+  padding-left: 5px;
+  margin-left: 25px;
+  float: right;
+  font-style: italic;
+  background-color: var(--wheat);
+}
+
+.hearticle {
+  background-color: var(--teal);
+  color: var(--violet);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.footer {
+  font-size: 0.8rem;
 }
 
 /* Define o fundo do site como cinza escuro e as margens como automáticas */
@@ -244,10 +315,7 @@ p {
 } */
 
 /* Define o estilo das imagens */
-img {
-  max-width: 100%;
-  height: auto;
-}
+
 
 /* Define as margens de formulários */
 /* form {
@@ -261,38 +329,6 @@ img {
   margin-left: 5px;
   text-align: justify;
 } */
-
-.section {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: var(--orange-red);
-  background-color: var(--plum);
-}
-
-.article {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: var(--rebecca-purple);
-  background-color: var(--salmon);
-  margin: 2px;
-}
-
-.aside {
-  width: 30%;
-  padding-left: 5px;
-  margin-left: 25px;
-  float: right;
-  font-style: italic;
-  background-color: var(--wheat);
-}
-
-.hearticle {
-  background-color: var(--teal);
-  color: var(--violet);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.footer {
-  font-size: 0.8rem;
-}
 
 /* div.city {
   background-color: var(--tomato);

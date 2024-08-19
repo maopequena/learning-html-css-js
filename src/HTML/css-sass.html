@@ -245,7 +245,780 @@
   </section>
 
   <section>
-    
+		<h2>Importação de arquivos de regras</h2>
+
+    <p>A prática recomendada com SASS é manter vários arquivos com cada área do código, como um arquivo de reset, um para variáveis, um para cores, um para fontes e tamanhos de fontes, etc. Para unir tudo, usamos a regra <code>@import</code>: <code>@import nomearquivo;</code>. Note que não é preciso usar uma extensão, porque o SASS já assume que o arquivo terá as extensões ".scss" ou ".sass" automaticamente. Podemos importar quantos arquivos forem necessários. No entanto, esse processo pode sobrecarregar sua página, já que cada solicitação de regra gera uma nova chamada HTTP.</p>
+
+		<p>Da mesma forma, é possível criar arquivos de variáveis chamados de "parciais". Sua sintaxe é <code>_nomearquivo.scss</code>. A importação funciona da mesma forma, mas o arquivo não é processado automaticamente ao ser carregado, o que limita as chamadas HTTP e não sobrecarrega o site.</p>
   </section>
+
+	<section>
+		<h2>Mixins</h2>
+
+		<p>A regra <code>@mixin</code> possibilita criar código de CSS a ser reutilizado por todo o site. Para usá-la, precisamos da regra <code>@include</code>. Sua sintaxe é:</p>
+
+		<pre>
+			<code>@mixin nome {
+			propriedade: valor;
+			propriedade: valor;
+			...
+		}</code>
+	</pre>
+
+	<p class="important-info"><strong>Observação</strong>: hífens e sublinhados são considerados iguais em SASS. Isso significa que o mixin "important-text" e o mixin "important_text" são a mesma coisa!</p>
+
+	<p>Para executá-lo, use a sintaxe:</p>
+
+	<pre>
+		<code>
+			seletor {
+				@include nome-mixin;
+			}
+		</code>
+	</pre>
+
+	<p>E você pode incluir outros mixins em um mixin:</p>
+
+	<pre><code>@mixin special-text {
+		@include important-text;
+		@include link;
+		@include special-border;
+	}</code></pre>
+
+	<h3>Mixins e variáveis</h3>
+
+	<p>Mixins aceitam argumentos, então podemos usar variáveis neles. Vejamos um exemplo:</p>
+
+	<pre><code>
+		/* Define mixin with two arguments */
+		@mixin bordered($color, $width) {
+			border: $width solid $color;
+		}
+		
+		.myArticle {
+			@include bordered(blue, 1px);  // Call mixin with two values
+		}
+		
+		.myNotes {
+			@include bordered(red, 2px); // Call mixin with two values
+		}</code></pre>
+
+		<p>será compilado como:</p>
+
+		<pre><code>
+			.myArticle {
+			border: 1px solid blue;
+		}
+		
+		.myNotes {
+			border: 2px solid red;
+		}</code></pre>
+
+		<p>E também é possível definir valores padrão para mixins:</p>
+
+		<pre><code>
+			@mixin bordered($color: blue, $width: 1px) {
+				border: $width solid $color;
+			}
+		</code></pre>
+
+		<p>Depois é só definir os valores que mudam ao incluir o mixin:</p>
+
+		<pre><code>
+			.myTips {
+				@include bordered($color: orange);
+			}
+		</code></pre>
+	</section>
+
+	<section>
+		<h2>Herança e compartilhamento de regras</h2>
+
+		<p>A regra <code>@extend</code> possibilita compartilhar um grupo de propriedades CSS entre seletores. Ela é útil em casos em que se tem elementos quase idênticos, exceto por pequenos detalhes, como botões.</p>
+
+		<p>No exemplo abaixo, temos três botões com pequenas diferenças entre eles:</p>
+
+		<pre><code>
+			.button-basic  {
+				border: none;
+				padding: 15px 30px;
+				text-align: center;
+				font-size: 16px;
+				cursor: pointer;
+			}
+			
+			.button-report  {
+				@extend .button-basic;
+				background-color: red;
+			}
+			
+			.button-submit  {
+				@extend .button-basic;
+				background-color: green;
+				color: white;
+			}
+		</code></pre>
+
+		<p>Após o processamento, o CSS ficará assim:</p>
+
+		<pre><code>
+			.button-basic, .button-report, .button-submit {
+				border: none;
+				padding: 15px 30px;
+				text-align: center;
+				font-size: 16px;
+				cursor: pointer;
+			}
+			
+			.button-report  {
+				background-color: red;
+			}
+			
+			.button-submit  {
+				background-color: green;
+				color: white;
+			}
+		</code></pre>
+
+		<p>Usando esta regra, não é preciso definir várias classes para um elemento no código HTML (como &lt;button class="button-basic button-report"&gt;Report this&lt;/button&gt;), somente ".button-report" e obteremos todos os estilos.</p>
+	</section>
+
+	<section>
+		<h2>Funções do SASS</h2>
+
+		<h3>Funções de cadeias de caracteres</h3>
+
+		<p>Essas funções são usadas para manipular e obter informações sobre cadeias de caracteres. O índice de cadeias de caracteres em SASS começa com 1, não 0. A tabela a seguir todas as funções disponíveis:</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Function</th>
+					<th>Description &amp; Example</th>
+				</tr>
+				<tr>
+					<td>quote(<em>string</em>)</td>
+					<td>Adds quotes to <em>string</em>, and returns the result.<br><br>
+					<strong>Example:</strong><br>quote(Hello world!)<br>Result: "Hello world!"</td>
+				</tr>
+				<tr>
+					<td>str-index(<em>string</em>,<em> substring</em>)</td>
+					<td>Returns the index of the first occurrence of the <em>substring</em> within 
+				<em>string</em>.<br><br>
+					<strong>Example:</strong><br>str-index("Hello world!", "H")<br>Result: 1</td>
+				</tr>
+				<tr>
+					<td>str-insert(<em>string</em>, <em>insert</em>, <em>index</em>)</td>
+					<td>Returns <em>string</em> with <em>insert</em> inserted at the specified 
+				<em>index</em> position.<br><br>
+					<strong>Example:</strong><br>str-insert("Hello world!", " wonderful", 6)<br>Result: "Hello 
+				wonderful world!"</td>
+				</tr>
+				<tr>
+					<td>str-length(<em>string</em>)</td>
+					<td>Returns the length of <em>string</em> (in characters).<br><br>
+					<strong>Example:</strong><br>str-length("Hello world!")<br>Result: 12</td>
+				</tr>
+				<tr>
+					<td>str-slice(<em>string</em>, <em>start</em>, <em>end</em>)</td>
+					<td>Extracts characters from <em>string</em>; start at <em>start</em> 
+				and end at <em>end</em>, and returns the slice.<br><br>
+					<strong>Example:</strong><br>str-slice("Hello world!", 2, 
+				5)<br>Result: "ello"</td>
+				</tr>
+				<tr>
+					<td>to-lower-case(<em>string</em>)</td>
+					<td>Returns a copy of <em>string</em> converted to lower case.<br><br>
+					<strong>Example:</strong><br>to-lower-case("Hello 
+				World!")<br>Result: "hello world!"</td>
+				</tr>
+				<tr>
+					<td>to-upper-case(<em>string</em>)</td>
+					<td>Returns a copy of <em>string</em> converted to upper case.<br><br>
+					<strong>Example:</strong><br>to-upper-case("Hello 
+				World!")<br>Result: "HELLO WORLD!"</td>
+				</tr>
+				<tr>
+					<td>unique-id()</td>
+					<td>Returns a unique randomly generated unquoted string (guaranteed to be 
+				unique within the current sass session).<br><br>
+					<strong>Example:</strong><br>unique-id()<br>Result: 
+				tyghefnsv</td>
+				</tr>
+				<tr>
+					<td>unquote(<em>string</em>)</td>
+					<td>Removes quotes around <em>string</em> (if any), and returns the result.<br>
+					<br>
+					<strong>Example:</strong><br>unquote("Hello world!")<br>Result: Hello world!</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p class="important-info"><strong>Observação</strong>: note que as funções "quote", "unquote" e "str-insert" podem ser substituídas por JavaScript, e as funções "to-lower-case" e "to-upper-case" podem ser substituídas por <a href="../HTML/css-texto.html#text-transform">transformações de texto</a>. "slice", "length" e "index" são basicamente inúteis no dia-a-dia. Portanto, a única função realmente útil aqui é "unique-id".</p>
+	</section>
+
+	<section>
+		<h3>Funções numéricas</h3>
+
+		<p>Usadas para manipular valores numéricos.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Function</th>
+					<th>Description &amp; Example</th>
+				</tr>
+				<tr>
+					<td>abs(<em>number</em>)</td>
+					<td>Returns the absolute value of <em>number</em>.<br><br>
+					<strong>Example:</strong><br>abs(15)<br>Result: 15<br>abs(-15)<br>Result: 15</td>
+				</tr>
+				<tr>
+					<td>ceil(<em>number</em>)</td>
+					<td>Rounds <em>number</em> up to the nearest integer.<br><br>
+					<strong>Example:</strong><br>ceil(15.20)<br>Result: 16</td>
+				</tr>
+				<tr>
+					<td>comparable(<em>num1</em>, <em>num2</em>)</td>
+					<td>Returns whether <em>num1</em> and <em>num2</em> are comparable.<br><br>
+					<strong>Example:</strong><br>comparable(15px, 10px)<br>Result: true<br>comparable(20mm, 1cm)<br>Result: 
+					true<br>comparable(35px, 2em)<br>Result: false</td>
+				</tr>
+				<tr>
+					<td>floor(<em>number</em>)</td>
+					<td>Rounds <em>number</em> down to the nearest integer.<br><br>
+					<strong>Example:</strong><br>floor(15.80)<br>Result: 15</td>
+				</tr>
+				<tr>
+					<td>max(<em>number...</em>)</td>
+					<td>Returns the highest value of several numbers.<br><br>
+					<strong>Example:</strong><br>max(5, 7, 9, 0, -3, -7)<br>Result: 9</td>
+				</tr>
+				<tr>
+					<td>min(<em>number...</em>)</td>
+					<td>Returns the lowest value of several numbers.<br><br>
+					<strong>Example:</strong><br>min(5, 7, 9, 0, -3, -7)<br>Result: -7</td>
+				</tr>
+				<tr>
+					<td>percentage(<em>number</em>)</td>
+					<td>Converts <em>number</em> to a percentage (multiplies the number with 100).<br>
+					<br>
+					<strong>Example:</strong><br>percentage(1.2)<br>Result: 120</td>
+				</tr>
+				<tr>
+					<td>random()</td>
+					<td>Returns a random number between 0 and 1.<br><br>
+					<strong>Example:</strong><br>random()<br>Result: 0.45673</td>
+				</tr>
+				<tr>
+					<td>random(<em>number</em>)</td>
+					<td>Returns a random integer between 1 and <em>number</em>.<br><br>
+					<strong>Example:</strong><br>random(6)<br>Result: 4</td>
+				</tr>
+				<tr>
+					<td>round(<em>number</em>)</td>
+					<td>Rounds <em>number</em> to the nearest integer.<br><br>
+					<strong>Example:</strong><br>round(15.20)<br>Result: 15<br>round(15.80)<br>Result: 16</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h3>Funções de lista</h3>
+
+		<p>Usadas para acessar valores em uma lista, combinar listas e adicionar itens a listas. As listas são imutáveis no SASS, então estas funções retornarão uma nova lista, sem alterar a original. O índice de listas no SASS começa com 1, não 0.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Function</th>
+					<th>Description &amp; Example</th>
+				</tr>
+				<tr>
+					<td>append(<em>list</em>, <em>value</em>, [<em>separator</em>])</td>
+					<td>Adds a single <em>value</em> to the end of the list. <em>separator</em> 
+					can be auto, comma, or space. auto is default.<br><br>
+					<strong>Example:<br></strong>append((a b c), d)<br>Result: a b c d<br>append((a b c), (d), comma)<br>
+					Result: a, b, c, d</td>
+				</tr>
+				<tr>
+					<td>index(<em>list</em>, <em>value</em>)</td>
+					<td>Returns the index position for the <em>value</em> in list.<br><br>
+					<strong>Example:</strong><br>index(a b c, b)<br>Result: 2<br>index(a b c, f)<br>Result: null</td>
+				</tr>
+				<tr>
+					<td>is-bracketed(<em>list</em>)</td>
+					<td>Checks whether the list has square brackets.<br><br>
+					<strong>Example:</strong><br>is-bracketed([a b c])<br>Result: true <br>is-bracketed(a b c)<br>Result: 
+					false</td>
+				</tr>
+				<tr>
+					<td>join(<em>list1</em>, <em>list2</em>, [<em>separator, bracketed</em>])</td>
+					<td>Appends <em>list2</em> to the end of <em>list1</em>. <em>separator</em> 
+					can be auto, comma, or space. auto is default (will use the separator in the 
+					first list). <em>bracketed</em> can be auto, true, or false. auto is default.<br>
+					<br>
+					<strong>Example:</strong><br>join(a b c, d e f)<br>Result: a b c d e f<br>join((a b c), (d e f), 
+					comma)<br>Result: a, b, c, d, e, f<br>join(a b c, d e f, $bracketed: true)<br>Result: 
+					[a b c d e f]</td>
+				</tr>
+				<tr>
+					<td>length(<em>list</em>)</td>
+					<td>Returns the length of the list.<br><br>
+					<strong>Example:</strong><br>length(a b c)<br>Result: 3</td>
+				</tr>
+				<tr>
+					<td>list-separator(<em>list</em>)</td>
+					<td>Returns the list separator used, as a string. Can be either space or 
+					comma.<br><br>
+					<strong>Example:</strong><br>list-separator(a b c)<br>Result: "space"<br>list-separator(a, b, c)<br>
+					Result: "comma"</td>
+				</tr>
+				<tr>
+					<td>nth(<em>list</em>, <em>n</em>)</td>
+					<td>Returns the <em>n</em>th element in the list.<br><br>
+					<strong>Example:</strong><br>nth(a b c, 3)<br>Result: c</td>
+				</tr>
+				<tr>
+					<td>set-nth(<em>list</em>, <em>n</em>, <em>value</em>)</td>
+					<td>Sets the <em>n</em>th list element to the <em>value</em> specified.<br>
+					<br>
+					<strong>Example:</strong><br>set-nth(a b c, 2, x)<br>Result: a x c</td>
+				</tr>
+				<tr>
+					<td>zip(<em>lists</em>)</td>
+					<td>Combines lists into a single multidimensional list.<br><br>
+					<strong>Example:</strong><br>zip(1px 2px 3px, solid dashed dotted, red green blue)<br>Result: 1px 
+					solid red, 2px dashed green, 3px dotted blue</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h3>Funções de mapeamento</h3>
+
+		<p>Essas funções representam um conjunto de chave/valor. Os mapas são imutáveis no SASS, então estas funções retornarão um novo mapa, sem alterar o original.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Function</th>
+					<th>Description &amp; Example</th>
+				</tr>
+				<tr>
+					<td>map-get(<em>map</em>, <em>key</em>)</td>
+					<td>Returns the value for the specified <em>key </em>in the map.<br><br>
+					<strong>Example:</strong><br>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br>map-get($font-sizes, 
+					"small")<br>Result: 12px</td>
+				</tr>
+				<tr>
+					<td>map-has-key(<em>map</em>, <em>key</em>)</td>
+					<td>Checks whether <em>map</em> has the specified <em>key</em>. Returns true or 
+					false.<br><br><strong>Example:</strong><br>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br>map-has-key($font-sizes, 
+					"big")<br>Result: false</td>
+				</tr>
+				<tr>
+					<td>map-keys(<em>map</em>)</td>
+					<td>Returns a list of all keys in <em>map</em>.<br><br><strong>Example:</strong><br>
+					$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br>map-keys($font-sizes)<br>Result: 
+					"small", "normal, "large"</td>
+				</tr>
+				<tr>
+					<td>map-merge(<em>map1</em>, <em>map2</em>)</td>
+					<td>Appends <em>map2</em> to the end of <em>map1</em>.<br><br><strong>
+					Example:</strong><br>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br>
+					$font-sizes2: ("x-large": 30px, "xx-large": 36px)<br>map-merge($font-sizes, 
+					$font-sizes2)<br>Result: "small": 12px, "normal": 18px, "large": 24px, 
+					"x-large": 30px, "xx-large": 36px</td>
+				</tr>
+				<tr>
+					<td>map-remove(<em>map</em>, <em>keys...</em>)</td>
+					<td>Removes the specified keys from <em>map</em>.<br><br><strong>Example:</strong><br>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br>map-remove($font-sizes, 
+					"small")<br>Result: ("normal": 18px, "large": 24px)<br>map-remove($font-sizes, 
+					"small", "large")<br>Result: ("normal": 18px)</td>
+				</tr>
+				<tr>
+					<td>map-values(<em>map</em>)</td>
+					<td>Returns a list of all values in <em>map</em>.<br><br><strong>Example:</strong><br>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br>map-values($font-sizes)<br>Result: 
+					12px, 18px, 24px</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h3>Funções de seletores</h3>
+
+		<p>Usadas para administrar e manipular seletores.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Function</th>
+					<th>Description &amp; Example</th>
+				</tr>
+				<tr>
+					<td>is-superselector(<em>super</em>, <em>sub</em>)</td>
+					<td>Checks whether the <em>super</em> selector matches all the elements that
+					<em>sub</em> matches.<br><br>
+					<strong>Example:</strong><br>is-superselector("div", "div.myInput")<br>Result: true<br>is-superselector("div.myInput", 
+					"div")<br>Result: false<br>is-superselector("div", 
+					"div")<br>Result: true</td>
+				</tr>
+				<tr>
+					<td>selector-append(<em>selectors</em>)</td>
+					<td>Appends the second (and third/fourth etc.) selector to the first 
+					selector.<br><br>
+					<strong>Example:</strong><br>selector-append("div", ".myInput")<br>Result: div.myInput<br>selector-append(".warning", 
+					"__a")<br>Result: .warning__a</td>
+				</tr>
+				<tr>
+					<td>selector-extend(<em>selector</em>, <em>extendee</em>, <em>extender</em>)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>selector-nest(<em>selectors</em>)</td>
+					<td>Returns a new selector containing a nested list of CSS selectors based 
+					on the list provided.<br><br>
+					<strong>Example:</strong><br>selector-nest("ul", "li")<br>Result: ul li<br>selector-nest(".warning", 
+					"alert", "div")<br>Result: .warning div, alert div</td>
+				</tr>
+				<tr>
+					<td>selector-parse(<em>selector</em>)</td>
+					<td>Returns a list of strings contained in <em>selector</em> using the same 
+					format as the parent selector.<br><br>
+					<strong>Example:<br></strong>selector-parse("h1 .myInput .warning")<br>Result: ('h1' '.myInput' 
+					'.warning')</td>
+				</tr>
+				<tr>
+					<td>selector-replace(<em>selector</em>, <em>original</em>, <em>replacement</em>)</td>
+					<td>Returns a new selector with the selectors specified in <em>replacement</em> 
+					in place of selectors specified in <em>original</em>.<br><br>
+					<strong>Example:</strong><br>selector-replace("p.warning", "p", "div")<br>Result: div.warning</td>
+				</tr>
+				<tr>
+					<td>selector-unify(<em>selector1</em>, <em>selector2</em>)</td>
+					<td>Returns a new selector that matches only elements matched by both <em>
+					selector1</em> and <em>selector2</em>.<br><br>
+					<strong>Example:</strong><br>selector-unify("myInput", ".disabled")<br>Result: myInput.disabled<br>
+					selector-unify("p", "h1")<br>Result: null</td>
+				</tr>
+				<tr>
+					<td>simple-selectors(<em>selectors</em>)</td>
+					<td>Returns a list of the individual selectors in <em>selectors</em>.<br>
+					<br>
+					<strong>Example:</strong><br>simple-selectors("div.myInput")<br>Result: div, .myInput<br>
+					simple-selectors("div.myInput:before")<br>Result: div, .myInput, 
+					:before</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h3>Funções de introspecção</h3>
+
+		<p>Raramente são usadas, entretanto são valiosas para debugar código.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Function</th>
+					<th>Description &amp; Example</th>
+				</tr>
+				<tr>
+					<td>call(<em>function</em>, <em>arguments</em>...)</td>
+					<td>Calls a function with arguments, and returns the result.</td>
+				</tr>
+				<tr>
+					<td>content-exists()</td>
+					<td>Checks whether the current mixin was passed a @content block.</td>
+				</tr>
+				<tr>
+					<td>feature-exists(<em>feature</em>)</td>
+					<td>Checks whether <em>feature</em> is supported by the current Sass 
+					implementation.<br><br>
+					<strong>Example:</strong><br>feature-exists("at-error");<br>Result: true</td>
+				</tr>
+				<tr>
+					<td>function-exists(<em>functionname</em>)</td>
+					<td>Checks whether the specified function exists.<br><br>
+					<strong>Example:</strong><br>function-exists("nonsense")<br>Result: false</td>
+				</tr>
+				<tr>
+					<td>get-function(<em>functionname</em>, css: false)</td>
+					<td>Returns the specified function. If css is true, it returns a plain CSS 
+					function instead.</td>
+				</tr>
+				<tr>
+					<td>global-variable-exists(<em>variablename</em>)</td>
+					<td>Checks whether the specified global variable exists.<br><br>
+					<strong>Example:</strong><br>variable-exists(a)<br>Result: true</td>
+				</tr>
+				<tr>
+					<td>inspect(<em>value</em>)</td>
+					<td>Returns a string representation of <em>value</em>.</td>
+				</tr>
+				<tr>
+					<td>mixin-exists(<em>mixinname</em>)</td>
+					<td>Checks whether the specified mixin exists.<br><br>
+					<strong>Example:</strong><br>mixin-exists("important-text")<br>Result: true</td>
+				</tr>
+				<tr>
+					<td>type-of(<em>value</em>)</td>
+					<td>Returns the type of <em>value</em>. Can be number, string, color, list, 
+					map, bool, null, function, arglist.<br><br>
+					<strong>Example:</strong><br>type-of(15px)<br>Result: number<br>type-of(#ff0000)<br>Result: color</td>
+				</tr>
+				<tr>
+					<td>unit(<em>number</em>)</td>
+					<td>Returns the unit associated with a number.<br><br>
+					<strong>Example:</strong><br>unit(15px)<br>Result: px</td>
+				</tr>
+				<tr>
+					<td>unitless(<em>number</em>)</td>
+					<td>Checks whether the specified number has a unit associated with it.<br>
+					<br>
+					<strong>Example:</strong><br>unitless(15px)<br>Result: false<br>unitless(15)<br>Result: true</td>
+				</tr>
+				<tr>
+					<td>variable-exists(<em>variablename</em>)</td>
+					<td>Checks whether the specified variable exists in the current scope.<br>
+					<br>
+					<strong>Example:</strong><br>variable-exists(b)<br>Result: true</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h3>Funções de cores</h3>
+
+		<p>Há três tipos de funções de cores: para defini-las, para obtê-las e para manipulá-las.</p>
+
+		<h4>Definição de cores</h4>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Function</th>
+					<th>Description &amp; Example</th>
+				</tr>
+				<tr>
+					<td>rgb(<em>red</em>, <em>green</em>, <em>blue</em>)</td>
+					<td>Sets a color using the Red-Green-Blue (RGB) model. An RGB color value is 
+					specified with: rgb(red, green, blue). Each parameter defines the intensity 
+					of that color and can be an integer between 0 and 255, or a percentage value 
+					(from 0% to 100%).<br><br>
+					<strong>Example:</strong><br>rgb(0, 0, 255); // rendered as blue because the 
+					blue parameter is set to its highest value (255) and the others are set to 0</td>
+				</tr>
+				<tr>
+					<td>rgba(<em>red</em>, <em>green</em>, <em>blue</em>, <em>alpha</em>)</td>
+					<td>Sets a color using the Red-Green-Blue-Alpha (RGBA) model. RGBA color 
+					values are an extension of RGB color values with an alpha channel - which 
+					specifies the opacity of the color. The alpha parameter is a number between 
+					0.0 (fully transparent) and 1.0 (fully opaque).<br><br>
+					<strong>Example:</strong><br>rgba(0, 0, 255, 0.3); // rendered as blue with 
+					opacity</td>
+				</tr>
+				<tr>
+					<td>hsl(<em>hue</em>, <em>saturation</em>, <em>lightness</em>)</td>
+					<td>Sets a color using the Hue-Saturation-Lightness (HSL) model - and 
+					represents a cylindrical-coordinate representation of colors. Hue is a 
+					degree on the color wheel (from 0 to 360) - 0 or 360 is red, 120 is green, 
+					240 is blue. Saturation is a percentage value; 0% means a shade of gray and 
+					100% is the full color. Lightness is also a percentage; 0% is black, 100% is 
+					white.<br><br>
+					<strong>Example:</strong><br>hsl(120, 100%, 50%); // green<br>hsl(120, 100%, 
+					75%); // light green<br>hsl(120, 100%, 25%); // dark green<br>hsl(120, 60%, 
+					70%); // pastel green <br></td>
+				</tr>
+				<tr>
+					<td>hsla(<em>hue</em>, <em>saturation</em>, <em>lightness</em>, <em>alpha</em>)</td>
+					<td>Sets a color using the Hue-Saturation-Lightness-Alpha (HSLA) model. HSLA 
+					color values are an extension of HSL color values with an alpha channel - 
+					which specifies the opacity of the color. The alpha parameter is a number 
+					between 0.0 (fully transparent) and 1.0 (fully opaque).<br><br>
+					<strong>Example:</strong><br>hsl(120, 100%, 50%, 0.3); // green with opacity<br>
+					hsl(120, 100%, 75%, 0.3); // light green with opacity</td>
+				</tr>
+				<tr>
+					<td>grayscale(<em>color</em>)</td>
+					<td>Sets a gray color with the same lightness as <em>color</em>.<br><br>
+					<strong>Example:</strong><br>grayscale(#7fffd4);<br>Result: #c6c6c6</td>
+				</tr>
+				<tr>
+					<td>complement(<em>color</em>)</td>
+					<td>Sets a color that is the complementary color of <em>color</em>.<br><br>
+					<strong>Example:</strong><br>complement(#7fffd4);<br>Result: #ff7faa</td>
+				</tr>
+				<tr>
+					<td>invert(<em>color</em>, <em>weight</em>)</td>
+					<td>Sets a color that is the inverse or negative color of <em>color</em>. 
+					The <em>weight</em> parameter is optional and must be a number between 0% 
+					and 100%. Default is 100%.<br><br>
+					<strong>Example:</strong><br>invert(white);<br>Result: black</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h4>Obtenção de cores</h4>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Function</th>
+					<th>Description &amp; Example</th>
+				</tr>
+				<tr>
+					<td>red(<em>color</em>)</td>
+					<td>Returns the red value of <em>color</em> as a number between 0 and 255.<br><br>
+					<strong>Example:</strong><br>red(#7fffd4);<br>Result: 127<br>red(red);<br>Result: 
+					255</td>
+				</tr>
+				<tr>
+					<td>green(<em>color</em>)</td>
+					<td>Returns the green value of <em>color</em> as a number between 0 and 255.<br><br>
+					<strong>Example:</strong><br>green(#7fffd4);<br>Result: 255<br>green(blue);<br>Result: 
+					0</td>
+				</tr>
+				<tr>
+					<td>blue(<em>color</em>)</td>
+					<td>Returns the blue value of <em>color</em> as a number between 0 and 255.<br><br>
+					<strong>Example:</strong><br>blue(#7fffd4);<br>Result: 212<br>blue(blue);<br>Result: 255</td>
+				</tr>
+				<tr>
+					<td>hue(<em>color</em>)</td>
+					<td>Returns the hue of <em>color</em> as a number between 0deg and 360deg.<br><br>
+					<strong>Example:</strong><br>hue(#7fffd4);<br>Result: 160deg</td>
+				</tr>
+				<tr>
+					<td>saturation(<em>color</em>)</td>
+					<td>Returns the HSL saturation of <em>color</em> as a number between 0% and 
+					100%.<br><br>
+					<strong>Example:</strong><br>saturation(#7fffd4);<br>Result: 100%</td>
+				</tr>
+				<tr>
+					<td>lightness(<em>color</em>)</td>
+					<td>Returns the HSL lightness of <em>color</em> as a number between 0% and 
+					100%.<br><br>
+					<strong>Example:</strong><br>lightness(#7fffd4);<br>Result: 74.9%</td>
+				</tr>
+				<tr>
+					<td>alpha(<em>color</em>)</td>
+					<td>Returns the alpha channel of <em>color</em> as a number between 0 and 1.<br><br>
+					<strong>Example:</strong><br>alpha(#7fffd4);<br>Result: 1</td>
+				</tr>
+				<tr>
+					<td>opacity(<em>color</em>)</td>
+					<td>Returns the alpha channel of <em>color</em> as a number between 0 and 1.<br><br>
+					<strong>Example:</strong><br>opacity(rgba(127, 255, 212, 0.5));<br>Result: 
+					0.5</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h4>Manipulação de cores</h4>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Function</th>
+					<th>Description &amp; Example</th>
+				</tr>
+				<tr>
+					<td>mix(<em>color1</em>, <em>color2</em>, <em>weight</em>)</td>
+					<td>Creates a color that is a mix of <em>color1</em> and <em>color2</em>. 
+					The <em>weight</em> parameter must be between 0% and 100%. A larger weight 
+					means that more of color1 should be used. A smaller weight means that more 
+					of color2 should be used. Default is 50%.</td>
+				</tr>
+				<tr>
+					<td>adjust-hue(<em>color</em>, <em>degrees</em>)</td>
+					<td>Adjusts the <em>color</em>'s hue with a degree from -360deg to 360deg.<br><br>
+					<strong>Example:</strong><br>adjust-hue(#7fffd4, 80deg);<br>Result: #8080ff</td>
+				</tr>
+				<tr>
+					<td>adjust-color(<em>color</em>, <em>red</em>, <em>green</em>, <em>blue</em>,
+					<em>hue</em>, <em>saturation</em>, <em>lightness</em>, <em>alpha</em>)</td>
+					<td>Adjusts one or more parameters by the specified amount. This function 
+					adds or subtracts the specified amount to/from the existing color value.<br>
+					<br>
+					<strong>Example:</strong><br>adjust-color(#7fffd4, blue: 25);<br>Result:</td>
+				</tr>
+				<tr>
+					<td>change-color(<em>color</em>, <em>red</em>, <em>green</em>, <em>blue</em>,
+					<em>hue</em>, <em>saturation</em>, <em>lightness</em>, <em>alpha</em>)</td>
+					<td>Sets one or more parameters of a <em>color</em> to new values.<br><br>
+					<strong>Example:</strong><br>change-color(#7fffd4, red: 255);<br>Result: 
+					#ffffd4</td>
+				</tr>
+				<tr>
+					<td>scale-color(<em>color</em>, <em>red</em>, <em>green</em>, <em>blue</em>,&nbsp;
+					<em>saturation</em>, <em>lightness</em>, <em>alpha</em>)</td>
+					<td>Scales one or more parameters of <em>color</em>.</td>
+				</tr>
+				<tr>
+					<td>rgba(<em>color</em>, <em>alpha</em>)</td>
+					<td>Creates a new color of <em>color</em> with the given <em>alpha</em> 
+					channel.<br><br><strong>Example:</strong><br>rgba(#7fffd4, 30%);<br>Result: 
+					rgba(127, 255, 212, 0.3)</td>
+				</tr>
+				<tr>
+					<td>lighten(<em>color</em>, <em>amount</em>)</td>
+					<td>Creates a lighter color of <em>color</em> with an <em>amount</em> 
+					between 0% and 100%. The amount parameter increases the HSL lightness by 
+					that percent.</td>
+				</tr>
+				<tr>
+					<td>darken(<em>color</em>, <em>amount</em>)</td>
+					<td>Creates a darker color of <em>color</em> with an <em>amount</em> between 
+					0% and 100%. The amount parameter decreases the HSL lightness by that 
+					percent.</td>
+				</tr>
+				<tr>
+					<td>saturate(<em>color</em>, <em>amount</em>)</td>
+					<td>Creates a more saturated color of <em>color</em> with an <em>amount</em> 
+					between 0% and 100%. The amount parameter increases the HSL saturation by 
+					that percent.</td>
+				</tr>
+				<tr>
+					<td>desaturate(<em>color</em>, <em>amount</em>)</td>
+					<td>Creates a less saturated color of <em>color</em> with an <em>amount</em> 
+					between 0% and 100%. The amount parameter decreases the HSL saturation by 
+					that percent.</td>
+				</tr>
+				<tr>
+					<td>opacify(<em>color</em>, <em>amount</em>)</td>
+					<td>Creates a more opaque color of <em>color</em> with an <em>amount</em> 
+					between 0 and 1. The amount parameter increases the alpha channel by that 
+					amount.</td>
+				</tr>
+				<tr>
+					<td>fade-in(<em>color</em>, <em>amount</em>)</td>
+					<td>Creates a more opaque color of <em>color</em> with an <em>amount</em> 
+					between 0 and 1. The amount parameter increases the alpha channel by that 
+					amount.</td>
+				</tr>
+				<tr>
+					<td>transparentize(<em>color</em>, <em>amount</em>)</td>
+					<td>Creates a more transparent color of <em>color</em> with an <em>amount</em> 
+					between 0 and 1. The amount parameter decreases the alpha channel by that 
+					amount.</td>
+				</tr>
+				<tr>
+					<td>fade-out(<em>color</em>, <em>amount</em>)</td>
+					<td>Creates a more transparent color of <em>color</em> with an <em>amount</em> 
+					between 0 and 1. The amount parameter decreases the alpha channel by that 
+					amount.</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p class="important-info">As funções que vejo como úteis: "grayscale(color)", "complement(color)", "invert(color, weight)", as de obtenção de cores, "mix", "scale-color" e "rgba(color, alpha)".</p>
+	</section>
 </body>
 </html>
