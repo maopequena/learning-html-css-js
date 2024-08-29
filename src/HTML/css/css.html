@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <meta charset="utf-8">
 <head>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="description" content="CSS">
     <meta name="author" content="Lizandra Silva (@maopequena)">
@@ -25,7 +25,7 @@
       <p>Com CSS é possível controlar a cor, a fonte, o tamanho do texto, o espaçamento entre os elementos, como os elementos são posicionados na tela, quais imagens ou cores de fundo usar, diferentes exibições para cada dispositivo e tamanho de tela, e muito mais!</p>
       <p>"Em cascata" significa que um estilo aplicado a um elemento pai também será aplicado a todos os elementos filhos dentro do pai. Então, ao definir a cor do texto do corpo como "blue", todos os cabeçalhos, parágrafos e outros elementos de texto dentro do corpo também receberão a mesma cor, a menos que seja especificado algo diferente posteriormente.</p>
       <p>Uma regra de CSS consiste de um seletor e um bloco de declarações.</p>
-      <img src="../img/css-syntax.gif" alt="Sintaxe do CSS">
+      <img src="../../img/css-syntax.gif" alt="Sintaxe do CSS">
       <p>O seletor aponta para o elemento HTML que se deseja estilizar.</p>
       <p>O bloco de declaração contém uma ou mais declarações, separadas por ponto-e-vírgula.</p>
       <p>Cada declaração inclui um nome de propriedade do CSS e um valor, separados por dois-pontos.</p>
@@ -67,11 +67,11 @@
     
       <h3>CSS external</h3>
       <p>O CSS externo é um arquivo de folha de estilo, com extensão <code>.css</code>, usado para definir o estilo de várias páginas HTML ao mesmo tempo. Para tanto, é necessário usar o elemento <code>&lt;link&gt;</code> na seção <code>&lt;head&gt;</code> de cada página HTML. Esse arquivo CSS não deve conter HTML.</p>
-      <p>Consultar <a href="../css/style.css">style.css</a></p>
+      <p>Consultar <a href="../../css/style.css">style.css</a></p>
     </section>
 
     <section>
-      <p>É possível fazer comentários no arquivo de CSS usando os caracteres <code>/*</code> e <code>*/</code>. Consulte o arquivo <a href="../css/style.css">style.css</a> para ver alguns.</p>
+      <p>É possível fazer comentários no arquivo de CSS usando os caracteres <code>/*</code> e <code>*/</code>. Consulte o arquivo <a href="../../css/style.css">style.css</a> para ver alguns.</p>
     </section>
 
     <section>
@@ -91,14 +91,14 @@
 
     <section>
       <h2 id="box-model2">O modelo de caixa</h2>
-      <p>Veja também: <a href="../HTML/css-margens.html#box-model1">Margens e padding no CSS</a></p>
+      <p>Veja também: <a href="../css/css-margens.html#box-model1">Margens e padding no CSS</a></p>
       <p>O modelo de caixa é uma definição fundamental do CSS. Entender como ele funciona, como é afetado por outros aspectos do CSS e, mais importante, como ele os controla. pode ajudá-lo a gerar um CSS mais previsível.</p>
       <p>É importante lembrar que TUDO que é exibido pelo CSS é uma caixa, mesmo que seja apenas texto ou que tenha um <code>border-radius</code> que a faça parecer um círculo.</p>
       <p>As caixas apresentam diferentes comportamentos com base no valor definido para a propriedade <code>display</code>, suas dimensões e seu conteúdo. Esse conteúdo pode ser apenas texto ou mais caixas geradas pelos elementos filhos. De qualquer forma,o conteúdo afeta o tamanho da caixa por padrão.</p>
       <p>Você pode controlar isto com o tamanho extrínseco, ou pode usar o tamanho intrínseco para deixar que o navegador decida o que fazer com base no tamanho do conteúdo da caixa.</p>
       <p>Isso faz com que a propriedade <code>overflow</code> não seja tão usada pelo navegador, já que a caixa é redimensionada de acordo com o conteúdo.</p>
       <p>Lembre-se: o tamanho intrínseco é o comportamento padrão do navegador e geralmente proporciona mais flexibilidade do que o tamanho extrínseco.</p>
-      <img src="../img/box-model (2).png" alt="O modelo de caixa">
+      <img src="../../img/box-model (2).png" alt="O modelo de caixa">
       <p>Uma propriedade definida pelos navegadores define a exibição padrão de uma caixa. Por exemplo, normalmente o valor de exibição padrão de um elemento <code>&lt;div&gt;</code> é <code>block</code>, o de <code>&lt;li&gt;</code> é <code>list-item</code> e o de <code>&lt;span&gt;</code> é é <code>inline</code>.</p>
       <p>Um elemento com o valor <code>inline</code> tem uma margem de bloco, mas os outros elementos não respeitam isso. Com <code>inline-block</code>, os outros elementos passam a respeitar a margem de bloco, mas o primeiro elemento mantém a maioria dos mesmos comportamentos que tinha quando ainda era um elemento <code>inline</code>. Um item de bloco preenche o espaço restante disponível na linha por padrão, enquanto os elementos <code>inline</code> e <code>inline-block</code> ficam tão grandes quanto seu conteúdo.</p>
         
@@ -164,7 +164,7 @@
       <p>O CSS que você cria não é o único aplicado à página. A cascata leva em conta a origem do CSS, que pode incluir a folha de estilo interna do navegador, estilos adicionados por extensões do navegador ou pelo sistema operacional e o CSS que você criou. A ordem de especificidade dessas origens, de menos para a mais específica, é a seguinte:</p>
 
       <picture>
-        <img src="../img/specificity-origin.png" alt="Ordem da origem de especificidade do CSS">
+        <img src="../../img/specificity-origin.png" alt="Ordem da origem de especificidade do CSS">
         <figcaption>Ordem da origem de especificidade do CSS</figcaption>
       </picture>
 
@@ -195,7 +195,7 @@
 
       <p>As ferramentas de desenvolvedor do navegador geralmente mostram todas as regras de CSS que correspondem a um elemento, e as que não estão sendo usadas aparecem riscadas.</p>
 
-      <img src="../img/dev-tools.png" alt="CSS no DevTools" width="800px">
+      <img src="../../img/dev-tools.png" alt="CSS no DevTools" width="800px">
 
       <p>Se a regra que você procura não aparece, é porque não correspondeu ao elemento. Nesse caso, procure por um erro de digitação no nome da classe ou do elemento, por exemplo.</p>
     </section>

@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <head>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="description" content="Declarações">
     <meta name="author" content="Lizandra Silva (@maopequena)">
@@ -16,7 +16,248 @@
 	</header>
 
 	<section>
-		
+		<p>Um <strong>programa de computador</strong> é uma lista de "instruções" a serem "executadas" por um computador.</p>
+		<p>Na linguagem de programação, essas instruções chamam-se <strong>declarações</strong>.</p>
+		<p>Um programa em JavaScript é uma lista de declarações, que são executadas pelo navegador.</p>
+	</section>
+
+	<section>
+		<h2>Composição</h2>
+		<p>Declarações de JavaScript são compostas de <em>valores</em>, <em>operadores</em>, <em>expressões</em>, <em>palavras-chave</em> e <em>comentários</em>. Por exemplo, a declaração a seguir informa o navegador para escrever "Hello, Dolly." em um elemento HTML que contém a id "demo":</p>
+
+		<pre>
+			<code>
+	document.getElementById("demo").innerHTML = "Hello Dolly.";
+			</code>
+		</pre>
+
+		<p>Um programa em JavaScript pode conter muitas declarações, e elas são executadas, uma por vez, na mesma ordem em que são escritas.</p>
+		<p>Separa-se declarações com ponto-e-vírgula (;):</p>
+
+		<pre>
+			<code>
+	let a, b, c;  // Declare 3 variables
+	a = 5;        // Assign the value 5 to a
+	b = 6;        // Assign the value 6 to b
+	c = a + b;    // Assign the sum of a and b to c
+			</code>
+		</pre>
+
+		<div class="important-info">
+		<p>O ponto-e-vírgula não é obrigatório, mas é uma prática recomendada.</p>
+		<p>Espaços em branco são ignorados, mas facilitam a leitura do código e também são considerados prática recomendada.</p>
+		<p>Outra prática recomendada é quebrar as linhas de código após aproximadamente 80 caracteres. Dê preferência para quebrar o código após os operadores.</p>
+		</div>
+
+		<h3>Funções</h3>
+		<p>As declarações JavaScript podem ser agrupadas em blocos de código, dentro de chaves {...}. O propósito disso é definir declarações que devem ser executadas juntas. A essa prática dá-se o nome de <strong>função</strong>. Por exemplo:</p>
+
+		<pre>
+			<code>
+	function myFunction() {
+		document.getElementById("demo1").innerHTML = "Hello Dolly!";
+		document.getElementById("demo2").innerHTML = "How are you?";
+	}
+			</code>
+		</pre>
+
+		<p>Saiba mais sobre <a href="#functions">funções</a>.</p> <!-- TODO: Adicionar link para funções -->
+	</section>
+
+	<section>
+		<h2 id="keywords">Palavras-chave</h2>
+
+		<p>As declarações começam com uma palavra-chave que identifica a ação a ser executada pelo código JavaScript. <a href="https://www.w3schools.com/js/js_reserved.asp">Esta lista</a> exibe todas as palavras que são "reservadas" por serem palavras-chave designadas e, portanto, não podem ser usadas como nomes de variáveis. Eis algumas delas:</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Palavra-chave</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>var</td>
+					<td>Declara uma variável</td>
+				</tr>
+				<tr>
+					<td>let</td>
+					<td>Declara uma variável em bloco</td>
+				</tr>
+				<tr>
+					<td>const</td>
+					<td>Declara uma constante em bloco</td>
+				</tr>
+				<tr>
+					<td>if</td>
+					<td>Marca um bloco de declarações para ser executado de acordo com uma condição</td>
+				</tr>
+				<tr>
+					<td>switch</td>
+					<td>Marca um bloco de declarações para ser executado em diferentes casos</td>
+				</tr>
+				<tr>
+					<td>for</td>
+					<td>Marca um bloco de declarações para ser executado em loop</td>
+				</tr>
+				<tr>
+					<td>function</td>
+					<td>Declara uma função</td>
+				</tr>
+				<tr>
+					<td>return</td>
+					<td>Sai de uma função</td>
+				</tr>
+				<tr>
+					<td>try</td>
+					<td>Implementa a manipulação de erros em um bloco de declarações</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Sintaxe</h2>
+
+		<p>A sintaxe do JavaScript define dois tipos de valores:</p>
+
+		<ul class="list-square">
+			<li><strong>Valores fixos</strong>: são chamados de literais ou constantes.</li>
+			<li><strong>Valores variáveis</strong>: são chamados de variáveis.</li>
+		</ul>
+
+		<h3>Literais ou constantes</h3>
+
+		<p>As duas regras de sintaxe mais importantes para valores fixos são:</p>
+
+		<ol>
+			<li><strong>Números</strong> são escritos com ou sem decimais: <code>10.50</code>, <code>1001</code>, <code>0</code>... Aparecem <strong>SEMPRE</strong> fora de aspas.</li>
+			<li><strong>Sequências de caracteres</strong> (ou "strings") são texto, escritas <strong>SEMPRE</strong> com aspas duplas ou simples: <code>"Hello World!"</code>, <code>'John Doe'</code>, <code>"input-btn"</code>... Um número entre aspas se transforma em uma string.</li>
+		</ol>
+
+		<h3>Variáveis</h3>
+
+		<p>Em uma linguagem de programação, as <em>variáveis</em> são usadas para <strong>armazenar</strong> valores de dados. Em JavaScript, as variáveis usam as palavras-chave <code>var</code> (que só deve ser usada para código a ser executado em navegadores mais antigos), <code>let</code> ou <code>const</code>.</p>
+		<p>O <strong>sinal de igual</strong> (=) é usado para <em>atribuir valores</em> às variáveis.</p>
+		<p>No exemplo a seguir, <code>x</code> é uma variável que recebe o valor 6.</p>
+
+		<pre>
+			<code>
+	let x;
+	x = 6;
+			</code>
+		</pre>
+
+		<p>Deve-se declarar as variáveis antes de usá-las no código. E a prática recomendada é declarar todas as variáveis no início do script.</p>
+		<p>Após definir uma variável, se não for atribuído um valor a ela, ela é considerada <code>undefined</code> (indefinida).</p>
+
+		<p>Use <code>const</code> para declarar variáveis cujo valor ou tipo <strong>não</strong> serão alterados durante a execução do código. Use <code>let</code> somente se não puder usar <code>const</code>.</p>
+		<p>Uma declaração pode conter muitas variáveis, se separadas por uma vírgula: <code>let person = "John Doe", carName = "Volvo", price = 200;</code>. Ou podemos colocar cada item em uma linha:</p>
+
+		<pre>
+			<code>
+	let person = "John Doe",
+	carName = "Volvo",
+	price = 200;
+			</code>
+		</pre>
+
+		<p>Em programas de computador, geralmente declaramos variáveis sem um valor. O valor pode ser calculado depois ou algo que será fornecido posteriormente, como digitação do usuário. Uma variável declarada sem valor terá o valor <code>undefined</code>.</p>
+
+		<p>Uma variável pode ser re-declarada usando a palavra-chave <code>var</code>, mas não as palavras-chave <code>let</code> e <code>const</code>. Por exemplo:</p>
+
+		<pre>
+			<code>
+	var carName = "Volvo";
+	var carName;
+			</code>
+		</pre>
+
+		<p>A variável acima ainda terá o valor "Volvo" após as declarações serem executadas.</p>
+	</section>
+
+	<section>
+		<h2>Operadores</h2>
+
+		<p>O JavaScript usa <strong>operadores matemáticos</strong> (<code>+ - * /</code>) para <em>computar</em> valores:</p>
+
+		<pre>		<code>(5 + 6) * 10</code></pre>
+
+		<p>E o operador de atribuição, como vimos anteriormente, é o sinal de igual (<code>=</code>).</p>
+	</section>
+
+	<section>
+		<h2>Expressões</h2>
+
+		<p>Uma <strong>expression</strong> combina valores, variáveis e operadores para <em>calcular</em> para uma avaliação. Por exemplo, 5*10 avalia para 50.</p>
+		<p>As expressões também podem conter variáveis: x*10.</p>
+		<p>Os valores podem ser números ou sequências de caracteres. Por exemplo, "John" + " " + "Doe" avalia para "John Doe".</p>
+
+		<h3>Comentários</h3>
+
+		<p>Nem todas as declarações do JavaScript são executadas. Códigos definidos após duas barras (<code>//</code>) ou entre os símbolos <code>/* */</code> são considerados como <strong>comentários</strong>, e são ignorados.</p>
+		<p>Use comentários para explicar o código JavaScript e torná-lo mais fácil de ler. Ou para impedir a execução de determinada declaração ao depurar o código ou testar alternativas.</p>
+
+		<p>Use duas barras (<code>//</code>) para definir comentários até o final da linha atual. Use barra, asterisco (<code>/* */</code>) para comentários em mais de uma linha (um bloco de comentários).</p>
+
+		<p>Comentários em bloco geralmente são designados para documentações oficiais.</p>
+	</section>
+
+	<section>
+		<h2>Nomes ou identificadores</h2>
+
+		<p><strong>Identificadores</strong> são nomes no JavaScript que identificam variáveis, palavras-chave e funções. As regras são as mesmas que em muitas outras linguagens de programação; o nome/identificador deve começar com:</p>
+
+		<ul class="list-square">
+			<li>Uma letra (A-Z ou a-z)</li>
+			<li>Um sinal de cifrão ($)</li>
+			<li>Um sublinhado (_)</li>
+		</ul>
+
+		<p>Os caracteres seguintes podem ser letras, números, sublinhados ou cifrões.</p>
+		<p class="important-info">O primeiro caractere de um nome/identificador não pode ser um número!</p>
+		<p>Todos os identificadores em JavaScript diferenciam maiúsculas de minúsculas. As variáveis <code>lastName</code> e <code>lastname</code> são diferentes. <code>LET</code>, <code>Let</code> e <code>let</code> são diferentes.</p>
+		<p>Diferentemente do HTML e do CSS, JavaScript não aceita hifens para separar os identificadores. Prefira usar <em>camelCase</em> ou sublinhados (<em>snake_case</em>).</p>
+		<p>Assim como o HTML, JavaScript usa UTF-8 como o conjunto de caracteres.</p>
+		<p>Todas as variáveis em JavaScript <strong>DEVEM</strong> ser identificadas com <strong>nomes exclusivos</strong>. Esses nomes podem ser curtos (como <code>x</code> ou <code>y</code>) ou mais descritivos (como <code>fullName</code> ou <code>age</code>). e não se esqueça que <span class="important-info">não se pode usar <a href="#keywords">palavras reservadas</a></span>.</p>
+	</section>
+
+	<section>
+		<h2>Os sinais de igual (=), cifrão ($) e sublinhado (_)</h2>
+
+		<p>Como já vimos, o sinal de igual (=) é um operador de atribuição. Ele <em>atribui</em> determinado valor a uma variável. Por exemplo, <code>x = x + 5;</code> faz total sentido em JavaScript, porque calcula o valor de x + 5 e atualiza o valor de x.</p>
+		<p>Para definir o "igual a" em JavaScript, use <code>===</code> (três sinais de igual em sequência).</p>
+
+		<p>Como o JavaScript trata o cifrão como uma letra, os identificadores que contêm o $ são nomes de variáveis válidos. Por exemplo:</p>
+
+		<pre>
+			<code>
+	let $ = "Hello World";
+	let $$$ = 2;
+	let $myMoney = 5;
+			</code>
+		</pre>
+
+		<p>Não é muito comum usar o cifrão em JavaScript, mas programadores profissionais geralmente o usam como um alias para a principal função em uma biblioteca JavaScript. Em jQuery, por exemplo, a função principal <code>$</code> é usada para selecionar elementos HTML, isto é <code>$("p")</code> significa "selecione todos os elementos p".</p>
+
+		<p>Como o JavaScript trata o sublinhado como uma letra, os identificadores que contêm o _ são nomes de variáveis válidos. Por exemplo:</p>
+
+		<pre>
+			<code>
+	let _lastName = "Johnson";
+	let _x = 2;
+	let _100 = 5;
+			</code>
+		</pre>
+
+		<p>Não é muito comum usar o sublinhado em JavaScript, mas programadores profissionais têm uma convenção de usá-lo como um alias para variáveis "privadas" (ou ocultas).</p>
+	</section>
+
+	<section>
+		<h2>Aritmética</h2>
+
+		<p>É possível fazer cálculos com variáveis no JavaScript usando os operadores <code>+ - / * %</code> e <code>=</code>.</p>
+
+		<p class="important-info">Se houver qualquer string no meio de um cálculo, toda a declaração será convertida para texto. Por exemplo, <code>5 + "10"</code> se transforma em <code>"510"</code>.</p>
 	</section>
 </body>
 </html>

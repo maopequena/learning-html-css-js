@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <link rel="icon" type="image/x-icon" href="/src/img/favicon.ico">
-  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
+  <link rel="stylesheet" href="../../css/style.css">
   <meta name="keywords" content="HTML, CSS, JavaScript"> <!-- define palavras-chave para mecanismos de pesquisa -->
   <meta name="description" content="Gráficos"> <!-- define uma descrição para a página -->
   <meta name="author" content="Lizandra Silva (@maopequena)"> <!-- define o autor da página -->
@@ -30,14 +30,14 @@
 
     <section>
       <h3>Diferenças entre SVG e Canvas</h3>
-      <ul style="list-style-type: disc;">
+      <ul class="list-square">
         <li>SVG é uma linguagem para descrever gráficos 2D em XML, enquanto Canvas desenha gráficos 2D com JavaScript.</li>
         <li>SVG é baseado em XML, o que significa que cada elemento está disponível no SVG DOM. É possível vincular manipuladores de evento JavaScript a gráficos SVG.</li>
         <li>Em SVG, cada forma desenhada é armazenada como um objeto. Se os atributos de um objeto SVG forem alterados, o navegador pode processar imediatamente a imagem.</li>
         <li>Canvas é processado pixel por pixel. Quando o gráfico é desenhado, o navegador o esquece imediatamente. Se sua posição mudar, ele precisa ser redesenhado do zero, incluindo quaisuqer objetos que possam ter sido coberto pelo gráfico.</li>
       </ul>
       <br>
-      <img src="../img/svg-versus-canvas.png"/>
+      <img src="../../img/svg-versus-canvas.png"/>
     </section>
 
     <section>
@@ -132,7 +132,7 @@
       <h2>Exemplo de "canvas" com borda e JS de imagem</h2>
       <br>
       <canvas id="canvas7" width="600" height="600" style="border: 5px dotted var(--yellow);"></canvas>
-      <img id="homer" src="../img/homer.gif" alt="Homer.gif" hidden>
+      <img id="homer" src="../../img/homer.gif" alt="Homer.gif" hidden>
       <script>
         var c = document.getElementById("canvas7");
         var ctx = c.getContext("2d");

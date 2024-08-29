@@ -2,8 +2,8 @@
 <html lang="pt-BR">
   <meta charset="utf-8" />
   <head>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico" />
+    <link rel="stylesheet" href="../../css/style.css" />
     <meta name="keywords" content="HTML, CSS, JavaScript" />
     <meta name="description" content="Layout" />
     <meta name="author" content="Lizandra Silva (@maopequena)" />
@@ -231,7 +231,7 @@
           <p>Como a imagem tem um índice-z de 0, fica na frente do div interno.</p>
           <div style="position: relative; width: 600px; height: 600px; border: 4px solid var(--green); background-color: var(--table-border);">
             <div style="position: absolute; width: 400px; height: 400px; margin-left: 85px; margin-top: 85px; border: 4px solid var(--green); background-color: var(--lightest-grey);"></div>
-            <img src="../img/img_tree.png" style="position: absolute; z-index: 0;"/>
+            <img src="../../img/img_tree.png" style="position: absolute; z-index: 0;"/>
           </div>
         </article>
 
@@ -279,7 +279,7 @@
           <p><code>clear</code> deve corresponder ao <code>float</code> usado, isto é, se o elemento tiver <code>float: left</code>, o <code>clear</code> deve ser o mesmo.</p>
           <p>Valores de <code>clear</code>: <code>left</code>, <code>right</code>, <code>none</code>, <code>both</code> e <code>inherit</code>.</p>
           <p>Consulte também: <a href="https://www.w3schools.com/css/css_float_clear.asp#:~:text=Try%20it%20Yourself%20%C2%BB-,The%20clearfix%20Hack,-If%20a%20floated" target="_blank" rel="noopener noreferrer">Clearfix Hack</a>, <a href="https://www.w3schools.com/css/css_float_examples.asp" target="_blank" rel="noopener noreferrer">Exemplos de float</a> e <a href="https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/" target="_blank" rel="noopener noreferrer">The end of the clearfix hack?</a>.</p>
-          <img src="../img/all-float-properties.png" alt="Todas as propriedades de float"/>
+          <img src="../../img/all-float-properties.png" alt="Todas as propriedades de float"/>
         </article>
 
         <article>
@@ -306,7 +306,7 @@
 
         <article>
           <h2>Alinhamento horizontal e vertical de texto</h2>
-          <p>Para centralizar o texto dentro de um elemento, use <code><a href="../HTML/fontes-de-aprendizado.html#ref-p-text-align" target="_blank" rel="noopener noreferrer">text-align</a>: center;</code>. Por exemplo:</p>
+          <p>Para centralizar o texto dentro de um elemento, use <code>text-align: center;</code>. Por exemplo:</p>
 
           <p style="text-align: center; color: var(--green)"><em>Este texto está centralizado horizontalmente.</em></p>
         </article>
@@ -315,7 +315,7 @@
           <h2>Alinhamento horizontal e vertical de imagens</h2>
           <p>Para centralizar uma imagem, defina as margens esquerda e direita como <code>auto</code> e defina-a com <code>display: block;</code>. Por exemplo:</p>
 
-          <img src="../img/paris.jpg" alt="Paris" style="margin: 0 auto; display: block"/>
+          <img src="../../img/paris.jpg" alt="Paris" style="margin: 0 auto; display: block"/>
         </article>
 
         <article>
@@ -347,7 +347,7 @@
           <p>This image is floated to the right. It is also taller than the element containing it, so it overflows outside of its container:</p>
 
           <div style="border: 3px solid var(--green); padding: 10px; width: 500px">
-            <img class="img1" src="../img/pineapple.jpg" alt="Pineapple" width="170" height="170"/>
+            <img class="img1" src="../../img/pineapple.jpg" alt="Pineapple" width="170" height="170"/>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
           </div>
 
@@ -355,7 +355,7 @@
           <p>Add the clearfix hack to the containing element, to fix this problem:</p>
 
           <div style="border: 3px solid var(--green); padding: 10px; width: 500px" class="clearfix">
-            <img class="img2" src="../img/pineapple.jpg" alt="Pineapple" width="170" height="170"/>
+            <img class="img2" src="../../img/pineapple.jpg" alt="Pineapple" width="170" height="170"/>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellusimperdiet...
           </div>
         </article>
@@ -403,7 +403,7 @@
         <article>
           <h2>Layout de páginas da Web</h2>
           
-          <img src="../img/website-layout.png" alt="Layout de páginas da Web">
+          <img src="../../img/website-layout.png" alt="Layout de páginas da Web">
 
           <p>O cabeçalho geralmente fica no topo da página (ou logo abaixo do menu de navegação) e costuma apresentar um logotipo e o nome do site.</p>
           <p>A barra de navegação contém uma lista de links para ajudar os visitantes a navegar pelo site.</p>
@@ -424,11 +424,11 @@
           <p>Isso também serve para a propriedade <code>padding</code>.</p>
 
           <figure>
-            <img src="../img/box-model (3).png" alt="Modelo de caixa com propriedades lógicas">
+            <img src="../../img/box-model (3).png" alt="Modelo de caixa com propriedades lógicas">
             <figcaption>Modelo de caixa com propriedades lógicas</figcaption>
           </figure>
 
-          <p>Veja também: <a href="../HTML/css.html#box-model2">CSS (Cascading Style Sheets)</a> e <a href="../HTML/css-margens.html#box-model1">Margens e padding no CSS</a>.</p>
+          <p>Veja também: <a href="../css/css.html#box-model2">CSS (Cascading Style Sheets)</a> e <a href="../css/css-margens.html#box-model1">Margens e padding no CSS</a>.</p>
 
           <h3>Tamanho relativo</h3>
           <p>Para impedir que um elemento exceda determinada largura ou altura, costumamos usar as propriedades <code>max-width</code> e <code>max-height</code>. Suas contrapartes lógicas são <code>max-inline-size</code> e <code>max-block-size</code>. E para <code>min-width</code> e <code>min-height</code>, <code>min-inline-size</code> e <code>min-block-size</code>.</p>

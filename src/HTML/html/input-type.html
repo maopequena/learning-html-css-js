@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <link rel="icon" type="image/x-icon" href="/src/img/favicon.ico">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+  <link rel="stylesheet" href="../../css/style.css">
   <meta name="keywords" content="HTML, CSS, JavaScript"> <!-- define palavras-chave para mecanismos de pesquisa -->
   <meta name="description" content="Tipos de 'input': índice"> <!-- define uma descrição para a página -->
   <meta name="author" content="Lizandra Silva (@maopequena)"> <!-- define o autor da página -->
@@ -66,14 +66,14 @@
       <a href="https://www.w3schools.com/html/html_form_attributes_form.asp" target="_blank" id="gen-links"/>Mais atributos</a>
     </section>
 
-    <section>
+    <section id="submit">
       <p style="font-weight:300;">Todos os exemplos abaixo contêm o tipo "submit", que é o botão Enviar</p>
       <p style="font-weight:300;">Todos os exemplos abaixo contêm o tipo "reset", que é o botão Redefinir</p>
     </section>
 
     <section>
       <h2 id="text">Campo de texto simples, sobrenome com "readonly" e nome com "autofocus"</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="fname">Nome:</label><br>
         <input type="text" id="fname" name="fname" value="Digite seu nome" autofocus><br>
         <label for="lname">Sobrenome:</label><br>
@@ -85,7 +85,7 @@
 
     <section>
       <h2 id="password">Nome de usuário e senha, nome com "size" e senha com "maxlength"</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="username">Nome de usuário:</label><br>
         <input type="text" id="username" name="username" value="Digite seu nome de usuário" size="10"><br>
         <label for="pwd">Senha:</label><br>
@@ -98,7 +98,7 @@
     <section>
       <h2 id="radio">Botões de opção</h2>
       <p>Escolha sua linguagem Web favorita:</p>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <input type="radio" id="html" name="fav_language" value="HTML">
         <label for="html">HTML</label><br>
         <input type="radio" id="css" name="fav_language" value="CSS">
@@ -112,7 +112,7 @@
 
     <section>
       <h2 id="checkbox">Caixas de seleção</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <input type="checkbox" id="veiculo1" name="veiculo1" value="Bicicleta">
         <label for="vehicle1"> Eu tenho uma bicicleta</label><br>
         <input type="checkbox" id="veiculo2" name="veiculo2" value="Carro">
@@ -127,7 +127,7 @@
     <section>
       <h2 id="button">Botão</h2>
       <br>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <input type="button" onclick="alert('Olá, Mundo!')" value="Clique aqui!">
       </form>
     </section>
@@ -143,7 +143,7 @@
 
     <section>
       <h2 id="date">Seletor de datas</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="birthday">Selecione sua data de nascimento:</label>
         <input type="date" id="birthday" name="birthday"><br>
         <input style="margin: 10px 0;" type="submit" value="Enviar">
@@ -153,7 +153,7 @@
 
     <section>
       <h2 id="restriction">Seletor de datas com restrição usando "min" e "max"</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="datemax">Selecione uma data anterior a 01/01/1980:</label>
         <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
         <label for="datemin">Selecione uma data posterior a 01/01/2000:</label>
@@ -165,7 +165,7 @@
 
     <section>
       <h2 id="datetime-local">Seletor de data e hora, sem fuso horário</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="birthdaytime">Nascimento (data e hora):</label>
         <input type="datetime-local" id="birthdaytime" name="birthdaytime"><br>
         <input style="margin: 10px 0;" type="submit" value="Enviar">
@@ -175,7 +175,7 @@
 
     <section>
       <h2 id="email">Campo de e-mail</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="email">Digite seu e-mail:</label>
         <input type="email" id="email" name="email"><br>
         <input style="margin: 10px 0;" type="submit" value="Enviar">
@@ -185,14 +185,14 @@
 
     <section>
       <h2 id="image">Botão de envio com imagem</h2>
-      <form action="/src/img/well-done.gif">
-        <input type="image" src="/src/img/homer.gif" alt="Enviar" width="48" height="48"><br>
+      <form action="../../img/well-done.gif">
+        <input type="image" src="../../img/homer.gif" alt="Enviar" width="48" height="48"><br>
       </form>
     </section>
 
     <section>
       <h2 id="file">Seletor de arquivos, com "multiple"</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="myfile">Selecione os arquivos para enviar:</label><br>
         <input style="margin: 10px 0;" type="file" id="myfile" name="myfile" multiple><br>
         <input style="margin: 10px 0;" type="submit" value="Enviar">
@@ -202,7 +202,7 @@
 
     <section>
       <h2 id="hidden">Tipo oculto: visualizar no F12, nome com "required"</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="fname">First name*:</label>
         <input type="text" id="fname" name="fname" required><br><br>
         <input type="hidden" id="custId" name="custId" value="3487">
@@ -213,7 +213,7 @@
 
     <section>
       <h2 id="month">Seletor de mês e ano</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="bdaymonth">Nascimento (mês e ano):</label>
         <input type="month" id="bdaymonth" name="bdaymonth">
         <input style="margin: 10px 0;" type="submit" value="Enviar">
@@ -223,7 +223,7 @@
 
     <section>
       <h2 id="number">Campo de inserção numérico, com restrições e intervalo de 3</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="quantity">Quantidade (entre 0 and 99, somente múltiplos de 3):</label>
         <input type="number" id="quantity" name="quantity" min="0" max="99" step="3">
         <input style="margin: 10px 0;" type="reset" value="Redefinir">
@@ -241,7 +241,7 @@
 
     <section>
       <h2 id="search">Campo de pesquisa, aceita "Enter", com "autocomplete"</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="gsearch">Search Google:</label>
         <input type="search" id="gsearch" name="gsearch">
         <input style="margin: 10px 0;" type="submit" value="Pesquisar">
@@ -251,7 +251,7 @@
 
     <section>
         <h2 id="tel">Números de telefone, residencial está com "disabled"</h2>
-        <form action="/src/img/well-done.gif">
+        <form action="../../img/well-done.gif">
           <label for="phone">Digite seu número de celular:</label>
           <input type="tel" id="phone" name="phone" pattern="[1-9]{2}[0-9]{5}[0-9]{4}" title="Obrigatório 11 números"><br>
           <label for="phone">Digite seu número de telefone residencial:</label>
@@ -263,7 +263,7 @@
 
     <section>
       <h2 id="time">Seletor de horas</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="appt">Selecione uma hora:</label>
         <input type="time" id="appt" name="appt"><br>
         <input style="margin: 10px 0;" type="submit" value="Enviar">
@@ -273,7 +273,7 @@
 
     <section>
       <h2 id="url">Campo de inserção de URL, com "placeholder"</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="homepage">Digite um URL:</label>
         <input type="url" id="homepage" name="homepage" placeholder="Não esqueça de http(s)://"><br>
         <input style="margin: 10px 0;" type="submit" value="Enviar">
@@ -283,7 +283,7 @@
 
     <section>
       <h2 id="week">Seletor de semana</h2>
-      <form action="/src/img/well-done.gif">
+      <form action="../../img/well-done.gif">
         <label for="week">Selecione uma semana:</label>
         <input type="week" id="week" name="week"><br>
         <input style="margin: 10px 0;" type="submit" value="Enviar">

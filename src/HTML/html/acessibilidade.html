@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/x-icon" href="/src/img/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="../../img/favicon.ico" />
   <meta name="keywords" content="HTML, CSS, JavaScript" />
   <meta name="description" content="Acessibilidade e inclusão" />
   <meta name="author" content="Lizandra Silva (@maopequena)" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <title>Acessibilidade e inclusão</title>
 </head>
 <body>
@@ -117,7 +117,7 @@
 
   <section>
     <h2>Quando usar a ARIA?</h2>
-    <p>Com os <a href="../HTML/elementos-semanticos.html" target="iframe"">elementos semânticos</a>, há menos necessidade de usar as funções, propriedades e estados/valores da <abbr title="Accessible Rich Internet Applications">ARIA</abbr>. Siga estas cinco regras para garantir a conformidade:</p>
+    <p>Com os <a href="../html/elementos-semanticos.html" target="iframe"">elementos semânticos</a>, há menos necessidade de usar as funções, propriedades e estados/valores da <abbr title="Accessible Rich Internet Applications">ARIA</abbr>. Siga estas cinco regras para garantir a conformidade:</p>
 
     <h3>Regra 1: Não use a ARIA</h3>
     <p>A ARIA é obrigatória quando um elemento HTML não oferece suporte à acessibilidade, seja porque o design não permite a adição de um elemento HTML semântico ou porque o comportamento/recurso desejado não está disponível no HTML. Essas situações, entretanto, são raras.</p>
@@ -203,7 +203,7 @@
 
   <section>
     <h2>Estrutura do conteúdo</h2>
-    <p><strong>Observação</strong>: veja também a página <a href="../HTML/elementos-semanticos.html" target="iframe">Elementos semânticos</a> para saber mais sobre como estruturar adequadamente o conteúdo.</p>
+    <p><strong>Observação</strong>: veja também a página <a href="../html/elementos-semanticos.html" target="iframe">Elementos semânticos</a> para saber mais sobre como estruturar adequadamente o conteúdo.</p>
 
     <p>A tabela a seguir apresenta os elementos semânticos do HTML e seus pares na ARIA.</p>
 
@@ -288,7 +288,7 @@
     <p><code>&lt;title&gt;Episódio 22 - O Final | Temporada 3 | A Série&lt;/title&gt;</code></p>
 
     <h3>Idioma</h3>
-    <p>O atributo <code>lang</code> define o idioma padrão de toda a página. Esse atributo deve ser adicionado à tag <code>&lt;html&gt;</code>. Deve haver um código de idioma válido em todas as páginas, porque é ele que indica ao leitor de tela qual idioma usar. Saiba mais em <a href="../HTML/atributos.html#lang-attribute" target="iframe">Atributos: lang</a>.</p>
+    <p>O atributo <code>lang</code> define o idioma padrão de toda a página. Esse atributo deve ser adicionado à tag <code>&lt;html&gt;</code>. Deve haver um código de idioma válido em todas as páginas, porque é ele que indica ao leitor de tela qual idioma usar. Saiba mais em <a href="../html/atributos.html#lang-attribute" target="iframe">Atributos: lang</a>.</p>
     <p>Quando este atributo está totalmente ausente, o leitor de tela usa o idioma padrão definido pelo usuário. Por exemplo, se o leitor estiver definido para espanhol e o usuário visitar uma página em inglês, o leitor de tela tentará ler o texto em inglês com sotaque e cadência do espanhol. Isso pode resultar em um produto digital inutilizável e em um usuário frustrado.</p>
     <p>Também é possível definir o idioma de uma seção específica em uma página, mesmo que o atributo <code>lang</code> esteja definido na tag <code>&lt;html&gt;</code>. Por exemplo:</p>
     <pre>
@@ -307,7 +307,7 @@
 
     <h3>iFrames</h3>
 
-    <p>O elemento <code>&lt;iframe&gt;</code> é usado para hospedar outra página HTML ou conteúdo de terceiros na página. iFrames geralmente são usados para propagandas, vídeos, análises da Web e conteúdo interativo. <a href="../HTML/iframes.html" target="iframe">Saiba mais</a>.</p>
+    <p>O elemento <code>&lt;iframe&gt;</code> é usado para hospedar outra página HTML ou conteúdo de terceiros na página. iFrames geralmente são usados para propagandas, vídeos, análises da Web e conteúdo interativo. <a href="../html/iframes.html" target="iframe">Saiba mais</a>.</p>
     <p>Para torná-lo acessível, cada iframe com conteúdo distinto deve incluir um elemento de título dentro da tag pai, pois ele fornece ao leitor de tela mais informações sobre o conteúdo do iframe. Além disso, recomenda-se definir a rolagem da tela para "auto" ou "yes" nas configurações da tag <code>&lt;iframe&gt;</code>. Isso possibilita que pessoas com deficiências visuais consigam rolar para o conteúdo dentro do iframe, que talvez não esteja visível para elas. Recomenda-se também que o contêiner do iframe tenha altura e largura flexíveis.</p>
     <p>Exemplo:</p>
     <pre>
