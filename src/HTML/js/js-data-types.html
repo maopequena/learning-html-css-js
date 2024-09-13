@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Tipos de dados">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de dados</title>
+</head>
+<body>
+	<header>
+		<h1>Tipos de dados</h1>
+	</header>
+
+	<section>
+		<p>Em programação, o conceito de tipos de dados é muito importante. Sem entender os tipos de dados, o computador não conseguiria resolver a expressão a seguir, nem você.</p>
+
+		<pre>
+			<code>
+	let x = 16 + "Volvo";
+			</code>
+		</pre>
+
+		<p>Qual o resultado da expressão anterior? Essa soma faz sentido?</p>
+
+		<p>Já sabemos que o JavaScript trata qualquer soma que contenha strings como se todos os operandos fossem strings, então o resultado seria o mesmo que:</p>
+
+		<pre>
+			<code>
+	let x = "16" + "Volvo";
+			</code>
+		</pre>
+
+		<p>O JavaScript avalia a expressão da esquerda para a direita, então sequências diferentes produzem resultados diferentes.</p>
+
+		<pre>
+			<code>
+	let x = 16 + 4 + "Volvo"; // 20Volvo
+	let x = "Volvo" + 16 + 4; // Volvo164
+			</code>
+		</pre>
+
+		<p>Os tipos de dados em JavaScript são dinâmicos, o que significa que a mesma variável pode conter diferentes tipos de dados:</p>
+
+		<pre>
+			<code>
+	let x;       // x está indefinido
+	x = 5;       // Agora x é um número
+	x = "John";  // Agora x é uma sequência de caracteres
+			</code>
+		</pre>
+
+		<p>Há oito tipos de dados em JavaScript:</p>
+
+		<ul>
+			<li>Sequência de caracteres (strings)</li>
+			<li>Números</li>
+			<li>BigInt</li>
+			<li>Booleanos</li>
+			<li>Indefinido</li>
+			<li>Nulo</li>
+			<li>Símbolos</li>
+			<li>Objetos</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Sequência de caracteres</h2>
+
+		<p>Uma sequência de caracteres, string ou um texto é um grupo de letras, como "John Doe". As strings são definidas pelas aspas, simples ou duplas:</p>
+
+		<pre>
+			<code>
+	// Com aspas duplas:
+	let carName1 = "Volvo XC60";
+
+	// Com aspas simples:
+	let carName2 = 'Volvo XC60';
+			</code>
+		</pre>
+
+		<p>Para usar aspas dentro de uma string, use o símbolo inverso:</p>
+
+		<pre>
+			<code>
+	// Aspas simples dentro de aspas duplas:
+	let answer1 = "It's alright";
+
+	// Aspas simples dentro de aspas duplas:
+	let answer2 = "He is called 'Johnny'";
+
+	// Aspas duplas dentro de aspas simples:
+	let answer3 = 'He is called "Johnny"';
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Números</h2>
+
+		<p>Números em JavaScript são armazenados como decimais (também conhecidos como números flutuantes) e podem ser escritos com ou sem as casas decimais.</p>
+
+		<pre>
+			<code>
+	// Com decimais:
+	let x1 = 34.00;
+
+	// Sem decimais:
+	let x2 = 34;
+			</code>
+		</pre>
+
+		<p>Números muito grandes ou muito pequenos podem ser escritos com notação científica.</p>
+
+		<pre>
+			<code>
+	let y = 123e5;    // 12300000
+	let z = 123e-5;   // 0.00123
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>BigInt</h2>
+
+		<p>Todos os números em JavaScript são armazenados em um formato de número flutuante com 64 bits. O BigInt é um novo tipo de dado que pode ser usado para armazenar valores que são muito grandes para serem representados por um número normal do JavaScript.</p>
+
+		<pre>
+			<code>
+	let x = BigInt("123456789012345678901234567890");
+			</code>
+		</pre>
+
+		<p>Não é possível executar cálculos entre um BigInt e um número.</p>
+	</section>
+
+	<section>
+		<h2>Booleanos</h2>
+
+		<p>Booleanos só aceitam dois valores: <strong>true</strong> ou <strong>false</strong> e são usados para testes condicionais.</p>
+	</section>
+
+	<section>
+		<h2>Matrizes</h2>
+
+		<p>Matrizes são escritas com colchetes e seus itens são separados por vírgulas. O código a seguir declara (ou cria) uma matriz chamada "cars" que contém três itens (os nomes dos carros):</p>
+
+		<pre>
+			<code>
+	const cars = ["Saab", "Volvo", "BMW"];
+			</code>
+		</pre>
+
+		<p>Como em Python, o índice das matrizes começa em 0.</p>
+	</section>
+
+	<section>
+		<h2>Objetos</h2>
+
+		<p>Objetos são escritos com chaves e suas propriedades são escritas como pares de nome:valor, separadas por vírgulas.</p>
+
+		<pre>
+			<code>
+	const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+			</code>
+		</pre>
+
+		<p>O objeto acima tem quatro propriedades: firstName, lastName, age e eyeColor.</p>
+	</section>
+
+	<section>
+		<h2>O operador typeof</h2>
+
+		<p>Podemos usar este operador para descobrir o tipo de dado de uma variável.</p>
+
+		<pre>
+			<code>
+	typeof "John" // retorna "string"
+	typeof 3.14 // retorna "number"
+			</code>
+		</pre>
+	</section>
+	
+	<section>
+		<h2>Indefinido</h2>
+
+		<p>Uma variável sem valor é considerada "indefinida" e, portanto, tem o tipo <code>undefined</code>. Podemos, também, definir o valor como <code>undefined</code> para esvaziar uma variável.</p>
+
+		<pre>
+			<code>
+	let car;    // Como o valor é indefinido, o tipo também é
+	car = undefined;    // Idem
+			</code>
+		</pre>
+
+		<h3>Valores vazios</h3>
+
+		<p>Um valor vazio não é indefinido. Uma sequência de caracteres vazia tem um valor legal e um tipo:</p>
+
+		<pre>
+			<code>
+	let car = "";    // O valor é "", o typeof é "string"
+			</code>
+		</pre>
+	</section>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Let e Const">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let e Const</title>
+</head>
+<body>
+	<header>
+		<h1>Let e Const</h1>
+
+		<p>As palavras-chave <code>let</code> e <code>const</code> foram introduzidas no <a href="https://www.w3schools.com/js/js_es6.asp" target="_blank" rel="noopener noreferrer">ES6</a> (2015). As variáveis declaradas com essas palavras-chave têm escopo de bloco, isto é, devem ser declaradas antes do uso e não podem ser re-declaradas no mesmo escopo. Variáveis declaradas com <code>const</code> também não podem ser reatribuídas.</p>
+	</header>
+
+	<section>
+		<h2>O que significa reatribuir?</h2>
+
+		<pre>
+			<code>
+	const PI = 3.141592653589793;
+	PI = 3.14;      // Isso gera um erro
+	PI = PI + 10;   // Isso também
+			</code>
+		</pre>
+
+		<p>Reatribuir uma variável com <code>const</code> não é permitido.</p>
+
+		<pre>
+			<code>
+	const x = 2;     // Permitido
+	x = 2;           // Não permitido
+	var x = 2;       // Não permitido
+	let x = 2;       // Não permitido
+	const x = 2;     // Não permitido
+
+	{
+		const x = 2;   // Permitido
+		x = 2;         // Não permitido
+		var x = 2;     // Não permitido
+		let x = 2;     // Não permitido
+		const x = 2;   // Não permitido
+	}
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>O que significa redeclarar?</h2>
+
+		<p>Não é possível fazer o seguinte com <code>let</code>:</p>
+		<pre>
+			<code>
+	let x = "John Doe";
+	let x = 0;
+			</code>
+		</pre>
+
+		<p><code>var</code> pode ser redeclarada em qualquer lugar do código. <code>let</code> e <code>const</code> podem ser redeclarados em outros blocos. </p>
+
+		<p>Redeclarar <code>var</code> ou <code>let</code> como <code>const</code> no mesmo escopo não é permitido:</p>
+
+		<pre>
+			<code>
+	var x = 2;     // Permitido
+	const x = 2;   // Não permitido
+
+	{
+	let x = 2;     // Permitido
+	const x = 2;   // Não permitido
+	}
+
+	{
+	const x = 2;   // Permitido
+	const x = 2;   // Não permitido
+	}
+			</code>
+		</pre>
+
+		<p>Porém, podemos redeclarar uma variável com <code>const</code> em outro escopo (ou bloco):</p>
+
+		<pre>
+			<code>
+	const x = 2;   // Permitido
+	{
+  const x = 3;   // Permitido
+	}
+	{
+  const x = 4;   // Permitido
+	}
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>O que é "escopo de bloco"?</h2>
+
+		<p>Antes do ES6, o JavaScript oferecia somente o <strong>escopo global</strong> e o <strong>escopo de função</strong>. Após a introdução do ES6, com as palavras-chave <code>let</code> e <code>const</code>, também temos o <strong>escopo de bloco</strong>. As variáveis declaradas com essas palavras-chave dentro de um bloco (definido por <kbd>{ }</kbd>) não podem ser acessadas fora dele. Por exemplo:</p>
+
+		<pre>
+			<code>
+	const x = 10;
+	// Aqui x é 10
+
+	{
+	const x = 2;
+	// Aqui x é 2
+	}
+
+	// Aqui x é 10
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Escopo global</h2>
+
+		<p>Variáveis declaradas com a palavra-chave <code>var</code> sempre têm <strong>escopo global</strong> e NÃO podem ter escopo de bloco.</p>
+
+		<p>Variáveis declaradas com <code>let</code> NÃO podem ser re-declaradas, mas variáveis declaradas com <code>var</code> e <code>const</code> podem.</p> </p>
+
+		<p>Com <code>var</code>, as variáveis redeclaradas dentro de um bloco são válidas também fora do bloco. Então podemos usar <code>let</code> para impedir esse comportamento, já que redeclarar a variável com <code>let</code> só funciona dentro do bloco.</p>
+
+		<h3>Diferenças entre var, let e const</h3>
+
+		<picture>
+			<img src="../../img/vlc-differences.png" alt="Diferenças entre var, let e const">
+			<figcaption>Diferenças entre var, let e const</figcaption>
+		</picture>
+	</section>
+
+	<section>
+		<h2>Práticas recomendadas para var, let e const</h2>
+
+		<h3>Práticas recomendadas</h3>
+		
+		<ul>
+			<li>Dê preferência para usar <code>let</code> e <code>const</code>, já que têm <strong>escopo de bloco</strong>.</li>
+			<li>Lembre-se que <code>let</code> e <code>const</code> não podem ser redeclaradas.</li>
+			<li>Lembre-se de declarar variáveis com <code>let</code> ou <code>const</code> antes do seu uso.</li>
+			<li>Variáveis declaradas com <code>let</code> e <code>const</code> não são "içadas", isto é não podem ser iniciadas a qualquer momento no código.</li>
+			<li>Sempre declare variáveis com <code>let</code> quando souber que seu valor será alterado no futuro.</li>
+			<li>Sempre declare variáveis com <code>const</code> quando souber que seu valor NÃO será alterado no futuro.</li>
+		</ul>
+
+		<h3>Práticas não recomendadas</h3>
+
+		<ul>
+			<li><code>var</code> não precisa ser declarada antes do uso.</li>
+			<li><code>var</code> pode ser içada, isto é, pode ser iniciada a qualquer momento no código.</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Mais informações sobre const</h2>
+
+		<p>Use <code>const</code> para declarar:</p>
+
+		<ul>
+			<li>Uma nova matriz (array).</li>
+			<li>Um novo objeto.</li>
+			<li>Uma nova função.</li>
+			<li>Um novo regexp.</li>
+		</ul>
+
+		<h3>Objetos e matrizes constantes</h3>
+
+		<p>A palavra-chave <code>const</code> engana um pouco, porque não define, exatamente, um valor constante, mas uma referência constante a um valor.</p>
+		<p>Por causa disso, NÃO é possível:</p>
+
+		<ul>
+			<li>Reatribuir um valor constante.</li>
+			<li>Reatribuir uma matriz constante.</li>
+			<li>Reatribuir um objeto constante.</li>
+		</ul>
+
+		<p>Porém, é possível:</p>
+
+		<ul>
+			<li>Alterar os elementos de uma matriz constante.</li>
+			<li>Alterar as propriedades de um objeto constante.</li>
+		</ul>
+
+		<h4>Exemplos de matrizes constantes</h4>
+
+		<p>Podemos criar uma matriz constante:</p>
+		<pre>
+			<code>
+	const cars = ["Saab", "Volvo", "BMW"];
+			</code>
+		</pre>
+
+		<p>Alterar um de seus elementos:</p>
+
+		<pre>
+			<code>
+	cars[0] = "Toyota";
+			</code>
+		</pre>
+
+		<p>E adicionar um elemento:</p>
+
+		<pre>
+			<code>
+	cars.push("Audi");
+			</code>
+		</pre>
+
+		<p>Mas não podemos fazer isso:</p>
+
+		<pre>
+			<code>
+	const cars = ["Saab", "Volvo", "BMW"];
+	cars = ["Toyota", "Volvo", "Audi"];    // Isso gera um erro
+			</code>
+		</pre>
+
+		<h4>Exemplos de objetos constantes</h4>
+
+		<p>Podemos criar um objeto constante:</p>
+
+		<pre>
+			<code>
+	const car = {type:"Fiat", model:"500", color:"white"};
+			</code>
+		</pre>
+
+		<p>Alterar uma de suas propriedades:</p>
+
+		<pre>
+			<code>
+	car.color = "red";
+			</code>
+		</pre>
+
+		<p>E adicionar uma propriedade:</p>
+
+		<pre>
+			<code>
+	car.owner = "Johnson";
+			</code>
+		</pre>
+		
+		<p>Mas não podemos fazer isso:</p>
+
+		<pre>
+			<code>
+	const car = {type:"Fiat", model:"500", color:"white"};
+	car = {type:"Volvo", model:"EX60", color:"red"};    // Isso gera um erro
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Içamento de variáveis</h2>
+
+		<p>Como vimos anteriormente, variáveis declaradas com <code>var</code> podem ser içadas, isto é iniciadas a qualquer momento no código, mas não as declaradas com <code>const</code> ou <code>let</code>.</p>
+		<p>Isso significa que variáveis declaradas com <code>var</code> podem ser usadas antes de serem declaradas. Variáveis declaradas com <code>const</code>, se içadas, geram um <code>ReferenceError</code>.</p>
+	</section>
+</body>
+</html>

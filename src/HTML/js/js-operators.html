@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Operadores">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+</head>
+<body>
+	<header>
+		<h1>Operadores</h1>
+
+		<p>Use os operadores para realizar diferentes tipos de cálculos lógicos e matemáticos:</p>
+	</header>
+
+	<section>
+		<h2>Tipos de operadores</h2>
+
+		<p>Há diferentes tipos de operadores em JavaScript:</p>
+
+		<ul>
+			<li>Aritméticos</li>
+			<li>Atribuição</li>
+			<li>Comparação</li>
+			<li>Sequência de caracteres (strings)</li>
+			<li>Lógicos</li>
+			<li>Bitwise</li>
+			<li>Ternários</li>
+			<li>De tipo</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Operadores aritméticos</h2>
+
+		<p>Operadores aritméticos realizam cálculos com números, que podem ser literais, variáveis ou expressões.</p>
+
+		<pre>
+			<code>
+	let x = 100 + 50; // cálculo com literais
+	let x = a + b; // cálculo com variáveis
+	let x = (100 + 50) * a // cálculo com expressão
+			</code>
+		</pre>
+
+		<h3>Operadores e operandos</h3>
+
+		<p>Em um cálculo aritmético, os números são chamados de <strong>operandos</strong> e os símbolos que definem o cálculo são chamados de <strong>operadores</strong>.</p>
+
+		<table style="text-align: center;">
+			<tbody>
+				<tr>
+					<th>Operando</th>
+					<th>Operador</th>
+					<th>Operando</th>
+				</tr>
+				<tr>
+					<td>100</td>
+					<td>+</td>
+					<td>50</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>A tabela a seguir exibe os operadores aritméticos e descreve o que fazem.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th style="width:25%">Operador</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>Adição</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>Subtração</td>
+				</tr>
+				<tr>
+					<td>*</td>
+					<td>Multiplicação</td>
+				</tr>
+				<tr>
+					<td>**</td>
+					<td>Exponente (<a href="js_2016.asp">ES2016</a>, gera o mesmo resultado que <code>Math.pow(x, y)</code>)</td>
+				</tr>
+				<tr>
+					<td>/</td>
+					<td>Divisão</td>
+				</tr>
+				<tr>
+					<td>%</td>
+					<td>Módulo (resto da divisão)</td>
+				</tr>
+				<tr>
+					<td>++</td>
+					<td>Incremento</td>
+				</tr>
+				<tr>
+					<td>--</td>
+					<td>Decremento</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Em aritmética, a divisão de dois inteiros gera um quociente e um resto. Na matemática, o resultado de uma operação de módulo é o resto de uma divisão aritmética.</p>
+
+		<h3>O operador de precedência</h3>
+
+		<p>Considere a seguinte expressão:</p>
+
+		<pre>
+			<code>
+	let x = 100 + 50 * 3;
+			</code>
+		</pre>
+
+		<p>Neste caso, qual o resultado? 100 + 150? Ou 150 * 3? O que fazer primeiro: a adição ou a multiplicação?</p>
+		<p>Na escola aprendemos que a multiplicação vem primeiro, pois multiplicação e divisão têm <em>precedência</em> sobre adição e subtração. E para definir essa precedência usamos parênteses.</p>
+		<p>No JavaScript é igual! Podemos usar parênteses para definir qual cálculo deve ser realizado primeiro. Lembre-se que o computador não entende a regra da escola e precisamos instruir pelo código como fazer o cálculo, minuciosamente.</p>
+		<p>Caso não seja definida a precedência, o JavaScript assume que os cálculos serão feitos da esquerda para a direita.</p>
+	</section>
+
+	<section>
+		<h2>Operadores de atribuição</h2>
+
+		<p>Use os operadores a seguir para atribuir valores a variáveis em JavaScript.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th style="width:25%">Operador</th>
+					<th>Exemplo</th>
+					<th>É o mesmo que</th>
+				</tr>
+				<tr>
+					<td>=</td>
+					<td>x = y</td>
+					<td>x = y</td>
+				</tr>
+				<tr>
+					<td>+=</td>
+					<td>x += y</td>
+					<td>x = x + y</td>
+				</tr>
+				<tr>
+					<td>-=</td>
+					<td>x -= y</td>
+					<td>x = x - y</td>
+				</tr>
+				<tr>
+					<td>*=</td>
+					<td>x *= y</td>
+					<td>x = x * y</td>
+				</tr>
+				<tr>
+					<td>/=</td>
+					<td>x /= y</td>
+					<td>x = x / y</td>
+				</tr>
+				<tr>
+					<td>%=</td>
+					<td>x %= y</td>
+					<td>x = x % y</td>
+				</tr>
+				<tr>
+					<td>**=</td>
+					<td>x **= y</td>
+					<td>x = x ** y</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Como já vimos várias vezes, o operador de igual (<code>=</code>) <strong>atribui</strong> um valor para uma variável. Mas, como vemos na tabela anterior e na próxima, ele pode fazer muito mais!</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th style="width:30%">Operador</th>
+					<th>Exemplo</th>
+					<th>É o mesmo que</th>
+				</tr>
+				<tr>
+					<th colspan="3" style="text-align:center">Operadores de atribuição para deslocamento</th>
+				</tr>
+				<tr>
+					<td>&lt;&lt;=</td>
+					<td>x &lt;&lt;= y</td>
+					<td>x = x &lt;&lt; y</td>
+				</tr>
+				<tr>
+					<td>&gt;&gt;=</td>
+					<td>x &gt;&gt;= y</td>
+					<td>x = x &gt;&gt; y</td>
+				</tr>
+				<tr>
+					<td>&gt;&gt;&gt;=</td>
+					<td>x &gt;&gt;&gt;= y</td>
+					<td>x = x &gt;&gt;&gt; y</td>
+				</tr>
+				<tr>
+					<th colspan="3" style="text-align:center">Operadores de atribuição para bitwise</th>
+				</tr>
+				<tr>
+					<td>&amp;=</td>
+					<td>x &amp;= y</td>
+					<td>x = x &amp; y</td>
+				</tr>
+				<tr>
+					<td>^=</td>
+					<td>x ^= y</td>
+					<td>x = x ^ y</td>
+				</tr>
+				<tr>
+					<td>|=</td>
+					<td>x |= y</td>
+					<td>x = x | y</td>
+				</tr>
+				<tr></tr>
+					<th colspan="3" style="text-align:center">Operadores de atribuição lógicos</th>
+				</tr>
+				<tr>
+					<td>&amp;&amp;=</td>
+					<td>x &amp;&amp;= y</td>
+					<td>x = x &amp;&amp; (x = y)</td>
+				</tr>
+				<tr>
+					<td>||=</td>
+					<td>x ||= y</td>
+					<td>x = x || (x = y)</td>
+				</tr>
+				<tr>
+					<td>??=</td>
+					<td>x ??= y</td>
+					<td>x = x ?? (x = y)</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p><a href="https://www.w3schools.com/js/js_assignment.asp" target="_blank" rel="noopener noreferrer">Saiba mais</a> sobre os operadores apresentados nesta seção.</p>
+	</section>
+
+	<section>
+		<h2>Operadores de comparação</h2>
+
+		<table>
+			<tbody>
+				<tr>
+					<th style="width:12%">Operador</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>==</td>
+					<td>igual a</td>
+				</tr>
+				<tr>
+					<td>===</td>
+					<td>igual ao valor e ao tipo</td>
+				</tr>
+				<tr>
+					<td>!=</td>
+					<td>desigual</td>
+				</tr>
+				<tr>
+					<td>!==</td>
+					<td>desigual ao valor e ao tipo</td>
+				</tr>
+				<tr>
+					<td>&gt;</td>
+					<td>maior que</td>
+				</tr>
+				<tr>
+					<td>&lt;</td>
+					<td>menor que</td>
+				</tr>
+				<tr>
+					<td>&gt;=</td>
+					<td>maior ou igual a</td>
+				</tr>
+				<tr>
+					<td>&lt;=</td>
+					<td>menor ou igual a</td>
+				</tr>
+				<tr>
+					<td>?</td>
+					<td>operador ternário</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Todos os operadores acima também podem ser usados para comparar texto:</p>
+
+		<pre>
+			<code>
+	let text1 = "A";
+	let text2 = "B";
+	let result = text1 < text2; // resultado = true
+
+	let text1 = "20";
+	let text2 = "5";
+	let result = text1 < text2; // resultado = true
+			</code>
+		</pre>
+
+		<p>O sinal de adição (<code>+</code>) e seus similares de atribuição (<code>+=</code>) também  podem ser usados com texto para concatenação:</p>
+
+		<pre>
+			<code>
+	let text1 = "What a very ";
+	text1 += "nice day"; // resultado de text1 = "What a very nice day"
+			</code>
+		</pre>
+
+		<p class="important-info"><strong>Observação</strong>: ao somar números e strings de números, a string <strong>SEMPRE</strong> vence e ambos os valores tornam-se strings:</p>
+
+		<pre class="important-info">
+			<code style="font-style: italic;">
+	let x = 5 + 5; // x = "10"
+	let y = "5" + 5; // y = "55"
+	let z = "Hello" + 5; // z = "Hello5"
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Operadores lógicos</h2>
+
+		<table>
+			<tbody>
+				<tr>
+					<th style="width:12%">Operador</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>&amp;&amp;</td>
+					<td>E lógico</td>
+				</tr>
+				<tr>
+					<td>||</td>
+					<td>OU lógico</td>
+				</tr>
+				<tr>
+					<td>!</td>
+					<td>NÃO lógico</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Operadores de tipo</h2>
+
+		<table>
+			<tbody>
+				<tr>
+				<th style="width:30%">Operador</th>
+				<th>Descrição</th>
+				</tr>
+				<tr>
+				<td>typeof</td>
+				<td>Retorna o tipo de uma variável</td>
+				</tr>
+				<tr>
+				<td>instanceof</td>
+				<td>Retorna "true" se um objeto é uma instância de um tipo de objeto</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Operadores bitwise</h2>
+
+		<p>Operadores de bit manipulam números de 32 bits. Qualquer operando numérico na operação é convertido em um número de 32 bits. O resultado é convertido de volta para um número em JavaScript.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th style="width:12%">Operador</th>
+					<th style="width:25%">Descrição</th>
+					<th>Exemplo</th>
+					<th>É o mesmo que</th>
+					<th>Resultado</th>
+					<th style="width:15%">Decimal</th>
+				</tr>
+				<tr>
+					<td>&amp;</td>
+					<td>E</td>
+					<td>5 &amp; 1</td>
+					<td>0101 &amp; 0001</td>
+					<td>0001</td>
+					<td>&nbsp;1</td>
+				</tr>
+				<tr>
+					<td>|</td>
+					<td>OU</td>
+					<td>5 | 1</td>
+					<td>0101 | 0001</td>
+					<td>0101</td>
+					<td>&nbsp;5</td>
+				</tr>
+				<tr>
+					<td>~</td>
+					<td>NÃO</td>
+					<td>~ 5</td>
+					<td>&nbsp;~0101</td>
+					<td>1010</td>
+					<td>&nbsp;10</td>
+				</tr>
+				<tr>
+					<td>^</td>
+					<td>OU EXCLUSIVO</td>
+					<td>5 ^ 1</td>
+					<td>0101 ^ 0001</td>
+					<td>0100</td>
+					<td>&nbsp;4</td>
+				</tr>
+				<tr>
+					<td>&lt;&lt;</td>
+					<td>deslocar um bit à esquerda (efetivamente, multiplicar por 2)</td>
+					<td>5 &lt;&lt; 1</td>
+					<td>0101 &lt;&lt; 1</td>
+					<td>1010</td>
+					<td>&nbsp;10</td>
+				</tr>
+					<tr>
+					<td>&gt;&gt;</td>
+					<td>deslocar um bit à direita (efetivamente, dividir por 2)</td>
+					<td>5 &gt;&gt; 1</td>
+					<td>0101 &gt;&gt; 1</td>
+					<td>0010</td>
+					<td>&nbsp; 2</td>
+				</tr>
+				<tr>
+					<td>&gt;&gt;&gt;</td>
+					<td>deslocamento não atribuído à direita</td>
+					<td>5 &gt;&gt;&gt; 1</td>
+					<td>0101 &gt;&gt;&gt; 1</td>
+					<td>0010</td>
+					<td>&nbsp; 2</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Os exemplos acima usam exemplos não atribuídos de 4 bits, mas o JavaScript usa números atribuídos de 32 bits. Por causa disso, em JavaScript, ~ 5 não retorna 10, mas sim -6. Isto é, ~00000000000000000000000000000101 retorna 11111111111111111111111111111010.</p>
+
+		<p>Para uma explicação completa dos operadores bitwise, consulte o vídeo <a href="https://youtu.be/JbGf_hd6g_Q?si=lIYUHTCXD4P4E4SU" target="_blank" rel="noopener noreferrer">Operadores Bitwise em Javascript - Curso de Javascript Moderno - Aula 08</a> de CFBCursos.</p>
+	</section>
+</body>
+</html>

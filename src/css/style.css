@@ -178,6 +178,16 @@ a {
 }
 
 /* Define os estilos de elementos mais específicos */
+figcaption {
+	font-size: 0.9em;
+	font-weight: 700;
+	font-style: italic;
+	color: var(--light-grey);
+	text-align: left;
+	margin-left: 5px;
+	max-width: 50ch;
+	padding-top: 5px;
+}
 code {
   font-family: 'Spline Sans Mono',monospace;
   font-size: 0.9em;
