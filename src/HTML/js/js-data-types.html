@@ -70,7 +70,7 @@
 	<section>
 		<h2>Sequência de caracteres</h2>
 
-		<p>Uma sequência de caracteres, string ou um texto é um grupo de letras, como "John Doe". As strings são definidas pelas aspas, simples ou duplas:</p>
+		<p>Uma sequência de caracteres, string ou um texto é um grupo de letras, como "John Doe". Ela pode conter 0 ou mais caracteres, sempre entre aspas, simples ou duplas:</p>
 
 		<pre>
 			<code>
@@ -96,6 +96,152 @@
 	let answer3 = 'He is called "Johnny"';
 			</code>
 		</pre>
+
+		<p>Também é possível "escapar" os caracteres de aspas:</p>
+
+		<pre>
+			<code>
+	let answer1 = "It\'s alright";
+	let answer2 = "He is called \"Johnny\"";
+	let answer3 = 'He is called \'Johnny\'';
+			</code>
+		</pre>
+
+		<h3>Strings complexas</h3>
+
+		<p>As <strong>template strings</strong> são definidas pelo acento da crase (<kbd>` `</kbd>) e possibilitam usar aspas simples e duplas sem o "escape". Por exemplo:</p>
+
+		<p><code>let text = `He's often called "Johnny"`;</code></p>
+
+		<p>Dessa forma, podemos escrever o código em várias linhas e o HTML quebra o texto de acordo:</p>
+
+		<pre>
+			<code>
+	let text =
+	`The quick
+	brown fox
+	jumps over
+	the lazy dog`;
+			</code>
+		</pre>
+
+		<h3>Comprimento de strings</h3>
+
+		<p>Para descobrir o comprimento de uma sequência de caracteres, use a propriedade <code>length</code>:</p>
+
+		<pre>
+			<code>
+	let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	let length = text.length; // 26
+			</code>
+		</pre>
+
+		<h3>Caracteres de escape</h3>
+
+		<p>Como as sequências de caracteres devem ser escritas com aspas, o JavaScript pode interpretar incorretamente a seguinte frase:</p>
+
+		<pre>
+			<code>
+				let text = "We are the so-called "Vikings" from the north.";
+			</code>
+		</pre>
+
+		<p>Ela será cortada logo após "so-called ". Para resolver isso, podemos usar os caracteres de escape (<kbd>\</kbd>):</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th width="25%">Código</th>
+					<th>Resultado</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>\'</td>
+					<td>'</td>
+					<td>Aspas simples</td>
+				</tr>
+				<tr>
+					<td>\"</td>
+					<td>"</td>
+					<td>Aspas duplas</td>
+				</tr>
+				<tr>
+					<td>\\</td>
+					<td>\</td>
+					<td>Barra invertida</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Há seis outras sequências de escape válidas, que originalmente controlavam máquinas de escrever, teletipos e máquinas de fax. Hoje em dia elas não fazem muito sentido, especialmente no HTML.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th width="25%">Código</th>
+					<th>Resultado</th>
+				</tr>
+				<tr>
+					<td>\b</td>
+					<td>Retorno</td>
+				</tr>
+				<tr>
+					<td>\f</td>
+					<td>Alimentação de formulário</td>
+				</tr>
+				<tr>
+					<td>\n</td>
+					<td>Nova linha</td>
+				</tr>
+				<tr>
+					<td>\r</td>
+					<td>Enter</td>
+				</tr>
+				<tr>
+					<td>\t</td>
+					<td>Tabulação horizontal</td>
+				</tr>
+				<tr>
+					<td>\v</td>
+					<td>Tabulação vertical</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>Quebras de linhas longas</h3>
+
+		<p>Devido à legibilidade, os programadores costumam evitar linhas de código muito longas. Para quebrar uma linha de código com segurança, faça-o depois do operador:</p>
+
+		<pre>
+			<code>
+	document.getElementById("demo").innerHTML =
+	"Hello Dolly!";
+			</code>
+		</pre>
+
+		<p>No caso de sequências de caracteres, use o operador de concatenação (operador de adição):</p>
+
+		<pre>
+			<code>
+	document.getElementById("demo").innerHTML = "Hello " +
+	"Dolly!";
+			</code>
+		</pre>
+
+		<h3>Sequências de caracteres como objetos</h3>
+
+		<p>Normalmente, as sequências de caracteres são valores primitivos, criadas a partir de literais, mas também podem ser definidas como objetos, com a palavras-chave <code>new</code>.</p>
+
+		<pre>
+			<code>
+	let x = "John";
+	let y = new String("John");
+			</code>
+		</pre>
+
+		<h3>Métodos de sequências de caracteres</h3>
+
+		
 	</section>
 
 	<section>

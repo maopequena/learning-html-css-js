@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Eventos">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+<body>
+	<header>
+		<h1>Eventos</h1>
+	</header>
+
+	<section>
+		<p>Eventos em HTML são "<strong>coisas</strong>"" que acontecem com o HTML. Ao usar JavaScript em páginas HTML, ele pode "<em>reagir</em>"" a esses eventos.</p>
+
+		<p>Um evento pode ser algo que o navegador ou que o usuário faz. Eis alguns exemplos de eventos:</p>
+
+		<ul>
+			<li>Uma página HTML termina de carregar</li>
+			<li>Uma alteração a um campo no HTML</li>
+			<li>Um clique em um botão no HTML</li>
+		</ul>
+
+		<p>Geralmente, quando o evento ocorre, podemos querer fazer algo. O JavaScript nos permite executar código ao detectar um evento. O HTML aceita que atributos manipuladores de eventos, <strong>com código JavaScript</strong>, sejam adicionados aos elementos usando aspas simples ou duplas.</p>
+
+		<p>No exemplo a seguir, adicionamos o atributo <code>onclick</code> a um elemento <code>&lt;button&gt;</code>:</p>
+
+		<pre>
+			<code>
+				&lt;button onclick="document.getElementById('demo').innerHTML = Date()"&gt;The time is?&lt;/button&gt;
+			</code>
+		</pre>
+
+		<p>Este código altera o conteúdo do elemento com a id="demo". No exemplo a seguir, o código altera o conteúdo em seu próprio elemento, usando <code>self.innerHTML</code>, e o resultado do clique aparece como o nome do botão.</p>
+
+		<pre>
+			<code>
+				&lt;button onclick="this.innerHTML = Date()"&gt;The time is?&lt;/button&gt;
+			</code>
+		</pre>
+
+		<p>Note que um código JavaScript geralmente apresenta várias linhas e é comum ver os atributos de eventos chamando funções.</p>
+	</section>
+
+	<section>
+		<h2>Eventos comuns no HTML</h2>
+
+		<p>A lista a seguir apresenta alguns dos eventos de HTML mais comuns:</p>
+
+		<table class="ws-table-all" style="width: 100%">
+			<tbody>
+				<tr>
+					<th>Evento</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>onchange</td>
+					<td>Um elemento HTML sofre uma alteração</td>
+				</tr>
+				<tr>
+					<td>onclick</td>
+					<td>O usuário clica em um elemento HTML</td>
+				</tr>
+				<tr>
+					<td>onmouseover</td>
+					<td>O usuário passa o mouse sobre um elemento HTML</td>
+				</tr>
+				<tr>
+					<td>onmouseout</td>
+					<td>O usuário tira o mouse de um elemento HTML</td>
+				</tr>
+				<tr>
+					<td>onkeydown</td>
+					<td>O usuário pressiona uma tecla do teclado</td>
+				</tr>
+				<tr>
+					<td>onload</td>
+					<td>O navegador termina de carregar a página</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>A lista é ainda mais longa, consulte a <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank" rel="noopener noreferrer">Referência sobre eventos JavaScript relacionados ao DOM</a> no site da w3schools ou <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement" target="_blank" rel="noopener noreferrer">no MDN</a>.</p>
+	</section>
+
+	<section>
+		<h2>Manipuladores de eventos</h2>
+
+		<p>Podem ser usados para manipular e verificar digitação do usuário, ações do usuário e ações do navegador:</p>
+
+		<ul>
+			<li>Coisas que devem ser feitas sempre que a página carrega</li>
+			<li>Coisas que devem ser feitas ao fechar a página</li>
+			<li>Uma ação que deve ser executada quando um usuário clica em um botão</li>
+			<li>Conteúdo que deve ser verificado quando o usuário insere dados</li>
+			<li>E muito mais...</li>
+		</ul>
+
+		<p>Podemos usar diversos métodos para que o JavaScript trate os eventos:</p>
+
+		<ul>
+			<li>Os atributos do evento HTML podem executar diretamente o código JavaScript</li>
+			<li>Os atributos do evento HTML podem chamar funções JavaScript</li>
+			<li>Você pode atribuir suas próprias funções manipuladoras de eventos a elementos HTML</li>
+			<li>Você pode impedir que os eventos sejam enviados ou manipulados</li>
+			<li>E muito mais...</li>
+		</ul>
+	</section>
+</body>
+</html>

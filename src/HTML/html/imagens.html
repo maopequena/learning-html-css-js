@@ -164,7 +164,7 @@
 
     <section>
       <p>Os atributos <code>width</code> e <code>height</code> definem, respectivamente, a largura e a altura da imagem a ser exibida. Ao definir <code>width=100%</code>, a imagem se torna responsiva de acordo com o dispositivo, e se adéqua ao tamanho da tela em que a imagem é exibida.</p>
-      <p>Os atributos <code>width</code>, <code>height</code> e <code>style=width:XXpx;height:XXpx"</code> são todos válidos, porém recomenda-se usar <code>style</code> para que folhas de estilo CSS e a tag <code>&lt;style&gt;</code> de <code>&lt;head&gt;</code> não alterem o tamanho das imagens.</p>
+      <p>Os atributos <code>width</code>, <code>height</code> e <code>style="width:XXpx;height:XXpx"</code> são todos válidos, porém recomenda-se usar <code>style</code> para que folhas de estilo CSS e a tag <code>&lt;style&gt;</code> de <code>&lt;head&gt;</code> não alterem o tamanho das imagens.</p>
       <h3>Imagem Goat Tip com os atributos width 500px e height 130px, sem style e com link para a página Links e âncoras</h3>
       <a href="../html/links-e-ancoras.html"><img src="../../img/goat-tip.jpeg" alt="Goat Tip" width="500px" height="130px"></a>
 
@@ -199,7 +199,7 @@
           <area shape="rect" coords="10, 20, 35, 45" href="../HTML/formatacao.html" alt="Mapa">
         </map>
       <br>
-      <h3>Como funciona o <code>&lt;map&gt;</code>?</h3>
+      <h3>Como funciona o &lt;map&gt;?</h3>
       <p>Um mapa de imagem possibilita realizar diferentes ações dependendo da área clicada na imagem. Para criá-lo são necessários uma imagem e o código HTML que descreve as áreas clicáveis.</p>
       <p>Insira a imagem com a tag <code>&lt;img&gt;</code>, usando o atributo <code>usemap</code>. O valor de <code>usemap</code> recebe uma hash tag (<code>#</code>) seguida do nome do mapa de imagem, e é usado como um link de âncora, para criar um relacionamento entre a imagem e o mapa. </p>
       <p>Em seguida, adiciona-se o elemento <code>&lt;map&gt;</code>, que é usado para criar um mapa da imagem e é vinculado à imagem com o atributo chamado <code>usemap</code>.</p>
@@ -213,33 +213,33 @@
     <section>
       <h2>Imagens de fundo</h2>
       <p>Qualquer elemento HTML pode ter uma imagem de fundo. Para fazer isso, use o atributo <code>style</code> com a propriedade <code>background-image</code> ou no elemento <code>&lt;style&gt;</code> da seção <code>&lt;head&gt;</code> da página. Se toda a página deve ter uma imagem de fundo, especifique-a no elemento <code>&lt;body&gt;</code>.</p>
-      <p>Para evitar que a imagem se repita por ser menor que a altura ou a largura da página, usar <code>background-repeat: no-repeat</code> no elemento <code>&lt;style&gt;</code> da seção <code>&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
+      <p>Para evitar que a imagem não se repita por ser menor que a altura ou a largura da página, usar <code>background-repeat: no-repeat</code> no elemento <code>&lt;style&gt;</code> da seção <code>&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
       <p>Para que a imagem de fundo cubra todo o elemento (página, div, caixa, etc.), definir <code>background-size: cover</code> no elemento <code>&lt;style&gt;</code> da seção <code>&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
       <p>E para garantir que o elemento inteiro sempre esteja coberto, usar <code>background-attachment: fixed</code> no elemento <code>&lt;style&gt;</code> da seção <code>&lt;head&gt;</code> ou no CSS. NÃO ESQUEÇA O PONTO-E-VÍRGULA NO FINAL!</p>
       <p><code>background-size: 100% 100%</code> estica a imagem e se adéqua ao redimensionamento da janela.</p>
 
       <div style="background-image: url(../../img/fundo-base.jpg); width: 300px; height: 300px; background-attachment:local;background-size: cover;">
-      <p style="color: azure; font-size: 20px;">Elemento <code>&lt;div&gt;</code> com imagem de fundo e <code>background-attachment: local</code> e <code>background-size: cover</code></p>
+      <p style="color: azure; font-size: 20px;">Elemento &lt;div&gt; com imagem de fundo, background-attachment: local e background-size: cover</p>
       </div>
 
       <div style="background-image: url(../../img/fundo-base.jpg); width: 300px; height: 300px; background-attachment:fixed;background-size: cover;">
-      <p style="color: azure; font-size: 20px;">Elemento <code>&lt;div&gt;</code> com imagem de fundo e <code>background-attachment: fixed</code> e <code>background-size: cover</code></p>
+      <p style="color: azure; font-size: 20px;">Elemento &lt;div&gt; com imagem de fundo, background-attachment: fixed e background-size: cover</p>
       </div>
     </section>
 
     <section>
-      <h2 id="imagens-picture">Elemento "picture"</h2>
+      <h2 id="imagens-picture">Elemento &lt;picture&gt;</h2>
       <p>O elemento HTML <code>&lt;picture&gt;</code> fornece mais flexibilidade ao especificar recursos de imagem. Ele contém um ou mais elementos <code>&lt;source&gt;</code>, cada um específico a diferentes imagens no atributo <code>srcset</code>. Assim, o navegador pode escolher a imagem que melhor se ajusta à visualização atual e/ou ao dispositivo. Cada elemento <code>&lt;source&gt;</code> recebe um atributo <code>media</code> que define quando a imagem é mais adequada.</p>
       <p>Com este elemento, o navegador procura pelo primeiro elemento <code>source</code> em que há correspondência do tamanho da mídia em relação à largura do dispositivo atual, e busca a imagem especificada no atributo <code>srcset</code>. O elemento <code>img</code> é OBRIGATÓRIO como a última tag do bloco de declaração da imagem, e é usado para fornecer retrocompatibilidade para navegadores que não oferecem suporte ao elemento <code>picture</code>, ou se nenhuma das tags <code>source</code> corresponder.</p>
 
       <p>Redimensione a janela para ver esta imagem mudar:<br>
         <picture>
-          <source media="(min-width: 650px)" srcset="../../img/colorfull-bird.jpg">
-          <source media="(min-width: 465px)" srcset="../../img/bike-flesh.jpeg">
+          <source media="(min-width: 800px)" srcset="../../img/colorfull-bird.jpg">
+          <source media="(max-width: 799px)" srcset="../../img/bike-flesh.jpeg">
           <img src="../../img/colorfull-bird.jpg" style="width: auto;">
         </picture>
       </p>
-      <h3>Quando usar o elemento <code>picture</code>?</h3>
+      <h3>Quando usar o elemento picture?</h3>
         <ol>
           <li>Se o dispositivo apresenta uma tela pequena, não é necessário carregar um arquivo de imagem grande. O navegador usará o primeiro elemento <code>&lt;source&gt;</code> que corresponder aos valores do atributo, e ignorará os elementos seguintes.</h4>
           <li>Alguns navegadores ou dispositivos podem não oferecer suporte a todos os formatos de imagem. Usando o elemento <code>&lt;picture&gt;</code> é possível adicionar imagens para todos os formatos e o navegador usará o primeiro formato que reconhecer, ignorando os restantes.</h4>
@@ -247,14 +247,10 @@
     </section>
 
     <section>
-        <h2>Imagem com o atributo "float" de "style"</h2>
+        <h2>Imagem com o atributo float de style</h2>
         <p>O atributo CSS <code>float</code> coloca a imagem "flutuando" ao lado do texto, à esquerda (<code>float: left</code>) ou à direita (<code>float: right</code>).</p>
           <div>
-          <img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="float: left; text-align: left;">
-          </div>
-          <br>
-          <div>
-          <img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="float: right;" text-align="right">
+          <img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="float: right; text-align: right;">
           </div>
     </section>
 
@@ -270,7 +266,7 @@
       <h2>Estilizar imagens usando CSS</h2>
       <p>Algumas propriedades do CSS que ajudam a estilizar imagens:</p>
 
-      <h3><code>border-radius</code></h3>
+      <h3>border-radius</h3>
 
       <figure><img style="border-radius: 5px;" src="../../img/bike-flesh.jpeg" alt="bike-flesh">
       <figcaption>border-radius: 5px</figcaption>
@@ -279,7 +275,7 @@
       <figure><img style="border-radius: 50%;" src="../../img/bike-flesh.jpeg" alt="bike-flesh">
       <figcaption>border-radius: 50%</figcaption></figure>
 
-      <h3><code>border</code></h3>
+      <h3>border</h3>
 
       <figure><img style="border: 1px solid var(--table-border); border-radius: 4px; padding: 5px; width: 250px; background-color: var(--lightest-grey);" src="../../img/colorfull-bird.jpg" alt="colorful-bird">
       <figcaption>border: 5px solid var(--table-border) with border-radius and background color</figcaption></figure>
@@ -339,54 +335,54 @@
 
       <p>A propriedade <code>filter</code> oferece vários filtros para alterar imagens:</p>
 
-        <h4><code>grayscale</code></h4>
+        <h4>grayscale</h4>
         <figure><img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: grayscale(70%);">
         <figcaption>filter: grayscale(70%)</figcaption></figure>
 
-        <h4><code>blur</code></h4>
+        <h4>blur</h4>
 
         <figure><img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: blur(2px);">
         <figcaption>filter: blur(2px)</figcaption></figure>
         
-        <h4><code>brightness</code></h4>
+        <h4>brightness</h4>
 
         <figure><img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: brightness(1.5);">
         <figcaption>filter: brightness(1.5)</figcaption></figure>
 
-        <h4><code>contrast</code></h4>
+        <h4>contrast</h4>
 
         <figure><img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: contrast(0.5);">
         <figcaption>filter: contrast(0.5)</figcaption></figure>
 
-        <h4><code>huerotate</code></h4>
+        <h4>hue-rotate</h4>
 
         <figure><img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: hue-rotate(250deg);">
         <figcaption>filter: hue-rotate(250deg)</figcaption></figure>
 
-        <h4><code>invert</code></h4>
+        <h4>invert</h4>
 
         <figure><img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: invert(100%);">
         <figcaption>filter: invert(100%)</figcaption></figure>
 
-        <h4><code>opacity</code></h4>
+        <h4>opacity</h4>
 
         <figure><img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: opacity(0.3);">
         <figcaption>filter: opacity(0.3)</figcaption></figure>
 
-        <h4><code>saturate</code></h4>
+        <h4>saturate</h4>
 
         <figure><img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: saturate(1.5);">
         <figcaption>filter: saturate(1.5)</figcaption></figure>
 
-        <h4><code>sepia</code></h4>
+        <h4>sepia</h4>
 
         <figure><img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: sepia(100%);">
         <figcaption>filter: sepia(100%)</figcaption></figure>
 
-        <h4><code>shadow</code></h4>
+        <h4>drop-shadow</h4>
 
         <figure><img src="../../img/kid-correspondence.jpeg" alt="Kid Correspondence" style="filter: drop-shadow(8px 8px 10px var(--orange));">
-        <figcaption>filter: drop-shadow(8px 8px 10px green)</figcaption></figure>
+        <figcaption>filter: drop-shadow(8px 8px 10px var(--orange))</figcaption></figure>
 
         <h3>Sobreposição (overlay)</h3>
 
@@ -401,7 +397,7 @@
 
         <p><a href="https://www.w3schools.com/css/css3_images.asp" target="_blank" rel="noopener noreferrer">Mais exemplos</a></p>
 
-        <h3><code>object-fit</code></h3>
+        <h3>object-fit</h3>
 
         <p>Esta propriedade define como uma imagem ou um video deve ser redimensionado para adequar-se ao contêiner pai. Ela aceita os seguintes valores:</p>
 
@@ -413,9 +409,9 @@
           <li><code>scale-down</code>: a imagem é reduzida para seu menor tamanho: <code>none</code> ou <code>contain</code>.</li>
         </ul>
 
-        <h3><code>object-position</code></h3>
+        <h3>object-position</h3>
 
-        <p>Esta propriedade define como uma imagem ou um video deve ser posicionado para adequar-se ao contêiner pai, usando as <strong>coordenadas X e Y em porcentagens</strong>. Ela é ideal para ser usada com a propriedade <code>object-fit</code>, já que proporciona definir qual parte da imagem deve aparecer na área redimensionada.</p>
+        <p>Esta propriedade define como uma imagem ou um video deve ser posicionado para adequar-se ao contêiner pai, usando as <strong>coordenadas X e Y em porcentagens</strong>. Ela é ideal para ser usada com a propriedade <code>object-fit</code>, já que possibilita definir qual parte da imagem deve aparecer na área redimensionada.</p>
 
         <h3>Máscaras</h3>
 
@@ -426,6 +422,7 @@
         <p>Para usar uma imagem PNG ou SVG como a camada de máscara, use o valor <code>url()</code> para definir a imagem. Essa imagem precisa ter uma área transparente ou semi-transparente. Por exemplo:</p>
 
         <img class="mask-5terre" src="../../img/img_5terre.jpg" alt="W3 Logo with Cinque Terre background using mask-image layer">
+				&lt;img class="mask-5terre" src="../../img/img_5terre.jpg" alt="W3 Logo with Cinque Terre background using mask-image layer"&gt;
 
         <p><strong>Observação</strong>: usamos as propriedades <code>-webkit-mask-image</code> e <code>-webkit-mask-repeat</code> para fornecer compatibilidade com navegadores que ainda não suportam <code>mask-image</code>. A propriedade <code>mask-repeat</code> impede a repetição de uma máscara menor.</p>
 
@@ -447,7 +444,7 @@
 
         <img class="universe-mask" src="../../img/universe-galaxy.jpg" alt="Universe galaxy with SVG mask">
 
-        <p>Note que essas máscaras podem ser feitas também com texto usando a propriedade <a href="https://codepen.io/pierrinho/pen/NEYmLO" target="_blank"><code>background-clip: text</code></a>. Outros exemplos do uso de máscaras: <a href="https://www.frontendhero.dev/tutorial/mask-text-with-image/" target="_blank" rel="noopener noreferrer">1</a>, <a href="https://www.youtube.com/watch?v=nstRtC_C8yY" target="_blank" rel="noopener noreferrer">2</a>, <a href="https://youtu.be/FCuNtCq3nRg?si=MhwkMWOqeeyipOTm" target="_blank" rel="noopener noreferrer">3</a>, <a href="https://youtu.be/9Kr3T4Ndl-o?si=16wXdNNObtMsT6Gc">4</a> e <a href="https://youtu.be/dldpud1PuL8?si=a2sqJcFGiOIzvaf6" target="_blank" rel="noopener noreferrer">5</a>.</p>
+        <p>Note que essas máscaras podem ser feitas também com texto usando a propriedade <a href="https://codepen.io/pierrinho/pen/NEYmLO" target="_blank"><code>background-clip: text</code></a>. Outros exemplos do uso de máscaras: <a href="https://www.frontendhero.dev/tutorial/mask-text-with-image/" target="_blank" rel="noopener noreferrer">1</a>, <a href="https://www.youtube.com/watch?v=nstRtC_C8yY" target="_blank" rel="noopener noreferrer">2</a>, <a href="https://youtu.be/FCuNtCq3nRg?si=MhwkMWOqeeyipOTm" target="_blank" rel="noopener noreferrer">3</a>, <a href="https://youtu.be/9Kr3T4Ndl-o?si=16wXdNNObtMsT6Gc" target="_blank" rel="noopener noreferrer">4</a> e <a href="https://youtu.be/dldpud1PuL8?si=a2sqJcFGiOIzvaf6" target="_blank" rel="noopener noreferrer">5</a>.</p>
     </section>
   </main>
 </body>
