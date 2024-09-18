@@ -20,7 +20,7 @@
 
 		<pre>
 			<code>
-	let x = 16 + "Volvo";
+				let x = 16 + "Volvo";
 			</code>
 		</pre>
 
@@ -30,7 +30,7 @@
 
 		<pre>
 			<code>
-	let x = "16" + "Volvo";
+				let x = "16" + "Volvo";
 			</code>
 		</pre>
 
@@ -38,8 +38,8 @@
 
 		<pre>
 			<code>
-	let x = 16 + 4 + "Volvo"; // 20Volvo
-	let x = "Volvo" + 16 + 4; // Volvo164
+				let x = 16 + 4 + "Volvo"; // 20Volvo
+				let x = "Volvo" + 16 + 4; // Volvo164
 			</code>
 		</pre>
 
@@ -47,9 +47,9 @@
 
 		<pre>
 			<code>
-	let x;       // x está indefinido
-	x = 5;       // Agora x é um número
-	x = "John";  // Agora x é uma sequência de caracteres
+				let x;       // x está indefinido
+				x = 5;       // Agora x é um número
+				x = "John";  // Agora x é uma sequência de caracteres
 			</code>
 		</pre>
 
@@ -74,11 +74,11 @@
 
 		<pre>
 			<code>
-	// Com aspas duplas:
-	let carName1 = "Volvo XC60";
+				// Com aspas duplas:
+				let carName1 = "Volvo XC60";
 
-	// Com aspas simples:
-	let carName2 = 'Volvo XC60';
+				// Com aspas simples:
+				let carName2 = 'Volvo XC60';
 			</code>
 		</pre>
 
@@ -86,14 +86,14 @@
 
 		<pre>
 			<code>
-	// Aspas simples dentro de aspas duplas:
-	let answer1 = "It's alright";
+				// Aspas simples dentro de aspas duplas:
+				let answer1 = "It's alright";
 
-	// Aspas simples dentro de aspas duplas:
-	let answer2 = "He is called 'Johnny'";
+				// Aspas simples dentro de aspas duplas:
+				let answer2 = "He is called 'Johnny'";
 
-	// Aspas duplas dentro de aspas simples:
-	let answer3 = 'He is called "Johnny"';
+				// Aspas duplas dentro de aspas simples:
+				let answer3 = 'He is called "Johnny"';
 			</code>
 		</pre>
 
@@ -101,15 +101,15 @@
 
 		<pre>
 			<code>
-	let answer1 = "It\'s alright";
-	let answer2 = "He is called \"Johnny\"";
-	let answer3 = 'He is called \'Johnny\'';
+				let answer1 = "It\'s alright";
+				let answer2 = "He is called \"Johnny\"";
+				let answer3 = 'He is called \'Johnny\'';
 			</code>
 		</pre>
 
 		<h3>Strings complexas</h3>
 
-		<p>As <strong>template strings</strong> são definidas pelo acento da crase (<kbd>` `</kbd>) e possibilitam usar aspas simples e duplas sem o "escape". Por exemplo:</p>
+		<p>As <strong>template strings</strong> (ou string templates, ou template literals) são definidas pelo acento da crase (<kbd>` `</kbd>) e possibilitam usar aspas simples e duplas sem o "escape". Por exemplo:</p>
 
 		<p><code>let text = `He's often called "Johnny"`;</code></p>
 
@@ -117,22 +117,58 @@
 
 		<pre>
 			<code>
-	let text =
-	`The quick
-	brown fox
-	jumps over
-	the lazy dog`;
+				let text =
+				`The quick
+				brown fox
+				jumps over
+				the lazy dog`;
 			</code>
 		</pre>
 
-		<h3>Comprimento de strings</h3>
+		<h4>Interpolação</h4>
 
-		<p>Para descobrir o comprimento de uma sequência de caracteres, use a propriedade <code>length</code>:</p>
+		<p>Com as strings complexas é possível interpolar facilmente variáveis e expressões em sequências de caracteres. A sintaxe é <code>${...}</code>.</p>
+
+		<p>Interpolar é usar as variáveis dentro das sentenças, assim:</p>
 
 		<pre>
 			<code>
-	let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	let length = text.length; // 26
+				let firstName = "John";
+				let lastName = "Doe";
+				let greeting = "Welcome"
+
+				let text = `${greeting}, ${firstName} ${lastName}!`; // Welcome, John Doe!
+			</code>
+		</pre>
+
+		<p>Também podemos criar cálculos com as strings complexas:</p>
+
+		<pre>
+			<code>
+				let price = 10;
+				let VAT = 0.25;
+
+				let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`; // Total: 12.50
+			</code>
+		</pre>
+
+		<p>Dessa forma, é possível criar todo o código HTML dentro da string complexa, inclusive inserindo variáveis:</p>
+
+		<pre>
+			<code>
+				&lt;script&gt;
+					let header = "Template Strings";
+					let tags = ["template strings", "javascript", "es6"];
+					
+					let html = `&lt;h2&gt;${header}&lt;/h2&gt;&lt;ul&gt;`;
+					
+					for (const x of tags) {
+						html += `&lt;li&gt;${x}&lt;/li&gt;`;
+					}
+					
+					html += `&lt;/ul&gt;`;
+					document.getElementById("demo").innerHTML = html;
+				&lt;/script&gt;
 			</code>
 		</pre>
 
@@ -214,8 +250,8 @@
 
 		<pre>
 			<code>
-	document.getElementById("demo").innerHTML =
-	"Hello Dolly!";
+				document.getElementById("demo").innerHTML =
+				"Hello Dolly!";
 			</code>
 		</pre>
 
@@ -223,8 +259,8 @@
 
 		<pre>
 			<code>
-	document.getElementById("demo").innerHTML = "Hello " +
-	"Dolly!";
+				document.getElementById("demo").innerHTML = "Hello " +
+				"Dolly!";
 			</code>
 		</pre>
 
@@ -234,14 +270,352 @@
 
 		<pre>
 			<code>
-	let x = "John";
-	let y = new String("John");
+				let x = "John";
+				let y = new String("John");
 			</code>
 		</pre>
 
 		<h3>Métodos de sequências de caracteres</h3>
 
-		
+		<p>Strings no JavaScript são primitivas e imutáveis. Todos os métodos apresentados a seguir geram uma nova sequência de caracteres sem alterar a original.</p>
+
+		<h4>length()</h4>
+
+		<p>A propriedade <code>length</code> retorna o comprimento de uma sequência de caracteres:</p>
+
+		<pre>
+			<code>
+				let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+				let length = text.length; // 26
+			</code>
+		</pre>
+
+		<h4>charAt()</h4>
+
+		<p>Este método retorna o caractere no índice especificado (posição) de uma string:</p>
+
+		<pre>
+			<code>
+				let text = "HELLO WORLD";
+				let char = text.charAt(0); // H
+			</code>
+		</pre>
+
+		<h4>charCodeAt()</h4>
+
+		<p>Este método retorna um código UTF-16 (um inteiro entre 0 e 65535) do caractere no índice especificado (posição) de uma string:</p>
+
+		<pre>
+			<code>
+				let text = "HELLO WORLD";
+				let char = text.charCodeAt(0); // 72
+			</code>
+		</pre>
+
+		<h4>at()</h4>
+
+		<p>Obtém o caractere no índice especificado (posição) de uma string:</p>
+
+		<pre>
+			<code>
+				// Obter a terceira letra em "name":
+				const name = "W3Schools";
+				let letter = name.at(2);
+
+				// Que também pode ser escrito assim:*
+				const name = "W3Schools";
+				let letter = name[2];
+			</code>
+		</pre>
+
+		<p>Este método possibilita usar índices negativos, coisa que <code>charAt()</code> não faz, então é possível usar <code>myString.at(-2)</code> em vez de <code>charAt(myString.length-2)</code>.</p>
+
+		<p><strong><sup>*</sup></strong>O acesso às propriedades desta maneira pode ser um pouco imprevisível, pois faz com que as strings pareçam-se com matrizes, apesar de não serem, se não houver um caractere no índice especificado (como um espaço), ele retorna <code>undefined</code>, enquanto <code>charAt()</code> retorna uma string vazia e é um método apenas para leitura, isto é, <code>str[0] = "A"</code> não exibe um erro, mas não funciona.</p>
+
+		<h4>slice()</h4>
+
+		<p>Este método extrai uma parte da string e retorna a parte extraída em uma nova sequência de caracteres. Ele aceita dois parâmetros, a posição inicial e a posição final, que não é inclusa:</p>
+
+		<pre>
+			<code>
+				let text = "Apple, Banana, Kiwi";
+				let part = text.slice(7, 13);
+			</code>
+		</pre>
+
+		<p>Se o parâmetro final não for definido, todo o restante da string é cortado. Um parâmetro negativo começa a contar do final da string.</p>
+
+		<h4>substring()</h4>
+
+		<p>Similar a <code>slice()</code>, porém os valores inicial e final menores que 0 são considerados como 0. Se o segundo parâmetro não for definido, todo o restante da string é cortado:</p>
+
+		<pre>
+			<code>
+				let str = "Apple, Banana, Kiwi";
+				let part = str.substring(7, 13);
+			</code>
+		</pre>
+
+		<h4>substr()</h4>
+
+		<p>Similar a <code>slice()</code>, porém o segundo parâmetro define o <strong>comprimento</strong> da parte extraída. Se o segundo parâmetro não for definido, todo o restante da string é cortado:</p>
+
+		<pre>
+			<code>
+				let str = "Apple, Banana, Kiwi";
+				let part = str.substr(7, 6);
+			</code>
+		</pre>
+
+		<p>Se o primeiro parâmetro for negativo, o JavaScript começa a conta do final da string.</p>
+
+		<h4>toUpperCase() e toLowerCase()</h4>
+
+		<p>Estes métodos convertem todas as letras de uma string, respectivamente, para maiúsculas e para minúsculas:</p>
+
+		<pre>
+			<code>
+				let text1 = "Hello World!";
+				let text2 = text1.toUpperCase(); // "HELLO WORLD!"
+
+				let text1 = "Hello World!";
+				let text2 = text1.toLowerCase(); // hello world!
+			</code>
+		</pre>
+
+		<h4>concat()</h4>
+
+		<p>Este método une duas ou mais strings:</p>
+
+		<pre>
+			<code>
+				let text1 = "Hello";
+				let text2 = "World";
+				let text3 = text1.concat(" ", text2); // Hello World
+			</code>
+		</pre>
+
+		<p>É a mesma coisa que usar o operador de adição (<code>+</code>):</p>
+
+		<pre>
+			<code>
+				let text1 = "Hello";
+				let text2 = "World";
+				let text3 = text1.concat(" ", text2); // Hello World
+				let text4 = text1 + " " + text2; // Hello World
+			</code>
+		</pre>
+
+		<h4>trim()</h4>
+
+		<p>Este método remove os espaços em branco no início e no final da string:</p>
+
+		<pre>
+			<code>
+				let text1 = "      Hello World!      ";
+				let text2 = text1.trim(); // Hello World!
+			</code>
+		</pre>
+
+		<p>Da mesma forma que <code>trim()</code>, temos <code>trimStart()</code> e <code>trimEnd()</code> que excluem, respectivamente, os espaços em branco no início e no fim da string.</p>
+
+		<h4>padStart() e padEnd()</h4>
+
+		<p>Estes métodos adicionam o segundo parâmetro fornecido a quantidade de vezes especificada no primeiro parâmetro ao início ou ao final da string, respectivamente:</p>
+
+		<pre>
+			<code>
+				let text = "5";
+				let padded = text.padStart(4,"0"); // 0005
+
+				let text = "5";
+				let padded = text.padStart(4,"x"); // xxx5
+
+				let text = "5";
+				let padded = text.padEnd(4,"0"); // 5000
+
+				let text = "5";
+				let padded = text.padEnd(4,"x"); // 5xxx
+			</code>
+		</pre>
+
+		<p>Note que estes métodos funcionam somente com strings. Para colocar padding para números, é preciso primeiro transformá-los em strings com o método <code>toString()</code>.</p>
+
+		<h4>repeat()</h4>
+
+		<p>Este método retorna a string repetida o número de vezes definido no parâmetro:</p>
+
+		<pre>
+			<code>
+				let text = "Hello world!";
+				let result = text.repeat(2); // Hello world!Hello world!
+			</code>
+		</pre>
+
+		<h4>replace()</h4>
+
+		<p>Este método substitui um valor especificado por outro em uma string:</p>
+
+		<pre>
+			<code>
+				let text = "Please visit Microsoft!";
+				let newText = text.replace("Microsoft", "W3Schools"); // Please visit W3Schools!
+			</code>
+		</pre>
+
+		<p>Este método não altera a string original e altera somente a primeira ocorrência encontrada. Se quiser substituir todas as ocorrências de determinado valor, use uma expressão regular com a flag "/g".</p>
+
+		<p class="important-info"><code>replace()</code> diferencia maiúsculas de minúsculas. No exemplo acima, se o primeiro parâmetro fosse "MICROSOFT", não funcionaria. Também é possível usar a flag "/i" para ignorar essa regra.</p>
+
+		<h4>replaceAll()</h4>
+
+		<p>Este método possibilita substituir todas as ocorrências de uma string E definir uma expressão regular ao invés de uma string para substituir. Se usar uma expressão regular, é preciso definir a flag "/g", caso contrário ocorre um <code>TypeError</code>.</p>
+
+		<h4>split()</h4>
+
+		<p>Também é possível trabalhar com strings transformando-as em matrizes, este método possibilita fazer isso.</p>
+
+		<pre>
+			<code>
+				let text = "a,b,c,d,e,f";
+				const myArray = text.split(",");
+
+				console.log(myArray[2]); // c
+			</code>
+		</pre>
+
+		<p>Se omitir o separador, a matriz retornada conterá toda a string no índice 0. Se o separador for "", a matriz retornada conterá cada caractere da string.</p>
+
+		<h4>indexOf() e lastIndexOf()</h4>
+
+		<p>Estes métodos retornam o índice da primeira e da última ocorrência de um valor especificado na string, respectivamente. Se o valor na string não for encontrado, o método retorna <code>-1</code>.</p>
+
+		<pre>
+			<code>
+				let text = "Please locate where 'locate' occurs!";
+				let index = text.indexOf("locate");
+
+				console.log(index); // 7
+
+				let text = "Please locate where 'locate' occurs!";
+				let index = text.lastIndexOf("locate");
+
+				console.log(index); // 21
+			</code>
+		</pre>
+
+		<p>É possível também definir um segundo parâmetro para estes métodos, que define a posição inicial para a pesquisa.</p>
+
+		<pre>
+			<code>
+				let text = "Please locate where 'locate' occurs!";
+				let index = text.indexOf("locate", 15); // 21
+				let index2 = text.lastIndexOf("locate", 15); // 7
+			</code>
+		</pre>
+
+		<h4>search()</h4>
+
+		<p>Este método pesquisa a string (ou expressão regular) definida como parâmetro e retorna o índice da primeira ocorrência.</p>
+
+		<pre>
+			<code>
+				let text = "Please locate where 'locate' occurs!";
+
+				console.log(text.search(/locate/)); // 7
+			</code>
+		</pre>
+
+		<p>Note que os métodos <code>indexOf()</code> e <code>search()</code> são similares, mas têm duas diferenças:</p>
+
+		<ul>
+			<li><code>search()</code> não aceita um segundo argumento de posição inicial.</li>
+			<li><code>indexOf()</code> não aceita valores de pesquisa complexos, como expressões regulares.</li>
+		</ul>
+
+		<h4>match()</h4>
+
+		<p>Este método retorna uma matriz com todas as ocorrências de uma string (ou expressão regular) em uma string.</p>
+
+		<pre>
+			<code>
+				let text = "The rain in SPAIN stays mainly in the plain";
+
+				let result1 = text.match("ain");
+				let result2 = text.match(/ain/);
+				let result3 = text.match(/ain/g);
+				let result4 = text.match(/ain/gi);
+				
+				console.log(result1); // 1 ain
+				console.log(result2); // 1 ain
+				console.log(result3); // 3 ain,ain,ain
+				console.log(result4); // 4 ain,ain,ain,ain
+			</code>
+		</pre>
+
+		<p>Se a expressão regular não incluir a flag "/g", o método retorna apenas a primeira ocorrência.</p>
+
+		<h4>matchAll()</h4>
+
+		<p>Este método retorna um iterador com os resultados de correspondência de uma string em relação a outra (ou a uma expressão regular).</p>
+
+		<pre>
+			<code>
+				let text = "I love cats. Cats are very easy to love. Cats are very popular."
+				const iterator = text.matchAll("Cats");
+				
+				for (const match of iterator) {
+					console.log(match);
+				}
+
+				// Outputs Cats in index 13 and Cats in index 41
+			</code>
+		</pre>
+
+		<p>Assim como com outros casos de uso de expressões regulares, é preciso definir as flags "/g" e "/i" para pesquisa global e que não diferencia maiúsculas de minúsculas, respectivamente. Note que este método, originalmente, diferencia maiúsculas e minúsculas.</p>
+
+		<h4>includes()</h4>
+
+		<p>Este método retorna <code>true</code> se uma string contiver um valor especificado. Caso contrário, retorna <code>false</code>.</p>
+
+		<pre>
+			<code>
+				let text = "Hello world, welcome to the universe.";
+				text.includes("world"); // true
+
+				let text = "Hello world, welcome to the universe.";
+				text.includes("world", 12); // false
+			</code>
+		</pre>
+
+		<p>Este método também diferencia maiúsculas de minúsculas.</p>
+
+		<h4>startsWith() e endsWith()</h4>
+
+		<p>Estes métodos retornam <code>true</code> se, respectivamente, a string começa ou termina com o valor especificado.</p>
+
+		<p>Também é possível definir um índice inicial para a pesquisa. Estes métodos diferenciam maiúsculas de minúsculas.</p>
+
+		<pre>
+			<code>
+				let text1 = "Hello world, welcome to the universe.";
+				console.log(text1.startsWith("Hello")); // true
+
+				let text2 = "Hello world, welcome to the universe.";
+				console.log(text2.startsWith("world")); // false
+
+				let text3 = "Hello world, welcome to the universe.";
+				console.log(text3.startsWith("world", 5)); // false
+
+				let text4 = "John Doe";
+				console.log(text4.endsWith("Doe")); // true
+
+				let text5 = "Hello world, welcome to the universe.";
+				console.log(text5.endsWith("world", 11)); // true
+			</code>
+		</pre>
+
+		<p>Saiba mais sobre <a href="https://www.w3schools.com/jsref/jsref_obj_string.asp" target="_blank" rel="noopener noreferrer">strings</a>, suas propriedades e métodos.</p>
 	</section>
 
 	<section>
@@ -251,11 +625,11 @@
 
 		<pre>
 			<code>
-	// Com decimais:
-	let x1 = 34.00;
+				// Com decimais:
+				let x1 = 34.00;
 
-	// Sem decimais:
-	let x2 = 34;
+				// Sem decimais:
+				let x2 = 34;
 			</code>
 		</pre>
 
@@ -263,24 +637,228 @@
 
 		<pre>
 			<code>
-	let y = 123e5;    // 12300000
-	let z = 123e-5;   // 0.00123
+				let y = 123e5;    // 12300000
+				let z = 123e-5;   // 0.00123
 			</code>
 		</pre>
+
+		<p>Diferente de outras linguagens de programação, o JavaScript não define diferentes tipos de números, como inteiros, curtos, longos, flutuantes, etc. <em>TODOS</em> os números são pontos flutuantes de 64 bits, isto é, são armazenados como números com precisão de duas casas, de acordo com o padrão internacional IEEE 754. Este formato armazena os números em 64 bits, em que o número (a fração) é armazenado em bits de 0 a 51, o exponente em bits de 52 a 62 e o bit de sinal 63.</p>
+
+		<h3>Precisão dos inteiros</h3>
+
+		<p>Os números inteiros, isto é, sem casas decimais ou notação de exponente, tem precisão de até 15 dígitos. E o número máximo de decimais é 17.</p>
+
+		<pre>
+			<code>
+				let x = 999999999999999;   // x será 999999999999999
+				let y = 9999999999999999;  // y será 10000000000000000
+			</code>
+		</pre>
+
+		<p>O cálculo de decimais nem sempre é preciso:</p>
+
+		<pre>
+			<code>
+				let x = 0.2 + 0.1; // 0.30000000000000004
+			</code>
+		</pre>
+
+		<p>Para solucionar esse problema, use multiplicação e divisão:</p>
+
+		<pre>
+			<code>
+				let x = (0.2 * 10 + 0.1 * 10) / 10; // 0.3
+			</code>
+		</pre>
+
+		<h3>Soma</h3>
+
+		<p class="important-info">LEMBRE-SE que o JavaScript usa o operador <code>+</code> para soma e concatenação. Números são somados, strings são concatenadas.</p>
+
+		<p>A soma de dois números resulta em um número. A soma de duas strings resulta em uma concatenação das strings. A soma de um número e uma string resulta em uma concatenação de strings.</p>
+
+		<p>Como as strings também podem ser números, é preciso ter cuidado ao usar os operadores aritméticos. Lembre-se também que os cálculos vão da esquerda para a direita. Durante um cálculo aritmético de subtração, multiplicação ou divisão, o JavaScript tenta transformar strings em números, se possível, mas não na soma.</p>
+
+		<h3>NaN: Not a Number</h3>
+
+		<p><code>NaN</code> é uma palavra reservada no JavaScript que indica que um número não é válido. Tentar fazer cálculos com uma string não numérica resulta em <code>NaN</code>. No entanto, <code>NaN</code> é considerado um número: <code>typeof NaN</code> resulta em <code>number</code>.</p>
+
+		<pre>
+			<code>
+				let x = 100 / "Apple"; // NaN
+			</code>
+		</pre>
+
+		<p>Entretanto, se a string for um número, como vimos antes, o resultado é um número.</p>
+
+		<p>A função global <code>isNaN()</code> testa se um número é válido.</p>
+
+		<pre>
+			<code>
+				let x = 100 / "Apple";
+				console.log(isNaN(x)); // true
+			</code>
+		</pre>
+
+		<p>Ao usar <code>NaN</code> em um cálculo, o resultado será <code>NaN</code> ou será concatenado com a outra string.</p>
+
+		<h3>Infinity</h3>
+
+		<p><code>Infinity</code> (ou <code>-Infinity</code>) é o valor que o JavaScript retorna ao calcular um número que vai além do maior número possível. A divisão por 0 também gera o resultado <code>Infinity</code>. <code>typeof Infinity</code> resulta em <code>number</code>.</p>
+
+		<pre>
+			<code>
+				let myNumber = 2;
+				// Executar até Infinity
+				while (myNumber != Infinity) {
+					myNumber = myNumber * myNumber;
+				}
+
+				console.log(myNumber) // Infinity
+			</code>
+		</pre>
+
+		<h3>Hexadecimais</h3>
+
+		<p>O JavaScript interpreta constantes numéricas como hexadecimais se tiverem o prefixo <code>0x</code>.</p>
+
+		<pre>
+			<code>
+				let x = 0xFF; // 255
+			</code>
+		</pre>
+
+		<p class="important-info">NUNCA escreva números com 0 na frente, como 07, porque algumas versões do JavaScript interpretam isso como octais.</p>
+
+		<p>Por padrão, o JavaScript exibe os números como decimais de base 10, mas podemos usar o método <code>toString()</code> para exibir números de base 2 a base 36. Hexadecimais são base 16, decimais são base 10, octais são base 8 e binários são base 2.</p>
+
+		<pre>
+			<code>
+				let myNumber = 32;
+				document.getElementById("demo").innerHTML =
+				"Decimal 32 = " + "<br><br>" + 
+				"Hexatrigesimal (base 36): " + myNumber.toString(36) + "<br>" + //
+				"Duotrigesimal (base 32): " + myNumber.toString(32) + "<br>" +
+				"Hexadecimal (base 16): " + myNumber.toString(16) + "<br>" +
+				"Duodecimal (base 12): " + myNumber.toString(12) + "<br>" +
+				"Decimal (base 10): " + myNumber.toString(10) + "<br>" +
+				"Octal (base 8): " + myNumber.toString(8) + "<br>" +
+				"Binary (base 2): " + myNumber.toString(2);
+			</code>
+		</pre>
+
+		<p>O resultado do código acima é:</p>
+
+		<pre>
+			<code>
+				Decimal 32 = 
+				Hexatrigesimal (base 36): w
+				Duotrigesimal (base 32): 10
+				Hexadecimal (base 16): 20
+				Duodecimal (base 12): 28
+				Decimal (base 10): 32
+				Octal (base 8): 40
+				Binary (base 2): 100000
+			</code>
+		</pre>
+
+		<h3>Números como objetos</h3>
+
+		<p>Normalmente, números no JavaScript são valores primitivos criados a partir de literais, mas também podem ser definidos como objetos com a palavra-chave <code>new</code>.</p>
+
+		<pre>
+			<code>
+				// x is a number
+				let x = 123;
+				// y is a Number object
+				let y = new Number(123);
+
+				console.log(typeof x); // number
+				console.log(typeof y); // object
+			</code>
+		</pre>
+
+		<p>Porém, a recomendação é não usar essa forma para criar números, porque isso complica o código e diminui a velocidade de execução. Além disso, isso pode gerar resultados inesperados, em que um objeto e um número, quando comparados com <kbd>==</kbd>, geram o resultado <code>true</code> e, quando comparados com <kbd>===</kbd>, geram o resultado <code>false</code>. E ao comparar dois objetos criados dessa forma, o resultado, independentemente do operador, é sempre <code>false</code>.</p>
+
+		<h3>Métodos de números e BigInt</h3>
+
+		<p>O JavaScript apresenta vários métodos para manipular números, e dois deles manipulam também os BigInt.</p>
+
+		<p>Todos os métodos podem ser usados em todos os tipos de números: literais, variáveis e expressões.</p>
+
+		<h4>toString()</h4>
+
+		<p>Retorna um número como uma string.</p>
 	</section>
 
 	<section>
 		<h2>BigInt</h2>
 
-		<p>Todos os números em JavaScript são armazenados em um formato de número flutuante com 64 bits. O BigInt é um novo tipo de dado que pode ser usado para armazenar valores que são muito grandes para serem representados por um número normal do JavaScript.</p>
+		<p>Todos os números em JavaScript são armazenados em formato de número flutuante com 64 bits. O BigInt é um novo tipo de dado que pode ser usado para armazenar valores que são muito grandes para serem representados por um número normal do JavaScript.</p>
 
 		<pre>
 			<code>
-	let x = BigInt("123456789012345678901234567890");
+				let x = BigInt("123456789012345678901234567890");
 			</code>
 		</pre>
 
-		<p>Não é possível executar cálculos entre um BigInt e um número.</p>
+		<p>Assim como os números inteiros, o BigInt tem precisão de até 15 dígitos.</p>
+
+		<p>Como os números são armazenados em formato de ponto flutuante de 64 bits, inteiros muito grandes não podem ser representados com exatidão e são arredondados. Por causa disso, o JavaScript só pode representar com segurança inteiros até <strong>9007199254740991 +(2<sup>53</sup>-1)</strong> e <strong>-9007199254740991 -(2<sup>53</sup>-1)</strong>.</p>
+
+		<p>Não é possível executar cálculos entre um BigInt e um número. Para usar um BigInt em um cálculo, use o método <code>Number()</code>.</p>
+
+		<pre>
+			<code>
+				let x = 5n;
+				let y = Number(x) / 2;
+			</code>
+		</pre>
+
+		<h3>Como criar um BigInt</h3>
+
+		<p>Para criar um BigInt, coloque "n" no final do número ou chame o método <code>BigInt()</code>:</p>
+
+		<pre>
+			<code>
+				let x = 9999999999999999; // 10000000000000000
+				let y = 9999999999999999n; // 9999999999999999n
+
+				let x = 1234567890123456789012345; // 1.2345678901234568e+24
+				let y = BigInt(1234567890123456789012345) // 1234567890123456824475648n
+			</code>
+		</pre>
+
+		<p>Todos os operadores que usamos com números podem ser usados com BigInt, exceto pelo deslocamento não atribuído à direita (<code>>>></code>), porque o BigInt não tem uma largura fixa.</p>
+
+		<p>O BigInt não pode ter decimais.</h3>
+
+		<h3>Hexadecimais, binários e octais</h3>
+
+		<p>Os BigInt também podem ser escritos com notação hexadecimal, binária e octal:</p>
+
+		<pre>
+			<code>
+				let hex = 0x20000000000003n; // 9007199254740995
+				let oct = 0o400000000000000003n; // 9007199254740995
+				let bin = 0b100000000000000000000000000000000000000000000000000011n; // 9007199254740995
+			</code>
+		</pre>
+
+		<p class="important-info"><strong>Observação</strong>: o arredondamento pode prejudicar a segurança do programa:</p>
+
+		<pre>
+			<code>
+				// Is 9007199254740992 equal to 9007199254740993?
+
+				let x = 9007199254740992 === 9007199254740993;
+				console.log(x) // true
+			</code>
+		</pre>
+
+		<h3>Números inteiros seguros máximo e mínimo</h3>
+
+		<p>Use os métodos <code>MAX_SAFE_INTEGER</code> e <code>MIN_SAFE_INTEGER</code> para relembrar os números máximo e mínimo que se pode usar com segurança.</p>
 	</section>
 
 	<section>
@@ -296,7 +874,7 @@
 
 		<pre>
 			<code>
-	const cars = ["Saab", "Volvo", "BMW"];
+				const cars = ["Saab", "Volvo", "BMW"];
 			</code>
 		</pre>
 
@@ -310,7 +888,7 @@
 
 		<pre>
 			<code>
-	const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+				const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
 			</code>
 		</pre>
 
@@ -324,8 +902,8 @@
 
 		<pre>
 			<code>
-	typeof "John" // retorna "string"
-	typeof 3.14 // retorna "number"
+				typeof "John" // retorna "string"
+				typeof 3.14 // retorna "number"
 			</code>
 		</pre>
 	</section>
@@ -337,8 +915,8 @@
 
 		<pre>
 			<code>
-	let car;    // Como o valor é indefinido, o tipo também é
-	car = undefined;    // Idem
+				let car;    // Como o valor é indefinido, o tipo também é
+				car = undefined;    // Idem
 			</code>
 		</pre>
 
@@ -348,9 +926,15 @@
 
 		<pre>
 			<code>
-	let car = "";    // O valor é "", o typeof é "string"
+				let car = "";    // O valor é "", o typeof é "string"
 			</code>
 		</pre>
+	</section>
+
+	<section class="dyk">
+		<h2>Você sabia?</h2>
+
+		<p>É muito importante lembrar que o índice no JavaScript começa em 0!</p>
 	</section>
 </body>
 </html>

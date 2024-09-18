@@ -196,6 +196,10 @@ code {
   color: var(--light-grey);
 }
 
+pre > code {
+	tab-size: 2;
+}
+
 kbd {
   font-family: 'Spline Sans Mono',monospace;
   font-size: 0.9em;
@@ -240,11 +244,15 @@ em {
 	background-color: var(--dyk);
 	color: #000;
 	width: 30%;
-	padding: 2px;
+	padding: 5px;
 	float: right;
 	position: sticky;
 	right: 0;
 	bottom: 7px;
+}
+
+.dyk > h2 {
+	margin-top: 5px;
 }
 
 table, th, td {

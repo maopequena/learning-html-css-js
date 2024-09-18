@@ -22,9 +22,9 @@
 
 		<pre>
 			<code>
-	const PI = 3.141592653589793;
-	PI = 3.14;      // Isso gera um erro
-	PI = PI + 10;   // Isso também
+				const PI = 3.141592653589793;
+				PI = 3.14;      // Isso gera um erro
+				PI = PI + 10;   // Isso também
 			</code>
 		</pre>
 
@@ -32,19 +32,19 @@
 
 		<pre>
 			<code>
-	const x = 2;     // Permitido
-	x = 2;           // Não permitido
-	var x = 2;       // Não permitido
-	let x = 2;       // Não permitido
-	const x = 2;     // Não permitido
+				const x = 2;     // Permitido
+				x = 2;           // Não permitido
+				var x = 2;       // Não permitido
+				let x = 2;       // Não permitido
+				const x = 2;     // Não permitido
 
-	{
-		const x = 2;   // Permitido
-		x = 2;         // Não permitido
-		var x = 2;     // Não permitido
-		let x = 2;     // Não permitido
-		const x = 2;   // Não permitido
-	}
+				{
+					const x = 2;   // Permitido
+					x = 2;         // Não permitido
+					var x = 2;     // Não permitido
+					let x = 2;     // Não permitido
+					const x = 2;   // Não permitido
+				}
 			</code>
 		</pre>
 	</section>
@@ -55,8 +55,8 @@
 		<p>Não é possível fazer o seguinte com <code>let</code>:</p>
 		<pre>
 			<code>
-	let x = "John Doe";
-	let x = 0;
+				let x = "John Doe";
+				let x = 0;
 			</code>
 		</pre>
 
@@ -66,18 +66,18 @@
 
 		<pre>
 			<code>
-	var x = 2;     // Permitido
-	const x = 2;   // Não permitido
+				var x = 2;     // Permitido
+				const x = 2;   // Não permitido
 
-	{
-	let x = 2;     // Permitido
-	const x = 2;   // Não permitido
-	}
+				{
+				let x = 2;     // Permitido
+				const x = 2;   // Não permitido
+				}
 
-	{
-	const x = 2;   // Permitido
-	const x = 2;   // Não permitido
-	}
+				{
+				const x = 2;   // Permitido
+				const x = 2;   // Não permitido
+				}
 			</code>
 		</pre>
 
@@ -85,13 +85,13 @@
 
 		<pre>
 			<code>
-	const x = 2;   // Permitido
-	{
-  const x = 3;   // Permitido
-	}
-	{
-  const x = 4;   // Permitido
-	}
+				const x = 2;   // Permitido
+				{
+				const x = 3;   // Permitido
+				}
+				{
+				const x = 4;   // Permitido
+				}
 			</code>
 		</pre>
 	</section>
@@ -103,15 +103,15 @@
 
 		<pre>
 			<code>
-	const x = 10;
-	// Aqui x é 10
+				const x = 10;
+				// Aqui x é 10
 
-	{
-	const x = 2;
-	// Aqui x é 2
-	}
+				{
+				const x = 2;
+				// Aqui x é 2
+				}
 
-	// Aqui x é 10
+				// Aqui x é 10
 			</code>
 		</pre>
 	</section>
@@ -190,7 +190,7 @@
 		<p>Podemos criar uma matriz constante:</p>
 		<pre>
 			<code>
-	const cars = ["Saab", "Volvo", "BMW"];
+				const cars = ["Saab", "Volvo", "BMW"];
 			</code>
 		</pre>
 
@@ -198,7 +198,7 @@
 
 		<pre>
 			<code>
-	cars[0] = "Toyota";
+				cars[0] = "Toyota";
 			</code>
 		</pre>
 
@@ -206,7 +206,7 @@
 
 		<pre>
 			<code>
-	cars.push("Audi");
+				cars.push("Audi");
 			</code>
 		</pre>
 
@@ -214,8 +214,8 @@
 
 		<pre>
 			<code>
-	const cars = ["Saab", "Volvo", "BMW"];
-	cars = ["Toyota", "Volvo", "Audi"];    // Isso gera um erro
+				const cars = ["Saab", "Volvo", "BMW"];
+				cars = ["Toyota", "Volvo", "Audi"];    // Isso gera um erro
 			</code>
 		</pre>
 
@@ -225,7 +225,7 @@
 
 		<pre>
 			<code>
-	const car = {type:"Fiat", model:"500", color:"white"};
+				const car = {type:"Fiat", model:"500", color:"white"};
 			</code>
 		</pre>
 
@@ -233,7 +233,7 @@
 
 		<pre>
 			<code>
-	car.color = "red";
+				car.color = "red";
 			</code>
 		</pre>
 
@@ -241,7 +241,7 @@
 
 		<pre>
 			<code>
-	car.owner = "Johnson";
+				car.owner = "Johnson";
 			</code>
 		</pre>
 		
@@ -249,8 +249,8 @@
 
 		<pre>
 			<code>
-	const car = {type:"Fiat", model:"500", color:"white"};
-	car = {type:"Volvo", model:"EX60", color:"red"};    // Isso gera um erro
+				const car = {type:"Fiat", model:"500", color:"white"};
+				car = {type:"Volvo", model:"EX60", color:"red"};    // Isso gera um erro
 			</code>
 		</pre>
 	</section>

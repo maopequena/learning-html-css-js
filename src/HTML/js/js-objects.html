@@ -45,11 +45,11 @@
 
 		<pre>
 			<code>
-	// Uma variável comum:
-	let car = "Fiat";
+				// Uma variável comum:
+				let car = "Fiat";
 
-	// Um objeto:
-	const car = {type:"Fiat", model:"500", color:"white"};
+				// Um objeto:
+				const car = {type:"Fiat", model:"500", color:"white"};
 			</code>
 		</pre>
 
@@ -65,7 +65,7 @@
 
 		<pre>
 			<code>
-	{firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+				{firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
 			</code>
 		</pre>
 
@@ -75,14 +75,14 @@
 
 		<pre>
 			<code>
-	// Criação do objeto
-	const person = {};
+				// Criar o objeto
+				const person = {};
 
-	// Adição das propriedades
-	person.firstName = "John";
-	person.lastName = "Doe";
-	person.age = 50;
-	person.eyeColor = "blue";
+				// Adicionar as propriedades
+				person.firstName = "John";
+				person.lastName = "Doe";
+				person.age = 50;
+				person.eyeColor = "blue";
 			</code>
 		</pre>
 
@@ -92,14 +92,14 @@
 
 		<pre>
 			<code>
-	// Criação do objeto
-	const person = new Object();
+				// Criar o objeto
+				const person = new Object();
 
-	// Adição das propriedades
-	person.firstName = "John";
-	person.lastName = "Doe";
-	person.age = 50;
-	person.eyeColor = "blue";
+				// Adicionar as propriedades
+				person.firstName = "John";
+				person.lastName = "Doe";
+				person.age = 50;
+				person.eyeColor = "blue";
 			</code>
 		</pre>
 
@@ -154,7 +154,7 @@
 
 		<pre>
 			<code>
-	nomeObjeto.nomePropriedade
+				nomeObjeto.nomePropriedade
 			</code>
 		</pre>
 
@@ -162,7 +162,7 @@
 
 		<pre>
 			<code>
-	nomeObjeto["nomePropriedade"]
+				nomeObjeto["nomePropriedade"]
 			</code>
 		</pre>
 
@@ -174,8 +174,8 @@
 
 		<pre>
 			<code>
-	// nomeObjeto.nomePropriedade = "valor";
-	person.nationality = "English";
+				// nomeObjeto.nomePropriedade = "valor";
+				person.nationality = "English";
 			</code>
 		</pre>
 
@@ -185,15 +185,15 @@
 
 		<pre>
 			<code>
-	const person = {
-		firstName: "John",
-		lastName: "Doe",
-		age: 50,
-		eyeColor: "blue"
-	};
-	
-	delete person.age;
-	// ou delete person["age"];
+				const person = {
+					firstName: "John",
+					lastName: "Doe",
+					age: 50,
+					eyeColor: "blue"
+				};
+				
+				delete person.age;
+				// ou delete person["age"];
 			</code>
 		</pre>
 
@@ -207,15 +207,15 @@
 
 		<pre>
 			<code>
-	myObj = {
-		name:"John",
-		age:30,
-		myCars: {
-			car1:"Ford",
-			car2:"BMW",
-			car3:"Fiat"
-		}
-	}
+				myObj = {
+					name:"John",
+					age:30,
+					myCars: {
+						car1:"Ford",
+						car2:"BMW",
+						car3:"Fiat"
+					}
+				}
 			</code>
 		</pre>
 
@@ -223,9 +223,9 @@
 
 		<pre>
 			<code>
-	myObj.myCars;
-	myObj.myCars.car1;
-	myObj["myCars"]["car3"];
+				myObj.myCars;
+				myObj.myCars.car1;
+				myObj["myCars"]["car3"];
 			</code>
 		</pre>
 	</section>
@@ -278,9 +278,9 @@
 
 		<pre>
 			<code>
-	person.name = function () {
-		return self.firstName + " " + self.lastName;
-	};
+				person.name = function () {
+					return self.firstName + " " + self.lastName;
+				};
 			</code>
 		</pre>
 
@@ -290,9 +290,9 @@
 
 		<pre>
 			<code>
-	person.name = function () {
-		return (self.firstName + " " + self.lastName).toUpperCase();
-	};
+				person.name = function () {
+					return (self.firstName + " " + self.lastName).toUpperCase();
+				};
 			</code>
 		</pre>
 	</section>
@@ -326,7 +326,7 @@
 
 		<pre>
 			<code>
-	const x = person;
+				const x = person;
 			</code>
 		</pre>
 
@@ -334,18 +334,18 @@
 
 		<pre>
 			<code>
-	// Criação de um objeto
-	const person = {
-		firstName:"John",
-		lastName:"Doe",
-		age:50, eyeColor:"blue"
-	}
+				// Criar um objeto
+				const person = {
+					firstName:"John",
+					lastName:"Doe",
+					age:50, eyeColor:"blue"
+				}
 
-	// Criação de uma cópia
-	const x = person;
+				// Criar uma cópia
+				const x = person;
 
-	// Alteração de idade em ambos
-	x.age = 10;
+				// Alterar a idade em ambos
+				x.age = 10;
 			</code>
 		</pre>
 	</section>
@@ -368,16 +368,16 @@
 
 		<pre>
 			<code>
-	// Criar um objeto
-	const person = {
-		name: "John",
-		age: 30,
-		city: "New York"
-	};
+				// Criar um objeto
+				const person = {
+					name: "John",
+					age: 30,
+					city: "New York"
+				};
 
-	// Exibir as propriedades
-	document.getElementById("demo").innerHTML =
-	person.name + "," + person.age + "," + person.city;
+				// Exibir as propriedades
+				document.getElementById("demo").innerHTML =
+				person.name + "," + person.age + "," + person.city;
 			</code>
 		</pre>
 
@@ -387,21 +387,21 @@
 
 		<pre>
 			<code>
-	// Criar um objeto
-	const person = {
-		name: "John",
-		age: 30,
-		city: "New York"
-	};
+				// Criar um objeto
+				const person = {
+					name: "John",
+					age: 30,
+					city: "New York"
+				};
 
-	// Criar o texto
-	let text = "";
-	for (let x in person) {
-		text += person[x] + " ";
-	};
+				// Criar o texto
+				let text = "";
+				for (let x in person) {
+					text += person[x] + " ";
+				};
 
-	// Exibir o texto
-	document.getElementById("demo").innerHTML = text;
+				// Exibir o texto
+				document.getElementById("demo").innerHTML = text;
 			</code>
 		</pre>
 
@@ -413,18 +413,18 @@
 
 		<pre>
 			<code>
-	// Criar um objeto
-	const person = {
-		name: "John",
-		age: 30,
-		city: "New York"
-	};
+				// Criar um objeto
+				const person = {
+					name: "John",
+					age: 30,
+					city: "New York"
+				};
 
-	// Criar uma matriz
-	const myArray = Object.values(person);
+				// Criar uma matriz
+				const myArray = Object.values(person);
 
-	// Exibir a matriz
-	document.getElementById("demo").innerHTML = myArray;
+				// Exibir a matriz
+				document.getElementById("demo").innerHTML = myArray;
 			</code>
 		</pre>
 
@@ -432,12 +432,12 @@
 
 		<pre>
 			<code>
-	const fruits = {Bananas:300, Oranges:200, Apples:500};
+				const fruits = {Bananas:300, Oranges:200, Apples:500};
 
-	let text = "";
-	for (let [fruit, value] of Object.entries(fruits)) {
-		text += fruit + ": " + value + "<br>";
-	}
+				let text = "";
+				for (let [fruit, value] of Object.entries(fruits)) {
+					text += fruit + ": " + value + "<br>";
+				}
 			</code>
 		</pre>
 
@@ -447,18 +447,18 @@
 
 		<pre>
 			<code>
-	// Criar um objeto
-	const person = {
-		name: "John",
-		age: 30,
-		city: "New York"
-	};
+				// Criar um objeto
+				const person = {
+					name: "John",
+					age: 30,
+					city: "New York"
+				};
 
-	// Usar stringify
-	let myString = JSON.stringify(person);
+				// Usar stringify
+				let myString = JSON.stringify(person);
 
-	// Exibir a sequência de caracteres
-	document.getElementById("demo").innerHTML = myString;
+				// Exibir a sequência de caracteres
+				document.getElementById("demo").innerHTML = myString;
 			</code>
 		</pre>
 	</section>
@@ -470,21 +470,21 @@
 
 		<pre>
 			<code>
-	// Função construtora para os objetos de pessoa
-	function Person(first, last, age, eye) {
-		self.firstName = first;
-		self.lastName = last;
-		self.age = age;
-		self.eyeColor = eye;
-	}
+				// Função construtora para os objetos de pessoa
+				function Person(first, last, age, eye) {
+					self.firstName = first;
+					self.lastName = last;
+					self.age = age;
+					self.eyeColor = eye;
+				}
 
-	// Criar dois objetos de pessoa
-	const myFather = new Person("John", "Doe", 50, "blue");
-	const myMother = new Person("Sally", "Rally", 48, "green");
+				// Criar dois objetos de pessoa
+				const myFather = new Person("John", "Doe", 50, "blue");
+				const myMother = new Person("Sally", "Rally", 48, "green");
 
-	// Exibir a idade
-	document.getElementById("demo").innerHTML =
-	"My father is " + myFather.age + " years old. My mother is " + myMother.age + " years old."; 
+				// Exibir a idade
+				document.getElementById("demo").innerHTML =
+				"My father is " + myFather.age + " years old. My mother is " + myMother.age + " years old."; 
 			</code>
 		</pre>
 
@@ -494,13 +494,13 @@
 
 		<pre>
 			<code>
-	function Person(first, last, age, eyecolor) {
-		self.firstName = first;
-		self.lastName = last;
-		self.age = age;
-		self.eyeColor = eyecolor;
-		self.nationality = "English";
-	}
+				function Person(first, last, age, eyecolor) {
+					self.firstName = first;
+					self.lastName = last;
+					self.age = age;
+					self.eyeColor = eyecolor;
+					self.nationality = "English";
+				}
 			</code>
 		</pre>
 
@@ -512,24 +512,24 @@
 
 		<pre>
 			<code>
-	// Função construtora para objetos de pessoa
-	function Person(first, last, age, eye) {
-		self.firstName = first;
-		self.lastName = last;
-		self.age = age;
-		self.eyeColor = eye;
-	}
+				// Função construtora para objetos de pessoa
+				function Person(first, last, age, eye) {
+					self.firstName = first;
+					self.lastName = last;
+					self.age = age;
+					self.eyeColor = eye;
+				}
 
-	// Criar dois objetos de pessoa
-	const myFather = new Person("John", "Doe", 50, "blue");
-	const myMother = new Person("Sally", "Rally", 48, "green");
+				// Criar dois objetos de pessoa
+				const myFather = new Person("John", "Doe", 50, "blue");
+				const myMother = new Person("Sally", "Rally", 48, "green");
 
-	// Adicionar a nacionalidade ao primeiro objeto
-	myFather.nationality = "English";
+				// Adicionar a nacionalidade ao primeiro objeto
+				myFather.nationality = "English";
 
-	// Exibir a nacionalidade
-	document.getElementById("demo").innerHTML =
-	"My father is " + myFather.nationality;
+				// Exibir a nacionalidade
+				document.getElementById("demo").innerHTML =
+				"My father is " + myFather.nationality;
 			</code>
 		</pre>
 
@@ -541,11 +541,11 @@
 
 		<pre>
 			<code>
-	// NÃO podemos fazer isto
-	Person.nationality = "English";
+				// NÃO podemos fazer isto
+				Person.nationality = "English";
 
-	// Mas podemos fazer isto
-	Person.prototype.nationality = "English";
+				// Mas podemos fazer isto
+				Person.prototype.nationality = "English";
 			</code>
 		</pre>
 	</section>
@@ -557,15 +557,15 @@
 
 		<pre>
 			<code>
-	function Person(first, last, age, eyecolor) {
-		self.firstName = first;
-		self.lastName = last;
-		self.age = age;
-		self.eyeColor = eyecolor;
-		self.fullName = function() {
-			return self.firstName + " " + self.lastName;
-		};
-	}
+				function Person(first, last, age, eyecolor) {
+					self.firstName = first;
+					self.lastName = last;
+					self.age = age;
+					self.eyeColor = eyecolor;
+					self.fullName = function() {
+						return self.firstName + " " + self.lastName;
+					};
+				}
 			</code>
 		</pre>
 
@@ -573,9 +573,9 @@
 
 		<pre>
 			<code>
-	myMother.changeName = function (name) {
-		self.lastName = name;
-	}
+				myMother.changeName = function (name) {
+					self.lastName = name;
+				}
 			</code>
 		</pre>
 

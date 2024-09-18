@@ -258,11 +258,13 @@
 		<p>A regra <code>@mixin</code> possibilita criar código de CSS a ser reutilizado por todo o site. Para usá-la, precisamos da regra <code>@include</code>. Sua sintaxe é:</p>
 
 		<pre>
-			<code>@mixin nome {
-			propriedade: valor;
-			propriedade: valor;
-			...
-		}</code>
+			<code>
+				@mixin nome {
+					propriedade: valor;
+					propriedade: valor;
+					...
+				}
+			</code>
 	</pre>
 
 	<p class="important-info"><strong>Observação</strong>: hifens e sublinhados são considerados iguais em SASS. Isso significa que o mixin "important-text" e o mixin "important_text" são a mesma coisa!</p>
@@ -279,56 +281,70 @@
 
 	<p>E você pode incluir outros mixins em um mixin:</p>
 
-	<pre><code>@mixin special-text {
-		@include important-text;
-		@include link;
-		@include special-border;
-	}</code></pre>
+	<pre>
+		<code>
+			@mixin special-text {
+			@include important-text;
+			@include link;
+			@include special-border;
+			}
+		</code>
+	</pre>
 
 	<h3>Mixins e variáveis</h3>
 
 	<p>Mixins aceitam argumentos, então podemos usar variáveis neles. Vejamos um exemplo:</p>
 
-	<pre><code>
-		/* Define mixin with two arguments */
-		@mixin bordered($color, $width) {
-			border: $width solid $color;
-		}
-		
-		.myArticle {
-			@include bordered(blue, 1px);  // Call mixin with two values
-		}
-		
-		.myNotes {
-			@include bordered(red, 2px); // Call mixin with two values
-		}</code></pre>
+	<pre>
+		<code>
+			/* Define mixin with two arguments */
+			@mixin bordered($color, $width) {
+				border: $width solid $color;
+			}
+			
+			.myArticle {
+				@include bordered(blue, 1px);  // Call mixin with two values
+			}
+			
+			.myNotes {
+				@include bordered(red, 2px); // Call mixin with two values
+			}
+		</code>
+	</pre>
 
 		<p>será compilado como:</p>
 
-		<pre><code>
-			.myArticle {
-			border: 1px solid blue;
-		}
-		
-		.myNotes {
-			border: 2px solid red;
-		}</code></pre>
+		<pre>
+			<code>
+				.myArticle {
+					border: 1px solid blue;
+				}
+			
+				.myNotes {
+					border: 2px solid red;
+				}
+			</code>
+		</pre>
 
 		<p>E também é possível definir valores padrão para mixins:</p>
 
-		<pre><code>
-			@mixin bordered($color: blue, $width: 1px) {
-				border: $width solid $color;
-			}
-		</code></pre>
+		<pre>
+			<code>
+				@mixin bordered($color: blue, $width: 1px) {
+					border: $width solid $color;
+				}
+			</code>
+		</pre>
 
 		<p>Depois é só definir os valores que mudam ao incluir o mixin:</p>
 
-		<pre><code>
-			.myTips {
-				@include bordered($color: orange);
-			}
-		</code></pre>
+		<pre>
+			<code>
+				.myTips {
+					@include bordered($color: orange);
+				}
+			</code>
+		</pre>
 	</section>
 
 	<section>
@@ -338,47 +354,51 @@
 
 		<p>No exemplo abaixo, temos três botões com pequenas diferenças entre eles:</p>
 
-		<pre><code>
-			.button-basic  {
-				border: none;
-				padding: 15px 30px;
-				text-align: center;
-				font-size: 16px;
-				cursor: pointer;
-			}
-			
-			.button-report  {
-				@extend .button-basic;
-				background-color: red;
-			}
-			
-			.button-submit  {
-				@extend .button-basic;
-				background-color: green;
-				color: white;
-			}
-		</code></pre>
+		<pre>
+			<code>
+				.button-basic  {
+					border: none;
+					padding: 15px 30px;
+					text-align: center;
+					font-size: 16px;
+					cursor: pointer;
+				}
+				
+				.button-report  {
+					@extend .button-basic;
+					background-color: red;
+				}
+				
+				.button-submit  {
+					@extend .button-basic;
+					background-color: green;
+					color: white;
+				}
+			</code>
+		</pre>
 
 		<p>Após o processamento, o CSS ficará assim:</p>
 
-		<pre><code>
-			.button-basic, .button-report, .button-submit {
-				border: none;
-				padding: 15px 30px;
-				text-align: center;
-				font-size: 16px;
-				cursor: pointer;
-			}
-			
-			.button-report  {
-				background-color: red;
-			}
-			
-			.button-submit  {
-				background-color: green;
-				color: white;
-			}
-		</code></pre>
+		<pre>
+			<code>
+				.button-basic, .button-report, .button-submit {
+					border: none;
+					padding: 15px 30px;
+					text-align: center;
+					font-size: 16px;
+					cursor: pointer;
+				}
+				
+				.button-report  {
+					background-color: red;
+				}
+				
+				.button-submit  {
+					background-color: green;
+					color: white;
+				}
+			</code>
+		</pre>
 
 		<p>Usando esta regra, não é preciso definir várias classes para um elemento no código HTML (como &lt;button class="button-basic button-report"&gt;Report this&lt;/button&gt;), somente ".button-report" e obteremos todos os estilos.</p>
 	</section>

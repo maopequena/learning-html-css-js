@@ -31,61 +31,73 @@
       <p>Os seletores simples de id usam o atributo para estilizar um único elemento nas páginas do site, já que o atributo id deve ser exclusivo.</p>
       <p>Para selecionar um elemento com uma id específica, use o caractere cerquilha (<code>#</code>) e o nome da id do elemento. P.ex.:</p>
       <pre>
-        <code>#myId {
-        text-align: center;
-        color: red;
-        }</code>
+        <code>
+					#myId {
+					text-align: center;
+					color: red;
+					}
+				</code>
       </pre>
       <p>O seletor de classe estiliza elementos HTML com um atributo de classe específico.</p>
       <p>Para selecionar elementos com uma classe especifica, digite um ponto (<code>.</code>) e o nome da classe do elemento. P.ex.:</p>
       <pre>
-        <code>.myClass {
-        font-size: 18pt;
-        color: blue;
-        }</code>
+        <code>
+					.myClass {
+					font-size: 18pt;
+					color: blue;
+					}
+				</code>
       </pre>
       <p>Também é possível definir que apenas alguns elementos HTML devem ser afetados por uma classe:</p>
       <pre>
-        <code>p.myClass {
-        margin-left: 10px;
-        font-family: Arial, Helvetica, sans-serif;
-        }</code>
+        <code>
+					p.myClass {
+					margin-left: 10px;
+					font-family: Arial, Helvetica, sans-serif;
+					}
+				</code>
       </pre>
       <p>Ou, ainda, um elemento pode ter mais de uma classe:</p>
       <pre>
-        <code>&lt;html&gt;
-        &lt;head&gt;
-        &lt;style&gt;
-        p.center {
-        text-align: center;
-        color: red;
-        }
+        <code>
+					&lt;html&gt;
+					&lt;head&gt;
+					&lt;style&gt;
+					p.center {
+						text-align: center;
+						color: red;
+					}
 
-        p.large {
-        font-size: 300%;
-        }
-        &lt;/style&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
+					p.large {
+						font-size: 300%;
+					}
+					&lt;/style&gt;
+					&lt;/head&gt;
+					&lt;body&gt;
 
-        &lt;h1 class="center"&gt;This heading will not be affected&lt;/h1&gt;
-        &lt;p class="center"&gt;This paragraph will be red and center-aligned.&lt;/p&gt;
-        &lt;p class="center large"&gt;This paragraph will be red, center-aligned, and in a large font-size.&lt;/p&gt;
-        &lt;/body&gt;</code>
+					&lt;h1 class="center"&gt;This heading will not be affected&lt;/h1&gt;
+					&lt;p class="center"&gt;This paragraph will be red and center-aligned.&lt;/p&gt;
+					&lt;p class="center large"&gt;This paragraph will be red, center-aligned, and in a large font-size.&lt;/p&gt;
+					&lt;/body&gt;
+				</code>
       </pre>
       <p>Também podemos usar o seletor universal (<code>*</code>) para selecionar todos os elementos na página.</p>
       <pre>
-        <code>* {
-        font-size: 18pt;
-        color: blue;
-        }</code>
+        <code>
+					* {
+						font-size: 18pt;
+						color: blue;
+					}
+				</code>
       </pre>
       <p>E é possível, ainda, agrupar elementos que têm o mesmo estilo usando vírgulas (o que é chamado de "lista"). Este exemplo coloca tamanho de fonte de 18 pontos e a cor azul em cabeçalhos h1, h2 e parágrafos:</p>
       <pre>
-        <code>h1, h2, p {
-        font-size: 18pt;
-        color: blue;
-        }</code>
+        <code>
+					h1, h2, p {
+						font-size: 18pt;
+						color: blue;
+					}
+				</code>
       </pre>
 
       <p class="important-info"><strong>Observação</strong>: ao agrupar seletores dessa forma, se a sintaxe de um dos seletores for inválida, toda a regra será ignorada!</p>
@@ -96,34 +108,42 @@
       <h3>Descendente (espaço)</h3>
       <p>Corresponde todos os elementos que são descendentes do elemento especificado. P.ex.:</p>
       <pre>
-        <code>div p {
-        background-color: yellow;
-        }</code>
+        <code>
+					div p {
+						background-color: yellow;
+					}
+				</code>
       </pre>
 
       <h3>Filho (>)</h3>
       <p>Corresponde todos os elementos que são filhos do elemento especificado. P.ex.:</p>
       <pre>
-        <code>div > p {
-        background-color: yellow;
-        }</code>
+        <code>
+					div > p {
+						background-color: yellow;
+					}
+				</code>
       </pre>
           
       <h3>Adjacentes (+)</h3>
       <p>Seleciona um elemento que está diretamente a seguir do elemento especificado. P.ex.:</p>
       <pre>
-        <code>div + p {
-        background-color: yellow;
-        }</code>
+        <code>
+					div + p {
+						background-color: yellow;
+					}
+				</code>
       </pre>
       <p>Os elementos adjacentes devem ter o mesmo pai. Muito usado para adicionar espaço entre os parágrafos ou itens de lista <em>somente</em> se um elemento é um <strong>irmão</strong> próximo de outro elemento pai.</p>
           
       <h3>Irmão geral (~)</h3>
       <p>Seleciona todos os elementos que são os irmãos próximos de um elementos especificado. P.ex.:</p>
       <pre>
-        <code>div ~ p {
-        background-color: yellow;
-        }</code>
+        <code>
+					div ~ p {
+						background-color: yellow;
+					}
+				</code>
       </pre>
 
       <h2 id="pseudo-classe">Seletores de pseudo-classe</h2>
@@ -135,19 +155,23 @@
       </ul>
       <p>Use dois-pontos (<code>:</code>) para definir uma pseudo-classe.</p>
       <pre>
-        <code>a:hover {
-        background-color: yellow;
-        }</code>
+        <code>
+					a:hover {
+						background-color: yellow;
+					}
+				</code>
       </pre>
       <p class="important-info"><strong>Observação</strong>: <code>a:hover</code> DEVE vir após <code>a:link</code> e <code>a:visited</code> nas definições do CSS para funcionar! <code>a:active</code> DEVE vir após <code>a:hover</code> para funcionar! Os nomes de pseudo-classes não diferenciam maiúsculas de minúsculas.</p>
       <p>Também é possível combinar pseudo-classe e ids ou classes. P.ex.:</p>
       <pre>
-        <code>a#myId:first-child {
-        background-color: yellow;
-        }
-        p.myClass:hover {
-        background-color: blue;
-        }</code>
+        <code>
+					a#myId:first-child {
+						background-color: yellow;
+					}
+					p.myClass:hover {
+						background-color: blue;
+					}
+				</code>
       </pre>
 
       <p>Mais informações sobre pseudo-classes em <a href="https://web.dev/learn/css/pseudo-classes" target="_blank" rel="noopener noreferrer">Web.dev</a>.</p>

@@ -109,14 +109,18 @@
       <p>Ao colocar o seletor <code>:nth-child()</code> em ambos os elementos <code>&lt;th&gt;</code> e <code>&lt;td&gt;</code>, a estilização ocorre para cabeçalhos e células da tabela.</p>
       <p>É possível combinar as duas estilizações acima para ter linhas e colunas alteradas com cores. Ao usar uma cor transparente, se obtém um efeito sobreposto.<br>Ex.:</p>
       <pre>
-      <code>tr:nth-child(even) {</code>
-      <code>background-color: rgba(150, 212, 212, 0.4);</code>
-      <code>}</code>
+				<code>
+					tr:nth-child(even) {
+						background-color: rgba(150, 212, 212, 0.4);
+					}
+				</code>
       </pre>
       <pre>
-      <code>th:nth-child(even),td:nth-child(even) {</code>
-      <code>background-color: rgba(150, 212, 212, 0.4);</code>
-      <code>}`</code>
+				<code>
+					th:nth-child(even),td:nth-child(even) {
+						background-color: rgba(150, 212, 212, 0.4);
+					}`
+				</code>
       </pre>
       <p>Também é possível usar <code>border-bottom=Npx solid #color</code> ou <code>border-top</code> no elemento <code>&lt;tr&gt;</code> para colocar bordas apenas embaixo ou em cima das células, dando a impressão de réguas divisoras.</p>
       <p>O seletor <code>:hover</code> em </code>&lt;tr&gt;</code> realça a cor de uma linha ao passar o mouse, idem para colunas.</p>
