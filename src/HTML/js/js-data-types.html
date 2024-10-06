@@ -786,9 +786,297 @@
 
 		<p>Todos os métodos podem ser usados em todos os tipos de números: literais, variáveis e expressões.</p>
 
-		<h4>toString()</h4>
+			<h4>toString()</h4>
 
-		<p>Retorna um número como uma string.</p>
+			<p>Retorna um número como uma string.</p>
+
+			<pre>
+				<code>
+					let x = 123;
+
+					x.toString(); // "123"
+					(123).toString(); // "123"
+					(100 + 23).toString(); // "123"
+				</code>
+			</pre>
+
+			<h4>toExponential()</h4>
+
+			<p>Retorna uma string, com um número arredondado e escrito em notação exponencial. O parâmetro define a quantidade de caracteres após o ponto decimal, este parâmetro é opcional e, se não definido, o JavaScript não arredonda o número.</p>
+
+			<pre>
+				<code>
+					let x = 9.656;
+
+					x.toExponential(); // 9.656e+0
+					x.toExponential(2); // 9.66e+0
+					x.toExponential(4); // 9.6560e+0
+					x.toExponential(6); // 9.656000e+0
+				</code>
+			</pre>
+
+			<h4>toFixed()</h4>
+
+			<p>Retorna uma string, com o número escrito com uma quantidade especificada de caracteres decimais. Este método é ótima para lidar com valores monetários.</p>
+
+			<pre>
+				<code>
+					let x = 9.656;
+
+					x.toFixed(0); // 10
+					x.toFixed(2); // 9.66
+					x.toFixed(4); // 9.6560
+					x.toFixed(6); // 9.656000
+				</code>
+			</pre>
+
+			<h4>toPrecision()</h4>
+
+			<p>Retorna uma string com um número escrito com uma quantidade especificada de dígitos.</p>
+
+			<pre>
+				<code>
+					let x = 9.656;
+
+					x.toPrecision(); // 9.656
+					x.toPrecision(2); // 9.7
+					x.toPrecision(4); // 9.656
+					x.toPrecision(6); // 9.65600
+				</code>
+			</pre>
+
+			<h4>valueOf()</h4>
+
+			<p>Retorna um número como número. Em JavaScript, um número pode ser um valor primitivo (typeof = number) ou um objeto (typeof = object). Este método é usado pelo JavaScript para converter objetos em valores primitivos, mas não é necessário usá-lo.</p>
+
+			<p class="important-info">Todos os tipos de dados em JavaScript aceitam os métodos <code>valueOf()</code> e <code>toString()</code>.</p>
+
+			<pre>
+				<code>
+					let x = 123;
+
+					x.valueOf(); // 123
+					(123).valueOf(); // 123
+					(100 + 23).valueOf(); // 123
+				</code>
+			</pre>
+
+		<h3>Converter variáveis em números</h3>
+
+		<p>Você pode usar um dos três métodos abaixo para converter variáveis em números, porém note que estes métodos não são exclusivos para números, são métodos <strong>globais</strong>.</p>
+
+			<h4>Number()</h4>
+
+			<p>Retorna um número convertido a partir de um argumento.</p>
+
+			<pre>
+				<code>
+					Number(true); // 1
+					Number(false); // 0
+					Number("10"); // 10
+					Number("  10"); // 10
+					Number("10  "); // 10
+					Number(" 10  "); // 10
+					Number("10.33"); // 10.33
+					Number("10,33"); // NaN
+					Number("10 33"); // NaN
+					Number("John"); // NaN
+				</code>
+			</pre>
+
+			<p>Observe que se a variável não pode ser convertida, é exibido <code>NaN</code>.</p>
+
+			<p>Também é possível usar este método para converter uma data em um número.</p>
+
+			<pre>
+				<code>
+					Number(new Date("1970-01-01")) // 0
+					Number(new Date("1970-01-02")) // 86400000
+					Number(new Date("2017-09-30")) // 253402214400000
+				</code>
+			</pre>
+
+			<p>Observe que o método <code>Date()</code> retorna a quantidade de milissegundos desde 1/1/1970.</p>
+
+			<h4>parseInt()</h4>
+
+			<p>Analisa uma string e retorna um número inteiro. É permitido usar espaços, mas apenas o primeiro número será exibido.</p>
+
+			<p>Se o número não pode ser convertido, é exibido <code>NaN</code>.</p>
+
+			<pre>
+				<code>
+					parseInt("-10"); // -10
+					parseInt("-10.33"); // -10
+					parseInt("10"); // 10
+					parseInt("10.33"); // 10
+					parseInt("10 20 30"); // 10
+					parseInt("10 years"); // 10
+					parseInt("years 10"); // NaN
+				</code>
+			</pre>
+
+			<h4>parseFloat()</h4>
+
+			<p>Analisa uma string e retorna um número. É permitido usar espaços, mas apenas o primeiro número será exibido.</p>
+
+			<p>Se o número não pode ser convertido, é exibido <code>NaN</code>.</p>
+
+			<pre>
+				<code>
+					parseFloat("10"); // 10
+					parseFloat("10.33"); // 10.33
+					parseFloat("10 20 30"); // 10
+					parseFloat("10 years"); // 10
+					parseFloat("years 10"); // NaN
+				</code>
+			</pre>
+
+		<h3>Métodos do objeto de número</h3>
+
+		<p>Os métodos descritos a seguir pertencem ao objeto de número e só podem ser acessados com notação de ponto (p.ex. <code>Number.isInteger()</code>).</p>
+
+		<p>Não é possível usar <code>X.isInteger()</code>, em que "X" é uma variável. Isso retorna um erro: <code>TypeError X.isInteger is not a function</code>.</p>
+
+		<p class="important-info">Os métodos de número <strong>NÃO</strong> podem ser usados em variáveis.</p>
+
+			<h4>Number.isInteger()</h4>
+
+			<p>Retorna <code>true</code> se o argumento é um número inteiro.</p>
+
+			<pre>
+				<code>
+					Number.isInteger(10); // true
+					Number.isInteger(10.5); // false
+				</code>
+			</pre>
+
+			<h4>Number.isSafeInteger()</h4>
+
+			<p>Um inteiro seguro é um número inteiro que pode ser representado como um número com precisão de duas casas. Este método retorna <code>true</code> se o argumento é um número inteiro seguro.</p>
+
+			<p>Os números inteiros seguros estão entre -(2<sup>53</sup> - 1) e +(2<sup>53</sup> - 1)</p>
+
+			<pre>
+				<code>
+					Number.isSafeInteger(10); // true
+					Number.isSafeInteger(12345678901234567890); // false
+				</code>
+			</pre>
+
+			<h4>Number.parseFloat()</h4>
+
+			<p>Analisa uma string e retorna um número. É permitido usar espaços, mas apenas o primeiro número será exibido.</p>
+
+			<p>Se o número não pode ser convertido, é exibido <code>NaN</code>.</p>
+
+			<pre>
+				<code>
+					Number.parseFloat("10"); // 10
+					Number.parseFloat("10.33"); // 10.33
+					Number.parseFloat("10 20 30"); // 10
+					Number.parseFloat("10 years"); // 10
+					Number.parseFloat("years 10"); // NaN
+				</code>
+			</pre>
+
+			<h4>Number.parseInt()</h4>
+
+			<p>Analisa uma string e retorna um número inteiro. É permitido usar espaços, mas apenas o primeiro número será exibido.</p>
+
+			<p>Se o número não pode ser convertido, é exibido <code>NaN</code>.</p>
+
+			<pre>
+				<code>
+					Number.parseInt("-10"); // -10
+					Number.parseInt("-10.33"); // -10
+					Number.parseInt("10"); // 10
+					Number.parseInt("10.33"); // 10
+					Number.parseInt("10 20 30"); // 10
+					Number.parseInt("10 years"); // 10
+					Number.parseInt("years 10"); // NaN
+				</code>
+			</pre>
+	</section>
+
+	<section>
+		<h3>Propriedades de números</h3>
+
+			<p class="important-info">Estas propriedades <strong>NÃO</strong> podem ser usadas com variáveis.</p>
+
+			<h4>EPSILON</h4>
+
+			<p>Esta propriedade retorna a diferença entre o menor número decimal maior que 1 e 1.</p>
+
+			<pre>
+				<code>
+					let x = Number.EPSILON; // 2.220446049250313e-16
+				</code>
+			</pre>
+
+			<h4>MAX_VALUE</h4>
+
+			<p>É uma constante que representa o maior número possível no JavaScript.</p>
+
+			<pre>
+				<code>
+					let x = Number.MAX_VALUE; // 1.7976931348623157e+308
+				</code>
+			</pre>
+
+			<h4>MIN_VALUE</h4>
+
+			<p>É uma constante que representa o menor número possível no JavaScript.</p>
+
+			<pre>
+				<code>
+					let x = Number.MIN_VALUE; // 5e-324
+				</code>
+			</pre>
+
+			<h4>MAX_SAFE_INTEGER</h4>
+
+			<p>Representa o número inteiro máximo no JavaScript, que é (2<sup>53</sup> - 1).</p>
+
+			<pre>
+				<code>
+					let x = Number.MAX_SAFE_INTEGER; // 9007199254740991
+				</code>
+			</pre>
+
+			<h4>MIN_SAFE_INTEGER</h4>
+
+			<p>Representa o número inteiro mínimo no JavaScript, que é -(2<sup>53</sup> - 1).</p>
+
+			<pre>
+				<code>
+					let x = Number.MIN_SAFE_INTEGER; // -9007199254740991
+				</code>
+			</pre>
+
+			<h4>POSITIVE_INFINITY e NEGATIVE_INFINITY</h4>
+
+			<p>Retornam <code>Infinity</code> e <code>-Infinity</code> quando usadas. Também são exibidas em divisões por 0.</p>
+
+			<pre>
+				<code>
+					let x = Number.POSITIVE_INFINITY; // Infinity
+					let x = Number.NEGATIVE_INFINITY; // -Infinity
+					let x = 1 / 0; // Infinity
+					let x = -1 / 0; // -Infinity
+				</code>
+			</pre>
+
+			<h4>NaN - Not a Number</h4>
+
+			<p>É uma palavra reservada no JavaScript para um número inválido. Tentar fazer uma operação aritmética com uma cadeia de caracteres não numérica também resulta em <code>NaN</code>.</p>
+
+			<pre>
+				<code>
+					let x = Number.NaN; // NaN
+					let x = 100 / "Apple"; // NaN
+				</code>
+			</pre>
 	</section>
 
 	<section>

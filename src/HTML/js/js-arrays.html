@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Matrizes">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrizes</title>
+</head>
+<body>
+	<header>
+		<h1>Matrizes</h1>
+	</header>
+
+	<section>
+		<p>Uma matriz é uma variável especial que pode conter mais de um valor.</p>
+
+		<pre>
+			<code>
+				const cars = ["Saab", "Volvo", "BMW"];
+			</code>
+		</pre>
+
+		<h2>Por que usar matrizes?</h2>
+
+		<p>Armazenar uma lista de variáveis unicamente pode ser muito trabalhoso:</p>
+
+		<pre>
+			<code>
+				let car1 = "Saab";
+				let car2 = "Volvo";
+				let car3 = "BMW";
+			</code>
+		</pre>
+
+		<p>E se quiséssemos usar um desses itens e nossa lista tivesse 300 itens? É para isso que servem as matrizes!</p>
+
+		<p>Ela pode conter muitos valores, com um só nome de variável. E podemos acessar seus valores pelos números de índice.</p>
+
+		<p>Para acessar toda a matriz, é só chamar seu nome de variável, como em:</p>
+
+		<pre>
+			<code>
+				const cars = ["Saab", "Volvo", "BMW"];
+				document.getElementById("demo").innerHTML = cars;
+			</code>
+		</pre>
+
+		<p>As matrizes são um tipo especial de objeto. O operador <code>typeof</code> retorna "object" para matrizes.</p>
+
+		<p>Portanto, para saber se determinada variável é uma matriz, use o método <code>Array.isArray()</code>. Ou use o <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_instanceof_array" target="_blank" rel="noopener noreferrer">operador <code>instanceof</code></a>.</p>
+
+		<h3>Os elementos de uma matriz podem ser objetos</h3>
+
+		<p>As variáveis no JavaScript podem ser objetos e as matrizes são um tipo especial de objeto.</p>
+
+		<p>Por causa disso, podemos ter tipos diferentes de variáveis na mesma matriz, inclusive objetos, funções e, até, matrizes!</p>
+
+		<pre>
+			<code>
+				myArray[0] = Date.now; // myArray contém um objeto Date
+				myArray[1] = myFunction; // myArray contém uma função
+				myArray[2] = myCars; // myArray contém uma matriz
+
+				console.log(myArray); // [Date.now, myFunction, myCars]
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Sintaxe de uma matriz</h2>
+
+		<p>Use a seguinte sintaxe para criar uma matriz:</p>
+
+		<p><code>const array_name = [item1, item2, ...];</code></p>
+
+		<p>A prática recomendada é declarar uma matriz com <code>const</code>.</p>
+
+		<p>O JavaScript não leva em consideração os espaços e as quebras de linha: os itens de uma matriz podem estar em várias linhas.</p>
+
+		<pre>
+			<code>
+				const cars = [
+					"Saab",
+					"Volvo",
+					"BMW"
+				];
+			</code>
+		</pre>
+
+		<p>Também é possível criar uma matriz vazia e, depois, fornecer os elementos:</p>
+
+		<pre>
+			<code>
+				const cars = [];
+					cars[0]= "Saab";
+					cars[1]= "Volvo";
+					cars[2]= "BMW";
+			</code>
+		</pre>
+
+		<p>Outra forma de criar matrizes é usando a palavra-chave <code>new</code>:</p>
+
+		<pre>
+			<code>
+				const cars = new Array("Saab", "Volvo", "BMW");
+			</code>
+		</pre>
+
+		<p>Porém, por questão de simplicidade e facilidade para ler o código, recomenda-se não usar a palavra-chave <code>new</code>.</p>
+
+		<p>Há também o construtor de matrizes <code>new Array()</code>, mas ele pode (e deve) ser substituído pela sintaxe <code>[]</code>, porque pode gerar resultados inesperados.</p>
+
+		<p>As duas declarações a seguir geram resultados diferentes:</p>
+
+		<pre>
+			<code>
+				const points = [40]; // 40
+				const points = new Array(40); // undefined
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Como acessar os itens de uma matriz</h2>
+
+		<p>Para acessar os itens de uma matriz, usamos seu número de índice. Vale lembrar que o número de índice no JavaScript começa em 0.</p>
+
+		<pre>
+			<code>
+				const cars = ["Saab", "Volvo", "BMW"];
+				let car = cars[0];
+			</code>
+		</pre>
+
+		<p>Para acessar o último elemento, use <code>cars.length - 1</code>.</p>
+		
+			<h3>Acessar todos os itens de uma matriz com um loop</h3>
+
+			<p>Podemos usar um loop <code>for</code> para acessar todos os itens de uma matriz em uma função, por exemplo.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					let fLen = fruits.length;
+
+					let text = "<ul>";
+					for (let i = 0; i < fLen; i++) {
+						text += "<li>" + fruits[i] + "</li>";
+					}
+					text += "</ul>";
+				</code>
+			</pre>
+
+			<p>Ou usando a função <code>Array.forEach()</code>:</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+					let text = "<ul>";
+					fruits.forEach(myFunction);
+					text += "</ul>";
+
+					function myFunction(value) {
+						text += "<li>" + value + "</li>";
+					}
+				</code>
+			</pre>
+
+			<p>O resultado dos dois últimos blocos de código é o mesmo, uma lista de frutas.</p>
+	</section>
+
+	<section>
+		<h2>Alterar elementos na matriz</h2>
+
+		<p>A declaração a seguir altera o valor do primeiro elemento na matriz chamada <code>cars</code>:</p>
+
+		<pre>
+			<code>
+				const cars = ["Saab", "Volvo", "BMW"];
+				cars[0] = "Opel";
+
+				console.log(cars) // ["Opel", "Volvo", "BMW"]
+			</code>
+		</pre>
+
+			<h3 id="addElements">Adicionar elementos a uma matriz</h3>
+
+			<p>A maneira mais fácil de adicionar elementos a uma matriz é usando o método <code>push()</code>.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple"];
+					fruits.push("Lemon");  // Adiciona um novo elemento (Lemon) a fruits
+				</code>
+			</pre>
+
+			<p>Ou podemos adicionar um novo elemento usando a <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_add" target="_blank" rel="noopener noreferrer">propriedade <code>length</code></a>.</p>
+
+			<p class="important-info">Adicionar elementos pelo índice pode criar "falhas" na matriz. Sempre observe o comprimento da matriz e adicione o número de índice correto.</p>
+	</section>
+
+	<section>
+		<h2 id="toString">Converter uma matriz em uma cadeia de caracteres</h2>
+
+		<p>O método <code>toString()</code> converte uma matriz em uma cadeia de caracteres, com os valores separados por vírgulas.</p>
+
+		<pre>
+			<code>
+				const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				document.getElementById("demo").innerHTML = fruits.toString();
+
+				console.log(fruits.toString()) // Banana,Orange,Apple,Mango
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Métodos e propriedades de matrizes</h2>
+
+		<p>A verdadeira utilidade das matrizes no JavaScript são suas propriedades e seus métodos incorporados.</p>
+
+			<h3>length</h3>
+
+			<p>Quando usada em uma matriz, esta propriedade retorna seu comprimento, isto é, a quantidade de elementos contidos na matriz.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					let length = fruits.length; // 4
+				</code>
+			</pre>
+
+			<h3>toString()</h3>
+
+			<p>Consulte <a href="#toString">Converter uma matriz em uma cadeia de caracteres</a> acima.</p>
+
+			<h3>at()</h3>
+
+			<p>É o mesmo que usar o número de índice entre colchetes, isto é, retorna o elemento correspondente ao índice.</p>
+
+			<p>Há linguagens de programação que permitem o uso de índices negativos, como "[-1]", porém isso não é possível no JavaScript, porque os colchetes são usados para acessar matrizes e objetos. É para isso que serve este método.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					let fruit = fruits.at(2); // "Apple"
+					let fruit = fruits[2]; // "Apple"
+				</code>
+			</pre>
+
+			<h3>join()</h3>
+
+			<p>Este método une todos os elementos da matriz em uma cadeia de caracteres. O parâmetro usado entre os parênteses será usado como seu separador.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					document.getElementById("demo").innerHTML = fruits.join(" * "); // Banana * Orange * Apple * Mango
+				</code>
+			</pre>
+
+			<h3>pop() e push()</h3>
+
+			<p>Estes métodos são usados, respectivamente, para remover e adicionar elementos no último índice de uma matriz. Veja também <a href="#addElements">Adicionar elementos a uma matriz</a>.</p>
+
+			<h3>shift() e unshift()</h3>
+
+			<p>Esses métodos funcionam como <code>pop()</code> e <code>push()</code>, respectivamente, mas para o primeiro elemento da matriz.</p>
+
+			<p>Nos casos de <code>pop()</code> e <code>shift()</code>, usar <code>variável.método()</code> retorna o elemento que foi removido. Nos casos de <code>push()</code> e <code>unshift()</code>, usar <code>variável.método()</code> retorna o comprimento da matriz.</p>
+
+			<h3>delete()</h3>
+
+			<p class="important-info">Não remova elementos de uma matriz. Dê preferência para usar os métodos <code>pop()</code> e <code>shift()</code>, pois este método pode gerar o resultado "<a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_delete" target="_blank" rel="noopener noreferrer">undefined</a>" se usado.</p>
+
+			<h3>concat()</h3>
+
+			<p>Cria uma nova matriz a partir de duas ou mais matrizes.</p>
+
+			<pre>
+				<code>
+					const myGirls = ["Cecilie", "Lone"];
+					const myBoys = ["Emil", "Tobias", "Linus"];
+
+					const myChildren = myGirls.concat(myBoys); // Cecilie,Lone,Emil,Tobias,Linus
+				</code>
+			</pre>
+
+			<p>Este método não altera as matrizes existentes, ele <em>cria uma nova</em>. Além disso, é possível usar vários argumentos e, até, cadeias de caracteres:</p>
+
+			<pre>
+				<code>
+					const arr1 = ["Cecilie", "Lone"];
+					const arr2 = ["Emil", "Tobias", "Linus"];
+					const arr3 = ["Robin", "Morgan"];
+					const myChildren = arr1.concat(arr2, arr3); // Cecilie,Lone,Emil,Tobias,Linus,Robin,Morgan
+					const myChildren = arr1.concat("Peter"); // Cecilie,Lone,Peter
+				</code>
+			</pre>
+
+			<h3>copyWithin()</h3>
+
+			<p>Copia os elementos de uma matriz para outra posição na mesma matriz, substituindo os valores existentes:</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					fruits.copyWithin(2, 0); // Copia para a posição 2 todos os elementos a partir do índice 0.
+
+					const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+					fruits.copyWithin(2, 0, 2); // Copia para a posição 2 todos os elementos do índice 0 ao 2.
+				</code>
+			</pre>
+
+			<p><strong>OBSERVAÇÃO</strong>: este método substitui os valores existentes, não adiciona itens à matriz e não altera o comprimento da matriz.</p>
+
+			<h3>flat()</h3>
+
+			<p>Este método transforma uma matriz multi-dimensional em uma matriz unidimensional:</p>
+
+			<pre>
+				<code>
+					const myArr = [[1,2],[3,4],[5,6]];
+					const newArr = myArr.flat(); // 1,2,3,4,5,6
+				</code>
+			</pre>
+
+			<h3>flatMap()</h3>
+
+			<p>Este método mapeia todos os elementos de uma matriz e, depois, cria uma nova matriz unidimensional com os resultados.</p>
+
+			<pre>
+				<code>
+					const myArr = [1, 2, 3, 4, 5, 6];
+					const newArr = myArr.flatMap(x => [x, x * 10]); // 1,10,2,20,3,30,4,40,5,50,6,60
+				</code>
+			</pre>
+
+			<h3>splice() e slice()</h3>
+
+			<p>Estes métodos permitem adicionar e remover elementos em uma matriz.</p>
+
+			<p><code>splice()</code> pode ser usado para adicionar ou remover elementos em uma posição específica de uma matriz:</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					fruits.splice(2, 0, "Lemon", "Kiwi"); // Banana,Orange,Lemon,Kiwi,Apple,Mango
+				</code>
+			</pre>
+
+			<p>No caso acima, o primeiro parâmetro define onde adicionar os novos elementos, o segundo parâmetro define quantos elementos devem ser removidos e o restante dos parâmetros são os elementos a adicionar. Usar <code>variável.splice()</code> retorna uma matriz com os itens excluídos.</p>
+
+			<p>Quando usado de forma correta, o método <code>splice()</code> também pode ser usado para <em>remover</em> elementos da matriz, sem deixar falhas.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					fruits.splice(0, 1); // Orange,Apple,Mango
+				</code>
+			</pre>
+
+			<p>Neste caso, o primeiro parâmetro define onde adicionar os novos elementos e o segundo parâmetro define quantos elementos devem ser removidos. E como não há mais parâmetros, nada é adicionado.</p>
+
+			<p><code>slice()</code> remove o elemento no índice definido no parâmetro entre parênteses e retorna uma nova matriz, sem alterar a matriz original.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+					const citrus = fruits.slice(3); // Apple,Mango
+				</code>
+			</pre>
+
+			<p>Este método aceita até dois parâmetros, como em "(1, 3)", sendo o primeiro o índice de início e o segundo o índice de fim, sem incluir este último. No caso de "(1, 3)" no exemplo acima, ficaríamos com:</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+					const citrus = fruits.slice(1, 3); // Orange,Lemon
+				</code>
+			</pre>
+
+			<h3>toSpliced()</h3>
+
+			<p>Este é um método seguro para cortar (splice) uma matriz sem alterar a matriz original. A diferença entre <code>toSpliced()</code> e <code>splice()</code> é que com este método criamos uma nova matriz, enquanto com <code>splice()</code> altera a matriz original.</p>
+
+			<h3>toString()</h3>
+
+			<p>Converte uma matriz em uma cadeia de caracteres separada por vírgulas. É o mesmo que chamar somente o nome de variável da matriz.</p>
+
+			<h3>indexOf()</h3>
+
+			<p>Pesquisa pelo valor de um elemento em uma matriz e retorna sua posição. A sintaxe usada é <em>matriz.indexOf(item, início)</em>. <em>item</em> é obrigatório, é o termo a pesquisar. <em>início</em> é o índice inicial, que é opcional, mas valores negativos começam a contar na posição definida desde o final da matriz, pesquisando até o final. Se o termo não for encontrado, retorna -1. Se há mais de uma ocorrência, retorna sempre o primeiro resultado.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Apple", "Orange", "Apple", "Mango"];
+					let position = fruits.indexOf("Apple"); // 0
+					let position = fruits.indexOf("Apple", 1); // 2
+				</code>
+			</pre>
+
+			<h3>lastIndexOf()</h3>
+
+			<p>Pesquisa pelo valor de um elemento em uma matriz e retorna sua última posição. A sintaxe usada é <em>matriz.lastIndexOf(item, início)</em>. <em>item</em> é obrigatório, é o termo a pesquisar. <em>início</em> é o índice inicial, que é opcional, mas valores negativos começam a contar na posição definida desde o final da matriz, pesquisando até o começo. Se o termo não for encontrado, retorna -1. Se há mais de uma ocorrência, retorna sempre o primeiro resultado.</p>
+
+			<h3>includes()</h3>
+
+			<p>Possibilita verificar se determinado elemento está presente em uma matriz, incluindo <em>NaN</em>, que não é permitido com <code>indexOf()</code>. Sua sintaxe é <em>matriz.includes(item-a-pesquisar)</em>.</p>
+
+			<h3>find()</h3>
+
+			<p>Retorna o valor do primeiro elemento da matriz que passa em uma função de teste. O exemplo a seguir encontra (isto é, retorna o valor de) o primeiro elemento da matriz que é maior que 18.</p>
+
+			<pre>
+				<code>
+					const numbers = [4, 9, 16, 25, 29];
+					let first = numbers.find(myFunction);
+
+					function myFunction(value, index, array) {
+						return value > 18;
+					}
+
+					console.log(first) // 25
+				</code>
+			</pre>
+
+			<p>Neste caso, a função aceita três argumentos: o valor do item, o índice do item e a matriz a pesquisar.</p>
+
+			<h3>findIndex()</h3>
+
+			<p>Retorna o índice do primeiro elemento da matriz que passa em uma função de teste. A função aceita os mesmos argumentos que em <code>find()</code>. O exemplo a seguir encontra o índice do primeiro elemento da matriz que é maior que 18.</p>
+
+			<pre>
+				<code>
+					const numbers = [4, 9, 16, 25, 29];
+					let first = numbers.findIndex(myFunction);
+
+					function myFunction(value, index, array) {
+						return value > 18;
+					} // 3
+				</code>
+			</pre>
+
+			<h3>findLast()</h3>
+
+			<p>Começa a pesquisar pelo final da matriz e retorna o valor do primeiro elemento que satisfaz uma condição.</p>
+
+			<pre>
+				<code>
+					const temp = [27, 28, 30, 40, 42, 35, 30];
+					let high = temp.findLast(x => x > 40); // 42
+				</code>
+			</pre>
+
+			<h3>findLastIndex()</h3>
+
+			<p>Faz o mesmo que o método acima, mas retorna o índice correspondente.</p>
+
+			<h3>sort()</h3>
+
+			<p>Classifica uma matriz alfabeticamente.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					fruits.sort();
+
+					console.log(fruits); // Apple,Banana,Mango,Orange
+				</code>
+			</pre>
+
+			<p>Por padrão, este método classifica os elementos como cadeias de caracteres, porém temos dificuldades com este método para classificar números, já que em uma matriz que contém os números 25 e 100, por exemplo, 100 apareceria antes de 25, porque 2 é maior que 1. Para solucionar esse problema, podemos usar uma <strong>função de comparação</strong>:</p>
+
+			<pre>
+				<code>
+					// Classificar de forma ascendente
+					const points = [40, 100, 1, 5, 25, 10];
+					points.sort(function(a, b){return a - b});
+
+					console.log(points) // 1,5,10,25,40,100
+
+					// Classificar de forma descendente
+					points.sort(function(a, b){return b - a});
+
+					console.log(points) // 100,40,25,10,5,1
+				</code>
+			</pre>
+
+			<p>A função de comparação retorna um valor negativo, zero ou um valor positivo, dependendo dos parâmetros usados. Ao colocar essa função dentro do método <code>sort()</code>, o método envia o valor à função e classifica o valor retornado. Se o valor é negativo, <code>a</code> é classificado antes de <code>b</code>, se for positivo, <code>b</code> é classificado antes de <code>a</code>, e se for zero o método não altera a ordem de classificação dos dois valores comparados.</p>
+
+			<p>Também podemos usar uma função para classificar uma matriz de números em ordem aleatória:</p>
+
+			<pre>
+				<code>
+					const points = [40, 100, 1, 5, 25, 10];
+					points.sort(function(){return 0.5 - Math.random()}); // 10,25,5,1,100,40
+					points.sort(function(){return 0.5 - Math.random()}); // 1,25,5,10,100,40
+					points.sort(function(){return 0.5 - Math.random()}); // 5,25,40,10,100,1
+				</code>
+			</pre>
+
+			<p>Cada ocorrência da função gera uma cadeia de caracteres diferente.</p>
+
+			<p>Este método de classificação não é muito preciso, já que favorece alguns números em relação a outros. Para corrigir isto, podemos usar o método de Fisher Yates da seguinte forma:</p>
+
+			<pre>
+				<code>
+					const points = [40, 100, 1, 5, 25, 10];
+
+					for (let i = points.length -1; i > 0; i--) {
+						let j = Math.floor(Math.random() * (i+1));
+						let k = points[i];
+						points[i] = points[j];
+						points[j] = k;
+					}
+
+					console.log(points); // 40,100,1,5,25,10
+					console.log(points); // 10,1,40,5,25,100
+					console.log(points); // 10,40,100,25,5,1
+				</code>
+			</pre>
+
+			<h3>reverse()</h3>
+
+			<p>Inverte os elementos de uma matriz.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					fruits.reverse();
+
+					console.log(fruits); // Mango,Apple,Orange,Banana
+				</code>
+			</pre>
+
+			<p>Quando combinado com <code>sort()</code>, este método pode ser usado para classificar uma matriz em ordem decrescente.</p>
+
+			<h3>toSorted()</h3>
+
+			<p>É o método seguro para classificar uma matriz sem alterar a original. <code>toSorted()</code> cria uma nova matriz, <code>sort()</code> altera a matriz original.</p>
+
+			<h3>toReversed()</h3>
+
+			<p>É o método seguro para inverter uma matriz sem alterar a original. <code>toReversed()</code> cria uma nova matriz, <code>reverse()</code> altera a matriz original.</p>
+
+			<h3>Encontrar o menor e o maior valor da matriz</h3>
+
+			<p>Não há métodos específicos para encontrar o menor e o maior valor de uma matriz. Entretanto, há três alternativas:</p>
+			
+			<ul>
+				<li>Classificar as matriz e ler o primeiro e o último valores, este é a forma menos eficiente</li>
+				<li>Usar os métodos <code>Math.min()</code> e <code>Math.max()</code></li>
+				<li>Criar uma função exclusiva</li>
+			</ul>
+
+				<h4>Math.min.apply</h4>
+
+					<pre>
+						<code>
+							function myArrayMin(arr) {
+								return Math.min.apply(null, arr);
+							}
+						</code>
+					</pre>
+
+					<h4>Math.max.apply</h4>
+
+					<pre>
+						<code>
+							function myArrayMax(arr) {
+								return Math.max.apply(null, arr);
+							}
+						</code>
+					</pre>
+
+				<h4>Função exclusiva</h4>
+
+					<p>O código abaixo analisa os elementos da matriz e compara cada valor com o menor valor encontrado.</p>
+
+					<pre>
+						<code>
+							function myArrayMin(arr) {
+								let len = arr.length;
+								let min = Infinity;
+								while (len--) {
+									if (arr[len] < min) {
+										min = arr[len];
+									}
+								}
+								return min;
+							}
+						</code>
+					</pre>
+
+					<p>Alterando apenas o símbolo de menor, <code>&lt;</code>, para maior, <code>&gt;</code>, e o nome da variável ("min" para "max"), a função pode ser usada para encontrar o maior valor:</p>
+
+					<pre>
+						<code>
+							function myArrayMax(arr) {
+								let len = arr.length;
+								let max = -Infinity;
+								while (len--) {
+									if (arr[len] > max) {
+										max = arr[len];
+									}
+								}
+								return max;
+							}
+						</code>
+					</pre>
+
+			<h3>Classificar objetos de matrizes</h3>
+
+			<p>No JavaScript, as matrizes podem conter objetos. Mesmo se os objetos forem de diferentes tipos de dados, podemos usar o método <code>sort()</code> para classificar a matriz usando uma função para comparar os valores das propriedades.</p>
+
+			<pre>
+				<code>
+					const cars = [
+						{type:"Volvo", year:2016},
+						{type:"Saab", year:2001},
+						{type:"BMW", year:2010}
+					];
+
+					cars.sort(function(a, b){return a.year - b.year});
+					displayCars();
+
+					function displayCars() {
+						cars[0].type + " " + cars[0].year; // Saab 2001
+						cars[1].type + " " + cars[1].year; // BMW 2010
+						cars[2].type + " " + cars[2].year; // Volvo 2016
+					}
+				</code>
+			</pre>
+
+			<p>Também é possível <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_object2" target="_blank" rel="noopener noreferrer">comparar as cadeias de caracteres em si</a>.</p>
+
+			<h3>forEach()</h3>
+
+			<p>Chama uma função de retorno uma vez para cada elemento da matriz. Aceita três argumentos: o valor do item, o índice do item e a matriz a pesquisar.</p>
+
+			<pre>
+				<code>
+					const numbers = [45, 4, 9, 16, 25];
+					let txt = "";
+					numbers.forEach(myFunction);
+
+					function myFunction(value, index, array) {
+						txt += value + "<br>";
+					}
+				</code>
+			</pre>
+
+			<h3>map()</h3>
+
+			<p>Cria uma nova matriz executando uma função em cada elemento da matriz. Este método não executa a função para elementos que não contêm valores e não altera a matriz original. O exemplo a seguir multiplica cada elemento da matriz por 2:</p>
+
+			<pre>
+				<code>
+					const numbers1 = [45, 4, 9, 16, 25];
+					const numbers2 = numbers1.map(myFunction);
+
+					function myFunction(value, index, array) {
+						return value * 2;
+					}
+				</code>
+			</pre>
+
+			<h3>flatMap()</h3>
+
+			<p>Mapeia os elementos de uma matriz multi-dimensional e cria uma matriz unidimensional.</p>
+
+			<h3>filter()</h3>
+
+			<p>Cria uma nova matriz com os elementos da matriz original que atendem a uma condição. O exemplo a seguir cria uma matriz com elementos que são maiores que 18:</p>
+
+			<pre>
+				<code>
+					const numbers = [45, 4, 9, 16, 25];
+					const over18 = numbers.filter(myFunction);
+
+					function myFunction(value, index, array) {
+						return value > 18;
+					}
+				</code>
+			</pre>
+
+			<h3>reduce() e reduceRight()</h3>
+
+			<p>Executam uma função em cada elemento de uma matriz para gerar (ou reduzir a) um único valor. <code>reduce()</code> trabalha sempre da esquerda para a direita na matriz e <code>reduceRight()</code>, da direita para a esquerda.</p>
+
+			<p>Este método não altera a matriz original. O exemplo a seguir encontra a soma de todos os números na matriz:</p>
+
+			<pre>
+				<code>
+					const numbers = [45, 4, 9, 16, 25];
+					let sum = numbers.reduce(myFunction);
+
+					function myFunction(total, value, index, array) {
+						return total + value;
+					}
+				</code>
+			</pre>
+
+			<h3>some()</h3>
+
+			<p>Verifica se algum (ou alguns) do(s) elemento(s) da matriz atende(m) a uma condição e retorna <code>true</code> ou <code>false</code>. <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_some" target="_blank" rel="noopener noreferrer">Exemplo</a>.</p>
+
+			<h3>Array.from()</h3>
+
+			<p>Cria uma matriz a partir de qualquer objeto com uma propriedade de comprimento ou qualquer objeto que possa ser iterado.</p>
+
+			<pre>
+				<code>
+					const myArr = Array.from("ABCDEFG");
+					console.log(myArr); // ["A", "B", "C", "D", "E", "F", "G"]
+				</code>
+			</pre>
+
+			<h3>keys()</h3>
+
+			<p>Retorna um objeto iterador de matriz com as chaves de uma matriz, isto é, retorna os índices.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					const keys = fruits.keys();
+
+					for (let x of keys) {
+						text += x + "<br>";
+					} // 0, 1, 2, 3
+				</code>
+			</pre>
+
+			<h3>entries()</h3>
+
+			<p>Cria um iterador de matriz, e itera entre os pares de valor/chave. Este método retorna um objeto com os pares de valor/chave e não altera a matriz original.</p>
+
+			<pre>
+				<code>
+					const fruits = ["Banana", "Orange", "Apple", "Mango"];
+					const f = fruits.entries();
+
+					for (let x of f) {
+						document.getElementById("demo").innerHTML += x;
+					}
+
+					///
+					Retorna o seguinte:
+
+					0,Banana
+					1,Orange
+					2,Apple
+					3,Mango
+					///
+				</code>
+			</pre>
+
+			<h3>with()</h3>
+
+			<p>É um método seguro para atualizar os elementos de uma matriz sem alterar a matriz original.</p>
+
+			<pre>
+				<code>
+					const months = ["Jan", "Feb", "Mar", "Apr"];
+					const myMonths = months.with(3, "April"); // ["Jan", "Feb", "Mar", "April"]
+				</code>
+			</pre>
+
+			<h3>O operador de expansão (...)</h3>
+
+			<p>Este operador expande um objeto iterável (como uma matriz) em mais elementos.</p>
+
+			<pre>
+				<code>
+					const q1 = ["Jan", "Feb", "Mar"];
+					const q2 = ["Apr", "May", "Jun"];
+					const q3 = ["Jul", "Aug", "Sep"];
+					const q4 = ["Oct", "Nov", "May"];
+
+					const year = [...q1, ...q2, ...q3, ...q4]; // ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+				</code>
+			</pre>
+	</section>
+
+	<section>
+		<h2>Matrizes associativas</h2>
+
+		<p>Muitas linguagens de programação aceitam matrizes com índices nomeados, que são chamadas de <strong>matrizes associativas</strong> (ou hashes). Esse <strong>NÃO</strong> é o caso do JavaScript, que só aceita matrizes com <strong>índices de números</strong>.</p>
+
+		<p>Ao usar índices nomeados, o JavaScript redefinirá a matriz como um objeto. Devido a isso, alguns métodos e propriedades podem gerar resultados incorretos.</p>
+
+		<pre>
+			<code>
+				const person = [];
+				person["firstName"] = "John";
+				person["lastName"] = "Doe";
+				person["age"] = 46;
+				person.length;     // Retorna 0
+				person[0];         // Retorna undefined
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Diferença entre matrizes e objetos</h2>
+
+		<p>Matrizes usam <em>índices de número</em>, objetos usam <em>índices nomeados</em>.</p>
+
+		<p>Use <em>objetos</em> quando precisar que os elementos nomeados sejam cadeias de caracteres (texto), e use <em>matrizes</em> quando precisar que os elementos nomeados sejam números.</p>
+	</section>
+
+	<section>
+		<h2>Aninhar objetos e matrizes</h2>
+
+		<p>Os valores de objetos também podem ser matrizes, e vice-versa.</p>
+
+		<pre>
+			<code>
+				const myObj = {
+					name: "John",
+					age: 30,
+					cars: [
+						{name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+						{name:"BMW", models:["320", "X3", "X5"]},
+						{name:"Fiat", models:["500", "Panda"]}
+					]
+				}
+			</code>
+		</pre>
+
+		<p>Para acessar matrizes dentro de matrizes, use um loop <code>for-in</code> para cada matriz:</p>
+
+		<pre>
+			<code>
+				for (let i in myObj.cars) {
+					x += "<h2>" + myObj.cars[i].name + "</h2>";
+					for (let j in myObj.cars[i].models) {
+						x += myObj.cars[i].models[j] + "<br>";
+					}
+				}
+				
+				document.getElementById("demo").innerHTML = x;
+			</code>
+		</pre>
+	</section>
+</body>
+</html>

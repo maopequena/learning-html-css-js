@@ -215,6 +215,10 @@ samp {
   color: var(--white);
 }
 
+sup, sub {
+	font-size: 0.7em;
+}
+
 ul.list-square {
   list-style: square;
   text-align: justify;

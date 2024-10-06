@@ -1,3 +1,3 @@
-let x = 9007199254740992 === 9007199254740993;
+const randomBoolean = () => Math.random() >= 0.5;
 
-console.log(x)
+console.log(randomBoolean()); // true;
