@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Datas">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datas</title>
+</head>
+<body>
+	<header>
+		<h1>Datas</h1>
+	</header>
+
+	<section>
+		<p>Os objetos de data no JavaScript nos permitem trabalhar com datas e horas. Objetos de data são estáticos, isto é, o "relógio" não é ao vivo. O relógio do computador é ao vivo, mas não o de objetos de data.</p>
+
+		<h2>Resultado de data</h2>
+
+		<p>Por padrão, o JavaScript usará o fuso horário do navegador para exibir uma data como uma cadeia de caracteres de texto:</p>
+
+		<p style="font-size: 1.6em;"><strong>Wed Oct 09 2024 14:40:57 GMT-0300 (Horário Padrão de Brasília)</strong></p>
+	</section>
+
+	<section>
+		<h2>Criar objetos de data</h2>
+
+		<p>Há nove maneiras de criar objetos de data, todos usam a o formato <code>new Date()</code>, o que muda são os parâmetros:</p>
+
+		<pre>
+			<code>
+				new Date()
+				new Date(date string) // no formato "yyyy-mm-dd hh:mm:ss:ms"
+
+				new Date(year,month)
+				new Date(year,month,day)
+				new Date(year,month,day,hours)
+				new Date(year,month,day,hours,minutes)
+				new Date(year,month,day,hours,minutes,seconds)
+				new Date(year,month,day,hours,minutes,seconds,ms)
+
+				new Date(milliseconds)
+			</code>
+		</pre>
+
+		<h3>new Date()</h3>
+
+		<p>Sem parâmetros, este construtor gera a data e hora atuais:</p>
+
+		<pre>
+			<code>
+				const d = new Date(); // 2024-10-09T17:51:19.372Z
+			</code>
+		</pre>
+
+		<h3>new Date(date string)</h3>
+
+		<p>É possível definir uma cadeia de caracteres específica para a data:</p>
+
+		<pre>
+			<code>
+				const d = new Date("October 13, 2014 11:13:00"); // 2014-10-13T14:13:00.000Z
+				const e = new Date("2022-03-25"); // 2022-03-25T00:00:00.000Z
+			</code>
+		</pre>
+
+		<p class="important-info">Note que acima a hora solicitada no parâmetro foi 11h13, mas o resultado exibiu 14h13, porque o fuso horário do Brasil (minha localidade) está três horas à frente do fuso horário de GMT.</p>
+
+		<h3>new Date(year, month, ...)</h3>
+
+		<p>É possível especificar também qualquer dos elementos de uma data (até os milissegundos!) especificando até 7 números, que identificam, em ordem, o ano, o mês, o dia, a hora, os minutos, os segundos e os milissegundos. É possível também especificar de 2 a 6 números. Porém, <strong>NÃO É POSSÍVEL</strong> usar menos de dois parâmetros, neste caso, o parâmetro será considerado como milissegundos.</p>
+
+		<pre>
+			<code>
+				const d = new Date(2018, 11, 24, 10, 33, 30, 0); // 2018-12-24T12:33:30.000Z
+			</code>
+		</pre>
+
+		<p>Observe que acima o mês é solicitado como 11, mas o resultado exibiu 12. Isso ocorre porque o JavaScript conta os meses de 0 até 11, isto é Janeiro é 0 e Dezembro é 11. Se definirmos o mês como um número maior que 11, o JavaScript não exibirá um erro, apenas transferirá para o ano seguinte ao solicitado no parâmetro (ou o ano atual se nenhum for definido). Os dois exemplos a seguir significam a mesma coisa:</p>
+
+		<pre>
+			<code>
+				const d = new Date(2018, 15, 24, 10, 33, 30); // 2019-04-24T13:33:30.000Z
+				const e = new Date(2019, 3, 24, 10, 33, 30); // 2019-04-24T13:33:30.000Z
+			</code>
+		</pre>
+
+		<p>O caso é o mesmo para a data solicitada nos parâmetros!</p>
+
+		<pre>
+			<code>
+				const d = new Date(2018, 5, 35, 10, 33, 30); // 2018-07-05T13:33:30.000Z
+				const e = new Date(2018, 6, 5, 10, 33, 30); // 2018-07-05T13:33:30.000Z
+			</code>
+		</pre>
+
+		<p>Ao usar um ou dois dígitos para o ano, o JavaScript interpreta o valor como 19xx.</p>
+
+		<pre>
+			<code>
+				const d = new Date(99, 11, 24); // 1999-12-24T02:00:00.000Z
+				const e = new Date(9, 11, 24); // 1909-12-24T03:06:28.000Z
+			</code>
+		</pre>
+
+		<p class="important-info">O JavaScript armazena datas como milissegundos contando desde 01 de janeiro de 1970!</p>
+		<p>A <em>hora zero</em> é <strong>01 de janeiro de 1970 00:00:00 UTC</strong>. Um dia (24 horas) contém 86.400 milissegundos. A data atual está a <strong>1.728.498.766.372 milissegundos</strong> da hora zero.</p>
+
+		<h3>new Date(milliseconds)</h3>
+
+		<p>Ao definir milissegundos como o parâmetro, é criado um objeto de data com os milissegundos além da hora zero:</p>
+
+		<pre>
+			<code>
+				// 01 de janeiro de 1970 MAIS 100 000 000 000 milissegundos
+				const d = new Date(100000000000); // 1973-03-03T09:46:40.000Z
+				// 01 de janeiro de 1970 MENOS 100 000 000 000 milissegundos
+				const d = new Date(-100000000000); // 1966-10-31T14:13:20.000Z
+				// 01 de janeiro de 1970 MAIS 24 horas
+				const d = new Date(24 * 60 * 60 * 1000); // 1970-01-02T00:00:00.000Z
+				// Ou
+				const d = new Date(86400000); // 1970-01-02T00:00:00.000Z
+				// 01 de janeiro de 1970 MAIS 0 milissegundos
+				const d = new Date(0); // 1970-01-01T00:00:00.000Z
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Métodos de data</h2>
+
+		<p>Métodos de data nos permitem manipular os objetos de data criados. Podemos obter ou definir o ano, o mês, o dia, a hora, os minutos, os segundos e os milissegundos usando a hora local ou UTC (também conhecido como hora universal ou GMT).</p>
+
+		<h3>Exibir datas</h3>
+
+		<p>Por padrão, o JavaScript usa o método <code>toString()</code> para exibir datas. Isso exibe uma representação em cadeia de caracteres da data, incluindo o fuso horário. O formato é: <strong>Wed Oct 09 2024 14:40:57 GMT-0300 (Horário Padrão de Brasília)</strong>. Veja <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_current">um exemplo</a>. Ao exibir um objeto de data no HTML, ele é automaticamente convertido para uma cadeia de caracteres com esse método.</p>
+
+		<p>O método <code>toDateString()</code> converte uma data em um formato mais fácil de ler. Veja <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_todatestring">um exemplo</a>.</p>
+
+		<p>O método <code>toUTCString()</code> converte uma data em uma cadeia de caracteres usando o padrão UTC. Veja <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_toutcstring">um exemplo</a>.</p>
+
+		<p>O método <code>toISOString()</code> converte uma data em uma cadeia de caracteres usando o padrão ISO. Veja <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_toisostring">um exemplo</a>.</p>
+	</section>
+
+	<section>
+		<h2>Formatos de data</h2>
+
+		<p>Há três tipos de formatos de inserção de data aceitos no JavaScript:</p>
+
+		<table class="ws-table-all">
+			<tbody>
+				<tr>
+					<th>Tipo</th>
+					<th>Exemplo</th>
+				</tr>
+				<tr>
+					<td>Data ISO</td>
+					<td>"2015-03-25"  (o padrão internacional)</td>
+				</tr>
+				<tr>
+					<td>Data abreviada</td>
+					<td>"03/25/2015"</td>
+				</tr>
+				<tr>
+					<td>Data longa</td>
+					<td>"Mar 25 2015" ou "25 Mar 2015"</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Há outros padrões, mas eles não são tão bem definidos e podem depender do navegador para funcionar.</p>
+
+		<p>Independente do formato de inserção, os formatos de saída são exibidos como uma cadeia de caracteres completa no seguinte formato: <em>Wed Oct 09 2024 16:31:06 GMT-0300 (Horário Padrão de Brasília)</em>.</p>
+
+		<h3>Datas ISO</h3>
+
+		<p>A norma <strong>ISO 8601</strong> é o padrão internacional para a representação de datas e horas. O JavaScript também prefere este padrão ("YYYY-MM-DD") para os formatos de data. <strong>Não se esqueça das aspas!</strong></p>
+		
+		<p>Também é possível usar somente o ano e o mês, "2015-03", ou somente o ano, "2015", no padrão ISO.</p>
+
+		<p class="important-info">Lembre-se que o fuso horário afeta o resultado exibido.</p>
+
+		<p>Para definir também as horas, minutos e segundos, use a sintaxe "YYYY-MM-DDTHH:MM:SSZ". Note que a data e a hora são separadas por um "T" maiúsculo e a hora UTC é definida pelo "Z" maiúsculo. Para definir um fuso horário diferente de UTC, remova o Z e adicione "+HH:MM" ou "-HH:MM", dependendo do fuso horário escolhido.</p>
+
+		<p class="important-info">Observe que se omitirmos o T e o Z na sintaxe, diferentes navegadores gerarão diferentes resultados.</p>
+
+		<h3>Datas abreviadas</h3>
+
+		<p>A sintaxe para datas abreviadas é "MM/DD/YYYY".</p>
+
+		<pre>
+			<code>
+				const d = new Date("03/25/2015"); // 2015-03-25T03:00:00.000Z
+			</code>
+		</pre>
+
+		<h3>Datas longas</h3>
+
+		<p>A sintaxe para datas longas geralmente é "MMM DD YYYY". O dia e o mês podem vir em qualquer ordem. O mês pode ser escrito por extenso, como "January", ou abreviado, como "Jan". As vírgulas são desconsideradas e não importa se as letras estão em minúsculas, maiúsculas ou usam ambas.</p>
+
+		<pre>
+			<code>
+				const d = new Date("Mar 25 2015"); // 2015-03-25T03:00:00.000Z
+				const e = new Date("25 Mar 2015"); // 2015-03-25T03:00:00.000Z
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Inserção de datas: análise de datas</h2>
+
+		<p>Se uma cadeia de caracteres é válida, use o método <code>Date.parse()</code> para convertê-la em milissegundos. Este método retorna a quantidade de milissegundos entre a data definida e 01 de janeiro de 1970.</p>
+
+		<pre>
+			<code>
+				let msec = Date.parse("March 21, 2012"); // 1332298800000
+			</code>
+		</pre>
+
+		<p>Em seguida, podemos converter a variável em um objeto de data.</p>
+
+		<pre>
+			<code>
+				const d = new Date(msec); // 2012-03-21T03:00:00.000Z
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Métodos de obtenção de data</h2>
+
+		<h3>Para hora local</h3>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Método</th>
+					<th>Descrição</th>
+					<th>Exemplo</th>
+				</tr>
+				<tr>
+					<td>getFullYear()</td>
+					<td>Obtém o <strong>ano</strong> como um número de quatro dígitos (yyyy)</td>
+					<td>
+						<pre>
+						<code>
+						const d = new Date();
+						const e = d.getFullYear(); // 2024
+						</code>
+					</pre>
+				</td>
+				</tr>
+				<tr>
+					<td>getMonth()<sup>*</sup></td>
+					<td>Obtém o <strong>mês</strong> como um número de 0 a 11</td>
+					<td>
+					<pre>
+					<code>
+					const f = new Date();
+					const g = f.getMonth(); // 9
+					</code>
+					</pre>
+					</td>
+				</tr>
+				<tr>
+					<td>getDate()</td>
+					<td>Obtém o <strong>dia</strong> como um número de 1 a 31</td>
+					<td>
+					<pre>
+					<code>
+					const i = new Date("10/10/2024");
+					const j = i.getDate(); // 10
+					</code>
+					</pre>
+					</td>
+				</tr>
+				<tr>
+					<td>getDay()<sup>**</sup></td>
+					<td>Obtém o <b>dia da semana</b> como um número de 0 a 6</td>
+					<td>
+					<pre>
+					<code>
+					const k = new Date("10/10/2024");
+					const l = k.getDay(); // 4
+					</code>
+					</pre>
+					</td>
+				</tr>
+				<tr>
+					<td>getHours()</td>
+					<td>Obtém a <strong>hora</strong> (0-23)</td>
+					<td>
+					<pre>
+					<code>
+					const m = new Date();
+					const n = m.getHours(); // 17
+					</code>
+					</pre>
+					</td>
+				</tr>
+				<tr>
+					<td>getMinutes()</td>
+					<td>Obtém os <strong>minutos</strong> (0-59)</td>
+					<td>
+					<pre>
+					<code>
+					const o = new Date();
+					const p = o.getMinutes(); // 58
+					</code>
+					</pre>
+					</td>
+				</tr>
+				<tr>
+					<td>getSeconds()</td>
+					<td>Obtém os <strong>segundos</strong> (0-59)</td>
+					<td>
+					<pre>
+					<code>
+					const q = new Date();
+					const r = q.getSeconds(); // 1
+					</code>
+					</pre>
+					</td>
+				</tr>
+				<tr>
+					<td>getMilliseconds()</td>
+					<td>Obtém os <strong>milissegundos</strong> (0-999)</td>
+					<td>
+					<pre>
+					<code>
+					const s = new Date();
+					const t = s.getMilliseconds(); // 378
+					</code>
+					</pre>
+					</td>
+				</tr>
+				<tr>
+					<td>getTime()</td>
+					<td>Obtém a <b>hora</b> em milissegundos desde 1 de janeiro de 1970</td>
+					<td>
+					<pre>
+					<code>
+					const v = new Date();
+					const x = v.getTime(); // 1728594262212
+					</code>
+					</pre>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Note que os métodos do tipo <code>get</code> retornam informações de objetos de data existentes. O objeto de data tem o tempo fixo, ou estático, isto é, o relógio não é "ao vivo". A hora de um objeto de data não é o mesmo que a hora atual.</p>
+		
+		<p class="important-info">Códigos JavaScript antigos podem ainda usar o método <code>getYear()</code>, que está deprecado. Este método retorna o ano com dois dígitos.</p>
+
+		<p><strong>*</strong> É possível usar uma matriz de nomes para obter o mês como uma palavra:</p>
+
+		<pre>
+			<code>
+				const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+				const h = new Date();
+				let month = months[h.getMonth()]; // October
+			</code>
+		</pre>
+
+		<p><strong>**</strong> No JavaScript, o primeiro dia da semana é domingo (o dia 0). Alguns países, como o Brasil, consideram segunda-feira o primeiro dia da semana. É possível usar uma matriz de nomes para obter o mês como uma palavra:</p>
+
+		<pre>
+			<code>
+				const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				const d = new Date();
+				let day = days[d.getDay()]; // Thursday
+			</code>
+		</pre>
+
+			<h4>Date.now()</h4>
+
+			<p>Retorna a quantidade de milissegundos desde 1 de janeiro de 1970. Este é um método estático do objeto de data, então não é possível usá-lo em um objeto de data, como <code>myDate.now()</code>. A sintaxe deve ser sempre <code>Date.now()</code>.</p>
+
+			<pre>
+				<code>
+					const date = Date.now(); // 1728845376930
+					const minute = 1000 * 60; // 60000
+					const hour = minute * 60; // 3600000
+					const day = hour * 24; // 86400000
+					const year = day * 365; // 31536000000
+					let years = Math.round(Date.now() / year); // 55
+				</code>
+			</pre>
+
+		<h3>Para hora UTC</h3>
+
+		<p>Os métodos para hora UTC usam o horário coordenado universal, também conhecido como GMT (Greenwich Mean Time). A diferença da hora local para a hora UTC pode ser de até 24 horas.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Método</th>
+					<th>É o mesmo que</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>getUTCDate()</td>
+					<td>getDate()</td>
+					<td>Retorna a data em UTC</td>
+				</tr>
+				<tr>
+					<td>getUTCFullYear()</td>
+					<td>getFullYear()</td>
+					<td>Retorna o ano em UTC</td>
+				</tr>
+				<tr>
+					<td>getUTCMonth()</td>
+					<td>getMonth()</td>
+					<td>Retorna o mês em UTC</td>
+				</tr>
+				<tr>
+					<td>getUTCDay()</td>
+					<td>getDay()</td>
+					<td>Retorna o dia da semana em UTC</td>
+				</tr>
+				<tr>
+					<td>getUTCHours()</td>
+					<td>getHours()</td>
+					<td>Retorna a hora em UTC</td>
+				</tr>
+				<tr>
+					<td>getUTCMinutes()</td>
+					<td>getMinutes()</td>
+					<td>Retorna os minutos em UTC</td>
+				</tr>
+				<tr>
+					<td>getUTCSeconds()</td>
+					<td>getSeconds()</td>
+					<td>Retorna os segundos em UTC</td>
+				</tr>
+				<tr>
+					<td>getUTCMilliseconds()</td>
+					<td>getMilliseconds()</td>
+					<td>Retorna os milissegundos em UTC</td>
+				</tr>
+			</tbody>
+		</table>
+
+			<h4>getTimezoneOffset()</h4>
+
+			<p>Este método retorna a diferença (em minutos) entre a hora local e a hora UTC.</p>
+
+			<pre>
+				<code>
+					const d = new Date("2024-10-13");
+					let diff = d.getTimezoneOffset(); // 180
+				</code>
+			</pre>
+	</section>
+
+	<section>
+		<h2>Métodos de definição de data</h2>
+
+		<p>Os métodos desta seção possibilitam definir valores de datas (anos, meses, dias, horas, minutos, segundos e milissegundos) para um objeto de data, isto é são usados para definir <em>parte</em> de uma data.</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Método</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>setDate()</td>
+					<td>Define o dia como um número (1-31)</td>
+				</tr>
+				<tr>
+					<td>setFullYear()</td>
+					<td>Define o ano (com a opção de definir também o mês e o dia)</td>
+				</tr>
+				<tr>
+					<td>setHours()</td>
+					<td>Define a hora (0-23)</td>
+				</tr>
+				<tr>
+					<td>setMilliseconds()</td>
+					<td>Define os milissegundos (0-999)</td>
+				</tr>
+				<tr>
+					<td>setMinutes()</td>
+					<td>Define os minutos (0-59)</td>
+				</tr>
+				<tr>
+					<td>setMonth()</td>
+					<td>Define o mês (0-11)</td>
+				</tr>
+				<tr>
+					<td>setSeconds()</td>
+					<td>Define os segundos (0-59)</td>
+				</tr>
+				<tr>
+					<td>setTime()</td>
+					<td>Define o horário (em milissegundos desde 1 de janeiro de 1970)</td>
+				</tr>
+			</tbody>
+		</table>
+
+			<h3>setFullYear()</h3>
+
+			<p>Define o ano de um objeto de data; no exemplo a seguir, usamos o ano 2020:</p>
+
+			<pre>
+				<code>
+					const d = new Date();
+					d.setFullYear(2020); // 2020-10-13T19:11:56.522Z
+				</code>
+			</pre>
+
+			<p>Com este método também é possível definir o mês e o dia:</p>
+
+			<pre>
+				<code>
+					const d = new Date();
+					d.setFullYear(2020, 11, 3); // 2020-12-03T19:13:16.169Z
+				</code>
+			</pre>
+
+			<h3>setMonth()</h3>
+
+			<p>Define o mês de um objeto de data, com valores de 0 a 11. <span class="important-info">Lembre-se que no JavaScript, contamos o mês de janeiro como 0.</span></p>
+
+			<pre>
+				<code>
+					const d = new Date();
+					d.setMonth(11); // 2024-12-13T19:15:43.402Z
+				</code>
+			</pre>
+
+			<h3>setDate()</h3>
+
+			<p>Define o dia de um objeto de data, com valores de 1 a 31.</p>
+
+			<pre>
+				<code>
+					const d = new Date();
+					d.setDate(15); // 2024-10-15T19:16:44.162Z
+				</code>
+			</pre>
+
+			<p>Também pode ser usado para <strong>adicionar dias</strong> a uma data:</p>
+
+			<pre>
+				<code>
+					const d = new Date();
+					d.setDate(d.getDate() + 50); // 2024-12-02T19:17:37.527Z
+				</code>
+			</pre>
+
+			<p>Se estiver adicionando dias à data e o mês ou o ano mudar, as alterações são feitas automaticamente pelo objeto de data.</p>
+
+			<h3>setHours()</h3>
+
+			<p>Define a hora de um objeto de data, com valores de 0 a 23.</p>
+
+			<pre>
+				<code>
+					const d = new Date();
+					d.setHours(22); // 2024-10-14T01:19:32.932Z
+				</code>
+			</pre>
+
+			<h3>setMinutes()</h3>
+
+			<p>Define os minutos de um objeto de data, com valores de 0 a 59.</p>
+
+			<pre>
+				<code>
+					const d = new Date();
+					d.setMinutes(30); // 2024-10-13T19:30:40.167Z
+				</code>
+			</pre>
+
+			<h3>setSeconds()</h3>
+
+			<p>Define os segundos de um objeto de data, com valores de 0 a 59.</p>
+
+			<pre>
+				<code>
+					const d = new Date();
+					d.setSeconds(30); // 2024-10-13T19:21:30.283Z
+				</code>
+			</pre>
+
+				<h4>Comparação de datas</h4>
+
+				<p>O código a seguir nos ensina a comparar datas com facilidade:</p>
+
+				<pre>
+					<code>
+						let text1 = "";
+						const today1 = new Date();
+						const someday1 = new Date();
+						someday1.setFullYear(2100, 0, 14);
+
+						if (someday1 > today1) {
+							text1 = "Today is before January 14, 2100.";
+						} else {
+							text1 = "Today is after January 14, 2100.";
+						}
+
+						// Today is before January 14, 2100.
+
+						let text2 = "";
+						const today2 = new Date();
+						const someday2 = new Date();
+						someday2.setFullYear(1979, 5, 6);
+
+						if (someday2 > today2) {
+							text2 = "Today is before June 6, 1979.";
+						} else {
+							text2 = "Today is after June 6, 1979.";
+						}
+
+						// Today is after June 6, 1979.
+					</code>
+				</pre>
+	</section>
+
+	<section>
+		<h2>Fusos horários</h2>
+
+		<p>Ao definir uma data sem especificar o fuso horário, o JavaScript usa o fuso horário do navegador do usuário. Ao obter ou definir uma data sem especificar o fuso horário, o resultado é convertido para o fuso horário do navegador.</p>
+	</section>
+
+	<section class="important-info">
+		<h2>Avisos importantes</h2>
+
+		<p>Em alguns navegadores, definir o mês ou ou dia sem 0 à esquerda pode gerar erros: "2015-3-25".</p>
+
+		<p>O comportamento da sintaxe "YYYY/MM/DD" é indefinido. Alguns navegadores tentam <em>adivinhar</em> o formato, outros retornam <code>NaN</code>.</p>
+
+		<p>O comportamento da sintaxe "DD-MM-YYYY" também é indefinido. Alguns navegadores tentam <em>adivinhar</em> o formato, outros retornam <code>NaN</code>.</p>
+	</section>
+</body>
+</html>

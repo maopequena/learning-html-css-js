@@ -849,5 +849,31 @@
 			</code>
 		</pre>
 	</section>
+	<section>
+		<h2>Matrizes e a palavra-chave const</h2>
+
+		<p>Matrizes não são contantes! Apesar de serem declaradas com a palavra chave <code>const</code>, os elementos das matrizes ainda podem ser alterados. A palavra-chave <code>const</code> não define uma matriz constante, mas uma <em>referência constante</em> para uma matriz.</p>
+
+		<p>Como vimos, é possível alterar os elementos de uma matriz com os vários métodos apresentados acima. Vejamos uma exemplo:</p>
+
+		<pre>
+			<code>
+				// Criar uma matriz constante:
+				const cars = ["Saab", "Volvo", "BMW"];
+
+				// Alterar um elemento:
+				cars[0] = "Toyota";
+
+				// Adicionar um elemento:
+				cars.push("Audi");
+			</code>
+		</pre>
+
+		<p>Não se esqueça que é preciso declarar a variável (neste caso, uma matriz) <strong><em>ANTES</em></strong> de iniciá-la, isto é, chamá-la. Porém, variáveis (ou matrizes) que usam <code>var</code> podem ser iniciadas antes de serem declaradas. E variáveis declaradas com <code>const</code> têm escopo de bloco, enquanto variáveis criadas com <code>var</code> têm escopo global.</p>
+
+		<h3>Como redeclarar matrizes</h3>
+
+		<p>Ao usar <code>var</code>, é possível redeclarar matrizes em qualquer lugar do programa. Entretanto, ao usar <code>const</code>, não é possível redeclarar ou reatribuir uma matriz no mesmo escopo (ou no mesmo bloco), porém é possível fazê-lo em outro escopo.</p>
+	</section>
 </body>
 </html>
