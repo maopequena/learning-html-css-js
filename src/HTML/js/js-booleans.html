@@ -437,11 +437,21 @@
 						<li>Se NÃO houver uma correspondência, o bloco de código padrão (default) é executado.</li>
 					</ul>
 
-					<p>Veja exemplos <a href="https://www.w3schools.com/js/js_switch.asp">aqui</a>.</p>
+					<p>Veja exemplos <a href="https://www.w3schools.com/js/js_switch.asp" target="_blank" rel="noopener noreferrer">aqui</a>.</p>
+
+					<p>É possível que mais de um caso execute o mesmo bloco de código. Veja um <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_switch3" target="_blank" rel="noopener noreferrer">exemplo</a>.</p>
+
+					<p>Se vários casos correspondem a um valor de caso, o primeiro caso no switch é selecionado. Se não houver correspondência, o programa executa o bloco de código em <code>default</code>. Se esta palavra-chave não estiver definida, o JavaScript executará o bloco de código após o switch.</p>
+
+					<p>Os casos no switch usam a comparação restrita (<code>===</code>), isto é, seus valores devem ser do mesmo tipo para que a correspondência seja válida. <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_switch5" target="_blank" rel="noopener noreferrer">Este exemplo</a> não tem correspondências.</p>
 
 				<h4>break</h4>
 
-				
+				<p>Quando o JavaScript atinge a palavra-chave <code>break</code>, ele interrompe a execução de um bloco de código no switch. Não é preciso adicionar esta palavra-chave ao último bloco de código, já que sua execução é interrompida por padrão. Porém, observe que ao omitir esta palavra-chave em um bloco de código, o JavaScript executará o próximo caso mesmo se a avaliação não corresponder ao caso.</p>
+
+				<h4>default</h4>
+
+				<p>Esta palavra-chave define o código a ser executado caso não haja correspondência com nenhum outro caso. O caso <code>default</code> não precisa ser o último bloco de código, porém se ele estiver em qualquer outra posição no switch, lembre-se de adicionar a palavra-chave <code>break</code> ao bloco de código.</p>
 
 		<p>Para saber mais sobre booleanos, consulte a <a href="https://www.w3schools.com/jsref/jsref_obj_boolean.asp">Referência completa sobre booleanos</a>.</p>
 	</section>

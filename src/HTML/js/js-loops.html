@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Loops">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+	<header>
+		<h1>Loops</h1>
+	</header>
+
+	<section>
+		<p>Loops executam um bloco de código várias vezes. Eles são úteis para executar o mesmo código várias vezes, sempre com um valor diferente. Por exemplo, ao invés de escrever:</p>
+
+		<pre>
+			<code>
+				text += cars[0] + "<br>";
+				text += cars[1] + "<br>";
+				text += cars[2] + "<br>";
+				text += cars[3] + "<br>";
+				text += cars[4] + "<br>";
+				text += cars[5] + "<br>";
+			</code>
+		</pre>
+
+		<p>Podemos escrever:</p>
+		
+		<pre>
+			<code>
+				for (let i = 0; i < cars.length; i++) {
+					text += cars[i] + "<br>";
+				}
+			</code>
+		</pre>
+
+		<p>Em que <code>i</code> significa <strong>instance</strong> (instância).</p>
+
+	</section>
+
+	<section>
+			<h2>Diferentes tipos de loop</h2>
+
+			<p>O JavaScript oferece suporte a diferentes tipos de loops:</p>
+
+			<ul>
+				<li><code>for</code>: repete um bloco de código uma determinada quantidade de vezes.</li>
+				<li><code>for/in</code>: percorre as propriedades de um objeto.</li>
+				<li><code>for/of</code>: percorre os valores de um objeto iterável (repetível).</li>
+				<li><code>while</code>: repete um bloco de código enquanto uma determinada condição for verdadeira.</li>
+				<li><code>do/while</code>: faz o mesmo que o caso acima.</li>
+			</ul>
+	</section>
+
+	<section>
+				<h3>O loop for</h3>
+
+				<p>Esta declaração cria um loop com três expressões opcionais:</p>
+
+				<pre>
+					<code>
+						for (expressão 1; expressão 2; expressão 3) {
+							// bloco de código a executar
+						}
+					</code>
+				</pre>
+
+				<p>A <strong>expressão 1</strong> é executada uma vez antes de executar o bloco de código, a <strong>expressão 2</strong> define a condição para executar o bloco de código, e a <strong>expressão 3</strong> é executada sempre após a execução do bloco de código. Vejamos um exemplo:</p>
+
+				<pre>
+					<code>
+						for (let i = 0; i < 5; i++) {
+							text += "O número é " + i + ".&lt;br&gt;";
+						}
+					</code>
+				</pre>
+
+				<p>Neste caso, a <strong>expressão 1</strong> define uma variável antes de o loop começar (<em><code>let i=0</code></em>), a <strong>expressão 2</strong> define a condição para executar o loop (<em><code>i</code> deve ser menor que 5</em>) e a <strong>expressão 3</strong> aumenta o valor de <code>i</code> a cada execução do bloco de código no loop.</p>
+
+					<h4>Expressão 1</h4>
+
+					<p>Normalmente usamos essa expressão para iniciar a variável que será usada no loop (<em><code>let i=0</code></em>), mas não é sempre assim. O JavaScript não se importa, a expressão 1 é opcional. Podemos iniciar vários valores nessa expressão, sempre separando-os com vírgulas:</p>
+
+					<pre>
+						<code>
+							for (let i = 0, len = cars.length, text = ""; i < len; i++) {
+								text += cars[i] + "&lt;br&gt;";
+							}
+						</code>
+					</pre>
+
+					<p>E podemos omiti-la por completo se os valores forem definidos antes de o loop começar:</p>
+
+					<pre>
+						<code>
+							let i = 2;
+							let len = cars.length;
+							let text = "";
+							for (; i < len; i++) {
+								text += cars[i] + "&lt;br&gt;";
+							}
+						</code>
+					</pre>
+
+					<h4>Expressão 2</h4>
+
+					<p>É usada para avaliar a condição da variável inicial. Essa expressão também é opcional. Se retornar <em>true</em>, o loop começa de novo; se retornar <em>false</em>, o loop é encerrado. Se esta expressão for omitida, é preciso usar a palavra-chave <code>break</code> dentro do loop, caso contrário, o loop nunca terminará e o navegador pode travar.</p>
+
+					<h4>Expressão 3</h4>
+
+					<p>Esta expressão geralmente incrementa o valor da variável inicial. Ela também é opcional. É possível usar incrementação negativa (como <code>i--</code>), positiva (como <code>i++</code>) ou qualquer outra coisa. Também é possível emitir esta expressão, por exemplo ao incrementar os valores dentro do loop.</p>
+
+					<pre>
+						<code>
+							let i = 0;
+							let len = cars.length;
+							let text = "";
+							for (; i < len; ) { // Note os espaços em branco antes do primeiro ponto-e-vírgula e depois do segundo
+								text += cars[i] + "<br>";
+								i++;
+							}
+						</code>
+					</pre>
+	</section>
+
+	<section>
+				<h3>Escopo do loop</h3>
+
+				<p>No exemplo abaixo, usamos <code>var</code>, a variável é declarada no loop e redeclarada fora dele.</p>
+
+				<pre>
+					<code>
+						var i = 5;
+
+						for (var i = 0; i < 10; i++) {
+							// some code
+						}
+
+						// Here i is 10
+					</code>
+				</pre>
+
+				<p>No exemplo a seguir, usamos <code>let</code>, a variável declarada no loop não é redeclarada fora dele.</p>
+
+				<pre>
+					<code>
+						let i = 5;
+
+						for (let i = 0; i < 10; i++) {
+							// some code
+						}
+
+						// Here i is 5
+					</code>
+				</pre>
+
+				<p>Isto é, ao usar <code>let</code>, a variável declarada no loop só fica visível dentro do loop.</p>
+	</section>
+
+	<section>
+				<h3>O loop for/in</h3>
+
+				<p>Este tipo de loop repete as propriedades de um objeto. Esta é a sintaxe:</p>
+
+				<pre>
+					<code>
+						for (<em>chave</em> in <em>objeto</em>) {
+							// bloco de código a executar
+						}
+					</code>
+				</pre>
+
+				<p>Por exemplo:</p>
+
+				<pre>
+					<code>
+						const person = {fname:"John", lname:"Doe", age:25};
+
+						let text = "";
+						for (let x in person) {
+							text += person[x];
+						}
+					</code>
+				</pre>
+
+				<p>No exemplo acima, o loop <strong>for in</strong> itera o objeto <strong>person</strong>, cada iteração retorna uma <strong>chave</strong> (x), que é usada para acessar o seu <strong>valor</strong>, que no caso é <strong>person[x]</strong>.</p>
+
+					<h4>For/in em matrizes</h4>
+
+					<p>Com este tipo de loop também podemos repetir as propriedades de uma matriz. Vejamos a sintaxe:</p>
+
+					<pre>
+						<code>
+							for (<em>variável</em> in <em>matriz</em>) {
+								código a executar
+							}
+						</code>
+					</pre>
+
+					<pre>
+						<code>
+							const numbers = [45, 4, 9, 16, 25];
+
+							let txt = "";
+							for (let x in numbers) {
+								txt += numbers[x];
+							}
+						</code>
+					</pre>
+
+					<p><strong>Observação</strong>: não use este tipo de loop em uma matriz quando a <strong>ordem</strong> do índice for importante. A ordem do índice depende de implementação e os valores da matriz podem não ser acessados na ordem que você deseja. <span class="important-info">Quando a ordem for importante, é melhor usar <code>for</code>, <code>for of</code> ou <code>Matriz.forEach()</code>.</span></p>
+	</section>
+
+	<section>
+				<h3>Matriz.forEach()</h3>
+
+				<p>Este método chama uma função de retorno uma vez para cada elemento da matriz.</p>
+
+				<pre>
+					<code>
+						const numeros = [45, 4, 9, 16, 25];
+
+						let texto = "";
+						numero.forEach(minhaFuncao);
+
+						function minhaFuncao(<em>valor</em>, <em>índice</em>, <em>matriz</em>) {
+							texto += valor + "<br>";
+						}
+					</code>
+				</pre>
+
+				<p>Observe que a função aceita três argumentos: o valor, o índice e a matriz. No exemplo acima usamos somente o valor, então podemos reescrever o código como:</p>
+
+				<pre>
+					<code>
+						const numeros = [45, 4, 9, 16, 25];
+
+						let texto = "";
+						numero.forEach(minhaFuncao);
+
+						function minhaFuncao(<em>valor</em>) {
+							texto += valor + "<br>";
+						}
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>O loop for/of</h3>
+
+				
+	</section>
+
