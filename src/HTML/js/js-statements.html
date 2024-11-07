@@ -32,14 +32,14 @@
 		</pre>
 
 		<p>Um programa em JavaScript pode conter muitas declarações, e elas são executadas, uma por vez, na mesma ordem em que são escritas.</p>
-		<p>Separa-se declarações com ponto-e-vírgula (;):</p>
+		<p>Separa-se declarações com ponto-e-vírgula (<kbd>;</kbd>):</p>
 
 		<pre>
 			<code>
-				let a, b, c;  // Declare 3 variables
-				a = 5;        // Assign the value 5 to a
-				b = 6;        // Assign the value 6 to b
-				c = a + b;    // Assign the sum of a and b to c
+				let a, b, c;  // Declarar 3 variáveis
+				a = 5;        // Atribuir o valor 5 a a
+				b = 6;        // Atribuir o valor 6 a b
+				c = a + b;    // Atribuir a soma de a e b a c
 			</code>
 		</pre>
 
@@ -50,18 +50,18 @@
 		</div>
 
 		<h3>Funções</h3>
-		<p>As declarações JavaScript podem ser agrupadas em blocos de código, dentro de chaves {...}. O propósito disso é definir declarações que devem ser executadas juntas. A essa prática dá-se o nome de <strong>função</strong>. Por exemplo:</p>
+		<p>As declarações JavaScript podem ser agrupadas em blocos de código, dentro de chaves (<kbd>{ }</kbd>). O propósito disso é definir declarações que devem ser executadas juntas. A essa prática dá-se o nome de <strong>função</strong>. Por exemplo:</p>
 
 		<pre>
 			<code>
-				function myFunction() {
+				function minhaFuncao() {
 					document.getElementById("demo1").innerHTML = "Hello Dolly!";
-					document.getElementById("demo2").innerHTML = "How are you?";
+					document.getElementById("demo2").innerHTML = "Como vai?";
 				}
 			</code>
 		</pre>
 
-		<p>Saiba mais sobre <a href="#functions">funções</a>.</p> <!-- TODO: Adicionar link para funções -->
+		<p>Saiba mais sobre <a href="./js-functions.html">funções</a>.</p>
 	</section>
 
 	<section>
@@ -137,7 +137,7 @@
 		<h3>Variáveis</h3>
 
 		<p>Em uma linguagem de programação, as <em>variáveis</em> são usadas para <strong>armazenar</strong> valores de dados. Em JavaScript, as variáveis usam as palavras-chave <code>var</code> (que só deve ser usada para código a ser executado em navegadores mais antigos), <code>let</code> ou <code>const</code>.</p>
-		<p>O <strong>sinal de igual</strong> (=) é usado para <em>atribuir valores</em> às variáveis.</p>
+		<p>O <strong>sinal de igual</strong> (<kbd>=</kbd>) é usado para <em>atribuir valores</em> às variáveis.</p>
 		<p>No exemplo a seguir, <code>x</code> é uma variável que recebe o valor 6.</p>
 
 		<pre>
@@ -178,7 +178,7 @@
 	<section>
 		<h2>Operadores</h2>
 
-		<p>O JavaScript usa <strong>operadores matemáticos</strong> (<code>+ - * /</code>) para <em>computar</em> valores:</p>
+		<p>O JavaScript usa <strong>operadores matemáticos</strong> (<kbd>+ - * /</kbd>) para <em>computar</em> valores:</p>
 
 		<pre>
 			<code>
@@ -186,22 +186,22 @@
 			</code>
 		</pre>
 
-		<p>E o operador de atribuição, como vimos anteriormente, é o sinal de igual (<code>=</code>).</p>
+		<p>E o operador de atribuição, como vimos anteriormente, é o sinal de igual (<kbd>=</kbd>).</p>
 	</section>
 
 	<section>
 		<h2>Expressões</h2>
 
-		<p>Uma <strong>expression</strong> combina valores, variáveis e operadores para <em>calcular</em> para uma avaliação. Por exemplo, 5*10 avalia para 50.</p>
+		<p>Uma <strong>expressão</strong> combina valores, variáveis e operadores para <em>calcular</em> para uma avaliação. Por exemplo, 5*10 avalia para 50.</p>
 		<p>As expressões também podem conter variáveis: x*10.</p>
 		<p>Os valores podem ser números ou sequências de caracteres. Por exemplo, "John" + " " + "Doe" avalia para "John Doe".</p>
 
 		<h3>Comentários</h3>
 
-		<p>Nem todas as declarações do JavaScript são executadas. Códigos definidos após duas barras (<code>//</code>) ou entre os símbolos <code>/* */</code> são considerados como <strong>comentários</strong>, e são ignorados.</p>
+		<p>Nem todas as declarações do JavaScript são executadas. Códigos definidos após duas barras (<kbd>//</kbd>) ou entre os símbolos <kbd>/* */</kbd> são considerados como <strong>comentários</strong>, e são ignorados.</p>
 		<p>Use comentários para explicar o código JavaScript e torná-lo mais fácil de ler. Ou para impedir a execução de determinada declaração ao depurar o código ou testar alternativas.</p>
 
-		<p>Use duas barras (<code>//</code>) para definir comentários até o final da linha atual. Use barra, asterisco (<code>/* */</code>) para comentários em mais de uma linha (um bloco de comentários).</p>
+		<p>Use duas barras (<kbd>//</kbd>) para definir comentários até o final da linha atual. Use barra, asterisco (<kbd>/* */</kbd>) para comentários em mais de uma linha (um bloco de comentários).</p>
 
 		<p>Comentários em bloco geralmente são designados para documentações oficiais.</p>
 	</section>
@@ -228,22 +228,22 @@
 	<section>
 		<h2>Os sinais de igual (=), cifrão ($) e sublinhado (_)</h2>
 
-		<p>Como já vimos, o sinal de igual (=) é um operador de atribuição. Ele <em>atribui</em> determinado valor a uma variável. Por exemplo, <code>x = x + 5;</code> faz total sentido em JavaScript, porque calcula o valor de x + 5 e atualiza o valor de x.</p>
-		<p>Para definir o "igual a" em JavaScript, use <code>===</code> (três sinais de igual em sequência).</p>
+		<p>Como já vimos, o sinal de igual (<kbd>=</kbd>) é um operador de atribuição. Ele <em>atribui</em> determinado valor a uma variável. Por exemplo, <code>x = x + 5;</code> faz total sentido em JavaScript, porque calcula o valor de x + 5 e atualiza o valor de x.</p>
+		<p>Para definir o "igual a" em JavaScript, use <kbd>===</kbd> (três sinais de igual em sequência).</p>
 
-		<p>Como o JavaScript trata o cifrão como uma letra, os identificadores que contêm o $ são nomes de variáveis válidos. Por exemplo:</p>
+		<p>Como o JavaScript trata o cifrão como uma letra, os identificadores que contêm o <kbd>$</kbd> são nomes de variáveis válidos. Por exemplo:</p>
 
 		<pre>
 			<code>
 				let $ = "Hello World";
 				let $$$ = 2;
-				let $myMoney = 5;
+				let $meuDinheiro = 5;
 			</code>
 		</pre>
 
 		<p>Não é muito comum usar o cifrão em JavaScript, mas programadores profissionais geralmente o usam como um alias para a principal função em uma biblioteca JavaScript. Em jQuery, por exemplo, a função principal <code>$</code> é usada para selecionar elementos HTML, isto é <code>$("p")</code> significa "selecione todos os elementos p".</p>
 
-		<p>Como o JavaScript trata o sublinhado como uma letra, os identificadores que contêm o _ são nomes de variáveis válidos. Por exemplo:</p>
+		<p>Como o JavaScript trata o sublinhado como uma letra, os identificadores que contêm o <kbd>_</kbd> são nomes de variáveis válidos. Por exemplo:</p>
 
 		<pre>
 			<code>
@@ -259,7 +259,7 @@
 	<section>
 		<h2>Aritmética</h2>
 
-		<p>É possível fazer cálculos com variáveis no JavaScript usando os operadores <code>+ - / * %</code> e <code>=</code>.</p>
+		<p>É possível fazer cálculos com variáveis no JavaScript usando os operadores <kbd>+ - / * %</kbd> e <kbd>=</kbd>.</p>
 
 		<p class="important-info">Se houver qualquer string no meio de um cálculo, toda a declaração será convertida para texto. Por exemplo, <code>5 + "10"</code> se transforma em <code>"510"</code>.</p>
 	</section>

@@ -134,7 +134,7 @@
 
   <section>
     <h2>Terminologia</h2>
-    <ul>
+    <ul class="list-square">
       <li><strong>Linhas</strong>: a grade é composta de linhas horizontais e verticais. Se a grade tem quatro colunas, terá cinco linhas, incluindo aquela após a última coluna. A numeração das linhas começa em "1", e segue o modo de escrita ("rtl" ou "ltr") e a direção do texto do componente. Isso significa que a coluna1, linha1 fica à esquerda em um idioma "ltr" e à direita em um idioma "rtl".</li>
       <li><strong>Trilhas</strong>: a trilha é o espaço entre duas linhas da grade. A "trilha de linha" é o espaço entre duas linhas e a "trilha de coluna" é o espaço entre duas colunas. Ao criar uma grade, essas trilhas recebem um tamanho. O tamanho das trilhas é <code>auto</code> por padrão.</li>
       <li><strong>Célula</strong>: a célula da grade é o menor espaço em uma grade, definido pela intersecção das trilhas de linhas e de colunas. Se os itens não forem posicionados ao definir uma grade, eles serão colocados automaticamente em cada célula da grade definida.</li>
@@ -149,7 +149,7 @@
     <h2>Dimensionamento da grade</h2>
     <p>Além das dimensões mencionadas em <a href="../css/css-units.html">Unidades de tamanho</a>, as trilhas da grade podem usar palavras-chaves de tamanho como:</p>
 
-    <ul>
+    <ul class="list-square">
       <li><strong><code>min-content</code></strong>: faz a trilha ficar com o tamanho mínimo possível, sem extravasar o conteúdo. Isso significa que a largura total das colunas será a do maior conteúdo da trilha.</li>
       <li><strong><code>max-content</code></strong>: tem o efeito oposto. A trilha fica o mais larga possível, para que todo o conteúdo seja exibido em uma única linha não quebrada. Isso pode fazer com que o conteúdo extravase, já que não quebra.</li>
       <li><strong><code>fit-content()</code></strong>: esta função age como <code>max-content</code>. No entanto, quando a trilha alcança o tamanho definido na função, ele começa a quebrar. Assim, <code>fit-content(10em)</code> cria uma trilha menor que 10em, se o conteúdo não ultrapassar esse valor.</li>
@@ -250,12 +250,12 @@
 
     <ul class="list-square">
       <li>grid-column</li>
-      <ul>
+      <ul class="list-square">
         <li>grid-column-start</li>
         <li>grid-column-end</li>
       </ul>
       <li>grid-row</li>
-      <ul>
+      <ul class="list-square">
         <li>grid-row-start</li>
         <li>grid-row-end</li>
       </ul>
@@ -290,7 +290,7 @@
 
     <p>Ao usar <code>grid-template-areas</code>, é preciso respeitar três regras:</p>
 
-    <ul>
+    <ul class="list-square">
       <li>O valor deve ser uma grade completa, sem células vazias.</li>
       <li>Para percorrer mais de uma trilha, repita o nome do item.</li>
       <li>As áreas criadas pela repetição do nome devem ser retangulares e não poderão ser desconectadas.</li>
@@ -308,7 +308,7 @@
     <h3>grid</h3>
     <p>Da mesma forma, a propriedade <code>grid</code> também é um resumo. Quando usada dessa maneira, ela redefine quaisquer outras propriedades <code>grid</code> para seus valores iniciais. São elas:</p>
 
-    <ul>
+    <ul class="list-square">
       <li><code>grid-template-rows</code></li>
       <li><code>grid-template-columns</code></li>
       <li><code>grid-template-areas</code></li>
@@ -323,7 +323,7 @@
     <p>O layout de grade usa as mesmas propriedades de alinhamento que o flexbox. Essas propriedades, que começam com <code>justify-</code> sempre afetam o eixo em linha, isto é, a direção eixo principal do modo de escrita (eixo horizontal).</p>
     <p>As propriedades que começam com <code>align-</code> são usadas no eixo do bloco, isto é, a direção do eixo cruzado no modo de escrita (eixo vertical).</p>
 
-    <ul>
+    <ul class="list-square">
       <li><code>justify-content</code> e <code>align-content</code>: distribuem o espaço adicional no contêiner de grade entre as trilhas.</li>
       <li><code>justify-self</code> e <code>align-self</code>: aplicam-se ao item da grade para movê-lo dentro da área da grade em que está posicionado.</li>
       <li><code>justify-items</code> e <code>align-items</code>: aplicam-se ao contêiner da grade para definir todas as propriedades de <code>justify-self</code> nos itens.</li>

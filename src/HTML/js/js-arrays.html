@@ -147,11 +147,11 @@
 					const fruits = ["Banana", "Orange", "Apple", "Mango"];
 					let fLen = fruits.length;
 
-					let text = "<ul>";
-					for (let i = 0; i < fLen; i++) {
-						text += "<li>" + fruits[i] + "</li>";
+					let text = "&lt;ul&gt;";
+					for (let i = 0; i &lt; fLen; i++) {
+						text += "&lt;li&gt;" + fruits[i] + "&lt;/li&gt;";
 					}
-					text += "</ul>";
+					text += "&lt;/ul&gt;";
 				</code>
 			</pre>
 
@@ -161,12 +161,12 @@
 				<code>
 					const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
-					let text = "<ul>";
+					let text = "&lt;ul&gt;";
 					fruits.forEach(myFunction);
-					text += "</ul>";
+					text += "&lt;/ul&gt;";
 
 					function myFunction(value) {
-						text += "<li>" + value + "</li>";
+						text += "&lt;li&gt;" + value + "&lt;/li&gt;";
 					}
 				</code>
 			</pre>
@@ -553,7 +553,7 @@
 
 			<p>Não há métodos específicos para encontrar o menor e o maior valor de uma matriz. Entretanto, há três alternativas:</p>
 			
-			<ul>
+			<ul class="list-square">
 				<li>Classificar as matriz e ler o primeiro e o último valores, este é a forma menos eficiente</li>
 				<li>Usar os métodos <code>Math.min()</code> e <code>Math.max()</code></li>
 				<li>Criar uma função exclusiva</li>
