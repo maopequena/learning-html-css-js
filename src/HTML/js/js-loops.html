@@ -16,16 +16,16 @@
 	</header>
 
 	<section>
-		<p>Loops executam um bloco de código várias vezes. Eles são úteis para executar o mesmo código várias vezes, sempre com um valor diferente. Por exemplo, ao invés de escrever:</p>
+		<p>Loops são úteis para executar o mesmo código várias vezes, sempre com um valor diferente. Por exemplo, ao invés de escrever:</p>
 
 		<pre>
 			<code>
-				text += cars[0] + "<br>";
-				text += cars[1] + "<br>";
-				text += cars[2] + "<br>";
-				text += cars[3] + "<br>";
-				text += cars[4] + "<br>";
-				text += cars[5] + "<br>";
+				texto += carros[0] + "<br>";
+				texto += carros[1] + "<br>";
+				texto += carros[2] + "<br>";
+				texto += carros[3] + "<br>";
+				texto += carros[4] + "<br>";
+				texto += carros[5] + "<br>";
 			</code>
 		</pre>
 
@@ -33,8 +33,8 @@
 		
 		<pre>
 			<code>
-				for (let i = 0; i < cars.length; i++) {
-					text += cars[i] + "<br>";
+				for (let i = 0; i &lt; carros.length; i++) {
+					texto += carros[i] + "<br>";
 				}
 			</code>
 		</pre>
@@ -49,16 +49,16 @@
 			<p>O JavaScript oferece suporte a diferentes tipos de loops:</p>
 
 			<ul>
-				<li><code>for</code>: repete um bloco de código uma determinada quantidade de vezes.</li>
-				<li><code>for/in</code>: percorre as propriedades de um objeto.</li>
-				<li><code>for/of</code>: percorre os valores de um objeto iterável (repetível).</li>
-				<li><code>while</code>: repete um bloco de código enquanto uma determinada condição for verdadeira.</li>
-				<li><code>do/while</code>: faz o mesmo que o caso acima.</li>
+				<li><code><a href="#loop-for">for</a></code>: repete um bloco de código uma determinada quantidade de vezes.</li>
+				<li><code><a href="#loop-for-in">for/in</a></code>: percorre as propriedades de um objeto.</li>
+				<li><code><a href="#loop-for-of">for/of</a></code>: percorre os valores de um objeto iterável (repetível).</li>
+				<li><code><a href="#loop-while">while</a></code>: repete um bloco de código enquanto uma determinada condição for verdadeira.</li>
+				<li><code><a href="#loop-do-while">do/while</a></code>: faz o mesmo que o caso acima.</li>
 			</ul>
 	</section>
 
 	<section>
-				<h3>O loop for</h3>
+				<h3 id="loop-for">O loop for</h3>
 
 				<p>Esta declaração cria um loop com três expressões opcionais:</p>
 
@@ -75,7 +75,7 @@
 				<pre>
 					<code>
 						for (let i = 0; i < 5; i++) {
-							text += "O número é " + i + ".&lt;br&gt;";
+							texto += "O número é " + i + ".&lt;br&gt;";
 						}
 					</code>
 				</pre>
@@ -88,8 +88,8 @@
 
 					<pre>
 						<code>
-							for (let i = 0, len = cars.length, text = ""; i < len; i++) {
-								text += cars[i] + "&lt;br&gt;";
+							for (let i = 0, len = carros.length, texto = ""; i < len; i++) {
+								texto += carros[i] + "&lt;br&gt;";
 							}
 						</code>
 					</pre>
@@ -99,10 +99,10 @@
 					<pre>
 						<code>
 							let i = 2;
-							let len = cars.length;
-							let text = "";
+							let len = carros.length;
+							let texto = "";
 							for (; i < len; i++) {
-								text += cars[i] + "&lt;br&gt;";
+								texto += carros[i] + "&lt;br&gt;";
 							}
 						</code>
 					</pre>
@@ -118,10 +118,10 @@
 					<pre>
 						<code>
 							let i = 0;
-							let len = cars.length;
-							let text = "";
-							for (; i < len; ) { // Note os espaços em branco antes do primeiro ponto-e-vírgula e depois do segundo
-								text += cars[i] + "<br>";
+							let len = carros.length;
+							let texto = "";
+							for (; i &lt; len; ) { // Note os espaços em branco antes do primeiro ponto-e-vírgula e depois do segundo
+								texto += carros[i] + "<br>";
 								i++;
 							}
 						</code>
@@ -137,7 +137,7 @@
 					<code>
 						var i = 5;
 
-						for (var i = 0; i < 10; i++) {
+						for (var i = 0; i &lt; 10; i++) {
 							// some code
 						}
 
@@ -163,7 +163,7 @@
 	</section>
 
 	<section>
-				<h3>O loop for/in</h3>
+				<h3 id="loop-for-in">O loop for/in</h3>
 
 				<p>Este tipo de loop repete as propriedades de um objeto. Esta é a sintaxe:</p>
 
@@ -181,9 +181,9 @@
 					<code>
 						const person = {fname:"John", lname:"Doe", age:25};
 
-						let text = "";
+						let texto = "";
 						for (let x in person) {
-							text += person[x];
+							texto += person[x];
 						}
 					</code>
 				</pre>
@@ -251,8 +251,360 @@
 	</section>
 
 	<section>
-				<h3>O loop for/of</h3>
+				<h3 id="loop-for-of">O loop for/of</h3>
 
-				
+				<p>Esta declaração repete os valores de um objeto iterável, permitindo passar por estruturas de dados como matrizes, sequências de caracteres (strings), mapas, listaas de nós, etc. A sintaxe é:</p>
+
+				<pre>
+					<code>
+						for (<em>variável</em> of <em>objeto iterável</em>) {
+							// bloco de código a executar
+						}
+					</code>
+				</pre>
+
+				<p>No caso acima, para <em>variável</em>, a cada iteração o valor da próxima propriedade é atribuído à variável. Uma variável, nesta situação, pode ser declarada com <code>const</code>, <code>let</code> ou <code>var</code>. O <em>objeto iterável</em> é o objeto que tem propriedades que podem ser repetidas.</p>
+
+					<h4>Exemplos</h4>
+
+					<p>Loop em uma matriz:</p>
+
+					<pre>
+						<code>
+							const carros = ["BMW", "Volvo", "Mini"];
+
+							let texto = "";
+							for (let x of carros) {
+								texto += x + "<br>";
+							}
+
+							// Resultado:
+
+							BMW
+							Volvo
+							Mini
+						</code>
+					</pre>
+
+					<p>Loop em uma string:</p>
+
+					<pre>
+						<code>
+							let linguagem = "JavaScript";
+
+							let texto = "";
+							for (let x of linguagem) {
+							texto += x + "<br>";
+							}
+
+							// Resultado:
+
+							J
+							a
+							v
+							a
+							S
+							c
+							r
+							i
+							p
+							t
+						</code>
+					</pre>
 	</section>
 
+	<section>
+				<h3 id="loop-while">O loop while</h3>
+
+				<p>Esta declaração cria um loop que repete enquanto uma determinada condição for verdadeira. A sintaxe é:</p>
+
+				<pre>
+					<code>
+						while (<em>condição</em>) {
+							// bloco de código a executar
+						}
+					</code>
+				</pre>
+
+					<h4>Exemplos</h4>
+
+					<p>No exemplo a seguir, o código no loop será executado repetidamente enquanto a variável (<em>i</em>) for menor que 10:</p>
+
+					<pre>
+						<code>
+							let texto = "";
+							let i = 0;
+
+							while (i &lt; 10) {
+								texto += "&lt;br&gt;O número é " + i;
+								i++;
+							}
+
+							// Resultado:
+
+							O número é 0
+							O número é 1
+							O número é 2
+							O número é 3
+							O número é 4
+							O número é 5
+							O número é 6
+							O número é 7
+							O número é 8
+							O número é 9
+						</code>
+					</pre>
+
+					<p><strong>Observação</strong>: se você esquecer de aumentar a variável ("<code>i++</code>") usada na condição, o loop nunca terminará, o que pode travar seu navegador.</p>
+
+				<h3 id="loop-do-while">O loop do-while</h3>
+
+				<p>Esta é uma variante do loop <code>while</code>. Ele executa o bloco de código uma vez, verifica se a condição ainda é verdadeira, e executa o código novamente enquanto a condição for verdadeira. Sintaxe:</p>
+
+				<pre>
+					<code>
+						do {
+							// bloco de código a executar
+						}
+						while (<em>condição</em>);
+					</code>
+				</pre>
+
+					<h4>Exemplos</h4>
+
+					<p>No exemplo abaixo, o loop sempre será executado uma vez, mesmo que a condição seja falsa, porque o bloco de código é executado antes de a condição ser testada:</p>
+
+					<pre>
+						<code>
+							let texto = "";
+							let i = 0;
+
+							do {
+								texto += "O número é " + i;
+								i++;
+							}
+							while (i &lt; 10);
+
+							// Resultado:
+
+							O número é 0
+							O número é 1
+							O número é 2
+							O número é 3
+							O número é 4
+							O número é 5
+							O número é 6
+							O número é 7
+							O número é 8
+							O número é 9
+						</code>
+					</pre>
+
+					<p><strong>Observação</strong>: lembre-se sempre de aumentar a variável ("<code>i++</code>") usada na condição, senão o loop nunca terminará, o que pode travar seu navegador.</p>
+	</section>
+
+	<section>
+				<h3>Comparação entre for e while</h3>
+
+				<p>O loop <code>while</code> é muito parecido com o loop <code>for</code>, se omitirmos as declarações 1 e 3. O exemplo a seguir usa um loop <code>for</code> para coletar nomes de carros da matriz <em>carros</em>:</p>
+
+				<pre>
+					<code>
+						const carros = ["BMW", "Volvo", "Saab", "Ford"];
+						let i = 0;
+						let texto = "";
+
+						for (;carros[i];) {
+							texto += carros[i];
+							i++;
+						}
+					</code>
+				</pre>
+
+				<p>E o exemplo abaixo usa um loop <code>while</code> para fazer a mesma coisa:</p>
+
+				<pre>
+					<code>
+						const carros = ["BMW", "Volvo", "Saab", "Ford"];
+						let i = 0;
+						let texto = "";
+
+						while (carros[i]) {
+							texto += carros[i];
+							i++;
+						}
+					</code>
+				</pre>
+
+				<p>O resultado dos dois loops é o mesmo:</p>
+
+				<pre>
+					<code>
+						BMW
+						Volvo
+						Saab
+						Ford
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>Break e Continue</h3>
+
+				<p>A declaração <code>break</code> "quebra" o loop e a declaração <code>continue</code> pula uma iteração do loop.</p>
+
+					<h4>Break</h4>
+
+					<p>Esta declaração pode ser usada para "quebrar" um loop ou uma declaração <code>switch()</code>. No exemplo abaixo, usamos a palavra-chave <code>break</code> para sair do loop quando o número for 3:</p>
+
+					<pre>
+						<code>
+							for (let i = 0; i &lt; 10; i++) {
+								if (i === 3) { break; }
+								texto += "O número é " + i + "<br>";
+							}
+
+							// Resultado:
+
+							O número é 0
+							O número é 1
+							O número é 2
+						</code>
+					</pre>
+
+					<h4>Continue</h4>
+
+					<p>Esta declaração pula uma iteração do loop se a condição especificada for verdadeira, continuando na iteração seguinte. No exemplo abaixo, usamos a palavra-chave <code>continue</code> para pular o loop quando o número for 3:</p>
+
+					<pre>
+						<code>
+							for (let i = 0; i &lt; 10; i++) {
+								if (i === 3) { continue; }
+								texto += "O número é " + i + "<br>";
+							}
+
+							// Resultado:
+
+							O número é 0
+							O número é 1
+							O número é 2
+							O número é 4
+							O número é 5
+							O número é 6
+							O número é 7
+							O número é 8
+							O número é 9
+						</code>
+					</pre>
+
+				<h3>Etiquetas</h3>
+
+				<p>É possível usar as palavras-chave <code>break</code> e <code>continue</code> com uma referência a uma <em>etiqueta</em>. No caso de <code>continue</code>, com ou sem a etiqueta, ela só pula uma iteração do loop. Entretanto, para <code>break</code>, sem a etiqueta, ela só quebra o loop ou switch. Com a etiqueta, pode ser usada para sair de qualquer bloco de código (o que está entre as chaves). Por exemplo:</p>
+
+				<pre>
+					<code>
+						const carros = ["BMW", "Volvo", "Saab", "Ford"];
+						let texto = "";
+
+						lista: {
+							texto += carros[0] + "<br>"; 
+							texto += carros[1] + "<br>"; 
+							break lista;
+							texto += carros[2] + "<br>"; 
+							texto += carros[3] + "<br>"; 
+						}
+
+						// Resultado:
+
+						BMW
+						Volvo
+					</code>
+				</pre>
+	</section>
+
+	<section>
+			<h2>Objetos iteráveis</h2>
+
+			<p>Objetos iteráveis são objetos que podem ser repetidos em um loop usando, por exemplo, o loop <code><a href="#loop-for-of">for/of</a></code>.</p>
+
+			<p>Iterar significa aplicar repetidamente um mesmo código em uma sequência de elementos, por exemplo, em uma sequência de caracteres (string) ou uma matriz.</p>
+
+				<h3>Iteradores</h3>
+
+				<p>O <strong>protocolo iterador</strong> define como gerar uma <strong>sequência de valores</strong> a partir de um objeto. Um objeto se torna um <strong>iterador</strong> quando implementa um método <code>next()</code>. Esse método deve retornar um objeto com duas propriedades:</p>
+
+				<ul>
+					<li>value (o próximo valor): o valor retornado pelo iterador (pode ser omitido se "done" for verdadeiro)</li>
+					<li>done (verdadeiro ou falso): <em>true</em> (verdadeiro) se o iterador está concluído, <em>false</em> (falso) se o iterador gerou um novo valor</li>
+				</ul>
+
+				<p class="important-info">Tecnicamente, os objetos iteráveis devem implementar o método <code>Symbol.iterator</code>. Sequências de caracteres (strings), matrizes (arrays), matrizes tipadas (TypedArrays), mapas (Maps) e conjuntos (Sets) são objetos iteráveis, porque seus objetos prototípicos têm o método <code>Symbol.iterator</code>. </p>
+
+				<h3>Objetos iteráveis criados do zero</h3>
+
+				<p>É possível, sim, criar um objeto iterável com um tipo diferente dos mencionados acima. Porém, eles não oferecem suporte à declaração <code>for/of</code>. A função a seguir retorna múltiplos de 10 ininterruptamente sempre que o método <code>next()</code> é chamado:</p>
+
+				<pre>
+					<code>
+						// Iterável do zero
+						function meusNumeros() {
+							let n = 0;
+							return {
+								next: function() {
+									n += 10;
+									return {value:n, done:false};
+								}
+							};
+						}
+
+						// Create Iterable
+						const n = meusNumeros();
+						n.next(); // Retorna 10
+						n.next(); // Retorna 20
+						n.next(); // Retorna 30
+					</code>
+				</pre>
+
+				<p>Também podemos usar o código <code>for (const x of iterable) { }</code> para gerar objetos iteráveis:</p>
+
+				<pre>
+					<code>
+						// Criar um objeto
+						meusNumeros = {};
+
+						// Iteração
+						meusNumeros[Symbol.iterator] = function() {
+							let n = 0;
+							done = false;
+							return {
+								next() {
+									n += 10;
+									if (n == 100) {done = true}
+									return {value:n, done:done};
+								}
+							};
+						}
+
+						// Uso de for/of
+						for (const num of meusNumeros) {
+							// bloco de código a executar
+						}
+					</code>
+				</pre>
+
+				<p>No código acima, o método <code>Symbol.iterator</code> é chamado automaticamente por <code>for/of</code>, mas também pode ser chamado manualmente:</p>
+
+				<pre>
+					<code>
+						let iterator = meusNumeros[Symbol.iterator]();
+
+						while (true) {
+							const result = iterator.next();
+							if (result.done) break;
+							// Bloco de código
+						}
+					</code>
+				</pre>
+	</section>
+</body>
+</html>

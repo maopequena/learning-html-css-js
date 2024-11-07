@@ -26,8 +26,8 @@
 
 		<p>Qual o resultado da expressão anterior? Essa soma faz sentido?</p>
 
-		<p>Já sabemos que o JavaScript trata qualquer soma que contenha strings como se todos os operandos fossem strings, então o resultado seria o mesmo que:</p>
-
+		<p>O JavaScript trata qualquer soma que contenha strings como se todos os operandos fossem strings, então o resultado seria o mesmo que:</p>"
+"
 		<pre>
 			<code>
 				let x = "16" + "Volvo";
@@ -53,18 +53,19 @@
 			</code>
 		</pre>
 
-		<p>Há oito tipos de dados em JavaScript:</p>
+		<p>Há sete tipos de dados simples em JavaScript:</p>
 
 		<ul>
-			<li>Sequência de caracteres (strings)</li>
-			<li>Números</li>
-			<li>BigInt</li>
-			<li>Booleanos</li>
-			<li>Indefinido</li>
-			<li>Nulo</li>
-			<li>Símbolos</li>
-			<li>Objetos</li>
+			<li>sequência de caracteres (string)</li>
+			<li>números</li>
+			<li>bigint</li>
+			<li>booleanos</li>
+			<li>indefinido</li>
+			<li>nulo</li>
+			<li>símbolos</li>
 		</ul>
+
+		<p>E um tipo de dado complexo: objeto. Todos os outros tipos de dados complexos, como matrizes, mapas, conjuntos e funções, são apenas diferentes tipos de objetos.</p>
 	</section>
 
 	<section>
@@ -292,7 +293,7 @@
 
 		<h4>charAt()</h4>
 
-		<p>Este método retorna o caractere no índice especificado (posição) de uma string:</p>
+		<p>Este método retorna o caractere no índice (posição) especificado de uma string:</p>
 
 		<pre>
 			<code>
@@ -303,7 +304,7 @@
 
 		<h4>charCodeAt()</h4>
 
-		<p>Este método retorna um código UTF-16 (um inteiro entre 0 e 65535) do caractere no índice especificado (posição) de uma string:</p>
+		<p>Este método retorna um código UTF-16 (um inteiro entre 0 e 65535) do caractere no índice (posição) especificado de uma string:</p>
 
 		<pre>
 			<code>
@@ -314,7 +315,7 @@
 
 		<h4>at()</h4>
 
-		<p>Obtém o caractere no índice especificado (posição) de uma string:</p>
+		<p>Obtém o caractere no índice (posição) especificado de uma string:</p>
 
 		<pre>
 			<code>
@@ -619,7 +620,7 @@
 	</section>
 
 	<section>
-		<h2>Números</h2>
+		<h2 id="numeros">Números</h2>
 
 		<p>Números em JavaScript são armazenados como decimais (também conhecidos como números flutuantes) e podem ser escritos com ou sem as casas decimais.</p>
 
@@ -736,13 +737,13 @@
 			<code>
 				let myNumber = 32;
 				document.getElementById("demo").innerHTML =
-				"Decimal 32 = " + "<br><br>" + 
-				"Hexatrigesimal (base 36): " + myNumber.toString(36) + "<br>" + //
-				"Duotrigesimal (base 32): " + myNumber.toString(32) + "<br>" +
-				"Hexadecimal (base 16): " + myNumber.toString(16) + "<br>" +
-				"Duodecimal (base 12): " + myNumber.toString(12) + "<br>" +
-				"Decimal (base 10): " + myNumber.toString(10) + "<br>" +
-				"Octal (base 8): " + myNumber.toString(8) + "<br>" +
+				"Decimal 32 = " + "&lt;br&gt;&lt;br&gt;" + 
+				"Hexatrigesimal (base 36): " + myNumber.toString(36) + "&lt;br&gt;" + 
+				"Duotrigesimal (base 32): " + myNumber.toString("32) + "&lt;br&gt;" +
+				"Hexadecimal (base 16): " + myNumber.toString(1"6) + "&lt;br&gt;" +
+				"Duodecimal (base 12): " + myNumber.toString("12) + "&lt;br&gt;" +
+				"Decimal (base 10): " + myNumber.toString(10") + "&lt;br&gt;" +
+				"Octal (base 8): " + myNumber.toString(8)" + "&lt;br&gt;" +
 				"Binary (base 2): " + myNumber.toString(2);
 			</code>
 		</pre>
@@ -768,19 +769,19 @@
 
 		<pre>
 			<code>
-				// x is a number
+				// x é um número
 				let x = 123;
-				// y is a Number object
+				// y é um objeto de número
 				let y = new Number(123);
 
-				console.log(typeof x); // number
-				console.log(typeof y); // object
+				console.log(typeof x); // número
+				console.log(typeof y); // objeto
 			</code>
 		</pre>
 
 		<p>Porém, a recomendação é não usar essa forma para criar números, porque isso complica o código e diminui a velocidade de execução. Além disso, isso pode gerar resultados inesperados, em que um objeto e um número, quando comparados com <kbd>==</kbd>, geram o resultado <code>true</code> e, quando comparados com <kbd>===</kbd>, geram o resultado <code>false</code>. E ao comparar dois objetos criados dessa forma, o resultado, independentemente do operador, é sempre <code>false</code>.</p>
 
-		<h3>Métodos de números e BigInt</h3>
+		<h3 id="number-methods">Métodos de números e BigInt</h3>
 
 		<p>O JavaScript apresenta vários métodos para manipular números, e dois deles manipulam também os BigInt.</p>
 
@@ -896,7 +897,7 @@
 				</code>
 			</pre>
 
-			<p>Observe que o método <code>Date()</code> retorna a quantidade de milissegundos desde 1/1/1970.</p>
+			<p>Observe que o método <code>Date()</code> retorna a quantidade de milissegundos desde 01/01/1970.</p>
 
 			<h4>parseInt()</h4>
 
@@ -1167,6 +1168,18 @@
 		</pre>
 
 		<p>Como em Python, o índice das matrizes começa em 0.</p>
+
+			<h3>Como reconhecer uma matriz?</h3>
+
+			<p>Use o método <code>Array.isArray()</code>:</p>
+
+			<pre>
+				<code>
+					// Criar uma matriz
+					const frutas = ["maçãs", "bananas", "laranjas"];
+					Array.isArray(frutas); // true
+				</code>
+			</pre>
 	</section>
 
 	<section>
@@ -1190,10 +1203,25 @@
 
 		<pre>
 			<code>
-				typeof "John" // retorna "string"
-				typeof 3.14 // retorna "number"
+				typeof "John"         // Retorna "string"
+				typeof ("John"+"Doe") // Retorna "string"
+				typeof 3.14           // Retorna "number"
+				typeof 33             // Retorna "number"
+				typeof (33 + 66)      // Retorna "number"
+				typeof true           // Retorna "boolean"
+				typeof false          // Retorna "boolean"
+				typeof 1234n          // Retorna "bigint"
+				typeof Symbol()       // Retorna "symbol"
+				typeof x              // Retorna "undefined"
+				typeof null           // Retorna "object"
+				typeof {name:'John'}  // Retorna "object"
+				typeof [1,2,3,4]      // Retorna "object"
+				typeof new Map()      // Retorna "object"
+				typeof new Set()      // Retorna "object"
+				typeof function (){}  // Retorna "function"
 			</code>
 		</pre>
+		<p>Para tipos de dados complexos, este operador retorna apenas dois tipos: <code>object</code> e <code>function</code>. Não é possível diferenciar uma matriz e uma data, por exemplo, usando este operador.</p>
 	</section>
 	
 	<section>
@@ -1223,6 +1251,450 @@
 		<h2>Você sabia?</h2>
 
 		<p>É muito importante lembrar que o índice no JavaScript começa em 0!</p>
+	</section>
+
+	<section>
+		<h2>Conversão de tipos de dados</h2>
+
+		<p>Nesta seção veremos como converter o seguinte:</p>
+
+		<ul>
+			<li>Sequências de caracteres em números</li>
+			<li>Números em sequências de caracteres</li>
+			<li>Datas em números</li>
+			<li>Números em datas</li>
+			<li>Booleanos em números</li>
+			<li>Números em booleanos</li>
+		</ul>
+
+		<p>É possível converter variáveis do JavaScript para uma nova variável e para outros tipos de dados usando uma função do JavaScript ou automaticamente.</p>
+
+			<h3>Converter sequências de caracteres em números</h3>
+
+			<p>O método global <code>Number()</code> converte uma variável (ou valor) em um número. Uma sequência de caracteres numérica, como "3.14", é convertida para um número, como 3.14. Uma sequência de caracteres vazia, como "", é convertida para 0. Uma sequência de caracteres não numérica, como "John Doe", é convertida para <code>NaN</code>. Por exemplo:</p>
+
+			<pre>
+				<code>
+					Number("3.14") // 3.14
+					Number(Math.PI) // 3.141592653589793
+					Number(" ") // 0
+					Number("") // 0
+					Number("99 88") // NaN
+					Number("John") // NaN
+				</code>
+			</pre>
+
+			<p>Há outros métodos para converter strings em números na seção <a href="#number-methods">Métodos de números e BigInt</a>, na seção <a href="#numeros">Números</a>.</p>
+
+			<table>
+				<tbody>
+					<tr>
+						<th style="width:25%">Método</th>
+						<th>Descrição</th>
+					</tr>
+					<tr>
+						<td>Number()</td>
+						<td>Retorna um número, convertido de seus argumentos</td>
+					</tr>
+					<tr>
+						<td>parseFloat()</td>
+						<td>Analisa uma string e retorna um número de ponto flutuante</td>
+					</tr>
+					<tr>
+						<td>parseInt()</td>
+						<td>Analisa uma string e retorna um inteiro</td>
+					</tr>
+			</tbody></table>
+
+				<h4>O operador unário +</h4>
+
+				<p>O operador unário + pode ser usado para converter uma variável em um número:</p>
+
+				<pre>
+					<code>
+						let y = "5";      // y é uma string
+						let x = + y;      // x é um número
+					</code>
+				</pre>
+
+				<p>Porém, se a variável não puder ser convertida, o resultado é <code>NaN</code>, que ainda é considerado do tipo número:</p>
+
+				<pre>
+					<code>
+						let y = "John";   // y é uma string
+						let x = + y;      // x é um número (NaN)
+					</code>
+				</pre>
+
+			<h3>Converter números em sequências de caracteres</h3>
+
+			<p>O método global <code>String()</code> pode converter números em sequências de caracteres. Com ele podemos converter qualquer tipo de número, literais, variáveis ou expressões. Por exemplo:</p>
+
+			<pre>
+				<code>
+					String(x)         // retorna uma string da variável numérica x
+					String(123)       // retorna uma string do literal numérico 123
+					String(100 + 23)  // retorna uma string de uma expressão numérica
+				</code>
+			</pre>
+
+			<p>O método <code>toString()</code> faz a mesma coisa:</p>
+
+			<pre>
+				<code>
+					x.toString()
+					(123).toString()
+					(100 + 23).toString()
+				</code>
+			</pre>
+
+			<p>Há outros métodos para converter strings em números na seção <a href="#number-methods">Métodos de números e BigInt</a>, na seção <a href="#numeros">Números</a>.</p>
+
+			<table>
+				<tbody>
+					<tr>
+						<th style="width:25%">Método</th>
+						<th>Descrição</th>
+					</tr>
+					<tr>
+						<td>toExponential()</td>
+						<td>Retorna uma string com um número arredondado e escrito usando notação exponencial.</td>
+					</tr>
+					<tr>
+						<td>toFixed()</td>
+						<td>Retorna uma string com um número arredondado e escrito com uma quantidade específica de casas decimais.</td>
+					</tr>
+					<tr>
+						<td>toPrecision()</td>
+						<td>Retorna uma string com um número escrito com um comprimento específico.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Converter datas em números</h3>
+
+			<p>O método <code>Number()</code> pode converter datas em números. Por exemplo:</p>
+
+			<pre>
+				<code>
+					d = new Date();
+					Number(d) // retorna 1404568027739
+				</code>
+			</pre>
+
+			<p>O método <code>getTime()</code> faz o mesmo:</p>
+
+			<pre>
+				<code>
+					d = new Date();
+					d.getTime() // retorna 1404568027739
+				</code>
+			</pre>
+
+			<h3>Converter datas em sequências de caracteres</h3>
+
+			<p>O método global <code>String()</code> pode converter datas em sequências de caracteres:</p>
+
+			<pre>
+				<code>
+					String(Date()) // retorna "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
+				</code>
+			</pre>
+
+			<p>O método <code>toString()</code> faz o mesmo:</p>
+
+			<pre>
+				<code>
+					Date().toString()  // retorna "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
+				</code>
+			</pre>
+
+			<p>Há outros métodos para converter datas em sequências de caracteres na seção <a href="./js-dates.html#date-methods">Métodos de data</a>.</p>
+
+			<table class="ws-table-all notranslate">
+				<tbody>
+					<tr>
+						<th>Método</th>
+						<th>Descriçaõ</th>
+					</tr>
+					<tr>
+						<td>getDate()</td>
+						<td>Obtém o dia como um número (1-31)</td>
+					</tr>
+					<tr>
+						<td>getDay()</td>
+						<td>Obtém o dia da semana como um número (0-6)</td>
+					</tr>
+					<tr>
+						<td>getFullYear()</td>
+						<td>Obtém um ano com quatro dígitos (aaaa)</td>
+					</tr>
+					<tr>
+						<td>getHours()</td>
+						<td>Obtém a hora (0-23)</td>
+					</tr>
+					<tr>
+						<td>getMilliseconds()</td>
+						<td>Obtém os milissegundos (0-999)</td>
+					</tr>
+					<tr>
+						<td>getMinutes()</td>
+						<td>Obtém os minutos (0-59)</td>
+					</tr>
+					<tr>
+						<td>getMonth()</td>
+						<td>Obtém o mês (0-11)</td>
+					</tr>
+					<tr>
+						<td>getSeconds()</td>
+						<td>Obtém os segundos (0-59)</td>
+					</tr>
+					<tr>
+						<td>getTime()</td>
+						<td>Obtém a hora completa (em milissegundos, desde 01 de janeiro de 1970)</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Converter booleanos em números</h3>
+
+			<p>O método global <code>Number()</code> pode converter booleanos em números. Por exemplo:</p>
+
+			<pre>
+				<code>
+					Number(false) // retorna 0
+					Number(true) // retorna 1
+				</code>
+			</pre>
+
+			<h3>Converter booleanos em sequências de caracteres</h3>
+
+			<p>O método global <code>String()</code> converte booleanos em strings:</p>
+
+			<pre>
+				<code>
+					String(false) // retorna "false"
+					String(true) // retorna "true"
+				</code>
+			</pre>
+
+			<p>O método <code>toString()</code> faz o mesmo:</p>
+
+			<pre>
+				<code>
+					false.toString() // retorna "false"
+					true.toString() // retorna "true"
+				</code>
+			</pre>
+
+			<h3>Conversão automática de tipos</h3>
+
+			<p>Quando o JavaScript tenta manipular um tipo de dado "errado", ele tenta convertê-lo para o tipo "certo". O resultado nem sempre é o que se espera:</p>
+
+			<pre>
+				<code>
+					5 + null    // retorna 5 porque null é convertido para um número, 0
+					"5" + null  // retorna "5null" porque null é convertido para uma string, "null"
+					"5" + 2     // retorna "52" porque 2 é convertido para uma string, "2"
+					"5" - 2     // retorna 3 porque "5" é convertido para um número, 5
+					"5" * "2"   // retorna 10 porque "5" e "2" são convertidos em números, 5 e 2
+					"5" / "2"   // retorna 2.5 porque "5" e "2" são convertidos em números, 5 e 2
+				</code>
+			</pre>
+
+				<h4>Conversão automática em sequências de caracteres</h4>
+
+				<p>O JavaScript chama automaticamente a função <code>toString()</code> para uma variável quando você tenta exibir um objeto ou uma variável:</p>
+
+				<pre>
+					<code>
+						document.getElementById("demo").innerHTML = minhaVar;
+
+						// if minhaVar = {name:"Fjohn"}  // toString converte para "[object Object]"
+						// if minhaVar = [1,2,3,4]       // toString converte para "1,2,3,4"
+						// if minhaVar = new Date()      // toString converte para "Fri Jul 18 2014 09:08:55 GMT+0200"
+					</code>
+				</pre>
+
+				<p>Isso também ocorre com números e booleanos, apesar de não ser tão fácil de reconhecer:</p>
+
+				<pre>
+					<code>
+						// if minhaVar = 123             // toString converte para "123"
+						// if minhaVar = true            // toString converte para "true"
+						// if minhaVar = false           // toString converte para "false"
+					</code>
+				</pre>
+			
+			<h3>Tabela de conversão de tipos em JavaScript</h3>
+
+			<p>A tabela abaixo mostra o resultado da conversão de diferentes valores no JavaScript para número, string e booleano. Os textos <span style="color:red">em vermelho</span> indicam valores que os programadores geralmente não esperam:</p>
+
+			<table>
+				<tbody>
+					<tr>
+						<th>Valor<br>original</th>
+						<th>Convertido<br>para número</th>
+						<th>Convertido<br>para string</th>
+						<th>Convertido<br>para booleano</th>
+						<th style="width:10%">Experimente</th>
+					</tr>
+					<tr>
+						<td>false</td>
+						<td>0</td>
+						<td>"false"</td>
+						<td>false</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_false" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>true</td>
+						<td>1</td>
+						<td>"true"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_true" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td>0</td>
+						<td>"0"</td>
+						<td>false</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_number_0" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>1</td>
+						<td>"1"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_number_1" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>"0"</td>
+						<td>0</td>
+						<td>"0"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_string_0" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>"000"</td>
+						<td>0</td>
+						<td>"000"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_string_000" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>"1"</td>
+						<td>1</td>
+						<td>"1"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_string_1" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>NaN</td>
+						<td>NaN</td>
+						<td>"NaN"</td>
+						<td>false</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_nan" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>Infinity</td>
+						<td>Infinity</td>
+						<td>"Infinity"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_infinity" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>-Infinity</td>
+						<td>-Infinity</td>
+						<td>"-Infinity"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_infinity_minus" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>""</td>
+						<td style="color:red">0</td>
+						<td>""</td>
+						<td style="color:red">false</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_string_empty" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>"20"</td>
+						<td>20</td>
+						<td>"20"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_string_number" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>"twenty"</td>
+						<td>NaN</td>
+						<td>"twenty"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_string_text" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>[ ]</td>
+						<td style="color:red">0</td>
+						<td>""</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_array_empty" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>[20]</td>
+						<td style="color:red">20</td>
+						<td>"20"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_array_one_number" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>[10,20]</td>
+						<td>NaN</td>
+						<td>"10,20"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_array_two_numbers" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>["twenty"]</td>
+						<td>NaN</td>
+						<td>"twenty"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_array_one_string" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>["ten","twenty"]</td>
+						<td>NaN</td>
+						<td>"ten,twenty"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_array_two_strings" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>function(){}</td>
+						<td>NaN</td>
+						<td>"function(){}"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_function" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>{ }</td>
+						<td>NaN</td>
+						<td>"[object Object]"</td>
+						<td>true</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_object" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>null</td>
+						<td style="color:red">0</td>
+						<td>"null"</td>
+						<td>false</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_null" target="_blank">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>undefined</td>
+						<td>NaN</td>
+						<td>"undefined"</td>
+						<td>false</td>
+						<td><a href="tryit.asp?filename=tryjs_type_convert_undefined" target="_blank">Experimente »</a></td>
+					</tr>
+				</tbody>
+			</table>
 	</section>
 </body>
 </html>

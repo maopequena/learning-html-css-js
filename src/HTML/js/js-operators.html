@@ -31,6 +31,7 @@
 			<li>Bitwise</li>
 			<li>Ternários</li>
 			<li>De tipo</li>
+			<li>Void</li>
 		</ul>
 	</section>
 
@@ -368,7 +369,7 @@
 				</tr>
 				<tr>
 				<td>instanceof</td>
-				<td>Retorna "true" se um objeto é uma instância de um tipo de objeto</td>
+				<td>Retorna "true" se um objeto é uma instância de um tipo de objeto específico</td>
 				</tr>
 			</tbody>
 		</table>
@@ -451,6 +452,26 @@
 		<p>Os exemplos acima usam exemplos não atribuídos de 4 bits, mas o JavaScript usa números atribuídos de 32 bits. Por causa disso, em JavaScript, ~ 5 não retorna 10, mas sim -6. Isto é, ~00000000000000000000000000000101 retorna 11111111111111111111111111111010.</p>
 
 		<p>Para uma explicação completa dos operadores bitwise, consulte o vídeo <a href="https://youtu.be/JbGf_hd6g_Q?si=lIYUHTCXD4P4E4SU" target="_blank" rel="noopener noreferrer">Operadores Bitwise em Javascript - Curso de Javascript Moderno - Aula 08</a> de CFBCursos.</p>
+	</section>
+
+	<section>
+		<h2>O operador void</h2>
+
+		<p>O operador <code>void</code> avalia uma expressão e retorna "undefined". Geralmente, usamos esse operador para obter o valor primitivo indefinido, usando "void(0)", útil ao avaliar uma expressão sem usar o valor de retorno.</p>
+
+		<p>Com o HTML e o CSS, também pode ser usado para fazer alterações ao estilo da página:</p>
+
+		<pre>
+			<code>
+				&lt;a href="javascript:void(0);"&gt;
+					Useless link
+				&lt;/a&gt;
+				
+				&lt;a href="javascript:void(document.body.style.backgroundColor='red');"&gt;
+					Click me to change the background color of body to red
+				&lt;/a&gt;
+			</code>
+		</pre>
 	</section>
 </body>
 </html>

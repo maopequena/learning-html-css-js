@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Conjuntos">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conjuntos</title>
+</head>
+<body>
+	<header>
+		<h1>Conjuntos</h1>
+	</header>
+
+	<section>
+		<p>Um <strong>conjunto</strong> é uma coleção de valores exclusivos, isto é, cada valor só pode existir uma vez no conjunto. Os valores podem ser de qualquer tipo, podem ser valores primitivos ou objetos.</p>
+
+		<p>Um <code>typeof</code> de um conjunto retornará <code>object</code>.</p>
+	</section>
+
+	<section>
+			<h2>Como criar conjuntos</h2>
+
+			<p>É possível criar conjuntos:</p>
+
+			<ul>
+				<li>Passando uma matriz para <code>new Set()</code></li>
+				<li>Criando um conjunto vazio e usando <code>add()</code> para adicionar novos valores</li>
+			</ul>
+	</section>
+
+	<section>
+				<h3>new Set()</h3>
+
+				<p>Passe uma matriz para o construtor <code>new Set()</code>, por exemplo:</p>
+
+				<pre>
+					<code>
+						// Criar o conjunto completo
+						const letras = new Set(["a","b","c"]);
+
+						// OU
+						// Criar o conjunto vazio
+						const letras = new Set();
+
+						// Adicionar valores ao conjunto criado
+						letras.add("a");
+						letras.add("b");
+						letras.add("c");
+
+						// OU
+						// Criar um conjunto vazio
+						const letras = new Set();
+
+						// Criar variáveis
+						const a = "a";
+						const b = "b";
+						const c = "c";
+
+						// Adicionar as variáveis ao conjunto criado
+						letras.add(a);
+						letras.add(b);
+						letras.add(c);
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>add()</h3>
+
+				<p>Esse método adiciona um novo valor ao conjunto já criado, por exemplo:</p>
+
+				<pre>
+					<code>
+						letras.add("d");
+						letras.add("e");
+					</code>
+				</pre>
+
+				<p class="important-info">Note que, se os valores adicionados com este método forem iguais aos valores existentes, o valor não será adicionado.</p>
+	</section>
+
+	<section>
+			<h2>Listar elementos do conjunto</h2>
+
+			<p>Para listar os elementos do conjunto, use a declaração <code>for/of</code>, por exemplo:</p>
+
+			<pre>
+				<code>
+					// Cria o conjunto
+					const letras = new Set(["a","b","c"]);
+
+					// Lista todos os elementos
+					let textoo = "";
+					for (const x of letras) {
+						textoo += x;
+					}
+				</code>
+			</pre>
+	</section>
+
+	<section>
+				<h3>has()</h3>
+
+				<p>Retorna <code>true</code> se o valor especificado estiver no conjunto.</p>
+
+				<pre>
+					<code>
+						// Criar o conjunto
+						const letras = new Set(["a","b","c"]);
+
+						// O conjunto contém "d"?
+						resposta = letras.has("d");
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>forEach()</h3>
+
+				<p>Chama uma função para cada elemento do conjunto.</p>
+
+				<pre>
+					<code>
+						// Criar o conjunto
+						const letras = new Set(["a","b","c"]);
+
+						// Listar todos os elementos
+						let texto = "";
+						letras.forEach (function(value) {
+							texto += value;
+						})
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>values()</h3>
+
+				<p>Retorna um objeto iterador com os valores de um conjunto.</p>
+
+				<pre>
+					<code>
+						// Exemplo 1
+						// Criar o conjunto
+						const letras = new Set(["a","b","c"]);
+
+						// Obter os valores
+						const meuIterador = letras.values();
+
+						// Listar os valores
+						let texto = "";
+						for (const entrada of meuIterador) {
+							texto += entrada;
+						}
+
+						// Exemplo 2
+						// Criar o conjunto
+						const letras = new Set(["a","b","c"]);
+
+						// Listar os valores
+						let texto = "";
+						for (const entrada of letras.values()) {
+							texto += entrada;
+						}
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>keys()</h3>
+
+				<p>Retorna um objeto iterador com os valores de um conjunto.</p>
+
+				<p><strong>Observação</strong>: um conjunto não tem chaves, então <code>keys()</code> retorna o mesmo que <code>values()</code>.</p>
+
+				<pre>
+					<code>
+						// Exemplo 1
+						// Criar o conjunto
+						const letras = new Set(["a","b","c"]);
+
+						// Criar o iterador
+						const meuIterador = letras.keys();
+
+						// Listar os elementos
+						let texto = "";
+						for (const x of meuIterador) {
+							texto += x;
+						}
+
+						// Exemplo 2
+						// Criar o conjunto
+						const letras = new Set(["a","b","c"]);
+
+						// Listar os elementos
+						let texto = "";
+						for (const x of letras.keys()) {
+							texto += x;
+						}
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>entries()</h3>
+
+				<p>Retorna um objeto iterador com pares de [valor, valor] de um conjunto.</p>
+
+				<p><strong>Observação</strong>: este método deveria retornar um par de [chave, valor], mas como o conjunto não tem chaves, ele retorna [valor, valor]. Isso torna o conjunto compatível com mapas.</p>
+
+				<pre>
+					<code>
+						// Exemplo 1
+						// Criar o conjunto
+						const letras = new Set(["a","b","c"]);
+
+						// Obter as entradas
+						const meuIterador = letras.entries();
+
+						// Listar as entradas
+						let texto = "";
+						for (const entrada of meuIterador) {
+							texto += entrada;
+						}
+
+						// Exemplo 2
+						// Criar o conjunto
+						const letras = new Set(["a","b","c"]);
+
+						// Listar as entradas
+						let texto = "";
+						for (const entrada of letras.entries()) {
+							texto += entrada;
+						}
+					</code>
+				</pre>
+	</section>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Mapas">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapas</title>
+</head>
+<body>
+	<header>
+		<h1>Mapas</h1>
+	</header>
+
+	<section>
+		<p>Um mapa guarda pares de chave-valor, em que as chaves podem ter qualquer tipo de dado. O mapa se lembra da posição original de inserção das chaves.</p>
+
+		<p>Mapas são objetos, isto é, um <code>typeof</code> retorna <code>object</code>. O <code>instanceof</code> de um mapa retorna <code>true</code>.</p>
+	</section>
+
+	<section>
+			<h2>Como criar um mapa</h2>
+
+			<p>É possível criar um mapa em JavaScript das seguintes maneiras:</p>
+
+			<ul>
+				<li>Passando uma matriz para <code>new Map()</code></li>
+				<li>Criando um mapa vazio e usando <code>Map.set()</code></li>
+			</ul>
+	</section>
+
+	<section>
+				<h3>new Map()</h3>
+
+				<p>Passe uma matriz para o construtor <code>new Map()</code>, por exemplo:</p>
+
+				<pre>
+					<code>
+						// Criar o mapa
+						const frutas = new Map([
+							["macas", 500],
+							["bananas", 300],
+							["laranjas", 200]
+						]);
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>set()</h3>
+
+				<p>Adicione elementos a um mapa com o método <code>set()</code>:</p>
+
+				<pre>
+					<code>
+						// Criar o mapa
+						const futas = new Map();
+
+						// Definir os valores do mapa
+						futas.set("macas", 500);
+						futas.set("bananas", 300);
+						futas.set("laranjas", 200);
+					</code>
+				</pre>
+
+				<p>Também podemos usar este método para alterar os valores existentes de um mapa:</p>
+
+				<pre>
+					<code>
+						frutas.set("macas", 200);
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>get()</h3>
+
+				<p>Obtém o valor associado a uma chave do mapa:</p>
+
+				<pre>
+					<code>
+						frutas.get("macas");    // Retorna 500
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>size</h3>
+
+				<p>Retorna a quantidade de elementos em um mapa:</p>
+
+				<pre>
+					<code>
+						frutas.size;
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>delete()</h3>
+
+				<p>Remova um elemento do mapa:</p>
+
+				<pre>
+					<code>
+						frutas.delete("laranjas");
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>clear()</h3>
+
+				<p>Remove todos os elementos de um mapa:</p>
+
+				<pre>
+					<code>
+						frutas.clear();
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>has()</h3>
+
+				<p>Retorna <code>true</code> se uma chave existir no mapa:</p>
+
+				<pre>
+					<code>
+						frutas.has("macas");
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>forEach()</h3>
+
+				<p>Executa uma função para cada par de chave-valor do mapa:</p>
+
+				<pre>
+					<code>
+						// Listar todos os elementos
+						let texto = "";
+						frutas.forEach (function(value, key) {
+							texto += key + ' = ' + value;
+						})
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>entries()</h3>
+
+				<p>Retorna um objeto iterador com pares de [chave, valor] de um mapa:</p>
+
+				<pre>
+					<code>
+						// Listar todas as entradas
+						let texto = "";
+						for (const x of frutas.entries()) {
+							texto += x;
+						}
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>keys()</h3>
+
+				<p>Retorna um objeto iterador com as chaves de um mapa:</p>
+
+				<pre>
+					<code>
+						// Listar todas as chaves
+						let texto = "";
+						for (const x of frutas.keys()) {
+							texto += x;
+						}
+					</code>
+				</pre>
+
+				<h3>values()</h3>
+
+				<p>Retorna um objeto iterador com os valores de um mapa:</p>
+
+				<pre>
+					<code>
+						// Listar todos os valores
+						let texto = "";
+						for (const x of frutas.values()) {
+							texto += x;
+						}
+					</code>
+				</pre>
+
+				<p>Este método também pode ser usado para somar os valores de um mapa:</p>
+
+				<pre>
+					<code>
+						// Somar todos os valores
+						let total = 0;
+						for (const x of frutas.values()) {
+							total += x;
+						}
+					</code>
+				</pre>
+	</section>
+
+	<section>
+				<h3>groupBy()</h3>
+
+				<p>Este método agrupa elementos de um objeto de acordo com valores de strings retornados por uma função de retorno. Ele não altera o objeto original.</p>
+
+				<pre>
+					<code>
+						// Criar uma matriz
+						const frutas = [
+							{name:"macas", quantity:300},
+							{name:"bananas", quantity:500},
+							{name:"laranjas", quantity:200},
+							{name:"kiwis", quantity:150}
+						];
+
+						// Função de retorno para agrupar elementos
+						function meuRetorno({ quantity }) {
+							return quantity > 200 ? "ok" : "pouco";
+						}
+
+						// Agrupar por quantidade
+						const resultado = Map.groupBy(frutas, meuRetorno);
+					</code>
+				</pre>
+
+				<p><code>groupBy()</code> pode ser usado com objetos e mapas. A diferença é que com objetos, ele agrupa elementos em um objeto; com mapas, agrupa-os em um mapa.</p>
+	</section>
+
+	<section>
+				<h3>Diferenças entre objetos e mapas</h3>
+
+				<table>
+					<tbody>
+						<tr>
+							<th>Objeto</th>
+							<th>Mapa</th>
+						</tr>
+						<tr>
+							<td>Não é iterável diretamente</td>
+							<td>É iterável diretamente</td></tr>
+						<tr>
+							<td>Não tem uma propriedade <code>size</code></td>
+							<td>Tem uma propriedade <code>size</code></td></tr>
+						<tr>
+							<td>As chaves devem ser sequências de caracteres (ou símbolos)</td>
+							<td>As chaves podem ter qualquer tipo de dado</td></tr>
+						<tr>
+							<td>As chaves não tem uma ordem adequada</td>
+							<td>As chaves são ordenadas pela inserção</td></tr>
+						<tr>
+							<td>Tem chaves por padrão</td>
+							<td>Não tem chaves por padrão</td></tr>
+					</tbody>
+				</table>
+
+				<h3>Objetos como chaves</h3>
+
+				<p>Um importante recurso dos mapas é poder usar os objetos como chaves.</p>
+
+				<pre>
+					<code>
+						// Criar objetos
+						const macas = {name: 'Maçãs'};
+						const bananas = {name: 'Bananas'};
+						const laranjas = {name: 'Laranjas'};
+
+						// Criar um mapa
+						const frutas = new Map();
+
+						// Adicionar novos elementos ao mapa
+						frutas.set(macas, 500);
+						frutas.set(bananas, 300);
+						frutas.set(laranjas, 200);
+					</code>
+				</pre>
+
+				<p>Neste caso, as chaves são objetos (variáveis), não sequências de caracteres ("strings"). Se usarmos o método <code>get()</code> no código acima com a string "macas", o resultado será <code>Undefined</code>.</p>
+	</section>
+</body>
+</html>
