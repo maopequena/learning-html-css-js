@@ -16,7 +16,166 @@
 	</header>
 
 	<section>
-		
+		<p>A desestruturação "desempacota" as propriedades de um objeto em variáveis. Também pode ser usado para desestruturações de matrizes e quaisquer outros objetos iteráveis. Sua sintaxe é a seguinte:</p>
+
+		<pre>
+			<code>
+				let {primeiroNome, sobrenome, idade} = pessoa;
+
+				let [primeiroNome, sobrenome, idade] = pessoa;
+			</code>
+		</pre>
+
+		<p>A desestruturação não destrói e não altera o objeto original.</p>
+
+		<p>Note que a ordem das propriedades não importa:</p>
+
+		<pre>
+			<code>
+				let {sobrenome, primeiroNome, idade} = pessoa;
+
+				let [idade, sobrenome, primeiroNome] = pessoa;
+			</code>
+		</pre>
+
+		<p>Propriedades ausentes podem receber um valor padrão diretamente na desestruturação:</p>
+
+		<pre>
+			<code>
+				// Criar o objeto
+				const pessoa = {
+					primeiroNome: "John",
+					sobrenome: "Doe",
+					idade: 50
+				};
+
+				// Desestruturar
+				let {primeiroNome, sobrenome, pais = "Brasil"} = pessoa;
+			</code>
+		</pre>
+
+		<p>Também é possível usar alias para as propriedades:</p>
+
+		<pre>
+			<code>
+				// Criar o objeto
+				const pessoa = {
+					primeiroNome: "John",
+					sobrenome: "Doe",
+					idade: 50
+				};
+
+				// Destructuring
+				let {sobrenome : nome} = pessoa;
+			</code>
+		</pre>
+
+			<h2>Trocar variáveis</h2>
+
+			<p>Usando a desestruturação, é possível trocar variáveis no JavaScript:</p>
+
+			<pre>
+				<code>
+					let primeiroNome = "John";
+					let sobrenome = "Doe";
+
+					// Desestruturação
+					[primeiroNome, sobrenome] = [sobrenome, primeiroNome];
+				</code>
+			</pre>
+	</section>
+
+	<section>
+			<h2>Sequências de caracteres</h2>
+
+			<p>Outro uso para a desestruturação é "desempacotar" caracteres de uma string:</p>
+
+			<pre>
+				<code>
+					// Criar uma string
+					let nome = "W3Schools";
+
+					// Desestruturação
+					let [a1, a2, a3, a4, a5] = nome;
+				</code>
+			</pre>
+	</section>
+
+	<section>
+			<h2>Matrizes</h2>
+
+			<p>Podemos coletar variáveis de matrizes usando a desestruturação:</p>
+
+			<pre>
+				<code>
+					// Criar uma matriz
+					const frutas = ["Bananas", "Laranjas", "Maçãs", "Mangas"];
+
+					// Desestruturação
+					let [fruta1, fruta2] = frutas;
+				</code>
+			</pre>
+
+			<p>Podemos também pular os elementos da matriz usando uma ou mais vírgulas:</p>
+
+			<pre>
+				<code>
+					// Criar uma matriz
+					const frutas = ["Bananas", "Laranjas", "Maçãs", "Mangas"];
+
+					// Desestruturação
+					let [fruta1,,,fruta2] = frutas;
+				</code>
+			</pre>
+
+			<p>Também é possível coletar valores de índices específicos da matriz:</p>
+
+			<pre>
+				<code>
+					// Criar a matriz
+					const frutas = ["Bananas", "Laranjas", "Maçãs", "Mangas"];
+					
+					// Desestruturação
+					let {[0]:fruta1, [1]:fruta2} = frutas;
+				</code>
+			</pre>
+	</section>
+
+	<section>
+			<h2>Mapas</h2>
+
+			<pre>
+				<code>
+					// Criar o mapa
+					const frutas = new Map([
+						["macas", 500],
+						["bananas", 300],
+						["laranjas", 200]
+					]);
+
+					// Desestruturação
+					let texto = "";
+					for (const [key, value] of frutas) {
+						text += key + " is " + value;
+					}
+				</code>
+			</pre>
+	</section>
+
+	<section>
+			<h2>A propriedade rest</h2>
+
+			<p>Podemos usar a palavra-chave <code>...rest</code> no final da sintaxe de desestruturação. Isso faz com que os valores restantes sejam armazenados na nova matriz:</p>
+
+			<pre>
+				<code>
+					// Criar a matriz
+					const numeros = [10, 20, 30, 40, 50, 60, 70];
+
+					// Desestruturação
+					const [a,b, ...rest] = numeros;
+				</code>
+			</pre>
 	</section>
 </body>
 </html>
