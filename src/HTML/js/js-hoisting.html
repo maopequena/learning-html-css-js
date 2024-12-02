@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Içamento">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Içamento</title>
+</head>
+<body>
+	<header>
+		<h1>Içamento</h1>
+	</header>
+
+	<section>
+		<p>O comportamento padrão do JavaScript é mover as declarações para o topo do escopo atual, isso se chama <em>hoisting</em> (ou içamento).</p>
+
+		<p>Podemos declarar uma variável após usá-la no código; isto é içamento. Os dois exemplos abaixo, um usando içamento e o outro não, têm o mesmo resultado.</p>
+
+		<pre>
+			<code>
+				x = 5; // Atribuir 5 a x
+
+				elem = document.getElementById("demo"); // Encontrar um elemento
+				elem.innerHTML = x;                     // Exibir x no elemento
+
+				var x; // Declarar x
+
+				OU
+
+				var x; // Declarar x
+				x = 5; // Atribuir 5 a x
+
+				elem = document.getElementById("demo"); // Encontrar um elemento
+				elem.innerHTML = x;                     // Exibir x no elemento
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>As declarações var e let</h2>
+
+		<p>Variáveis definidas com <code>let</code> e <code>const</code> são içadas para o topo do bloco de código, mas não são <em>inicializadas</em>, isto é, o bloco de código sabe da existência da variável, mas não pode usá-la até que seja declarada.</p>
+
+		<p>Usar uma variável <code>let</code> antes de declará-la resulta em um <code>ReferenceError</code>. A variável fica em um tipo de "zona morta temporal" desde o início do bloco de código até ser declarada:</p>
+
+		<pre>
+			<code>
+				carName = "Volvo";
+				let carName; // ReferenceError
+			</code>
+		</pre>
+
+		<p>Usar uma variável <code>const</code> antes de declará-la é um erro de sintaxe, então o código simplesmente não executa:</p>
+
+		<pre>
+			<code>
+				carName = "Volvo";
+				const carName; // Nada acontece!
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Inicializações não são içadas</h2>
+
+		<p>O JavaScript iça apenas declarações, não inicializações. O Exemplo 1 abaixo não tem o mesmo resultado do Exemplo 2:</p>
+
+		<pre>
+			<code>
+				// Exemplo 1:
+				var x = 5; // Inicializar x
+				var y = 7; // Inicializar y
+
+				elem = document.getElementById("demo"); // Encontrar um elemento
+				elem.innerHTML = x + " " + y;           // Exibir x e y
+
+				// Exemplo 2:
+				var x = 5; // Inicializar x
+
+				elem = document.getElementById("demo"); // Encontrar um elemento
+				elem.innerHTML = x + " " + y;           // Exibir x e y = "5 undefined"
+
+				var y = 7; // Inicializar y
+			</code>
+		</pre>
+
+		<p>No Exemplo 2, faz sentido que y seja indefinido? Isso ocorre porque apenas a declaração <code>var</code> é içada e não a inicialização ("=7"). O JavaScript considera isso como uma declaração antes do uso, por isso y é indefinido.</p>
+
+		<p class="important-info">Por causa do içamento, a prática recomendada é sempre declarar as variáveis no início do escopo.</p>
+	</section>
+
+	<section>
+		<h2>use strict;</h2>
+
+		<p>Esta não é uma declaração, é uma expressão literal. Seu propósito é indicar que o código deve ser executado em "modo rigoroso", em que não se pode, por exemplo, usar variáveis sem declará-las. Como é apenas uma sequência de caracteres, podemos deixá-la no código mesmo que o navegador não a compreenda, então a prática recomendada é sempre colocá-la no início do código.</p>
+
+		<p>Colocando o comando <code>use strict;</code> no topo do arquivo, isto é, no início do código, ele tem escopo global. Porém, também é possível declará-lo com escopo local, dentro de uma função.</p>
+
+		<p>Essa string ajuda a manter o código seguro. Por exemplo, sem o modo rigoroso, ao digitar um nome de variável incorretamente, você cria uma nova variável global, mas no modo rigoroso isso gera um erro. Neste modo também ocorrem erros ao atribuir valores a propriedades que não podem receber atribuições ou a propriedades, variáveis ou objetos inexistentes.</p>
+
+		<p>Neste modo também não é possível excluir variáveis, objetos ou funções com a declaração <code>delete</code>; duplicar um nome de parâmetro, usar literais numéricos ou caracteres de escape octais; usar <code>eval</code>, <code>arguments</code>, <code>with</code>.</p>
+
+		<p>Além disso, a palavra-chave <code>this</code> funciona diferentemente no modo rigoroso. Essa palavra chave refere-se a um objeto que chama uma função; se o objeto não estiver especificado, as funções no modo rigoroso retornarão <code>undefined</code> e no modo normal, o objeto global (a janela).</p>
+	</section>
+
+	<section>
+		<h2>Palavras-chave que não podem ser usadas como nomes de variáveis</h2>
+
+		<p>Algumas palavras-chave estão reservadas para uso atual e futuro no JavaScript e <strong>NÃO</strong> podem ser usadas como nomes de variáveis no modo rigoroso. São elas:</p>
+
+		<ul>
+			<li>implements</li>
+			<li>interface</li>
+			<li>let</li>
+			<li>package</li>
+			<li>private</li>
+			<li>protected</li>
+			<li>public</li>
+			<li>static</li>
+			<li>yield</li>
+		</ul>
+	</section>
+</body>
+</html>

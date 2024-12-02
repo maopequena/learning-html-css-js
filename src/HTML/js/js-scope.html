@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Escopo">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escopo</title>
+</head>
+<body>
+	<header>
+		<h1>Escopo</h1>
+	</header>
+
+	<section>
+		<p>Como vimos nas seções sobre <a href="js-loops.html#loop-scope">loop</a> e <a href="js-let-const.html">declarações de variáveis</a>, o <strong>escopo</strong> determina o acesso (ou visibilidade) das variáveis. Há três tipos de escopo:</p>
+
+		<ul>
+			<li><a href="#block-scope">De bloco</a></li>
+			<li><a href="#function-scope">De função</a></li>
+			<li><a href="#global-scope">Global</a></li>
+		</ul>
+
+			<h3>Variáveis</h3>
+
+			<p>No JavaScript, objetos e funções também são considerados variáveis e o escopo determina a acessibilidade deles em diferentes partes do código.</p>
+
+			<p>O ciclo de vida de uma variável no JavaScript começa com sua declaração. Variáveis locais são excluídas ao concluir a função. Variáveis globais são excluídas ao fechar a janela do navegador (ou a aba).</p>
+	</section>
+
+	<section>
+			<h2 id="block-scope">Escopo de bloco</h2>
+
+			<p>Até o ES6 (2015), as variáveis no JavaScript tinham apenas dois escopos: global e de função. Desde então, temos duas palavras-chave importantes: <code>let</code> e <code>const</code>, que fornecem também o escopo de bloco. As variáveis declaradas dentro de um bloco delimitado por chaves (<kbd>{ }</kbd>) não podem ser acessadas de fora do bloco.</p>
+
+			<p>Variáveis declaradas com a palavra-chave <code>var</code> <strong>não podem</strong> ter escopo de bloco e <strong>podem</strong> ser acessadas de fora das chaves (<kbd>{ }</kbd>).</p>
+	</section>
+
+	<section>
+			<h2 id="function-scope">Escopo de função</h2>
+
+			<p>As variáveis declaradas em uma função no JavaScript são <strong>locais</strong> e não é possível usá-las fora das chaves (<kbd>{ }</kbd>). Como essas variáveis só são reconhecidas dentro de suas funções, é possível usar variáveis com o mesmo nome em funções diferentes. Elas são criadas quando a função inicia e excluídas quando a função termina, isto é, cada função cria um novo escopo. As três palavras-chave <code>let</code>, <code>const</code> e <code>var</code> podem ser usadas para criar variáveis com escopo de função.</p>
+
+			<p id="important-info">Parâmetros de funções funcionam como variáveis locais dentro de funções.</p>
+	</section>
+
+	<section>
+			<h2 id="global-scope">Escopo global</h2>
+
+			<p>Uma variável declarada fora de uma função tem escopo <strong>global</strong>, isto é, todos os scripts e funções em uma página podem acessá-la de qualquer lugar. As três palavras-chave <code>let</code>, <code>const</code> e <code>var</code> podem ser usadas para criar variáveis com escopo global.</p>
+			
+			<p>Ao atribuir um valor a uma variável que não havia sido declarada, ela se torna automaticamente <strong>global</strong>. O exemplo abaixo declara uma variável global <code>carName</code>, apesar de o valor estar sendo declarado somente dentro de uma função:</p>
+
+			<pre>
+				<code>
+					myFunction();
+
+					// qualquer código aqui pode usar carName
+
+					function myFunction() {
+						carName = "Volvo";
+					}
+				</code>
+			</pre>
+
+				<h3>Modo restrito</h3>
+
+				<p>Todos os navegadores modernos executam o JavaScript no <em>modo restrito</em>, isto é, variáveis não declaradas não são globais automaticamente.</p>
+	</section>
+
+	<section>
+			<h2>Variáveis globais no HTML</h2>
+
+			<p>No JavaScript, o escopo global é o ambiente JavaScript, mas no HTML, é o objeto <em>window</em>. Variáveis declaradas com a palavra-chave <code>var</code> pertencem ao objeto <em>window</em>.</p>
+
+			<p>Variáveis declaradas com <code>let</code> não pertencem ao objeto <em>window</em>.</p>
+
+			<p id="important-info"><strong>NÃO</strong> crie variáveis globais, a menos que queira isso explicitamente, essas variáveis (ou funções) podem sobrescrever as variáveis do objeto <em>window</em>!</p>
+	</section>
+</body>
+</html>

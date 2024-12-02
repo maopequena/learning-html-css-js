@@ -18,248 +18,425 @@
 	</header>
 
 	<section>
-		<h2>O que significa reatribuir?</h2>
+			<h2>O que significa reatribuir?</h2>
 
-		<pre>
-			<code>
-				const PI = 3.141592653589793;
-				PI = 3.14;      // Isso gera um erro
-				PI = PI + 10;   // Isso também
-			</code>
-		</pre>
+			<pre>
+				<code>
+					const PI = 3.141592653589793;
+					PI = 3.14;      // Isso gera um erro
+					PI = PI + 10;   // Isso também
+				</code>
+			</pre>
 
-		<p>Reatribuir uma variável com <code>const</code> não é permitido.</p>
+			<p>Reatribuir uma variável com <code>const</code> não é permitido.</p>
 
-		<pre>
-			<code>
-				const x = 2;     // Permitido
-				x = 2;           // Não permitido
-				var x = 2;       // Não permitido
-				let x = 2;       // Não permitido
-				const x = 2;     // Não permitido
+			<pre>
+				<code>
+					const x = 2;     // Permitido
+					x = 2;           // Não permitido
+					var x = 2;       // Não permitido
+					let x = 2;       // Não permitido
+					const x = 2;     // Não permitido
 
-				{
-					const x = 2;   // Permitido
-					x = 2;         // Não permitido
-					var x = 2;     // Não permitido
-					let x = 2;     // Não permitido
+					{
+						const x = 2;   // Permitido
+						x = 2;         // Não permitido
+						var x = 2;     // Não permitido
+						let x = 2;     // Não permitido
+						const x = 2;   // Não permitido
+					}
+				</code>
+			</pre>
+	</section>
+
+	<section>
+			<h2>O que significa redeclarar?</h2>
+
+			<p>Não é possível fazer o seguinte com <code>let</code>:</p>
+			<pre>
+				<code>
+					let x = "John Doe";
+					let x = 0;
+				</code>
+			</pre>
+
+			<p><code>var</code> pode ser redeclarada em qualquer lugar do código. <code>let</code> e <code>const</code> podem ser redeclarados em outros blocos. </p>
+
+			<p>Redeclarar <code>var</code> ou <code>let</code> como <code>const</code> no mesmo escopo não é permitido:</p>
+
+			<pre>
+				<code>
+					var x = 2;     // Permitido
 					const x = 2;   // Não permitido
-				}
-			</code>
-		</pre>
+
+					{
+					let x = 2;     // Permitido
+					const x = 2;   // Não permitido
+					}
+
+					{
+					const x = 2;   // Permitido
+					const x = 2;   // Não permitido
+					}
+				</code>
+			</pre>
+
+			<p>Porém, podemos redeclarar uma variável com <code>const</code> em outro escopo (ou bloco):</p>
+
+			<pre>
+				<code>
+					const x = 2;   // Permitido
+					{
+					const x = 3;   // Permitido
+					}
+					{
+					const x = 4;   // Permitido
+					}
+				</code>
+			</pre>
 	</section>
 
 	<section>
-		<h2>O que significa redeclarar?</h2>
+			<h2>O que é "escopo de bloco"?</h2>
 
-		<p>Não é possível fazer o seguinte com <code>let</code>:</p>
-		<pre>
-			<code>
-				let x = "John Doe";
-				let x = 0;
-			</code>
-		</pre>
+			<p>Antes do ES6, o JavaScript oferecia somente o <strong>escopo global</strong> e o <strong>escopo de função</strong>. Após a introdução do ES6, com as palavras-chave <code>let</code> e <code>const</code>, também temos o <strong>escopo de bloco</strong>. As variáveis declaradas com essas palavras-chave dentro de um bloco (definido por <kbd>{ }</kbd>) não podem ser acessadas fora dele. Por exemplo:</p>
 
-		<p><code>var</code> pode ser redeclarada em qualquer lugar do código. <code>let</code> e <code>const</code> podem ser redeclarados em outros blocos. </p>
+			<pre>
+				<code>
+					const x = 10;
+					// Aqui x é 10
 
-		<p>Redeclarar <code>var</code> ou <code>let</code> como <code>const</code> no mesmo escopo não é permitido:</p>
+					{
+					const x = 2;
+					// Aqui x é 2
+					}
 
-		<pre>
-			<code>
-				var x = 2;     // Permitido
-				const x = 2;   // Não permitido
-
-				{
-				let x = 2;     // Permitido
-				const x = 2;   // Não permitido
-				}
-
-				{
-				const x = 2;   // Permitido
-				const x = 2;   // Não permitido
-				}
-			</code>
-		</pre>
-
-		<p>Porém, podemos redeclarar uma variável com <code>const</code> em outro escopo (ou bloco):</p>
-
-		<pre>
-			<code>
-				const x = 2;   // Permitido
-				{
-				const x = 3;   // Permitido
-				}
-				{
-				const x = 4;   // Permitido
-				}
-			</code>
-		</pre>
+					// Aqui x é 10
+				</code>
+			</pre>
 	</section>
 
 	<section>
-		<h2>O que é "escopo de bloco"?</h2>
+			<h2>Escopo global</h2>
 
-		<p>Antes do ES6, o JavaScript oferecia somente o <strong>escopo global</strong> e o <strong>escopo de função</strong>. Após a introdução do ES6, com as palavras-chave <code>let</code> e <code>const</code>, também temos o <strong>escopo de bloco</strong>. As variáveis declaradas com essas palavras-chave dentro de um bloco (definido por <kbd>{ }</kbd>) não podem ser acessadas fora dele. Por exemplo:</p>
+			<p>Variáveis declaradas com a palavra-chave <code>var</code> sempre têm <strong>escopo global</strong> e NÃO podem ter escopo de bloco.</p>
 
-		<pre>
-			<code>
-				const x = 10;
-				// Aqui x é 10
+			<p>Variáveis declaradas com <code>let</code> NÃO podem ser re-declaradas, mas variáveis declaradas com <code>var</code> e <code>const</code> podem.</p> </p>
 
-				{
-				const x = 2;
-				// Aqui x é 2
-				}
+			<p>Com <code>var</code>, as variáveis redeclaradas dentro de um bloco são válidas também fora do bloco. Então podemos usar <code>let</code> para impedir esse comportamento, já que redeclarar a variável com <code>let</code> só funciona dentro do bloco.</p>
 
-				// Aqui x é 10
-			</code>
-		</pre>
+				<h3>Diferenças entre var, let e const</h3>
+
+				<picture>
+					<img src="../../img/vlc-differences.png" alt="Diferenças entre var, let e const">
+					<figcaption>Diferenças entre var, let e const</figcaption>
+				</picture>
 	</section>
 
 	<section>
-		<h2>Escopo global</h2>
+			<h2>Práticas recomendadas para var, let e const</h2>
 
-		<p>Variáveis declaradas com a palavra-chave <code>var</code> sempre têm <strong>escopo global</strong> e NÃO podem ter escopo de bloco.</p>
+				<h3>Práticas recomendadas</h3>
+				
+				<ul class="list-square">
+					<li>Dê preferência para usar <code>let</code> e <code>const</code>, já que têm <strong>escopo de bloco</strong>.</li>
+					<li>Lembre-se que <code>let</code> e <code>const</code> não podem ser redeclaradas.</li>
+					<li>Lembre-se de declarar variáveis com <code>let</code> ou <code>const</code> antes do seu uso.</li>
+					<li>Variáveis declaradas com <code>let</code> e <code>const</code> não são "içadas", isto é não podem ser iniciadas a qualquer momento no código.</li>
+					<li>Sempre declare variáveis com <code>let</code> quando souber que seu valor será alterado no futuro.</li>
+					<li>Sempre declare variáveis com <code>const</code> quando souber que seu valor NÃO será alterado no futuro.</li>
+				</ul>
 
-		<p>Variáveis declaradas com <code>let</code> NÃO podem ser re-declaradas, mas variáveis declaradas com <code>var</code> e <code>const</code> podem.</p> </p>
+				<h3>Práticas não recomendadas</h3>
 
-		<p>Com <code>var</code>, as variáveis redeclaradas dentro de um bloco são válidas também fora do bloco. Então podemos usar <code>let</code> para impedir esse comportamento, já que redeclarar a variável com <code>let</code> só funciona dentro do bloco.</p>
-
-		<h3>Diferenças entre var, let e const</h3>
-
-		<picture>
-			<img src="../../img/vlc-differences.png" alt="Diferenças entre var, let e const">
-			<figcaption>Diferenças entre var, let e const</figcaption>
-		</picture>
+				<ul class="list-square">
+					<li><code>var</code> não precisa ser declarada antes do uso.</li>
+					<li><code>var</code> pode ser içada, isto é, pode ser iniciada a qualquer momento no código.</li>
+				</ul>
 	</section>
 
 	<section>
-		<h2>Práticas recomendadas para var, let e const</h2>
+			<h2>Mais informações sobre const</h2>
 
-		<h3>Práticas recomendadas</h3>
-		
-		<ul class="list-square">
-			<li>Dê preferência para usar <code>let</code> e <code>const</code>, já que têm <strong>escopo de bloco</strong>.</li>
-			<li>Lembre-se que <code>let</code> e <code>const</code> não podem ser redeclaradas.</li>
-			<li>Lembre-se de declarar variáveis com <code>let</code> ou <code>const</code> antes do seu uso.</li>
-			<li>Variáveis declaradas com <code>let</code> e <code>const</code> não são "içadas", isto é não podem ser iniciadas a qualquer momento no código.</li>
-			<li>Sempre declare variáveis com <code>let</code> quando souber que seu valor será alterado no futuro.</li>
-			<li>Sempre declare variáveis com <code>const</code> quando souber que seu valor NÃO será alterado no futuro.</li>
-		</ul>
+			<p>Use <code>const</code> para declarar:</p>
 
-		<h3>Práticas não recomendadas</h3>
+			<ul class="list-square">
+				<li>Uma nova matriz (array).</li>
+				<li>Um novo objeto.</li>
+				<li>Uma nova função.</li>
+				<li>Um novo regexp.</li>
+			</ul>
 
-		<ul class="list-square">
-			<li><code>var</code> não precisa ser declarada antes do uso.</li>
-			<li><code>var</code> pode ser içada, isto é, pode ser iniciada a qualquer momento no código.</li>
-		</ul>
+				<h3>Objetos e matrizes constantes</h3>
+
+				<p>A palavra-chave <code>const</code> engana um pouco, porque não define, exatamente, um valor constante, mas uma referência constante a um valor.</p>
+				<p>Por causa disso, NÃO é possível:</p>
+
+				<ul class="list-square">
+					<li>Reatribuir um valor constante.</li>
+					<li>Reatribuir uma matriz constante.</li>
+					<li>Reatribuir um objeto constante.</li>
+				</ul>
+
+				<p>Porém, é possível:</p>
+
+				<ul class="list-square">
+					<li>Alterar os elementos de uma matriz constante.</li>
+					<li>Alterar as propriedades de um objeto constante.</li>
+				</ul>
+
+					<h4>Exemplos de matrizes constantes</h4>
+
+					<p>Podemos criar uma matriz constante:</p>
+					<pre>
+						<code>
+							const cars = ["Saab", "Volvo", "BMW"];
+						</code>
+					</pre>
+
+					<p>Alterar um de seus elementos:</p>
+
+					<pre>
+						<code>
+							cars[0] = "Toyota";
+						</code>
+					</pre>
+
+					<p>E adicionar um elemento:</p>
+
+					<pre>
+						<code>
+							cars.push("Audi");
+						</code>
+					</pre>
+
+					<p>Mas não podemos fazer isso:</p>
+
+					<pre>
+						<code>
+							const cars = ["Saab", "Volvo", "BMW"];
+							cars = ["Toyota", "Volvo", "Audi"];    // Isso gera um erro
+						</code>
+					</pre>
+
+					<h4>Exemplos de objetos constantes</h4>
+
+					<p>Podemos criar um objeto constante:</p>
+
+					<pre>
+						<code>
+							const car = {type:"Fiat", model:"500", color:"white"};
+						</code>
+					</pre>
+
+					<p>Alterar uma de suas propriedades:</p>
+
+					<pre>
+						<code>
+							car.color = "red";
+						</code>
+					</pre>
+
+					<p>E adicionar uma propriedade:</p>
+
+					<pre>
+						<code>
+							car.owner = "Johnson";
+						</code>
+					</pre>
+					
+					<p>Mas não podemos fazer isso:</p>
+
+					<pre>
+						<code>
+							const car = {type:"Fiat", model:"500", color:"white"};
+							car = {type:"Volvo", model:"EX60", color:"red"};    // Isso gera um erro
+						</code>
+					</pre>
 	</section>
 
 	<section>
-		<h2>Mais informações sobre const</h2>
+			<h2>Içamento de variáveis</h2>
 
-		<p>Use <code>const</code> para declarar:</p>
-
-		<ul class="list-square">
-			<li>Uma nova matriz (array).</li>
-			<li>Um novo objeto.</li>
-			<li>Uma nova função.</li>
-			<li>Um novo regexp.</li>
-		</ul>
-
-		<h3>Objetos e matrizes constantes</h3>
-
-		<p>A palavra-chave <code>const</code> engana um pouco, porque não define, exatamente, um valor constante, mas uma referência constante a um valor.</p>
-		<p>Por causa disso, NÃO é possível:</p>
-
-		<ul class="list-square">
-			<li>Reatribuir um valor constante.</li>
-			<li>Reatribuir uma matriz constante.</li>
-			<li>Reatribuir um objeto constante.</li>
-		</ul>
-
-		<p>Porém, é possível:</p>
-
-		<ul class="list-square">
-			<li>Alterar os elementos de uma matriz constante.</li>
-			<li>Alterar as propriedades de um objeto constante.</li>
-		</ul>
-
-		<h4>Exemplos de matrizes constantes</h4>
-
-		<p>Podemos criar uma matriz constante:</p>
-		<pre>
-			<code>
-				const cars = ["Saab", "Volvo", "BMW"];
-			</code>
-		</pre>
-
-		<p>Alterar um de seus elementos:</p>
-
-		<pre>
-			<code>
-				cars[0] = "Toyota";
-			</code>
-		</pre>
-
-		<p>E adicionar um elemento:</p>
-
-		<pre>
-			<code>
-				cars.push("Audi");
-			</code>
-		</pre>
-
-		<p>Mas não podemos fazer isso:</p>
-
-		<pre>
-			<code>
-				const cars = ["Saab", "Volvo", "BMW"];
-				cars = ["Toyota", "Volvo", "Audi"];    // Isso gera um erro
-			</code>
-		</pre>
-
-		<h4>Exemplos de objetos constantes</h4>
-
-		<p>Podemos criar um objeto constante:</p>
-
-		<pre>
-			<code>
-				const car = {type:"Fiat", model:"500", color:"white"};
-			</code>
-		</pre>
-
-		<p>Alterar uma de suas propriedades:</p>
-
-		<pre>
-			<code>
-				car.color = "red";
-			</code>
-		</pre>
-
-		<p>E adicionar uma propriedade:</p>
-
-		<pre>
-			<code>
-				car.owner = "Johnson";
-			</code>
-		</pre>
-		
-		<p>Mas não podemos fazer isso:</p>
-
-		<pre>
-			<code>
-				const car = {type:"Fiat", model:"500", color:"white"};
-				car = {type:"Volvo", model:"EX60", color:"red"};    // Isso gera um erro
-			</code>
-		</pre>
+			<p>Como vimos anteriormente, variáveis declaradas com <code>var</code> podem ser <a href="./js-hoisting.html">içadas</a>, isto é iniciadas a qualquer momento no código, mas não as declaradas com <code>const</code> ou <code>let</code>.</p>
+			<p>Isso significa que variáveis declaradas com <code>var</code> podem ser usadas antes de serem declaradas. Variáveis declaradas com <code>const</code>, se içadas, geram um <code>ReferenceError</code>.</p>
 	</section>
 
 	<section>
-		<h2>Içamento de variáveis</h2>
+			<h2>A palavra-chave this</h2>
 
-		<p>Como vimos anteriormente, variáveis declaradas com <code>var</code> podem ser içadas, isto é iniciadas a qualquer momento no código, mas não as declaradas com <code>const</code> ou <code>let</code>.</p>
-		<p>Isso significa que variáveis declaradas com <code>var</code> podem ser usadas antes de serem declaradas. Variáveis declaradas com <code>const</code>, se içadas, geram um <code>ReferenceError</code>.</p>
+			<p>Em JavaScript, a palavra-chave <code>this</code> refere-se a diferentes objetos, dependendo de como é usada. Ela <strong>NÃO</strong> é uma variável, não é possível alterar seu valor.</p>
+
+			<ul>
+				<li><a href="#method-this">Em um método de objeto</a>, <code>this</code> refere-se ao objeto em si.</li>
+				<li><a href="#alone-this">Sozinha</a>, <code>this</code> refere-se ao objeto global.</li>
+				<li><a href="#function-this">Em uma função</a>, <code>this</code> refere-se ao objeto global.</li>
+				<li><a href="#strict-this">Em uma função no modo rigoroso</a>, <code>this</code> é <code>undefined</code>.</li>
+				<li><a href="#event-this">Em um evento</a>, <code>this</code> refere-se ao elemento que recebeu o evento.</li>
+				<li><a href="#explicit-this">Métodos</a> como <code>call()</code>, <code>apply()</code> e <code>bind()</code> podem referir <code>this</code> a qualquer objeto.</li>
+			</ul>
+
+				<h3 id="method-this">Em um método</h3>
+
+				<p>Quando usada em um método de objeto, <code>this</code> refere-se ao objeto em si. No exemplo a seguir, refere-se ao objeto <code>person</code>, porque o método <code>fullName</code> pertence ao objeto <code>person</code>.</p>
+
+				<pre>
+					<code>
+						const person = {
+							firstName: "John",
+							lastName : "Doe",
+							id       : 5566,
+							fullName : function() {
+								return this.firstName + " " + this.lastName; // Exibe "John Doe"
+							}
+						};
+					</code>
+				</pre>
+
+				<h3 id="alone-this">Sozinha</h3>
+
+				<p>Quando usada sozinha, <code>this</code> refere-se ao <strong>objeto global</strong>, porque está sendo executada no escopo global. Na janela do navegador, <code>this</code> refere-se ao objeto <code>window</code>.</p>
+
+				<pre>
+					<code>
+						let x = this;
+						document.getElementById("demo").innerHTML = x; // Exibe "[object Window]"
+					</code>
+				</pre>
+
+				<p>No <strong>modo rigoroso</strong>, quando usada sozinha, <code>this</code> é também se refere ao objeto global.</p>
+
+				<pre>
+					<code>
+						let x = this;
+						document.getElementById("demo").innerHTML = x; // Exibe "[object Window]"
+					</code>
+				</pre>
+
+				<h3 id="function-this">Em uma função</h3>
+				
+				<p>Quando usada em uma função, <code>this</code> refere-se ao <strong>objeto global</strong>, que é o objeto <code>window</code>.</p>
+
+				<pre>
+					<code>
+						document.getElementById("demo").innerHTML = myFunction();
+
+						function myFunction() {
+							return this; // Exibe "[object Window]"
+						}
+					</code>
+				</pre>
+
+				<h3 id="strict-this">No modo rigoroso</h3>
+
+				<p>Como o modo rigoroso não permite vincular a um objeto por padrão, no caso de uma função, <code>this</code> é <code>undefined</code>.</p>
+
+				<pre>
+					<code>
+						"use strict";
+						document.getElementById("demo").innerHTML = myFunction();
+
+						function myFunction() {
+							return this; // Exibe "undefined"
+						}
+					</code>
+				</pre>
+
+				<h3 id="event-this">Em manipuladores de eventos</h3>
+
+				<p>Em manipuladores de eventos do HTML, <code>this</code> refere-se ao elemento HTML que recebeu o evento.</p>
+
+				<pre>
+					<code>
+						&lt;button onclick="this.style.display='none'"&gt;Click to Remove Me!&lt;/button&gt; // Remove o botão da tela
+					</code>
+				</pre>
+
+				<h3 id="explicit-this">Funções explícitas</h3>
+
+				<p>Os métodos <code>call()</code> e <code>apply()</code>são predefinidos no JavaScript, isto é, podem ser usados para chamar um método de objeto com outro objeto como argumento. Consulte <a href="https://www.w3schools.com/js/js_function_call.asp" target="_blank" rel="noopener noreferrer">call()</a>, <a href="https://www.w3schools.com/js/js_function_apply.asp" target="_blank" rel="noopener noreferrer">apply()</a> e <a href="https://www.w3schools.com/js/js_function_bind.asp" target="_blank" rel="noopener noreferrer">bind()</a> para saber mais.</p>
+
+				<p>O exemplo abaixo chama <strong>person1.fullName</strong> com <strong>person2</strong> como argumento. Neste caso, <code>this</code> refere-se a <strong>person2</strong>, mesmo que <strong>fullName</strong> seja um objeto de <strong>person1</strong>.</p>
+
+				<pre>
+					<code>
+						const person1 = {
+							fullName: function() {
+								return this.firstName + " " + this.lastName;
+							}
+						}
+						
+						const person2 = {
+							firstName:"John",
+							lastName: "Doe",
+						}
+						
+						let x = person1.fullName.call(person2); 
+						document.getElementById("demo").innerHTML = x; // Exibe "John Doe"
+					</code>
+				</pre>
+
+				<h3>Emprestar funções</h3>
+
+				<p>Com o método <code>bind()</code>, um objeto pode "emprestar" um método de outro objeto. O exemplo abaixo cria dois objetos, <code>person</code> e <code>member</code>, e este último empresta o método <code>fullname</code> de <code>person</code>.</p>
+
+				<pre>
+					<code>
+						const person = {
+							firstName:"John",
+							lastName: "Doe",
+							fullName: function () {
+								return this.firstName + " " + this.lastName;
+							}
+						}
+						
+						const member = {
+							firstName:"Hege",
+							lastName: "Nilsen",
+						}
+						
+						let fullName = person.fullName.bind(member); // Exibe "Hege Nilsen"
+					</code>
+				</pre>
+
+				<h3>Precedência</h3>
+
+				<p>Para determinar a qual objeto <code>this</code> se refere, use a seguinte ordem de precedência:</p>
+
+				<table>
+					<tbody>
+						<tr>
+							<td>Precedência</td>
+							<td>Objeto</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>bind()</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>apply() e call()</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Método de objeto</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>Escopo global</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p><code>this</code> em uma função está sendo chamado por <code>bind()</code>?</p>
+
+				<p><code>this</code> em uma função está sendo chamado por <code>apply()</code>?</p>
+					
+				<p><code>this</code> em uma função está sendo chamado por <code>call()</code>?</p>
+					
+				<p><code>this</code> está em um (método) de função de objeto?</p>
+					
+				<p><code>this</code> está em uma função no escopo global?</p>
 	</section>
 </body>
 </html>

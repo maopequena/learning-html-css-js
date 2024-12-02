@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Erros">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erros</title>
+</head>
+<body>
+	<header>
+		<h1>Erros</h1>
+	</header>
+
+	<section>
+			<h2>Declarações de erros</h2>
+
+			<p>Há quatro declarações que definem erros:</p>
+
+			<ul>
+				<li><code><a href="#try-catch">try</a></code>: define um bloco de código a ser executado (para teste).</li>
+				<li><code><a href="#try-catch">catch</a></code>: define um bloco de código que lida com qualquer erro.</li>
+				<li><code><a href="#finally">finally</a></code>: define um bloco de código a executar independentemente do resultado.</li>
+				<li><code><a href="#throw">throw</a></code>: define um erro personalizado.</li>
+			</ul>
+	</section>
+
+	<section>
+			<h2>Erros acontecem!</h2>
+
+			<p>Ao executar códigos JavaScript, podem ocorrer diferentes erros, que podem ter sido cometidos pelo programador (como erros de digitação), pelo usuário (uma inserção incorreta) ou outras coisas que não se pode prever.</p>
+
+			<p>Quando ocorre um erro, o JavaScript geralmente pára e gera uma mensagem de erro. Em termos técnicos: o JavaScript <strong>exibe uma exceção</strong> (ou um erro).</p>
+
+			<p>Na verdade, o JavaScript cria um objeto de erro (<code>Error object</code>) com duas propriedades: nome (<code>name</code>) e mensagem (<code>message</code>).</p>
+	</section>
+
+	<section>
+			<h2 id="try-catch">try e catch</h2>
+
+			<p>Essas duas declarações funcionam como um par: <code>try</code> possibilita definir um bloco de código a ser testado durante a execução, enquanto <code>catch</code> possibilita definir um bloco de código a executar se ocorrer um erro em <code>try</code>. Sintaxe:</p>
+
+			<pre>
+				<code>
+					try {
+						Bloco de código a testar
+					}
+					catch(err) {
+						Bloco de código para lidar com os erros
+					}
+				</code>
+			</pre>
+	</section>
+
+	<section>
+			<h2 id="throw">throw</h2>
+
+			<p>A declaração <code>throw</code> possibilita criar um erro personalizado, isto é, <strong>exibir uma exceção</strong> (ou um erro), que pode ser uma sequência de caracteres, um número, um booleano ou um objeto. Por exemplo:</p>
+
+			<pre>
+				<code>
+					throw "Grande demais"; // exibe um texto
+					throw 500; // exibe um número
+				</code>
+			</pre>
+
+			<p>Usando <code>throw</code> com <code>try</code> e <code>catch</code>, é possível controlar o fluxo do programa e gerar mensagens de erro personalizadas.</p>
+	</section>
+
+	<section>
+			<h2 id="finally">finally</h2>
+
+			<p>Esta declaração permite executar um código após a execução de <code>try</code> e <code>catch</code>, independentemente do resultado. Sintaxe:</p>
+
+			<pre>
+				<code>
+					try {
+						Bloco de código a testar
+					}
+					catch(err) {
+						Bloco de código para lidar com os erros
+					}
+					finally {
+						Bloco de código a executar independentemente do resultado de try/catch
+					}
+				</code>
+			</pre>
+
+			<p>Veja um exemplo <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_finally_error" target="_blank" rel="noopener noreferrer">aqui</a>.</p>
+	</section>
+
+	<section>
+			<h2>Exemplo de validação de dados</h2>
+
+			<p>O exemplo a seguir analisa os dados inseridos. Se o valor estiver incorreto, exibe um erro, que aciona a declaração <code>catch</code> para exibir um erro personalizado.</p>
+
+			<pre>
+				<code>
+					&lt;!DOCTYPE html&gt;
+					&lt;html&gt;
+					&lt;body&gt;
+
+					&lt;p&gt;Please input a number between 5 and 10:&lt;/p&gt;
+
+					&lt;input id="demo" type="text"&gt;
+					&lt;button type="button" onclick="myFunction()"&gt;Test Input&lt;/button&gt;
+					&lt;p id="p01"&gt;&lt;/p&gt;
+
+					&lt;script&gt;
+					function myFunction() {
+						const message = document.getElementById("p01");
+						message.innerHTML = "";
+						let x = document.getElementById("demo").value;
+						try {
+							if(x.trim() == "") throw "empty";
+							if(isNaN(x)) throw "not a number";
+							x = Number(x);
+							if(x < 5) throw "too low";
+							if(x > 10) throw "too high";
+						}
+						catch(err) {
+							message.innerHTML = "Input is " + err;
+						}
+					}
+					&lt;/script&gt;
+
+					&lt;/body&gt;
+					&lt;/html&gt;
+				</code>
+			</pre>
+
+			<p>Navegadores modernos geralmente combinam JavaScript e HTML para validar os dados inseridos, usando regras de validação predefinidas nos atributos HTML: <code>&lt;input id="demo" type="number" min="5" max="10" step="1"&gt;</code>. Saiba mais em <a href="../html/formularios.html#form-validation">Validação de formulários</a> e em <a href="https://www.w3schools.com/html/html_forms.asp" target="_blank" rel="noopener noreferrer"></a>.</p>
+	</section>
+
+	<section>
+			<h2>O objeto Error</h2>
+
+			<p>O JavaScript oferece um objeto de erro incorporado, que exibe informações quando ocorre um erro. Esse objeto tem duas propriedades úteis: <code>name</code>, que define ou retorna um nome de erro, e <code>message</code>, que define ou retorna uma mensagem de erro (um texto, em formato String).</p>
+
+				<h3>Valores dos nomes de erros</h3>
+
+				<p>Há seis valores para a propriedade <code>name</code>. Vejamos as descrições abaixo.</p>
+
+					<h4>EvalError</h4>
+
+					<p>Exibido quando ocorre um erro na função <code>eval()</code>. Porém, versões mais recentes do JavaScript não exibem esse erro, exibem <code>SyntaxError</code>.</p>
+
+					<h4>RangeError</h4>
+
+					<p>Exibido quando o número inserido está fora do "limite" permitido. Por exemplo, não é possível definir um número com 500 dígitos significativos.</p>
+
+					<pre>
+						<code>
+							let num = 1;
+							try {
+								num.toPrecision(500);   // A number cannot have 500 significant digits
+							}
+							catch(err) {
+								document.getElementById("demo").innerHTML = err.name;
+							}
+						</code>
+					</pre>
+
+					<h4>ReferenceError</h4>
+
+					<p>Exibido ao fazer referência a uma variável que ainda não foi declarada.</p>
+
+					<h4>SyntaxError</h4>
+
+					<p>Exibido ao tentar avaliar um código com erros de sintaxe, por exemplo, quando falta um ponto ou ao não fechar aspas.</p>
+
+					<h4>TypeError</h4>
+
+					<p>Exibido se um operando ou argumento for incompatível com o tipo esperado por um operador ou função. Por exemplo, não é possível converter um número com <code>toUpperCase()</code></p>
+
+					<h4>URIError</h4>
+
+					<p>Exibido ao usar caracteres ilegais em uma função de URI.</p>
+
+					<pre>
+						<code>
+							decodeURI("%%%"); // Não é possível decodificar sinais de porcentagem
+						</code>
+					</pre>
+
+				<h3>Propriedades não padrão do objeto Error</h3>
+
+				<p>A Mozilla e a Microsoft definiram outras propriedades para o objeto Error:</p>
+
+				<ul>
+					<li>fileName (Mozilla)</li>
+					<li>lineNumber (Mozilla)</li>
+					<li>columnNumber (Mozilla)</li>
+					<li>stack (Mozilla)</li>
+					<li>description (Microsoft)</li>
+					<li>number (Microsoft)</li>
+				</ul>
+
+				<p class="important-info">Não use essas propriedades em sites públicos, já que elas não funcionam em todos os navegadores.</p>
+
+				<p>Saiba mais sobre error na <a href="https://www.w3schools.com/jsref/jsref_obj_error.asp" target="_blank" rel="noopener noreferrer">Referência completa sobre erros do JavaScript</a>.</p>
+	</section>
+</body>
+</html>

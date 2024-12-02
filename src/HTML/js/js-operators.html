@@ -378,7 +378,9 @@
 	<section>
 		<h2>Operadores bitwise</h2>
 
-		<p>Operadores de bit manipulam números de 32 bits. Qualquer operando numérico na operação é convertido em um número de 32 bits. O resultado é convertido de volta para um número em JavaScript.</p>
+		<p>Operadores de bit manipulam números de 32 bits. Qualquer operando numérico na operação é convertido em um número de 32 bits. O resultado é convertido de volta para um número de 64 bits em JavaScript.</p>
+
+		<p>Os exemplos abaixo usam números binários de 4 bits.</p>
 
 		<table>
 			<tbody>
@@ -389,6 +391,9 @@
 					<th>É o mesmo que</th>
 					<th>Resultado</th>
 					<th style="width:15%">Decimal</th>
+					<th>Mais informações</th>
+					<th>Exemplo com 1 bit</th>
+					<th>Exemplo com 4 bits</th>
 				</tr>
 				<tr>
 					<td>&amp;</td>
@@ -397,6 +402,9 @@
 					<td>0101 &amp; 0001</td>
 					<td>0001</td>
 					<td>&nbsp;1</td>
+					<td>Ao aplicar o AND em um par de bits, isso retorna 1 se ambos os bits forem 1.</td>
+					<td>0 & 0 = 0, 0 & 1 = 0, 1 & 0 = 0, 1 & 1 = 1</td>
+					<td>1111 & 0000 = 0000, 1111 & 1111 = 1111, 1111 & 0001 = 0001, 1111 & 0010 = 0010</td>
 				</tr>
 				<tr>
 					<td>|</td>
@@ -405,6 +413,9 @@
 					<td>0101 | 0001</td>
 					<td>0101</td>
 					<td>&nbsp;5</td>
+					<td>Ao aplicar o OR em um par de bits, isso retorna 1 se pelo menos um dos bits for 1.</td>
+					<td>0 | 0 = 0, 0 | 1 = 1, 1 | 0 = 1, 1 | 1 = 1</td>
+					<td>1111 | 0000 = 1111, 1111 | 0001 = 1111, 1111 | 0010 = 1111, 1111 | 0100 = 1111</td>
 				</tr>
 				<tr>
 					<td>~</td>
@@ -413,6 +424,9 @@
 					<td>&nbsp;~0101</td>
 					<td>1010</td>
 					<td>&nbsp;10</td>
+					<td>------</td>
+					<td>------</td>
+					<td>------</td>
 				</tr>
 				<tr>
 					<td>^</td>
@@ -421,6 +435,9 @@
 					<td>0101 ^ 0001</td>
 					<td>0100</td>
 					<td>&nbsp;4</td>
+					<td>Ao aplicar o XOR em um par de bits, isso retorna 1 se os bits são diferentes.</td></td>
+					<td>0 ^ 0 = 0, 0 ^ 1 = 1, 1 ^ 0 = 1, 1 ^ 1 = 0</td>
+					<td>1111 ^ 0000 = 1111, 1111 ^ 0001 = 1110, 1111 ^ 0010 = 1101, 1111 ^ 0100 = 1011</td>
 				</tr>
 				<tr>
 					<td>&lt;&lt;</td>
@@ -429,6 +446,9 @@
 					<td>0101 &lt;&lt; 1</td>
 					<td>1010</td>
 					<td>&nbsp;10</td>
+					<td>São colocados zeros à direita e o bit mais à esquerda é descartado.</td>
+					<td>------</td>
+					<td>------</td>
 				</tr>
 					<tr>
 					<td>&gt;&gt;</td>
@@ -437,6 +457,9 @@
 					<td>0101 &gt;&gt; 1</td>
 					<td>0010</td>
 					<td>&nbsp; 2</td>
+					<td>Cópias do bit mais à esquerda são deslocadas para a direita e o bit mais à direita é descartado.</td></td>
+					<td>------</td>
+					<td>------</td>
 				</tr>
 				<tr>
 					<td>&gt;&gt;&gt;</td>
@@ -445,6 +468,9 @@
 					<td>0101 &gt;&gt;&gt; 1</td>
 					<td>0010</td>
 					<td>&nbsp; 2</td>
+					<td>Um ou mais 0s são colocados à esquerda e o bit mais à direita é descartado.</td>
+					<td>------</td>
+					<td>------</td>
 				</tr>
 			</tbody>
 		</table>
@@ -452,6 +478,107 @@
 		<p>Os exemplos acima usam exemplos não atribuídos de 4 bits, mas o JavaScript usa números atribuídos de 32 bits. Por causa disso, em JavaScript, ~ 5 não retorna 10, mas sim -6. Isto é, ~00000000000000000000000000000101 retorna 11111111111111111111111111111010.</p>
 
 		<p>Para uma explicação completa dos operadores bitwise, consulte o vídeo <a href="https://youtu.be/JbGf_hd6g_Q?si=lIYUHTCXD4P4E4SU" target="_blank" rel="noopener noreferrer">Operadores Bitwise em Javascript - Curso de Javascript Moderno - Aula 08</a> de CFBCursos.</p>
+
+			<h3>Números binários</h3>
+
+			<p>É fácil compreender números binários com apenas um conjunto de bits:</p>
+
+			<table>
+				<tbody>
+					<tr>
+						<th>Representação binária</th>
+						<th>Valor decimal</th>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000000001</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000000010</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000000100</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000001000</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000010000</td>
+						<td>16</td>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000100000</td>
+						<td>32</td>
+					</tr>
+					<tr>
+						<td>00000000000000000000000001000000</td>
+						<td>64</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Definir mais bits revela o padrão binário:</p>
+
+			<table>
+				<tbody>
+					<tr>
+						<th>Representação binária</th>
+						<th>Valor decimal</th>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000000101</td>
+						<td>5 (4 + 1)</td>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000001101</td>
+						<td>13 (8 + 4 + 1)</td>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000101101</td>
+						<td>45 (32 + 8 + 4 + 1)</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>No JavaScript, números binários são armazenados no formato complementar de dois, isto é um número negativo é o bitwise NÃO do número positivo:</p>
+
+			<table>
+				<tbody>
+					<tr>
+						<th>Representação binária</th>
+						<th>Valor decimal</th>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000000101</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>11111111111111111111111111111011</td>
+						<td>-5</td>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000000110</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>11111111111111111111111111111010</td>
+						<td>-6</td>
+					</tr>
+					<tr>
+						<td>00000000000000000000000000101000</td>
+						<td>40</td>
+					</tr>
+					<tr>
+						<td>11111111111111111111111111011000</td>
+						<td>-40</td>
+					</tr>
+				</tbody>
+			</table>
+		
+		<p>Saiba mais sobre operadores bitwise em <a href="https://www.w3schools.com/js/js_bitwise.asp" target="_blank" rel="noopener noreferrer">JavaScript Bitwise Operations</a>.</p>
 	</section>
 
 	<section>
@@ -472,6 +599,492 @@
 				&lt;/a&gt;
 			</code>
 		</pre>
+	</section>
+
+	<section>
+		<h2>Precedência de operadores</h2>
+
+		<p>Esta seção descreve a ordem em que as operações são realizadas em operações aritméticas. A multiplicação (<kbd>*</kbd>)e a divisão (<kbd>/</kbd>) têm <strong>precedência</strong> sobre a adição (<kbd>+</kbd>) e a subtração (<kbd>-</kbd>).</p>
+
+		<p>Como na matemática tradicional, a multiplicação é realizada primeiro, porém, ao usar parênteses, o que está dentro deles é calculado primeiro. Operações com a mesma precedência são realizadas da esquerda para a direita. Vejamos exemplos:</p>
+
+		<pre>
+			<code>
+				let x = 100 + 50 * 3; // 250
+				let x = (100 + 50) * 3; // 450
+				let x = 100 / 50 * 3; // 6
+			</code>
+		</pre>
+
+		<table>
+			<tbody>
+				<tr>
+				<td colspan="4">
+				<h3>Valores de precedência de operadores</h3>
+				As expressões entre parênteses são calculadas <strong>antes</strong> de outras expressões<br>
+				As funções são executadas <strong>antes</strong> de seu resultado ser usado no restante da expressão
+				</td>
+				</tr>
+				<tr>
+					<td>Valor</td>
+					<td>Operador</td>
+					<td>Descrição</td>
+					<td>Exemplo</td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>( )</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_arithmetic_precedence2">Agrupamento de expressões</a></td>
+					<td>(100 + 50) * 3 = 450</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>.</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_member_of">Membro de</a></td>
+					<td>pessoa.nome = Obtém o nome da pessoa no objeto correspondente</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>[]</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_member_of2">Membro de</a></td>
+					<td>pessoa["nome"] = Obtém o nome da pessoa no objeto correspondente</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>?.</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_optional_chaining">Encadeamento opcional</a>
+					<a href="js_2019.asp">ES2020</a></td>
+					<td>x ?. y = Retorna "undefined" se o objeto for indefinido ou nulo, em vez de um erro</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>()</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_functions">Chamada de função</a></td>
+					<td>minhaFuncao() = Chama uma função que realiza um cálculo e retorna o resultado</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>new</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_date_new_arguments">"New" com argumentos</a></td>
+					<td>new Date("June 5,2022")</td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>new</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_date_current">"New" sem argumentos</a></td>
+					<td>new Date()</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+					<span>Operadores de incremento</span><br>
+					Incrementos pós-fixados são executados <strong>antes</strong> de incrementos pré-fixados</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>++</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_incr2">Incremento pós-fixado</a></td>
+					<td>i++</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>--</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_decr2">Decrement pós-fixado</a></td>
+					<td>i--</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>++</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_incr">Increment pré-fixado</a></td>
+					<td>++i</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>--</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_decr">Decremento pré-fixado</a></td>
+					<td>--i</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<span>Operadores "NÃO"</span>
+					</td>
+				</tr>
+				<tr>
+					<td>!</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_not">NÃO lógico</a></td>
+					<td>!(x==y)</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>~</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_bitwise_not">NÃO bitwise</a></td>
+					<td>~x</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+					<span>Operadores unários</span><br>
+					Operadores que atuam sobre um único operando (ou variável) em uma expressão
+					</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_unary_plus">Mais unário</a></td>
+					<td>+x</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>-</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_unary_minus">Menos unário</a></td>
+					<td>-x</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>typeof</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_typeof_all">Tipo de dado</a></td>
+					<td>typeof x</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>void</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_void">Avaliar void</a></td>
+					<td>void(0)</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>delete</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_delete">Excluir propriedade</a></td>
+					<td>delete myCar.color</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<span>Operadores aritméticos</span><br>
+						Exponentes são executados <strong>antes</strong> de multiplicações<br>
+						As multiplicações são executadas <strong>antes</strong> de adições e subtrações
+					</td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>**</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_arithmetric_exponent1">Exponenciação</a>
+					<a href="js_2016.asp">ES2016</a></td>
+					<td>10 ** 2 = 100</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>*</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_mult">Multiplicação</a></td>
+					<td>10 * 5 = 50</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>/</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_div">Divisão</a></td>
+					<td>10 / 5 = 2</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>%</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_mod">Resto da divisão</a></td>
+					<td>10 % 5 = 0</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>+</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_add">Adição</a></td>
+					<td>10 + 5 = 15</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>-</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_sub">Subtração</a></td>
+					<td>10 - 5 = 5</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>+</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_concatenate">Concatenação</a></td>
+					<td>"John" + "Doe" = "JohnDoe"</td>
+				</tr>
+				<tr>
+				<td colspan="4">
+				Operadores de deslocamento</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>&lt;&lt;</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_bitwise_left">Deslocar à esquerda</a></td>
+					<td>x &lt;&lt; 2</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>&gt;&gt;</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_bitwise_right_sign">Deslocar à direita (com propagação de sinal)</a></td>
+					<td>x &gt;&gt; 2</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>&gt;&gt;&gt;</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_bitwise_right">Deslocar à direita (com preenchimento de zeros)</a></td>
+					<td>x &gt;&gt;&gt; 2</td>
+				</tr>
+				<tr>
+				<td colspan="4">
+				Operadores relacionais</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>in</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_in">Propriedade em objeto</a></td>
+					<td>"PI" in Math = true</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>instanceof</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_instanceof">Instância de objeto</a></td>
+					<td>x instanceof Array = true</td>
+				</tr>
+				<tr>
+				<td colspan="4" class="w3-pale-yellow w3-xlarge w3-center">
+				Operadores de comparação</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>&lt;</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison9">Menor que</a></td>
+					<td>x &lt; y&nbsp;</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>&lt;=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison11">Menor ou igual a</a></td>
+					<td>x &lt;= y</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>&gt;</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison8">Maior que</a></td>
+					<td>x &gt; y</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>&gt;=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison10">Maior ou igual a</a></td>
+					<td>x &gt;= Array</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>==</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison1">Igual a</a></td>
+					<td>x == y</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>===</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison4">Igualdade restrita</a></td>
+					<td>x === y</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>!=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison5">Desigual</a></td>
+					<td>x != y</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>!==</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison6">Desigualdade restrita</a></td>
+					<td>x !== y</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+					Operadores bitwise
+					</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>&amp;</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_bitwise_and">E bitwise</a></td>
+					<td>x &amp; y</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>^</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_bitwise_xor">OU exclusivo bitwise</a></td>
+					<td>x ^ y</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>|</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_bitwise_or">OU bitwise</a></td>
+					<td>x | y</td>
+				</tr>
+				<tr>
+					<td colspan="4">Operadores lógicos</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>&amp;&amp;</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison_and">E lógico</a></td>
+					<td>x &amp;&amp; y</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>||</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison_or">OU lógico</a></td>
+					<td>x || y</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>??</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_nullish">Nulo coalescente</a>
+					<a href="js_2019.asp">ES2020</a><br>
+					Retorna o primeiro argumento se não for nulo (<em>null</em> ou <em>undefined</em>), caso contrário, retorna o segundo</td>
+					<td>x ?? y</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<span>Operador ternário condicional</span>
+					</td>
+				</tr>
+				<tr>
+					<td>? :</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison">Condição</a></td>
+					<td>? "valor1" : "valor2" (esses valores podem ser sim/não, true/false, 1/0 ou qualquer outra comparação que se deseje executar. Veja o exemplo.)</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+					<span class="w3-xlarge">Operadores de atribuição</span><br>
+					As atribuições são executadas <strong>antes</strong> de outras operações
+					</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_equal">Atribuição simples</a></td>
+					<td>x = y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>:</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_colon">Atribuição com dois-pontos</a></td>
+					<td>x: 5</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>+=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_plusequal">Atribuição de adição (incremento)</a></td>
+					<td>x += y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>-=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_minequal">Atribuição de subtração (decremento)</a></td>
+					<td>x -= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>*=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_multequal">Atribuição de multiplicação</a></td>
+					<td>x *= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>**=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_exponential">Atribuição exponencial</a></td>
+					<td>x **= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>/=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_divequal">Atribuição de divisão</a></td>
+					<td>x /= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>%=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_modequal">Atribuição de resto</a></td>
+					<td>x %= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>&lt;&lt;=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_left_shift">Atribuição de deslocamento à esquerda</a></td>
+					<td>x &lt;&lt;= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>&gt;&gt;=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_right_shift">Atribuição de deslocamento à direita</a></td>
+					<td>x &gt;&gt;= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>&gt;&gt;&gt;=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_unsigned_right_shift">Atribuição de deslocamento sem sinal</a></td>
+					<td>x &gt;&gt;&gt;= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>&amp;=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_bitwise_and">Atribuição de E bitwise</a></td>
+					<td>x &amp;= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>|=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_bitwise_or">Atribuição de OU bitwise</a></td>
+					<td>x |= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>^=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_bitwise_xor">Atribuição de OU exclusivo bitwise</a></td>
+					<td>x ^= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>&amp;&amp;=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_logical_and">Atribuição de E lógico</a></td>
+					<td>x &amp;&amp;= y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>||=</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_assign_logical_or">Atribuição de OU lógico</a></td>
+					<td>x ||= y</td>
+				</tr>
+				
+				<tr>
+					<td>2</td>
+					<td>=&gt;</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_arrow_function4">Seta (é como executar uma função)</a></td>
+					<td>x =&gt; y</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>yield</td>
+					<td>Pausar / Retomar</td>
+					<td>yield x</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>yield*</td>
+					<td>Delegar</td>
+					<td>yield* x</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>...</td>
+					<td><a target="_blank" href="tryit.asp?filename=tryjs_oper_spread_arguments">Spread (expandir)</a></td>
+					<td>... x</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>,</td>
+					<td>Vírgula</td>
+					<td>x , y</td>
+				</tr>
+			</tbody>
+		</table>
 	</section>
 </body>
 </html>

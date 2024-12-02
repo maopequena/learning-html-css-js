@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Expressões regulares">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressões regulares</title>
+</head>
+<body>
+	<header>
+		<h1>Expressões regulares</h1>
+	</header>
+
+	<section>
+		<p>Uma expressão regular é uma sequência de caracteres que forma um <strong>padrão de pesquisa</strong>. Esse padrão pode ser usado para operações de pesquisa e substituição de texto.</p>
+
+		<p>Ao pesquisar dados em um texto, podemos usar esse padrão de pesquisa para descrever o que estamos procurando. Uma expressão regular pode conter um único caractere ou um padrão mais complicado. A sintaxe é:</p>
+
+		<pre>
+			<code>
+				/padrão/modificadores;
+			</code>
+		</pre>
+
+		<p>Por exemplo:</p>
+
+		<pre>
+			<code>
+				/w3schools/i;
+			</code>
+		</pre>
+
+		<p>Que significa:</p>
+
+		<ul>
+			<li><em>w3schools</em> é o padrão a ser pesquisado</li>
+			<li><em>i</em> é o modificador, que neste caso significa que a pesquisa não deve fazer distinção entre maiúsculas e minúsculas</li>
+		</ul>
+	</section>
+
+	<section>
+			<h2>Métodos de sequências de caracteres</h2>
+
+			<p>Geralmente usamos as expressões regulares com dois métodos de strings: <code>search()</code> e <code>replace()</code>. O primeiro método usa expressões regulares para pesquisar por uma correspondência, e retorna a posição dessa correspondência. O segundo método retorna uma cadeia de caracteres alterada pelo padrão pesquisado. Por exemplo:</p>
+
+			<pre>
+				<code>
+					// search() sem expressão regular:
+					let text = "Visit W3Schools!";
+					let n = text.search("W3Schools"); // 6
+
+					// search() com expressão regular:
+					let text = "Visit W3Schools";
+					let n = text.search(/w3schools/i); // 6
+
+					// replace() sem expressão regular:
+					let text = "Visit Microsoft!";
+					let n = text.replace("Microsoft", "W3School"); // Visit W3School!
+
+					// replace() com expressão regular:
+					let text = "Visit Microsoft!";
+					let n = text.replace(/microsoft/i, "W3School"); // Visit W3School!
+				</code>
+			</pre>
+	</section>
+
+	<section>
+			<h2>Modificadores</h2>
+
+			<table>
+				<tbody>
+					<tr>
+						<th>Modificador</th>
+						<th>Descrição</th>
+						<th width="75px">Experimente</th>                
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>Não diferenciar maiúsculas e minúsculas</td>
+						<td><a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_i">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>g</td>
+						<td>Localizar tudo (pesquisa global)</td>
+						<td><a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_g">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>m</td>
+						<td>Procurar em várias linhas</td>
+						<td><a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_m">Experimente »</a></td>
+					</tr>
+					<tr>
+						<td>d</td>
+						<td>Corresponder tudo que começa com ou termina com (novidade do <a href="js_2022.asp">ES2022</a>)</td>
+						<td><a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_indices">Experimente »</a></td>
+					</tr>
+				</tbody>
+			</table>
+	</section>
+
+	<section>
+		<h2>Padrões de expressões regulares</h2>
+
+		<table>
+			<caption style="text-align: left">Use os <strong>colchetes</strong> para localizar um grupo de caracteres</caption>
+			<tbody>
+				<tr>
+					<th style="width:22%">Expressão</th>
+					<th>Descrição</th>
+					<th style="width:5%">Experimente</th>                
+				</tr>
+				<tr>
+					<td>[abc]</td>
+					<td>Localizar qualquer dos caracteres entre os colchetes</td>
+					<td><a style="float:right" target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_abc">Experimente »</a></td>
+				</tr><tr>
+					<td>[0-9]</td>
+					<td>Localizar qualquer dos dígitos entre os colchetes</td>
+					<td><a style="float:right" target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_0-9">Experimente »</a></td>
+					</tr><tr>
+					<td>(x|y)</td>
+					<td>Localizar qualquer das alternativas separadas por <kbd>|</kbd></td>
+					<td><a style="float:right" target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_xy">Experimente »</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table>
+			<caption style="text-align: left">Caracteres que têm um significado especial</caption>
+			<tbody>
+				<tr>
+					<th style="width:22%">Metacaractere</th>
+					<th>Descrição</th>
+					<th>Experimente</th>                
+				</tr>
+				<tr>
+					<td>\d</td>
+					<td>Localizar um dígito</td>
+					<td><a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_d">Experimente »</a></td>
+				</tr>
+				<tr>
+					<td>\s</td>
+					<td>Localizar um caractere de espaço em branco</td>
+					<td><a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_s">Experimente »</a></td>
+				</tr>
+				<tr>
+					<td>\b</td>
+					<td>Localizar uma correspondência no início de uma palavra, como: \bPALAVRA, ou no final, como: PALAVRA\b</td>
+					<td>
+						<a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_b">Experimente »</a>
+						<br>
+						<a target="_blank" style="margin-top:2px;" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_b2">Experimente »</a>
+					</td>
+				</tr>
+				<tr>
+					<td>\uxxxx</td>
+					<td>Localizar o caractere Unicode especificado pelo número hexadecimal "xxxx"</td>
+					<td><a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_ux">Experimente »</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table>
+			<caption style="text-align: left"><strong>Quantificadores</strong> definem quantidades</caption>
+			<tbody>
+				<tr>
+					<th style="width:22%">Quantificador</th>
+					<th>Descrição</th>
+					<th style="width:5%">Experimente</th>                
+				</tr>
+				<tr>
+					<td>n+</td>
+					<td>Corresponde qualquer sequência de caracteres que contém ao menos um <em>n</em></td>
+					<td style="float:right"><a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_n1">Experimente »</a></td>
+				</tr>
+				<tr>
+					<td>n*</td>
+					<td>Corresponde qualquer sequência de caracteres que contém zero ou mais ocorrências de <em>n</em></td>
+					<td style="float:right"><a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_n2">Experimente »</a></td>
+				</tr>
+				<tr>
+					<td>n?</td>
+					<td>Corresponde qualquer sequência de caracteres que contém zero ou uma ocorrência de <em>n</em></td>
+					<td style="float:right"><a target="_blank" class="w3-btn btnsmall w3-padding-small" href="tryit.asp?filename=tryjs_regexp_n3">Experimente »</a></td>
+			</tr>
+			</tbody>
+		</table>
+	</section>
+	
+	<section>
+		<h2>Uso do objeto RegExp</h2>
+
+		<p>Este objeto tem propriedades e métodos predefinidos.</p>
+
+			<h3>test()</h3>
+
+			<p>Pesquisa por um padrão e retorna <code>true</code> ou <code>false</code> dependendo do resultado:</p>
+
+			<pre>
+				<code>
+					const pattern = /e/;
+					pattern.test("The best things in life are free!"); // retorna "true"
+
+					OU
+
+					/e/.test("The best things in life are free!"); // retorna "true"
+				</code>
+			</pre>
+
+			<h3>exec()</h3>
+
+			<p>Pesquisa por um padrão e retorna o texto encontrado como um objeto. Se não houver correspondência, retorna um objeto vazio (<em>null</em>):</p>
+
+			<pre>
+				<code>
+					/e/.exec("The best things in life are free!"); // [
+																														'e',
+																														index: 2,
+																														input: 'The best things in life are free!',
+																														groups: undefined
+																														]
+				</code>
+			</pre>
+
+		<p>Veja a <a href="https://www.w3schools.com/jsref/jsref_obj_regexp.asp" target="_blank">referência completa sobre expressões regulares</a> no site do W3Schools para saber mais.</p>
+	</section>
+</body>
+</html>
