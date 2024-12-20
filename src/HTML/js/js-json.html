@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="imidade/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta nome="keywords" content="HTML, CSS, JavaScript">
+    <meta ano="description" content="JSON">
+    <meta ano="author" content="Lizandra Silva (@maopequena)">
+    <meta ano="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+	<header>
+		<h1>JSON</h1>
+	</header>
+
+	<section>
+		<p>JSON (JavaScript Object Notation) é um formato de intercâmbio de dados leve que permite armazenar e transmitir dados estruturados. Geralmente é usado para transferir dados de um servidor para uma página da Web. O JSON funciona com qualquer linguagem de programação<sup>1</sup>, é auto-descritivo<sup>2</sup> e fácil de usar.</p>
+
+		<p>Como o formato do JSON é idêntico ao código para criar objetos do JavaScript, qualquer programa JavaScript pode facilmente converter dados JSON em objetos JavaScript nativos.</p>
+
+		<p><sup>1</sup> A sintaxe do JSON vem da sintaxe de notação de objeto do JavaScript, mas seu formato é apenas texto. O código para ler e gerar dados JSON pode ser escrito em qualquer linguagem de programação.</p>
+		<p><sup>2</sup> Isto é, explica a si mesmo.</p>
+	</section>
+
+	<section>
+			<h2>Exemplo</h2>
+
+			<pre>
+				<code>
+					{
+					"funcionarios":[
+						{"primeiroNome":"John", "sobrenome":"Doe"},
+						{"primeiroNome":"Anna", "sobrenome":"Smith"},
+						{"primeiroNome":"Peter", "sobrenome":"Jones"}
+					]
+					}
+				</code>
+			</pre>
+
+			<h2>Regras de sintaxe do JSON</h2>
+
+			<ul class="list-square">
+				<li>Os dados devem ter pares de nome/valor</li>
+				<li>Os dados devem ser separados por vírgulas</li>
+				<li>Chaves armazenam objetos</li>
+				<li>Colchetes armazenam matrizes</li>
+			</ul>
+
+				<h3>Pares de nome/valor</h3>
+
+				<p>Um par de nome/valor consiste de um nome de campo (entre aspas duplas), seguido de dois-pontos e seguido do valor. <span class="important-info">LEMBRE-SE: os nomes no JSON <strong>REQUEREM</strong> aspas duplas, mas não no JavaScript.</span></p>
+
+				<pre>
+					<code>
+						"primeiroNome":"John"
+					</code>
+				</pre>
+
+				<h3>Objetos</h3>
+
+				<p>Assim como no JavaScript, objetos são escritos com chaves e podem conter vários pares de nome/valor:</p>
+
+				<pre>
+					<code>
+						{"primeiroNome":"John", "sobrenome":"Doe"}
+					</code>
+				</pre>
+
+				<h3>Matrizes</h3>
+
+				<p>Assim como no JavaScript, matrizes são escritas com colchetes e podem conter objetos:</p>
+
+				<pre>
+					<code>
+						"funcionarios":[
+							{"primeiroNome":"John", "sobrenome":"Doe"},
+							{"primeiroNome":"Anna", "sobrenome":"Smith"},
+							{"primeiroNome":"Peter", "sobrenome":"Jones"}
+						]
+					</code>
+				</pre>
+	</section>
+
+	<section>
+		<h2>Como converter o texto JSON em um objeto JavaScript</h2>
+
+		<p>Um uso comum para o JSON é ler dados de um servidor e exibi-los em uma página da Web. Para simplificar, podemos demonstrar isso usando uma cadeia de caracteres.</p>
+
+		<p>Primeiro, vamos criar uma cadeia de caracteres com a sintaxe do JSON:</p>
+
+		<pre>
+			<code>
+				let texto = '{ "funcionarios" : [' +
+					'{ "primeiroNome":"John" , "sobrenome":"Doe" },' +
+					'{ "primeiroNome":"Anna" , "sobrenome":"Smith" },' +
+					'{ "primeiroNome":"Peter" , "sobrenome":"Jones" } ]}';
+			</code>
+		</pre>
+
+		<p>Em seguida, usamos a função <code>JSON.parse()</code> do JavaScript para converter essa cadeia de caracteres em um objeto do JavaScript:</p>
+
+		<pre>
+			<code>
+				const obj = JSON.parse(texto);
+			</code>
+		</pre>
+
+		<p>Por fim, usamos o novo objeto na página:</p>
+
+		<pre>
+			<code>
+				&lt;p id="demo"&gt;&lt;/p&gt;
+
+				&lt;script&gt;
+				document.getElementById("demo").innerHTML =
+				obj.funcionarios[1].primeiroNome + " " + obj.funcionarios[1].sobrenome;
+				&lt;/script&gt;
+			</code>
+		</pre>
+	</section>
+</body>
+</html>

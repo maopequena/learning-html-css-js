@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Guia de estilo do JavaScript">
+    <meta name="author" content="Lizandra Silva (@maopequena)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de estilo do JavaScript</title>
+		<script src="https://kit.fontawesome.com/fcd7dd333f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<h1>Guia de estilo do JavaScript</h1>
+	</header>
+
+	<section>
+			<h2>Convenções de código</h2>
+
+				<p>Sempre use as convenções de código para todos os projetos do JavaScript. Essas convenções abrangem:</p>
+
+				<ul class="list-square">
+					<li>Regras de nomenclatura e declaração para variáveis e funções.</li>
+					<li>Regras para o uso de espaços em branco, indentação e comentários.</li>
+					<li>Práticas e princípios de programação.</li>
+				</ul>
+
+				<p>As convenções de código garantem a qualidade do código melhorando sua leitura e facilitando a manutenção.</p>
+	</section>
+
+	<section>
+			<h2>Nomes de variáveis</h2>
+
+				<p>Geralmente, usa-se o <strong>camelCase</strong><sup>*</sup> para nomes de identificadores, como variáveis e funções, e os nomes <strong>devem</strong> começar uma letra.</p>
+
+				<p><sup>*</sup> camelCase: a primeira palavra toda em letras minúsculas e as demais com a primeira letra em maiúscula.</p>
+
+			<h2>Espaços entre os operadores</h2>
+
+				<p>Sempre adicione espaços entre os operadores (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>**</code>, <code>||</code> e <code>=</code>) e após vírgulas.</p>
+
+			<h2>Indentação do código</h2>
+
+				<p>Sempre use dois espaços para indentar blocos de código dentro de funções, matrizes ou objetos:</p>
+
+				<pre>
+					<code>
+						function paraCelsius(fahrenheit) {
+							return (5 / 9) * (fahrenheit - 32);
+						}
+					</code>
+				</pre>
+
+				<p class="important-info">Não use tabuladores para indentação, use espaços, já que diferentes editores interpretam a tabulação de forma diferente.</p>
+	</section>
+
+	<section>
+			<h2>Regras de declaração</h2>
+
+				<ul class="list-square">
+					<li>Sempre termine uma declaração simples com ponto-e-vírgula.</li>
+					<li>Em declarações complexas, abra parênteses, colchetes e chaves no final da primeira linha.</li>
+					<li>Use um espaço antes de abrir parênteses, colchetes e chaves.</li>
+					<li>Feche parênteses, colchetes e chaves em uma nova linha, sem espaços antes.</li>
+					<li>Não finalize uma declaração complexa com ponto-e-vírgula.</li>
+				</ul>
+
+			<h2>Regras de objetos</h2>
+
+				<ul class="list-square">
+					<li>Abra parênteses, colchetes e chaves na mesma linha do nome do objeto.</li>
+					<li>Use uma vírgula e um espaço entre cada propriedade e seu valor.</li>
+					<li>Use aspas para valores de strings, mas não para valores numéricos.</li>
+					<li>Não adicione vírgulas após o último par de propriedade/valor.</li>
+					<li>Feche parênteses, colchetes e chaves em uma nova linha, sem espaços antes.</li>
+					<li>Sempre finalize uma definição de objeto com ponto-e-vírgula.</li>
+					<li>Objetos pequenos (mais curtos) podem ser escritos em uma só linha, usando espaços somente entre as propriedades.</li>
+				</ul>
+
+			<h2>Limite de caracteres</h2>
+
+				<p>Para facilitar a leitura, use um limite de 80 caracteres por linha. Se a declaração não couber em uma linha, quebre-a após um operador ou uma vírgula.</p>
+
+			<h2>Convenções de nomenclatura</h2>
+
+				<p>Sempre use as mesmas convenções de nomenclatura em todos os seus projetos de código. Por exemplo:</p>
+
+				<ul class="list-square">
+					<li>Nomes de variáveis e funções devem ser escritos em camelCase</li>
+					<li>Variáveis globais devem ser escritas em letras maiúsculas (não é obrigatório, mas recomendado)</li>
+					<li>Constantes (como PI) devem ser escritas em letras maiúsculas</li>
+					<li>Não use hifens nos nomes dos identificadores, substitua por sublinhados ou camelCase</li>
+					<li>Não use o símbolo de cifrão ($), pois isso pode causar conflitos com bibliotecas do JavaScript</li>
+				</ul>
+	</section>
+
+	<section>
+			<h2>Como carregar o JavaScript no HTML</h2>
+
+				<p>Use uma sintaxe simples para carregar scripts externos (o atributo <code>type</code> não é necessário):</p>
+
+				<pre>
+					<code>
+						&lt;script src="meuscript.js"&gt;&lt;/script&gt;
+					</code>
+				</pre>
+
+			<h2>Como acessar objetos do HTML</h2>
+
+				<p>Uma consequência de usar estilos HTML "bagunçados" é que podem ocorrer erros no JavaScript. As duas declarações a seguir produzem resultados diferentes:</p>
+
+				<pre>
+					<code>
+						const obj = getElementById("Demo")
+
+						const obj = getElementById("demo")
+					</code>
+				</pre>
+
+				<p>Sempre que possível, use a mesma convenção de nomenclatura usada no HTML.</p>
+
+			<h2>Extensões de arquivos</h2>
+
+				<p>Arquivos HTML devem ter a extensão <strong>.html</strong> (ou <strong>.htm</strong>), arquivos CSS devem ter a extensão <strong>.css</strong> e arquivos JavaScript devem ter a extensão <strong>.js</strong>.</p>
+
+				<p>Nomes de arquivos devem sempre ser escritos em letras minúsculas, porque a inconsistência pode gerar erros.</p>
+	</section>
+
+	<section>
+			<h2>Práticas recomendadas</h2>
+
+				<h3>Evite variáveis globais</h3>
+
+					<p>Evite variáveis globais para todos os tipos de dados, objetos e funções, já que elas podem ser sobrescritas por outros scripts.</p>
+
+				<h3>Declarações no topo</h3>
+
+					<p>As declarações no topo são uma prática recomendada que faz o seguinte:</p>
+
+					<ul class="list-square">
+						<li>Deixa o código mais limpo</li>
+						<li>Fornecem um local exclusivo para todas as variáveis locais</li>
+						<li>Facilitam evitar o uso de variáveis globais (que são indesejadas)</li>
+						<li>Reduzem a possibilidade de declarações repetidas</li>
+					</ul>
+
+					<p>Isso também é indicado para variáveis de loops.</p>
+
+				<h3>Inicialização de variáveis</h3>
+
+					<p>Inicializar variáveis após sua declaração é uma prática recomendada que faz o seguinte:</p>
+
+					<ul class="list-square">
+						<li>Deixa o código mais limpo</li>
+						<li>Fornece um local exclusivo para iniciar as variáveis</li>
+						<li>Evita valores indefinidos</li>
+					</ul>
+
+					<p>Isso mostra o uso pretendido da variável e seu tipo de dado.</p>
+
+				<h3>Não use new Object()</h3>
+
+					<ul class="list-square">
+						<li>Use <code>""</code> em vez de <code>new String()</code></li>
+						<li>Use <code>0</code> em vez de <code>new Number()</code></li>
+						<li>Use <code>false</code> em vez de <code>new Boolean()</code></li>
+						<li>Use <code>{}</code> em vez de <code>new Object()</code></li>
+						<li>Use <code>[]</code> em vez de <code>new Array()</code></li>
+						<li>Use <code>/()/</code> em vez de <code>new RegExp()</code></li>
+						<li>Use <code>function (){}</code> em vez de <code>new Function()</code></li>
+					</ul>
+
+				<h3>Cuidado com conversões automáticas de tipos</h3>
+
+					<p>Como variáveis no JavaScript podem ter qualquer tipo de dado, elas podem ser convertidas para qualquer outro tipo de dado. Isso pode provocar erros. Por exemplo:</p>
+
+					<pre>
+						<code>
+							let x = "Hello"; // typeof x é string
+							x = 5; // typeof x muda para number
+						</code>
+					</pre>
+
+					<p>Tenha cuidado também com números, já que eles podem ser convertidos em strings, e isso pode gerar resultados de operações com <code>NaN</code>.</p>
+				
+				<h3>Sempre use três sinais de igual</h3>
+
+					<p>Sempre use <code>===</code> ao fazer comparações: <code>==</code> sempre converte (para o tipo correspondente) antes da comparação, <code>===</code> força a comparação de valor <strong>e</strong> tipo.</p>
+
+				<h3>Padronize os parâmetros</h3>
+
+					<p>Ao chamar uma função com um argumento ausente, o valor do argumento ausente é definido como <code>undefined</code>. Valores indefinidos podem quebrar o código, então recomenda-se atribuir valores padrão aos argumentos.</p>
+
+					<pre>
+						<code>
+							function minhaFuncao(x, y) {
+								if (y === undefined) {
+									y = 0;
+								}
+							}
+
+							OU
+
+							function (a=1, b=1) { 
+								/*código da função*/
+							}
+						</code>
+					</pre>
+
+				<h3>Finalize os switch com default</h3>
+
+					<p>Sempre finalize uma declaração <code>switch</code> com <code>default</code>, mesmo se achar que não há razão para isso.</p>
+
+					<pre>
+						<code>
+							switch (new Date().getDay()) {
+								case 0:
+									dia = "Domingo";
+									break;
+								case 1:
+									dia = "Segunda";
+									break;
+								case 2:
+									dia = "Terça";
+									break;
+								case 3:
+									dia = "Quarta";
+									break;
+								case 4:
+									dia = "Quinta";
+									break;
+								case 5:
+									dia = "Sexta";
+									break;
+								case 6:
+									dia = "Sábado";
+									break;
+								default:
+									dia = "Desconhecido";
+							}
+						</code>
+					</pre>
+
+				<h3>Evite usar números, strings e booleanos como objetos</h3>
+
+					<p>Sempre trate esses tipos de dados como primitivos, nunca como objetos. Declará-los como objetos reduz a velocidade de execução do código e pode gerar erros graves.</p>
+
+				<h3>Evite usar eval()</h3>
+
+					<p>Usamos essa função para executar um texto como código. Em quase todas as situações, não deve ser necessário usá-la, já que isso pode fazer com que um código malicioso seja executado, causando um problema de segurança.</p>
+	</section>
+</body>
+</html>

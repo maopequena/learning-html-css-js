@@ -9,24 +9,12 @@
     <meta name="author" content="Lizandra Silva (@maopequena)">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erros</title>
+		<script src="https://kit.fontawesome.com/fcd7dd333f.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<header>
 		<h1>Erros</h1>
 	</header>
-
-	<section>
-			<h2>Declarações de erros</h2>
-
-			<p>Há quatro declarações que definem erros:</p>
-
-			<ul>
-				<li><code><a href="#try-catch">try</a></code>: define um bloco de código a ser executado (para teste).</li>
-				<li><code><a href="#try-catch">catch</a></code>: define um bloco de código que lida com qualquer erro.</li>
-				<li><code><a href="#finally">finally</a></code>: define um bloco de código a executar independentemente do resultado.</li>
-				<li><code><a href="#throw">throw</a></code>: define um erro personalizado.</li>
-			</ul>
-	</section>
 
 	<section>
 			<h2>Erros acontecem!</h2>
@@ -39,7 +27,18 @@
 	</section>
 
 	<section>
-			<h2 id="try-catch">try e catch</h2>
+		<h2>Declarações de erros</h2>
+
+		<p>Há quatro declarações que definem erros:</p>
+
+		<ul>
+			<li><code><a href="#try-catch">try</a></code>: define um bloco de código a ser executado (para teste).</li>
+			<li><code><a href="#try-catch">catch</a></code>: define um bloco de código que lida com qualquer erro.</li>
+			<li><code><a href="#finally">finally</a></code>: define um bloco de código a executar independentemente do resultado.</li>
+			<li><code><a href="#throw">throw</a></code>: define um erro personalizado.</li>
+		</ul>
+
+			<h3 id="try-catch">try e catch</h3>
 
 			<p>Essas duas declarações funcionam como um par: <code>try</code> possibilita definir um bloco de código a ser testado durante a execução, enquanto <code>catch</code> possibilita definir um bloco de código a executar se ocorrer um erro em <code>try</code>. Sintaxe:</p>
 
@@ -56,7 +55,7 @@
 	</section>
 
 	<section>
-			<h2 id="throw">throw</h2>
+			<h3 id="throw">throw</h3>
 
 			<p>A declaração <code>throw</code> possibilita criar um erro personalizado, isto é, <strong>exibir uma exceção</strong> (ou um erro), que pode ser uma sequência de caracteres, um número, um booleano ou um objeto. Por exemplo:</p>
 
@@ -71,7 +70,7 @@
 	</section>
 
 	<section>
-			<h2 id="finally">finally</h2>
+			<h3 id="finally">finally</h3>
 
 			<p>Esta declaração permite executar um código após a execução de <code>try</code> e <code>catch</code>, independentemente do resultado. Sintaxe:</p>
 
@@ -93,62 +92,62 @@
 	</section>
 
 	<section>
-			<h2>Exemplo de validação de dados</h2>
+		<h2>Exemplo de validação de dados</h2>
 
-			<p>O exemplo a seguir analisa os dados inseridos. Se o valor estiver incorreto, exibe um erro, que aciona a declaração <code>catch</code> para exibir um erro personalizado.</p>
+		<p>O exemplo a seguir analisa os dados inseridos. Se o valor estiver incorreto, exibe um erro, que aciona a declaração <code>catch</code> para exibir um erro personalizado.</p>
 
-			<pre>
-				<code>
-					&lt;!DOCTYPE html&gt;
-					&lt;html&gt;
-					&lt;body&gt;
+		<pre>
+			<code>
+				&lt;!DOCTYPE html&gt;
+				&lt;html&gt;
+				&lt;body&gt;
 
-					&lt;p&gt;Please input a number between 5 and 10:&lt;/p&gt;
+				&lt;p&gt;Please input a number between 5 and 10:&lt;/p&gt;
 
-					&lt;input id="demo" type="text"&gt;
-					&lt;button type="button" onclick="myFunction()"&gt;Test Input&lt;/button&gt;
-					&lt;p id="p01"&gt;&lt;/p&gt;
+				&lt;input id="demo" type="text"&gt;
+				&lt;button type="button" onclick="myFunction()"&gt;Test Input&lt;/button&gt;
+				&lt;p id="p01"&gt;&lt;/p&gt;
 
-					&lt;script&gt;
-					function myFunction() {
-						const message = document.getElementById("p01");
-						message.innerHTML = "";
-						let x = document.getElementById("demo").value;
-						try {
-							if(x.trim() == "") throw "empty";
-							if(isNaN(x)) throw "not a number";
-							x = Number(x);
-							if(x < 5) throw "too low";
-							if(x > 10) throw "too high";
-						}
-						catch(err) {
-							message.innerHTML = "Input is " + err;
-						}
+				&lt;script&gt;
+				function myFunction() {
+					const message = document.getElementById("p01");
+					message.innerHTML = "";
+					let x = document.getElementById("demo").value;
+					try {
+						if(x.trim() == "") throw "empty";
+						if(isNaN(x)) throw "not a number";
+						x = Number(x);
+						if(x < 5) throw "too low";
+						if(x > 10) throw "too high";
 					}
-					&lt;/script&gt;
+					catch(err) {
+						message.innerHTML = "Input is " + err;
+					}
+				}
+				&lt;/script&gt;
 
-					&lt;/body&gt;
-					&lt;/html&gt;
-				</code>
-			</pre>
+				&lt;/body&gt;
+				&lt;/html&gt;
+			</code>
+		</pre>
 
-			<p>Navegadores modernos geralmente combinam JavaScript e HTML para validar os dados inseridos, usando regras de validação predefinidas nos atributos HTML: <code>&lt;input id="demo" type="number" min="5" max="10" step="1"&gt;</code>. Saiba mais em <a href="../html/formularios.html#form-validation">Validação de formulários</a> e em <a href="https://www.w3schools.com/html/html_forms.asp" target="_blank" rel="noopener noreferrer"></a>.</p>
+		<p>Navegadores modernos geralmente combinam JavaScript e HTML para validar os dados inseridos, usando regras de validação predefinidas nos atributos HTML: <code>&lt;input id="demo" type="number" min="5" max="10" step="1"&gt;</code>. Saiba mais em <a href="../html/formularios.html#form-validation">Validação de formulários</a> e em <a href="https://www.w3schools.com/html/html_forms.asp" target="_blank" rel="noopener noreferrer"></a>.</p>
 	</section>
 
 	<section>
-			<h2>O objeto Error</h2>
+		<h2>O objeto Error</h2>
 
-			<p>O JavaScript oferece um objeto de erro incorporado, que exibe informações quando ocorre um erro. Esse objeto tem duas propriedades úteis: <code>name</code>, que define ou retorna um nome de erro, e <code>message</code>, que define ou retorna uma mensagem de erro (um texto, em formato String).</p>
+		<p>O JavaScript oferece um objeto de erro incorporado, que exibe informações quando ocorre um erro. Esse objeto tem duas propriedades úteis: <code>name</code>, que define ou retorna um nome de erro, e <code>message</code>, que define ou retorna uma mensagem de erro (um texto, em formato String).</p>
 
-				<h3>Valores dos nomes de erros</h3>
+			<h3>Valores dos nomes de erros</h3>
 
-				<p>Há seis valores para a propriedade <code>name</code>. Vejamos as descrições abaixo.</p>
+			<p>Há seis valores para a propriedade <code>name</code>. Vejamos as descrições abaixo.</p>
 
-					<h4>EvalError</h4>
+				<h4>EvalError</h4>
 
 					<p>Exibido quando ocorre um erro na função <code>eval()</code>. Porém, versões mais recentes do JavaScript não exibem esse erro, exibem <code>SyntaxError</code>.</p>
 
-					<h4>RangeError</h4>
+				<h4>RangeError</h4>
 
 					<p>Exibido quando o número inserido está fora do "limite" permitido. Por exemplo, não é possível definir um número com 500 dígitos significativos.</p>
 
@@ -164,19 +163,19 @@
 						</code>
 					</pre>
 
-					<h4>ReferenceError</h4>
+				<h4>ReferenceError</h4>
 
 					<p>Exibido ao fazer referência a uma variável que ainda não foi declarada.</p>
 
-					<h4>SyntaxError</h4>
+				<h4>SyntaxError</h4>
 
 					<p>Exibido ao tentar avaliar um código com erros de sintaxe, por exemplo, quando falta um ponto ou ao não fechar aspas.</p>
 
-					<h4>TypeError</h4>
+				<h4>TypeError</h4>
 
 					<p>Exibido se um operando ou argumento for incompatível com o tipo esperado por um operador ou função. Por exemplo, não é possível converter um número com <code>toUpperCase()</code></p>
 
-					<h4>URIError</h4>
+				<h4>URIError</h4>
 
 					<p>Exibido ao usar caracteres ilegais em uma função de URI.</p>
 
@@ -186,7 +185,7 @@
 						</code>
 					</pre>
 
-				<h3>Propriedades não padrão do objeto Error</h3>
+			<h3>Propriedades não padrão do objeto Error</h3>
 
 				<p>A Mozilla e a Microsoft definiram outras propriedades para o objeto Error:</p>
 
@@ -201,7 +200,164 @@
 
 				<p class="important-info">Não use essas propriedades em sites públicos, já que elas não funcionam em todos os navegadores.</p>
 
-				<p>Saiba mais sobre error na <a href="https://www.w3schools.com/jsref/jsref_obj_error.asp" target="_blank" rel="noopener noreferrer">Referência completa sobre erros do JavaScript</a>.</p>
+				<p>Saiba mais sobre erros na <a href="https://www.w3schools.com/jsref/jsref_obj_error.asp" target="_blank" rel="noopener noreferrer">Referência completa sobre erros do JavaScript</a>.</p>
+	</section>
+
+	<section>
+		<h2>Depuração</h2>
+
+		<p>Um código pode conter erros sintáticos ou lógicos. Pode ser difícil diagnosticar esses erros.</p>
+
+		<p>Quando há erros, geralmente não acontece nada: não aparecem mensagens de erro e você não receberá informações do que corrigir. Procurar e corrigir error no código chama-se <em>depuração</em>, que é o processo de testar, localizar e mitigar erros.</p>
+
+		<p>Depurar não é uma tarefa fácil. Felizmente, todos os navegadores modernos têm um depurador JavaScript incorporado, que podem ser ativados e desativados, forçando o relatório de erros ao usuário.</p>
+
+		<p>Com um depurador, também é possível definir pontos de parada (breakpoints), pontos do código em que o depurador deve parar a execução e, assim, examinar as variáveis durante a execução do código.</p>
+
+		<p>Geralmente é só pressionar a tecla <kbd>F12</kbd> no teclado e selecionar <strong>Console</strong> para ativar o depurador. Caso contrário, siga as instruções <a href="https://www.w3schools.com/js/js_debugging.asp" target="_blank" rel="noopener noreferrer">na parte inferior desta página</a>.</p>
+	</section>
+
+	<section>
+		<h2>console.log()</h2>
+
+		<p>Se seu navegador oferece suporte à depuração, use o método <code>console.log()</code> para exibir valores do JavaScript na janela de depuração:</p>
+
+		<pre>
+			<code>
+				&lt;!DOCTYPE html&gt;
+				&lt;html&gt;
+				&lt;body&gt;
+
+				&lt;h1&gt;Minha primeira página da Web&lt;/h1&gt;
+
+				&lt;script&gt;
+				a = 5;
+				b = 6;
+				c = a + b;
+				console.log(c);
+				&lt;/script&gt;
+
+				&lt;/body&gt;
+				&lt;/html&gt;
+			</code>
+		</pre>
+
+		<p>Saiba mais sobre este método na <a href="https://www.w3schools.com/jsref/met_console_log.asp" target="_blank" rel="noopener noreferrer">Referência sobre objetos de JavaScript</a> no site da W3Schools.</p>
+	</section>
+
+	<section>
+		<h2>Definir pontos de parada</h2>
+
+		<p>Na janela do depurador, podemos definir pontos de parada no código JavaScript.</p>
+
+		<p>A cada ponto de parada, o JavaScript para a execução e possibilita examinar os valores. Após isso, você pode retomar a execução do código (geralmente com um botão <em>Reproduzir</em>&nbsp;&nbsp;<i class="fa-solid fa-play" style="color: #ffffff;"></i>).</p>
+
+			<h3>debugger</h3>
+
+			<p>a palavra-chave <code>debugger</code> para a execução do código JavaScript e chama, se disponível, a função de depuração, que é o mesmo que adicionar um ponto de parada na janela do depurador.</p>
+
+			<p>Se não estiver disponível no navegador, esta palavra-chave não tem efeito.</p>
+	</section>
+
+	<section>
+		<h2>Erros comuns no JavaScript</h2>
+
+			<h3>Usar erroneamente o operador de atribuição</h3>
+
+				<p>Programas JavaScript podem gerar resultados inesperados se for usado acidentalmente um operador de atribuição (=) em vez de um de comparação (==) em uma declaração <code>if</code>.</p>
+
+				<p>Um operador de atribuição sempre retorna o valor da atribuição.</p>
+
+				<pre>
+					<code>
+						let x = 0;
+
+						if (x == 10); // Retorna false (como esperado), já que 10 != 0
+						if (x = 10); // Retorna true, pois 10 é verdadeiro
+						if (x = 0); // Retorna false, porque 0 é falso
+					</code>
+				</pre>
+
+			<h3>Comparações não restritas</h3>
+
+				<p>Em uma comparação normal, o tipo de dados não importa. Na comparação restrita, o tipo de dados importa. E é comum esquecer que uma declaração <code>switch</code> usa comparações restritas.</p>
+
+				<pre>
+					<code>
+						let x = 10;
+						let y = "10";
+
+						if (x == y); // Retorna true
+						if (x === y); // Retorna false
+						
+						switch(x) {
+							case 10: alert("Hello");
+						} // Exibe um alerta com "Hello"
+						switch(x) {
+							case "10": alert("Hello");
+						} // Não exibe um alerta
+					</code>
+				</pre>
+			
+			<h3>Confundir adição e concatenação</h3>
+
+				<p>A adição <strong>soma números</strong>, a concatenação <strong>une cadeias de caracteres</strong>, apesar de ambas as operações usarem o mesmo operador (<code>+</code>). Devido a isso, somar números com cadeias de caracteres pode ter resultados inesperados.</p>
+
+				<pre>
+					<code>
+						let x = 10;
+						x = 10 + 5;       // Aqui x é 15
+
+						let y = 10;
+						y += "5";        // Aqui y é "105"
+					</code>
+				</pre>
+
+			<h3>Não entender floats</h3>
+
+				<p>Todos os números no JavaScript são armazenados como números de ponto flutuante de 64-bits (floats). Todas as linguagens de programação, incluindo o JavaScript, têm dificuldades com a precisão de valores de ponto flutuante. Para resolver esse problema, o ideal é fazer cálculos de multiplicação e divisão.</p>
+
+				<pre>
+					<code>
+						let x = 0.1;
+						let y = 0.2;
+						let z = x + y // o resultado de z não é 0.3, mas 0.30000000000000004
+
+						let z = (x * 10 + y * 10) / 10; // com multiplicação e divisão, z é 0.3
+					</code>
+				</pre>
+
+			<h3>Quebrar strings</h3>
+
+				<p>O JavaScript permite quebrar uma declaração em duas linhas, mas não é possível quebrar uma cadeia de caracteres. Para quebrar uma cadeia de caracteres, use uma barra invertida (\).</p>
+
+				<pre>
+					<code>
+						let x =
+						"Hello World!"; // isso é permitido
+
+						let x = "Hello
+						World!"; // isso é inválido
+
+						let x = "Hello \
+						World!"; // isso é permitido
+					</code>
+				</pre>
+
+			<h3>Uso incorreto do ponto-e-vírgula</h3>
+
+				<p>Usar o ponto-e-vírgula incorretamente pode fazer com que o código seja executado mesmo se uma declaração <code>if</code> não for válida:</p>
+
+				<pre>
+					<code>
+						if (x == 19);
+						{
+							// bloco de código a executar
+						}
+					</code>
+				</pre>
+
+			<h3>Quebrar uma declaração return</h3>
 	</section>
 </body>
 </html>

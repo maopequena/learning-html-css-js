@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="imidade/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta nome="keywords" content="HTML, CSS, JavaScript">
+    <meta ano="description" content="Módulos">
+    <meta ano="author" content="Lizandra Silva (@maopequena)">
+    <meta ano="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos</title>
+</head>
+<body>
+	<header>
+		<h1>Módulos</h1>
+	</header>
+
+	<section>
+		<p>Os módulos no JavaScript possibilitam "detalhar" o código em diferentes arquivos, o que simplifica sua manutenção. É possível importar módulos de arquivos externos com a palavra-chave <code>import</code> e, para usá-los no HTML, é preciso adicionar <code>type="module"</code> à tag <code>&lt;script&gt;</code>. Por exemplo:</p>
+
+		<pre>
+			<code>
+				&lt;script type="module"&gt;
+					import messidade from "./messidade.js";
+				&lt;/script&gt;
+			</code>
+		</pre>
+
+		<p>É possível também armazenar módulos com funções e variáveis em um arquivo externo. Para isso, há dois tipos de exportação: <strong>exportação nomeada</strong> e <strong>exportação padrão</strong>.</p>
+
+			<h2>Exportação nomeada</h2>
+
+			<p>Vamos criar um arquivo chamado <em>pessoa.js</em> e preenchê-lo com o que desejamos exportar. Para exportar algo, é preciso usar a palavra-chave <code>export</code> e há duas formas de exportar: linha a linha ou em um bloco no final do arquivo.</p>
+
+			<pre>
+				<code>
+					pessoa.js
+
+					// Exportar linha a linha:
+					export const nome = "Jesse";
+					export const idade = 40;
+
+					// Exportar em um bloco:
+					const nome = "Jesse";
+					const idade = 40;
+					
+					export { nome, idade };
+				</code>
+			</pre>
+
+			<h2>Exportação padrão</h2>
+
+			<p>Agora vamos criar outro arquivo, <code>mensagem.js</code>, para demonstrar a exportação padrão. <span class="important-info">Só pode haver uma exportação padrão por arquivo.</span></p>
+
+			<pre>
+				<code>
+					mensagem.js
+
+					const mensagem = () => {
+					const nome = "Jesse";
+					const idade = 40;
+					return nome + ' tem ' + idade + 'anos.';
+					};
+					
+					export default mensagem;
+				</code>
+			</pre>
+
+		<p>Para importar módulos externos, é preciso usar a palavra-chave <code>import</code> e deve-se levar em conta o tipo de exportação: para importar exportações nomeadas, usa-se chaves, mas não para exportações padrão.</p>
+
+		<pre>
+			<code>
+				import { nome, idade } from "./pessoa.js";
+
+				import mensagem from "./mensagem.js";
+			</code>
+		</pre>
+
+		<p><strong>Observação</strong>: os módulos só funcionam com o protocolo HTTP(s). Uma página que usa o protocolo file:// não consegue usar a importação/exportação.</p>
+	</section>
+</body>
+</html>

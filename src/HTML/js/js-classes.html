@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="imidade/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta nome="keywords" content="HTML, CSS, JavaScript">
+    <meta ano="description" content="Classes">
+    <meta ano="author" content="Lizandra Silva (@maopequena)">
+    <meta ano="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+	<header>
+		<h1>Classes</h1>
+	</header>
+
+	<section>
+		<p>Classes são modelos para objetos. Uma classe pode ser usada para criar vários objetos com propriedades e comportamentos semelhantes.</p>
+
+			<h2>Sintaxe</h2>
+
+			<p>Use a palavra-chave <code>class</code> para criar uma classe e sempre adicione um método chamado <code>constructor()</code>.</p>
+
+			<pre>
+				<code>
+					class NomeClasse {
+						constructor() { ... }
+					}
+				</code>
+			</pre>
+
+			<p>Vejamos um exemplo, em que criamos uma classe chamada <code>Carro</code> com duas propriedades: <code>nome</code> e <code>ano</code>.</p>
+
+			<pre>
+				<code>
+					class Carro {
+						constructor(nome, ano) {
+							this.nome = nome;
+							this.ano = ano;
+						}
+					}
+				</code>
+			</pre>
+
+			<p class="important-info">Observe que uma classe <strong>NÃO É</strong> um objeto, mas sim um <strong>modelo</strong> para objetos.</pcl>
+	</section>
+
+	<section>
+			<h2>Como usar uma classe</h2>
+
+			<p>Após criar a classe, podemos usá-la para criar objetos:</p>
+
+			<pre>
+				<code>
+					const myCar1 = new Car("Ford", 2014);
+					const myCar2 = new Car("Audi", 2019);
+
+					document.getElementById("demo").innerHTML = myCar1.nome + ", " + myCar1.ano + "<br>" + myCar2.nome + ", " + myCar2.ano;
+					// Exibe "Ford, 2014
+									  Audi, 2019"
+				</code>
+			</pre>
+
+			<p>A classe chama automaticamente o método <code>constructor()</code> ao criar um novo objeto. Este é um método especial:</p>
+
+				<ul class="list-square">
+					<li>Ele precisa ter o nome <strong>exato</strong> "constructor"</li>
+					<li>Ele precisa ser executado automaticamente ao criar um novo objeto</li>
+					<li>Ele é usado para inicializar propriedades de objetos</li>
+				</ul>
+				
+				<p>Se você não definir este método, o JavaScript adicionará um método <code>constructor()</code> vazio.</p>
+	</section>
+
+	<section>
+			<h2>Métodos de classes</h2>
+
+			<p>Um método de classe é uma função declarada dentro de uma classe. Para criá-lo, use a mesma sintaxe dos métodos de objetos:</p>
+
+			<pre>
+				<code>
+					class NomeDaClasse {
+						constructor() { ... }
+						metodo_1() { ... }
+						metodo_2() { ... }
+						metodo_3() { ... }
+					}
+				</code>
+			</pre>
+
+			<p>Sempre use o método <code>constructor()</code> e a palavra-chave <code>class</code> para criar métodos de classes. Por exemplo, vamos criar um método <strong>idade</strong> que retorna a idade de um carro:</p>
+
+			<pre>
+				<code>
+					class Carro {
+						constructor(nome, ano) {
+							this.nome = nome;
+							this.ano = ano;
+						}
+						idade() {
+							const data = new Date();
+							return data.getFullAno() - this.ano;
+						}
+					}
+					
+					const meuCarro = new Carro("Ford", 2014);
+					document.getElementById("demo").innerHTML =
+					"Meu carro tem " + meuCarro.idade() + " anos."; // Exibe "Meu carro tem 10 anos."
+				</code>
+			</pre>
+
+			<p>Também é possível adicionar parâmetros aos métodos de classes:</p>
+
+			<pre>
+				<code>
+					class Carro {
+						constructor(nome, ano) {
+							this.nome = nome;
+							this.ano = ano;
+						}
+						idade(x) {
+							return x - this.ano;
+						}
+					}
+					
+					const data = new Date();
+					let ano = data.getFullYear();
+					
+					const meuCarro = new Carro("Ford", 2014);
+					document.getElementById("demo").innerHTML=
+					"Meu carro tem " + meuCarro.idade(ano) + " anos."; // Exibe "Meu carro tem 10 anos."
+				</code>
+			</pre>
+	</section>
+</body>
+</html>
