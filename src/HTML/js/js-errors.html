@@ -358,6 +358,84 @@
 				</pre>
 
 			<h3>Quebrar uma declaração return</h3>
+
+				<p>O comportamento padrão no JavaScript é fechar uma declaração automaticamente no final da linha e permitir quebrar uma declaração em duas linhas. Por causa disso, o ponto-e-vírgula no final não faz diferença na última declaração de um bloco de código. Porém, ao quebrar uma declaração fechada com ponto-e-vírgula na última linha, a função retorna <code>undefined</code>.</p>
+
+				<pre>
+					<code>
+						function myFunction(a) {
+							let power = 10 
+							return a * power // permitido
+						}
+
+						function myFunction(a) {
+							let power = 10;
+							return a * power; // permitido
+						}
+
+						function myFunction(a) {
+							let
+							power = 10; // permitido
+							return a * power;
+						}
+
+						function myFunction(a) {
+							let
+							power = 10; 
+							return
+							a * power; // undefined
+						}
+					</code>
+				</pre>
+
+				<p>Por quê? Porque para o JavaScript, o último bloco de código significa o seguinte:</p>
+
+				<pre>
+					<code>
+						function myFunction(a) {
+							let
+							power = 10; 
+							return;
+							a * power;
+						}
+					</code>
+				</pre>
+
+				<p>Assim, a recomendação é nunca quebrar uma declaração com <code>return</code> e sempre usar ponto-e-vírgula.</p>
+
+			<h3>Acessar matrizes com índices nomeados</h3>
+
+				<p>Muitas linguagens de programação oferecem suporte a matrizes com índices nomeados, que são chamadas de matrizes associativas (ou hashes). O JavaScript não é uma dessas linguagens. No JavaScript, as matrizes têm índices numerados.</p>
+
+				<p>No JavaScript, os <strong>objetos</strong> usam índices nomeados. Portanto, ao usar um índice nomeados ao acessar matrizes, o JavaScript redefinirá a matriz como um objeto. Após essa redefinição, os métodos e propriedades de matrizes resultarão em <code>undefined</code> ou gerarão resultados incorretos.</p>
+			
+			<h3>Finalizar definições com vírgula</h3>
+
+				<p>Deixar uma vírgula no final de objetos e matrizes é permitido no ECMAScript 5. Por exemplo:</p>
+
+				<pre>
+					<code>
+						pessoa = {primeiroNome:"John", sobrenome:"Doe", idade:46,};
+
+						pontos = [40, 100, 1, 5, 25, 10,];
+					</code>
+				</pre>
+
+				<p>Porém isso pode gerar problemas com os navegadores antigos e o JSON não aceita essas vírgulas "soltas". A recomendação é não deixar vírgulas soltas.</p>
+
+			<h3>Indefinido não é nulo</h3>
+
+				<p>Objetos, variáveis, propriedades e métodos do JavaScript podem ser <code>undefined</code>. Além disso, objetos vazios podem ter o valor <code>null</code>. Isso pode dificultar testar se um objeto está vazio, mas é possível fazer isso testando se o tipo é <code>undefined</code>.</p>
+
+				<pre>
+					<code>
+						if (typeof myObj === "undefined") 
+					</code>
+				</pre>
+
+				<p>Porém, não é possível testar se um objeto é <code>null</code>, porque isso gera um erro se o objeto for <code>undefined</code>.</p>
+
+				<p>Para solucionar este problema, teste se o objeto <strong>não é</strong> <code>null</code> e <strong>não é</strong> <code>undefined</code>, mas saiba que isso ainda pode gerar um erro se <code>undefined</code> for testado antes de <code>null</code>.</p>
 	</section>
 </body>
 </html>

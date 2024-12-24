@@ -251,5 +251,436 @@
 
 					<p>Usamos essa função para executar um texto como código. Em quase todas as situações, não deve ser necessário usá-la, já que isso pode fazer com que um código malicioso seja executado, causando um problema de segurança.</p>
 	</section>
+
+	<section>
+		<h2>Sobre o desempenho do JavaScript</h2>
+
+			<p>Vejamos como acelerar a velocidade de execução do JavaScript.</p>
+
+			<h3>Reduza a atividade em loops</h3>
+
+				<p>Cada declaração de um loop, incluindo o <code>for</code>, é executado em cada iteração do loop. Colocar declarações ou atribuições fora do loop faz ele executar mais rápido.</p>
+
+				<pre>
+					<code>
+						for (let i = 0; i < arr.length; i++) {} // errado
+
+						let l = arr.length;
+						for (let i = 0; i < l; i++) {} // certo
+					</code>
+				</pre>
+
+			<h3>Reduza o acesso ao DOM</h3>
+
+				<p>Acessar o DOM do HTML demora muito em comparação com outras declarações do JavaScript. Se acha que vai acessar um elemento do DOM com frequência,, acesse-o uma vez e use-o como uma variável local.</p>
+
+				<pre>
+					<code>
+						const obj = document.getElementById("demo");
+						obj.innerHTML = "Hello";
+					</code>
+				</pre>
+
+			<h3>Reduza o tamanho do DOM</h3>
+
+				<p>Use poucos elementos do DOM HTML. Isso sempre melhora o carregamento da página e acelera seu processamento (exibição da página), especialmente em dispositivos menores. Assim, cada tentativa de procurar no DOM (como getElementsByTagName) será mais rápida.</p>
+
+			<h3>Evite variáveis desnecessárias</h3>
+
+				<p>Não crie novas variáveis se não planeja salvar seus valores.</p>
+
+				<pre>
+					<code>
+						// Substitua isso:
+
+						let nomeCompleto = primeiroNome + " " + sobrenome;
+						document.getElementById("demo").innerHTML = nomeCompleto;
+
+						// Por isso:
+
+						document.getElementById("demo").innerHTML = primeiroNome + " " + sobrenome;
+					</code>
+				</pre>
+
+			<h3>Atrase o carregamento do JavaScript</h3>
+
+				<p>Colocar seus scripts no final do corpo da página HTML possibilita que o navegador carregue a página primeiro. Enquanto o script está sendo baixado, o navegador não carrega mais nada. Além disso, toda a atividade de processamento pode ser bloqueada.</p>
+
+				<p>Uma alternativa é usar <code>defer="true"</code> na tag <code>script</code>. Esse atributo define que o script deve ser executado após o processamento da página, mas só funciona para scripts externos.</p>
+
+				<p>Se possível adicione o script diretamente no HTML, no final da página.</p>
+
+			<h3>Evite usar with</h3>
+
+				<p>Evite usar a palavra-chave <code>with</code>, já que ela pode afetar negativamente a velocidade da página e bagunça os escopos do JavaScript. Essa palavra-chave não é permitida no modo restrito.</p>
+	</section>
+
+	<section>
+		<h2>Palavras reservadas</h2>
+
+			<p>Não é possível usar as seguintes palavras reservadas no JavaScript como nomes de variáveis, rótulos ou funções:</p>
+
+			<table>
+				<tbody>
+					<tr>
+						<td>abstract</td>
+						<td>arguments</td>
+						<td>await*</td>
+						<td>boolean</td>
+					</tr>
+					<tr>
+						<td>break</td>
+						<td>byte</td>
+						<td>case</td>
+						<td>catch</td>
+					</tr>
+					<tr>
+						<td>char</td>
+						<td>class*</td>
+						<td>const*</td>
+						<td>continue</td>
+					</tr>
+					<tr>
+						<td>debugger</td>
+						<td>default</td>
+						<td>delete</td>
+						<td>do</td>
+					</tr>
+					<tr>
+						<td>double</td>
+						<td>else</td>
+						<td>enum*</td>
+						<td>eval</td>
+					</tr>
+					<tr>
+						<td>export*</td>
+						<td>extends*</td>
+						<td>false</td>
+						<td>final</td>
+					</tr>
+					<tr>
+						<td>finally</td>
+						<td>float</td>
+						<td>for</td>
+						<td>function</td>
+					</tr>
+					<tr>
+						<td>goto</td>
+						<td>if</td>
+						<td>implements</td>
+						<td>import*</td>
+					</tr>
+					<tr>
+						<td>in</td>
+						<td>instanceof</td>
+						<td>int</td>
+						<td>interface</td>
+					</tr>
+					<tr>
+						<td>let*</td>
+						<td>long</td>
+						<td>native</td>
+						<td>new</td>
+					</tr>
+					<tr>
+						<td>null</td>
+						<td>package</td>
+						<td>private</td>
+						<td>protected</td>
+					</tr>
+					<tr>
+						<td>public</td>
+						<td>return</td>
+						<td>short</td>
+						<td>static</td>
+					</tr>
+					<tr>
+						<td>super*</td>
+						<td>switch</td>
+						<td>synchronized</td>
+						<td>this</td>
+					</tr>
+					<tr>
+						<td>throw</td>
+						<td>throws</td>
+						<td>transient</td>
+						<td>true</td>
+					</tr>
+					<tr>
+						<td>try</td>
+						<td>typeof</td>
+						<td>var</td>
+						<td>void</td>
+					</tr>
+					<tr>
+						<td>volatile</td>
+						<td>while</td>
+						<td>with</td>
+						<td>yield</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>As seguintes palavras reservadas foram removidas no ECMAScript 5/6 (2015):</p>
+
+			<table>
+				<tbody>
+					<tr>
+						<td>abstract</td>
+						<td>boolean</td>
+						<td>byte</td>
+						<td>char</td>
+					</tr>
+					<tr>
+						<td>double</td>
+						<td>final</td>
+						<td>float</td>
+						<td>goto</td>
+					</tr>
+					<tr>
+						<td>int</td>
+						<td>long</td>
+						<td>native</td>
+						<td>short</td>
+					</tr>
+					<tr>
+						<td>synchronized</td>
+						<td>throws</td>
+						<td>transient</td>
+						<td>volatile</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Porém, ainda não é possível usá-las como nomes de variáveis.</p>
+
+			<h3>Objetos, propriedades e métodos no JavaScript</h3>
+
+				<p>Evite também usar o nome de objetos, propriedades e métodos incorporados do JavaScript:</p>
+
+				<table>
+					<tbody>
+						<tr>
+							<td>Array</td>
+							<td>Date</td>
+							<td>eval</td>
+							<td>function</td>
+						</tr>
+						<tr>
+							<td>hasOwnProperty</td>
+							<td>Infinity</td>
+							<td>isFinite</td>
+							<td>isNaN</td>
+						</tr>
+						<tr>
+							<td>isPrototypeOf</td>
+							<td>length</td>
+							<td>Math</td>
+							<td>NaN</td>
+						</tr>
+						<tr>
+							<td>name</td>
+							<td>Number</td>
+							<td>Object</td>
+							<td>prototype</td>
+						</tr>
+						<tr>
+							<td>String</td>
+							<td>toString</td>
+							<td>undefined</td>
+							<td>valueOf</td>
+						</tr>
+					</tbody>
+				</table>
+
+			<h3>Palavras reservadas no Java</h3>
+
+				<p>Como o JavaScript é muito usado com o Java, evite usar objetos e propriedades do Java como identificadores do JavaScript.</p>
+
+				<table>
+					<tbody>
+						<tr>
+							<td>getClass</td>
+							<td>java</td>
+							<td>JavaArray</td>
+							<td>javaClass</td>
+						</tr>
+						<tr>
+							<td>JavaObject</td>
+							<td>JavaPackage</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+
+			<h3>Outras palavras reservadas</h3>
+
+				<p>O JavaScript pode ser usado como linguagem de programação em muitas aplicações, por isso, evite usar o nome de objetos e propriedades do HTML e da Window:</p>
+
+				<table>
+					<tbody>
+						<tr>
+							<td>alert</td>
+							<td>all</td>
+							<td>anchor</td>
+							<td>anchors</td>
+						</tr>
+						<tr>
+							<td>area</td>
+							<td>assign</td>
+							<td>blur</td>
+							<td>button</td>
+						</tr>
+						<tr>
+							<td>checkbox</td>
+							<td>clearInterval</td>
+							<td>clearTimeout</td>
+							<td>clientInformation</td>
+						</tr>
+						<tr>
+							<td>close</td>
+							<td>closed</td>
+							<td>confirm</td>
+							<td>constructor</td>
+						</tr>
+						<tr>
+							<td>crypto</td>
+							<td>decodeURI</td>
+							<td>decodeURIComponent</td>
+							<td>defaultStatus</td>
+						</tr>
+						<tr>
+							<td>document</td>
+							<td>element</td>
+							<td>elements</td>
+							<td>embed</td>
+						</tr>
+						<tr>
+							<td>embeds</td>
+							<td>encodeURI</td>
+							<td>encodeURIComponent</td>
+							<td>escape</td>
+						</tr>
+						<tr>
+							<td>event</td>
+							<td>fileUpload</td>
+							<td>focus</td>
+							<td>form</td>
+						</tr>
+						<tr>
+							<td>forms</td>
+							<td>frame</td>
+							<td>innerHeight</td>
+							<td>innerWidth</td>
+						</tr>
+						<tr>
+							<td>layer</td>
+							<td>layers</td>
+							<td>link</td>
+							<td>location</td>
+						</tr>
+						<tr>
+							<td>mimeTypes</td>
+							<td>navigate</td>
+							<td>navigator</td>
+							<td>frames</td>
+						</tr>
+						<tr>
+							<td>frameRate</td>
+							<td>hidden</td>
+							<td>history</td>
+							<td>image</td>
+						</tr>
+						<tr>
+							<td>images</td>
+							<td>offscreenBuffering</td>
+							<td>open</td>
+							<td>opener</td>
+						</tr>
+						<tr>
+							<td>option</td>
+							<td>outerHeight</td>
+							<td>outerWidth</td>
+							<td>packages</td>
+						</tr>
+						<tr>
+							<td>pageXOffset</td>
+							<td>pageYOffset</td>
+							<td>parent</td>
+							<td>parseFloat</td>
+						</tr>
+						<tr>
+							<td>parseInt</td>
+							<td>password</td>
+							<td>pkcs11</td>
+							<td>plugin</td>
+						</tr>
+						<tr>
+							<td>prompt</td>
+							<td>propertyIsEnum</td>
+							<td>radio</td>
+							<td>reset</td>
+						</tr>
+						<tr>
+							<td>screenX</td>
+							<td>screenY</td>
+							<td>scroll</td>
+							<td>secure</td>
+						</tr>
+						<tr>
+							<td>select</td>
+							<td>self</td>
+							<td>setInterval</td>
+							<td>setTimeout</td>
+						</tr>
+						<tr>
+							<td>status</td>
+							<td>submit</td>
+							<td>taint</td>
+							<td>text</td>
+						</tr>
+						<tr>
+							<td>textarea</td>
+							<td>top</td>
+							<td>unescape</td>
+							<td>untaint</td>
+						</tr>
+						<tr>
+							<td>window</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+
+			<h3>Manipuladores de eventos do HTML</h3>
+
+				<p>Evite também usar o nome de manipuladores de eventos do HTML, como os seguintes:</p>
+
+				<table>
+					<tbody>
+						<tr>
+							<td>onblur</td>
+							<td>onclick</td>
+							<td>onerror</td>
+							<td>onfocus</td>
+						</tr>
+						<tr>
+							<td>onkeydown</td>
+							<td>onkeypress</td>
+							<td>onkeyup</td>
+							<td>onmouseover</td>
+						</tr>
+						<tr>
+							<td>onload</td>
+							<td>onmouseup</td>
+							<td>onmousedown</td>
+							<td>onsubmit</td>
+						</tr>
+					</tbody>
+				</table>
+	</section>
 </body>
 </html>
