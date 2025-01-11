@@ -4,10 +4,10 @@
 <head>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../../css/style.css">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="description" content="Objetos">
-    <meta name="author" content="Lizandra Silva (@maopequena)">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta nome="keywords" content="HTML, CSS, JavaScript">
+    <meta nome="description" content="Objetos">
+    <meta nome="author" content="Lizandra Silva (@maopequena)">
+    <meta nome="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objetos</title>
 </head>
 <body>
@@ -26,11 +26,11 @@
 					<th>Métodos</th>
 				</thead>
 				<tr>
-					<td rowspan="3">Carro</td>
+					<td rowspan="3">carro</td>
 				</tr>
 				<tr>
-					<td>car.name = Fiat <br> car.model = 500 <br> car.weight = 850 Kg <br> car.color = white</td>
-					<td>car.start() <br> car.drive() <br> car.brake() <br> car.stop()</td>
+					<td>carro.nome = Fiat <br> carro.modelo = 500 <br> carro.peso = 850 Kg <br> carro.cor = white</td>
+					<td>carro.partida() <br> carro.dirigir() <br> carro.frear() <br> carro.desligar()</td>
 				</tr>
 			</tbody>
 		</table>
@@ -39,596 +39,709 @@
 
 		<p>Os <strong>métodos</strong> de um carro de verdade são coisas como partida e frear. Todos os objetos "carro" têm os mesmos métodos, mas eles acontecem em momentos diferentes.</p>
 
-		<h3>Objetos vs. variáveis</h3>
+			<h2>Objetos vs. variáveis</h2>
 
-		<p>Variáveis em JavaScript são contêineres de dados. <strong>Objetos</strong> também são variáveis, mas eles contêm muitos valores:</p>
+			<p>Variáveis em JavaScript são contêineres de dados. <strong>Objetos</strong> também são variáveis, mas eles contêm muitos valores:</p>
 
-		<pre>
-			<code>
-				// Uma variável comum:
-				let car = "Fiat";
+			<pre>
+				<code>
+					// Uma variável comum:
+					let carro = "Fiat";
 
-				// Um objeto:
-				const car = {type:"Fiat", model:"500", color:"white"};
-			</code>
-		</pre>
+					// Um objeto:
+					const carro = {tipo:"Fiat", modelo:"500", cor:"white"};
+				</code>
+			</pre>
 
-		<p class="important-info">Costuma-se declarar objetos com a palavra-chave <code>const</code>.</p>
+			<p class="important-info">Costuma-se declarar objetos com a palavra-chave <code>const</code>.</p>
 	</section>
 	
 	<section>
-		<h2>Definição de objetos</h2>
+			<h2>Definição de objetos</h2>
 
-		<h3>Definir objetos usando literais</h3>
+			<p>Os métodos para definir objetos no JavaScript são:</p>
 
-		<p>Uma "literal de objeto" (ou um inicializador de objeto) é uma lista de pares de <em>nome:valor</em> (ou <em>chave:valor</em>) dentro de chaves (<kbd>{ }</kbd>). Por exemplo:</p>
+			<ul>
+				<li>Usar um literal de objeto</li>
+				<li>Usar a palavra-chave <code>new</code></li>
+				<li>Usar um construtor de objeto</li>
+				<li>Usar <code>Object.assign()</code></li>
+				<li>Usar <code>Object.create()</code></li>
+				<li>Usar <code>Object.fromEntries()</code></li>
+			</ul>
 
-		<pre>
-			<code>
-				{firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
-			</code>
-		</pre>
+				<h3>Definir objetos usando literais</h3>
 
-		<p>Ao declarar uma literal de objeto, os espaços e quebras de linha não têm efeito. É como se tudo estivesse em uma só linha.</p>
+				<p>Uma "literal de objeto" (ou um inicializador de objeto) é uma lista de pares de <em>nome:valor</em> (ou <em>chave:valor</em>) dentro de chaves (<kbd>{ }</kbd>). Por exemplo:</p>
 
-		<p>Também é possível criar um objeto vazio e adicionar propriedades a ele posteriormente: </p>
+				<pre>
+					<code>
+						{primeiroNome:"John", sobrenome:"Doe", idade:50, corOlhos:"azul"}
+					</code>
+				</pre>
 
-		<pre>
-			<code>
-				// Criar o objeto
-				const person = {};
+				<p>Ao declarar uma literal de objeto, os espaços e quebras de linha não têm efeito. É como se tudo estivesse em uma só linha.</p>
 
-				// Adicionar as propriedades
-				person.firstName = "John";
-				person.lastName = "Doe";
-				person.age = 50;
-				person.eyeColor = "blue";
-			</code>
-		</pre>
+				<p>Também é possível criar um objeto vazio e adicionar propriedades a ele posteriormente: </p>
 
-		<h3>Definir objetos usando a palavra-chave new</h3>
+				<pre>
+					<code>
+						// Criar o objeto
+						const pessoa = {};
 
-		<p>A sintaxe usando a palavra-chave <code>new</code> é similar a usar literais:</p>
+						// Adicionar as propriedades
+						pessoa.primeiroNome = "John";
+						pessoa.sobrenome = "Doe";
+						pessoa.idade = 50;
+						pessoa.corOlhos = "azul";
+					</code>
+				</pre>
 
-		<pre>
-			<code>
-				// Criar o objeto
-				const person = new Object();
+				<h3>Definir objetos usando a palavra-chave new</h3>
 
-				// Adicionar as propriedades
-				person.firstName = "John";
-				person.lastName = "Doe";
-				person.age = 50;
-				person.eyeColor = "blue";
-			</code>
-		</pre>
+				<p>A sintaxe usando a palavra-chave <code>new</code> é similar a usar literais:</p>
 
-		<p>Portanto, é melhor usar o método das literais para definir objetos, já que isso melhora a leitura do código, sua simplicidade e velocidade de execução.</p>
+				<pre>
+					<code>
+						// Criar o objeto
+						const pessoa = new Object();
+
+						// Adicionar as propriedades
+						pessoa.primeiroNome = "John";
+						pessoa.sobrenome = "Doe";
+						pessoa.idade = 50;
+						pessoa.corOlhos = "azul";
+					</code>
+				</pre>
+
+				<p>Portanto, é melhor usar o método das literais para definir objetos, já que isso melhora a leitura do código, sua simplicidade e velocidade de execução.</p>
 	</section>
 
 	<section>
-		<h2>Propriedades de um objeto</h2>
+			<h2>Propriedades de um objeto</h2>
 
-		<p>Em objetos de JavaScript, os <strong>valores nomeados</strong> se chamam <strong>propriedades</strong>.</p>
+			<p>Em objetos de JavaScript, os <strong>valores nomeados</strong> se chamam <strong>propriedades</strong>.</p>
 
-		<p>Um objeto é um conjunto não ordenado de propriedades. As propriedades são a parte mais importante de um objeto em JavaScript. Elas podem ser alteradas, adicionadas e excluídas, e algumas são apenas para leitura.</p>
+			<p>Um objeto é um conjunto não ordenado de propriedades. As propriedades são a parte mais importante de um objeto em JavaScript. Elas podem ser alteradas, adicionadas e excluídas, e algumas são apenas para leitura.</p>
 
-		<table style="width: 70%; text-align: center;">
-			<tbody>
-				<tr>
-					<th style="width: 50%;">Propriedade</th>
-					<th>Valor</th>
-				</tr>
-				<tr>
-					<td>firstName</td>
-					<td>John</td>
-				</tr>
-				<tr>
-					<td>lastName</td>
-					<td>Doe</td>
-				</tr>
-				<tr>
-					<td>age</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>eyeColor</td>
-					<td>blue</td>
-				</tr>
-			</tbody>
-		</table>
+			<table style="width: 30%; text-align: center;">
+				<tbody>
+					<tr>
+						<th style="width: 50%;">Propriedade</th>
+						<th>Valor</th>
+					</tr>
+					<tr>
+						<td>primeiroNome</td>
+						<td>John</td>
+					</tr>
+					<tr>
+						<td>sobrenome</td>
+						<td>Doe</td>
+					</tr>
+					<tr>
+						<td>idade</td>
+						<td>50</td>
+					</tr>
+					<tr>
+						<td>corOlhos</td>
+						<td>azul</td>
+					</tr>
+				</tbody>
+			</table>
 
-		<p>Objetos escritos com pares de <em>nome e valor</em> são similares a:</p>
+			<p>Objetos escritos com pares de <em>nome e valor</em> são similares a:</p>
 
-		<ul class="list-square">
-			<li>Matrizes associativas em PHP</li>
-			<li>Dicionários em Python</li>
-			<li>Tabelas hash em C</li>
-			<li>Mapas hash em Java</li>
-			<li>Hashes em Ruby e Perl</li>
-		</ul>
+			<ul class="list-square">
+				<li>Matrizes associativas em PHP</li>
+				<li>Dicionários em Python</li>
+				<li>Tabelas hash em C</li>
+				<li>Mapas hash em Java</li>
+				<li>Hashes em Ruby e Perl</li>
+			</ul>
 
-		<h3>Como acessar as propriedades de um objeto</h3>
+				<h3>Como acessar as propriedades de um objeto</h3>
 
-		<p>Há duas maneiras de acessar as propriedades de um objeto. Pela notação de ponto:</p>
+				<p>Há duas maneiras de acessar as propriedades de um objeto. Pela notação de ponto:</p>
 
-		<pre>
-			<code>
-				nomeObjeto.nomePropriedade
-			</code>
-		</pre>
+				<pre>
+					<code>
+						nomeObjeto.nomePropriedade
+					</code>
+				</pre>
 
-		<p>E pela notação de colchetes:</p>
+				<p>E pela notação de colchetes:</p>
 
-		<pre>
-			<code>
-				nomeObjeto["nomePropriedade"]
-			</code>
-		</pre>
+				<pre>
+					<code>
+						nomeObjeto["nomePropriedade"]
+					</code>
+				</pre>
 
-		<p>Também é possível atribuir uma variável a uma propriedade e chamar a variável nas notações mencionadas acima.</p>
+				<p>Também é possível atribuir uma variável a uma propriedade e chamar a variável com as notações mencionadas acima.</p>
 
-		<h3>Como adicionar novas propriedades</h3>
+				<h3>Como adicionar novas propriedades</h3>
 
-		<p>Para adicionar novas propriedades a um objeto existente, só é preciso fornecer um valor:</p>
+				<p>Para adicionar novas propriedades a um objeto existente, só é preciso fornecer um valor:</p>
 
-		<pre>
-			<code>
-				// nomeObjeto.nomePropriedade = "valor";
-				person.nationality = "English";
-			</code>
-		</pre>
+				<pre>
+					<code>
+						// nomeObjeto.nomePropriedade = "valor";
+						pessoa.nacionalidade = "Britânico";
+					</code>
+				</pre>
 
-		<h3>Como excluir propriedades</h3>
+				<h3>Como excluir propriedades</h3>
 
-		<p>Use a palavra-chave <code>delete</code> para excluir propriedades de um objeto:</p>
+				<p>Use a palavra-chave <code>delete</code> para excluir propriedades de um objeto:</p>
 
-		<pre>
-			<code>
-				const person = {
-					firstName: "John",
-					lastName: "Doe",
-					age: 50,
-					eyeColor: "blue"
-				};
-				
-				delete person.age;
-				// ou delete person["age"];
-			</code>
-		</pre>
+				<pre>
+					<code>
+						const pessoa = {
+							primeiroNome: "John",
+							sobrenome: "Doe",
+							idade: 50,
+							corOlhos: "azul"
+						};
+						
+						delete pessoa.idade;
+						// ou delete pessoa["idade"];
+					</code>
+				</pre>
 
-		<p>Esta palavra-chave exclui o valor e a propriedade em si. Para usar a propriedade novamente após a exclusão, é preciso adicioná-la novamente ao objeto.</p>
+				<p>Esta palavra-chave exclui o valor e a propriedade em si. Para usar a propriedade após a exclusão, é preciso adicioná-la novamente ao objeto.</p>
 	</section>
 
 	<section>
-		<h2>Objetos aninhados</h2>
+			<h2>Objetos aninhados</h2>
 
-		<p>Os valores de uma propriedade também podem ser objetos.</p>
+			<p>Os valores de uma propriedade também podem ser objetos.</p>
 
-		<pre>
-			<code>
-				myObj = {
-					name:"John",
-					age:30,
-					myCars: {
-						car1:"Ford",
-						car2:"BMW",
-						car3:"Fiat"
+			<pre>
+				<code>
+					meuObjeto = {
+						nome:"John",
+						idade:30,
+						meusCarros: {
+							carro1:"Ford",
+							carro2:"BMW",
+							carro3:"Fiat"
+						}
 					}
-				}
-			</code>
-		</pre>
+				</code>
+			</pre>
 
-		<p>E essas propriedades aninhadas podem ser acessadas com notação de ponto ou de colchete:</p>
+			<p>E essas propriedades aninhadas podem ser acessadas com notação de ponto ou de colchete:</p>
 
-		<pre>
-			<code>
-				myObj.myCars;
-				myObj.myCars.car1;
-				myObj["myCars"]["car3"];
-			</code>
-		</pre>
+			<pre>
+				<code>
+					meuObjeto.meusCarros;
+					meuObjeto.meusCarros.carro1;
+					meuObjeto["meusCarros"]["carro3"];
+				</code>
+			</pre>
 	</section>
 
 	<section>
-		<h2>Métodos de objeto</h2>
+			<h2>Métodos de objeto</h2>
 
-		<p>Métodos são ações que se pode realizar em objetos. São <strong>definições de funções</strong> armazenadas como <strong>valores de propriedades</strong>.</p>
+			<p>Métodos são ações que se pode realizar em objetos. São <strong>definições de funções</strong> armazenadas como <strong>valores de propriedades</strong>.</p>
 
-		<table>
-			<tbody>
-				<tr>
-					<th>Propriedade</th>
-					<th>Valor da propriedade</th>
-				</tr>
-				<tr>
-					<td>firstName</td>
-					<td>John</td>
-				</tr>
-				<tr>
-					<td>lastName</td>
-					<td>Doe</td>
-				</tr>
-				<tr>
-					<td>age</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>eyeColor</td>
-					<td>blue</td>
-				</tr>
-				<tr>
-					<td>fullName</td>
-					<td>function() {return self.firstName + " " + self.lastName;}</td>
-				</tr>
-			</tbody>
-		</table>
+			<table>
+				<tbody>
+					<tr>
+						<th>Propriedade</th>
+						<th>Valor da propriedade</th>
+					</tr>
+					<tr>
+						<td>primeiroNome</td>
+						<td>John</td>
+					</tr>
+					<tr>
+						<td>sobrenome</td>
+						<td>Doe</td>
+					</tr>
+					<tr>
+						<td>idade</td>
+						<td>50</td>
+					</tr>
+					<tr>
+						<td>corOlhos</td>
+						<td>azul</td>
+					</tr>
+					<tr>
+						<td>nomeCompleto</td>
+						<td>function() {return self.primeiroNome + " " + self.sobrenome;}</td>
+					</tr>
+				</tbody>
+			</table>
 
-		<p>No exemplo acima, <code>self</code> refere-se ao objeto da pessoa. Quer dizer, <code>self.firstName</code> e <code>self.lastName</code> referem-se, respectivamente, a <code>firstName</code> e <code>lastName</code> da pessoa.</p>
+			<p>No exemplo acima, <code>self</code> refere-se ao objeto da pessoa. Quer dizer, <code>self.primeiroNome</code> e <code>self.sobrenome</code> referem-se, respectivamente, a <code>primeiroNome</code> e <code>sobrenome</code> da pessoa.</p>
 
-		<p class="important-info">Note que <code>self</code> não é tão amplamente usado mais, a prática recomendada é usar <strong><code>self</code></strong>. Porém, é importante observar que esta pode ser qualquer palavra, como "s_", "proto$", "item", "instance",etc.</p>
+			<p class="important-info">Note que <code>self</code> não é tão amplamente usado mais, a prática recomendada é usar <strong><code>self</code></strong>. Porém, é importante observar que esta pode ser qualquer palavra, como "s_", "proto$", "item", "instance", etc.</p>
 
-		<h3>Como acessar métodos de um objeto</h3>
+				<h3>Como acessar métodos de um objeto</h3>
 
-		<p>Use a sintaxe <code>nomeObjeto.nomeMétodo()</code> para acessar os métodos de um objeto. Chamar uma propriedade seguida de parênteses, como em <code>person.firstName()</code>, faz com que a propriedade seja executada como uma função, e usa a mesma sintaxe com chaves. Acessar uma propriedade sem os parênteses, como em <code>person.firstName</code>, retorna a definição da função, ou o código em si.</p>
+				<p>Use a sintaxe <code>nomeObjeto.nomeMétodo()</code> para acessar os métodos de um objeto. Chamar uma propriedade seguida de parênteses, como em <code>pessoa.primeiroNome()</code>, faz com que a propriedade seja executada como uma função, e usa a mesma sintaxe com chaves. Acessar uma propriedade sem os parênteses, como em <code>pessoa.primeiroNome</code>, retorna a definição da função, ou o código em si.</p>
 
-		<h3>Adicionar um método a um objeto</h3>
+				<h3>Adicionar um método a um objeto</h3>
 
-		<p>É muito fácil adicionar um método a um objeto:</p>
+				<p>É muito fácil adicionar um método a um objeto:</p>
 
-		<pre>
-			<code>
-				person.name = function () {
-					return self.firstName + " " + self.lastName;
-				};
-			</code>
-		</pre>
+				<pre>
+					<code>
+						pessoa.nome = function () {
+							return self.primeiroNome + " " + self.sobrenome;
+						};
+					</code>
+				</pre>
 
-		<h3>Como usar métodos</h3>
+				<h3>Como usar métodos</h3>
 
-		<p>O exemplo a seguir usa o método <code>to UpperCase()</code> para converter um texto para letras maiúsculas:</p>
+				<p>O exemplo a seguir usa o método <code>to UpperCase()</code> para converter um texto para letras maiúsculas:</p>
 
-		<pre>
-			<code>
-				person.name = function () {
-					return (self.firstName + " " + self.lastName).toUpperCase();
-				};
-			</code>
-		</pre>
-	</section>
-	
-	<section>
-		<h2>Primitivos</h2>
-
-		<p>Um <em>valor primitivo</em> não tem propriedades ou métodos. <strong>3.14</strong> é um valor primitivo.</p>
-
-		<p>Um <em>tipo de dado primitivo</em> é um dado que tem um valor primitivo. O JavaScript tem 7 tipos de dados primitivos:</p>
-
-		<ul class="list-square">
-			<li><code>string</code></li>
-			<li><code>number</code></li>
-			<li><code>boolean</code></li>
-			<li><code>null</code></li>
-			<li><code>undefined</code></li>
-			<li><code>symbol</code></li>
-			<li><code>bigint</code></li>
-		</ul>
-
-		<p>Valores primitivos são <strong>imutáveis</strong>, isto é não podem ser alterados, são "hardcoded". Se <code>x = 3.14</code>, é possível alterar o valor de x, mas não o de 3.14.</p>
-	</section>
-
-	<section>
-		<h2>Objetos são mutáveis</h2>
-
-		<p>Objetos são mutáveis porque são chamados pela referência, não pelo valor.</p>
-
-		<p>Se "<strong>pessoa</strong>" é um objeto, a declaração a seguir não cria uma cópia de "pessoa".</p>
-
-		<pre>
-			<code>
-				const x = person;
-			</code>
-		</pre>
-
-		<p>O objeto x não é uma cópia de "pessoa", o objeto x <strong>é</strong> pessoa. O objeto x e o objeto pessoa têm o mesmo endereço na memória. Quaisquer alterações feitas a x, também alteram pessoa:</p>
-
-		<pre>
-			<code>
-				// Criar um objeto
-				const person = {
-					firstName:"John",
-					lastName:"Doe",
-					age:50, eyeColor:"blue"
-				}
-
-				// Criar uma cópia
-				const x = person;
-
-				// Alterar a idade em ambos
-				x.age = 10;
-			</code>
-		</pre>
+				<pre>
+					<code>
+						pessoa.nome = function () {
+							return (self.primeiroNome + " " + self.sobrenome).toUpperCase();
+						};
+					</code>
+				</pre>
 	</section>
 	
 	<section>
-		<h2>Exibição de objetos</h2>
+			<h2>Primitivos</h2>
 
-		<p>Se tentarmos inserir um objeto no HTML, o JavaScript escreve, literalmente, "<strong>[object Object]</strong>". Para evitar isso, devemos fazer uma das seguintes coisas:</p>
+			<p>Um <em>valor primitivo</em> não tem propriedades ou métodos. <strong>3.14</strong> é um valor primitivo.</p>
 
-		<ul class="list-square">
-			<li>Exibir a propriedade do objeto</li>
-			<li>Exibir as propriedades do objeto em um loop</li>
-			<li>Exibir o objeto chamando Object.values()</li>
-			<li>Exibir o objeto usando JSON.stringify()</li>
-		</ul>
+			<p>Um <em>tipo de dado primitivo</em> é um dado que tem um valor primitivo. O JavaScript tem 7 tipos de dados primitivos:</p>
 
-		<h3>Exibir as propriedades de um objeto</h3>
+			<ul class="list-square">
+				<li><code>string</code> (cadeia de caracteres)</li>
+				<li><code>number</code> (número)</li>
+				<li><code>boolean</code> (booleano)</li>
+				<li><code>null</code> (nulo)</li>
+				<li><code>undefined</code> (indefinido)</li>
+				<li><code>symbol</code> (símbolo)</li>
+				<li><code>bigint</code> (inteiro grande)</li>
+			</ul>
 
-		<p>As propriedades de um objeto podem ser exibidas como uma sequência de caracteres:</p>
-
-		<pre>
-			<code>
-				// Criar um objeto
-				const person = {
-					name: "John",
-					age: 30,
-					city: "New York"
-				};
-
-				// Exibir as propriedades
-				document.getElementById("demo").innerHTML =
-				person.name + "," + person.age + "," + person.city;
-			</code>
-		</pre>
-
-		<h3>Exibir as propriedades de um objeto em um loop</h3>
-
-		<p>Pode-se usar um loop para chamar as propriedades de um objeto.</p>
-
-		<pre>
-			<code>
-				// Criar um objeto
-				const person = {
-					name: "John",
-					age: 30,
-					city: "New York"
-				};
-
-				// Criar o texto
-				let text = "";
-				for (let x in person) {
-					text += person[x] + " ";
-				};
-
-				// Exibir o texto
-				document.getElementById("demo").innerHTML = text;
-			</code>
-		</pre>
-
-		<p class="important-info"><strong>Observação</strong>: é obrigatório usar person[x] no loop. person.x não funciona, porque x é a variável do loop.</p>
-
-		<h3>Exibir o objeto chamando Object.values()</h3>
-
-		<p>Isso cria uma matriz para os valores das propriedades:</p>
-
-		<pre>
-			<code>
-				// Criar um objeto
-				const person = {
-					name: "John",
-					age: 30,
-					city: "New York"
-				};
-
-				// Criar uma matriz
-				const myArray = Object.values(person);
-
-				// Exibir a matriz
-				document.getElementById("demo").innerHTML = myArray;
-			</code>
-		</pre>
-
-		<p>Também é possível usar <code>Object.entries()</code> para facilitar o uso do objeto com um loop:</p>
-
-		<pre>
-			<code>
-				const fruits = {Bananas:300, Oranges:200, Apples:500};
-
-				let text = "";
-				for (let [fruit, value] of Object.entries(fruits)) {
-					text += fruit + ": " + value + "<br>";
-				}
-			</code>
-		</pre>
-
-		<h3>Exibir o objeto usando JSON.stringify()</h3>
-
-		<p>Objetos JavaScript podem ser convertidos em uma sequência de caracteres com o método JSON <code>JSON.stringify()</code>. Ele está incluso com o JavaScript e é aceito pela maioria dos navegadores. O resultado deste método será uma sequência de caracteres em notação JSON: <code>{"name":"John","age":50,"city":"New York"}</code>.</p>
-
-		<pre>
-			<code>
-				// Criar um objeto
-				const person = {
-					name: "John",
-					age: 30,
-					city: "New York"
-				};
-
-				// Usar stringify
-				let myString = JSON.stringify(person);
-
-				// Exibir a sequência de caracteres
-				document.getElementById("demo").innerHTML = myString;
-			</code>
-		</pre>
+			<p>Valores primitivos são <strong>imutáveis</strong>, isto é não podem ser alterados, são "hardcoded". Se <code>x = 3.14</code>, é possível alterar o valor de x, mas não o de 3.14.</p>
 	</section>
 
 	<section>
-		<h2>Funções construtoras de objetos</h2>
+			<h2>Objetos são mutáveis</h2>
 
-		<p>Algumas vezes precisamos criar várias funções do mesmo <em>tipo</em>. Para criar um <strong>tipo de objeto</strong>, usamos <strong>funções construtoras de objetos</strong>. A prática recomendada é começar o nome da função deve com letra maiúscula. Por exemplo:</p>
+			<p>Objetos são mutáveis porque são chamados pela referência, não pelo valor.</p>
 
-		<pre>
-			<code>
-				// Função construtora para os objetos de pessoa
-				function Person(first, last, age, eye) {
-					self.firstName = first;
-					self.lastName = last;
-					self.age = age;
-					self.eyeColor = eye;
-				}
+			<p>Se "<strong>pessoa</strong>" é um objeto, a declaração a seguir não cria uma cópia de "pessoa".</p>
 
-				// Criar dois objetos de pessoa
-				const myFather = new Person("John", "Doe", 50, "blue");
-				const myMother = new Person("Sally", "Rally", 48, "green");
+			<pre>
+				<code>
+					const x = pessoa;
+				</code>
+			</pre>
 
-				// Exibir a idade
-				document.getElementById("demo").innerHTML =
-				"My father is " + myFather.age + " years old. My mother is " + myMother.age + " years old."; 
-			</code>
-		</pre>
+			<p>O objeto x não é uma cópia de "pessoa", o objeto x <strong>é</strong> pessoa. O objeto x e o objeto pessoa têm o mesmo endereço na memória. Quaisquer alterações feitas a x, também alteram pessoa:</p>
 
-		<h3>Valores padrão de propriedades</h3>
+			<pre>
+				<code>
+					// Criar um objeto
+					const pessoa = {
+						primeiroNome:"John",
+						sobrenome:"Doe",
+						idade:50, corOlhos:"azul"
+					}
 
-		<p>Um valor fornecido para uma propriedade será o <em>valor padrão</em> para todos os objetos criados pelo construtor. Por exemplo:</p>
+					// Criar uma cópia
+					const x = pessoa;
 
-		<pre>
-			<code>
-				function Person(first, last, age, eyecolor) {
-					self.firstName = first;
-					self.lastName = last;
-					self.age = age;
-					self.eyeColor = eyecolor;
-					self.nationality = "English";
-				}
-			</code>
-		</pre>
+					// Alterar a idade em ambos
+					x.idade = 10;
+				</code>
+			</pre>
+	</section>
+	
+	<section>
+			<h2>Exibição de objetos</h2>
 
-		<p>Neste caso, todos os objetos criados terão a nacionalidade "English".</p>
+			<p>Se tentarmos inserir um objeto no HTML, o JavaScript escreve, literalmente, "<strong>[object Object]</strong>". Para evitar isso, devemos fazer uma das seguintes coisas:</p>
 
-		<h3>Adicionar uma nova propriedade a um objeto</h3>
+			<ul class="list-square">
+				<li>Exibir a propriedade do objeto</li>
+				<li>Exibir as propriedades do objeto em um loop</li>
+				<li>Exibir o objeto chamando Object.values()</li>
+				<li>Exibir o objeto usando JSON.stringify()</li>
+			</ul>
 
-		<p>Após criar o construtor, para adicionar uma nova propriedade, é só fazer o seguinte:</p>
+				<h3>Exibir as propriedades de um objeto</h3>
 
-		<pre>
-			<code>
-				// Função construtora para objetos de pessoa
-				function Person(first, last, age, eye) {
-					self.firstName = first;
-					self.lastName = last;
-					self.age = age;
-					self.eyeColor = eye;
-				}
+				<p>As propriedades de um objeto podem ser exibidas como uma sequência de caracteres:</p>
 
-				// Criar dois objetos de pessoa
-				const myFather = new Person("John", "Doe", 50, "blue");
-				const myMother = new Person("Sally", "Rally", 48, "green");
+				<pre>
+					<code>
+						// Criar um objeto
+						const pessoa = {
+							nome: "John",
+							idade: 30,
+							cidade: "Nova York"
+						};
 
-				// Adicionar a nacionalidade ao primeiro objeto
-				myFather.nationality = "English";
+						// Exibir as propriedades
+						document.getElementById("demo").innerHTML =
+						pessoa.nome + "," + pessoa.idade + "," + pessoa.cidade;
+					</code>
+				</pre>
 
-				// Exibir a nacionalidade
-				document.getElementById("demo").innerHTML =
-				"My father is " + myFather.nationality;
-			</code>
-		</pre>
+				<h3>Exibir as propriedades de um objeto em um loop</h3>
 
-		<p>Note que a nova propriedade é adicionada somente ao objeto <strong>myFather</strong>, e a nenhum outro.</p>
+				<p>Pode-se usar um loop para chamar as propriedades de um objeto.</p>
 
-		<h3>Adicionar uma nova propriedade a todos os objetos</h3>
+				<pre>
+					<code>
+						// Criar um objeto
+						const pessoa = {
+							nome: "John",
+							idade: 30,
+							cidade: "Nova York"
+						};
 
-		<p><strong>NÃO</strong> é possível adicionar uma nova propriedade a um construtor de objetos. Em vez disso, é preciso adicioná-la ao protótipo da função construtora:</p>
+						// Criar o texto
+						let texto = "";
+						for (let x in pessoa) {
+							texto += pessoa[x] + " ";
+						};
 
-		<pre>
-			<code>
-				// NÃO podemos fazer isto
-				Person.nationality = "English";
+						// Exibir o texto
+						document.getElementById("demo").innerHTML = texto;
+					</code>
+				</pre>
 
-				// Mas podemos fazer isto
-				Person.prototype.nationality = "English";
-			</code>
-		</pre>
+				<p class="important-info"><strong>Observação</strong>: é obrigatório usar pessoa[x] no loop. pessoa.x não funciona, porque x é a variável do loop.</p>
+
+				<h3>Exibir o objeto chamando Object.values()</h3>
+
+				<p>Isso cria uma matriz para os valores das propriedades:</p>
+
+				<pre>
+					<code>
+						// Criar um objeto
+						const pessoa = {
+							nome: "John",
+							idade: 30,
+							cidade: "Nova York"
+						};
+
+						// Criar uma matriz
+						const minhaMatriz = Object.values(pessoa);
+
+						// Exibir a matriz
+						document.getElementById("demo").innerHTML = minhaMatriz;
+					</code>
+				</pre>
+
+				<p>Também é possível usar <code>Object.entries()</code> para facilitar o uso do objeto com um loop:</p>
+
+				<pre>
+					<code>
+						const frutas = {Bananas:300, Laranjas:200, Macas:500};
+
+						let texto = "";
+						for (let [fruta, valor] of Object.entries(frutas)) {
+							texto += fruta + ": " + valor + "<br>";
+						}
+					</code>
+				</pre>
+
+				<h3>Exibir o objeto usando JSON.stringify()</h3>
+
+				<p>Objetos JavaScript podem ser convertidos em uma sequência de caracteres com o método <code>JSON.stringify()</code>. Ele está incluso com o JavaScript e é aceito pela maioria dos navegadores. O resultado deste método será uma sequência de caracteres em notação JSON: <code>{"nome":"John","idade":50,"cidade":"Nova York"}</code>.</p>
+
+				<pre>
+					<code>
+						// Criar um objeto
+						const pessoa = {
+							nome: "John",
+							idade: 30,
+							cidade: "Nova York"
+						};
+
+						// Usar stringify
+						let minhaString = JSON.stringify(pessoa);
+
+						// Exibir a sequência de caracteres
+						document.getElementById("demo").innerHTML = minhaString;
+					</code>
+				</pre>
 	</section>
 
 	<section>
-		<h2>Métodos construtores de objetos</h2>
+			<h2>Funções construtoras de objetos</h2>
 
-		<p>Uma função construtora também pode ter métodos:</p>
+			<p>Algumas vezes precisamos criar várias funções do mesmo <em>tipo</em>. Para criar um <strong>tipo de objeto</strong>, usamos <strong>funções construtoras de objetos</strong>. A prática recomendada é começar o nome da função deve com letra maiúscula. Por exemplo:</p>
 
-		<pre>
-			<code>
-				function Person(first, last, age, eyecolor) {
-					self.firstName = first;
-					self.lastName = last;
-					self.age = age;
-					self.eyeColor = eyecolor;
-					self.fullName = function() {
-						return self.firstName + " " + self.lastName;
-					};
-				}
-			</code>
-		</pre>
+			<pre>
+				<code>
+					// Função construtora para o objeto "pessoa"
+					function Pessoa(nome, sobrenome, idade, olhos) {
+						this.primeiroNome = nome;
+						this.sobrenome = sobrenome;
+						this.idade = idade;
+						this.corOlhos = olhos;
+					}
 
-		<h3>Adicionar um método a um objeto</h3>
+					// Agora é possível usar <code>new Pessoa()</code> para criar vários objetos de pessoas.
 
-		<pre>
-			<code>
-				myMother.changeName = function (name) {
-					self.lastName = name;
-				}
-			</code>
-		</pre>
+					// Criar objetos de pessoa
+					const meuPai = new Pessoa("John", "Doe", 50, "azul");
+					const minhaMae = new Pessoa("Sally", "Rally", 48, "verde");
+					const minhaIrma = new Pessoa("Anna", "Rally", 18, "verde");
+					const euMesmo = new Pessoa("Johnny", "Rally", 22, "verde");
 
-		<h3>Adicionar um método a todos os objetos</h3>
+					// Exibir a idade
+					document.getElementById("demo").innerHTML =
+					"Meu pai tem " + meuPai.idade + " anos. Minha mãe tem " + minhaMae.idade + " anos."; 
+				</code>
+			</pre>
 
-		<p>Não é possível adicionar um método a uma função construtora de objeto, isso gera um erro (<samp>TypeError</samp>). É preciso adicionar o método ao protótipo da função construtora:</p>
+				<h3>Valores padrão de propriedades</h3>
 
-		<pre>
-			<code>
-				// Não podemos fazer isto
-				Person.changeName = function (name) {
-					self.lastName = name;
-				}
-				
-				myMother.changeName("Doe"); //TypeError: myMother.changeName is not a function
+				<p>Um valor fornecido para uma propriedade será o <em>valor padrão</em> para todos os objetos criados pelo construtor. Por exemplo:</p>
 
-				// Mas podemos fazer isto
-				Person.prototype.changeName = function (name) {
-					self.lastName = name;
-				}
-				
-				myMother.changeName("Doe");
-			</code>
-		</pre>
+				<pre>
+					<code>
+						function Pessoa(nome, sobrenome, idade, corOlhos) {
+							self.primeiroNome = nome;
+							self.sobrenome = sobrenome;
+							self.idade = idade;
+							self.corOlhos = corOlhos;
+							self.nacionalidade = "britânico";
+						}
+					</code>
+				</pre>
 
-		<p>A função <code>changeName()</code> atribui o valor de <code>name</code> à propriedade <code>lastName</code> da pessoa, substituindo <code>self</code> por <code>myMother</code>.</p>
+				<p>Neste caso, todos os objetos criados terão a nacionalidade "britânico".</p>
+
+				<h3>Adicionar uma nova propriedade a um objeto</h3>
+
+				<p>Após criar o construtor, para adicionar uma nova propriedade, é só fazer o seguinte:</p>
+
+				<pre>
+					<code>
+						// Função construtora para o objeto "pessoa"
+						function Pessoa(nome, sobrenome, idade, olhos) {
+							self.primeiroNome = nome;
+							self.sobrenome = sobrenome;
+							self.idade = idade;
+							self.corOlhos = olhos;
+						}
+
+						// Criar dois objetos de pessoa
+						const meuPai = new Pessoa("John", "Doe", 50, "azul");
+						const minhaMae = new Pessoa("Sally", "Rally", 48, "verde");
+
+						// Adicionar a nacionalidade ao primeiro objeto
+						meuPai.nacionalidade = "britânico";
+
+						// Exibir a nacionalidade
+						document.getElementById("demo").innerHTML =
+						"My eu pai é " + meuPai.nacionalidade;
+					</code>
+				</pre>
+
+				<p>Note que a nova propriedade é adicionada somente ao objeto <strong>meuPai</strong>, e a nenhum outro.</p>
+
+				<h3>Adicionar uma nova propriedade a todos os objetos</h3>
+
+				<p><strong>NÃO</strong> é possível adicionar uma nova propriedade a um construtor de objetos. Em vez disso, é preciso adicioná-la ao protótipo da função construtora:</p>
+
+				<pre>
+					<code>
+						// NÃO podemos fazer isto
+						Pessoa.nacionalidade = "britânico";
+
+						// Mas podemos fazer isto
+						Pessoa.prototype.nacionalidade = "britânico";
+					</code>
+				</pre>
 	</section>
 
 	<section>
-		<h2>Construtores que acompanham o JavaScript</h2>
+			<h2>Métodos construtores de objetos</h2>
 
-		<p>O JavaScript já tem construtores para todos os objetos:</p>
+			<p>Uma função construtora também pode ter métodos:</p>
 
-		<ul class="list-square">
-			<li>new Object(): cria um objeto em um Objeto</li>
-			<li>new Array(): cria um objeto de Matriz</li>
-			<li>new Map(): cria um objeto de Mapa</li>
-			<li>new Set(): cria um objeto de Conjunto</li>
-			<li>new Date(): cria um objeto de Data</li>
-			<li>new RegExp(): cria um objeto de Expressão Regular</li>
-			<li>new Function(): cria um objeto de Função</li>
-		</ul>
+			<pre>
+				<code>
+					function Pessoa(nome, sobrenome, idade, corOlhos) {
+						self.primeiroNome = nome;
+						self.sobrenome = sobrenome;
+						self.idade = idade;
+						self.corOlhos = corOlhos;
+						self.nomeCompleto = function() {
+							return self.primeiroNome + " " + self.sobrenome;
+						};
+					}
+				</code>
+			</pre>
 
-		<p class="important-info">O objeto <code>Math()</code> não está na lista porque é um objeto global. A palavra-chave <code>new</code> não pode ser usada com <code>Math</code>.</p>
+				<h3>Adicionar um método a um objeto</h3>
+
+				<pre>
+					<code>
+						minhaMae.alterarNome = function (nome) {
+							self.sobrenome = nome;
+						}
+					</code>
+				</pre>
+
+				<h3>Adicionar um método a todos os objetos</h3>
+
+				<p>Não é possível adicionar um método a uma função construtora de objeto, isso gera um erro (<samp>TypeError</samp>). É preciso adicionar o método ao protótipo da função construtora:</p>
+
+				<pre>
+					<code>
+						// Não podemos fazer isto
+						Pessoa.alterarNome = function (nome) {
+							self.sobrenome = nome;
+						}
+						
+						minhaMae.alterarNome("Doe"); // TypeError: minhaMae.alterarNome is not a function
+
+						// Mas podemos fazer isto
+						Pessoa.prototype.alterarNome = function (nome) {
+							self.sobrenome = nome;
+						}
+						
+						minhaMae.alterarNome("Doe");
+					</code>
+				</pre>
+
+				<p>A função <code>alterarNome()</code> atribui o valor de <code>nome</code> à propriedade <code>sobrenome</code> da pessoa, substituindo <code>self</code> por <code>minhaMae</code>.</p>
+	</section>
+
+	<section>
+			<h2>Construtores que acompanham o JavaScript</h2>
+
+			<p>O JavaScript já tem construtores para todos os objetos:</p>
+
+			<ul class="list-square">
+				<li>new Object(): cria um objeto em um Objeto</li>
+				<li>new Array(): cria um objeto de Matriz</li>
+				<li>new Map(): cria um objeto de Mapa</li>
+				<li>new Set(): cria um objeto de Conjunto</li>
+				<li>new Date(): cria um objeto de Data</li>
+				<li>new RegExp(): cria um objeto de Expressão Regular</li>
+				<li>new Function(): cria um objeto de Função</li>
+			</ul>
+
+			<p class="important-info">O objeto <code>Math()</code> não está na lista porque é um objeto global. A palavra-chave <code>new</code> não pode ser usada com <code>Math</code>.</p>
 	</section>
 
 	<section class="dyk">
-		<h2>Você sabia?</h2>
+			<h2>Você sabia?</h2>
 
-		<p>Use literais de objeto (<kbd>{}</kbd>) em vez de <code>new Object()</code>.</p>
-		<p>Use literais de matriz (<kbd>[]</kbd>) em vez de <code>new Array()</code>.</p>
-		<p>Use literais de padrão (<kbd>/()/</kbd>) em vez de <code>new RegExp()</code>.</p>
-		<p>Use expressões de função (<kbd>() {}</kbd>) em vez de <code>new Function()</code>.</p>
+			<p>Use literais de objeto (<kbd>{}</kbd>) em vez de <code>new Object()</code>.</p>
+			<p>Use literais de matriz (<kbd>[]</kbd>) em vez de <code>new Array()</code>.</p>
+			<p>Use literais de padrão (<kbd>/()/</kbd>) em vez de <code>new RegExp()</code>.</p>
+			<p>Use expressões de função (<kbd>() {}</kbd>) em vez de <code>new Function()</code>.</p>
+	</section>
+
+	<section>
+			<h2>Métodos de objetos</h2>
+
+			<p>Métodos de objeto no JavaScript podem ser agrupados em:</p>
+
+			<ul>
+				<li>Métodos gerais</li>
+				<li>Métodos de gestão de propriedades</li>
+				<li>Métodos de proteção de objetos</li>
+			</ul>
+
+				<h3>Métodos gerais</h3>
+
+				<pre>
+					<code>
+						// Copia as propriedades de um objeto para outro
+						Object.assign(destino, origem)
+
+						// Cria um objeto a partir de outro já existente
+						Object.create(objeto)
+
+						// Retorna uma matriz de pares chave/valor de um objeto
+						Object.entries(objeto)
+
+						// Cria um objeto a partir de uma lista de pares chave/valor
+						Object.fromEntries()
+
+						// Retorna uma matriz das chaves de um objeto
+						Object.keys(objeto)
+
+						// Retorna uma matriz dos valores de propriedades de um objeto
+						Object.values(objeto)
+
+						// Agrupa elementos de um objeto de acordo com uma função
+						Object.groupBy(objeto, retorno)
+					</code>
+				</pre>
+
+				<p>Saiba mais sobre <a href="https://www.w3schools.com/js/js_object_methods.asp" target="_blank" rel="noopener noreferrer">Métodos gerais de objetos</a> no JavaScript.</p>
+
+				<h3>Métodos de gestão de propriedades</h3>
+
+				<pre>
+					<code>
+						// Adicionar ou alterar uma propriedade de objeto
+						Object.defineProperty(objeto, propriedade, descritor)
+
+						// Adicionar ou alterar propriedades de um objeto
+						Object.defineProperties(objeto, descritores)
+
+						// Acessar uma propriedade
+						Object.getOwnPropertyDescriptor(objeto, propriedade)
+
+						// Acessar propriedades
+						Object.getOwnPropertyDescriptors(objeto)
+
+						// Retornar todas as propriedades como uma matriz
+						Object.getOwnPropertyNames(objeto)
+
+						// Acessar o protótipo
+						Object.getPrototypeOf(objeto)
+					</code>
+				</pre>
+
+				<p>Saiba mais sobre <a href="https://www.w3schools.com/js/js_object_properties.asp" target="_blank" rel="noopener noreferrer">Métodos de gestão de propriedades de objetos</a>.</p>
+
+				<h3>Métodos de proteção de objetos</h3>
+
+				<pre>
+					<code>
+						// Impedir a reatribuição
+						const carro = {tipo:"Fiat", modelo:"500", cor:"branco"};
+
+						// Impedir a adição de propriedades ao objeto
+						Object.preventExtensions(objeto)
+
+						// Retornar "true" se é possível adicionar propriedades ao objeto
+						Object.isExtensible(objeto)
+
+						// Impedir a adição e a exclusão de propriedades
+						Object.seal(objeto)
+
+						// Retornar "true" se o objeto estiver selado (bloqueado)
+						Object.isSealed(objeto)
+
+						// Impedir qualquer alteração em um objeto
+						Object.freeze(objeto)
+
+						// Retornar "true" se o objeto estiver congelado
+						Object.isFrozen(objeto)
+					</code>
+				</pre>
+
+				<p>Lembre-se que o método mais comum para proteger objetos é usar a palavra-chave <code>const</code>, que não permite reatribuir um objeto, mas ainda permite adicionar e excluir propriedades, além de alterar os valores de uma propriedade.</p>
+
+				<p>Saiba mais sobre <a href="https://www.w3schools.com/js/js_object_protection.asp" target="_blank" rel="noopener noreferrer">Métodos de proteção de objetos</a>.</p>
 	</section>
 </body>
 </html>
