@@ -563,6 +563,50 @@
 						Pessoa.prototype.nacionalidade = "britânico";
 					</code>
 				</pre>
+
+					<h4>Herança dos protótipos</h4>
+
+					<p>Todos os objetos JavaScript herdam as propriedades e métodos de um protótipo:</p>
+
+					<ul>
+						<li>Os objetos de <code>Date</code> herdam do <code>Date.prototype</code></li>
+						<li>Os objetos de <code>Array</code> herdam do <code>Array.prototype</code></li>
+						<li>Os objetos de <code>Person</code> herdam do <code>Person.prototype</code></li>
+					</ul>
+
+					<p>O <code>Object.prototype</code> está no topo da cadeira de herança de protótipos: os objetos de <code>Date</code>, <code>Array</code> e <code>Person</code> herdam do <code>Object.prototype</code>.</p>
+
+					<h4>Como adicionar propriedades e métodos aos objetos</h4>
+
+					<p>Usando a propriedade <code>prototype</code>, é possível adicionar novas propriedades (ou métodos) a construtores de objetos. Por exemplo:</p>
+
+					<pre>
+						<code>
+							// Nova propriedade
+							function Pessoa(nome, sobrenome, idade, corDosOlhos) {
+								this.primeiroNome = nome;
+								this.ultimoNome = sobrenome;
+								this.idade = idade;
+								this.corOlhos = corDosOlhos;
+							}
+							
+							Pessoa.prototype.nacionalidade = "britânico";
+
+							// Novo método
+							function Pessoa(nome, sobrenome, idade, corDosOlhos) {
+								this.primeiroNome = nome;
+								this.ultimoNome = sobrenome;
+								this.idade = idade;
+								this.corOlhos = corDosOlhos;
+							}
+							
+							Pessoa.prototype.nome = function() {
+								return this.primeiroNome + " " + this.ultimoNome;
+							};
+						</code>
+					</pre>
+
+					<p class="important-info">Altere <strong>apenas</strong> os seus próprios protótipos, nunca os objetos padrão do JavaScript.</p>
 	</section>
 
 	<section>
@@ -731,7 +775,7 @@
 						// Retornar "true" se o objeto estiver selado (bloqueado)
 						Object.isSealed(objeto)
 
-						// Impedir qualquer alteração em um objeto
+						// Impedir qualquer alteração em um objeto, transforma o objeto em somente leitura
 						Object.freeze(objeto)
 
 						// Retornar "true" se o objeto estiver congelado
@@ -741,7 +785,141 @@
 
 				<p>Lembre-se que o método mais comum para proteger objetos é usar a palavra-chave <code>const</code>, que não permite reatribuir um objeto, mas ainda permite adicionar e excluir propriedades, além de alterar os valores de uma propriedade.</p>
 
+				<p><strong>Observação</strong>: os métodos <code>Object.seal()</code> e <code>Object.freeze()</code> falham silenciosamente no modo não restrito e exibem um <code>TypeError</code> no modo restrito.</p>
+
 				<p>Saiba mais sobre <a href="https://www.w3schools.com/js/js_object_protection.asp" target="_blank" rel="noopener noreferrer">Métodos de proteção de objetos</a>.</p>
+	</section>
+
+	<section>
+			<h2>Acessadores de objetos (get/set)</h2>
+
+			<p>Os getters e setters nos permitem definir acessadores de objetos, ou seja, propriedades computadas. O exemplo abaixo usa a propriedade <code>lingua</code> para <code>get</code> (obter) o valor da propriedade <code>idioma</code>.</p>
+
+			<pre>
+				<code>
+					// Criar um objeto:
+					const pessoa = {
+						primeiroNome: "John",
+						ultimoNome: "Doe",
+						idioma: "pt_BR",
+						get lingua() {
+							return this.idioma;
+						}
+					};
+
+					// Exibir dados do objeto usando o getter:
+					document.getElementById("demo").innerHTML = pessoa.lingua;
+				</code>
+			</pre>
+
+			<p>O exemplo abaixo usa a propriedade <code>lingua</code> para <code>set</code> (definir) o valor da propriedade <code>idioma</code>.</p>
+
+			<pre>
+				<code>
+					// Usaremos o mesmo objeto do exemplo anterior:
+					const pessoa = {
+						primeiroNome: "John",
+						ultimoNome: "Doe",
+						idioma: "",
+						set lingua(lingua) {
+							this.idioma = lingua;
+						}
+					};
+
+					// Definir uma propriedade de objeto com o setter:
+					pessoa.lingua = "pt-BR";
+
+					// Exibir dados do objeto:
+					document.getElementById("demo").innerHTML = pessoa.idioma;
+				</code>
+			</pre>
+
+				<h3>Devemos usar uma função ou um getter?</h3>
+
+				<p>Qual é a diferença entre os dois exemplos a seguir?</p>
+
+				<pre>
+					<code>
+						// Exemplo 1:
+						const pessoa = {
+							primeiroNome: "John",
+							ultimoNome: "Doe",
+							nomeCompleto: funcao() {
+								return this.primeiroNome + " " + this.ultimoNome;
+							}
+						};
+						
+						// Exibir dados de um objeto com um método:
+						document.getElementById("demo").innerHTML = pessoa.nomeCompleto();
+
+						// Exemplo 2:
+						const pessoa = {
+							primeiroNome: "John",
+							ultimoNome: "Doe",
+							get nomeCompleto() {
+								return this.primeiroNome + " " + this.ultimoNome;
+							}
+						};
+						
+						// Exibir dados de um objeto com um getter:
+						document.getElementById("demo").innerHTML = pessoa.nomeCompleto;
+					</code>
+				</pre>
+
+				<p>O exemplo 1 acessa o nomeCompleto como uma função: pessoa.nomeCompleto(), o exemplo 2 usa uma propriedade: pessoa.nomeCompleto. O segundo exemplo tem uma sintaxe mais simples.</p>
+
+				<h3>Qualidade dos dados</h3>
+
+				<p>O JavaScript pode garantir melhor a qualidade dos dados ao usar getters e setters.</p>
+
+				<p>Vejamos um exemplo com a propriedade <code>lingua</code>, que retorna o valor da propriedade <code>idioma</code> em letras maiúsculas:</p>
+
+				<pre>
+					<code>
+						// Criar um objeto:
+						const pessoa = {
+							primeiroNome: "John",
+							ultimoNome: "Doe",
+							idioma: "pt-BR",
+							get lingua() {
+								return this.idioma.toUpperCase();
+							}
+						};
+
+						// Exibir dados do objeto com um getter:
+						document.getElementById("demo").innerHTML = pessoa.lingua;
+					</code>
+				</pre>
+
+				<p>E outro exemplo, em que a propriedade <code>lingua</code> armazena o valor da propriedade <code>idioma</code> em letras maiúsculas:</p>
+
+				<pre>
+					<code>
+						const pessoa = {
+							primeiroNome: "John",
+							ultimoNome: "Doe",
+							idioma: "",
+							set lingua(lingua) {
+								this.idioma = lingua.toUpperCase();
+							}
+						};
+						
+						// Definir a propriedade do objeto com um setter:
+						pessoa.lingua = "pt-BR";
+						
+						// Exibir os dados do objeto:
+						document.getElementById("demo").innerHTML = pessoa.idioma;
+					</code>
+				</pre>
+
+				<h3>Por que usar getters e setters?</h3>
+
+				<ul>
+					<li>A sintaxe é mais simples</li>
+					<li>A sintaxe é igual para propriedades e métodos</li>
+					<li>É possível garantir melhor a qualidade dos dados</li>
+					<li>É útil para ações "<em>nos bastidores</em>"</li>
+				</ul>
 	</section>
 </body>
 </html>
