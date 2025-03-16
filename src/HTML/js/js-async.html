@@ -10,6 +10,7 @@
     <meta ano="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assincronia</title>
 </head>
+
 <body>
 	<header>
 		<h1>Assincronia</h1>
@@ -160,7 +161,327 @@
 	<section>
 		<h2>Promessas</h2>
 
-		
+		<p>O "código em produção" pode demorar um pouco para executar, o "código em consumo" deve esperar por um resultado. Uma <strong>promessa</strong> é um objeto que vincula os códigos <em>em produção</em> e <em>em consumo</em>.</p>
+
+		<p>Uma promessa contém o código em produção e chamadas para o código em consumo:</p>
+
+		<pre>
+			<code>
+				let minhaPromessa = new Promise(function(minhaSolucao, minhaRejeicao) {
+				// "Código em produção" (pode demorar a executar)
+				
+					minhaSolucao(); // quando bem sucedido
+					minhaRejeicao();  // quando houver erro
+				});
+				
+				// "Código em consumo" (deve esperar que uma promessa seja resolvida)
+				minhaPromessa.then(
+					function(valor) { /* código se bem sucedido */ },
+					function(erro) { /* código se houver erro */ }
+				);
+			</code>
+		</pre>
+
+		<p>Quando o código em produção receber o resultado, deve chamar uma das funções de retorno:</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Quando isto ocorrer</th>
+					<th>Chamar</th>
+				</tr>
+				<tr>
+					<td>Sucesso</td>
+					<td>minhaSolucao (valor do resultado)</td>
+				</tr>
+				<tr>
+					<td>Erro</td>
+					<td>minhaRejeicao (objeto de erro)</td>
+				</tr>
+			</tbody>
+		</table>
+
+			<h3>Propriedades do objeto de promessa</h3>
+
+			<p>Um objeto Promise do JavaScript pode estar:</p>
+
+			<ul class="list-square">
+				<li>Pendente (pending)</li>
+				<li>Concluído (fulfilled)</li>
+				<li>Rejeitado (rejected)</li>
+			</ul>
+
+			<p>O objeto <code>Promise</code> aceita duas propriedades: <strong>state</strong> e <strong>result</strong>.</p>
+
+			<p>Quando um objeto Promise está "pendente" (em execução), o resultado é indefinido; quando é "concluído", o resultado é um valor; e quando é "rejeitado", é um objeto de erro.</p>
+
+			<table>
+				<tbody>
+					<tr>
+						<th>minhaPromessa.state</th>
+						<th>minhaPromessa.result</th>
+					</tr>
+					<tr>
+						<td>"pendente"</td>
+						<td>indefinido</td>
+					</tr>
+					<tr>
+						<td>"concluído"</td>
+						<td>um valor com o resultado</td>
+					</tr>
+					<tr>
+						<td>"rejeitado"</td>
+						<td>um objeto de erro</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Note que não é possível acessar as propriedades <strong>state</strong> e <strong>result</strong> de uma promessa. É preciso usar métodos para manipular promessas.</p>
+
+			<h3>Sintaxe de uma promessa</h3>
+
+			<pre>
+				<code>
+					minhaPromessa.then(
+					function(valor) { /* código se bem sucedido */ },
+					function(erro) { /* código se houver erro */ }
+					);
+				</code>
+			</pre>
+
+			<p><code>Promise.then()</code> recebe dois argumentos: um retorno de chamada para o sucesso e outro para a falha. Ambos são opcionais, então é possível incluir um retorno de chamada apenas para o sucesso, ou para a falha.</p>
+
+			<h3>Exemplos</h3>
+
+			<p>1. OK ou Erro</p>
+
+			<pre>
+				<code>
+					function funcaoExibidora(some) {
+						document.getElementById("demo").innerHTML = some;
+					}
+					
+					let minhaPromessa = new Promise(function(minhaSolucao, minhaRejeicao) {
+						let x = 0;
+					
+					// O código em produção (que pode demorar)
+					
+						if (x == 0) {
+							minhaSolucao("OK");
+						} else {
+							minhaRejeicao("Erro");
+						}
+					});
+					
+					minhaPromessa.then(
+						function(value) {funcaoExibidora(value);},
+						function(error) {funcaoExibidora(error);}
+					);
+				</code>
+			</pre>
+
+			<p>2. Exibir depois de 3 segundos</p>
+
+			<p>Com retorno de chamada</p>
+
+			<pre>
+				<code>
+					setTimeout(function() { minhaFuncao("Eu te amo!!!"); }, 3000);
+
+					function minhaFuncao(value) {
+						document.getElementById("demo").innerHTML = value;
+					}
+				</code>
+			</pre>
+
+			<p>Com promessa</p>
+
+			<pre>
+				<code>
+					let minhaPromessa = new Promise(function(minhaSolucao, minhaRejeicao) {
+						setTimeout(function() { minhaSolucao("Eu te amo!!!"); }, 3000);
+					});
+					
+					minhaPromessa.then(function(value) {
+						document.getElementById("demo").innerHTML = value;
+					});
+				</code>
+			</pre>
+
+			<p>3. Aguardar um arquivo</p>
+
+			<p>Com retorno de chamada</p>
+
+			<pre>
+				<code>
+					function obterArquivo(meuRetorno) {
+						let req = new XMLHttpRequest();
+						req.open('GET', "meucarro.html");
+						req.onload = function() {
+							if (req.status == 200) {
+								meuRetorno(req.textoResposta);
+							} else {
+								meuRetorno("Erro: " + req.status);
+							}
+						}
+						req.send();
+					}
+					
+					obterArquivo(funcaoExibidora);
+				</code>
+			</pre>
+
+			<p>Com promessa</p>
+
+			<pre>
+				<code>
+					let minhaPromessa = new Promise(function(minhaSolucao, minhaRejeicao) {
+						let req = new XMLHttpRequest();
+						req.open('GET', "meucarro.html");
+						req.onload = function() {
+							if (req.status == 200) {
+								minhaSolucao(req.response);
+							} else {
+								minhaRejeicao("Arquivo não encontrado");
+							}
+						};
+						req.send();
+					});
+					
+					minhaPromessa.then(
+						function(value) {myDisplayer(value);},
+						function(error) {myDisplayer(error);}
+					);
+				</code>
+			</pre>
+	</section>
+
+	<section>
+		<h2>Assincronia</h2>
+
+		<p>As palavras-chave <code>async</code> e <code>await</code> facilitam a escrita do código. <strong>async</strong> faz uma função retornar uma promessa, <strong>await</strong> faz uma função esperar uma promessa.</p>
+
+			<h3>Sintaxe de async</h3>
+
+			<p>Usar a palavra-chave <em>async</em> antes de uma função, faz ela retornar uma promessa:</p>
+
+			<pre>
+				<code>
+					async function minhaFuncao() {
+						return "Olá";
+					}
+
+					// É o mesmo que:
+
+					function minhaFuncao() {
+						return Promise.resolve("Olá");
+					}
+				</code>
+			</pre>
+
+			<p>Agora vamos usar a promessa:</p>
+
+			<pre>
+				<code>
+					async function minhaFuncao() {
+						return "Olá";
+					}
+					minhaFuncao().then(
+						function(value) {myDisplayer(value);},
+						function(error) {myDisplayer(error);}
+					);
+
+					// Ou, uma forma mais simples, já que não esperamos receber um erro:
+
+					async function minhaFuncao() {
+						return "Olá";
+					}
+					minhaFuncao().then(
+						function(value) {myDisplayer(value);}
+					);
+				</code>
+			</pre>
+
+			<h3>Sintaxe de await</h3>
+
+			<p>A palavra-chave <code>await</code> só pode ser usada dentro de uma função assíncrona, e faz com que a função pause a execução e espere por uma promessa com um resultado antes de continuar:</p>
+
+			<pre>
+				<code>
+					let value = await promise;
+				</code>
+			</pre>
+
+			<h3>Exemplo</h3>
+
+			<p>Vamos aprender como usar <code>async</code> e <code>await</code> devagar:</p>
+
+			<pre>
+				<code>
+					async function funcaoExibidora() {
+						let minhaPromessa = new Promise(function(resolve, reject) {
+							resolve("Eu te amo!!");
+						});
+						document.getElementById("demo").innerHTML = await minhaPromessa;
+					}
+					
+					funcaoExibidora();
+				</code>
+			</pre>
+
+			<p>Os dois argumentos (<code>resolve</code> e <code>reject</code>) são pré-definidos pelo JavaScript. Não os criaremos, mas chamaremos um deles quando a função executadora estiver pronta. E, na maioria das vezes, não precisaremos de uma função <code>reject</code>. Então agora, vejamos como fica sem o <code>reject</code>:</p>
+
+			<pre>
+				<code>
+					async function funcaoExibidora() {
+						let minhaPromessa = new Promise(function(resolve) {
+							resolve("Eu te amo!!");
+						});
+						document.getElementById("demo").innerHTML = await minhaPromessa;
+					}
+					
+					funcaoExibidora();
+				</code>
+			</pre>
+
+			<p>E vamos adicionar um período de espera:</p>
+
+			<pre>
+				<code>
+					async function funcaoExibidora() {
+						let minhaPromessa = new Promise(function(resolve) {
+							setTimeout(function() {resolve("Eu te amo!!");}, 3000);
+						});
+						document.getElementById("demo").innerHTML = await minhaPromessa;
+					}
+					
+					funcaoExibidora();
+				</code>
+			</pre>
+
+			<p>Agora vamos solicitar um arquivo:</p>
+
+			<pre>
+				<code>
+					async function obterArquivo() {
+						let minhaPromessa = new Promise(function(resolve) {
+							let req = new XMLHttpRequest();
+							req.open('GET', "meucarro.html");
+							req.onload = function() {
+								if (req.status == 200) {
+									resolve(req.response);
+								} else {
+									resolve("Arquivo não encontrado");
+								}
+							};
+							req.send();
+						});
+						document.getElementById("demo").innerHTML = await minhaPromessa;
+					}
+					
+					obterArquivo();
+				</code>
+			</pre>
 	</section>
 </body>
 </html>
