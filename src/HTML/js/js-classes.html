@@ -53,10 +53,10 @@
 
 			<pre>
 				<code>
-					const myCar1 = new Car("Ford", 2014);
-					const myCar2 = new Car("Audi", 2019);
+					const meuCarro1 = new Carro("Ford", 2014);
+					const meuCarro2 = new Carro("Audi", 2019);
 
-					document.getElementById("demo").innerHTML = myCar1.nome + ", " + myCar1.ano + "<br>" + myCar2.nome + ", " + myCar2.ano;
+					document.getElementById("demo").innerHTML = meuCarro1.nome + ", " + meuCarro1.ano + "<br>" + meuCarro2.nome + ", " + meuCarro2.ano;
 					// Exibe "Ford, 2014
 									  Audi, 2019"
 				</code>
@@ -132,6 +132,170 @@
 					"Meu carro tem " + meuCarro.idade(ano) + " anos."; // Exibe "Meu carro tem 10 anos."
 				</code>
 			</pre>
+
+			<p class="important-info">A sintaxe de classes deve ser escrita no <strong>modo restrito</strong>. Você receberá um erro se não declarar uma variável antes de usá-la:</p>
+
+			<pre>
+				<code>
+					class Carro {
+						constructor(nome, ano) {
+							this.nome = nome;
+							this.ano = ano;
+						}
+						age() {
+							// data = new Date();  // Isso não funciona
+							const data = new Date(); // Isso funciona
+							return date.getFullYear() - this.ano;
+						}
+					}
+				</code>
+			</pre>
+	</section>
+
+	<section>
+		<h2>Herança de classes</h2>
+
+		<p>Para criar uma herança de classe, use a palavra-chave <code>extends</code>. Use a palavra-chave <code>super</code> para chamar o construtor da classe pai. Uma classe criada com herança herda todos os métodos de outra classe:</p>
+
+		<pre>
+			<code>
+				class Carro {
+					constructor(marca) {
+						this.nomecarro = marca;
+					}
+					present() {
+						return 'Eu tenho um ' + this.nomecarro;
+					}
+				}
+				
+				class Modelo extends Carro {
+					constructor(marca, mod) {
+						super(marca);
+						this.modelo = mod;
+					}
+					show() {
+						return this.present() + ', é da marca ' + this.modelo;
+					}
+				}
+				
+				let meuCarro = new Modelo("Ford", "Mustang");
+				document.getElementById("demo").innerHTML = meuCarro.show(); // Exibe "Eu tenho um Ford, é da marca Mustang"
+			</code>
+		</pre>
+
+		<p>A herança é útil em casos em que precisamos reutilizar o código, como os métodos e propriedades de uma classe existente, ao criar uma nova classe.</p>
+	</section>
+
+	<section>
+		<h2>Obtentores e definidores</h2>
+
+		<p>As classes também nos permitem usar <em>obtentores</em> (getters) e <em>definidores</em> (setters).</p>
+
+		<p>Pode ser bom usá-los para as propriedades, especialmente se quisermos fazer algo especial com o valor antes de retorná-los ou defini-los. Para adicionar obtentores ou definidores a uma classe, use as palavras-chave <code>get</code> e <code>set</code>, respectivamente.</p>
+
+		<pre>
+			<code>
+				class Carro {
+					constructor(marca) {
+						this.nomecarro = marca;
+					}
+					get cnom() {
+						return this.nomecarro;
+					}
+					set cnom(x) {
+						this.nomecarro = x;
+					}
+				}
+				
+				const meuCarro = new Carro("Ford");
+				
+				document.getElementById("demo").innerHTML = meuCarro.cnom; // Exibe "Ford"
+			</code>
+		</pre>
+
+		<p class="important-info">Mesmo se o obtentor for um método, não use parênteses quando quiser obter o valor da propriedade.</p>
+
+		<p>O nome do método obtentor/definidor não pode ser igual ao nome da propriedade, então muitos programadores usam um sublinhado (<kbd>_</kbd>) antes do nome da propriedade para diferenciá-la do nome do obtentor/definidor. Usando o mesmo exemplo acima, ficaríamos com:</p>
+
+		<pre>
+			<code>
+				...
+				constructor(marca) {
+					this._nomecarro = marca;
+				}
+				get nomecarro() {
+					return this._nomecarro;
+				}
+				set nomecarro(x) {
+					this._nomecarro = x;
+				}
+				...
+			</code>
+		</pre>
+
+		<p>Para usar um definidor, use a mesma sintaxe que se usa ao definir um valor de propriedade, mas sem os parênteses. Usando o mesmo exemplo acima, ficaríamos com:</p>
+
+		<pre>
+			<code>
+				...
+				const meuCarro = new Carro("Ford");
+				meuCarro.nomecarro = "Volvo";
+				document.getElementById("demo").innerHTML = meuCarro.nomecarro; // Exibe "Volvo"
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Içamento</h2>
+
+		<p>Diferente de funções e de outras declarações no JavaScript, as declarações de classes não são içadas. Quer dizer, precisamos declarar uma classe antes de poder usá-la:</p>
+
+		<pre>
+			<code>
+				// Aqui ainda não podemos usar a classe.
+				// meuCarro = new Carro("Ford") exibirá um erro.
+
+				class Carro {
+					constructor(marca) {
+						this.nomecarro = marca;
+					}
+				}
+
+				// Agora podemos usar a classe:
+				const meuCarro = new Carro("Ford")
+			</code>
+		</pre>
+	</section>
+	
+	<section>
+		<h2>Métodos estáticos</h2>
+
+		<p>Métodos de classe estáticos são definidos na própria classe. Não é possível chamar um método estático em um objeto, apenas em uma classe de objeto. Vejamos um exemplo:</p>
+
+		<pre>
+			<code>
+				class Carro {
+					constructor(nome) {
+						this.nome = nome;
+					}
+					static hello() {
+						return "Hello!!";
+					}
+				}
+				
+				const meuCarro = new Carro("Ford");
+				
+				// Podemos chamar 'hello()' na classe Carro:
+				document.getElementById("demo").innerHTML = Carro.hello();
+				
+				// Mas NÃO em um objeto Carro:
+				// document.getElementById("demo").innerHTML = meuCarro.hello();
+				// Isso exibe um erro.
+
+				// Se quiser usar o objeto meuCarro dentro do método <code>static</code>, envie-o como um parâmetro:
+				document.getElementById("demo").innerHTML = Carro.hello(meuCarro);
+			</code>
+		</pre>
 	</section>
 </body>
 </html>

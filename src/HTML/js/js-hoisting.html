@@ -18,7 +18,7 @@
 	<section>
 		<p>O comportamento padrão do JavaScript é mover as declarações para o topo do escopo atual, isso se chama <em>hoisting</em> (ou içamento).</p>
 
-		<p>Podemos declarar uma variável após usá-la no código; isto é içamento. Os dois exemplos abaixo, um usando içamento e o outro não, têm o mesmo resultado.</p>
+		<p>Podemos declarar uma variável após usá-la no código: isto é içamento. Os dois exemplos abaixo, um usando içamento e o outro não, têm o mesmo resultado.</p>
 
 		<pre>
 			<code>
@@ -41,7 +41,7 @@
 	</section>
 
 	<section>
-		<h2>As declarações var e let</h2>
+		<h2>As declarações var, let e const</h2>
 
 		<p>Variáveis definidas com <code>let</code> e <code>const</code> são içadas para o topo do bloco de código, mas não são <em>inicializadas</em>, isto é, o bloco de código sabe da existência da variável, mas não pode usá-la até que seja declarada.</p>
 
@@ -123,6 +123,24 @@
 			<li>static</li>
 			<li>yield</li>
 		</ul>
+	</section>
+
+	<section>
+		<h2>Içamento de funções</h2>
+
+		<p>O içamento aplica-se também a declarações de funções; por causa disso, as funções podem ser chamadas antes de serem declaradas.</p>
+
+		<pre>
+			<code>
+				minhaFuncao(5);
+
+				function minhaFuncao(y) {
+					return y * y;
+				}
+			</code>
+		</pre>
+
+		<p>Note, porém, que funções definidas com uma <strong>expressão</strong> não são içadas.</p>
 	</section>
 </body>
 </html>

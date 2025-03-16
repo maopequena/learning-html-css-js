@@ -20,6 +20,30 @@
 
 		<p>As funções servem, principalmente, para podermos reutilizar o código em diferentes lugares do projeto. Diferentes argumentos têm resultados diferentes.</p>
 
+		<p>Apesar de o operador <code>typeof</code> retornar "function" para funções, o JavaScript considera uma função como um objeto, com propriedades e métodos. A propriedade <code>argumento.length</code> retorna o número de parâmetros recebidos ao chamar a função:</p>
+
+		<pre>
+			<code>
+				function minhaFuncao(a, b) {
+					return arguments.length;
+				}
+			</code>
+		</pre>
+
+		<p>O método <code>toString()</code> retorna a função como uma cadeia de caracteres:</p>
+
+		<pre>
+			<code>
+				function minhaFuncao(a, b) {
+					return a * b;
+				}
+				
+				let text = minhaFuncao.toString();
+			</code>
+		</pre>
+
+		<p>Uma função definida como propriedade de um objeto é o <em>método</em> do objeto. Uma função que cria novos objetos é um <em>construtor</em> de objetos.</p>
+
 			<h2>Sintaxe</h2>
 
 			<p>Para definir uma função, use a palavra-chave <code>function</code>, seguida de um <strong>nome</strong> (definido pelo desenvolvedor, use algo fácil de lembrar e que se relacione à tarefa que a função executará), de parênteses (<kbd>( )</kbd>) e de chaves (<kbd>{ }</kbd>). Os nomes das funções podem conter letras, dígitos, sublinhados e cifrões (mesma regra das variáveis). Os parênteses podem conter nomes de parâmetros, separados por vírgulas. O código a ser executado pela função deve ser colocado entre as chaves:</p>
@@ -31,16 +55,214 @@
 					}
 				</code>
 			</pre>
-			<p><strong>Argumentos</strong> são os valores recebidos pela função ao chamá-la, e dentro da função os argumentos (parâmetros) comportam-se como variáveis. Lembre-se:</p>
 
-			<picture>
-				<img src="../../img/parameters-vs-arguments.png" alt="Meme que ajuda a lembrar a diferença de colocação entre parâmetros e argumentos" width="300" style="display: block; margin-left: 5px;">
-				<figcaption>Meme que ajuda a lembrar a diferença de posição entre parâmetros e argumentos: os argumentos devem ficar FORA da função</figcaption>
-			</picture>
+			<p>Lembre-se de sempre usar ponto-e-vírgula (<kbd>;</kbd>) para separar declarações executáveis no JavaScript. Como a declaração de uma função não é executável, não é comum usar ponto-e-vírgula após a chave final de uma função.</p>
 
-				<h3>O operador ()</h3>
+				<h3>Parâmetros e argumentos</h3>
 
-				<p>Este operador chama a função, mas lembre-se que acessar uma função com parâmetros incorretos pode retornar uma resposta incorreta.</p>
+				<p><strong>Argumentos</strong> são os valores recebidos pela função ao chamá-la, e dentro da função os argumentos (chamados <em>parâmetros</em>) comportam-se como variáveis. Lembre-se:</p>
+
+				<picture>
+					<img src="../../img/parameters-vs-arguments.png" alt="Meme que ajuda a lembrar a diferença entre parâmetros e argumentos" width="300" style="display: block; margin-left: 5px;">
+					<figcaption>Meme que ajuda a lembrar a diferença de posição entre parâmetros e argumentos: os argumentos devem ficar FORA da função</figcaption>
+				</picture>
+
+				<p>Uma função do JavaScript não realiza qualquer verificação dos valores dos parâmetros (argumentos).</p>
+
+				<p>Os <strong>parâmetros</strong> são os <strong>nomes</strong> listados na definição da função. Os <strong>argumentos</strong> são os <strong>valores</strong> reais passados para (e recebidos pela) a função.</p>
+
+					<h4>O operador ()</h4>
+
+					<p>Este operador chama a função, mas lembre-se que acessar uma função com parâmetros incorretos pode retornar uma resposta incorreta.</p>
+
+					<h4>call()</h4>
+
+					<p>O método predefinido <code>call()</code> possibilita escrever um método que pode ser usado em diferentes objetos.</p>
+
+					<p>Ele pode ser usado para chamar um método com um objeto como argumento (parâmetro). Com este método, um objeto <strong>pode</strong> usar um método que pertence a outro objeto.</p>
+
+					<pre>
+						<code>
+							const pessoa = {
+								nomeCompleto: function() {
+									return this.primeiroNome + " " + this.sobrenome;
+								}
+							}
+							const pessoa1 = {
+								primeiroNome:"John",
+								sobrenome: "Doe"
+							}
+							const pessoa2 = {
+								primeiroNome:"Mary",
+								sobrenome: "Doe"
+							}
+							
+							// Isso retorna "John Doe":
+							pessoa.nomeCompleto.call(person1);
+
+							// Isso retorna "Mary Doe"
+							person.nomeCompleto.call(person2);
+						</code>
+					</pre>
+
+					<p>Como vimos acima, este método aceita argumentos.</p>
+
+					<pre>
+						<code>
+							const pessoa = {
+								nomeCompleto: function(cidade, pais) {
+									return this.primeiroNome + " " + this.sobrenome + "," + cidade + "," + pais;
+								}
+							}
+							
+							const pessoa1 = {
+								primeiroNome:"John",
+								sobrenome: "Doe"
+							}
+							
+							pessoa.nomeCompleto.call(pessoa1, "Oslo", "Noruega");
+						</code>
+					</pre>
+
+					<h4>apply()</h4>
+
+					<p>Assim como <code>call()</code>, este método possibilita escrever um método que pode ser usado em diferentes objetos.</p>
+
+					<p>A diferença é:</p>
+
+					<ul class="list-square">
+						<li><code>call()</code> aceita argumentos <strong>separadamente</strong>.</li>
+						<li><code>apply()</code> aceita argumentos como uma <strong>matriz</strong>.</li>
+					</ul>
+
+					<pre>
+						<code>
+							const pessoa = {
+								nomeCompleto: function(cidade, pais) {
+									return this.primeiroNome + " " + this.sobrenome + "," + cidade + "," + pais;
+								}
+							}
+							
+							const pessoa1 = {
+								primeiroNome:"John",
+								sobrenome: "Doe"
+							}
+							
+							pessoa.nomeCompleto.apply(pessoa1, ["Oslo", "Noruega"]);
+						</code>
+					</pre>
+
+					<h4>bind()</h4>
+
+					<p>Este método possibilita <strong>emprestar</strong> um método de outro objeto.</p>
+
+					<pre>
+						<code>
+							const pessoa = {
+								primeiroNome:"John",
+								sobrenome: "Doe",
+								nomeCompleto: function () {
+									return this.primeiroNome + " " + this.sobrenome;
+								}
+							}
+							
+							const membro = {
+								primeiroNome:"Hege",
+								sobrenome: "Nilsen",
+							}
+							
+							let nomeCompleto = pessoa.fullName.bind(membro);
+
+							// Retorna "Hege Nilsen"
+						</code>
+					</pre>
+
+					<h4>Regras de parâmetros</h4>
+
+					<p>As definições de função no JavaScript não especificam tipos de dados para parâmetros, não verificam o tipo dos argumentos informados e não verificam a quantidade de argumentos recebidos.</p>
+
+					<p>Ao chamar uma função com argumentos ausentes (menos do que o declarado<sup>*</sup>), os valores ausentes são definidos com <code>undefined</code>. Algumas vezes isso é aceito, mas é melhor atribuir um valor padrão para o parâmetro:</p>
+
+					<pre>
+						<code>
+							function minhaFuncao(x, y) {
+								if (y === undefined) { // Se y for indefinido
+									y = 2;							 // Defina y como 2
+								}
+							}
+
+							OU
+
+							function minhaFuncao(x, y = 10) { // valor padrão diretamente no parâmetro
+								return x + y;
+							}
+							minhaFuncao(5);
+						</code>
+					</pre>
+
+					<p><sup>*</sup>Se a quantidade de argumentos for <strong>maior</strong> que a quantidade de parâmetros, é possível usar o objeto <a href="arguments-object">arguments</a>.</p>
+
+					<h4>O parâmetro rest</h4>
+
+					<p>O parâmetro <em>rest</em> (<kbd>...</kbd>) permite que uma função trate um número indefinido de argumentos como uma matriz:</p>
+
+					<pre>
+						<code>
+							function soma(...args) {
+								let soma = 0;
+								for (let arg of args) soma += arg;
+								return soma;
+							}
+							
+							let x = soma(4, 9, 16, 25, 29, 100, 66, 77); // 326
+						</code>
+					</pre>
+
+					<h4 id="arguments-object">O objeto arguments</h4>
+
+					<p>As funções no JavaScript têm um objeto incorporado chamado <strong>arguments</strong>, que contém uma matriz dos argumentos usados ao chamar a função. Dessa forma é possível usar a função para encontrar, por exemplo, o valor mais alto em uma lista de números:</p>
+
+					<pre>
+						<code>
+							x = encontrarMax(1, 123, 500, 115, 44, 88);
+
+							function encontrarMax() {
+								let max = -Infinity;
+								for (let i = 0; i &lt; arguments.length; i++) {
+									if (arguments[i] > max) {
+										max = arguments[i];
+									}
+								}
+								return max;
+							}
+						</code>
+					</pre>
+
+					<p>Ou criar uma função para somar todos os valores inseridos:</p>
+
+					<pre>
+						<code>
+							x = somarTudo(1, 123, 500, 115, 44, 88);
+
+							function somarTudo() {
+								let sum = 0;
+								for (let i = 0; i &lt; arguments.length; i++) {
+									sum += arguments[i];
+								}
+								return sum;
+							}
+						</code>
+					</pre>
+
+					<h4>Argumentos são passados pelo valor</h4>
+
+					<p>Ao chamar uma função, os parâmetros se tornam os argumentos da função, e eles são passados pelo seu valor, isto é, a função só recebe os valores, não os locais dos argumentos.</p>
+
+					<p>Se uma função alterar o valor de um argumento, isso não altera o valor original do parâmetro. Mudanças feitas aos argumentos não ficam visíveis (não se refletem) fora da função.</p>
+
+					<h4>Objetos são passados como referências</h4>
+
+					<p>No JavaScript, as referências dos objetos são os valores. Por causa disso, os objetos se comportam como se fossem passados pela referência, isto é, se a função alterar a propriedade de um objeto, isso altera o valor original. Mudanças feitas a propriedades de objetos ficam visíveis (se refletem) foram da função.</p>
 	</section>
 
 	<section>
@@ -50,9 +272,90 @@
 
 			<ul class="list-square">
 				<li>Quando um evento ocorre (p.ex. um clique no botão do mouse).</li>
-				<li>Quando a função é chamada pelo código</li>
-				<li>Automaticamente (chamada em si mesma)</li>
+				<li>Quando a função é chamada pelo código</a></li>
+				<li>Automaticamente (chamada em si mesma)</a></li>
 			</ul>
+
+			<p>O código em uma função não é executado ao <strong>definir</strong> a função. Em vez disso, é executado ao <strong>chamar</strong> a função.</p>
+			
+			<p>É comum usar o termo "<strong>invocar uma função</strong>" em vez de "<strong>chamar</strong>". Também se usa "iniciar" ou "executar". Porém, aqui, usaremos <strong>chamar</strong>, porque as funções podem ser chamadas sem serem "invocadas" (que é um termo um tanto pejorativo no português brasileiro).</p>
+
+				<h3>Chamar automaticamente</h3>
+
+				<p>Esta é a forma mais comum de chamar uma função no JavaScript, porém não é uma prática recomendada. Variáveis, métodos e funções globais podem facilmente criar conflitos de nome e <em>bugs</em> no objeto global.</p>
+
+				<pre>
+					<code>
+						function minhaFuncao(a, b) {
+							return a * b;
+						}
+						minhaFuncao(10, 2);           // Retorna 20
+					</code>
+				</pre>
+
+				<p>A função acima não pertence a nenhum objeto, mas, no JavaScript, sempre há um objeto padrão global.</p>
+
+				<p>No HTML, o objeto padrão global é a página HTML em si, então a função acima "pertence" à página HTML.</p>
+					
+				<p>Em um navegador, o objeto da página é a janela do navegador. Então a função acima automaticamente se torna uma função da janela.</p>
+
+				<p class="important-info"><code>minhaFuncao</code> e <code>window.minhaFuncao</code> são a mesma coisa neste caso.</p>
+
+				<h3>Chamar como um método</h3>
+
+				<p>É possível definir funções como métodos de objetos. O exemplo a seguir cria um objeto (<code>meuObjeto</code>) com duas propriedades (<strong>primeiroNome</strong> e <strong>sobrenome</strong>) e um método (<strong>nomeCompleto</strong>):</p>
+
+				<pre>
+					<code>
+						const meuObjeto = {
+							primeiroNome:"John",
+							sobrenome: "Doe",
+							nomeCompleto: function () {
+								return this.primeiroNome + " " + this.sobrenome;
+							}
+						}
+						meuObjeto.nomeCompleto();         // Retorna "John Doe"
+					</code>
+				</pre>
+
+				<p>O método <strong>nomeCompleto</strong> é uma função, que pertence ao objeto <strong>meuObjeto</strong>. <code>this</code> é o objeto "dono" do código JavaScript, neste caso, o valor de <code>this</code> é neuObjeto. Podemos testar isso alterando o método <code>fullName</code> para retornar o valor de <code>this</code>:</p>
+
+				<pre>
+					<code>
+						const meuObjeto = {
+							primeiroNome:"John",
+							sobrenome: "Doe",
+							nomeCompleto: function () {
+								return this;
+							}
+						}
+						
+						// Retorna [object Object] (o objeto proprietário)
+						meuObjeto.nomeCompleto();
+					</code>
+				</pre>
+
+				<h3>Chamar com um construtor</h3>
+
+				<p>Se chamar uma função com a palavra-chave <code>new</code> na frente, essa chamada se torna um construtor. Parece que criamos uma função, mas como as funções no JavaScript são objeto, na verdade estamos criando um novo objeto:</p>
+
+				<pre>
+					<code>
+						// Um construtor de função:
+						function minhaFuncao(arg1, arg2) {
+							this.primeiroNome = arg1;
+							this.sobrenome  = arg2;
+						}
+
+						// Isso cria um novo objeto
+						const meuObjeto = new minhaFuncao("John", "Doe");
+
+						// Isso retorna "John"
+						meuObjeto.primeiroNome;
+					</code>
+				</pre>
+
+				<p>O novo objeto herda as propriedades e métodos de seu construtor.</p>
 	</section>
 
 	<section>
@@ -65,9 +368,9 @@
 			<pre>
 				<code>
 					// A função é chamada, o valor de retorno será exibido em x
-					let x = myFunction(4, 3);
+					let x = minhaFuncao(4, 3);
 					
-					function myFunction(a, b) {
+					function minhaFuncao(a, b) {
 					// A função retorna o produto de a e b
 						return a * b;
 					}
@@ -94,6 +397,8 @@
 				<h3>Variáveis locais</h3>
 
 				<p>As variáveis declaradas em uma função JavaScript se tornam <strong>locais</strong> e só podem ser acessadas dentro da função. Por causa disso, é possível usar variáveis com o mesmo nome em diferentes funções. As variáveis locais são criadas ao iniciar uma função e excluídas após sua conclusão.</p>
+
+				
 	</section>
 
 	<section>
@@ -135,11 +440,245 @@
 				</code>
 			</pre>
 
+			<p>Porém, recomenda-se sempre usar os parênteses, mesmo quando desnecessários.</p>
+
+			<p>Funções de seta não são içadas, e devem ser definidas <em>antes</em> do uso.</p>
+
+			<p>É mais seguro usar <code>const</code> do que <code>var</code>, porque uma expressão de função é sempre um valor constante.</p>
+
 				<h3>E a palavra-chave this?</h3>
 
 				<p>Em funções de seta, o comportamento da palavra-chave <code>this</code> também é diferente. Nelas, essa palavra-chave não é vinculada ao objeto que chamou a função, mas sim ao objeto que <em>definiu</em> a função.</p>
 
 				<p>Para entender melhor a diferença, veja os exemplos em <a href="https://www.w3schools.com/js/js_arrow_function.asp" target="_blank" rel="noopener noreferrer">JavaScript Arrow Functions</a>.</p>
+	</section>
+
+	<section>
+			<h2>Expressões de funções</h2>
+
+			<p>Uma função no JavaScript também pode ser definida com uma expressão. Uma expressão de função pode ser armazenada em uma variável, o que nos permite usar a variável como uma função:</p>
+
+			<pre>
+				<code>
+					// Armazenar a expressão de uma função em uma variável
+					const x = function (a, b) {return a * b};
+
+					// Usar a variável como uma função
+					let z = x(4, 3);
+				</code>
+			</pre>
+
+			<p>Funções armazenadas em variáveis não precisam ter nomes, elas são anônimas, porque são chamadas pela variável.</p>
+
+				<h3>Funções automáticas</h3>
+
+				<p>Expressões de função também podem chamar a si mesmas, elas iniciam automaticamente, sem serem chamadas. Isso ocorre se a expressão for seguida de <kbd>()</kbd>. Porém, não é possível chamar automaticamente uma declaração de função, para isso é preciso adicionar parênteses em volta da função para indicar que é uma expressão de função:</p>
+
+				<pre>
+					<code>
+						(function () {
+							let x = "Olá!!";  // Eu chamo a mim mesma!
+						})();
+					</code>
+				</pre>
+
+				<p>Esse tipo de expressão também é anônimo.</p>
+	</section>
+
+	<section>
+			<h2>Podemos usar funções como valores</h2>
+
+			<p>Podemos usar funções como valores ou em expressões:</p>
+
+			<pre>
+				<code>
+					function minhaFuncao1(a, b) {
+						return a * b;
+					}
+					
+					let x = minhaFuncao1(4, 3);
+
+					function minhaFuncao2(a, b) {
+						return a * b;
+					}
+					
+					let x = minhaFuncao2(4, 3) * 2;
+				</code>
+			</pre>
+	</section>
+
+	<section>
+			<h2>Closures</h2>
+
+			<p>As variáveis no JavaScript podem pertencer ao <strong>escopo local</strong> ou ao <strong>escopo global</strong>. As variáveis globais podem se tornar locais (isto é, privadas) com <em><strong>closures</strong></em>.</p>
+
+				<h3>Variáveis locais</h3>
+
+				<p>Uma variável local é "privada" quando está dentro de uma função. A função pode acessar todas as variáveis do escopo local. Por exemplo:</p>
+
+				<pre>
+					<code>
+						function myFunction() { // <strong>a</strong> é uma variável local definida dentro da função
+							let a = 4;
+							return a * a;
+						}
+					</code>
+				</pre>
+
+				<h3>Variáveis globais</h3>
+
+				<p>Uma variável global é "pública", e é definida fora de uma função. A função pode acessar todas as variáveis do escopo global. Por exemplo:</p>
+
+				<pre>
+					<code>
+						let a = 4; // <strong>a</strong> é uma variável global definida fora da função
+						function myFunction() {
+							return a * a;
+						}
+					</code>
+				</pre>
+
+				<p>Em uma página da Web, as variáveis globais pertencem à página e podem ser usadas (ou alteradas) por todos os scripts na página.</p>
+					
+				<p>Uma variável local só pode ser usada dentro da função em que foi definida. Ela é privada e fica oculta de outras funções e scripts.</p>
+					
+				<p>Variáveis globais e locais com o mesmo nome são completamente diferentes. Se você alterar uma, não altera a outra.</p>
+
+				<p class="important-info">Variáveis não declaradas (criadas sem as palavras-chave <code>var</code>, <code>let</code> ou <code>const</code>), sempre são globais, mesmo se forem criadas dentro de uma função.</p>
+
+				<pre>
+					<code>
+						function myFunction() { // A variável <strong>a</strong> é global porque <strong>não foi declarada</strong>
+							a = 4;
+						}
+					</code>
+				</pre>
+
+				<h3>Ciclo de vida de variáveis</h3>
+
+				<p>As variáveis globais permanecem ativas até que a página seja descartada, como ao navegar para outra página ou ao fechar a janela. As variáveis locais têm uma vida mais curta: são criadas ao chamar a função e excluídas ao finalizar a função.</p>
+
+			<h2>Funções aninhadas</h2>
+
+			<p>Todas as funções têm acesso ao escopo global. Na verdade, em JavaScript, todas as funções têm acesso ao escopo "acima" delas.</p>
+
+			<p>O JavaScript oferece suporte a funções aninhadas, que têm acesso ao escopo "acima" delas. Por exemplo, a função <code>plus()</code> abaixo tem acesso à variável <code>counter</code> da função pai:</p>
+
+			<pre>
+				<code>
+					function add() {
+						let counter = 0;
+						function plus() {counter += 1;}
+						plus();   
+						return counter;
+					}
+				</code>
+			</pre>
+
+			<h2>O dilema do contador</h2>
+
+			<p>Suponhamos que queremos usar uma variável para contar algo, e esse contador deve estar disponível para todas as funções. Poderíamos usaruma variável global e uma função para aumentar o contador:</p>
+
+			<pre>
+				<code>
+					// Iniciar contador
+					let contador = 0;
+
+					// Função para incrementar o contador
+					function somar() {
+						contador += 1;
+					}
+
+					// Chamar somar() 3 vezes
+					somar();
+					somar();
+					somar();
+
+					// O contador agora deve valer "3"
+				</code>
+			</pre>
+
+			<p>Porém, há um problema com a solução acima: qualquer código na página pode alterar o contador sem precisar chamar <code>somar()</code>. O contador deve, então, ser local à função <code>somar()</code>, para impedir que outros códigos o alterem:</p>
+
+			<pre>
+				<code>
+					// Iniciar contador
+					let contador = 0;
+
+					// Função para incrementar o contador
+					function somar() {
+						let contador = 0;
+						contador += 1;
+					}
+
+					// Chamar somar() 3 vezes
+					somar();
+					somar();
+					somar();
+
+					// O contador deveria ser "3", mas é "0"
+				</code>
+			</pre>
+
+			<p>Isso não funciona porque exibimos o contador global em vez de um local. Podemos remover o contador global e acessar o local fazendo com que a função o retorne:</p>
+
+			<pre>
+				<code>
+					// Função para incrementar o contador
+					function somar() {
+						let contador = 0;
+						contador += 1;
+						return contador;
+					}
+
+					let x= 0;
+					// Chamar somar() 3 vezes
+					x = somar();
+					x = somar();
+					x = somar();
+
+					// O contador deveria ser "3", mas é "1".
+				</code>
+			</pre>
+
+			<p>Não funcionou porque redefinimos o contador local sempre que chamamos a função.</p>
+
+			<p>Uma função aninhada talvez resolvesse o dilema do contador, se pudéssemos chegar à função <code>plus()</code> a partir do escopo global. E também precisamos descobrir como executar <code>counter = 0</code> apenas uma vez.</p>
+
+			<p>A solução é uma <strong>closure</strong>!</p>
+
+			<pre>
+				<code>
+					function meuContador() {
+						let contador = 0;
+						return function() {
+							contador++;
+							return contador;
+						};
+					}
+					const somar = meuContador();
+					somar();
+					somar();
+					somar();
+					
+					// Agora, o contador é 3
+				</code>
+			</pre>
+
+				<h5>Explicação</h5>
+
+				<p>A variável <code>somar</code> é atribuída ao valor de retorno de uma função. Essa função é executada apenas uma vez, define o contador como zero (0) e retorna uma expressão de função. Dessa forma, <code>somar</code> se torna uma função, que pode acessar o contador em seu escopo pai.</p>
+				
+				<p><strong><em>Isso é uma closure.</em></strong> Ela possibilita que uma função tenha variáveis "privadas". O contador está protegido pelo escopo da função <code>meuContador</code>, e só pode ser alterado usando a função <code>somar</code>.</p>
+
+				<p>Closures podem ser usadas para:</p>
+
+				<ul class="list-square">
+					<li>Criar variáveis privadas</li>
+					<li>Preservar o estado entre chamadas de uma função</li>
+					<li>Simular o escopo de bloco entes do uso de <code>let</code> e <code>const</code></li>
+					<li>Implementar determinados padrões de design, como "currying" e "memoization"</li>
+				</ul>
 	</section>
 </body>
 </html>

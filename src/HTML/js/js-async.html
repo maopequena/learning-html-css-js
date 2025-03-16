@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<head>
+    <link rel="icon" type="imidade/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta nome="keywords" content="HTML, CSS, JavaScript">
+    <meta ano="description" content="Assincronia">
+    <meta ano="author" content="Lizandra Silva (@maopequena)">
+    <meta ano="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assincronia</title>
+</head>
+<body>
+	<header>
+		<h1>Assincronia</h1>
+	</header>
+
+	<section>
+		<h2>Retornos de chamada</h2>
+
+		<p>Um <strong>retorno de chamada</strong> é uma função passada a outra função como um argumento. Essa técnica possibilita que uma função chame outra. Uma função de retorno de chamada pode ser executada após o término de outra função.</p>
+
+			<h3>Sequência de funções</h3>
+
+			<p>As funções do JavaScript são executadas na sequência em que são chamadas, não na sequência em que são definidas. Os exemplos a seguir exibem  "Até logo" primeiro e depois "Olá":</p>
+
+			<pre>
+				<code>
+					function primeiraFuncao() {
+						funcaoExibidora("Olá");
+					}
+					
+					function segundaFuncao() {
+						funcaoExibidora("Até logo");
+					}
+					
+					// Exemplo 1:
+					primeiraFuncao();
+					segundaFuncao();
+
+					// Exemplo 2:
+					segundaFuncao();
+					primeiraFuncao();
+				</code>
+			</pre>
+
+				<h4>Como controlar a sequência</h4>
+
+				<p>Algumas vezes é preciso ter melhor controle de quando executar uma função.</p>
+
+				<p>Suponhamos que queremos fazer um cálculo e, depois, exibir o resultado. Poderíamos chamar uma função que faz o cálculo (<code>minhaCalculadora</code>), salvar o resultado e, então, chamar outra função (<code>funcaoExibidora</code>) para mostrar o resultado:</p>
+
+				<pre>
+					<code>
+						function funcaoExibidora(some) {
+							document.getElementById("demo").innerHTML = some;
+						}
+						
+						function minhaCalculadora(num1, num2) {
+							let soma = num1 + num2;
+							return soma;
+						}
+						
+						let resultado = minhaCalculadora(5, 5);
+						funcaoExibidora(resultado);
+					</code>
+				</pre>
+
+				<p>O problema do exemplo acima é que precisamos chamar duas funções para exibir o resultado.</p>
+
+				<p>Outra opção é chamar a função que faz o cálculo (<code>minhaCalculadora</code>) e deixr que ela chame a funão de exibição (<code>funcaoExibidora</code>):</p>
+
+				<pre>
+					<code>
+						function funcaoExibidora(some) {
+							document.getElementById("demo").innerHTML = some;
+						}
+						
+						function minhaCalculadora(num1, num2) {
+							let soma = num1 + num2;
+							funcaoExibidora(soma);
+						}
+						
+						minhaCalculadora(5, 5);
+					</code>
+				</pre>
+
+				<p>O problema com esta segunda abordagem é que não podemos impedir a função que faz o cálculo de exibir o resultado. Assim, a solução é usar um <strong>retorno de chamada</strong>.</p>
+
+				<p>Com ele, podemos chamar a função de cálculo (<code>minhaCalculadora</code>) com um retorno (<code>meuRetorno</code>) e deixar que a primeira execute o retorno após finalizar o cálculo:</p>
+
+				<pre>
+					<code>
+						function funcaoExibidora(some) {
+							document.getElementById("demo").innerHTML = some;
+						}
+						
+						function minhaCalculadora(num1, num2, meuRetorno) {
+							let soma = num1 + num2;
+							meuRetorno(soma);
+						}
+						
+						minhaCalculadora(5, 5, funcaoExibidora);
+					</code>
+				</pre>
+
+				<p>Neste exemplo, <code>funcaoExibidora</code> é uma <strong>função de retorno de chamada</strong>, que é passada como argumento para <code>minhaCalculadora</code>. <span class="important-info">Note que ao passar uma função como argumento não se deve usar parênteses: <code>minhaCalculadora(5, 5, funcaoExibidora)</code> e não <code>minhaCalculadora(5, 5, funcaoExibidora())</code>.</span></p>
+
+				<p>Os retornos de chamada são muito usados em funções assíncronas, em que uma função precisa esperar por outra.</p>
+	</section>
+
+	<section>
+		<h2>JavaScript assíncrono</h2>
+
+		<p>Funções executadas em paralelo com outras funções são chamadas de <strong>assíncronas</strong>. Um bom exemplo é a <code>setTimeout()</code>, com a qual podemos definir um período de tempo de pausa até a execução de uma função:</p>
+
+		<pre>
+			<code>
+				setTimeout(minhaFuncao, 3000); // 3000 é a quantidade de milissegundos, isto é, 3 segundos
+
+				function minhaFuncao() {
+					document.getElementById("demo").innerHTML = "Eu te amo!!";
+				}
+			</code>
+		</pre>
+
+		<p>E, além de passar o nome de uma função como argumento, podemos passar uma função completa:</p>
+
+		<pre>
+			<code>
+				setTimeout(function() { minhaFuncao("Eu te amo!!!"); }, 3000);
+
+				function minhaFuncao(value) {
+					document.getElementById("demo").innerHTML = value;
+				}
+			</code>
+		</pre>
+
+		<p>Com a função <code>setInterval()</code>, podemos definir que uma função de retorno seja executada em intervalos regulares:</p>
+
+		<pre>
+			<code>
+				setInterval(minhaFuncao, 1000);
+
+				function minhaFuncao() {
+					let d = new Date();
+					document.getElementById("demo").innerHTML=
+					d.getHours() + ":" +
+					d.getMinutes() + ":" +
+					d.getSeconds();
+				}
+			</code>
+		</pre>
+
+			<h3>Alternativas</h3>
+
+			<p>Com a programação assíncrona, programas em JavaScript podem iniciar tarefas que demoram a executar e continuar executando outras tarefas em paralelo. Porém, programas assíncronos são difíceis de escrever e de depurar. Por causa disso, a maioria dos método de JavaScript assíncronos não usam retorno de chamada, mas sim <strong>promessas</strong>.</p>
+	</section>
+
+	<section>
+		<h2>Promessas</h2>
+
+		
+	</section>
+</body>
+</html>
