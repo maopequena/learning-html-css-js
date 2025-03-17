@@ -133,8 +133,7 @@ h5, h6 {
 
 h1 {
   font-size: 2rem;
-  margin-left: 5px;
-  margin-right: 5px;
+  text-align: center;
 }
 
 h2 {
@@ -237,6 +236,10 @@ strong {
 em {
   font-style: italic;
   font-weight: 600;
+}
+
+.deprecated {
+	color: var(--red);
 }
 
 .important-info {

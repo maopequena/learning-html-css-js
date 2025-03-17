@@ -16,5 +16,758 @@
 		<h1>DOM do HTML</h1>
 	</header>
 
+	<section>
+		<h2>O DOM do HTML</h2>
+		
+		<p>Usando o DOM (Document Object Model, modelo de objetos do documento) do HTML, o JavaScript pode acessar e alterar todos os elementos de um documento HTML.</p>
+
+		<p><em>O Modelo de objetos do documento (DOM) da W3C é uma plataforma e interface de linguagem neutra que possibilitaque programas e scripts acessem e atualizem dinamicamente o conteúdo, a estrutura e o estilo de um documento.</em></p>
+
+		<p>Há 3 partes no DOM padrão da W3C:</p>
+
+		<ul class="list-square">
+			<li>DOM essencial: modelo padrão para todos os tipos de documento</li>
+			<li>DOM XML: modelo padrão para documentos XML</li>
+			<li>DOM HTML: modelo padrão para documentos HTML</li>
+		</ul>
+
+		<p>Ao carregar uma página da Web, o navegador cria um Modelo de objetos do documento da página, que é uma <strong>árvore</strong> de objetos.</p>
+
+		<figure>
+			<img class="dom-tree" src="../../img/html_dom_tree.gif" alt="A árvore de objetos do DOM do HTML">
+			<figcaption style="text-align: center;" class="overlay">A árvore de objetos do DOM do HTML</figcaption>
+		</figure>
+
+		<p>Com esse modelo, o JavaScript tem tudo o que precisa para criar páginas HTML dinâmicas:</p>
+
+		<ul class="list-square">
+			<li>Pode alterar todos os elementos HTML na página</li>
+			<li>Pode alterar todos os atributos HTML na página</li>
+			<li>Pode alterar todos os estilos CSS na página</li>
+			<li>Pode remover os elementos e atributos HTML existentes</li>
+			<li>Pode adicionar novos elementos e atributos HTML</li>
+			<li>Pode reagir a todos os eventos HTML existentes na página</li>
+			<li>Pode criar novos eventos HTML na página</li>
+		</ul>
+
+		<p>O DOM do HTML define:</p>
+
+		<ul class="list-square">
+			<li>Os elementos HTML como <strong>objetos</strong></li>
+			<li>As <strong>propriedades</strong> de todos os elementos HTML</li>
+			<li>Os <strong>métodos</strong> para acessar todos os elementos HTML</li>
+			<li>Os <strong>eventos</strong> para todos os elementos HTML</li>
+		</ul>
+
+		<p>Resumindo: o DOM é um padrão para obter, alterar, adicionar ou excluir elementos HTML.</p>
+	</section>
+
+	<section>
+		<h2>Métodos do DOM</h2>
+
+		<p><strong>Métodos</strong> são ações que se pode realizar em elementos HTML. <strong>Propriedades</strong> são os valores dos elementos HTML que se pode alterar ou definir.</p>
+
+			<h3>A interface de programação do DOM</h3>
+
+			<p>O DOM do HTML pode ser acessado com JavaScript (e outras linguagens de programação); nele, todos os elementos HTML são definidos como objetos.</p>
+
+			<p>A interface de programação são as <strong>propriedades</strong> e <strong>métodos</strong> de cada objeto.</p>
+
+			<p>Uma propriedade é um valor que se pode obter ou definir (como alterar o conteúdo de um elemento HTML). Um método é uma ação que se pode executar (como adicionar ou excluir um elemento HTML).</p>
+
+			<h3>Exemplo</h3>
+
+			<p>O exemplo a seguir altera o conteúdo (a tag <code>innerHTML</code>) do elemento <code>&lt;p&gt;</code> com <code>id="demo"</code>:</p>
+
+			<pre>
+				<code>
+					&lt;html&gt;
+					&lt;body&gt;
+
+						&lt;p id="demo"&gt;&lt;/p&gt;
+
+						&lt;script&gt;
+						document.getElementById("demo").innerHTML = "Olá, mundo!";
+						&lt;/script&gt;
+
+					&lt;/body&gt;
+					&lt;/html&gt;
+				</code>
+			</pre>
+
+			<p><code>getElementById</code> é um método, <code>innerHTML</code> é uma propriedade.</p>
+
+			<p>A maneira mais comum de acessar um elemento HTML é usando a sua <code>id</code>. No exemplo acima, o método <code>getElementById</code> usou <code>id="demo"</code> para localizar o elemento.</p>
+
+			<p>A maneira mais fácil de obter o conteúdo de um elemento é usando a propriedade <code>innerHTML</code>, que é bastante útil para obter ou substituir o conteúdo de elementos HTML.</p>
+	</section>
+
+	<section>
+		<p>O DOM é o proprietário de todos os outros objetos na página Web.</p>
+
+		<p>O objeto do documento representa a página da Web. Se você quiser acessar qualquer elemento em uma página HTML, sempre precisa acessar primeiro o objeto do documento. Eis alguns exemplos de como usar o objeto do documento para acessar e manipular elementos HTML:</p>
+
+		<table>
+			<tbody>
+				<tr style="text-align:center">
+					<th colspan="2">Localizar elementos</th>
+				</tr>
+				<tr>
+					<th>Método</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>document.getElementById(<em>identificador</em>)</td>
+					<td>Localizar um elemento pela sua id</td>
+				</tr>
+				<tr>
+					<td>document.getElementsByTagName(<em>nome</em>)</td>
+					<td>Localizar elementos pelo nome da tag</td>
+				</tr>
+				<tr>
+					<td>document.getElementsByClassName(<em>nome</em>)</td>
+					<td>Localizar elementos pelo nome da classe</td>
+				</tr>
+				<tr style="text-align:center">
+					<th colspan="2">Alterar elementos</th>
+				</tr>
+				<tr>
+					<td><em>element</em>.innerHTML =&nbsp; <em>novo conteúdo html</em></td>
+					<td>Alterar o HTML interno de um elemento</td>
+				</tr>
+				<tr>
+					<th style="width:50%">Propriedade</th>
+					<th>Descrição</th>
+				</tr><tr>
+					<td><em>element</em>.<em>attribute = novo valor</em></td>
+					<td>Alterar o valor do atributo de um elemento HTML</td>
+				</tr>
+					<tr>
+					<td><em>element</em>.style.<em>property = novo estilo</em></td>
+					<td>Alterar o estilo de um elemento HTML</td>
+					</tr>
+					<tr>
+				<th style="width:50%">Método</th>
+				<th>Descrição</th>
+					</tr>
+					<tr>
+					<td><em>element</em>.setAttribute<em>(atributo, valor)</em></td>
+					<td>Alterar o valor de um atributo em um elemento HTML</td>
+					</tr>
+					<tr style="text-align:center">
+						<th colspan="2">Adicionar ou excluir elementos</th>
+					</tr>
+					<tr>
+						<th style="width:50%">Método</th>
+						<th>Descrição</th>
+					</tr>
+					<tr>
+						<td>document.createElement(<em>elemento</em>)</td>
+						<td>Criar um elemento HTML</td>
+					</tr>
+					<tr>
+						<td>document.removeChild(<em>elemento</em>)</td>
+						<td>Remover um elemento HTML</td>
+					</tr>
+					<tr>
+						<td>document.appendChild(<em>elemento</em>)</td>
+						<td>Adicionar um elemento HTML</td>
+					</tr>
+					<tr>
+						<td>document.replaceChild(<em>novo, antigo</em>)</td>
+						<td>Substituir um elemento HTML</td>
+					</tr>
+					<tr>
+						<td>document.write(<em>texto</em>)</td>
+						<td>Escrever no fluxo de saída do HTML</td>
+					</tr>
+					<tr style="text-align:center">
+						<th colspan="2">Adicionar manipuladores de eventos</th>
+					</tr>
+					<tr>
+						<th style="width:50%">Método</th>
+						<th>Descrição</th>
+					</tr>
+					<tr>
+						<td>document.getElementById(<em>identificador</em>).onclick = function(){<em>código</em>}</td>
+						<td>Adicionar um código que manipula um evento no caso de um clique</td>
+					</tr>
+			</tbody>
+		</table>
+
+		<p>Mais exemplos de como localizar elementos HTML no DOM:</p>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>Propriedade</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>document.anchors</td>
+					<td><span class="deprecated">Obsoleto. Não use.</span></td>
+				</tr>
+				<tr>
+					<td>document.applets</td>
+					<td><span class="deprecated">Obsoleto. Não use.</span></td>
+				</tr>
+				<tr>
+					<td>document.baseURI</td>
+					<td>Retorna a URI de origem absoluta do documento</td>
+				</tr>
+				<tr>
+					<td>document.body</td>
+					<td>Retorna o elemento &lt;body&gt;</td>
+				</tr>
+				<tr>
+					<td>document.cookie</td>
+					<td>Retorna o cookie do documento</td>
+				</tr>
+				<tr>
+					<td>document.doctype</td>
+					<td>Retorna o doctype do documento</td>
+				</tr>
+				<tr>
+					<td>document.documentElement</td>
+					<td>Retorna o elemento &lt;html&gt;</td>
+				</tr>
+				<tr>
+					<td>document.documentMode</td>
+					<td>Retorna o modo usado pelo navegador</td>
+				</tr>
+				<tr>
+					<td>document.documentURI</td>
+					<td>Retorna a URI do documento</td>
+				</tr>
+				<tr>
+					<td>document.domain</td>
+					<td><span class="deprecated">Obsoleto. Não use.</span></td>
+				</tr>
+				<tr>
+					<td>document.domConfig</td>
+					<td><span class="deprecated">Obsoleto. Não use.</span></td>
+				</tr>
+				<tr>
+					<td>document.embeds</td>
+					<td>Retorna todos os elementos &lt;embed&gt;</td>
+				</tr>
+				<tr>
+					<td>document.forms</td>
+					<td>Retorna todos os elementos &lt;form&gt;</td>
+				</tr>
+				<tr>
+					<td>document.head</td>
+					<td>Retorna o elemento &lt;head&gt;</td>
+				</tr>
+				<tr>
+					<td>document.images</td>
+					<td>Retorna todos os elementos &lt;img&gt;</td>
+				</tr>
+				<tr>
+					<td>document.implementation</td>
+					<td>Retorna a implementação do DOM</td>
+				</tr>
+				<tr>
+					<td>document.inputEncoding</td>
+					<td>Retorna a codificação do documento (conjunto de caracteres)</td>
+				</tr>
+				<tr>
+					<td>document.lastModified</td>
+					<td>Retorna a data e a hora em que o documento foi atualizado por último</td>
+				</tr>
+				<tr>
+					<td>document.links</td>
+					<td>Retorna todos os elementos &lt;area&gt; e &lt;a&gt; que têm um atributo <code>href</code></td>
+				</tr>
+				<tr>
+					<td>document.readyState</td>
+					<td>Retorna o status (de carregamento) do documento</td>
+				</tr>
+				<tr>
+					<td>document.referrer</td>
+					<td>Retorna a URI do referenciador (o documento que envia para o atual)</td>
+				</tr>
+				<tr>
+					<td>document.scripts</td>
+					<td>Retorna todos os elementos &lt;script&gt;</td>
+				</tr>
+				<tr>
+					<td>document.strictErrorChecking</td>
+					<td>Retorna se a checagem de erro é obrigatória</td>
+				</tr>
+				<tr>
+					<td>document.title</td>
+					<td>Retorna o elemento &lt;title&gt;</td>
+				</tr>
+				<tr>
+					<td>document.URL</td>
+					<td>Retorna o URL completo do documento</td>
+				</tr>
+			</tbody></table>
+	</section>
+
+	<section>
+		<h2>Elementos do DOM</h2>
+
+			<h3>Localizar elementos</h3>
+
+			<p>Há várias maneira de localizar elementos no DOM:</p>
+
+			<ul class="list-square">
+				<li><a href="#element-by-id">Pelo identificador</a></li>
+				<li><a href="#element-by-tag">Pelo nome da tag</a></li>
+				<li><a href="#element-by-class">Pelo nome da classe</a></li>
+				<li><a href="#element-by-selector">Pelos seletores de CSS</a></li>
+				<li><a href="#element-by-collection">Pelas coleções de objetos HTML</a></li>
+			</ul>
+
+				<h4 id="element-by-id">Localizar elementos pelo identificador</h4>
+
+				<p>O exemplo abaixo encontra o elemento pelo identificador <code>intro</code>:</p>
+
+				<pre>
+					<code>
+						const element = document.getElementById("intro");
+					</code>
+				</pre>
+
+				<p>Se o elemento for encontrado, o método o retorna como um objeto (na variável <code>element</code>). Caso contrário, <code>element</code> conterá <code>null</code>.</p>
+
+				<h4 id="element-by-tag">Localizar elementos pelo nome da tag</h4>
+
+				<p>O exemplo abaixo localiza todos os elementos <code>&lt;p&gt;</code> no documento:</p>
+
+				<pre>
+					<code>
+						const element = document.getElementsByTagName("p");
+					</code>
+				</pre>
+
+				<p>O exemplo abaixo localiza todos os elementos com a id <code>main</code> e todos os elementos <code>&lt;p&gt;</code> dentro de <code>main</code>:</p>
+
+				<pre>
+					<code>
+						const x = document.getElementById("main");
+						const y = x.getElementsByTagName("p");
+					</code>
+				</pre>
+
+				<h4 id="element-by-class">Localizar elementos pelo nome da classe</h4>
+
+				<p>O exemplo abaixo retorna todos os elementos com a classe <code>intro</code>:</p>
+
+				<pre>
+					<code>
+						const x = document.getElementsByClassName("intro");
+					</code>
+				</pre>
+
+				<h4 id="element-by-selector">Localizar elementos pelos seletores de CSS</h4>
+
+				<p>É possível localizar qualquer seletor usado no CSS, incluindo id, nomes de classes, tipos, atributos, valores de atributos, etc. O exemplo abaixo lista todos os elementos <code>&lt;p&gt;</code> com a classe <code>intro</code>:</p>
+
+				<pre>
+					<code>
+						const x = document.querySelectorAll("p.intro");
+					</code>
+				</pre>
+
+				<h4 id="element-by-collection">Pelas coleções de objetos HTML</h4>
+
+				<p>O exemplo abaixo localiza o elemento de formulário com o identificador <code>frm1</code> e exibe todos os seus valores:</p>
+
+				<pre>
+					<code>
+						const x = document.forms["frm1"];
+						let texto = "";
+						for (let i = 0; i &lt; x.length; i++) {
+							text += x.elements[i].value + "&lt;br&gt;";
+						}
+						document.getElementById("demo").innerHTML = texto;
+					</code>
+				</pre>
+
+				<p>Também é possível acessar âncoras, o corpo do documento, embeds, cabeçalhos, imagens, links, etc.</p>
+
+			<h3>Alterar o HTML</h3>
+
+			<p>Há várias maneira de alterar o conteúdo HTML em uma página:</p>
+
+			<ul class="list-square">
+				<li><a href="#change-html-content">Alterar o conteúdo HTML</a></li>
+				<li><a href="#attribute-value">Alterar o valor de um atributo</a></li>
+				<li><a href="#dynamic_html">Conteúdo HTML dinâmico</a></li>
+				<li><a href="#document-write">document.write()</a></li>
+			</ul>
+
+				<h4 id="change-html-content">Alterar o conteúdo HTML</h4>
+
+				<p>Sintaxe: <code>document.getElementById(id).innerHTML = novo HTML</code></p>
+
+				<p>A maneira mais fácil de alterar o conteúdo de um elemento HTML é com a propriedade <code>innerHTML</code>. O exemplo abaixo altera o conteúdo de um elemento <code>&lt;p&gt;</code>:</p>
+
+				<pre>
+					<code>
+						<html>
+							&lt;body&gt;
+
+							&lt;p id="p1"&gt;Olá, mundo!&lt;/p&gt;
+
+							&lt;script&gt;
+								document.getElementById("p1").innerHTML = "Novo texto!";
+							&lt;/script&gt;
+
+							&lt;/body&gt;
+							&lt;/html&gt;
+					</code>
+				</pre>
+
+				<p>O exemplo abaixo altera o conteúdo de um elemento <code>&lt;h1&gt;</code>:</p>
+
+				<pre>
+					<code>
+						<html>
+							&lt;body&gt;
+
+							&lt;h1 id="id01"&gt;Cabeçalho velho&lt;/h1&gt;
+
+							&lt;script&gt;
+								const element = document.getElementById("id01");
+								element.innerHTML = "Cabeçalho novo";
+							&lt;/script&gt;
+
+							&lt;/body&gt;
+							&lt;/html&gt;
+					</code>
+				</pre>
+
+				<h4 id="attribute-value">Alterar o valor de um atributo</h4>
+
+				<p>Sintaxe: <code>document.getElementById(id).atributo = novo valor</code></p>
+
+				<p>O exemplo abaixo altera o valor do atributo <code>src</code> de um elemento <code>&lt;img&gt;</code>:</p>
+
+				<pre>
+					<code>
+						...
+						&lt;img id="minhaImagem" src="smiley.gif"&gt;
+
+						&lt;script&gt;
+							document.getElementById("minhaImagem").src = "landscape.jpg";
+						&lt;/script&gt;
+						...
+					</code>
+				</pre>
+
+				<h4 id="dynamic_html">Conteúdo HTML dinâmico</h4>
+				
+				<p>É possível criar conteúdo HTML dinâmico com o JavaScript.</p>
+
+				<pre>
+					<code>
+						...
+						&lt;script&gt;
+							document.getElementById("demo").innerHTML = "Data : " + Date(); 
+						&lt;/script&gt;
+						...
+					</code>
+				</pre>
+
+				<p>Este exemplo exibe a data e a hora do carregamento da página no elemento com o identificador <code>demo</code>.</p>
+
+				<h4 id="document-write">document.write()</h4>
+
+				<p>Podemos usar <code>document.write()</code> para escrever diretamente no fluxo de saída do HTML:</p>
+
+				<pre>
+					<code>
+						...
+						&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/p&gt;
+
+						&lt;script&gt;
+							document.write(Date());
+						&lt;/script&gt;
+
+						&lt;p&gt;Nesciunt fugit magni ipsa architecto veniam saepe quia expedita.&lt;/p&gt;
+						...
+					</code>
+				</pre>
+
+				<p>Porém, note que nunca se deve usar este método após o documento ser carregado, já que isso pode sobrescrevê-lo.</p>
+	</section>
+
+	<section>
+			<h2>Formulários no JavaScript</h2>
+
+				<h3>Validação de formulários</h3>
+
+				<p>Se um campo de formulário estiver vazio, o exemplo a seguir envia uma mensagem de alerta e retorna <code>false</code> para impedir que o formulário seja enviado:</p>
+
+				<pre>
+					<code>
+						function validarForm() {
+							let x = document.forms["meuForm"]["fname"].value;
+							if (x == "") {
+								alert("O campo Nome deve estar preenchido");
+								return false;
+							}
+						}
+					</code>
+				</pre>
+
+				<p>Em seguida, é só chamar a função ao enviar o formulário:</p>
+
+				<pre>
+					<code>
+						&lt;form name="meuForm" action="/action_page.php" onsubmit="return validarForm()" method="post"&gt;
+							Nome: &lt;input type="text" name="fname"&gt;
+						&lt;input type="submit" value="Enviar"&gt;
+						&lt;/form&gt;
+					</code>
+				</pre>
+
+					<h4>Validação automática</h4>
+
+					<p>O navegador pode validar formulários automaticamente. Se um campo de formulário estiver vazio, o atributo <code>required</code> impede que o formulário seja enviado:</p>
+
+					<pre>
+						<code>
+							&lt;form action="/action_page.php" method="post"&gt;
+								&lt;input type="text" name="fname" <em><strong>required</strong></em>&gt;
+								&lt;input type="submit" value="Enviar"&gt;
+							&lt;/form&gt;
+						</code>
+					</pre>
+
+				<h3>Validação de números</h3>
+
+				<p>Também podemos usar JavaScript para validar a digitação de números em formulários:</p>
+
+				<pre>
+					<code>
+						&lt;p&gt;Insira um número entre 1 e 10:&lt;/p&gt;
+
+						&lt;input id="numb"&gt;
+
+						&lt;button type="button" onclick="minhaFuncao()"&gt;Enviar&lt;/button&gt;
+
+						&lt;p id="demo"&gt;&lt;/p&gt;
+
+						&lt;script&gt;
+						function minhaFuncao() {
+							// Obter o valor do campo com o identificador <code>numb</code>
+							let x = document.getElementById("numb").value;
+							// Se x is não for um número, for menor que um ou maior que 10
+							let texto;
+							if (isNaN(x) || x &lt; 1 || x &gt; 10) {
+								texto = "Valor inválido";
+							} else {
+								texto = "Valor aceito";
+							}
+							document.getElementById("demo").innerHTML = texto;
+						}
+						&lt;/script&gt;
+					</code>
+				</pre>
+
+				<h3>Validação de dados</h3>
+
+				<p><em>Validação de dados</em> é o processo que garante que o que foi digitado pelo usuário é útil, correto e claro. Algumas tarefas de validação comuns são:</p>
+
+				<ul class="list-square">
+					<li>O usuário preencheu todos os campos obrigatórios?</li>
+					<li>O usuário inseriu uma data válida?</li>
+					<li>O usuário inseriu texto em um campo numérico?</li>
+				</ul>
+
+				<p>Na maioria dos casos, o propósito da validação dos dados é garantir que o usuário preencha corretamente os campos. Há várias maneira de definir a validação, e de implementá-la.</p>
+
+				<p>A <strong>validação no lado do servidor</strong> é feita por um servidor da Web, após as informações serem enviadas ao servidor. A <strong>validação no lado do cliente</strong> é feita pelo navegador, antes das informações serem enviadas ao servidor.</p>
+
+					<h4>Validação por restrição</h4>
+
+					<p>O HTML5 apresentou um novo conceito de validação HTML chamado de <strong>validação por restrição</strong>. Esse tipo de validação baseia-se em:</p>
+
+					<ul class="list-square">
+						<li>Atributos de <code>input</code> no HTML</li>
+						<li>Pseudo-seletores do CSS</li>
+						<li>Propriedades e métodos do DOM</li>
+					</ul>
+
+					<p>Atributos HTML que permitem a validação por restrição:</p>
+
+					<table>
+						<tbody>
+							<tr>
+								<th>Atributo</th>
+								<th>Descrição</th>
+							</tr>
+							<tr>
+								<td>disabled</td>
+								<td>Define que o elemento <code>input</code> deve aparecer desativado</td>
+							</tr>
+							<tr>
+								<td>max</td>
+								<td>Define o valor máximo de um elemento <code>input</code></td>
+							</tr>
+							<tr>
+								<td>min</td>
+								<td>Define o valor mínimo de um elemento <code>input</code></td>
+							</tr>
+							<tr>
+								<td>pattern</td>
+								<td>Define o padrão do valor de um elemento <code>input</code></td>
+							</tr>
+							<tr>
+								<td>required</td>
+								<td>Define que o campo <code>input</code> requer um valor</td>
+							</tr>
+							<tr>
+								<td>type&nbsp;</td>
+								<td>Define o tipo de um elemento <code>input</code></td>
+							</tr>
+							<tr>
+								<th>Seletor</th>
+								<th>Descrição</th>
+							</tr>
+							<tr>
+								<td>:disabled</td>
+								<td>Seleciona elementos de <code>input</code> que têm o atributo "disabled" definido</td>
+							</tr>
+							<tr>
+								<td>:invalid</td>
+								<td>Seleciona elementos de <code>input</code> que têm valores inválidos</td>
+							</tr>
+							<tr>
+								<td>:optional</td>
+								<td>Seleciona elementos de <code>input</code> que não têm o atributo "required" definido</td>
+							</tr>
+							<tr>
+								<td>:required</td>
+								<td>Seleciona elementos de <code>input</code> que têm o atributo "required" definido</td>
+							</tr>
+							<tr>
+								<td>:valid</td>
+								<td>Seleciona elementos de <code>input</code> que têm valores válidos</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p>Para obter uma lista completa de atributos de <code>input</code>, acesse <a href="https://www.w3schools.com/html/html_form_attributes.asp" target="_blank" rel="noopener noreferrer">Atributos de input no HTML</a> ou a página <a href="../html/input-type-indice.html">Tipos de 'input'</a> neste site.</p>
+
+					<p>Para obter uma lista completa de pseudo-seletores do CSS, acesse <a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank" rel="noopener noreferrer">Pseudo-classes no CSS</a> ou a página <a href="../css/css-seletores.html">Seletores do CSS</a> neste site.</p>
+	</section>
+
+	<section>
+			<h2>Alterar o CSS</h2>
+
+			<p>Sintaxe: <code>document.getElementById(id).style.propriedade = novo estilo</code></p>
+
+			<p>O exemplo a seguir altera o estilo de um elemento &lt;p&gt;:</p>
+
+			<pre>
+				<code>
+					&lt;p id="p2"&gt;Olá, mundo!&lt;/p&gt;
+
+					&lt;script&gt;
+						document.getElementById("p2").style.color = "blue";
+						document.getElementById("p2").style.fontFamily = "Arial";
+						document.getElementById("p2").style.fontSize = "larger";
+					&lt;/script&gt;
+				</code>
+			</pre>
+
+			<p>Uma outra forma de alterar o CSS é ocultar um elemento HTML no carregamento da página e fornecer um botão (ou outro elemento), que altera sua <em>visibilidade</em>:</p>
+
+			<pre>
+				<code>
+					&lt;body onload="document.getElementById('p1').style.visibility='hidden'"&gt;
+
+					&lt;p id="p1"&gt;Este texto está oculto ao carregar a página, mas ao clicar no botão "Clique aqui!", ele aparece.&lt;/p&gt;
+					
+					&lt;input type="button" value="Clique aqui!" onclick="document.getElementById('p1').style.visibility='visible'"&gt;
+
+					&lt;/body&gt;
+				</code>
+			</pre>
+
+			<p><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_visibility" target="_blank" rel="noopener noreferrer">Saiba mais</a>. Para obter uma lista de todas as propriedades de estilo do DOM, consulte a <a href="https://www.w3schools.com/jsref/dom_obj_style.asp" target="_blank" rel="noopener noreferrer">Referência de objetos de estilo do DOM</a>.</p>
+	</section>
+
+	<section>
+			<h2>Animações</h2>
+
+			<p>Vejamos as etapas de um exemplo simples de como criar uma animação com JavaScript:</p>
+
+			<ul class="list-square">
+				<li>1. Criar uma página básica. Para isso, digite <kbd>!</kbd> no Visual Studio Code.</li>
+				<li>2. Crie um contêiner para a animação. Um elemento <code>div</code> com o identificador <code>animation</code> dentro de um elemento <code>div</code> com o identificador <code>container</code> é suficiente.</li>
+				<li>3. Estilize os elementos. O <code>div</code> externo deve ter <code>position: relative</code>, o interno deve ter <code>position: absolute</code></li>
+				<li>4. Crie o código da animação. Para isso, programe alterações graduais no estilo de um elemento. Essas alterações serão acionadas por um temporizador e, quando o intervalo de tempo é pequeno o suficiente, a animação parece algo contínuo.</li>
+				<li>5. Crie uma forma de acionar a animação. Um elemento <code>button</code> deve bastar. Chame a função da animação no botão.</li>
+			</ul>
+
+			<pre>
+				<code>
+					&lt;!DOCTYPE html&gt;
+					&lt;html&gt;
+
+					&lt;head&gt;
+					&lt;style&gt;
+						#container {
+							width: 400px;
+							height: 400px;
+							position: relative;
+							background: yellow;
+						}
+						#animate {
+							width: 50px;
+							height: 50px;
+							position: absolute;
+							background: red;
+						}
+					&lt;/style&gt;
+					&lt;/head&gt;
+
+					&lt;body&gt;
+
+						&lt;h1&gt;Minha primeira animação em JavaScript&lt;/h1&gt;
+
+						&lt;div id="container"&gt;
+							&lt;div id="animate"&gt;Minha animação aparecerá aqui!&lt;/div&gt;
+						&lt;/div&gt;
+
+						&lt;button onclick="minhaAnimacao()"&gt;Iniciar animação&lt;/button&gt;
+
+						&lt;script&gt;
+							function minhaAnimacao() {
+								let id = null;
+								const elem = document.getElementById("animate");
+								let pos = 0;
+								clearInterval(id);
+								id = setInterval(frame, 5);
+								function frame() {
+									if (pos == 350) {
+										clearInterval(id);
+									} else {
+										pos++;
+										elem.style.top = pos + 'px';
+										elem.style.left = pos + 'px';
+									}
+								}
+							}
+						&lt;/script&gt;
+
+					&lt;/body&gt;
+					&lt;/html&gt;
+				</code>
+			</pre>
+	</section>
+
+	<section>
+			<h2>Eventos</h2>
+
+			
+	</section>
 </body>
 </html>
