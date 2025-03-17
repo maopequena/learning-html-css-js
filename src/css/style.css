@@ -218,6 +218,10 @@ sup, sub {
 	font-size: 0.7em;
 }
 
+del {
+	color: var(--red);
+}
+
 ul.list-square {
   list-style: square;
   text-align: justify;

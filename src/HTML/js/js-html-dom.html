@@ -767,7 +767,311 @@
 	<section>
 			<h2>Eventos</h2>
 
-			
+			<p>Exemplos de eventos HTML que podem ser manipulados:</p>
+
+			<ul class="list-square">
+				<li>O usuário clica com o mouse (<code>onclick</code>, <code>onmousedown</code> ou <code>onmouseup</code>)</li>
+				<li>Ao carregar uma página da Web (<code>onload</code> e <code>onunload</code>)</li>
+				<li>Ao carregar uma imagem (<code>onload</code> e <code>onunload</code>)</li>
+				<li>Quando o mouse passa sobre um elemento (<code>onmouseover</code> ou <code>onmouseout</code>)</li>
+				<li>Ao alterar um campo de entrada (<code>oninput</code> ou <code>onchange</code>)</li>
+				<li>Ao enviar um formulário HTML (<code>onsubmit</code>)</li>
+				<li>Quando o usuário pressiona uma tecla (<code>onkeydown</code>, <code>onkeypress</code> ou <code>onkeyup</code>)</li>
+				<li>Quando um elemento recebe o foco (<code>onfocus</code>)</li>
+			</ul>
+
+			<p>E há muitos mais! Para saber mais sobre eventos HTML e como manipular o DOM, consulte a <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank" rel="noopener noreferrer">Referência de objetos de eventos do DOM</a>.</p>
+
+				<h3>addEventListener()</h3>
+
+				<p>O método <code>addEventListener()</code> incorpora um manipulador de eventos ao elemento especificado, sem sobrescrever os manipuladores existentes. É possível adicionar vários manipuladores de eventos a um elemento, sejam do mesmo tipo ou diferentes. E podemos adicioná-los também a qualquer objeto do DOM, não só a elementos HTML.</p>
+
+				<p>Este método facilita controlar como os eventos reagem com os eventos pais.</p>
+
+				<p>Ao usar este método, o JavaScript é separado da marcação HTML para permitir melhor legibilidade, o que possibilita adicionar manipuladores de eventos mesmo quando você não tem controle sobre a marcação HTML.</p>
+
+				<p>Para remover um manipulador de eventos, use o método <code>removeEventListener()</code>.</p>
+
+				<p>Sintaxe: <code><em>elemento</em>.addEventListener(evento, função, useCapture);</code>. O primeiro parâmetro é o tipo de evento que se deseja manipular (como "click", "mousedown" ou qualquer outro <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank" rel="noopener noreferrer">evento do DOM HTML</a>). O segundo parâmetro é a função que se deseja chamar quando o evento ocorrer. O terceiro parâmetro, que é opcional, é um valor booleano que define se o evento deve ser executado no pai ou nos filhos. <span class="important-info">Note que aqui não se deve usar "on" antes do nome do evento. É "click", não "onclick".</span></p>
+
+				<h3>Bubbling e capturing</h3>
+
+				<p>Há duas maneiras de propagar eventos no DOM do HTML: bubbling (para cima, para o pai) e capturing (para baixo, para os filhos). Isso define a ordem dos elementos quando o evento ocorre. Se há um elemento &lt;p&gt; dentro de um elemento &lt;div&gt; e o usuário clica no elemento &lt;p&gt;, qual evento de clique do elemento deve ser alterado primeiro?</p>
+
+				<p>Em <strong>bubbling</strong>, o evento no elemento mais interno é alterado primeiro, depois o externo.</p>
+
+				<p>Em <strong>capturing</strong>, o evento no elemento mais externo é alterado primeiro, depois o interno.</p>
+
+				<p>Com o método <code>addEventListener()</code> podemos definir o tipo de propagação com o parâmetro <code>useCapture</code>. O padrão desse parâmetro é <code>false</code>, que significa usar <strong>bubbling</strong>. Ao defini-lo como <code>true</code>, o evento usará <strong>capturing</strong>.</p>
+	</section>
+
+	<section>
+			<h2>Navegação no DOM</h2>
+
+			<p>Podemos navegar pela árvore de nós do DOM HTML usando os relacionamentos entre os nós. Tudo em um documento HTML é um nó:</p>
+
+			<ul class="list-square">
+				<li>Todo o documento é um nó de documento.</li>
+				<li>Cada elemento HTML é um nó de elemento.</li>
+				<li>O texto dentro dos elementos HTML são nós de texto.</li>
+				<li><del>Cada atributo HTML é um nó de atributo (obsoleto).</del></li>
+				<li>All comments are comment nodes</li>
+			</ul>
+
+			<p>Todos os nós podem ser acessados, alterados, adicionados ou excluídos pelo JavaScript.</p>
+
+			<figure>
+				<img src="../../img/html_dom_tree_nodes.gif" alt="Árvore representando os nós de elementos do DOM do HTML">
+				<figcaption>Árvore representando os nós de elementos do DOM do HTML</figcaption>
+			</figure>
+
+				<h3>Relacionamentos entre nós</h3>
+
+				<p>Há uma relação hierárquica entre os nós da árvore. Usamos os termos "pais", "filhos" e "irmãos" para descrever os relacionamentos:</p>
+
+				<ul class="list-square">
+					<li>O nó mais superior é chamado de <strong>raiz</strong> (root).</li>
+					<li>Cada nó tem <strong>exatamente um pai</strong>, exceto o raiz, que não tem pais.</li>
+					<li>Um nó pode ter vários <strong>filhos</strong>.</li>
+					<li><strong>Irmãos</strong> são nós que têm os mesmos pais.</li>
+				</ul>
+
+				<p>Sabendo disso, podemos usar as seguintes propriedades para navegar entre os nós com o JavaScript:</p>
+
+				<ul class="list-square">
+					<li><code>parentNode</code></li>
+					<li><code>childNodes[número_do_nó]</code></li>
+					<li><code>firstChild</code></li>
+					<li><code>lastChild</code></li>
+					<li><code>lastChild</code></li>
+					<li><code>previousSibling</code></li>
+				</ul>
+
+				<p>E há duas propriedades especiais que dão acesso ao documento completo:</p>
+
+				<ul class="list-square">
+					<li><code>document.body</code>: o corpo do documento.</li>
+					<li><code>document.documentElement</code>: o documento completo.</li>
+				</ul>
+
+				<h3>nodeName</h3>
+
+				<p>Essa propriedade especifica o nome de um nó:</p>
+
+				<ul class="list-square">
+					<li>Ela é somente leitura.</li>
+					<li>O <code>nodeName</code> de um nó de elemento é o mesmo que o nome da tag.</li>
+					<li>O <code>nodeName</code> de um nó de atributo é o nome do atributo.</li>
+					<li>O <code>nodeName</code> de um nó de texto é sempre <em>#text</em>.</li>
+					<li>O <code>nodeName</code> de um nó de documento é sempre <em>#document</em>.</li>
+				</ul>
+
+				<h3>nodeValue</h3>
+
+				<p>Esta propriedade especifica o valor de um nó:</p>
+
+				<ul class="list-square">
+					<li>O <code>nodeValue</code> de nós de elementos é <code>null</code>.</li>
+					<li>O <code>nodeValue</code> de nós de texto é o texto em si.</li>
+					<li>O <code>nodeValue</code> de nós de atributo é o valor do atributo.</li>
+				</ul>
+
+				<h3>nodeType</h3>
+
+				<p>Esta propriedade é somente leitura e retorna o tipo de um nó. Os <code>nodeType</code> mais importantes são:</p>
+
+				<table>
+					<tbody>
+						<tr>
+							<th>Nó</th>
+							<th>Tipo</th>
+							<th>Exemplo</th>
+						</tr>
+						<tr>
+							<td>ELEMENT_NODE</td>
+							<td>1</td>
+							<td>&lt;h1 class="heading"&gt;W3Schools&lt;/h1&gt;</td>
+						</tr>
+						<tr>
+							<td>ATTRIBUTE_NODE</td>
+							<td>2</td>
+							<td>&nbsp;class = "heading" (deprecated)</td>
+						</tr>
+						<tr>
+							<td>TEXT_NODE</td>
+							<td>3</td>
+							<td>W3Schools</td>
+						</tr>
+						<tr>
+							<td>COMMENT_NODE</td>
+							<td>8</td>
+							<td>&lt;!-- This is a comment --&gt;</td>
+						</tr>
+						<tr>
+							<td>DOCUMENT_NODE</td>
+							<td>9</td>
+							<td>The HTML document itself (the parent of &lt;html&gt;)</td>
+						</tr>
+						<tr>
+							<td>DOCUMENT_TYPE_NODE</td>
+							<td>10</td>
+							<td>&lt;!Doctype html&gt;</td>
+						</tr>
+					</tbody>
+				</table>
+	</section>
+
+	<section>
+		<h2>Como criar e remover nós</h2>
+
+		<p>Para adicionar um novo elemento ao DOM, é preciso criá-lo primeiro e, então, anexá-lo a um elemento existente.</p>
+
+		<pre>
+			<code>
+				&lt;div id="div1"&gt;
+					&lt;p id="p1"&gt;Isto é um parágrafo.&lt;/p&gt;
+					&lt;p id="p2"&gt;Este é outro parágrafo.&lt;/p&gt;
+				&lt;/div&gt;
+				
+				&lt;script&gt;
+				const para = document.createElement("p");
+				const node = document.createTextNode("Isto é novo.");
+				para.appendChild(node);
+				
+				const element = document.getElementById("div1");
+				element.appendChild(para);
+				&lt;/script&gt;
+			</code>
+		</pre>
+
+			<h4>Explicação:</h4>
+
+			<p>O código <span style="color: var(--chocolate); background-color: lightgray;">const para = document.createElement("p");</span> cria um novo elemento.</p>
+
+			<p>Para adicionar texto ao elemento recém-criado, é preciso primeiro criar um nós de texto. O código <span style="color: var(--chocolate); background-color: lightgray;">const node = document.createTextNode("Isto é novo.");</span> faz isso.</p>
+
+			<p>Em seguida, precisamos anexar o nó de texto ao elemento &lt;p&gt;; para tanto, usamos o código <span style="color: var(--chocolate); background-color: lightgray;">para.appendChild(node);</span>.</p>
+
+			<p>Por fim, precisamos anexar o novo elemento a um elemento existente. É para isso que servem as linhas de código <span style="color: var(--chocolate); background-color: lightgray;">const element = document.getElementById("div1");</span> e <span style="color: var(--chocolate); background-color: lightgray;">element.appendChild(para);</span>.</p>
+
+			<h3>insertBefore()</h3>
+
+			<p>O método <code>appendChild()</code> do exemplo anterior anexou o novo elemento como o último filho do pai. Mas podemos usar o método <code>insertBefore()</code> para anexá-lo em qualquer posição:</p>
+
+			<pre>
+				<code>
+					&lt;div id="div1"&gt;
+						&lt;p id="p1"&gt;Isto é um parágrafo.&lt;/p&gt;
+						&lt;p id="p2"&gt;Este é outro parágrafo.&lt;/p&gt;
+					&lt;/div&gt;
+					
+					&lt;script&gt;
+					const para = document.createElement("p");
+					const node = document.createTextNode("Isto é novo.");
+					para.appendChild(node);
+					
+					const element = document.getElementById("div1");
+					const child = document.getElementById("p1");
+					element.insertBefore(para, child);
+					&lt;/script&gt;
+				</code>
+			</pre>
+
+			<h3>Remover elementos</h3>
+
+			<p>Use o método <code>remove()</code> para excluir um elemento HTML:</p>
+
+			<pre>
+				<code>
+					&lt;div&gt;
+						&lt;p id="p1"&gt;Isto é um parágrafo.&lt;/p&gt;
+						&lt;p id="p2"&gt;Este é outro parágrafo.&lt;/p&gt;
+					&lt;/div&gt;
+					
+					&lt;script&gt;
+						const elmnt = document.getElementById("p1"); elmnt.remove();
+					&lt;/script&gt;
+				</code>
+			</pre>
+
+					<h4>Explicação:</h4>
+
+					<p>O documento HTML contém um <span style="color: var(--chocolate); background-color: lightgray;">div</span> com dois nós filhos:<br><span style="color: var(--chocolate); background-color: lightgray;">&lt;div&gt;<br>
+						&lt;p id="p1"&gt;Isto é um parágrafo.&lt;/p&gt;<br>
+						&lt;p id="p2"&gt;Este é outro parágrafo.&lt;/p&gt;<br>
+					&lt;/div&gt;</span></p>
+
+					<p>O código <span style="color: var(--chocolate); background-color: lightgray;">const elmnt = document.getElementById("p1");</span> localiza o elemento a excluir.</p>
+
+					<p>Depois é só executar o método no elemento: <span style="color: var(--chocolate); background-color: lightgray;">elmnt.remove();</span>.</p>
+
+				<h3>removeChild()</h3>
+
+				<p>Alguns navegadores mais antigos não aceitam o método <code>remove()</code>. Neste caso, encontre o pai do elemento que deseja excluir e use o método <code>removeChild()</code>.</p>
+
+				<pre>
+					<code>
+						&lt;div id="div1"&gt;
+							&lt;p id="p1"&gt;Isto é um parágrafo.&lt;/p&gt;
+							&lt;p id="p2"&gt;Este é  outro parágrafo.&lt;/p&gt;
+						&lt;/div&gt;
+						
+						&lt;script&gt;
+						const parent = document.getElementById("div1");
+						const child = document.getElementById("p1");
+						parent.removeChild(child);
+						&lt;/script&gt;
+					</code>
+				</pre>
+
+					<h4>Explicação:</h4>
+
+					<p>O documento HTML contém um <span style="color: var(--chocolate); background-color: lightgray;">div</span> com dois nós filhos:<br><span style="color: var(--chocolate); background-color: lightgray;">&lt;div&gt;<br>
+						&lt;p id="p1"&gt;Isto é um parágrafo.&lt;/p&gt;<br>
+						&lt;p id="p2"&gt;Este é outro parágrafo.&lt;/p&gt;<br>
+					&lt;/div&gt;</span></p>
+
+					<p>O código <span style="color: var(--chocolate); background-color: lightgray;">const parent = document.getElementById("div1");</span> localiza o elemento com identificador <code>div1</code> e o código <span style="color: var(--chocolate); background-color: lightgray;">const child = document.getElementById("p1");</span> localiza o elemento com identificador <code>p1</code>.</p>
+
+					<p>O código <span style="color: var(--chocolate); background-color: lightgray;">parent.removeChild(child);</span> remove o filho do pai.</p>
+
+					<p>Também podemos usar a propriedade <code>parentNode</code> do elemento filho para localizar seu pai:</p>
+
+					<pre>
+						<code>
+							const child = document.getElementById("p1");
+							child.parentNode.removeChild(child);
+						</code>
+					</pre>
+
+				<h3>Substituir elementos</h3>
+
+				<p>Para substituir elementos no DOM, use o método <code>replaceChild()</code>:</p>
+
+				<pre>
+					<code>
+						&lt;div id="div1"&gt;
+							&lt;p id="p1"&gt;Isto é um parágrafo.&lt;/p&gt;
+							&lt;p id="p2"&gt;Este é outro parágrafo.&lt;/p&gt;
+						&lt;/div&gt;
+						
+						&lt;script&gt;
+						const para = document.createElement("p");
+						const node = document.createTextNode("Isto é novo.");
+						para.appendChild(node);
+						
+						const parent = document.getElementById("div1");
+						const child = document.getElementById("p1");
+						parent.replaceChild(para, child);
+						&lt;/script&gt;
+					</code>
+				</pre>
+	</section>
+
+	<section>
+		<h2>Coleções do DOM</h2>
+
+		
 	</section>
 </body>
 </html>
