@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <meta charset="utf-8">
 <head>
-    <link rel="icon" type="imidade/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../../css/style.css">
     <meta nome="keywords" content="HTML, CSS, JavaScript">
     <meta ano="description" content="DOM do navegador">
@@ -18,7 +18,132 @@
 		</header>
 
 		<section>
+				<h2>O BOM do navegador</h2>
 			
+				<p>Usando o BOM (Browser Object Model, modelo de objetos do navegador), o JavaScript pode "falar" com o navegador.</p>
+
+				<p>Não há um padrão oficial para o BOM. Como os navegadores modernos implementaram (quase) os mesmos métodos e propriedades para interagir com o JavaScript, eles geralmente são chamados de métodos e propriedades do BOM.</p>
+		</section>
+
+		<section>
+				<h2>O objeto Window</h2>
+
+				<p>Todos os navegadores oferecem suporte para o objeto <code>window</code>; ele representa a janela do navegador. Todos os objetos, funções e variáveis globais do JavaScript automaticamente se tornam membros deste objeto.</p>
+
+				<p>As variáveis globais são propriedades e funções globais são métodos desse objeto. Até o objeto do documento (o DOM do HTML) é uma propriedade do objeto <code>window</code>: <code>window.document.getElementById("header");</code> é o mesmo que <code>document.getElementById("header");</code>.</p>
+		</section>
+
+		<section>
+				<h2>Tamanho da janela</h2>
+
+				<p>Há duas propriedades para determinar o tamanho da janela, que retornam o tamanho em pixels:</p>
+
+				<ul class="list-square">
+					<li><code>window.innerHeight</code>: a <strong>altura</strong> interna da janela do navegador (em pixels)</li>
+					<li><code>window.innerWidth</code>: a <strong>largura</strong> interna da janela do navegador (em pixels)</li>
+				</ul>
+
+				<p class="important-info">Note que esses valores não incluem o menu de ferramentas ou a barra de rolagem.</p>
+
+					<h3>Outros métodos da janela do navegador</h3>
+
+					<p>Alguns outros métodos:</p>
+
+					<ul class="list-square">
+						<li><code>window.open()</code>: abre uma nova janela.</li>
+						<li><code>window.close()</code>: fecha a janela atual.</li>
+						<li><code>window.moveTo()</code>: move a janela atual.</li>
+						<li><code>window.resizeTo()</code>: redimensiona a janela atual.</li>
+					</ul>
+		</section>
+
+		<section>
+				<h2>window.screen</h2>
+
+				<p>Este objeto contém informações sobre a tela do usuário e pode ser escrito sem o prefixo <code>window</code>. Suas propriedades são:</p>
+
+				<ul class="list-square">
+					<li><a href="#screen-width">screen.width</a></li>
+					<li><a href="#screen-height"></a>screen.height</a></li>
+					<li><a href="#screen-availWidth"></a>screen.availWidth</a></li>
+					<li><a href="#screen-availHeight"></a>screen.availHeight</a></li>
+					<li><a href="#color-depth"></a>screen.colorDepth</a></li>
+					<li><a href="#pixel-depth"></a>screen.pixelDepth</a></li>
+				</ul>
+		
+					<h3 id="screen-width">screen.width</h3>
+
+					<p>Esta propriedade retorna a largura da tela do visitante em pixels.</p>
+
+					<pre>
+						<code>
+							document.getElementById("demo").innerHTML =
+							"Screen Width: " + screen.width; // Screen Width: 1920
+						</code>
+					</pre>
+			
+					<h3 id="screen-height">screen.height</h3>
+
+					<p>Esta propriedade retorna a altura da tela do visitante em pixels.</p>
+
+					<pre>
+						<code>
+							document.getElementById("demo").innerHTML =
+							"Screen Height: " + screen.height; // Screen Width: 1080
+						</code>
+					</pre>
+			
+					<h3 id="screen-availWidth">screen.availWidth</h3>
+
+					<p>Esta propriedade retorna a largura disponível na tela do visitante, em pixels, menos os recursos da interface, como a barra de tarefas do Windows.</p>
+
+					<pre>
+						<code>
+							document.getElementById("demo").innerHTML =
+							"Available Screen Width: " + screen.availWidth; // Available Screen Width: 1920
+						</code>
+					</pre>
+			
+					<h3 id="screen-availHeight">screen.availHeight</h3>
+
+					<p>Esta propriedade retorna a altura disponível na tela do visitante, em pixels, menos os recursos da interface, como a barra de tarefas do Windows.</p>
+
+					<pre>
+						<code>
+							document.getElementById("demo").innerHTML =
+							"Available Screen Height: " + screen.availHeight; // Available Screen Height: 1050
+						</code>
+					</pre>
+			
+					<h3 id="color-depth">screen.colorDepth</h3>
+
+					<p>Esta propriedade retorna a quantidade de bits usada para exibir uma cor. Todos os computadores modernos usam hardware de 24 bits ou 32 bits para a resolução de cores: 24 bits = 16.777.216 cores diferentes, 32 bits = 4.294.967.296 cores diferentes. Computadores mais antigos têm uma resolução de 16 bits: 65.536 "cores" diferentes. Computadores e celulares muito antigos usavam 8 bits = 256 cores diferentes.</p>
+
+					<pre>
+						<code>
+							document.getElementById("demo").innerHTML =
+							"Screen Color Depth: " + screen.colorDepth; // Screen Color Depth: 24
+						</code>
+					</pre>
+			
+					<h3 id="pixel-depth">screen.pixelDepth</h3>
+
+					<p>Esta propriedade retorna a profundidade de pixels da tela.</p>
+
+					<pre>
+						<code>
+							document.getElementById("demo").innerHTML =
+							"Screen Pixel Depth: " + screen.pixelDepth; // Screen Pixel Depth: 24
+						</code>
+					</pre>
+
+					<p class="important-info">Note que, em computadores modernos, pixelDepth e colorDepth são a mesma coisa.</p>
+		</section>
+
+		<section>
+				<h2>window.location</h2>
+
+				
 		</section>
 	</main>
 </body>
