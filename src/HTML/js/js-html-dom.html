@@ -1071,7 +1071,46 @@
 	<section>
 		<h2>Coleções do DOM</h2>
 
-		
+			<h3>O objeto HTMLCollection</h3>
+
+			<p>O método <code>getElementsByTagName()</code> retorna um objeto <code>HTMLCollection</code>, que é uma lista em formato de matriz (também conhecida como <strong>coleção</strong>) de elementos HTML.</p>
+
+			<p>O código <code>const myCollection = document.getElementsByTagName("p");</code> seleciona todos os elementos <code>&lt;p&gt;</code> em um documento. É possível acessar os elementos de uma coleção com um número de índice. Então, para acessar o segundo elemento <code>&lt;p&gt;</code>, podemos usar <code>minhaColecao[1]</code>. <span class="important-info">Lembre-se que os índices no JavaScript começam em 0.</span></p>
+
+			<p>A propriedade <code>length</code> define a quantidade de elementos em um HTMLCollection. Ela é útil quando se deseja fazer um loop pelos elementos de uma coleção, por exemplo, alterar a cor de texto de todos os elementos <code>&lt;p&gt;</code>:</p>
+
+			<pre>
+				<code>
+					const minhaColecao = document.getElementsByTagName("p");
+					for (let i = 0; i &lt; minhaColecao.length; i++) {
+						minhaColecao[i].style.color = "red";
+					}
+				</code>
+			</pre>
+
+			<p class="important-info">Note que um HTMLCollection NÃO é uma matriz. Podemos fazer loop por sua lista e nos referir aos elementos com um índice, como em uma matriz, mas não é possível usar métodos de matrizes, como <code>valueOf()</code>, <code>pop()</code>, <code>push()</code> ou <code>join()</code>.</p>
+	</section>
+
+	<section>
+			<h2>Listas de nós do DOM</h2>
+
+				<h3>O objeto NodeList</h3>
+
+				<p>Um objeto <code>NodeList</code> é uma lista (ou coleção) de nós extraída de um documento, e é bem similar ao objeto <code>HTMLCollection</code>.</p>
+
+				<p>Alguns navegadores mais antigos retornam um objeto NodeList ao invés de HTMLCollection ao usar métodos como <code>getElementsByClassName()</code>. Todos os navegadores retornam este objeto para a propriedade <code>childNodes</code>. E a maioria dos navegadores o retorna para o método <code>querySelectorAll()</code>.</p>
+
+				<p>Assim como o <code>HTMLCollection</code>, é possível usar um índice com <code>NodeList</code> e a propriedade <code>length</code> (para loops).</p>
+
+				<h3>Diferença entre HTMLCollection e NodeList</h3>
+
+				<p>Então qual a diferença entre os dois? <em>HTMLCollection</em> é uma coleção de <strong>elementos do documento</strong>, enquanto <em>NodeList</em> é uma coleção de <strong>nós do documento</strong> (nós de elementos, de atributo e de texto).</p>
+
+				<p>Os itens da HTMLCollection podem ser acessados pelo nome, identificador ou índice, os itens da NodeList só podem ser acessados pelo índice.</p>
+
+				<p>A HTMLCollection é dinâmica, enquanto a NodeList é estática. Por exemplo, ao adicionar um elemento <code>&lt;li&gt;</code> a uma lista no DOM, a lists na HTMLCollection também muda. Entretanto, ao adicionar o mesmo elemento a uma NodeList, a lista permanece inalterada.</p>
+
+				<p>Os métodos <code>getElementsByClassName()</code> e <code>getElementsByTagName()</code> retornam uma HTMLCollection dinâmica, <code>querySelectorAll()</code> retorna uma NodeList estática e a propriedade <code>childNodes</code> retorna uma NodeList dinâmica.</p>
 	</section>
 </body>
 </html>
