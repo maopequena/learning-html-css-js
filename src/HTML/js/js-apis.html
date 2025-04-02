@@ -17,7 +17,254 @@
 			<h1>APIs da Web</h1>
 		</header>
 
+		<section>
+				<h2>Introdução</h2>
 
+				<p>Uma API da Web é o sonho de um desenvolvedor:</p>
+
+				<ul class="list-square">
+					<li>Ela amplia a funcionalidade do navegador.</li>
+					<li>Ela pode simplificar, e muito, funções complexas.</li>
+					<li>Ela pode fornecer uma sintaxe simplificada para um código complexo.</li>
+				</ul>
+		</section>
+
+		<section>
+				<h2>O que é uma API da Web?</h2>
+
+				<p><strong>API</strong> significa <strong>I</strong>nterface de <strong>P</strong>rogramação de <strong>A</strong>plicativos. Há vários tipos de APIs: da Web, de navegador e de servidor.</p>
+
+				<p>Todos os navegadores têm APIs incorporadas que oferecem suporte a operações complexas e ajudam a acessar dados. Por exemplo, a API <em>Geolocation</em> retorna as coordenadas da localização do navegador.</p>
+
+				<p>Há também APIs de terceiros, que não estão incorporadas no navegador. Para usá-las, é preciso fazer download do código da Internet. Exemplos:</p>
+
+				<ul class="list-square">
+					<li>API do YouTube: possibilita exibir vídeos em um site.</li>
+					<li>API do Twitter (X): possibilita exibir tweets em um site.</li>
+					<li>API do Facebook: possibilita exibir informações do FB em um site.</li>
+				</ul>
+		</section>
+
+		<section>
+				<h2>API de validação do JavaScript</h2>
+
+				<p><strong>Métodos de validação para restrição no DOM:</strong></p>
+
+				<table>
+					<tbody>
+						<tr>
+							<th>Propriedade</th>
+							<th>Descrição</th>
+						</tr>
+						<tr>
+							<td>checkValidity()</td>
+							<td>Retorna <code>true</code> se um elemento inserido contém dados válidos.</td>
+						</tr>
+						<tr>
+							<td>setCustomValidity()</td>
+							<td>Define a propriedade <code>validationMessage</code> de um elemento inserido.</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p><strong>Propriedades de validação para restrição no DOM:</strong></p>
+
+				<table>
+					<tbody>
+						<tr>
+							<th>Propriedade</th>
+							<th>Descrição</th>
+						</tr>
+						<tr>
+							<td>validity</td>
+							<td>Contém propriedades booleanas relacionadas à validade de um elemento inserido.</td>
+						</tr>
+						<tr>
+							<td>validationMessage</td>
+							<td>Contém a mensagem que o navegador exibirá quando <code>validity</code> for <code>false</code>.</td>
+						</tr>
+						<tr>
+							<td>willValidate</td>
+							<td>Indica se um elemento inserido será validado.</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p>A propriedade <code>validity</code> oferece várias propriedades relacionadas à validação de dados:</p>
+
+				<table>
+					<tbody>
+						<tr>
+						<th>Propriedade</th>
+						<th>Descrição</th>
+						</tr>
+						<tr>
+						<td>customError</td>
+						<td>Retorna <code>true</code> se houver uma mensagem de validação personalizada.</td>
+						</tr>
+						<tr>
+						<td>patternMismatch</td>
+						<td>Retorna <code>true</code> se o valor de um elemento não corresponde ao atributo <code>pattern</code>.</td>
+						</tr>
+						<tr>
+						<td>rangeOverflow</td>
+						<td>Retorna <code>true</code> se o valor de um elemento é maior que o atributo <code>max</code>.</td>
+						</tr>
+						<tr>
+						<td>rangeUnderflow</td>
+						<td>Retorna <code>true</code> se o valor de um elemento é  menor que o atributo <code>min</code>.</td>
+						</tr>
+						<tr>
+						<td>stepMismatch</td>
+						<td>Retorna <code>true</code> se o valor de um elemento é inválido em relação ao atributo <code>step</code>.</td>
+						</tr>
+						<tr>
+						<td>tooLong</td>
+						<td>Retorna <code>true</code> se o valor de um elemento excede o atributo <code>maxLength</code>.</td>
+						</tr>
+						<tr>
+						<td>typeMismatch</td>
+						<td>Retorna <code>true</code> se o valor de um elemento é inválido em relação ao atributo <code>type</code>.</td>
+						</tr>
+						<tr>
+						<td>valueMissing</td>
+						<td>Retorna <code>true</code> se um elemento com o atributo <code>required</code> não tem valor.</td>
+						</tr>
+						<tr>
+						<td>valid</td>
+						<td>Retorna <code>true</code> se o valor de um elemento é válido.</td>
+						</tr>
+					</tbody>
+				</table>
+		</section>
+
+		<section>
+				<h2>API de histórico</h2>
+
+				<p>Esta API fornece métodos para acessar o objeto <code>window.history</code>, que contém os URLs visitados pelo usuário.</p>
+
+					<h3>back()</h3>
+
+					<p>Este método carrega o URL anterior no histórico e é o mesmo que clicar na seta para voltar na janela do navegador.</p>
+
+					<h3>go()</h3>
+
+					<p>Carrega um URL específico no histórico.</p>
+
+					<p>A tabela a seguir mostra a propriedade e os métodos do objeto <code>window.history</code>:</p>
+
+					<table class="ws-table-all notranslate">
+						<tbody>
+							<tr>
+								<th>Método</th>
+								<th>Descrição</th>
+							</tr>
+							<tr>
+								<td><a href="/jsref/met_his_back.asp">back()</a></td>
+								<td>Carrega o URL anterior no histórico</td>
+								</tr>
+							<tr>
+								<td><a href="/jsref/met_his_forward.asp">forward()</a></td>
+								<td>Carrega o próximo URL no histórico</td>
+								</tr>
+							<tr>
+								<td><a href="/jsref/met_his_go.asp">go()</a></td>
+								<td>Carrega um URL específico do histórico</td>
+							</tr>
+							<tr>
+								<th>Propriedade</th>
+								<th>Descrição</th>
+							</tr>
+							<tr>
+								<td><a href="/jsref/prop_his_length.asp">length</a></td>
+								<td>Retorna a quantidade de URLs no histórico</td>
+							</tr>
+					</tbody>
+				</table>
+		</section>
+
+		<section>
+				<h2>API de armazenamento</h2>
+
+				<p>A API de armazenamento é uma sintaxe simples para armazenar e recuperar dados no navegador.</p>
+
+					<h3>localStorage</h3>
+
+					<p>Este objeto fornece acesso ao armazenamento local para determinado site e possibilita armazenar, ler, adicionar, alterar e excluir itens de dados do domínio relevante. Os dados armazenados não tem validade e não serão excluídos ao fechar o navegador; eles ficam disponíveis por dias, semanas ou anos.</p>
+
+					<h3>setItem()</h3>
+
+					<p>Este método armazena um item de dados e recebe como parâmetros um <code>nome</code> e um <code>valor</code>:</p>
+
+					<pre>
+						<code>
+							localStorage.setItem("nome", "John Doe");
+							sessionStorage.setItem("nome", "John Doe");
+						</code>
+					</pre>
+
+					<h3>getItem()</h3>
+
+					<p>Este método recupera um item de dados do armazenamento e recebe apenas o <code>nome</code> como parâmetro:</p>
+
+					<pre>
+						<code>
+							localStorage.getItem("nome");
+							sessionStorage.getItem("nome", "John Doe");
+						</code>
+					</pre>
+
+					<h3>sessionStorage</h3>
+
+					<p>Este objeto é idêntico a <code>localStorage</code>, porém só armazena dados para a sessão atual, os dados são excluídos ao fechar o navegador.</p>
+
+					<pre>
+						<code>
+							sessionStorage.getItem("nome");
+						</code>
+					</pre>
+
+					<h3>Propriedades e métodos do objeto de armazenamento</h3>
+
+					<table>
+						<tbody>
+							<tr>
+								<th style="width:30%">Propriedade/Método</th>
+								<th>Descrição</th>
+							</tr>
+							<tr>
+								<td><a href="/jsref/met_storage_key.asp">key(<em>n</em>)</a></td>
+								<td>Retorna o nome da <em>enésima</em> chave no armazenamento</td>
+							</tr>
+							<tr>
+								<td><a href="/jsref/prop_storage_length.asp">length</a></td>
+								<td>Retorna a quantidade de itens de dados armazenada no objeto Storage</td>
+							</tr>
+							<tr>
+								<td><a href="/jsref/met_storage_getitem.asp">getItem(<em>nomeDaChave</em>)</a></td>
+								<td>Retorna o valor do nome de chave especificado</td>
+							</tr>
+							<tr>
+								<td><a href="/jsref/met_storage_setitem.asp">setItem(<em>nomeDaChave</em>, <em>valor</em>)</a></td>
+								<td>Adiciona uma chave ao armazenamento, ou atualiza um valor de chave (se já existir)</td>
+							</tr>
+							<tr>
+								<td><a href="/jsref/met_storage_removeitem.asp">removeItem(<em>nomeDaChave</em>)</a></td>
+								<td>Remove a chave do armazenamento</td>
+							</tr>
+							<tr>
+								<td><a href="/jsref/met_storage_clear.asp">clear()</a></td>
+								<td>Esvazia todas as chaves no armazenamento</td>
+							</tr>
+						</tbody>
+					</table>
+		</section>
+
+		<section>
+				<h2>API de trabalhadores</h2>
+
+				
+		</section>
 	</main>
 </body>
 </html>
