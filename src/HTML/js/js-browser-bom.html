@@ -143,7 +143,408 @@
 		<section>
 				<h2>window.location</h2>
 
-				
+				<p>Este objeto pode ser usado para obter o endereço da página atual (o URL) e para redirecionar o navegador para outra página. E pode ser escrito sem o prefixo <code>window</code>. Por exemplo:</p>
+
+				<ul class="list-square">
+					<li><a href="#location-href"><code>window.location.href</code></a> retorna o <em>href</em> (URL) da página atual</li>
+					<li><a href="#location-hostname"><code>window.location.hostname</code> retorna</a> o nome de domínio do host da Web</li>
+					<li><a href="#location-pathname"><code>window.location.pathname</code></a> retorna o caminho e o nome de arquivo da página atual</li>
+					<li><a href="#location-protocol"><code>window.location.protocol</code></a> retorna o protocolo Web usado (<em>http:</em> ou <em>https:</em>)</li>
+					<li><a href="#location-assign"><code>window.location.assign()</code></a> carrega um novo documento</li>
+				</ul>
+
+					<h3 id="location-href">window.location.href</h3>
+
+					<p>Esta propriedade retorna o <em>href</em> (URL) da página atual.</p>
+
+					<pre>
+						<code>
+							// Exibir o URL da página atual
+							document.getElementById("demo").innerHTML =
+							"O local da página é " + window.location.href; // O local da página é https://www.w3schools.com/js/js_window_location.asp
+						</code>
+					</pre>
+
+					<h3 id="location-hostname">window.location.hostname</h3>
+
+					<p>Esta propriedade retorna o nome do host de Internet.</p>
+
+					<pre>
+						<code>
+							// Exibir o nome do host
+							document.getElementById("demo").innerHTML =
+							"O nome do host da página é " + window.location.hostname; // O nome do host da página é www.w3schools.com
+						</code>
+					</pre>
+
+					<h3 id="location-pathname">window.location.pathname</h3>
+
+					<p>Esta propriedade retorna o nome de arquivo da página atual.</p>
+
+					<pre>
+						<code>
+							document.getElementById("demo").innerHTML =
+							"O caminho da página é " + window.location.pathname; // O caminho da página é /js/js_window_location.asp
+						</code>
+					</pre>
+
+					<h3 id="location-protocol">window.location.protocol</h3>
+
+					<p>Esta propriedade retorna o protocolo Web da página atual.</p>
+
+					<pre>
+						<code>
+							document.getElementById("demo").innerHTML =
+							"O protocolo da página é " + window.location.protocol; // O protocolo da página é https:
+						</code>
+					</pre>
+
+					<h3>window.location.port</h3>
+
+					<p>Esta propriedade retorna o número de porta do host de Internet da página atual. Porém, note que a maioria dos navegadores não exibe números de porta padrão, como 80 (http) ou 443 (https).</p>
+
+					<pre>
+						<code>
+							document.getElementById("demo").innerHTML =
+							"O número da porta é " + window.location.port; // O número da porta é https:
+						</code>
+					</pre>
+
+					<h3 id="location-assign">window.location.assign()</h3>
+
+					<p>Este método carrega um novo documento. Veja o exemplo em: <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign" target="_blank" rel="noopener noreferrer">Load a new document</a> (em inglês).</p>
+		</section>
+
+		<section>
+				<h2>window.history</h2>
+
+				<p>Este objeto contém o histórico do navegador e também pode ser escrito sem o prefixo.</p>
+
+				<p>Para proteger a privacidade dos usuários, há limites para como o JavaScript pode acessar este objeto. Veja exemplos deste objeto em <a href="https://www.w3schools.com/js/js_window_history.asp" target="_blank" rel="noopener noreferrer">JavaScript Window History</a>.</p>
+
+					<h3>history.back()</h3>
+
+					<p>Este método carrega o URL anterior no histórico e é o mesmo que clicar na seta para voltar na janela do navegador.</p>
+
+					<h3>history.forward()</h3>
+
+					<p>Este método carrega o próximo URL no histórico e é o mesmo que clicar na seta para frente na janela do navegador.</p>
+		</section>
+
+		<section>
+				<h2>window.navigator</h2>
+
+				<p>Este objeto contém informações sobre o navegador do visitante da página e pode ser escrito com ou sem o prefixo.</p>
+
+					<h3>Cookies do navegador</h3>
+
+					<p>A propriedade <code>cookieEnabled</code> retorna <code>true</code> se os cookies estiverem habilitados no navegador. Caso contrário, retorna <code>false</code>.</p>
+
+					<h3>Idioma do navegador</h3>
+
+					<p>A propriedade <code>language</code> retorna o idioma do navegador.</p>
+
+					<h3>Online ou offline</h3>
+
+					<p>A propriedade <code>onLine</code> retorna <code>true</code> se o navegador estiver online e <code>false</code> se estiver offline.</p>
+
+					<h3>Nome do aplicativo</h3>
+
+					<p>A propriedade <code>appName</code> retorna o nome do aplicativo do navegador. Esta propriedade está obsoleta, porque a maioria dos navegadores retorna <code>Netscape</code> como o nome.</p>
+
+					<h3>Nome de código do aplicativo</h3>
+
+					<p>A propriedade <code>appCodeName</code> retorna o nome de código do navegador. Esta propriedade está obsoleta, porque a maioria dos navegadores retorna <code>Mozilla</code> como o nome.</p>
+
+					<h3>Mecanismo do navegador</h3>
+
+					<p>A propriedade <code>product</code> retorna o nome de produto do mecanismo do navegador. Esta propriedade está obsoleta, porque a maioria dos navegadores retorna <code>Gecko</code> como o nome.</p>
+
+					<h3>Versão do navegador</h3>
+
+					<p>A propriedade <code>appVersion</code> retorna informações sobre a versão do navegador. Esta propriedade está obsoleta e você não deve confiar nestas informações.</p>
+
+					<h3>Agente do navegador</h3>
+
+					<p>A propriedade <code>userAgent</code> retorna o cabeçalho user-agent enviado pelo navegador ao servidor.</p>
+
+					<h3>Plataforma do navegador</h3>
+
+					<p>A propriedade <code>platform</code> retorna o sistema operacional do navegador. Esta propriedade está obsoleta e você não deve confiar nestas informações.</p>
+
+					<h3>Com ou sem Java</h3>
+
+					<p>O método <code>javaEnabled</code> retorna <code>true</code> se o Java estiver habilitado e <code>false</code> se estiver desabilitado. Este método está obsoleto e sempre retornará <code>false</code>.</p>
+
+					<p class="important-info">Informações deste objeto podem estar incorretas! Este objeto não deve ser usado para detectar informações sobre versões do navegador porque:</p>
+
+					<ul class="list-square important-info">
+						<li>Diferentes navegadores podem ter o mesmo nome</li>
+						<li>Os dados do <code>navigator</code> podem ser alterador pelo proprietário do navegador</li>
+						<li>Alguns navegadores se identificam incorretamente para passar em testes de sites</li>
+						<li>Os navegadores não podem informar sistemas operacionais novos, lançados após o navegador</li>
+					</ul>
+		</section>
+
+		<section>
+				<h2>Caixas popup</h2>
+
+				<p>Há três tipos de caixas popup no JavaScript: <a href="#popup-alert">alertas</a>, <a href="#popup-confirm">confirmação</a> e <a href="#popup-prompt">prompt</a>.</p>
+
+					<h3 id="popup-alert">Alertas</h3>
+
+					<p>Geralmente usamos caixas de alerta para garantir que uma informação seja exibida ao usuário. Quando ela aparece, o usuário precisa clicar em "OK" para prosseguir.</p>
+
+						<h4>Sintaxe:</h4>
+
+						<pre>
+							<code>
+								window.alert("texto a exibir no popup");
+							</code>
+						</pre>
+
+						<p>Também é possível usar este método sem o prefixo:</p>
+
+						<pre>
+							<code>
+								alert("texto a exibir no popup");
+							</code>
+						</pre>
+
+					<h3 id="popup-confirm">Confirmação</h3>
+
+					<p>Geralmente usamos caixas de confirmação para que o usuário verifique ou aceite algo. Quando ela aparece, o usuário precisa clicar em "OK" ou em "Cancelar" para prosseguir. Se clicar em "OK", a caixa retorna <strong>true</strong>, caso contrário, retorna <strong>false</strong>.</p>
+
+						<h4>Sintaxe:</h4>
+
+						<pre>
+							<code>
+								window.confirm("texto a exibir no popup");
+							</code>
+						</pre>
+
+						<p>Também é possível usar este método sem o prefixo:</p>
+
+						<pre>
+							<code>
+								if (confirm("Clique em um dos botões!")) {
+									txt = "Você clicou em OK!";
+								} else {
+									txt = "Você clicou em Cancelar!";
+								}
+							</code>
+						</pre>
+
+					<h3 id="popup-prompt">Prompt</h3>
+
+					<p>Geralmente usamos caixas de prompt para que o usuário digite algo antes de abrir uma página. Quando ela aparece, o usuário precisa clicar em "OK" ou em "Cancelar" para prosseguir após digitar um valor. Se o usuário clicar em "OK", a caixa retorna o valor digitado, caso contrário, retorna <strong>null</strong>.</p>
+
+						<h4>Sintaxe:</h4>
+
+						<pre>
+							<code>
+								window.prompt("texto a exibir no popup", "valor padrão");
+							</code>
+						</pre>
+
+						<p>Também é possível usar este método sem o prefixo:</p>
+
+						<pre>
+							<code>
+								let pessoa = prompt("Digite seu nome", "Harry Potter");
+								let texto;
+								if (pessoa == null || person == "") {
+									text = "O usuário cancelou o prompt.";
+								} else {
+									text = "Olá " + pessoa + "! Você está bem?";
+								}
+							</code>
+						</pre>
+
+					<h3>Quebras de linha</h3>
+
+					<p>Para exibir quebras de linha em uma caixa popup, use uma barra invertida (<kbd>\</kbd>) e o caractere <kbd>n</kbd>.</p>
+
+					<pre>
+						<code>
+							alert("Olá\nComo você está?");
+						</code>
+					</pre>
+		</section>
+
+		<section>
+				<h2>Eventos de temporização</h2>
+
+				<p>O objeto <code>window</code> permite executar código em intervalos definidos. Esses intervalos chamam-se eventos de temporização. Os dois principais métodos são:</p>
+
+				<ul class="list-square">
+					<li><code>setTimeout(função, milissegundos)</code>: executa uma função após esperar uma determinada quantidade de milissegundos.</li>
+					<li><code>setInterval(função, milissegundos)</code>: executa uma função após esperar uma determinada quantidade de milissegundos, mas repete essa execução continuamente.</li>
+				</ul>
+
+				<p>Ambos são objetos do objeto <code>Window</code> do DOM HTML.</p>
+
+					<h3>setTimeout()</h3>
+
+					<p>Este método pode ser usado sem o prefixo <code>window</code>. Exemplo:</p>
+
+					<pre>
+						<code>
+							&lt;button onclick="setTimeout(myFunction, 3000)"&gt;Try it&lt;/button&gt;
+
+							&lt;script&gt;
+							function myFunction() {
+								alert('Hello');
+							}
+							&lt;/script&gt;
+						</code>
+					</pre>
+
+					<h3>Como interromper a execução?</h3>
+
+					<p>O método <code>clearTimeout()</code> pode ser usado para interromper a execução de um evento de temporização. Exemplo: <code>clearTimeout(variávelDeTempo)</code>. A <em>variávelDeTempo</em> é retornada pelo <code>setTimeout()</code>. É possível interromper a execução chamando este método mesmo que a função ainda não tenha sido executada.</p>
+
+					<h3>setInterval()</h3>
+
+					<p>Este método repete a execução de uma função a intervalos definidos. Pode ser usado sem o prefixo <code>window</code>. Exemplo:</p>
+
+					<pre>
+						<code>
+							setInterval(meuTemporizador, 1000);
+
+							function meuTemporizador() {
+								const d = new Date();
+								document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+							}
+						</code>
+					</pre>
+
+					<p class="important-info">Não se esqueça: 1000 milissegundos = 1 segundo!</p>
+		</section>
+
+		<section>
+				<h2>Cookies</h2>
+
+				<p>Os cookies nos permitem armazenar informações em páginas da Web. Cookies são dados armazenados em pequenos arquivos de texto, em formato de pares <em>nome=valor</em>, em seu computador. Quando um servidor da web envia uma página para um navegador, a conexão é finalizada e o servidor se esquece de tudo sobre o usuário. Os cookies resolvem esse problema.</p>
+
+				<p>Quando o usuário visita uma página, seu nome pode ser armazenado em um cookie. Da próxima vez que o usuário visitar a mesma página, o cookie "se lembra" do nome do usuário.</p>
+
+				<p>Quando o navegador solicita uma página do servidor, os cookies que pertencem à página são adicionados à solicitação. Dessa forma, o servidor obtém os dados necessários para "lembrar" de informações sobre o usuário.</p>
+
+				<p><strong>Observação</strong>: os exemplos abaixo não funcionarão se os cookies locais não estiverem habilitados em seu navegador.</p>
+
+					<h3>Como criar um cookie com JavaScript</h3>
+
+					<p>O JavaScript pode criar, ler e excluir cookies com a propriedade <code>document.cookie</code>.</p>
+
+						<h4>Criar cookies</h4>
+
+						<pre>
+							<code>
+								document.cookie = "nomeusuario=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+							</code>
+						</pre>
+
+						<p>O cookie acima conterá o nome do usuário, expirará em 18 de dezembro de 2013 e o caminho de acesso será <code>/</code> (a raiz do site em questão). Por padrão o cookie pertence à página atual.</p>
+
+						<h4>Ler cookies</h4>
+
+						<pre>
+							<code>
+								let x = document.cookie;
+							</code>
+						</pre>
+
+						<p>Ao ler os cookies, esta propriedade retorna uma única string com todos os cookies do navegador: <code>cookie1=valor; cookie2=valor; cookie3=valor;</code>.</p>
+
+						<h4>Alterar cookies</h4>
+
+						<p>Para alterar um cookie, use a mesma sintaxe de criação: <code>document.cookie = "username=John Smith; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";</code>, e o cookie antigo será substituído.</p>
+
+						<h4>Excluir cookies</h4>
+
+						<p>É muito simples excluir cookies, não é preciso definir um valor, apenas defina a data de validade ("expires") para uma data no passado. Por exemplo:</p>
+
+						<pre>
+							<code>
+								document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+							</code>
+						</pre>
+
+						<p class="important-info">Sempre defina um caminho para o cookie, para garantir que excluirá o cookie certo. Alguns navegadores não permitem excluir cookies se o caminho não estiver especificado.</p>
+
+					<h3>A sequência de caracteres de cookies</h3>
+
+					<p>A propriedade <code>document.cookie</code> parece um sequência de texto normal, mas não é. Mesmo que você escreva uma string de cookie completa na propriedade <code>document.cookie</code>, ao lê-la só será possível ver o par de nome-valor. Se definir um novo cookie, os mais antigos não serão substituídos. O novo cookie será adicionado ao document.cookie, então, ao lê-lo novamente, você verá algo como: <code>cookie1 = value; cookie2 = value;</code>. Se quiser encontrar o valor de um cookie específico, precisará escrever uma função do JavaScript que pesquisa pelo valor do cookie na sequência de caracteres.</p>
+
+						<h4>Exemplo de cookie</h4>
+
+						<p>No exemplo a seguir, criaremos um cookie que armazena o nome de um visitante. Na primeira vez que o visitante acessa a página, ele será solicitado a digitar seu nome, que será armazenado em um cookie. Da próxima vez que ele acessar a página, receberá uma mensagem de boas vindas. Para isso, criaremos três funções JavaScript:</p>
+
+						<ol>
+							<li>Uma função para definir o cookie</li>
+							<li>Uma função para ler o valor do cookie</li>
+							<li>Uma função para verificar o valor do cookie</li>
+						</ol>
+
+						<p>1. Definir o cookie:</p>
+
+						<pre>
+							<code>
+								function definirCookie(nomec, valorc, validade) {
+									const d = new Date();
+									d.setTime(d.getTime() + (validade*24*60*60*1000));
+									let expira = "expires="+ d.toUTCString();
+									document.cookie = nomec + "=" + valorc + ";" + expira + ";path=/";
+								}
+							</code>
+						</pre>
+
+						<p><strong>Explicação</strong>: os parâmetros da função acima são o nome do cookie (nomec), o valor do cookie (valorc) e em quantos dias o cookie perde a validade (validade). A função define um cookie concatenando seu nome, seu valor e a data de validade como uma sequência de caracteres.</p>
+
+						<p>2. Ler o cookie:</p>
+
+						<pre>
+							<code>
+								function lerCookie(nomec) {
+									let nome = nomec + "=";
+									let cookieDecodificado = decodeURIComponent(document.cookie);
+									let ca = decodedCookie.split(';');
+									for(let i = 0; i &lt; ca.length; i++) {
+										let c = ca[i];
+										while (c.charAt(0) == ' ') {
+											c = c.substring(1);
+										}
+										if (c.indexOf(nome) == 0) {
+											return c.substring(nome.length, c.length);
+										}
+									}
+									return "";
+								}
+							</code>
+						</pre>
+
+						<p><strong>Explicação</strong>: pega o nome do cookie como um parâmetro (nomec), cria uma variável (nome) com o texto a pesquisar (nomec + "="). Decodifica a sequência de caracteres do cookie para lidar com caracteres especiais (p.ex. "$"). Divide document.cookie, usando ponto-e-vírgula, em uma matriz chamada ca (ca = decodedCookie.split(';'). Percerre um loop pela matriz ca (i = 0; i &lt; ca.length; i++) e lê cada valor (c = ca[i]). Se o cookie for encontrado (c.indexOf(nome) == 0), retorna o valor do cookie (c.substring(nome.length, c.length)). Se não for encontrado, retorna "".</p>
+
+						<p>3. Verificar o cookie:</p>
+
+						<pre>
+							<code>
+								function verificarCookie() {
+									let nomeusuario = lerCookie("nomeusuario");
+									if (nomeusuario != "") {
+										alert("Bem-vindo(a) de volta " + nomeusuario + "!");
+									} else {
+										nomeusuario = prompt("Digite seu nome:", "");
+										if (nomeusuario != "" && nomeusuario != null) {
+											definirCookie("nomeusuario", nomeusuario, 365);
+										}
+									}
+								}
+							</code>
+						</pre>
+
+						<p><strong>Explicação</strong>: se o cookie estiver definido, exibe uma saudação. Caso contrário, exibe uma caixa de prompt solicitando que o usuário digite seu nome, e armazena essa informação no cookie "nomeusuario" por 365 dias chamando a função definirCookie.</p>
 		</section>
 	</main>
 </body>
