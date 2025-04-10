@@ -34,7 +34,7 @@
 
 				<p><strong>API</strong> significa <strong>I</strong>nterface de <strong>P</strong>rogramação de <strong>A</strong>plicativos. Há vários tipos de APIs: da Web, de navegador e de servidor.</p>
 
-				<p>Todos os navegadores têm APIs incorporadas que oferecem suporte a operações complexas e ajudam a acessar dados. Por exemplo, a API <em>Geolocation</em> retorna as coordenadas da localização do navegador.</p>
+				<p>Todos os navegadores têm APIs incorporadas que oferecem suporte a operações complexas e ajudam a acessar dados. Por exemplo, a API de <em>geolocalização</em> retorna as coordenadas da localização do navegador.</p>
 
 				<p>Há também APIs de terceiros, que não estão incorporadas no navegador. Para usá-las, é preciso fazer download do código da Internet. Exemplos:</p>
 
@@ -261,9 +261,303 @@
 		</section>
 
 		<section>
-				<h2>API de trabalhadores</h2>
+				<h2>API de tarefas</h2>
 
-				
+				<p>Uma API de tarefas (<em>Workers API</em>) é um script executado em segundo plano, independente de outros scripts e que não afeta o desempenho da página.</p>
+
+				<p>Antes de criar uma tarefa, é preciso garantir que haja suporte do navegador. Para tanto, use o seguinte código:</p>
+
+				<pre>
+					<code>
+						if (typeof(Worker) !== "undefined") {
+							// Sim! Há suporte para tarefas!
+							// Código a executar
+						} else {
+							// Desculpe! Não há suporte para tarefas.
+						}
+					</code>
+				</pre>
+
+					<h3>Como criar uma tarefa</h3>
+
+					<p>Para criar uma tarefa, é preciso usar um arquivo JavaScript externo, sem adicioná-lo ao HTML ou a um JavaScript com outros scripts. O exemplo a seguir gera uma contagem no arquivo <strong>demo_workers.js</strong>.</p>
+
+					<pre>
+						<code>
+							let i = 0;
+
+							function contagem() {
+								i ++;
+								postMessage(i);
+								setTimeout("contagem()",500);
+							}
+
+							contagem();
+						</code>
+					</pre>
+
+					<p>Observe o método <code>postMessage()</code>, usado para exibir uma mensagem na página HTML.</p>
+
+					<p class="important-info">Tarefas não são usadas para coisas tão simples, mas para algo que exige muito processamento.</p>
+
+					<p>Agora que temos o arquivo, precisamos chamá-lo na página HTML. O código a seguir verifica se a tarefa já existe, caso contrário, cria um novo objeto e executa o código em <code>demo_workers.js</code>.</p>
+
+					<pre>
+						<code>
+							if (typeof(w) == "undefined") {
+								w = new Worker("demo_workers.js");
+							}
+						</code>
+					</pre>
+
+					<p>Agora podemos enviar e receber mensagens da tarefa. Vamos adicionar o event listener <code>onmessage</code> à tarefa:</p>
+
+					<pre>
+						<code>
+							w.onmessage = function(event){
+								document.getElementById("result").innerHTML = event.data;
+							};
+						</code>
+					</pre>
+
+					<p>Ao publicar uma mensagem, a tarefa executa o código no event listener. Os dados são armazenados em <code>event.data</code>.</p>
+
+					<h3>Como finalizar uma tarefa</h3>
+
+					<p>O objeto de tarefa continua a aguardar mensagens, mesmo após a finalização do script externo. Para parar a tarefa e liberar recursos do computador, use o método <code>terminate()</code>.</p>
+
+					<pre>
+						<code>
+							w.terminate();
+						</code>
+					</pre>
+
+					<h3>Como reutilizar uma tarefa</h3>
+
+					<p>Ao definir a variável de tarefa como <code>undefined</code>, ela pode ser reutilizada.</p>
+
+					<pre>
+						<code>
+							w = undefined;
+						</code>
+					</pre>
+
+					<p class="important-info">Observe que as tarefas estão em arquivos externos, então não têm acesso aos seguintes objetos JavaScript:</p>
+
+					<ul class="list-square important-info">
+						<li>O objeto <code>window</code></li>
+						<li>O objeto <code>document</code></li>
+						<li>O objeto pai</li>
+					</ul>
+
+						<h4>Exemplo completo da API de tarefas</h4>
+
+						<pre>
+							<code>
+								&lt;!DOCTYPE html&gt;
+								&lt;html&gt;
+								&lt;body&gt;
+
+								&lt;p&gt;Contar números: &lt;output id="result"&gt;&lt;/output&gt;&lt;/p&gt;
+								&lt;button onclick="iniciarTarefa()"&gt;Iniciar tarefa&lt;/button&gt;
+								&lt;button onclick="pararTarefa()"&gt;Parar tarefa&lt;/button&gt;
+
+								&lt;script&gt;
+								let w;
+
+								function iniciarTarefa() {
+									if (typeof(w) == "undefined") {
+										w = new Worker("demo_workers.js");
+									}
+									w.onmessage = function(event) {
+										document.getElementById("result").innerHTML = event.data;
+									};
+								}
+
+								function pararTarefa() {
+									w.terminate();
+									w = undefined;
+								}
+								&lt;/script&gt;
+
+								&lt;/body&gt;
+								&lt;/html&gt;
+							</code>
+						</pre>
+		</section>
+
+		<section>
+				<h2>API de solicitação</h2>
+
+				<p>Esta API possibilita fazer solicitações HTTP a servidores da Web, isto é não precisamos mais usar <code>XMLHttpRequest</code>. Vejamos alguns exemplos:</p>
+
+					<h3>Buscar um arquivo e exibir seu conteúdo</h3>
+
+					<pre>
+						<code>
+							fetch(arquivo)
+							.then(x => x.texto())
+							.then(y => exibir(y));
+						</code>
+					</pre>
+
+					<p>Como esta API baseia-se em <code>async</code> e <code>await</code>, pode ser mais fácil entendê-la assim:</p>
+
+					<pre>
+						<code>
+							async function obterTexto(arquivo) {
+								let x = await fetch(arquivo);
+								let y = await x.texto();
+								exibir(y);
+							}
+						</code>
+					</pre>
+
+					<p>Melhor ainda: vamos usar nomes compreensíveis ao invés de <code>x</code> e <code>y</code>.</p>
+
+					<pre>
+						<code>
+							async function obterTexto(arquivo) {
+								let meuObjeto = await fetch(arquivo);
+								let meuTexto = await meuObjeto.texto();
+								exibir(meuTexto);
+							}
+						</code>
+					</pre>
+		</section>
+
+		<section>
+				<h2>API de geolocalização</h2>
+
+				<p>Use esta API para obter a posição geográfica de um usuário. Porém, note que, como ela pode comprometer a privacidade, a posição só fica disponível se o usuário permitir. E lembre-se que a geolocalização é mais precisa em dispositivos com GPS, como <em>smartphones</em>.</p>
+
+				<p class="important-info">A geolocalização só funciona em contextos seguros, como HTTPS.</p>
+
+				<p>O exemplo abaixo retorna a latitude e a longitude de um usuário através do método <code>getCurrentPosition()</code>. Note que este é um script bem básico, que não lida com erros.</p>
+
+				<pre>
+					<code>
+						&lt;script&gt;
+							const x = document.getElementById("demo");
+							function obterLocal() {
+								if (navigator.geolocation) {
+									navigator.geolocation.getCurrentPosition(exibirPosicao);
+								} else {
+									x.innerHTML = "Não há suporte para a geolocalização neste navegador.";
+								}
+							}
+							
+							function exibirPosicao(posicao) {
+								x.innerHTML = "Latitude: " + position.coords.latitude +
+								"&lt;br&gt;Longitude: " + position.coords.longitude;
+							}
+							&lt;/script&gt;
+					</code>
+				</pre>
+
+				<p><strong>Explicação:</strong></p>
+
+				<ul class="list-square">
+					<li>Verifica se há suporte para a geolocalização</li>
+					<li>Se há, executa o método <code>getCurrentPosition()</code>. Caso contrário, exibe uma mensagem para o usuário</li>
+					<li>Se o método <code>getCurrentPosition()</code> for bem sucedido, retorna um objeto de coordenadas para a função especificada no parâmetro (exibirPosicao)</li>
+					<li>A função exibirPosicao() retorna a Latitude e a Longitude</li>
+				</ul>
+
+				<p>Use o segundo parâmetro de <code>getCurrentPosition()</code> para lidar com erros. Ele especifica uma função a executar se falhar ao obter a posição do usuário.</p>
+
+				<pre>
+					<code>
+						function exibirErros(error) {
+							switch(error.code) {
+								case error.PERMISSION_DENIED:
+									x.innerHTML = "O usuário negou a solicitação de geolocalização."
+									break;
+								case error.POSITION_UNAVAILABLE:
+									x.innerHTML = "As informações de localização estão indisponíveis."
+									break;
+								case error.TIMEOUT:
+									x.innerHTML = "Tempo excedido na solicitação para obter a localização."
+									break;
+								case error.UNKNOWN_ERROR:
+									x.innerHTML = "Erro desconhecido."
+									break;
+							}
+						}
+					</code>
+				</pre>
+
+					<h3>Como exibir o resultado em um mapa</h3>
+
+					<p>Para exibir o resultado em um mapa, é preciso ter acesso a um serviço de mapas, como o Google Maps. No exemplo abaixo, usamos a latitude e a longitude retornadas para mostrar o local no Google Maps (com uma imagem estática):</p>
+
+					<pre>
+						<code>
+							function exibirPosicao(posicao) {
+								let latlon = posicao.coords.latitude + "," + position.coords.longitude;
+							
+								let img_url = "https://maps.googleapis.com/maps/api/staticmap?center=
+								"+latlon+"&zoom=14&size=400x300&sensor=false&key=SUA_CHAVE_API";
+							
+								document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+							}
+						</code>
+					</pre>
+
+				<p>Também podemos usar a geolocalização para exibir informações	atualizadas de local, exibir pontos de interesse próximos ao usuário e navegação em mapas (GPS).</p>
+
+				<p class="important-info">O método <code>getCurrentPosition()</code> retorna um objeto quanto é bem sucedido. As propriedades <code>latitude</code>, <code>longitude</code> e <code>accuracy</code> (precisão) sempre são retornadas, as propriedades abaixo somente quando estão disponíveis:</p>
+
+				<table>
+					<tbody>
+						<tr>
+							<th style="width:150px">Propriedade</th>
+							<th>Retorna</th>
+						</tr>
+						<tr>
+							<td>coords.latitude</td>
+							<td>A latitude como um número decimal (sempre retornada)</td>
+						</tr>
+						<tr>
+							<td>coords.longitude</td>
+							<td>A longitude como um número decimal (sempre retornada)</td>
+						</tr>
+						<tr>
+							<td>coords.accuracy</td>
+							<td>A precisão da posição (sempre retornada)</td>
+						</tr>
+						<tr>
+							<td>coords.altitude</td>
+							<td>A altitude, em metros, acima do nível do mar (somente se disponível)</td>
+						</tr>
+						<tr>
+							<td>coords.altitudeAccuracy</td>
+							<td>A precisão da altitude da posição (somente se disponível)</td>
+						</tr>
+						<tr>
+							<td>coords.heading</td>
+							<td>A orientação (norte, sul, leste ou oeste), em graus, no sentido horário a partir do norte (somente se disponível)</td>
+						</tr>
+						<tr>
+							<td>coords.speed</td>
+							<td>A velocidade, em metros por segundo (somente se disponível)</td>
+						</tr>
+						<tr>
+							<td>timestamp</td>
+							<td>A data/hora da resposta (somente se disponível)</td>
+						</tr>
+					</tbody>
+				</table>
+
+					<h3>Outros métodos interessantes da geolocalização</h3>
+
+						<h4>watchPosition()</h4>
+
+						<p>Retorna a posição atual do usuário e continua retornando uma posição atualizada conforme o usuário se move (como o GPS em um carro).</p>
+
+						<h4>clearWatch()</h4>
+
+						<p>Pára o método <code>watchPosition()</code>.</p>
 		</section>
 	</main>
 </body>
