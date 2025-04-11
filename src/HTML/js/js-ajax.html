@@ -18,7 +18,33 @@
 		</header>
 
 		<section>
+				<p>AJAX não é uma linguagem de programação, é uma técnica para acessar servidores da Web a partir de uma página no navegador. AJAX significa <strong>A</strong>synchronous <strong>J</strong>avaScript <strong>a</strong>nd <strong>X</strong>ML.</p>
 
+				<p>O AJAX combina um objeto <code>XMLHttpRequest</code>, que acompanha qualquer navegador, para solicitar dados de um servidor da Web, ao JavaScript e ao DOM HTML.</p>
+
+				<p>Dessa forma, as páginas da Web são atualizadas de forma assíncrona, trocando dados com um servidor da Web em segundo plano. E não é preciso recarregar a página para obter os novos dados.</p>
+		</section>
+
+		<section>
+				<h2>Como o AJAX funciona</h2>
+
+				<img src="../../img/how_ajax_works.gif" alt="Organograma que explica o funcionamento do AJAX">
+
+				<p><strong>Explicação</strong></p>
+
+				<ol>
+					<li>Determinado evento ocorre em uma página (a página carrega, o usuário clica em um botão, etc...)</li>
+					<li>O JavaScript cria um objeto XMLHttpRequest</li>
+					<li>O objeto XMLHttpRequest envia uma solicitação a um servidor da Web</li>
+					<li>O servidor processa a solicitação</li>
+					<li>O servidor enviar uma resposta de volta à página da Web</li>
+					<li>O JavaScript lê a resposta</li>
+					<li>O JavaScript executa a ação apropriada (como atualizar a página)</li>
+				</ol>
+
+					<h3>API fetch()</h3>
+
+					<p>Em navegadores modernos, temos a API de solicitação (<code>fetch()</code>). Saiba mais em <a href="../js/js-apis.html#api-fetch">API de solicitação</a>.</p>
 		</section>
 	</main>
 </body>
