@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<meta charset="utf-8">
-<head>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../../css/style.css">
-    <meta nome="keywords" content="HTML, CSS, JavaScript">
-    <meta ano="description" content="JSON">
-    <meta ano="author" content="Lizandra Silva (@maopequena)">
-    <meta ano="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <meta nome="keywords" content="HTML, CSS, JavaScript" />
+    <meta ano="description" content="JSON" />
+    <meta ano="author" content="Lizandra Silva (@maopequena)" />
+    <meta ano="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JSON</title>
-</head>
-<body>
-	<header>
-		<h1>JSON</h1>
-	</header>
+  </head>
+  <body>
+    <header>
+      <h1>JSON</h1>
+    </header>
 
-	<section>
-		<p>JSON (JavaScript Object Notation) é um formato de intercâmbio de dados leve que permite armazenar e transmitir dados estruturados. Geralmente é usado para transferir dados de um servidor para uma página da Web. O JSON funciona com qualquer linguagem de programação<sup>1</sup>, é auto-descritivo<sup>2</sup> e fácil de usar.</p>
+    <section>
+      <p>
+        JSON (<strong>J</strong>ava<strong>S</strong>cript
+        <strong>O</strong>bject <strong>N</strong>otation) é um formato de troca
+        de dados leve que permite armazenar e transmitir dados estruturados.
+        Geralmente é usado para transferir dados de um servidor para uma página
+        da Web. O JSON funciona com qualquer linguagem de programação<a
+          href="#notacao1"
+          ><sup>1</sup></a
+        >, é auto-descritivo<a href="#notacao2"><sup>2</sup></a> e fácil de
+        usar.
+      </p>
 
-		<p>Como o formato do JSON é idêntico ao código para criar objetos do JavaScript, qualquer programa JavaScript pode facilmente converter dados JSON em objetos JavaScript nativos.</p>
+      <p>
+        Como o formato do JSON é idêntico ao código para criar objetos do
+        JavaScript, qualquer programa JavaScript pode facilmente converter dados
+        JSON em objetos JavaScript nativos.
+      </p>
 
-		<p><sup>1</sup> A sintaxe do JSON vem da sintaxe de notação de objeto do JavaScript, mas seu formato é apenas texto. O código para ler e gerar dados JSON pode ser escrito em qualquer linguagem de programação.</p>
-		<p><sup>2</sup> Isto é, explica a si mesmo.</p>
-	</section>
+      <p id="notacao1">
+        <sup>1</sup> A sintaxe do JSON vem da sintaxe de notação de objeto do
+        JavaScript, mas seu formato é apenas texto. O código para ler e gerar
+        dados JSON pode ser escrito em qualquer linguagem de programação.
+      </p>
+      <p id="notacao2"><sup>2</sup> Isto é, explica a si mesmo.</p>
+    </section>
 
-	<section>
-			<h2>Exemplo</h2>
+    <section>
+      <h2>Exemplo</h2>
 
-			<pre>
+      <pre>
 				<code>
 					{
 					"funcionarios":[
@@ -39,40 +57,53 @@
 				</code>
 			</pre>
 
-			<h2>Regras de sintaxe do JSON</h2>
+      <h2>Regras de sintaxe do JSON</h2>
 
-			<ul class="list-square">
-				<li>Os dados devem ter pares de nome/valor</li>
-				<li>Os dados devem ser separados por vírgulas</li>
-				<li>Chaves armazenam objetos</li>
-				<li>Colchetes armazenam matrizes</li>
-			</ul>
+      <ul class="list-square">
+        <li>Os dados devem ter pares de nome/valor</li>
+        <li>Os dados devem ser separados por vírgulas</li>
+        <li>Chaves armazenam objetos</li>
+        <li>Colchetes armazenam matrizes</li>
+      </ul>
 
-				<h3>Pares de nome/valor</h3>
+      <h3>Pares de nome/valor</h3>
 
-				<p>Um par de nome/valor consiste de um nome de campo (entre aspas duplas), seguido de dois-pontos e seguido do valor. <span class="important-info">LEMBRE-SE: os nomes no JSON <strong>REQUEREM</strong> aspas duplas, mas não no JavaScript.</span></p>
+      <p>
+        Um par de nome/valor consiste de um nome de campo (entre aspas duplas),
+        seguido de dois-pontos e seguido do valor, também entre aspas duplas.
+        <span class="important-info"
+          >LEMBRE-SE: os nomes no JSON <strong>REQUEREM</strong> aspas duplas,
+          mas não no JavaScript.</span
+        >
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						"primeiroNome":"John"
 					</code>
 				</pre>
 
-				<h3>Objetos</h3>
+      <h3>Objetos</h3>
 
-				<p>Assim como no JavaScript, objetos são escritos com chaves e podem conter vários pares de nome/valor:</p>
+      <p>
+        Assim como no JavaScript, objetos são escritos com chaves e podem conter
+        vários pares de nome/valor:
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						{"primeiroNome":"John", "sobrenome":"Doe"}
 					</code>
 				</pre>
 
-				<h3>Matrizes</h3>
+      <h3>Matrizes</h3>
 
-				<p>Assim como no JavaScript, matrizes são escritas com colchetes e podem conter objetos:</p>
+      <p>
+        Assim como no JavaScript, matrizes são escritas com colchetes e podem
+        conter objetos:
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						"funcionarios":[
 							{"primeiroNome":"John", "sobrenome":"Doe"},
@@ -81,35 +112,49 @@
 						]
 					</code>
 				</pre>
-	</section>
 
-	<section>
-		<h2>Como converter o texto JSON em um objeto JavaScript</h2>
+      <p>
+        O tipo de arquivo JSON deve ser <code>.json</code>, o tipo MIME para
+        texto JSON é <code>application/json</code>.
+      </p>
+    </section>
 
-		<p>Um uso comum para o JSON é ler dados de um servidor e exibi-los em uma página da Web. Para simplificar, podemos demonstrar isso usando uma cadeia de caracteres.</p>
+    <section>
+      <h2>Como converter o texto JSON em um objeto JavaScript</h2>
 
-		<p>Primeiro, vamos criar uma cadeia de caracteres com a sintaxe do JSON:</p>
+      <p>
+        Um uso comum para o JSON é ler dados de um servidor e exibi-los em uma
+        página da Web. Para simplificar, podemos demonstrar isso usando uma
+        cadeia de caracteres.
+      </p>
 
-		<pre>
+      <p>
+        Primeiro, vamos criar uma cadeia de caracteres com a sintaxe do JSON:
+      </p>
+
+      <pre>
 			<code>
 				let texto = '{ "funcionarios" : [' +
 					'{ "primeiroNome":"John" , "sobrenome":"Doe" },' +
 					'{ "primeiroNome":"Anna" , "sobrenome":"Smith" },' +
-					'{ "primeiroNome":"Peter" , "sobrenome":"Jones" } ]}';
+					'{ "primeiroNome":"Peter" , "sobrenome":"Jones" } + ]}'';
 			</code>
 		</pre>
 
-		<p>Em seguida, usamos a função <code>JSON.parse()</code> do JavaScript para converter essa cadeia de caracteres em um objeto do JavaScript:</p>
+      <p>
+        Em seguida, usamos a função <code>JSON.parse()</code> do JavaScript para
+        converter essa cadeia de caracteres em um objeto do JavaScript:
+      </p>
 
-		<pre>
+      <pre>
 			<code>
 				const obj = JSON.parse(texto);
 			</code>
 		</pre>
 
-		<p>Por fim, usamos o novo objeto na página:</p>
+      <p>Por fim, usamos o novo objeto na página:</p>
 
-		<pre>
+      <pre>
 			<code>
 				&lt;p id="demo"&gt;&lt;/p&gt;
 
@@ -119,6 +164,647 @@
 				&lt;/script&gt;
 			</code>
 		</pre>
-	</section>
-</body>
+
+      <p>
+        Também é possível converter um objeto JavaScript em um texto JSON usando
+        a função <code>JSON.stringify()</code>.
+      </p>
+
+      <pre>
+			<code>
+				const obj = {
+					"funcionarios":[
+					{"primeiroNome":"John", "sobrenome":"Doe"},
+					{"primeiroNome":"Anna", "sobrenome":"Smith"},
+					{"primeiroNome":"Peter", "sobrenome":"Jones"}
+					]
+				};
+
+				const meuJSON = JSON.stringify(obj);
+			</code>
+		</pre>
+
+      <p>
+        Com JSON, é possível receber texto puro de um servidor e usá-lo como um
+        objeto JavaScript. É possível enviar um objeto JavaScript para um
+        servidor em formato de texto puro. E é possível trabalhar com dados como
+        objetos JavaScript, sem necessidade de análises ou traduções
+        complicadas.
+      </p>
+
+      <p>
+        Não é preciso armazenar dados em um formato específico e,
+        independentemente de onde serão armazenados, o texto é sempre um formato
+        permitido. O JSON permite isso!
+      </p>
+    </section>
+
+    <section>
+      <h2>JSON vs XML</h2>
+
+      <p>
+        Podemos usar ambos para receber e enviar dados de um servidor, mas o
+        JSON é mais usado. Compare os dois exemplos abaixo, um em JSON e outro
+        em XML. Ambos apresentam uma matriz com três funcionários:
+      </p>
+
+      <pre>
+			<code>
+				EXEMPLO JSON:
+
+				{"funcionarios":[
+					{ "primeiroNome":"John", "sobrenome":"Doe" },
+					{ "primeiroNome":"Anna", "sobrenome":"Smith" },
+					{ "primeiroNome":"Peter", "sobrenome":"Jones" }
+				]}
+
+				EXEMPLO XML:
+
+				&lt;funcionarios&gt;
+				&lt;funcionario&gt;
+					&lt;primeiroNome&gt;John&lt;/primeiroNome&gt;
+					&lt;sobrenome&gt;Doe&lt;/sobrenome&gt;
+				&lt;/employee&gt;
+				&lt;employee&gt;
+					&lt;primeiroNome&gt;Anna&lt;/primeiroNome&gt;
+					&lt;sobrenome&gt;Smith&lt;/sobrenome&gt;
+				&lt;/employee&gt;
+				&lt;employee&gt;
+					&lt;primeiroNome&gt;Peter&lt;/primeiroNome&gt;
+					&lt;sobrenome&gt;Jones&lt;/sobrenome&gt;
+				&lt;/funcionario&gt;
+			&lt;/funcionarios&gt;
+			</code>
+		</pre>
+
+      <h3>JSON é similar a XML porque:</h3>
+
+      <ul class="list-square">
+        <li>Ambos são auto-descritivos (fácil de ler para humanos)</li>
+        <li>Ambos são hierárquicos (valores estão dentro de valores)</li>
+        <li>
+          Ambos podem ser lidos e usados por várias linguagens de programação
+        </li>
+        <li>Ambos podem ser solicitados com XMLHttpRequest</li>
+      </ul>
+
+      <h3>JSON é diferente de XML porque:</h3>
+
+      <ul class="list-square">
+        <li>O JSON não tem tags de fechamento</li>
+        <li>O JSON é mais curto</li>
+        <li>O JSON é mais rápido para ler e escrever</li>
+        <li>O JSON pode usar matrizes</li>
+      </ul>
+
+      <p>
+        Porém, a principal diferença entre eles é que o XML precisa de um leitor
+        específico, enquanto o JSON pode ser lido por uma função JavaScript
+        padrão.
+      </p>
+
+      <p>
+        No caso de aplicativos AJAX, é mais fácil e rápido usar JSON do que XML:
+      </p>
+
+      <p>Com XML:</p>
+
+      <ul class="list-square">
+        <li>Solicitar um documento XML</li>
+        <li>Usado o DOM do XML para iterar pelo documento</li>
+        <li>Extrair valores e armazená-los em variáveis</li>
+      </ul>
+
+      <p>Com JSON:</p>
+
+      <ul class="list-square">
+        <li>Solicitar uma string JSON</li>
+        <li>Usar <code>JSON.parse()</code> na string</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tipos de dados válidos no JSON</h2>
+
+      <p>
+        Os tipos de dados válidos no JSON incluem: <strong>strings</strong>,
+        <strong>números</strong>, <strong>booleanos</strong>,
+        <strong>nulos</strong>, <strong>matrizes</strong> e
+        <strong>objetos</strong>.
+        <span class="important-info"
+          >Note que não é possível usar funções, datas e
+          <em>undefined</em>.</span
+        >
+      </p>
+
+      <h3>Exemplos</h3>
+
+      <p><strong>Strings</strong></p>
+
+      <p><code>{"nome":"John"}</code></p>
+
+      <p><strong>Números</strong></p>
+
+      <p><code>{"idade":30}</code></p>
+
+      <p><strong>Objetos</strong></p>
+
+      <pre><code>
+{
+"funcionario":{"nome":"John", "idade":30, "cidade":"Nova York"}
+}
+			</code></pre>
+
+      <p><strong>Matrizes</strong></p>
+
+      <pre><code>
+{
+"funcionarios":["John", "Anna", "Peter"]
+}
+			</code></pre>
+
+      <p><strong>Booleanos</strong></p>
+
+      <p><code>{"venda":true}</code></p>
+
+      <p><strong>Nulos</strong></p>
+
+      <p><code>{"nomeDoMeio":null}</code></p>
+    </section>
+
+    <section>
+      <h2>Como converter datas e funções em JSON</h2>
+
+      <p>
+        Um uso comum para o JSON é trocar dados de/para um servidor da Web. Ao
+        receber dados de um servidor, eles serão sempre
+        <strong>strings</strong>, ou cadeias de caracteres. Analise os dados com
+        <code>JSON.parse()</code> e eles se tornarão um objeto JavaScript.
+      </p>
+
+      <h3>Exemplo</h3>
+
+      <p>Recebemos o seguinte de um servidor:</p>
+
+      <pre>
+					<code>
+						'{"nome":"John", "idade":30, "cidade":"Nova York"}'
+					</code>
+				</pre>
+
+      <p>Use a função <code>JSON.parse()</code>:</p>
+
+      <pre>
+				<code>
+					const obj = JSON.parse('{"nome":"John", "idade":30, "cidade":"Nova York"}');
+				</code>
+			</pre>
+
+      <p>Depois é só usar o objeto no JavaScript:</p>
+
+      <pre>
+				<code>
+					&lt;p id="demo"&gt;&lt;/p&gt;
+
+					&lt;script&gt;
+					document.getElementById("demo").innerHTML = obj.nome;
+					&lt;/script&gt;
+				</code>
+			</pre>
+
+      <h3>Matrizes</h3>
+
+      <p>
+        Note que ao usar <code>JSON.parse()</code> em uma matriz, o método
+        retorna uma matriz e não um objeto:
+      </p>
+
+      <pre>
+				<code>
+					const text = '["Ford", "BMW", "Audi", "Fiat"]';
+					const meuArr = JSON.parse(text);
+				</code>
+			</pre>
+
+      <h3>Exceções</h3>
+
+      <p><strong>Análise de datas</strong></p>
+
+      <p>
+        Objetos de data não são permitidos no JSON. Se precisar incluir uma
+        data, escreva-a como uma cadeia de caracteres e, depois, converta-a de
+        volta para um objeto de data:
+      </p>
+
+      <pre>
+				<code>
+					const texto = '{"nome":"John", "dataNascimento":"1986-12-14", "cidade":"Nova York"}';
+					const obj = JSON.parse(texto);
+					obj.dataNascimento = new Date(obj.dataNascimento);
+
+					document.getElementById("demo").innerHTML = obj.nome + ", " + obj.dataNascimento;
+				</code>
+			</pre>
+
+      <p>
+        Ou use o segundo parâmetro de JSON.parse(): o <em>reviver</em>, que
+        verifica cada propriedade antes de retornar o valor.
+      </p>
+
+      <pre>
+				<code>
+					const texto = '{"nome":"John", "dataNascimento":"1986-12-14", "cidade":"Nova York"}';
+					const obj = JSON.parse(texto, function (key, value) {
+						if (key == "dataNascimento") {
+							return new Date(value);
+						} else {
+							return value;
+						}
+					});
+
+					document.getElementById("demo").innerHTML = obj.nome + ", " + obj.dataNascimento;
+				</code>
+			</pre>
+
+      <p><strong>Análise de funções</strong></p>
+
+      <p>
+        Funções não são permitidas no JSON. Se precisar incluir uma função,
+        escreva-a como uma cadeia de caracteres e depois converta-a de volta
+        para uma função:
+      </p>
+
+      <pre>
+				<code>
+					const texto = '{"nome":"John", "idade":"function () {return 30;}", "cidade":"Nova York"}';
+					const obj = JSON.parse(texto);
+					obj.idade = eval("(" + obj.idade + ")");
+
+					document.getElementById("demo").innerHTML = obj.nome + ", " + obj.idade();
+				</code>
+			</pre>
+
+			<p class="important-info">Evite usar funções no JSON, já que elas podem perder o escopo e é preciso usar <code>eval()</code> para executá-las.</code></p>
+    </section>
+
+		<section>
+			<h2 id="stringify">JSON.stringify()</h2>
+
+			<h3>Objeto</h3>
+			
+			<p>Imagine que temos o seguinte objeto no JavaScript:</p>
+
+			<pre>
+				<code>
+					const obj = {nome: "John", idade: 30, cidade: "Nova York"};
+				</code>
+			</pre>
+
+			<p>Vamos usar a função <code>JSON.stringify</code> para convertê-lo:</p>
+
+			<pre>
+				<code>
+					const meuJSON = JSON.stringify(obj);
+				</code>
+			</pre>
+
+			<p>O resultado será uma cadeia de caracteres com a notação JSON, que já pode ser enviado para um servidor:</p>
+
+			<pre>
+				<code>
+					{"nome":"John","idade":30,"cidade":"Nova York"}
+				</code>
+			</pre>
+
+			<h3>Matriz</h3>
+
+			<p>Também podemos transformar matrizes em cadeias de caracteres com a mesma função:</p>
+
+			<pre>
+				<code>
+					const matriz = ["John", "Peter", "Sally", "Jane"];
+					const meuJSON = JSON.stringify(matriz);
+
+					// Resultado:
+					["John","Peter","Sally","Jane"]
+				</code>
+			</pre>
+
+			<h3>Armazenar dados</h3>
+
+			<p>Para armazenar dados, é preciso que eles estejam em um formato específico e, independentemente de onde são armazenados, sempre é possível armazenar em formato de texto. O JSON possibilita armazenar objetos JavaScript nesse formato.</p>
+
+			<pre>
+				<code>
+					// Armazenar os dados:
+					const meuObj = {nome: "John", idade: 31, cidade: "Nova York"};
+					const meuJSON = JSON.stringify(meuObj);
+					localStorage.setItem("testeJSON", meuJSON);
+
+					// Recuperar os dados:
+					let texto = localStorage.getItem("testeJSON");
+					let obj = JSON.parse(texto);
+					document.getElementById("demo").innerHTML = obj.nome;
+				</code>
+			</pre>
+
+			<h3>Todos os tipos de dados</h3>
+
+			<p>Esta função pode converter qualquer tipo de dados em uma cadeia de caracteres, não só objetos e matrizes. Por exemplo:</p>
+
+			<pre>
+				<code>
+					// Números:
+					const num = 123e-5;
+					const meyJSON = JSON.stringify(num); // 0.00123
+
+					// Booleanos:
+					let bool = new Boolean(1);
+					const meuJSON = JSON.stringify(bool); // true
+				</code>
+			</pre>
+
+			<h3>Datas</h3>
+
+			<p>Objetos de data não são permitidos no JSON. A função <code>JSON.stringify()</code> converterá qualquer objeto de data em cadeias de caracteres:</p>
+
+			<pre>
+				<code>
+					const obj = {nome: "John", hoje: new Date(), cidade : "Nova York"};
+					const meuJSON = JSON.stringify(obj); // {"nome":"John","hoje":"2025-07-11T17:31:15.568Z","cidade":"Nova York"}
+				</code>
+			</pre>
+
+			<p>Após receber o objeto no ponto final, é possível converter o objeto novamente em data.</p>
+
+			<h3>Funções</h3>
+
+			<p>As funções não são objetos permitidos no JSON, porém a função <code>JSON.stringify()</code> <strong>removerá</strong> qualquer função de um objeto JavaScript, transformando ambos a chave e o valor em cadeias de caracteres:</p>
+
+			<pre>
+				<code>
+					const obj = {nome: "John", idade: function () {return 30;}, cidade: "Nova York"};
+					const meuJSON = JSON.stringify(obj); // {"nome":"John","cidade":"Nova York"}
+				</code>
+			</pre>
+
+			<p>Podemos evitar que a função seja removida ao convertê-la primeiro em uma cadeia de caracteres:</p>
+
+			<pre>
+				<code>
+					const obj = {nome: "John", idade: function () {return 30;}, cidade: "Nova York"};
+					obj.idade = obj.idade.toString();
+					const meuJSON = JSON.stringify(obj); // {"nome":"John","idade":"function () {return 30;}","cidade":"Nova York"}
+				</code>
+			</pre>
+
+			<p class="important-info">Lembre-se que ao enviar funções via JSON, elas podem perder o escopo (o contexto) e deverão ser convertidas com a função <code>eval()</code> para que funcionem novamente.</p>
+		</section>
+
+		<section>
+			<h2>Enviar dados para um servidor</h2>
+
+			<p>Se um objeto JavaScript contém dados, podemos converter o objeto em JSON e enviá-lo ao servidor:</p>
+
+			<pre>
+				<code>
+					const meuObj = {nome: "John", idade: 31, cidade: "Nova York"};
+					const meuJSON = JSON.stringify(meuObj);
+					window.location = "demo_json.php?x=" + meuJSON;
+				</code>
+			</pre>
+
+			<h2>Receber dados de um servidor</h2>
+
+			<p>Ao receber dados no formato JSON, podemos convertê-los em um objeto JavaScript:</p>
+
+			<pre>
+				<code>
+					const meuJSON = '{"nome":"John", "idade":31, "cidade":"Nova York"}';
+					const meuObj = JSON.parse(meuJSON);
+					document.getElementById("demo").innerHTML = meuObj.nome;
+				</code>
+			</pre>
+
+			<h2>Solicitar JSON de um servidor</h2>
+
+			<p>Podemos solicitar JSON se um servidor usando AJAX. Desde que a resposta venha no formato JSON, podemos convertê-la em um objeto JavaScript.</p>
+
+			<pre>
+				<code>
+					const xmlhttp = new XMLHttpRequest();
+					xmlhttp.onload = function() {
+						const meuObj = JSON.parse(this.textoResposta);
+						document.getElementById("demo").innerHTML = meuObj.nome;
+					};
+					xmlhttp.open("GET", "json_demo.txt");
+					xmlhttp.send();
+				</code>
+			</pre>
+
+			<p>Este é o objeto usado no exemplo acima:</p>
+
+				<pre>
+					<code>
+						{"nome":"John",
+						"idade":31,
+						"animais":[
+							{ "animal":"cão", "nome":"Fido" },
+							{ "animal":"gato", "nome":"Felix" },
+							{ "animal":"hamster", "nome":"Raio" }]
+						}
+					</code>
+				</pre>
+		</section>
+
+		<section>
+			<h2>JSON e PHP</h2>
+
+			<p>A seguir veremos como compartilhar dados em JSON entre o cliente e o servidor PHP.</p>
+
+			<h3>O arquivo PHP</h3>
+
+			<p>O PHP oferece algumas funções para lidar diretamente com JSON. Podemos converter objetos do PHP em JSON usando a função <code>json_encode()</code>:</p>
+
+			<pre>
+				<code>
+					&lt;?php
+					$meuObj->nome = "John";
+					$meuObj->idade = 30;
+					$meuObj->cidade = "Nova York";
+
+					$meuJSON = json_encode($meuObj);
+
+					echo $meuJSON;
+					?&gt;
+				</code>
+			</pre>
+
+			<h3>O cliente JavaScript</h3>
+
+			<p>Agora vejamos como fica o JavaScript no lado do cliente, usando uma chamada AJAX para solicitar o arquivo PHP acima:</p>
+
+			<pre>
+				<code>
+					const xmlhttp = new XMLHttpRequest();
+					xmlhttp.onload = function() {
+						const meuObj = JSON.parse(this.responseText);
+						document.getElementById("demo").innerHTML = meuObj.nome;
+					}
+					xmlhttp.open("GET", "demo_file.php");
+					xmlhttp.send();
+				</code>
+			</pre>
+
+			<h3>Matriz no PHP</h3>
+
+			<p>Também podemos converter matrizes no PHP para JSON usando a função <code>json_encode()</code>:</p>
+
+			<pre>
+				<code>
+					&lt;?php
+					$minhaMatriz = array("John", "Mary", "Peter", "Sally");
+
+					$meuJSON = json_encode($minhaMatriz);
+
+					echo $meuJSON;
+					?&gt;
+				</code>
+			</pre>
+
+			<p>E este é o JavaScript correspondente:</p>
+
+			<pre>
+				<code>
+					var xmlhttp = new XMLHttpRequest();
+					xmlhttp.onload = function() {
+						const meuObj = JSON.parse(this.responseText);
+						document.getElementById("demo").innerHTML = meuObj[2];
+					}
+					xmlhttp.open("GET", "demo_file_array.php", true);
+					xmlhttp.send();
+				</code>
+			</pre>
+
+			<h3>Banco de dados PHP</h3>
+
+			<p>O PHP é uma linguagem de programação usada no servidor, usada para acessar um banco de dados. Imagine que temos um banco de dados no servidor e queremos enviar uma solicitação a ele, vinda do cliente, para pedir as 10 primeiras linhas em uma tabela chamada "clientes".</p>
+
+			<p>No cliente, criamos um objeto JSON que descreve a quantidade de linha que se deseja retornar. Antes de enviar a solicitação ao servidor, precisamos converter o objeto JSON em uma cadeia de caracteres, para enviá-lo como parâmetro à URL da página em PHP:</p>
+
+			<pre>
+				<code>
+					const limite = {"limit":10};
+					const paramDB = JSON.stringify(limite);
+					xmlhttp = new XMLHttpRequest();
+					xmlhttp.onload = function() {
+						document.getElementById("demo").innerHTML = this.responseText;
+					}
+					xmlhttp.open("GET","json_demo_db.php?x=" + paramDB);
+					xmlhttp.send();
+				</code>
+			</pre>
+
+			<h4>Explicação do exemplo:</h4>
+
+				<ul>
+					<li>Definir um objeto que contém uma propriedade "limite" e seu valor</li>
+					<li>Converter o objeto em uma cadeia de caracteres JSON</li>
+					<li>Enviar uma solicitação ao arquivo PHP, com a cadeia de caracteres JSON como parâmetro</li>
+					<li>Aguardar até que a solicitação retorne com o resultado (em formato JSON)</li>
+					<li>Exibir o resultado recebido do arquivo PHP</li>
+				</ul>
+
+				<p>Vejamos o arquivo PHP:</p>
+
+				<pre>
+					<code>
+						&lt;?php
+						header("Content-Type: application/json; charset=UTF-8");
+						$obj = json_decode($_GET["x"], false);
+
+						$conn = new mysqli("meuServidor", "meuUsuario", "minhaSenha", "Northwind");
+						$stmt = $conn->prepare("SELECT nome FROM clientes LIMIT ?");
+						$stmt->bind_param("s", $obj->limit);
+						$stmt->execute();
+						$result = $stmt->get_result();
+						$outp = $result->fetch_all(MYSQLI_ASSOC);
+
+						echo json_encode($outp);
+						?&gt;
+					</code>
+				</pre>
+
+				<h4>Explicação</h4>
+
+				<ul>
+					<li>Converter a solicitação em um objeto usando a função <code>json_decode()</code> do PHP</li>
+					<li>Acessar o banco de dados e preencher uma matriz com os dados solicitados</li>
+					<li>Adicionar a matriz a um objeto e retorná-lo como JSON usando a função <code>json_encode()</code></li>
+				</ul>
+
+				<p>Depois é só usar os dados:</p>
+
+				<pre>
+					<code>
+						xmlhttp.onload = function() {
+						const meuObj = JSON.parse(this.responseText);
+						let texto = "";
+						for (let x in meuObj) {
+							texto += meuObj[x].nome + "<br>";
+						}
+						document.getElementById("demo").innerHTML = texto;
+					}
+					</code>
+				</pre>
+
+				<h3>Método POST no PHP</h3>
+
+				<p>Ao enviar dados para o servidor, é melhor usar o método HTTP <strong>POST</strong>. Para enviar solicitações AJAX usando este método, defina-o com o cabeçalho correto. Os dados enviador ao servidor devem, então, se tornar um argumento do método <code>send()</code>:</p>
+
+				<pre>
+					<code>
+						const paramDB = JSON.stringify({"limit":10});
+						const xmlhttp = new XMLHttpRequest();
+						xmlhttp.onload = function() {
+							const meuObj = JSON.parse(this.responseText);
+							let texto ="";
+							for (let x in meuObj) {
+								texto += meuObj[x].nome + "<br>";
+							}
+							document.getElementById("demo").innerHTML = texto;
+						}
+						xmlhttp.open("POST", "json_demo_db_post.php");
+						xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+						xmlhttp.send("x=" + paramDB);
+					</code>
+				</pre>
+
+				<p>O arquivo PHP aqui tem uma diferença: o método usado para transferir os dados.</p>
+
+				<pre>
+					<code>
+						&lt;?php
+						header("Content-Type: application/json; charset=UTF-8");
+						$obj = json_decode($_POST["x"], false);
+
+						$conn = new mysqli("meuServidor", "meuUsuario", "minhaSenha", "Northwind");
+						$stmt = $conn->prepare("SELECT nome FROM clientes LIMIT ?");
+						$stmt->bind_param("s", $obj->limit);
+						$stmt->execute();
+						$result = $stmt->get_result();
+						$outp = $result->fetch_all(MYSQLI_ASSOC);
+
+						echo json_encode($outp);
+						?&gt;
+					</code>
+				</pre>
+		</section>
+
+		<section>
+			<h2>JSON e HTML</h2>
+
+			
+		</section>
+  </body>
 </html>

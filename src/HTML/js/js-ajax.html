@@ -20,7 +20,7 @@
 		<section>
 				<p>AJAX não é uma linguagem de programação, é uma técnica para acessar servidores da Web a partir de uma página no navegador. AJAX significa <strong>A</strong>synchronous <strong>J</strong>avaScript <strong>a</strong>nd <strong>X</strong>ML.</p>
 
-				<p>O AJAX combina um objeto <code>XMLHttpRequest</code>, que acompanha qualquer navegador, para solicitar dados de um servidor da Web, ao JavaScript e ao DOM HTML.</p>
+				<p>O AJAX combina um objeto <code>XMLHttpRequest</code>, que acompanha qualquer navegador, para solicitar dados de um servidor da Web, do JavaScript e do DOM HTML.</p>
 
 				<p>Dessa forma, as páginas da Web são atualizadas de forma assíncrona, trocando dados com um servidor da Web em segundo plano. E não é preciso recarregar a página para obter os novos dados.</p>
 		</section>
@@ -45,6 +45,346 @@
 					<h3>API fetch()</h3>
 
 					<p>Em navegadores modernos, temos a API de solicitação (<code>fetch()</code>). Saiba mais em <a href="../js/js-apis.html#api-fetch">API de solicitação</a>.</p>
+		</section>
+
+		<section>
+				<h2>O objeto XMLHttpRequest</h2>
+
+				<p>A base do AJAX é o objeto <code>XMLHttpRequest</code>, que:</p>
+
+				<ul class="list-square">
+					<li>Cria um objeto XMLHttpRequest</li>
+					<li>Define uma função de retorno</li>
+					<li>Abre um objeto XMLHttpRequest</li>
+					<li>Envia uma solicitaçãoa um servidor</li>
+				</ul>
+
+				<p>Todos os navegadores modernos oferecem suporte a este objeto, que pode ser usado para trocar dados com um servidor da Web em segundo plano, isto é, podemos atualizar uma página sem a necessidade de recarregá-la.</p>
+
+					<h3>Como criar o objeto XMLHttpRequest</h3>
+
+					<p><strong>Sintaxe:</strong> <code>let <em>variável</em> = new XMLHttpRequest();</code></p>
+
+					<h3>Como definir uma <a href="../js/js-async.html/#callback">função de retorno</a> é passada como um parâmetro em outra função e deve conter o código a executar quando a resposta do objeto <code>XMLHttpRequest</code> estiver pronta.</code></h3>
+
+					<p><strong>Exemplo de sintaxe:</strong></p>
+
+					<pre>
+						<code>
+							xhttp.onload = funcao() {
+								// Código que indica o que fazer quando a resposta estiver pronta
+							}
+						</code>
+					</pre>
+
+					<p>Por exemplo, para enviar uma solicitação a um servidor, podemos usar os métodos <code>open()</code> e <code>send()</code>:</p>
+
+					<pre>
+						<code>
+							xhttp.open("GET", "ajax_info.txt");
+							xhttp.send();
+						</code>
+					</pre>
+
+					<p class="important-info">Por motivos de segurança, os navegadores modernos não permitem o acesso entre domínios, portanto a página de origem e o arquivo XML a ser carregado precisam estar no mesmo servidor.</p>
+		</section>
+
+		<section>
+				<h2>Métodos do objeto XMLHttpRequest</h2>
+
+				<table class="ws-table-all notranslate">
+					<tbody>
+						<tr>
+							<th style="width:35%">Método</th>
+							<th style="width:65%">Descrição</th>
+						</tr>
+						<tr>
+							<td>new XMLHttpRequest()</td>
+							<td>Cria um novo objeto XMLHttpRequest</td>
+						</tr>
+						<tr>
+							<td>abort()</td>
+							<td>Cancela a solicitação atual</td>
+						</tr>
+						<tr>
+							<td>getAllResponseHeaders()</td>
+							<td>Retorna informações do cabeçalho</td>
+						</tr>
+						<tr>
+							<td>getResponseHeader()</td>
+							<td>Retorna informações específicas do cabeçalho</td>
+						</tr>
+						<tr>
+							<td>open(<em>método, url, async, usuário, senha</em>)</td>
+							<td>Especifica a solicitação:
+								<br>
+								<br>
+								<em>método</em>: o tipo de solicitação, GET ou POST<br>
+								<em>url</em>: o local do arquivo<br>
+								<em>async</em>: <code>true</code> (assíncrono) ou <code>false</code> (síncrono)<br>
+								<em>usuário</em>: nome de usuário opcional<br>
+								<em>senha</em>: senha opcional</td>
+						</tr>
+						<tr>
+							<td>send()</td>
+							<td>Envia a solicitação ao servidor<br>Usado para solicitações do tipo GET</td>
+						</tr>
+						<tr>
+							<td>send(<em>string</em>)</td>
+							<td>Envia a solicitação ao servidor.<br>Usada para solicitações do tipo POST</td>
+						</tr>
+						<tr>
+							<td>setRequestHeader()</td>
+							<td>Adiciona um par "rótulo/valor" ao cabeçalho a ser enviado</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2>Propriedades do objeto XMLHttpRequest</h2>
+
+				<table class="ws-table-all notranslate">
+					<tbody>
+						<tr>
+							<th style="width:35%">Propriedade</th>
+							<th style="width:65%">Descrição</th>
+						</tr>
+						<tr>
+							<td>onload</td>
+							<td>Define uma função a ser chamada ao receber (carregar) a solicitação</td>
+						</tr>
+					
+						<tr>
+							<td>onreadystatechange</td>
+							<td>Define uma função a ser chamada quando a propriedade <code>readyState</code> mudar</td>
+						</tr>
+						<tr>
+							<td>readyState</td>
+							<td>Contém o status de XMLHttpRequest. Explicação dos códigos:<br>
+								0: solicitação não iniciada <br>
+								1: estabelecida conexão com o servidor<br>
+								2: solicitação recebida<br>
+								3: processando solicitação<br>
+								4: solicitação concluída, a resposta está pronta</td>
+						</tr>
+						<tr>
+							<td>responseText</td>
+							<td>Retorna os dados da resposta como uma cadeia de caracteres</td>
+						</tr>
+						<tr>
+							<td>responseXML</td>
+							<td>Retorna os dados da resposta como dados XML</td>
+						</tr>
+						<tr>
+							<td>status</td>
+							<td>Retorna o número do status de uma solicitação:<br>
+								200: "OK"<br>
+								403: "Proibido"<br>
+								404: "Não encontrado".<br>
+								Para obter uma lista completa desses códigos, consulte a <a href="/tags/ref_httpmessages.asp">Referência sobre mensagens HTTP</a>.</td>
+						</tr>
+						<tr>
+							<td>statusText</td>
+							<td>Retorna o texto de status (p.ex. "OK" ou "Not Found" [Não encontrado])</td>
+						</tr>
+					</tbody>
+				</table>
+		</section>
+
+		<section>
+				<h3>A propriedade onload</h3>
+
+				<p>Com o objeto <code>XMLHttpRequest</code> é possível definir uma função de retorno a ser executada quando a solicitação recebe uma resposta. Define-se essa função na propriedade <code>onload</code>:</p>
+
+				<pre>
+					<code>
+						xhttp.onload = function() {
+							document.getElementById("demo").innerHTML = this.responseText;
+						}
+						xhttp.open("GET", "ajax_info.txt");
+						xhttp.send();
+					</code>
+				</pre>
+
+				<p>Se houver mais de uma tarefa AJAX no site, crie uma função para executar o objeto <code>XMLHttpRequest</code> e uma para cada tarefa AJAX. A chamada para a função deve conter o URL e qual função chamar quando a resposta estiver pronta. Exemplo:</p>
+
+				<pre>
+					<code>
+						carregarDoc("url-1", minhaFuncao1);
+
+						carregarDoc("url-2", minhaFuncao2);
+
+						function carregarDoc(url, cFunction) {
+							const xhttp = new XMLHttpRequest();
+							xhttp.onload = function() {cFunction(this);}
+							xhttp.open("GET", url);
+							xhttp.send();
+						}
+
+						function minhaFuncao1(xhttp) {
+							// a ação a executar
+						}
+						function minhaFuncao2(xhttp) {
+							// a ação a executar
+						}
+					</code>
+				</pre>
+
+				<h3>A propriedade onreadystatechange</h3>
+
+				<p>A propriedade <code>readyState</code> contém o status de <code>XMLHttpRequest</code>. A propriedade <code>onreadystatechange</code> define uma função de retorno a ser executada quando <code>readyState</code> mudar. As propriedades <code>status</code> e <code>statusText</code> contêm o status do objeto <code>XMLHttpRequest</code>.</p>
+
+				<table> 
+					<tbody>
+						<tr>
+							<th style="width:20%">Propriedade</th>
+							<th>Descrição</th>
+						</tr>  
+						<tr>
+							<td>onreadystatechange</td>
+							<td>Define uma função a ser chamada quando a propriedade <code>readyState</code> mudar</td>
+						</tr>
+						<tr>
+							<td>readyState</td>
+							<td>Contém o status de XMLHttpRequest.<br>
+							0: solicitação não iniciada<br>
+							1: conexão com o servidor estabelecida<br>
+							2: solicitação recebida<br>
+							3: processando a solicitação<br>
+							4: solicitação finalizada, a resposta está pronta</td>
+						</tr>
+						<tr>
+							<td>status</td>
+							<td>200: "OK"<br>403: "Proibido"<br>
+							404: "Página não encontrada"<br>
+							Para ver a lista completa, acesse <a href="/tags/ref_httpmessages.asp">Referência sobre mensagens HTTP</a></td>
+						</tr>
+						<tr>
+							<td>statusText</td>
+							<td>Retorna o texto do status (p.ex. "OK" ou "Não encontrado")</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p>A função <code>onreadystatechange</code> é chamada sempre que <code>readyState</code> muda. Quando <code>readyState</code> é <code>4</code> e o <code>status</code> é <code>200</code>, a resposta está pronta. Exemplo:</p>
+
+				<pre>
+					<code>
+						function carregarDoc() {
+							const xhttp = new XMLHttpRequest();
+							xhttp.onreadystatechange = function() {
+								if (this.readyState == 4 && this.status == 200) {
+									document.getElementById("demo").innerHTML =
+									this.responseText;
+								}
+							};
+							xhttp.open("GET", "ajax_info.txt");
+							xhttp.send();
+						}
+					</code>
+				</pre>
+
+				<p class="important-info">O evento <code>onreadystatechange</code> é acionado quatro vezes (1-4), uma vez para cada mudança de <code>readyState</code>.</p>
+		</section>
+
+		<section>
+			<h2>XMLHttpRequest</h2>
+
+			<p>Usa-se este objeto para solicitar dados de um servidor.</p>
+
+				<h3>Enviar uma solicitação para um servidor</h3>
+
+				<p>Para enviar uma solicitação a um servidor, podemos usar os métodos <code>open()</code> e <code>send()</code>.</p>
+
+				<pre>
+					<code>
+						xhttp.open("GET", "ajax_info.txt", true);
+						xhttp.send();
+					</code>
+				</pre>
+
+				<table>
+					<tbody>
+						<tr>
+							<th style="width:30%">Método</th>
+							<th>Descrição</th>
+						</tr>  
+						<tr>
+							<td>open(<i>method, url, async</i>)</td>
+							<td>Especifica o tipo de solicitação:<br>
+							<i>method</i>: o tipo de solicitação, GET ou POST<br>
+							<i>url</i>: o local do servidor (do arquivo)<br>
+							<i>async</i>: <code>true</code> (se assíncrono) ou <code>false</code> (se síncrono)</td>
+						</tr>
+						<tr>
+							<td>send()</td>
+							<td>Envia a solicitação ao servidor (usado para GET)</td>
+						</tr>
+						<tr>
+							<td>send(<i>string</i>)</td>
+							<td>Envia a solicitação ao servidor (usado para POST)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p>O parâmetro <code>url</code> do método <code>open()</code> é um endereço em um servidor. Pode ser qualquer tipo de arquivo, como <em>.txt</em> ou <em>.xml</em>, ou arquivos de script, como <em>.asp</em> ou <em>.php</em>, que executam ações no servidor antes de enviar uma resposta.</p>
+
+				<p>As solicitações enviadas ao servidor devem ser assíncronas, isto é, o parâmetro <code>async</code> deve ser <code>true</code>. Dessa forma, o JavaScript não precisa esperar pela resposta do servidor e pode executar outros scripts enquanto espera pela resposta e lidar com a resposta quando estiver pronta.</p>
+
+				<p class="important-info">O valor padrão para o parâmetro <code>async</code> é <code>true</code>, então você pode omiti-lo no código.Não se recomenda usar <code>false</code>, porque o JavaScript para de executar até que a resposta do servidor esteja pronta. Se o servidor estiver ocupado ou for lento, o aplicativo pode travar ou parar.</p>
+
+				<p>Entretanto, <code>async = false</code> pode ser usado para um teste rápido. </p>
+
+				<h3>GET ou POST?</h3>
+
+				<p><code>GET</code> é mais simples e rápido que <code>POST</code> e pode ser usado na maioria dos casos. Entretanto, sempre use solicitações <code>POST</code> nos seguintes casos:</p>
+
+				<ul class="list-square">
+					<li>Não for possível usar um arquivo em cache (ao atualizar um arquivo ou banco de dados no servidor, por exemplo).</li>
+					<li>Ao enviar uma grande quantidade de dados ao servidor (POST não tem limites de tamanho).</li>
+					<li>Ao enviar informações digitadas pelo usuário (que podem conter caracteres desconhecidos), POST é mais robusto e seguro que GET.</li>
+				</ul>
+		</section>
+
+		<section>
+			<h2>Resposta do servidor</h2>
+
+			<p><strong>Propriedades</strong></p>
+
+			<table>
+				<tbody>
+					<tr>
+						<th style="width:230px">Propriedade</th>
+						<th>Descrição</th>
+					</tr>  
+					<tr>
+						<td>responseText</td>
+						<td>obtém os dados da resposta como uma string</td>
+					</tr>
+					<tr>
+						<td>responseXML</td>
+						<td>obtém os dados da resposta como XML</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p><strong>Métodos</strong></p>
+
+			<table>
+				<tbody>
+					<tr>
+						<th style="width:230px">Método</th>
+						<th>Descrição</th>
+					</tr>  
+					<tr>
+						<td>getResponseHeader()</td>
+						<td>Retorna informações específicas do cabeçalho do servidor</td>
+					</tr>
+					<tr>
+						<td>getAllResponseHeaders()</td>
+						<td>Retorna todas as informações de cabeçalho disponíveis no servidor</td>
+					</tr>
+				</tbody>
+			</table>
 		</section>
 	</main>
 </body>

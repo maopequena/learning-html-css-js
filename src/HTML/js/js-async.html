@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<meta charset="utf-8">
-<head>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../../css/style.css">
-    <meta nome="keywords" content="HTML, CSS, JavaScript">
-    <meta ano="description" content="Assincronia">
-    <meta ano="author" content="Lizandra Silva (@maopequena)">
-    <meta ano="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <meta nome="keywords" content="HTML, CSS, JavaScript" />
+    <meta ano="description" content="Assincronia" />
+    <meta ano="author" content="Lizandra Silva (@maopequena)" />
+    <meta ano="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assincronia</title>
-</head>
+  </head>
 
-<body>
-	<header>
-		<h1>Assincronia</h1>
-	</header>
+  <body>
+    <header>
+      <h1>Assincronia</h1>
+    </header>
 
-	<section>
-		<h2>Retornos de chamada</h2>
+    <section>
+      <h2 id="callback">Retornos de chamada</h2>
 
-		<p>Um <strong>retorno de chamada</strong> é uma função passada a outra função como um argumento. Essa técnica possibilita que uma função chame outra. Uma função de retorno de chamada pode ser executada após o término de outra função.</p>
+      <p>
+        Um <strong>retorno de chamada</strong> é uma função passada a outra
+        função como um argumento. Essa técnica possibilita que uma função chame
+        outra. Uma função de retorno de chamada pode ser executada após o
+        término de outra função.
+      </p>
 
-			<h3>Sequência de funções</h3>
+      <h3>Sequência de funções</h3>
 
-			<p>As funções do JavaScript são executadas na sequência em que são chamadas, não na sequência em que são definidas. Os exemplos a seguir exibem  "Até logo" primeiro e depois "Olá":</p>
+      <p>
+        As funções do JavaScript são executadas na sequência em que são
+        chamadas, não na sequência em que são definidas. Os exemplos a seguir
+        exibem "Até logo" primeiro e depois "Olá":
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					function primeiraFuncao() {
 						funcaoExibidora("Olá");
@@ -45,13 +54,21 @@
 				</code>
 			</pre>
 
-				<h4>Como controlar a sequência</h4>
+      <h4>Como controlar a sequência</h4>
 
-				<p>Algumas vezes é preciso ter melhor controle de quando executar uma função.</p>
+      <p>
+        Algumas vezes é preciso ter melhor controle de quando executar uma
+        função.
+      </p>
 
-				<p>Suponhamos que queremos fazer um cálculo e, depois, exibir o resultado. Poderíamos chamar uma função que faz o cálculo (<code>minhaCalculadora</code>), salvar o resultado e, então, chamar outra função (<code>funcaoExibidora</code>) para mostrar o resultado:</p>
+      <p>
+        Suponhamos que queremos fazer um cálculo e, depois, exibir o resultado.
+        Poderíamos chamar uma função que faz o cálculo
+        (<code>minhaCalculadora</code>), salvar o resultado e, então, chamar
+        outra função (<code>funcaoExibidora</code>) para mostrar o resultado:
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						function funcaoExibidora(some) {
 							document.getElementById("demo").innerHTML = some;
@@ -67,11 +84,18 @@
 					</code>
 				</pre>
 
-				<p>O problema do exemplo acima é que precisamos chamar duas funções para exibir o resultado.</p>
+      <p>
+        O problema do exemplo acima é que precisamos chamar duas funções para
+        exibir o resultado.
+      </p>
 
-				<p>Outra opção é chamar a função que faz o cálculo (<code>minhaCalculadora</code>) e deixr que ela chame a funão de exibição (<code>funcaoExibidora</code>):</p>
+      <p>
+        Outra opção é chamar a função que faz o cálculo
+        (<code>minhaCalculadora</code>) e deixr que ela chame a funão de
+        exibição (<code>funcaoExibidora</code>):
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						function funcaoExibidora(some) {
 							document.getElementById("demo").innerHTML = some;
@@ -86,11 +110,19 @@
 					</code>
 				</pre>
 
-				<p>O problema com esta segunda abordagem é que não podemos impedir a função que faz o cálculo de exibir o resultado. Assim, a solução é usar um <strong>retorno de chamada</strong>.</p>
+      <p>
+        O problema com esta segunda abordagem é que não podemos impedir a função
+        que faz o cálculo de exibir o resultado. Assim, a solução é usar um
+        <strong>retorno de chamada</strong>.
+      </p>
 
-				<p>Com ele, podemos chamar a função de cálculo (<code>minhaCalculadora</code>) com um retorno (<code>meuRetorno</code>) e deixar que a primeira execute o retorno após finalizar o cálculo:</p>
+      <p>
+        Com ele, podemos chamar a função de cálculo
+        (<code>minhaCalculadora</code>) com um retorno (<code>meuRetorno</code>)
+        e deixar que a primeira execute o retorno após finalizar o cálculo:
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						function funcaoExibidora(some) {
 							document.getElementById("demo").innerHTML = some;
@@ -105,17 +137,34 @@
 					</code>
 				</pre>
 
-				<p>Neste exemplo, <code>funcaoExibidora</code> é uma <strong>função de retorno de chamada</strong>, que é passada como argumento para <code>minhaCalculadora</code>. <span class="important-info">Note que ao passar uma função como argumento não se deve usar parênteses: <code>minhaCalculadora(5, 5, funcaoExibidora)</code> e não <code>minhaCalculadora(5, 5, funcaoExibidora())</code>.</span></p>
+      <p>
+        Neste exemplo, <code>funcaoExibidora</code> é uma
+        <strong>função de retorno de chamada</strong>, que é passada como
+        argumento para <code>minhaCalculadora</code>.
+        <span class="important-info"
+          >Note que ao passar uma função como argumento não se deve usar
+          parênteses: <code>minhaCalculadora(5, 5, funcaoExibidora)</code> e não
+          <code>minhaCalculadora(5, 5, funcaoExibidora())</code>.</span
+        >
+      </p>
 
-				<p>Os retornos de chamada são muito usados em funções assíncronas, em que uma função precisa esperar por outra.</p>
-	</section>
+      <p>
+        Os retornos de chamada são muito usados em funções assíncronas, em que
+        uma função precisa esperar por outra.
+      </p>
+    </section>
 
-	<section>
-		<h2>JavaScript assíncrono</h2>
+    <section>
+      <h2>JavaScript assíncrono</h2>
 
-		<p>Funções executadas em paralelo com outras funções são chamadas de <strong>assíncronas</strong>. Um bom exemplo é a <code>setTimeout()</code>, com a qual podemos definir um período de tempo de pausa até a execução de uma função:</p>
+      <p>
+        Funções executadas em paralelo com outras funções são chamadas de
+        <strong>assíncronas</strong>. Um bom exemplo é a
+        <code>setTimeout()</code>, com a qual podemos definir um período de
+        tempo de pausa até a execução de uma função:
+      </p>
 
-		<pre>
+      <pre>
 			<code>
 				setTimeout(minhaFuncao, 3000); // 3000 é a quantidade de milissegundos, isto é, 3 segundos
 
@@ -125,9 +174,12 @@
 			</code>
 		</pre>
 
-		<p>E, além de passar o nome de uma função como argumento, podemos passar uma função completa:</p>
+      <p>
+        E, além de passar o nome de uma função como argumento, podemos passar
+        uma função completa:
+      </p>
 
-		<pre>
+      <pre>
 			<code>
 				setTimeout(function() { minhaFuncao("Eu te amo!!!"); }, 3000);
 
@@ -137,9 +189,12 @@
 			</code>
 		</pre>
 
-		<p>Com a função <code>setInterval()</code>, podemos definir que uma função de retorno seja executada em intervalos regulares:</p>
+      <p>
+        Com a função <code>setInterval()</code>, podemos definir que uma função
+        de retorno seja executada em intervalos regulares:
+      </p>
 
-		<pre>
+      <pre>
 			<code>
 				setInterval(minhaFuncao, 1000);
 
@@ -153,19 +208,33 @@
 			</code>
 		</pre>
 
-			<h3>Alternativas</h3>
+      <h3>Alternativas</h3>
 
-			<p>Com a programação assíncrona, programas em JavaScript podem iniciar tarefas que demoram a executar e continuar executando outras tarefas em paralelo. Porém, programas assíncronos são difíceis de escrever e de depurar. Por causa disso, a maioria dos método de JavaScript assíncronos não usam retorno de chamada, mas sim <strong>promessas</strong>.</p>
-	</section>
+      <p>
+        Com a programação assíncrona, programas em JavaScript podem iniciar
+        tarefas que demoram a executar e continuar executando outras tarefas em
+        paralelo. Porém, programas assíncronos são difíceis de escrever e de
+        depurar. Por causa disso, a maioria dos método de JavaScript assíncronos
+        não usam retorno de chamada, mas sim <strong>promessas</strong>.
+      </p>
+    </section>
 
-	<section>
-		<h2>Promessas</h2>
+    <section>
+      <h2>Promessas</h2>
 
-		<p>O "código em produção" pode demorar um pouco para executar, o "código em consumo" deve esperar por um resultado. Uma <strong>promessa</strong> é um objeto que vincula os códigos <em>em produção</em> e <em>em consumo</em>.</p>
+      <p>
+        O "código em produção" pode demorar um pouco para executar, o "código em
+        consumo" deve esperar por um resultado. Uma <strong>promessa</strong> é
+        um objeto que vincula os códigos <em>em produção</em> e
+        <em>em consumo</em>.
+      </p>
 
-		<p>Uma promessa contém o código em produção e chamadas para o código em consumo:</p>
+      <p>
+        Uma promessa contém o código em produção e chamadas para o código em
+        consumo:
+      </p>
 
-		<pre>
+      <pre>
 			<code>
 				let minhaPromessa = new Promise(function(minhaSolucao, minhaRejeicao) {
 				// "Código em produção" (pode demorar a executar)
@@ -182,65 +251,79 @@
 			</code>
 		</pre>
 
-		<p>Quando o código em produção receber o resultado, deve chamar uma das funções de retorno:</p>
+      <p>
+        Quando o código em produção receber o resultado, deve chamar uma das
+        funções de retorno:
+      </p>
 
-		<table>
-			<tbody>
-				<tr>
-					<th>Quando isto ocorrer</th>
-					<th>Chamar</th>
-				</tr>
-				<tr>
-					<td>Sucesso</td>
-					<td>minhaSolucao (valor do resultado)</td>
-				</tr>
-				<tr>
-					<td>Erro</td>
-					<td>minhaRejeicao (objeto de erro)</td>
-				</tr>
-			</tbody>
-		</table>
+      <table>
+        <tbody>
+          <tr>
+            <th>Quando isto ocorrer</th>
+            <th>Chamar</th>
+          </tr>
+          <tr>
+            <td>Sucesso</td>
+            <td>minhaSolucao (valor do resultado)</td>
+          </tr>
+          <tr>
+            <td>Erro</td>
+            <td>minhaRejeicao (objeto de erro)</td>
+          </tr>
+        </tbody>
+      </table>
 
-			<h3>Propriedades do objeto de promessa</h3>
+      <h3>Propriedades do objeto de promessa</h3>
 
-			<p>Um objeto Promise do JavaScript pode estar:</p>
+      <p>Um objeto Promise do JavaScript pode estar:</p>
 
-			<ul class="list-square">
-				<li>Pendente (pending)</li>
-				<li>Concluído (fulfilled)</li>
-				<li>Rejeitado (rejected)</li>
-			</ul>
+      <ul class="list-square">
+        <li>Pendente (pending)</li>
+        <li>Concluído (fulfilled)</li>
+        <li>Rejeitado (rejected)</li>
+      </ul>
 
-			<p>O objeto <code>Promise</code> aceita duas propriedades: <strong>state</strong> e <strong>result</strong>.</p>
+      <p>
+        O objeto <code>Promise</code> aceita duas propriedades:
+        <strong>state</strong> e <strong>result</strong>.
+      </p>
 
-			<p>Quando um objeto Promise está "pendente" (em execução), o resultado é indefinido; quando é "concluído", o resultado é um valor; e quando é "rejeitado", é um objeto de erro.</p>
+      <p>
+        Quando um objeto Promise está "pendente" (em execução), o resultado é
+        indefinido; quando é "concluído", o resultado é um valor; e quando é
+        "rejeitado", é um objeto de erro.
+      </p>
 
-			<table>
-				<tbody>
-					<tr>
-						<th>minhaPromessa.state</th>
-						<th>minhaPromessa.result</th>
-					</tr>
-					<tr>
-						<td>"pendente"</td>
-						<td>indefinido</td>
-					</tr>
-					<tr>
-						<td>"concluído"</td>
-						<td>um valor com o resultado</td>
-					</tr>
-					<tr>
-						<td>"rejeitado"</td>
-						<td>um objeto de erro</td>
-					</tr>
-				</tbody>
-			</table>
+      <table>
+        <tbody>
+          <tr>
+            <th>minhaPromessa.state</th>
+            <th>minhaPromessa.result</th>
+          </tr>
+          <tr>
+            <td>"pendente"</td>
+            <td>indefinido</td>
+          </tr>
+          <tr>
+            <td>"concluído"</td>
+            <td>um valor com o resultado</td>
+          </tr>
+          <tr>
+            <td>"rejeitado"</td>
+            <td>um objeto de erro</td>
+          </tr>
+        </tbody>
+      </table>
 
-			<p>Note que não é possível acessar as propriedades <strong>state</strong> e <strong>result</strong> de uma promessa. É preciso usar métodos para manipular promessas.</p>
+      <p>
+        Note que não é possível acessar as propriedades <strong>state</strong> e
+        <strong>result</strong> de uma promessa. É preciso usar métodos para
+        manipular promessas.
+      </p>
 
-			<h3>Sintaxe de uma promessa</h3>
+      <h3>Sintaxe de uma promessa</h3>
 
-			<pre>
+      <pre>
 				<code>
 					minhaPromessa.then(
 					function(valor) { /* código se bem sucedido */ },
@@ -249,13 +332,18 @@
 				</code>
 			</pre>
 
-			<p><code>Promise.then()</code> recebe dois argumentos: um retorno de chamada para o sucesso e outro para a falha. Ambos são opcionais, então é possível incluir um retorno de chamada apenas para o sucesso, ou para a falha.</p>
+      <p>
+        <code>Promise.then()</code> recebe dois argumentos: um retorno de
+        chamada para o sucesso e outro para a falha. Ambos são opcionais, então
+        é possível incluir um retorno de chamada apenas para o sucesso, ou para
+        a falha.
+      </p>
 
-			<h3>Exemplos</h3>
+      <h3>Exemplos</h3>
 
-			<p>1. OK ou Erro</p>
+      <p>1. OK ou Erro</p>
 
-			<pre>
+      <pre>
 				<code>
 					function funcaoExibidora(some) {
 						document.getElementById("demo").innerHTML = some;
@@ -280,11 +368,11 @@
 				</code>
 			</pre>
 
-			<p>2. Exibir depois de 3 segundos</p>
+      <p>2. Exibir depois de 3 segundos</p>
 
-			<p>Com retorno de chamada</p>
+      <p>Com retorno de chamada</p>
 
-			<pre>
+      <pre>
 				<code>
 					setTimeout(function() { minhaFuncao("Eu te amo!!!"); }, 3000);
 
@@ -294,9 +382,9 @@
 				</code>
 			</pre>
 
-			<p>Com promessa</p>
+      <p>Com promessa</p>
 
-			<pre>
+      <pre>
 				<code>
 					let minhaPromessa = new Promise(function(minhaSolucao, minhaRejeicao) {
 						setTimeout(function() { minhaSolucao("Eu te amo!!!"); }, 3000);
@@ -308,11 +396,11 @@
 				</code>
 			</pre>
 
-			<p>3. Aguardar um arquivo</p>
+      <p>3. Aguardar um arquivo</p>
 
-			<p>Com retorno de chamada</p>
+      <p>Com retorno de chamada</p>
 
-			<pre>
+      <pre>
 				<code>
 					function obterArquivo(meuRetorno) {
 						let req = new XMLHttpRequest();
@@ -331,9 +419,9 @@
 				</code>
 			</pre>
 
-			<p>Com promessa</p>
+      <p>Com promessa</p>
 
-			<pre>
+      <pre>
 				<code>
 					let minhaPromessa = new Promise(function(minhaSolucao, minhaRejeicao) {
 						let req = new XMLHttpRequest();
@@ -354,18 +442,25 @@
 					);
 				</code>
 			</pre>
-	</section>
+    </section>
 
-	<section>
-		<h2>Assincronia</h2>
+    <section>
+      <h2>Assincronia</h2>
 
-		<p>As palavras-chave <code>async</code> e <code>await</code> facilitam a escrita do código. <strong>async</strong> faz uma função retornar uma promessa, <strong>await</strong> faz uma função esperar uma promessa.</p>
+      <p>
+        As palavras-chave <code>async</code> e <code>await</code> facilitam a
+        escrita do código. <strong>async</strong> faz uma função retornar uma
+        promessa, <strong>await</strong> faz uma função esperar uma promessa.
+      </p>
 
-			<h3>Sintaxe de async</h3>
+      <h3>Sintaxe de async</h3>
 
-			<p>Usar a palavra-chave <em>async</em> antes de uma função, faz ela retornar uma promessa:</p>
+      <p>
+        Usar a palavra-chave <em>async</em> antes de uma função, faz ela
+        retornar uma promessa:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					async function minhaFuncao() {
 						return "Olá";
@@ -379,9 +474,9 @@
 				</code>
 			</pre>
 
-			<p>Agora vamos usar a promessa:</p>
+      <p>Agora vamos usar a promessa:</p>
 
-			<pre>
+      <pre>
 				<code>
 					async function minhaFuncao() {
 						return "Olá";
@@ -402,21 +497,28 @@
 				</code>
 			</pre>
 
-			<h3>Sintaxe de await</h3>
+      <h3>Sintaxe de await</h3>
 
-			<p>A palavra-chave <code>await</code> só pode ser usada dentro de uma função assíncrona, e faz com que a função pause a execução e espere por uma promessa com um resultado antes de continuar:</p>
+      <p>
+        A palavra-chave <code>await</code> só pode ser usada dentro de uma
+        função assíncrona, e faz com que a função pause a execução e espere por
+        uma promessa com um resultado antes de continuar:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					let value = await promise;
 				</code>
 			</pre>
 
-			<h3>Exemplo</h3>
+      <h3>Exemplo</h3>
 
-			<p>Vamos aprender como usar <code>async</code> e <code>await</code> devagar:</p>
+      <p>
+        Vamos aprender como usar <code>async</code> e
+        <code>await</code> devagar:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					async function funcaoExibidora() {
 						let minhaPromessa = new Promise(function(resolve, reject) {
@@ -429,9 +531,15 @@
 				</code>
 			</pre>
 
-			<p>Os dois argumentos (<code>resolve</code> e <code>reject</code>) são pré-definidos pelo JavaScript. Não os criaremos, mas chamaremos um deles quando a função executadora estiver pronta. E, na maioria das vezes, não precisaremos de uma função <code>reject</code>. Então agora, vejamos como fica sem o <code>reject</code>:</p>
+      <p>
+        Os dois argumentos (<code>resolve</code> e <code>reject</code>) são
+        pré-definidos pelo JavaScript. Não os criaremos, mas chamaremos um deles
+        quando a função executadora estiver pronta. E, na maioria das vezes, não
+        precisaremos de uma função <code>reject</code>. Então agora, vejamos
+        como fica sem o <code>reject</code>:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					async function funcaoExibidora() {
 						let minhaPromessa = new Promise(function(resolve) {
@@ -444,9 +552,9 @@
 				</code>
 			</pre>
 
-			<p>E vamos adicionar um período de espera:</p>
+      <p>E vamos adicionar um período de espera:</p>
 
-			<pre>
+      <pre>
 				<code>
 					async function funcaoExibidora() {
 						let minhaPromessa = new Promise(function(resolve) {
@@ -459,9 +567,9 @@
 				</code>
 			</pre>
 
-			<p>Agora vamos solicitar um arquivo:</p>
+      <p>Agora vamos solicitar um arquivo:</p>
 
-			<pre>
+      <pre>
 				<code>
 					async function obterArquivo() {
 						let minhaPromessa = new Promise(function(resolve) {
@@ -482,6 +590,6 @@
 					obterArquivo();
 				</code>
 			</pre>
-	</section>
-</body>
+    </section>
+  </body>
 </html>
