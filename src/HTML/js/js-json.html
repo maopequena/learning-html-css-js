@@ -804,7 +804,206 @@
 		<section>
 			<h2>JSON e HTML</h2>
 
-			
+			<p>É possível traduzir JSON em JavaScript e, em seguida, usá-lo para criar páginas em HTML. Exemplos:</p>
+
+			<ul>
+				<li><a href="#table1">Tabela em HTML</a></li>
+				<li><a href="#table2">Tabela dinâmica em HTML</a></li>
+				<li><a href="#dropdown">Lista suspensa em HTML</a></li>
+			</ul>
+
+				<h3 id="table1">Tabela em HTML</h3>
+
+				<p>Criar uma tabela em HTML com dados advindos de JSON:</p>
+
+				<pre>
+					<code>
+						const paramDB = JSON.stringify({table:"clientes",limit:20});
+						const xmlhttp = new XMLHttpRequest();
+						xmlhttp.onload = function() {
+							meuObj = JSON.parse(this.responseText);
+							let texto = "&lt;table border='1'&gt;"
+							for (let x in meuObj) {
+								texto += "&lt;tr&gt;&lt;td&gt;" + meuObj[x].name + "&lt;/td&gt;&lt;/tr&gt;";
+							}
+							texto += "&lt;/table&gt;"
+							document.getElementById("demo").innerHTML = texto;
+						}
+						xmlhttp.open("POST", "json_demo_html_table.php");
+						xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+						xmlhttp.send("x=" + paramDB);
+					</code>
+				</pre>
+
+				<h3 id="table2">Tabela dinâmica em HTML</h3>
+
+				<p>Criar uma tabela em HTML com base no valor selecionado em uma lista suspensa ("Clientes", "Produtos" ou "Fornecedores"):</p>
+
+				<pre>
+					<code>
+						&lt;select id="minhaselecao" onchange="alterar_minhaselecao(this.value)"&gt;
+						&lt;option value=""&gt;Escolha uma opção:&lt;/option&gt;
+						&lt;option value="customers"&gt;Clientes&lt;/option&gt;
+						&lt;option value="products"&gt;Produtos&lt;/option&gt;
+						&lt;option value="suppliers"&gt;Fornecedores&lt;/option&gt;
+					&lt;/select&gt;
+
+					&lt;script&gt;
+					function alterar_minhaselecao(sel) {
+						const paramDB = JSON.stringify({table:sel,limit:20});
+						const xmlhttp = new XMLHttpRequest();
+						xmlhttp.onload = function() {
+							const meuObj = JSON.parse(this.responseText);
+							let texto = "&lt;table border='1'&gt;"
+							for (let x in meuObj) {
+								texto += "&lt;tr&gt;&lt;td&gt;" + meuObj[x].name + "&lt;/td&gt;&lt;/tr&gt;";
+							}
+							texto += "&lt;/table&gt;"
+							document.getElementById("demo").innerHTML = texto;
+						}
+						xmlhttp.open("POST", "json_demo_html_table.php");
+						xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+						xmlhttp.send("x=" + paramDB);
+					}
+					&lt;/script&gt;
+					</code>
+				</pre>
+
+				<h3 id="dropdown">Lista suspensa em HTML</h3>
+
+				<p>Criar uma lista suspensa em HTML com dados advindos de JSON:</p>
+
+				<pre>
+					<code>
+						const paramDB = JSON.stringify({table:"clientes",limit:20});
+						const xmlhttp = new XMLHttpRequest();
+						xmlhttp.onload = function() {
+							const meuObj = JSON.parse(this.responseText);
+							let texto = "&lt;select&gt;"
+							for (let x in meuObj) {
+								texto += "&lt;option&gt;" + meuObj[x].name + "&lt;/option&gt;";
+							}
+							texto += "&lt;/select&gt;"
+							document.getElementById("demo").innerHTML = texto;
+							}
+						xmlhttp.open("POST", "json_demo_html_table.php", true);
+						xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+						xmlhttp.send("x=" + paramDB);
+					</code>
+				</pre>
+		</section>
+
+		<section>
+			<h2>JSONP</h2>
+
+			<p>JSONP é um método para enviar dados JSON sem ter que se preocupar com problemas de domínios cruzados. JSONP não usa o objeto <code>XMLHttpRequest</code>, mas a tag <code>&lt;script&gt;</code>.</p>
+
+			<p>JSONP significa <strong>JSON</strong> with <strong>P</strong>adding.</p>
+
+			<p>Solicitar um arquivo de outro domínio pode gerar problemas devido à política de domínios cruzados. Solicitar um script externo de outro domínio não gera esse problema. O JSONP usa isso para solicitar arquivos com a tag <code>script</code> em vez do objeto <code>XMLHttpRequest</code>.</p>
+
+				<h3>O arquivo no servidor</h3>
+
+				<p>O arquivo no servidor contém o resultado em uma chamada de função:</p>
+
+				<pre>
+					<code>
+						&lt;?php
+						$meuJSON = '{ "nome":"John", "idade":30, "cidade":"Nova York" }';
+
+						echo "minhaFunc(".$meuJSON.");";
+						?&gt;
+					</code>
+				</pre>
+
+				<p>O resultado retorna uma chamada para uma função chamada "minhaFunc", com os dados JSON como parâmetro. Certifique-se de que a função existe no cliente.</p>
+
+				<h3>A função JavaScript</h3>
+
+				<p>A função "minhaFunc" está localizada no cliente e fica pronta para lidar com os dados JSON:</p>
+
+				<pre>
+					<code>
+						function minhaFunc(meuObj) {
+						document.getElementById("demo").innerHTML = meuObj.nome;
+					}
+					</code>
+				</pre>
+
+				<h3>Criar uma tag script dinâmica</h3>
+
+				<p>O exemplo acima executa a função "minhaFunc" ao carregar a página, com base em onde você coloca a tag <code>script</code>, o que não é muito adequado. Essa tag só deve ser criada quando necessário, portanto podemos criar e inserir a tag ao clicar em um botão:</p>
+
+				<pre>
+					<code>
+						function clicarBotao() {
+						let s = document.createElement("script");
+						s.src = "demo_jsonp.php";
+						document.body.appendChild(s);
+					}
+					</code>
+				</pre>
+
+				<h3>Resultado JSONP dinâmico</h3>
+
+				<p>Os exemplos acima ainda são muito estáticos. Vamos criar um exemplo mais dinâmico enviando o JSON para o arquivo php e deixando que ele retorne um objeto JSON com base nas informações recebidas.</p>
+
+				<pre>
+					<code>
+						&lt;?php
+						header("Content-Type: application/json; charset=UTF-8");
+						$obj = json_decode($_GET["x"], false);
+
+						$conn = new mysqli("meuServidor", "meuUsuario", "minhaSenha", "Northwind");
+						$result = $conn->query("SELECT name FROM ".$obj->$table." LIMIT ".$obj->$limit);
+						$outp = array();
+						$outp = $result->fetch_all(MYSQLI_ASSOC);
+
+						echo "minhaFunc(".json_encode($outp).")";
+						?>
+					</code>
+				</pre>
+
+				<p><strong>Explicação:</strong></p>
+
+				<ul>
+					<li>Converter a solicitação em um objeto usando a função PHP <code>json_decode()</code>.</li>
+					<li>Acessar o banco de dados e preencher uma matriz com os dados selecionados.</li>
+					<li>Adicionar a matriz a um objeto.</li>
+					<li>Converter a matriz em JSON usando a função <code>json_encode()</code>.</li>
+					<li>Colocar a "minhaFunc()" em volta do objeto retornado.</li>
+				</ul>
+
+				<p>E esta é a função que será chamada no arquivo php:</p>
+
+				<pre>
+					<code>
+						const obj = { table: "produtos", limit: 10 };
+						let s = document.createElement("script");
+						s.src = "jsonp_demo_db.php?x=" + JSON.stringify(obj);
+						document.body.appendChild(s);
+
+						function minhaFunc(meuObj) {
+							let txt = "";
+							for (let x in meuObj) {
+								txt += meuObj[x].nome + "&lt;br&gt;";
+							}
+							document.getElementById("demo").innerHTML = txt;
+						}
+					</code>
+				</pre>
+
+				<h3>Função de retorno de chamada</h3>
+
+				<p>Quando não se tem controle sobre o arquivo no servidor, como podemos fazê-lo chamar a função correta? Em alguns casos, o arquivo no servidor oferece uma função de retorno como parâmetro. O exemplo abaixo chama a função que você passar como um parâmetro de retorno de chamada:</p>
+
+				<pre>
+					<code>
+						let s = document.createElement("script");
+						s.src = "jsonp_demo_db.php?callback=minhaFuncExcibicao";
+						document.body.appendChild(s);
+					</code>
+				</pre>
 		</section>
   </body>
 </html>
