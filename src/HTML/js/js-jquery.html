@@ -16,7 +16,201 @@
     </header>
 
     <main>
-      <section></section>
+      <section>
+        <h2>jQuery vs JavaScript</h2>
+
+        <p>
+          O jQuery foi criado em 2006 por John Resig. Seu propósito era lidar
+          com incompatibilidades entre navegadores e simplificar a manipulação
+          do DOM do HTML, o tratamento de eventos, animações e o Ajax.
+        </p>
+
+        <p>
+          Por mais de 10 anos, o jQuery foi a biblioteca JavaScript mais popular
+          do mundo. Entretanto, após a versão 5 do JavaScript (2009), a maioria
+          dos recursos do jQuery pode ser solucionada com algumas linhas de
+          JavaScript padrão. Vejamos alguns exemplos.
+        </p>
+      </section>
+
+      <section>
+        <h3>Encontrar um elemento HTML pela id</h3>
+
+        <p>Retornar o elemento com <code>id="id01"</code>:</p>
+
+        <pre>
+					<code>
+						// jQuery:
+						myElement = $("#id01");
+
+						// JavaScript:
+						myElement = document.getElementById("id01");
+					</code>
+				</pre>
+
+        <h3>Encontrar um elemento HTML pelo nome da tag</h3>
+
+        <p>Retornar todos os elementos <code>&lt;p&gt;</code>:</p>
+
+        <pre>
+					<code>
+						// jQuery:
+						myElements = $("p");
+
+						// JavaScript:
+						myElements = document.getElementsByTagName("p");
+					</code>
+				</pre>
+
+        <h3>Encontrar elementos HTML pelo nome da classe</h3>
+
+        <p>Retornar todos os elementos <code>class="intro"</code>:</p>
+
+        <pre>
+					<code>
+						// jQuery:
+						myElements = $(".intro");
+
+						// JavaScript:
+						myElements = document.getElementsByTagName("intro");
+					</code>
+				</pre>
+
+        <h3>Encontrar elementos HTML pelo seletor CSS</h3>
+
+        <p>
+          Retornar todos os elementos <code>&lt;p&gt;</code> com
+          <code>class="intro"</code>:
+        </p>
+
+        <pre>
+					<code>
+						// jQuery:
+						myElements = $("p.intro");
+
+						// JavaScript:
+						myElements = document.getElementsByTagName("p.intro");
+					</code>
+				</pre>
+      </section>
+
+      <section>
+        <h3>Definir o conteúdo do texto</h3>
+
+        <pre>
+					<code>
+						// jQuery:
+						myElement.text("Hello Sweden!");
+
+						// JavaScript:
+						myElement.textContent = "Hello Sweden!";
+					</code>
+				</pre>
+
+        <h3>Obter o conteúdo do texto</h3>
+
+        <p>Obter o texto de um elemento HTML:</p>
+
+        <pre>
+					<code>
+						// jQuery:
+						myText = $("#02").text();
+
+						// JavaScript:
+						myText = document.getElementById("02").textContent;
+					</code>
+				</pre>
+
+        <h3>Definir o conteúdo HTML de um elemento</h3>
+
+        <pre>
+					<code>
+						// jQuery:
+						myElement.html("<p>Hello World</p>");
+
+						// JavaScript:
+						myElement.innerHTML = "<p>Hello World</p>";
+					</code>
+				</pre>
+
+        <h3>Obter o conteúdo HTML de um elemento</h3>
+
+        <pre>
+					<code>
+						// jQuery:
+						content = myElement.html();
+
+						// JavaScript:
+						content = myElement.innerHTML;
+					</code>
+				</pre>
+      </section>
+
+      <section>
+        <h2>Estilos CSS com jQuery</h2>
+
+        <h3>Ocultar elementos HTML</h3>
+
+        <pre>
+						<code>
+							// jQuery:
+							myElement.hide();
+
+							// JavaScript:
+							myElement.style.display = "none";
+						</code>
+					</pre>
+
+        <h3>Exibir elementos HTML</h3>
+
+        <pre>
+						<code>
+							// jQuery:
+							myElement.show();
+
+							// JavaScript:
+							myElement.style.display = "";
+						</code>
+					</pre>
+
+        <h3>Estilizar elementos HTML</h3>
+
+        <pre>
+						<code>
+							// jQuery:
+							$("#demo").css("font-size","35px");
+
+							// JavaScript:
+							document.getElementById("demo").style.fontSize = "35px";
+						</code>
+					</pre>
+      </section>
+
+      <section>
+        <h3>Remover elementos HTML</h3>
+
+        <pre>
+					<code>
+						// jQuery:
+						$("#id02").remove();
+
+						// JavaScript:
+						document.getElementById("id02").remove();
+					</code>
+				</pre>
+
+        <h3>Obter o elemento pai</h3>
+
+        <pre>
+					<code>
+						// jQuery:
+						myParent = $("#02").parent().prop("nodeName");
+
+						// JavaScript:
+						myParent = document.getElementById("02").parentNode.nodeName;
+					</code>
+				</pre>
+      </section>
     </main>
   </body>
 </html>
