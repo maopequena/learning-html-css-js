@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<meta charset="utf-8">
-<head>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../../css/style.css">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="description" content="Conjuntos">
-    <meta name="author" content="Lizandra Silva (@maopequena)">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="description" content="Conjuntos" />
+    <meta name="author" content="Lizandra Silva (@maopequena)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conjuntos</title>
-</head>
-<body>
-	<header>
-		<h1>Conjuntos</h1>
-	</header>
+  </head>
+  <body>
+    <header>
+      <h1>Conjuntos</h1>
+    </header>
 
-	<section>
-		<p>Um <strong>conjunto</strong> é uma coleção de valores exclusivos, isto é, cada valor só pode existir uma vez no conjunto. Os valores podem ser de qualquer tipo, podem ser valores primitivos ou objetos.</p>
+    <section>
+      <p>
+        Um <strong>conjunto</strong> é uma coleção de valores exclusivos, isto
+        é, cada valor só pode existir uma vez no conjunto. Os valores podem ser
+        de qualquer tipo, podem ser valores primitivos ou objetos.
+      </p>
 
-		<p>Um <code>typeof</code> de um conjunto retornará <code>object</code>.</p>
-	</section>
+      <p>
+        Um <code>typeof</code> de um conjunto retornará <code>object</code>.
+      </p>
+    </section>
 
-	<section>
-			<h2>Como criar conjuntos</h2>
+    <section>
+      <h2>Como criar conjuntos</h2>
 
-			<p>É possível criar conjuntos:</p>
+      <p>É possível criar conjuntos:</p>
 
-			<ul class="list-square">
-				<li>Passando uma matriz para <code>new Set()</code></li>
-				<li>Criando um conjunto vazio e usando <code>add()</code> para adicionar novos valores</li>
-			</ul>
-	</section>
+      <ul class="list-square">
+        <li>Passando uma matriz para <code>new Set()</code></li>
+        <li>
+          Criando um conjunto vazio e usando <code>add()</code> para adicionar
+          novos valores
+        </li>
+      </ul>
+    </section>
 
-	<section>
-				<h3>new Set()</h3>
+    <section>
+      <h3>new Set()</h3>
 
-				<p>Passe uma matriz para o construtor <code>new Set()</code>, por exemplo:</p>
+      <p>
+        Passe uma matriz para o construtor <code>new Set()</code>, por exemplo:
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						// Criar o conjunto completo
 						const letras = new Set(["a","b","c"]);
@@ -66,64 +77,78 @@
 						letras.add(c);
 					</code>
 				</pre>
-	</section>
+    </section>
 
-	<section>
-				<h3>add()</h3>
+    <section>
+      <h3>add()</h3>
 
-				<p>Esse método adiciona um novo valor ao conjunto já criado, por exemplo:</p>
+      <p>
+        Esse método adiciona um novo valor ao conjunto já criado, por exemplo:
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						letras.add("d");
 						letras.add("e");
 					</code>
 				</pre>
 
-				<p class="important-info">Note que, se os valores adicionados com este método forem iguais aos valores existentes, o valor não será adicionado.</p>
-	</section>
+      <p class="important-info">
+        Note que, se os valores adicionados com este método forem iguais aos
+        valores existentes, o valor não será adicionado.
+      </p>
+    </section>
 
-	<section>
-			<h2>Listar elementos do conjunto</h2>
+    <section>
+      <h2>Listar elementos do conjunto</h2>
 
-			<p>Para listar os elementos do conjunto, use a declaração <code>for/of</code>, por exemplo:</p>
+      <p>
+        Para listar os elementos do conjunto, use a declaração
+        <code>for/of</code>, por exemplo:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					// Cria o conjunto
 					const letras = new Set(["a","b","c"]);
 
 					// Lista todos os elementos
-					let textoo = "";
+					let texto = "";
 					for (const x of letras) {
-						textoo += x;
+						texto += x;
 					}
+
+					// Resultado: "abc"
 				</code>
 			</pre>
-	</section>
+    </section>
 
-	<section>
-				<h3>has()</h3>
+    <section>
+      <h3>has()</h3>
 
-				<p>Retorna <code>true</code> se o valor especificado estiver no conjunto.</p>
+      <p>
+        Retorna <code>true</code> se o valor especificado estiver no conjunto.
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						// Criar o conjunto
 						const letras = new Set(["a","b","c"]);
 
 						// O conjunto contém "d"?
 						resposta = letras.has("d");
+
+						// Resultado: false
 					</code>
 				</pre>
-	</section>
+    </section>
 
-	<section>
-				<h3>forEach()</h3>
+    <section>
+      <h3>forEach()</h3>
 
-				<p>Chama uma função para cada elemento do conjunto.</p>
+      <p>Chama uma função para cada elemento do conjunto.</p>
 
-				<pre>
+      <pre>
 					<code>
 						// Criar o conjunto
 						const letras = new Set(["a","b","c"]);
@@ -133,16 +158,18 @@
 						letras.forEach (function(value) {
 							texto += value;
 						})
+
+						// Resultado: "abc"
 					</code>
 				</pre>
-	</section>
+    </section>
 
-	<section>
-				<h3>values()</h3>
+    <section>
+      <h3>values()</h3>
 
-				<p>Retorna um objeto iterador com os valores de um conjunto.</p>
+      <p>Retorna um objeto iterador com os valores de um conjunto.</p>
 
-				<pre>
+      <pre>
 					<code>
 						// Exemplo 1
 						// Criar o conjunto
@@ -155,7 +182,7 @@
 						let texto = "";
 						for (const entrada of meuIterador) {
 							texto += entrada;
-						}
+						} // Resultado: "abc"
 
 						// Exemplo 2
 						// Criar o conjunto
@@ -165,19 +192,22 @@
 						let texto = "";
 						for (const entrada of letras.values()) {
 							texto += entrada;
-						}
+						} // Resultado: "abc"
 					</code>
 				</pre>
-	</section>
+    </section>
 
-	<section>
-				<h3>keys()</h3>
+    <section>
+      <h3>keys()</h3>
 
-				<p>Retorna um objeto iterador com os valores de um conjunto.</p>
+      <p>Retorna um objeto iterador com os valores de um conjunto.</p>
 
-				<p><strong>Observação</strong>: um conjunto não tem chaves, então <code>keys()</code> retorna o mesmo que <code>values()</code>.</p>
+      <p>
+        <strong>Observação</strong>: um conjunto não tem chaves, então
+        <code>keys()</code> retorna o mesmo que <code>values()</code>.
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						// Exemplo 1
 						// Criar o conjunto
@@ -203,16 +233,22 @@
 						}
 					</code>
 				</pre>
-	</section>
+    </section>
 
-	<section>
-				<h3>entries()</h3>
+    <section>
+      <h3>entries()</h3>
 
-				<p>Retorna um objeto iterador com pares de [valor, valor] de um conjunto.</p>
+      <p>
+        Retorna um objeto iterador com pares de [valor, valor] de um conjunto.
+      </p>
 
-				<p><strong>Observação</strong>: este método deveria retornar um par de [chave, valor], mas como o conjunto não tem chaves, ele retorna [valor, valor]. Isso torna o conjunto compatível com mapas.</p>
+      <p>
+        <strong>Observação</strong>: este método deveria retornar um par de
+        [chave, valor], mas como o conjunto não tem chaves, ele retorna [valor,
+        valor]. Isso torna o conjunto compatível com mapas.
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						// Exemplo 1
 						// Criar o conjunto
@@ -238,6 +274,186 @@
 						}
 					</code>
 				</pre>
-	</section>
-</body>
+    </section>
+
+    <section>
+      <h2>Métodos lógicos</h2>
+
+      <p>
+        Em 2025, sete novos métodos lógicos foram adicionados ao JavaScript:
+      </p>
+
+      <ul class="list-square">
+        <li><a href="#union">union()</a></li>
+        <li><a href="#difference">difference()</a></li>
+        <li><a href="#intersection">intersection()</a></li>
+        <li><a href="#disjoint">isDisjointFrom()</a></li>
+        <li><a href="#subset">isSubsetOf()</a></li>
+        <li><a href="#superset">isSupersetOf()</a></li>
+        <li><a href="#symdiff">symmetricDifference()</a></li>
+      </ul>
+
+      <h3 class="union">union()</h3>
+
+      <p>
+        Este método retorna um novo conjunto que contém elementos que estão em
+        um, em outro ou em ambos os conjuntos, isto é, a união de dois
+        conjuntos:
+      </p>
+
+      <img src="../../img/set_union.jpg" alt="União de dois conjuntos" />
+
+      <p>Exemplo:</p>
+
+      <pre>
+				<code>
+					const A = new Set(['a','b','c']);
+					const B = new Set(['b','c','d']);
+
+					const C = A.union(B); // Resultado: Set {'a', 'b', 'c', 'd'}
+				</code>
+			</pre>
+
+      <h3 class="difference">difference()</h3>
+
+      <p>
+        Este método retorna um novo conjunto que contém elementos que estão em
+        um conjunto, mas não no outro conjunto considerado, isto é, a diferença
+        entre os conjuntos:
+      </p>
+
+      <img
+        src="../../img/set_difference.jpg"
+        alt="Diferença entre dois conjuntos"
+      />
+
+      <p>Exemplo:</p>
+
+      <pre>
+				<code>
+					const A = new Set(['a','b','c']);
+					const B = new Set(['b','c','d']);
+
+					const C = A.difference(B); // Resultado: Set {'a'}
+				</code>
+			</pre>
+
+      <h3 class="intersection">intersection()</h3>
+
+      <p>
+        Este método retorna um novo conjunto que contém os elementos que estão
+        em ambos os conjuntos considerados, isto é, a intersecção de dois
+        conjuntos:
+      </p>
+
+      <img
+        src="../../img/set_intersection.jpg"
+        alt="Intersecção de dois conjuntos"
+      />
+
+      <p>Exemplo:</p>
+
+      <pre>
+				<code>
+					const A = new Set(['a','b','c']);
+					const B = new Set(['b','c','d']);
+
+					const C = A.intersection(B); // Resultado: Set {'b', 'c'}
+				</code>
+			</pre>
+
+      <h3 class="disjoint">isDisjointFrom()</h3>
+
+      <p>
+        Este método retorna <code>true</code> se um conjunto não tiver elementos
+        em comum com o outro:
+      </p>
+
+      <img
+        src="../../img/set_disjoint.jpg"
+        alt="Não há elementos em comum entre A e B"
+      />
+
+      <p>Exemplo:</p>
+
+      <pre>
+				<code>
+					const A = new Set(['a','b','c']);
+					const B = new Set(['b','c','d']);
+
+					let answer = A.isDisjointFrom(B); // Resultado: false
+				</code>
+			</pre>
+
+      <h3 class="subset">isSubsetOf()</h3>
+
+      <p>
+        Este método retorna <code>true</code> se todos os elementos de um
+        conjunto também são elementos do outro conjunto considerado na
+        comparação, isto é, se um é subconjunto do outro:
+      </p>
+
+      <img src="../../img/set_subset.jpg" alt="A é subconjunto de B" />
+
+      <p>Exemplo:</p>
+
+      <pre>
+				<code>
+					const A = new Set(['a','b','c']);
+					const B = new Set(['b','c','d']);
+
+					let answer = A.isSubsetOf(B); // Resultado: false
+				</code>
+			</pre>
+
+      <h3 class="superset">isSupersetOf()</h3>
+
+      <p>
+        Este método retorna <code>true</code> se todos os elementos nos
+        conjuntos considerados na comparação forem iguais, isto é, se um for o
+        supraconjunto do outro, ou o inverso do método acima:
+      </p>
+
+      <img src="../../img/set_superset.jpg" alt="A é supraconjunto de B" />
+
+      <p>Exemplo:</p>
+
+      <pre>
+				<code>
+					const A = new Set(['a','b','c']);
+					const B = new Set(['b','c','d']);
+
+					let answer = A.isSupersetOf(B); // Resultado: false
+				</code>
+			</pre>
+
+      <h3 class="symdiff">symmetricDifference()</h3>
+
+      <p>
+        Este método retorna um novo conjunto que contém elementos que estão ou
+        em um ou em outro dos conjuntos considerados na comparação, mas não em
+        ambos, isto é, a diferença simétrica entre os conjuntos:
+      </p>
+
+      <img
+        src="../../img/set_symmetric_difference.jpg"
+        alt="Diferença simétrica entre dois conjuntos"
+      />
+
+      <p>Exemplo:</p>
+
+      <pre>
+				<code>
+					const A = new Set(['a','b','c']);
+					const B = new Set(['b','c','d']);
+
+					const C = A.symetricDifference(B); // Resultado: Set {'a', 'd'}
+				</code>
+			</pre>
+    </section>
+
+    <section>
+      <h2>WeakSet</h2>
+    </section>
+  </body>
 </html>

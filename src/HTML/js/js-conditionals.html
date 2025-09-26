@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <meta charset="utf-8" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="description" content="Condicionais" />
+    <meta name="author" content="Lizandra Silva (@maopequena)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condicionais</title>
+  </head>
+  <body>
+    <header>
+      <h1>Declarações condicionais</h1>
+    </header>
+
+    <section>
+      <p>
+        Ao escrever o código, geralmente queremos realizar diferentes ações para
+        diferentes condições. As declarações condicionais executam um código
+        diferente dependendo de uma condição ser verdadeira ou falsa. As
+        declarações condicionais incluem:
+      </p>
+
+      <ul class="list-square">
+        <li><a href="#cond-if">if</a></li>
+        <li><a href="#cond-if-else">if... else...</a></li>
+        <li><a href="#cond-if-else-2">if... else... if... else...</a></li>
+        <li><a href="#cond-switch">switch</a></li>
+        <li><a href="#cond-ternary">ternária (? :)</a></li>
+      </ul>
+
+      <h3>Quando devemos usar as condicionais?</h3>
+
+      <ul class="list-square">
+        <li>
+          Use <code>if</code> para definir um bloco de código a executar se
+          determinada condição especificada for verdadeira
+        </li>
+        <li>
+          Use <code>else</code> para definir um bloco de código a executar se a
+          mesma condição for falsa
+        </li>
+        <li>
+          Use <code>else if</code> para definir uma nova condição a testar se a
+          primeira condição for falsa
+        </li>
+        <li>
+          Use <code>switch</code> para definir vários blocos de código
+          alternativos a executar
+        </li>
+        <li>
+          Use <code>(? :)</code> (condicional ternária) como uma abreviação para
+          <code>if...else</code>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 id="cond-if">if</h2>
+
+      <p>
+        Use <code>if</code> para especificar um bloco de código a executar se
+        determinada condição for <code>true</code>.
+      </p>
+
+      <p>Sintaxe</p>
+
+      <pre>
+				<code>
+					if (condição) {
+						// código a executar se a condição for verdadeira
+					}
+				</code>
+			</pre>
+
+      <p>
+        Note que usar <code>if</code> com letras maiúsculas (If, IF ou iF) gera
+        um erro no JavaScript.
+      </p>
+
+      <h3>if aninhado</h3>
+
+      <p>É possível usar uma declaração <code>if</code> dentro de outra:</p>
+
+      <pre>
+					<code>
+						let idade = 16;
+						let pais = "Brasil";
+						let text = "Você NÃO pode votar!";
+
+						if (pais == "Brasil") {
+							if (idade >= 16) {
+								text = "Você pode votar!";
+							}
+						}
+					</code>
+				</pre>
+
+      <p>
+        Declarações <code>if</code> aninhadas podem tornar o código mais
+        complexo. Uma solução melhor é usar o operador lógico <code>AND</code>:
+      </p>
+
+      <pre>
+					<code>
+						let idade = 16;
+						let pais = "Brasil";
+						let text = "Você NÃO pode votar!";
+
+						if (pais == "Brasil" && idade >= 16) {
+							text = "Você pode votar!";
+						}
+					</code>
+				</pre>
+
+      <h2 id="cond-if-else">else</h2>
+
+      <p>
+        Use <code>else</code> para especificar um bloco de código a executar se
+        a mesma condição de <code>if</code> for <code>false</code>.
+      </p>
+
+      <p>Sintaxe</p>
+
+      <pre>
+				<code>
+					if (condição) {
+						// código a executar se a condição for verdadeira
+					}
+					else {
+						// código a executar se a condição for falsa
+					}
+				</code>
+			</pre>
+
+      <h2 id="cond-if-else-2">else if</h2>
+
+      <p>
+        Use <code>else if</code> para especificar uma nova condição a testar se
+        a condição for <code>false</code>.
+      </p>
+
+      <p>Sintaxe</p>
+
+      <pre>
+				<code>
+					if (condição1) {
+						// código a executar se a condicional for verdadeira
+					} else if (condição2) {
+						// código a executar se a condicional for falsa e a condição2 for verdadeira
+					} else {
+						// código a executar se a condição1 for falsa e a condição2 for falsa
+					}
+				</code>
+			</pre>
+
+      <p>Exemplo</p>
+
+      <p>
+        Este exemplo usa um número aleatório para direcionar o usuário ao site
+        da W3Schools ou da World Wildlife Foundation (WWF); cada opção tem 50%
+        de chance de ser apresentado.
+      </p>
+
+      <pre>
+				<code>
+					let text;
+					if (Math.random() &lt; 0.5) {
+						text = "&lt;a href='https://w3schools.com'&gt;Visit W3Schools&lt;/a&gt;";
+					} else {
+						text = "&lt;a href='https://wwf.org'&gt;Visit WWF&lt;/a&gt;";
+					}
+					document.getElementById("demo").innerHTML = text;
+				</code>
+			</pre>
+
+      <h2 id="cond-switch">switch</h2>
+
+      <p>
+        Use <code>switch</code> para especificar vários blocos de código
+        alternativos a executar.
+      </p>
+
+      <p>
+        Com base em uma condição, o <code>switch</code> seleciona um ou mais
+        blocos de código a executar. Ele executa os blocos de código que
+        correspondem a uma expressão. Geralmente usamos o
+        <code>switch</code> como uma alternativa mais fácil de ler em relação a
+        várias declarações <code>if...else if...else</code>, especialmente ao
+        lidar com vários valores possíveis.
+      </p>
+
+      <p>Sintaxe</p>
+
+      <pre>
+				<code>
+					switch(expressão) {
+						case x:
+							// bloco de código
+							break;
+						case y:
+							// bloco de código
+							break;
+						default:
+							// bloco de código
+					}
+				</code>
+			</pre>
+
+      <p>Funciona assim:</p>
+
+      <ul class="list-square">
+        <li>A expressão do <code>switch</code> é avaliada uma vez.</li>
+        <li>O valor da expressão é comparado com os valores de cada caso.</li>
+        <li>
+          Se há uma correspondência, o bloco de código associado é executado.
+        </li>
+        <li>Se não há correspondência, nenhum código é executado.</li>
+      </ul>
+
+      <p>Exemplo</p>
+
+      <p>
+        O método <code>getDay()</code> retorna o dia da semana como um número
+        entre 0 e 6: (domingo=0, segunda-feira=1, terça-feira=2, etc...). O
+        exemplo abaixo usa o número para calcular o nome do dia da semana:
+      </p>
+
+      <pre>
+				<code>
+					switch (new Date().getDay()) {
+						case 0:
+							dia = "domingo";
+							break;
+						case 1:
+							dia = "segunda-feira";
+							break;
+						case 2:
+							dia = "terça-feira";
+							break;
+						case 3:
+							dia = "quarta-feira";
+							break;
+						case 4:
+							dia = "quinta-feira";
+							break;
+						case 5:
+							dia = "sexta-feira";
+							break;
+						case 6:
+							dia = "sábado";
+					}
+				</code>
+			</pre>
+
+      <h3>break</h3>
+
+      <p>
+        Quando o JavaScript chega à palavra-chave <code>break</code>, ele "sai"
+        do bloco <code>switch</code>; isso interrompe a execução dentro do bloco
+        <code>switch</code>. Nenhuma outra declaração no bloco será executada.
+      </p>
+
+      <p>
+        Não é necessário inserir <code>break</code> no último caso, já que o
+        <code>switch</code> termina ali de qualquer forma.
+      </p>
+
+      <p class="important-info">
+        Note que a palavra-chave <code>break</code> é crucial para impedir que o
+        código continue a ser executado nos próximos casos de blocos de código
+        (e no bloco <code>default</code>, se houver), mesmo se seus valores não
+        corresponderem à expressão.
+      </p>
+
+      <h3>default</h3>
+
+      <p>
+        A palavra-chave <code>default</code> especifica um bloco de código a
+        executar se não houver correspondência com outros casos. Essa
+        palavra-chave é opcional e pode ser uma alternativa se não houver um
+        caso apresentado.
+      </p>
+
+      <p>
+        Exemplo: o método <code>getDay()</code> retorna o dia da semana como um
+        número entre 0 e 6. Se hoje não for sábado (6), nem domingo (0), a
+        mensagem padrão é exibida.
+      </p>
+
+      <pre>
+				<code>
+					switch (new Date().getDay()) {
+						case 6:
+							text = "Hoje é sábado";
+							break;
+						case 0:
+							text = "Hoje é domingo";
+							break;
+						default:
+							text = "Espero que o fim de semana chegue logo";
+					}
+				</code>
+			</pre>
+
+      <p>
+        <code>default</code> não precisa ser a última opção no bloco de código,
+        porém se não for, lembre-se de adicionar <code>break</code> abaixo do
+        caso <code>default</code>:
+      </p>
+
+      <pre>
+				<code>
+					switch (new Date().getDay()) {
+						default:
+							text = "Espero que o fim de semana chegue logo";
+							break;
+						case 6:
+							text = "Hoje é sábado";
+							break;
+						case 0:
+							text = "Hoje é domingo";
+					}
+				</code>
+			</pre>
+
+      <h3>Blocos de código comuns</h3>
+
+      <p>
+        Pode haver situações em que você quer que diferentes casos no
+        <code>switch</code> usem o mesmo código. No exemplo abaixo, os casos 4 e
+        5 executam o mesmo código, assim como 0 e 6:
+      </p>
+
+      <pre>
+				<code>
+					switch (new Date().getDay()) {
+						case 4:
+						case 5:
+							text = "O fim de semana chega logo!";
+							break;
+						case 0:
+						case 6:
+							text = "É o fim de semana";
+							break;
+						default:
+							text = "Espero que o fim de semana chegue logo";
+					}
+				</code>
+			</pre>
+
+      <p>
+        Se um valor corresponder a vários casos, o
+        <strong>primeiro</strong> caso será selecionado. Se não houver
+        correspondências, o programa continua até a etiqueta
+        <code>default</code>. Se essa etiqueta não existir, o programa continua
+        para a declaração após o <code>switch</code>.
+      </p>
+
+      <h3>Comparação rigorosa</h3>
+
+      <p>
+        O <code>switch</code> usa a comparação rigorosa (===), isto é os valores
+        devem ter o mesmo tipo para serem uma correspondência. Esse tipo de
+        comparação só pode ser verdadeira se ambos os operandos forem do mesmo
+        tipo. Por exemplo, abaixo vemos que não há correspondência para
+        <code>x</code>:
+      </p>
+
+      <pre>
+				<code>
+					let x = "0";
+					switch (x) {
+						case 0:
+							text = "Desligado";
+							break;
+						case 1:
+							text = "Ligado";
+							break;
+						default:
+							text = "Nenhum valor encontrado";
+					}
+				</code>
+			</pre>
+
+      <h2 id="cond-ternary">Operador ternário (? :)</h2>
+
+      <p>
+        Use a condicional ternária <code>(? :)</code> como uma abreviação para
+        <code>if...else</code>. Observe que a expressão1 no exemplo abaixo é a
+        expressão <strong>verdadeira</strong> e a expressão2 é a expressão
+        <strong>falsa</strong>.
+      </p>
+
+      <p>
+        Este operador tem o nome "ternário" por aceitar 3 (três) operandos e é o
+        único operador no JavaScript que requer três operandos.
+      </p>
+
+      <p>Sintaxe</p>
+
+      <pre>
+				<code>
+					condição ? expressão1 : expressão2
+				</code>
+			</pre>
+
+      <p>Exemplos</p>
+
+      <pre>
+				<code>
+					let text = (idade &gt; 18) ? "Adulto" : "Menor de idade";
+
+					let membro = true;
+					let discount = membro ? 0.2 : 0;
+				</code>
+			</pre>
+
+      <table>
+        <tbody>
+          <tr></tr>
+          <tr>
+            <th>Parâmetro</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td><i>condição</i></td>
+            <td>
+              Obrigatório.<br />
+              A condição a testar.<br />
+              Uma expressão que avaliada como
+              <code>verdadeira</code> ou <code>falsa</code>.
+            </td>
+          </tr>
+          <tr>
+            <td>?</td>
+            <td>
+              Obrigatório.<br />
+              O operador que separa a condição das expressões.
+            </td>
+          </tr>
+          <tr>
+            <td><i>expressão1</i></td>
+            <td>
+              Obrigatória.<br />
+              O valor a retornar se a condição for <code>verdadeira</code>.
+            </td>
+          </tr>
+          <tr>
+            <td>:</td>
+            <td>
+              Obrigatório.<br />
+              O operador que separa as expressões.
+            </td>
+          </tr>
+          <tr>
+            <td><i>expressão2</i></td>
+            <td>
+              Obrigatório.<br />
+              O valor a retornar se a condição for <code>falsa</code>.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>

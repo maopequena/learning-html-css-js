@@ -26,7 +26,7 @@
 			<li>Aritméticos</li>
 			<li>Atribuição</li>
 			<li>Comparação</li>
-			<li>Sequência de caracteres (strings)</li>
+			<li>Sequências de caracteres (strings)</li>
 			<li>Lógicos</li>
 			<li>Bitwise</li>
 			<li>Ternários</li>
@@ -112,7 +112,7 @@
 
 		<p>Em aritmética, a divisão de dois inteiros gera um quociente e um resto. Na matemática, o resultado de uma operação de módulo é o resto de uma divisão aritmética.</p>
 
-		<h3>O operador de precedência</h3>
+		<h3>Precedência de operadores</h3>
 
 		<p>Considere a seguinte expressão:</p>
 
@@ -301,13 +301,15 @@
 			<code>
 				let text1 = "A";
 				let text2 = "B";
-				let result = text1 < text2; // resultado = true
+				let result = text1 &lt; text2; // resultado = true
 
 				let text1 = "20";
 				let text2 = "5";
-				let result = text1 < text2; // resultado = true
+				let result = text1 &lt; text2; // resultado = false
 			</code>
 		</pre>
+
+		<p>Note que as sequências de caracteres (strings) são comparadas alfabeticamente.</p>
 
 		<p>O sinal de adição (<code>+</code>) e seus similares de atribuição (<code>+=</code>) também  podem ser usados com texto para concatenação:</p>
 
@@ -332,23 +334,29 @@
 	<section>
 		<h2>Operadores lógicos</h2>
 
+		<p>Usamos operadores lógicos para combinar expressões booleanas e para alterar o resultado de comparações. Normalmente, usaremos um operador de comparação para verificar uma condição e o operador lógico para combinar condições em uma lógica mais complexa.</p>
+
 		<table>
 			<tbody>
 				<tr>
-					<th style="width:12%">Operador</th>
+					<th>Operador</th>
 					<th>Descrição</th>
+					<th>Exemplo</th>
 				</tr>
 				<tr>
 					<td>&amp;&amp;</td>
-					<td>E lógico</td>
+					<td>E lógico: retorna <i>true</i> se ambas as expressões são verdadeiras, caso contrário, retorna <i>false</i></td>
+					<td>(x &lt; 10 && y > 1) é <strong>true</strong></td>
 				</tr>
 				<tr>
 					<td>||</td>
-					<td>OU lógico</td>
+					<td>OU lógico: retorna <i>true</i> se uma ou ambas as expressões forem verdadeiras, caso contrário, retorna <i>false</i></td>
+					<td>(x === 5 || y === 5) é <strong>false</strong></td>
 				</tr>
 				<tr>
 					<td>!</td>
-					<td>NÃO lógico</td>
+					<td>NÃO lógico: retorna <i>true</i> para expressões falsas e <i>false</i> para expressões verdadeiras</td>
+					<td>!(x === y) é <strong>true</strong></td>
 				</tr>
 			</tbody>
 		</table>
@@ -475,7 +483,7 @@
 			</tbody>
 		</table>
 
-		<p>Os exemplos acima usam exemplos não atribuídos de 4 bits, mas o JavaScript usa números atribuídos de 32 bits. Por causa disso, em JavaScript, ~ 5 não retorna 10, mas sim -6. Isto é, ~00000000000000000000000000000101 retorna 11111111111111111111111111111010.</p>
+		<p>Os exemplos acima usam exemplos não atribuídos de 4 bits, mas o JavaScript usa números atribuídos de 32 bits. Por causa disso, em JavaScript, ~5 não retorna 10, mas sim -6. Isto é, ~00000000000000000000000000000101 retorna 11111111111111111111111111111010.</p>
 
 		<p>Para uma explicação completa dos operadores bitwise, consulte o vídeo <a href="https://youtu.be/JbGf_hd6g_Q?si=lIYUHTCXD4P4E4SU" target="_blank" rel="noopener noreferrer">Operadores Bitwise em Javascript - Curso de Javascript Moderno - Aula 08</a> de CFBCursos.</p>
 
@@ -543,7 +551,7 @@
 				</tbody>
 			</table>
 
-			<p>No JavaScript, números binários são armazenados no formato complementar de dois, isto é um número negativo é o bitwise NÃO do número positivo:</p>
+			<p>No JavaScript, números binários são armazenados no formato complementar de dois, isto é um número negativo é o bitwise "NÃO" do número positivo:</p>
 
 			<table>
 				<tbody>

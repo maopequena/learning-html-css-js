@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<meta charset="utf-8">
-<head>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../../css/style.css">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="description" content="Booleanos">
-    <meta name="author" content="Lizandra Silva (@maopequena)">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="description" content="Booleanos" />
+    <meta name="author" content="Lizandra Silva (@maopequena)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booleanos</title>
-</head>
-<body>
-	<header>
-		<h1>Booleanos</h1>
-	</header>
+  </head>
+  <body>
+    <header>
+      <h1>Booleanos</h1>
+    </header>
 
-	<section>
-		<p>Em programação, muitas vezes precisamos de um tipo de dado que só pode ter dois valores, como:</p>
+    <section>
+      <p>
+        Em programação, muitas vezes precisamos de um tipo de dado que só pode
+        ter dois valores, como:
+      </p>
 
-		<ul class="list-square">
-			<li>Sim / Não</li>
-			<li>Ligado / Desligado</li>
-			<li>Verdadeiro / Falso</li>
-		</ul>
+      <ul class="list-square">
+        <li>Sim / Não</li>
+        <li>Ligado / Desligado</li>
+        <li>Verdadeiro / Falso</li>
+      </ul>
 
-		<p>É para isso que servem os booleanos: um booleano representa um de dois valores: <strong>true</strong> ou <strong>false</strong>.</p>
+      <p>
+        É para isso que servem os booleanos; um booleano representa um de dois
+        valores: <strong>true</strong> ou <strong>false</strong>.
+      </p>
 
-		<p>Qualquer coisa <em>com</em> um "valor" é verdadeira:</p>
+      <p>Qualquer coisa <em>com</em> um "valor" é verdadeira:</p>
 
-		<pre>
+      <pre>
 			<code>
 				Boolean(3.14) // true
 				Boolean(100) // true
@@ -39,9 +45,9 @@
 			</code>
 		</pre>
 
-		<p>Qualquer coisa <em>sem</em> um "valor" é falsa:</p>
+      <p>Qualquer coisa <em>sem</em> um "valor" é falsa:</p>
 
-		<pre>
+      <pre>
 			<code>
 				let x = 0; // x é zero
 				const a = Boolean(x); // false
@@ -53,7 +59,7 @@
 				const c = Boolean(z); // false
 
 				let w; // w é indefinido
-				const d = Boolean(x); // false
+				const d = Boolean(w); // false
 
 				let v = null; // v é nulo
 				const e = Boolean(v); // false
@@ -65,228 +71,296 @@
 				const g = Boolean(t); // false
 			</code>
 		</pre>
-	</section>
 
-	<section>
-		<h2>A função Boolean()</h2>
+      <h5>Características essenciais de booleanos</h5>
 
-		<p>Use esta função para descobrir se uma expressão (ou variável) é verdadeira:</p>
+      <ul class="list-square">
+        <li>
+          <strong>true</strong> e <code>false</code> são tipos de dados
+          considerados booleanos
+        </li>
+        <li>
+          <strong>true</strong> e <strong>false</strong> são os únicos valores
+          booleanos possíveis
+        </li>
+        <li>
+          <strong>true</strong> e <strong>false</strong> devem ser escritos em
+          minúsculas
+        </li>
+        <li>
+          <strong>true</strong> e <strong>false</strong> devem ser escritos sem
+          aspas (simples ou duplas)
+        </li>
+      </ul>
+    </section>
 
-		<pre>
+    <section>
+      <h2>A função Boolean()</h2>
+
+      <p>
+        Use esta função para descobrir se uma expressão (ou variável) é
+        verdadeira:
+      </p>
+
+      <pre>
 			<code>
 				Boolean(10 > 9); // true
 			</code>
 		</pre>
 
-		<p>A expressão acima pode ser escrita também sem a palavra-chave <code>Boolean</code>:</p>
+      <p>
+        A expressão acima pode ser escrita também sem a palavra-chave
+        <code>Boolean</code>:
+      </p>
 
-		<pre>
+      <pre>
 			<code>
 				(10 > 9); // true
 				10 > 9; // true
 			</code>
 		</pre>
-	</section>
+    </section>
 
-	<section>
-		<h2>Booleanos como objetos</h2>
+    <section>
+      <h2>Booleanos como objetos</h2>
 
-		<p>Normalmente, os booleanos no JavaScript são valores primitivos criados a partir de literais: <code>let x = false;</code>. Mas eles também podem ser definidos como objetos com a palavra-chave <code>new</code>: <code>let y = new Boolean(false);</code>. <code>typeof</code> <strong>x</strong> retorna <code>boolean</code>, <code>typeof</code> <strong>y</strong> retorna <code>object</code>.</p>
+      <p>
+        Normalmente, os booleanos no JavaScript são valores primitivos criados a
+        partir de literais: <code>let x = false;</code>. Mas eles também podem
+        ser definidos como objetos com a palavra-chave <code>new</code>:
+        <code>let y = new Boolean(false);</code>. O <code>typeof</code> de
+        <strong>x</strong> retorna <code>boolean</code>, o
+        <code>typeof</code> de <strong>y</strong> retorna <code>object</code>.
+      </p>
 
-		<p class="important-info"><strong>OBSERVAÇÃO</strong>: não crie objetos booleanos! A palavra-chave <code>new</code> só complica o código e reduz sua velocidade de execução. Além disso, objetos booleanos podem gerar resultados inesperados: se compararmos x e y do exemplo usado acima com o operador <code>==</code>, o resultado é <code>true</code>, e com o operador <code>===</code>, o resultado é <code>false</code>.</p>
-	</section>
+      <p class="important-info">
+        <strong>OBSERVAÇÃO</strong>: não crie objetos booleanos! A palavra-chave
+        <code>new</code> só complica o código e reduz sua velocidade de
+        execução. Além disso, objetos booleanos podem gerar resultados
+        inesperados: se compararmos x e y do exemplo usado acima com o operador
+        <code>==</code>, o resultado é <code>true</code>, e com o operador
+        <code>===</code>, o resultado é <code>false</code>.
+      </p>
+    </section>
 
-	<section>
-		<h2>Comparações e condições</h2>
+    <section>
+      <h2>Comparações e condições</h2>
 
-		<p>O valor booleano de uma expressão é a base para todas as comparações e condições no JavaScript.</p>
+      <p>
+        O valor booleano de uma expressão é a base para todas as comparações e
+        condições no JavaScript.
+      </p>
 
-		<p class="important-info">Observe que comparar dois objetos no JavaScript sempre retorna <code>false</code>.</p>
+      <p class="important-info">
+        Observe que comparar dois objetos no JavaScript sempre retorna
+        <code>false</code>.
+      </p>
 
-		<p>Para testar se algo é <code>true</code> ou <code>false</code>, podemos usar operadores de comparação e lógicos.</p>
+      <p>
+        Para testar se algo é <code>true</code> ou <code>false</code>, podemos
+        usar operadores de comparação e lógicos.
+      </p>
 
-			<h3>Operadores de comparação</h3>
+      <h3>Operadores de comparação</h3>
 
-			<p>Os operadores de comparação são usados em declarações lógicas para determinar a igualdade ou a diferença entre variáveis ou valores. Na tabela abaixo, <code>x = 5</code>. Vejamos como funcionam os operadores de comparação.</p>
+      <p>
+        Os operadores de comparação são usados em declarações lógicas para
+        determinar a igualdade ou a diferença entre variáveis ou valores. Na
+        tabela abaixo, <code>x = 5</code>. Vejamos como funcionam os operadores
+        de comparação.
+      </p>
 
-			<table>
-				<tbody>
-					<tr>
-						<th style="width:12%">Operador</th>
-						<th>Descrição</th>
-						<th>Comparação</th>
-						<th>Retorna</th>
-						<th style="width:10%">Experimente</th>
-					</tr>
-					<tr>
-						<td rowspan="3">==</td>
-						<td rowspan="3">igual a</td>
-						<td>x == 8</td>
-						<td>false</td>
-						<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison1">Experimente »</a></td> 
-					</tr>
-					<tr>
-						<td>x == 5</td>
-						<td>true</td>
-						<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison2">Experimente »</a></td> 
-					</tr>
-					<tr>
-						<td>x == "5"</td>
-						<td>true</td>
-						<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison12">Experimente »</a></td> 
-					</tr>
-					<tr>
-						<td rowspan="2">===</td>
-						<td rowspan="2">valor igual e tipo igual</td>
-						<td>x === 5</td>
-						<td>true</td>
-						<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison4">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td>x === "5"</td>
-						<td>false</td>
-						<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison3">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td>!=</td>
-						<td>desigual</td>
-						<td>x != 8</td>
-						<td>true</td>
-						<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison5">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td rowspan="3">!==</td>
-						<td rowspan="3">valor desigual ou tipo desigual</td>
-						<td>x !== 5</td>
-						<td>false</td>
-						<td><a href="tryit.asp?filename=tryjs_comparison7" target="_blank">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td>x !== "5"</td>
-						<td>true</td>
-						<td><a href="tryit.asp?filename=tryjs_comparison6" target="_blank">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td>x !== 8</td>
-						<td>true</td>
-						<td><a href="tryit.asp?filename=tryjs_comparison13" target="_blank">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td>&gt;</td>
-						<td>maior que</td>
-						<td>x &gt; 8</td>
-						<td>false</td>
-						<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison8">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td>&lt;</td>
-						<td>menor que</td>
-						<td>x &lt; 8</td>
-						<td>true</td>
-						<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison9">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td>&gt;=</td>
-						<td>maior ou igual a</td>
-						<td>x &gt;= 8</td>
-						<td>false</td>
-						<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison10">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td>&lt;=</td>
-						<td>menor ou igual a</td>
-						<td>x &lt;= 8</td>
-						<td>true</td>
-						<td><a target="_blank" href="tryit.asp?filename=tryjs_comparison11">Experimente »</a></td>
-					</tr>
-				</tbody>
-			</table>
+      <table>
+        <tbody>
+          <tr>
+            <th style="width: 12%">Operador</th>
+            <th>Descrição</th>
+            <th>Comparação</th>
+            <th>Retorna</th>
+          </tr>
+          <tr>
+            <td rowspan="3">==</td>
+            <td rowspan="3">igual a</td>
+            <td>x == 8</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>x == 5</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>x == "5"</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td rowspan="2">===</td>
+            <td rowspan="2">valor igual e tipo igual</td>
+            <td>x === 5</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>x === "5"</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>!=</td>
+            <td>desigual</td>
+            <td>x != 8</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td rowspan="3">!==</td>
+            <td rowspan="3">valor desigual ou tipo desigual</td>
+            <td>x !== 5</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>x !== "5"</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>x !== 8</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>&gt;</td>
+            <td>maior que</td>
+            <td>x &gt; 8</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>&lt;</td>
+            <td>menor que</td>
+            <td>x &lt; 8</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>&gt;=</td>
+            <td>maior ou igual a</td>
+            <td>x &gt;= 8</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>&lt;=</td>
+            <td>menor ou igual a</td>
+            <td>x &lt;= 8</td>
+            <td>true</td>
+          </tr>
+        </tbody>
+      </table>
 
-				<h4>Exemplo de uso</h4>
+      <h4>Exemplo de uso</h4>
 
-				<p>Os operadores de comparação podem ser usados com declarações condicionais para comparar valores e executar uma ação dependendo do resultado:</p>
+      <p>
+        Os operadores de comparação podem ser usados com declarações
+        condicionais para comparar valores e executar uma ação dependendo do
+        resultado:
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						if (age < 18) text = "Too young to buy alcohol";
 					</code>
 				</pre>
 
-			<h3>Operadores lógicos</h3>
+      <h3>Operadores lógicos</h3>
 
-			<p>Usamos operadores lógicos para determinar a lógica entre variáveis ou valores. Dado que <code>x = 6</code> e <code>y = 3</code>, a tabela abaixo explica os operadores lógicos.</p>
+      <p>
+        Usamos operadores lógicos para determinar a lógica entre variáveis ou
+        valores. Dado que <code>x = 6</code> e <code>y = 3</code>, a tabela
+        abaixo explica os operadores lógicos.
+      </p>
 
-			<table>
-				<tbody>
-					<tr>
-						<th style="width:12%">Operador</th>
-						<th>Descrição</th>
-						<th>Exemplo</th>
-						<th style="width:10%">Experimente</th>
-					</tr>
-					<tr>
-						<td>&amp;&amp;</td>
-						<td>E lógico</td>
-						<td> (x &lt; 10 &amp;&amp; y &gt; 1) é true</td>
-						<td><a target="_blank" class="w3-btn btnsmall" href="tryit.asp?filename=tryjs_comparison_and">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td>||</td>
-						<td>OU lógico</td>
-						<td>(x == 5 || y == 5) é false</td>
-						<td><a target="_blank" class="w3-btn btnsmall" href="tryit.asp?filename=tryjs_comparison_or">Experimente »</a></td>
-					</tr>
-					<tr>
-						<td>!</td>
-						<td>NÃO lógico</td>
-						<td> !(x == y) é true</td>
-						<td><a target="_blank" class="w3-btn btnsmall" href="tryit.asp?filename=tryjs_comparison_not">Experimente »</a></td>
-					</tr>
-				</tbody>
-			</table>
+      <table>
+        <tbody>
+          <tr>
+            <th>Operador</th>
+            <th>Descrição</th>
+            <th>Exemplo</th>
+          </tr>
+          <tr>
+            <td>&amp;&amp;</td>
+            <td>E lógico</td>
+            <td>(x &lt; 10 &amp;&amp; y &gt; 1) é true</td>
+          </tr>
+          <tr>
+            <td>||</td>
+            <td>OU lógico</td>
+            <td>(x == 5 || y == 5) é false</td>
+          </tr>
+          <tr>
+            <td>!</td>
+            <td>NÃO lógico</td>
+            <td>!(x == y) é true</td>
+          </tr>
+        </tbody>
+      </table>
 
-			<h3>Operador condicional (ternário, ?)</h3>
+      <h3>Operador condicional (ternário, ?)</h3>
 
-			<p>O JavaScript também oferece um operador condicional que atribui um valor a uma variável com base em uma condição. Sua sintaxe é a seguinte:</p>
+      <p>
+        O JavaScript também oferece um operador condicional que atribui um valor
+        a uma variável com base em uma condição. Sua sintaxe é a seguinte:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
-					nome_variável = (condição) ? valor1:valor2
+					nome_variável = (condição) ? valor1 : valor2
 				</code>
 			</pre>
 
-				<h4>Exemplo de uso</h4>
+      <h4>Exemplo de uso</h4>
 
-				<pre>
+      <pre>
 					<code>
-						let voteable = (age < 18) ? "Too young":"Old enough";
+						let pode_votar = (idade &lt;= 16) ? "Muito jovem" : "Pode votar";
 					</code>
 				</pre>
 
-				<p>Neste caso, se a variável <code>age</code> é um valor abaixo de 18, o valor da variável <code>votable</code> será "Too young". Caso contrário, será "Old enough".</p>
+      <p>
+        Neste caso, se a variável <code>idade</code> é um valor abaixo de 16, o
+        valor da variável <code>pode_votar</code> será "Muito jovem". Caso
+        contrário, será "Pode votar".
+      </p>
 
-			<h3>Comparar diferentes tipos de dados</h3>
+      <h3>Comparar diferentes tipos de dados</h3>
 
-			<p>Comparar dados de tipos diferentes pode gerar resultados inesperados. Ao comparar uma cadeia de caracteres com um número, o JavaScript converte a cadeia de caracteres em um número para fazer a comparação. Uma cadeia de caracteres vazia, por exemplo, é convertida para 0. Uma cadeia de caracteres que contém texto é convertida para <code>NaN</code>, que é <code>false</code>.</p>
+      <p>
+        Comparar dados de tipos diferentes pode gerar resultados inesperados. Ao
+        comparar uma cadeia de caracteres com um número, o JavaScript converte a
+        cadeia de caracteres em um número para fazer a comparação. Uma cadeia de
+        caracteres vazia, por exemplo, é convertida para 0. Uma cadeia de
+        caracteres que contém texto é convertida para <code>NaN</code>, que é
+        <code>false</code>.
+      </p>
 
-			<p>Ao comparar duas cadeias de caracteres, "2" será maior que "12", porque, alfabeticamente, 1 é menor que 2. Para obter um resultado correto, as variáveis devem ser convertidas para o tipo de dados certo antes da comparação:</p>
+      <p>
+        Ao comparar duas cadeias de caracteres, "2" será maior que "12", porque,
+        alfabeticamente, 1 é menor que 2. Para obter um resultado correto, as
+        variáveis devem ser convertidas para o tipo de dados certo antes da
+        comparação:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
-					age = Number(age);
+					idade = Number(idade);
 					if (isNaN(age)) {
-						voteable = "Input is not a number";
+						pode_votar = "O valor não é um número";
 					} else {
-						voteable = (age < 18) ? "Too young" : "Old enough";
+						pode_votar = (idade &lt;= 16) ? "Muito jovem" : "Pode votar";
 					}
 				</code>
 			</pre>
 
-			<h3>Operador nulo coalescente (??)</h3>
+      <h3>Operador nulo coalescente (??)</h3>
 
-			<p>O operador <code>??</code> retorna o primeiro argumento se ele não for nulo, isto é <strong>nulo</strong> ou <strong>indefinido</strong>. Caso contrário, retorna o segundo argumento. Por exemplo:</p>
+      <p>
+        O operador <code>??</code> retorna o primeiro argumento se ele não for
+        nulo, isto é <strong>nulo</strong> ou <strong>indefinido</strong>. Caso
+        contrário, retorna o segundo argumento. Por exemplo:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					let name = null;
 					let text = "missing";
@@ -294,37 +368,71 @@
 				</code>
 			</pre>
 
-			<h3>Operador de encadeamento opcional (?.)</h3>
+      <h3>Operador de encadeamento opcional (?.)</h3>
 
-			<p>O operador <code>?.</code> retorna <code>undefined</code> se um objeto for indefinido ou nulo, em vez de exibir um erro. Por exemplo:</p>
+      <p>
+        O operador <code>?.</code> retorna <code>undefined</code> se um objeto
+        for indefinido ou nulo, em vez de exibir um erro. Por exemplo:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
-					// Create an object:
-					const car = {type:"Fiat", model:"500", color:"white"};
-					// Ask for car name:
-					document.getElementById("demo").innerHTML = car?.name;
+					// Criar um objeto:
+					const carro = {tipo:"Fiat", modelo:"500", cor:"branco"};
+					// Pedir o nome do carro:
+					document.getElementById("demo").innerHTML = carro?.nome;
+					// O resultado é undefined, sem erro
 				</code>
 			</pre>
 
-			<h3>Declarações condicionais</h3>
+      <p>
+        Saiba mais sobre
+        <a
+          href="/src/HTML/js/js-operators.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Operadores</a
+        >.
+      </p>
 
-			<p>Com muita frequência ao escrever código, podemos querer executar diferentes ações para diferentes condições. Para isso, podemos usar as declarações condicionais. No JavaScript temos as seguintes declarações condicionais:</p>
+      <h3>Declarações condicionais</h3>
 
-			<ul class="list-square">
-				<li><code>if</code>: define um bloco de código a ser executado se determinada condição for verdadeira.</li>
-				<li><code>else</code>: define um bloco de código a ser executado se a mesma condição for falsa.</li>
-				<li><code>else if</code>: define uma nova condição a ser testada se a primeira condição for falsa.</li>
-				<li><code>switch</code>: define vários blocos de código alternativos a serem executados.</li>
-			</ul>
+      <p>
+        Com muita frequência ao escrever código, podemos querer executar
+        diferentes ações para diferentes condições. Para isso, podemos usar as
+        declarações condicionais. No JavaScript temos as seguintes declarações
+        condicionais:
+      </p>
 
-				<h4>if</h4>
+      <ul class="list-square">
+        <li>
+          <code>if</code>: define um bloco de código a ser executado se
+          determinada condição for verdadeira.
+        </li>
+        <li>
+          <code>else</code>: define um bloco de código a ser executado se a
+          mesma condição for falsa.
+        </li>
+        <li>
+          <code>else if</code>: define uma nova condição a ser testada se a
+          primeira condição for falsa.
+        </li>
+        <li>
+          <code>switch</code>: define vários blocos de código alternativos a
+          serem executados.
+        </li>
+      </ul>
 
-				<p>Use esta palavra-chave para definir um bloco de código a ser executado se determinada condição for verdadeira.</p>
+      <h4>if</h4>
 
-					<h5>Sintaxe</h5>
+      <p>
+        Use esta palavra-chave para definir um bloco de código a ser executado
+        se determinada condição for verdadeira.
+      </p>
 
-					<pre>
+      <h5>Sintaxe</h5>
+
+      <pre>
 						<code>
 							if (condição) {
 								//  bloco de código a ser executado se determinada condição for verdadeira
@@ -332,11 +440,14 @@
 						</code>
 					</pre>
 
-					<p><strong>Observação</strong>: não use maiúsculas na palavra-chave, pois isso pode gerar um erro.</p>
+      <p>
+        <strong>Observação</strong>: não use maiúsculas na palavra-chave, pois
+        isso pode gerar um erro.
+      </p>
 
-					<h5>Exemplo</h5>
+      <h5>Exemplo</h5>
 
-					<pre>
+      <pre>
 						<code>
 							// Make a "Good day" greeting if the hour is less than 18:00:
 							if (hour < 18) {
@@ -345,13 +456,16 @@
 						</code>
 					</pre>
 
-				<h4>else</h4>
+      <h4>else</h4>
 
-				<p>Use esta palavra-chave para definir um bloco de código a ser executado se a mesma condição definida em <code>if</code> for falsa.</p>
+      <p>
+        Use esta palavra-chave para definir um bloco de código a ser executado
+        se a mesma condição definida em <code>if</code> for falsa.
+      </p>
 
-					<h5>Sintaxe</h5>
+      <h5>Sintaxe</h5>
 
-					<pre>
+      <pre>
 						<code>
 							if (condição) {
 								//  código a executar para a condição verdadeira
@@ -361,9 +475,9 @@
 						</code>
 					</pre>
 
-					<h5>Exemplo</h5>
+      <h5>Exemplo</h5>
 
-					<pre>
+      <pre>
 						<code>
 							// If the hour is less than 18, create a "Good day" greeting, otherwise "Good evening"
 							if (hour < 18) {
@@ -374,13 +488,16 @@
 						</code>
 					</pre>
 
-				<h4>else if</h4>
+      <h4>else if</h4>
 
-				<p>Use estas palavras-chave para definir uma nova condição se a primeira for falsa.</p>
+      <p>
+        Use estas palavras-chave para definir uma nova condição se a primeira
+        for falsa.
+      </p>
 
-					<h5>Sintaxe</h5>
+      <h5>Sintaxe</h5>
 
-					<pre>
+      <pre>
 						<code>
 							if (condition1) {
 								//  block of code to be executed if condition1 is true
@@ -392,9 +509,9 @@
 						</code>
 					</pre>
 
-					<h5>Exemplo</h5>
+      <h5>Exemplo</h5>
 
-					<pre>
+      <pre>
 						<code>
 							// If time is less than 10:00, create a "Good morning" greeting, if not, but time is less than 20:00, create a "Good day" greeting, otherwise a "Good evening"
 							if (time < 10) {
@@ -407,13 +524,17 @@
 						</code>
 					</pre>
 
-				<h4>switch</h4>
+      <h4>switch</h4>
 
-				<p>Use esta palavra-chave para realizar diferentes ações com base em diferentes condições. Com ela, é possível selecionar um de vários blocos de código disponíveis para executar.</p>
+      <p>
+        Use esta palavra-chave para realizar diferentes ações com base em
+        diferentes condições. Com ela, é possível selecionar um de vários blocos
+        de código disponíveis para executar.
+      </p>
 
-					<h5>Sintaxe</h5>
+      <h5>Sintaxe</h5>
 
-					<pre>
+      <pre>
 						<code>
 							switch(expressão) {
 								caso x:
@@ -428,33 +549,144 @@
 						</code>
 					</pre>
 
-					<p>Funciona assim:</p>
+      <p>Funciona assim:</p>
 
-					<ul class="list-square">
-						<li>A expressão é avaliada uma vez.</li>
-						<li>O valor da expressão é comparado aos valores de cada caso.</li>
-						<li>Se houver uma correspondência, o bloco de código associado é executado.</li>
-						<li>Se NÃO houver uma correspondência, o bloco de código padrão (default) é executado.</li>
-					</ul>
+      <ul class="list-square">
+        <li>A expressão é avaliada uma vez.</li>
+        <li>O valor da expressão é comparado aos valores de cada caso.</li>
+        <li>
+          Se houver uma correspondência, o bloco de código associado é
+          executado.
+        </li>
+        <li>
+          Se NÃO houver uma correspondência, o bloco de código padrão (default)
+          é executado.
+        </li>
+      </ul>
 
-					<p>Veja exemplos <a href="https://www.w3schools.com/js/js_switch.asp" target="_blank" rel="noopener noreferrer">aqui</a>.</p>
+      <p>
+        Veja exemplos
+        <a
+          href="https://www.w3schools.com/js/js_switch.asp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >aqui</a
+        >.
+      </p>
 
-					<p>É possível que mais de um caso execute o mesmo bloco de código. Veja um <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_switch3" target="_blank" rel="noopener noreferrer">exemplo</a>.</p>
+      <p>
+        É possível que mais de um caso execute o mesmo bloco de código. Veja um
+        <a
+          href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_switch3"
+          target="_blank"
+          rel="noopener noreferrer"
+          >exemplo</a
+        >.
+      </p>
 
-					<p>Se vários casos correspondem a um valor de caso, o primeiro caso no switch é selecionado. Se não houver correspondência, o programa executa o bloco de código em <code>default</code>. Se esta palavra-chave não estiver definida, o JavaScript executará o bloco de código após o switch.</p>
+      <p>
+        Se vários casos correspondem a um valor de caso, o primeiro caso no
+        switch é selecionado. Se não houver correspondência, o programa executa
+        o bloco de código em <code>default</code>. Se esta palavra-chave não
+        estiver definida, o JavaScript executará o bloco de código após o
+        switch.
+      </p>
 
-					<p>Os casos no switch usam a comparação restrita (<code>===</code>), isto é, seus valores devem ser do mesmo tipo para que a correspondência seja válida. <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_switch5" target="_blank" rel="noopener noreferrer">Este exemplo</a> não tem correspondências.</p>
+      <p>
+        Os casos no switch usam a comparação restrita (<code>===</code>), isto
+        é, seus valores devem ser do mesmo tipo para que a correspondência seja
+        válida.
+        <a
+          href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_switch5"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Este exemplo</a
+        >
+        não tem correspondências.
+      </p>
 
-				<h4>break</h4>
+      <h4>break</h4>
 
-				<p>Quando o JavaScript atinge a palavra-chave <code>break</code>, ele interrompe a execução de um bloco de código no switch. Não é preciso adicionar esta palavra-chave ao último bloco de código, já que sua execução é interrompida por padrão. Porém, observe que ao omitir esta palavra-chave em um bloco de código, o JavaScript executará o próximo caso mesmo se a avaliação não corresponder ao caso.</p>
+      <p>
+        Quando o JavaScript atinge a palavra-chave <code>break</code>, ele
+        interrompe a execução de um bloco de código no switch. Não é preciso
+        adicionar esta palavra-chave ao último bloco de código, já que sua
+        execução é interrompida por padrão. Porém, observe que ao omitir esta
+        palavra-chave em um bloco de código, o JavaScript executará o próximo
+        caso mesmo se a avaliação não corresponder ao caso.
+      </p>
 
-				<h4>default</h4>
+      <h4>default</h4>
 
-				<p>Esta palavra-chave define o código a ser executado caso não haja correspondência com nenhum outro caso. O caso <code>default</code> não precisa ser o último bloco de código, porém se ele estiver em qualquer outra posição no switch, lembre-se de adicionar a palavra-chave <code>break</code> ao bloco de código.</p>
+      <p>
+        Esta palavra-chave define o código a ser executado caso não haja
+        correspondência com nenhum outro caso. O caso <code>default</code> não
+        precisa ser o último bloco de código, porém se ele estiver em qualquer
+        outra posição no switch, lembre-se de adicionar a palavra-chave
+        <code>break</code> ao bloco de código.
+      </p>
 
-		<p>Para saber mais sobre booleanos, consulte a <a href="https://www.w3schools.com/jsref/jsref_obj_boolean.asp">Referência completa sobre booleanos</a>.</p>
-	</section>
+      <p>
+        Para saber mais sobre booleanos, consulte a
+        <a href="https://www.w3schools.com/jsref/jsref_obj_boolean.asp"
+          >Referência completa sobre booleanos</a
+        >.
+      </p>
 
-</body>
+      <p>
+        Saiba mais sobre
+        <a
+          href="/src/HTML/js/js-conditionals.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Declarações condicionais</a
+        >.
+      </p>
+    </section>
+
+    <section>
+      <h2>Loops</h2>
+
+      <p>
+        Os booleanos são muito usados em loops para determinar as condições dos
+        loops.
+      </p>
+
+      <table style="width: 50%">
+        <tbody style="text-align: center">
+          <tr>
+            <th>Descrição</th>
+            <th>Exemplo</th>
+          </tr>
+          <tr>
+            <td>Loop <i>for</i></td>
+            <td>for (i = 0; i &lt; 5; i++)</td>
+          </tr>
+          <tr>
+            <td>Loop <i>while</i></td>
+            <td>while (i &lt; 10)</td>
+          </tr>
+          <tr>
+            <td>Loop <i>for in</i></td>
+            <td>for (x in pessoa)</td>
+          </tr>
+          <tr>
+            <td>Loop <i>for of</i></td>
+            <td>for (x of carros)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h5>Exemplo</h5>
+
+      <pre>
+				<code>
+					while (i &lt; 10) {
+						text += i;
+						i++;
+					}
+				</code>
+			</pre>
+    </section>
+  </body>
 </html>

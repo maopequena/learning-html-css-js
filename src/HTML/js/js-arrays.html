@@ -1079,8 +1079,8 @@
 
       <pre>
 				<code>
-					const months = ["Jan", "Feb", "Mar", "Apr"];
-					const myMonths = months.with(3, "April"); // ["Jan", "Feb", "Mar", "April"]
+					const meses = ["Jan", "Fev", "Mar", "Abr"];
+					const meusMeses = months.with(3, "Abril"); // ["Jan", "Fev", "Mar", "Abril"]
 				</code>
 			</pre>
 
@@ -1093,12 +1093,12 @@
 
       <pre>
 				<code>
-					const q1 = ["Jan", "Feb", "Mar"];
-					const q2 = ["Apr", "May", "Jun"];
-					const q3 = ["Jul", "Aug", "Sep"];
-					const q4 = ["Oct", "Nov", "May"];
+					const q1 = ["Jan", "Fev", "Mar"];
+					const q2 = ["Abr", "Mai", "Jun"];
+					const q3 = ["Jul", "Ago", "Set"];
+					const q4 = ["Out", "Nov", "Mai"];
 
-					const year = [...q1, ...q2, ...q3, ...q4]; // ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+					const year = [...q1, ...q2, ...q3, ...q4]; // ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dec"]
 				</code>
 			</pre>
     </section>
@@ -1121,12 +1121,12 @@
 
       <pre>
 			<code>
-				const person = [];
-				person["firstName"] = "John";
-				person["lastName"] = "Doe";
-				person["age"] = 46;
-				person.length;     // Retorna 0
-				person[0];         // Retorna undefined
+				const pessoa = [];
+				pessoa["nome"] = "John";
+				pessoa["sobrenome"] = "Doe";
+				pessoa["idade"] = 46;
+				pessoa.length;     // Retorna 0
+				pessoa[0];         // Retorna undefined
 			</code>
 		</pre>
     </section>
@@ -1227,6 +1227,196 @@
         lugar do programa. Entretanto, ao usar <code>const</code>, não é
         possível redeclarar ou reatribuir uma matriz no mesmo escopo (ou no
         mesmo bloco), porém é possível fazê-lo em outro escopo.
+      </p>
+    </section>
+
+    <section>
+      <h2>Matrizes tipadas</h2>
+
+      <p>
+        Usamos matrizes tipadas para lidar com dados binários brutos. Diferente
+        das matrizes comuns, as tipadas são <em>"buffers"</em> com comprimento
+        fixo. Matrizes tipadas armazenam elementos de tipos fixos, como inteiros
+        de 8 bits ou números de 32 bits.
+      </p>
+
+      <h3>Benefícios das matrizes tipadas</h3>
+
+      <p>
+        As matrizes tipadas foram criadas para oferecer uma maneira eficiente de
+        lidar com dados binários, diferente de matrizes JavaScript tradicionais,
+        que podem armazenar elementos de vários tipos de dados.
+      </p>
+
+      <p>
+        As matrizes tipadas são uma memória bruta, então o JavaScript pode
+        passá-las diretamente para qualquer função, sem converter os dados em
+        outro tipo. Elas são muito mais rápidas do que matrizes normais ao
+        passar dados para funções, que podem usar dados binários brutos e são
+        adequadas para:
+      </p>
+
+      <ul class="list-square">
+        <li>
+          <strong>WebGL e Canvas:</strong><br />Processamento rápido de imagens
+          e vídeos.
+        </li>
+        <li>
+          <strong>APIs de arquivos:</strong><br />Leitura e gravação rápidas de
+          arquivos locais.
+        </li>
+        <li>
+          <strong>APIs de mídias:</strong><br />Manipulação rápida de dados de
+          áudio e vídeo.
+        </li>
+        <li>
+          <strong>WebSockets:</strong><br />Transferência eficaz de dados
+          binários pela rede.
+        </li>
+      </ul>
+
+      <h3>Diferença em relação a matrizes comuns</h3>
+
+      <ul class="list-square">
+        <li>
+          Comprimento fixo: as matrizes tipadas não podem ser redimensionadas
+          dinamicamente com métodos como <code>push()</code> ou
+          <code>pop()</code>.
+        </li>
+        <li>
+          Restrição de tipo: os elementos <strong>devem</strong> ser do tipo
+          especificado pela matriz tipada.
+        </li>
+        <li>
+          Buffer subjacente: as matrizes tipadas são visualizações de um
+          ArrayBuffer, o que possibilita a manipulação direta dos dados
+          binários.
+        </li>
+      </ul>
+
+      <h3>Tipos de matrizes tipadas</h3>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Nome</th>
+            <th>Mín.</th>
+            <th>Máx.</th>
+            <th>Bytes</th>
+            <th>Tipo</th>
+          </tr>
+          <tr>
+            <td>Int8Array</td>
+            <td align="right">-128</td>
+            <td align="right">127</td>
+            <td>1</td>
+            <td>byte</td>
+          </tr>
+          <tr>
+            <td>Uint8Array</td>
+            <td align="right">0</td>
+            <td align="right">255</td>
+            <td>1</td>
+            <td>octeto</td>
+          </tr>
+          <tr>
+            <td>Uint8ClampedArray</td>
+            <td align="right">0</td>
+            <td align="right">255</td>
+            <td>1</td>
+            <td>octeto</td>
+          </tr>
+          <tr>
+            <td>Int16Array</td>
+            <td align="right">-32768</td>
+            <td align="right">32767</td>
+            <td>2</td>
+            <td>breve</td>
+          </tr>
+          <tr>
+            <td>Uint16Array</td>
+            <td>0</td>
+            <td>65535</td>
+            <td>2</td>
+            <td>breve não assinada</td>
+          </tr>
+          <tr>
+            <td>Int32Array</td>
+            <td align="right">-2147483648</td>
+            <td>2147483647</td>
+            <td>4</td>
+            <td>longa</td>
+          </tr>
+          <tr>
+            <td>Uint32Array</td>
+            <td>0</td>
+            <td>4294967295</td>
+            <td>4</td>
+            <td>longa não assinada</td>
+          </tr>
+          <tr>
+            <td>BigInt64Array</td>
+            <td>-2<sup>63</sup></td>
+            <td>2<sup>63</sup> - 1</td>
+            <td>8</td>
+            <td>bigint</td>
+          </tr>
+          <tr>
+            <td>BigUint64Array</td>
+            <td>0</td>
+            <td>2<sup>64</sup> - 1</td>
+            <td>8</td>
+            <td>bigint não assinado</td>
+          </tr>
+          <tr>
+            <td>Float16Array</td>
+            <td>-65504</td>
+            <td>65504</td>
+            <td>2</td>
+            <td>meia não restrita</td>
+          </tr>
+          <tr>
+            <td>Float32Array</td>
+            <td>-3.4e38</td>
+            <td>3.4e38</td>
+            <td>4</td>
+            <td>float não restrita</td>
+          </tr>
+          <tr>
+            <td>Float64Array</td>
+            <td>-1.8e308</td>
+            <td>1.8e308</td>
+            <td>8</td>
+            <td>dupla não restrita</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Veja exemplos de matrizes tipadas em
+        <a
+          href="https://www.w3schools.com/js/js_typed_arrays.asp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Matrizes tipadas no W3Schools</a
+        >.
+      </p>
+
+      <p class="important-info">
+        Matrizes tipadas não são matrizes. O método <code>isArray()</code> de
+        uma matriz tipada retorna <code>false</code>. Muitos métodos de matrizes
+        (como <code>push</code> e <code>pop</code>) não são compatíveis com
+        matrizes tipadas.
+      </p>
+
+      <p>
+        Saiba mais sobre
+        <a
+          href="https://www.w3schools.com/js/js_typed_methods.asp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >métodos de matrizes tipadas</a
+        >.
       </p>
     </section>
   </body>

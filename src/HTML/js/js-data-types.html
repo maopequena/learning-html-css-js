@@ -53,23 +53,54 @@
 			</code>
 		</pre>
 
-		<p>Há sete tipos de dados simples em JavaScript:</p>
+		<p>Há oito tipos de dados em JavaScript:</p>
 
-		<ul class="list-square">
-			<li>sequência de caracteres (string)</li>
-			<li>números</li>
-			<li>bigint</li>
-			<li>booleanos</li>
-			<li>indefinido</li>
-			<li>nulo</li>
-			<li>símbolos</li>
-		</ul>
+		<table>
+			<tbody>
+				<tr>
+					<th>Tipo</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td><a href="#dt-string">String</a> (Sequência de caracteres)</td>
+					<td>Uma sequência de caracteres (um texto) entre aspas</td>
+				</tr>
+				<tr>
+					<td><a href="#dt-number">Número</a></td>
+					<td>Um número que representa um valor matemático</td>
+				</tr>
+				<tr>
+					<td><a href="#dt-bigint">Bigint</a></td>
+					<td>Um número que representa um inteiro muito grande</td>
+				</tr>
+				<tr>
+					<td><a href="#dt-boolean">Booleano</a></td>
+					<td>Um tipo de dados que representa verdadeiro ou falso</td>
+				</tr>
+				<tr>
+					<td><a href="#dt-object">Objeto</a></td>
+					<td>Uma coleção de pares de chave e valor que contêm dados</td>
+				</tr>
+				<tr>
+					<td><a href="#dt-undefined">Indefinido</a></td>
+					<td>Uma variável primitiva sem valor atribuído</td>
+				</tr>
+				<tr>
+					<td><a href="#dt-null">Nulo</a></td>
+					<td>Um valor primitivo que representa a falta de um objeto</td>
+				</tr>
+				<tr>
+					<td><a href="#dt-symbol">Símbolo</a></td>
+					<td>Um identificador único e primitivo</td>
+				</tr>
+			</tbody>
+		</table>
 
-		<p>E um tipo de dado complexo: objeto. Todos os outros tipos de dados complexos, como matrizes, mapas, conjuntos e funções, são apenas diferentes tipos de objetos.</p>
+		<p>Todos os outros tipos de dados complexos, como matrizes, mapas, conjuntos e funções, são apenas diferentes tipos de objetos.</p>
 	</section>
 
 	<section>
-		<h2>Sequência de caracteres</h2>
+		<h2 id="dt-string">Sequência de caracteres</h2>
 
 		<p>Uma sequência de caracteres, string ou um texto é um grupo de letras, como "John Doe". Ela pode conter 0 ou mais caracteres, sempre entre aspas, simples ou duplas:</p>
 
@@ -136,9 +167,9 @@
 			<code>
 				let firstName = "John";
 				let lastName = "Doe";
-				let greeting = "Welcome"
+				let greeting = "Bem-vindo";
 
-				let text = `${greeting}, ${firstName} ${lastName}!`; // Welcome, John Doe!
+				let text = `${greeting}, ${firstName} ${lastName}!`; // Bem-vindo, John Doe!
 			</code>
 		</pre>
 
@@ -224,7 +255,7 @@
 				</tr>
 				<tr>
 					<td>\f</td>
-					<td>Alimentação de formulário</td>
+					<td>Feed return (retorno para a linha seguinte, sem quebrar a sentença)</td>
 				</tr>
 				<tr>
 					<td>\n</td>
@@ -232,7 +263,7 @@
 				</tr>
 				<tr>
 					<td>\r</td>
-					<td>Enter</td>
+					<td>Enter (retorno para a linha seguinte que quebra a sentença)</td>
 				</tr>
 				<tr>
 					<td>\t</td>
@@ -276,6 +307,8 @@
 			</code>
 		</pre>
 
+		<p class="important-info">Lembre-se que não se recomenda mais usar a palavra chave <em>new</em> no JavaScript. Prefira atribuir a variável diretamente.</p>
+
 		<h3>Métodos de sequências de caracteres</h3>
 
 		<p>Strings no JavaScript são primitivas e imutáveis. Todos os métodos apresentados a seguir geram uma nova sequência de caracteres sem alterar a original.</p>
@@ -304,7 +337,7 @@
 
 		<h4>charCodeAt()</h4>
 
-		<p>Este método retorna um código UTF-16 (um inteiro entre 0 e 65535) do caractere no índice (posição) especificado de uma string:</p>
+		<p>Este método retorna um código UTF-16 (um número inteiro entre 0 e 65535) do caractere no índice (posição) especificado de uma string:</p>
 
 		<pre>
 			<code>
@@ -340,7 +373,10 @@
 		<pre>
 			<code>
 				let text = "Apple, Banana, Kiwi";
-				let part = text.slice(7, 13);
+				let part = text.slice(7, 13); // Banana
+
+				let text = "Apple, Banana, Kiwi";
+				let part = text.slice(4, 10); // e, Ban
 			</code>
 		</pre>
 
@@ -352,8 +388,11 @@
 
 		<pre>
 			<code>
-				let str = "Apple, Banana, Kiwi";
-				let part = str.substring(7, 13);
+				let text = "Apple, Banana, Kiwi";
+				let part = text.substring(7, 13); // Banana
+
+				let text = "Apple, Banana, Kiwi";
+				let part = text.substring(4, 10); // e, Ban
 			</code>
 		</pre>
 
@@ -620,7 +659,7 @@
 	</section>
 
 	<section>
-		<h2 id="numeros">Números</h2>
+		<h2 id="dt-number">Números</h2>
 
 		<p>Números em JavaScript são armazenados como decimais (também conhecidos como números flutuantes) e podem ser escritos com ou sem as casas decimais.</p>
 
@@ -818,7 +857,7 @@
 
 			<h4>toFixed()</h4>
 
-			<p>Retorna uma string, com o número escrito com uma quantidade especificada de caracteres decimais. Este método é ótima para lidar com valores monetários.</p>
+			<p>Retorna uma string, com o número escrito com uma quantidade especificada de caracteres decimais. Este método é ótimo para lidar com valores monetários.</p>
 
 			<pre>
 				<code>
@@ -1081,7 +1120,7 @@
 	</section>
 
 	<section>
-		<h2>BigInt</h2>
+		<h2 id="dt-bigint">BigInt</h2>
 
 		<p>Todos os números em JavaScript são armazenados em formato de número flutuante com 64 bits. O BigInt é um novo tipo de dado que pode ser usado para armazenar valores que são muito grandes para serem representados por um número normal do JavaScript.</p>
 
@@ -1100,7 +1139,7 @@
 		<pre>
 			<code>
 				let x = 5n;
-				let y = Number(x) / 2;
+				let y = Number(x) / 2; // 2.5
 			</code>
 		</pre>
 
@@ -1151,7 +1190,7 @@
 	</section>
 
 	<section>
-		<h2>Booleanos</h2>
+		<h2 id="dt-boolean">Booleanos</h2>
 
 		<p>Booleanos só aceitam dois valores: <strong>true</strong> ou <strong>false</strong> e são usados para testes condicionais.</p>
 	</section>
@@ -1183,23 +1222,23 @@
 	</section>
 
 	<section>
-		<h2>Objetos</h2>
+		<h2 id="dt-object">Objetos</h2>
 
 		<p>Objetos são escritos com chaves e suas propriedades são escritas como pares de nome:valor, separadas por vírgulas.</p>
 
 		<pre>
 			<code>
-				const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+				const pessoa = {nome:"John", sobrenome:"Doe", idade:50, corOlhos:"azul"};
 			</code>
 		</pre>
 
-		<p>O objeto acima tem quatro propriedades: firstName, lastName, age e eyeColor.</p>
+		<p>O objeto acima tem quatro propriedades: nome, sobrenome, idade e corOlhos.</p>
 	</section>
 
 	<section>
 		<h2>O operador typeof</h2>
 
-		<p>Podemos usar este operador para descobrir o tipo de dado de uma variável.</p>
+		<p>Podemos usar este operador para descobrir o tipo de dado de uma variável ou expressão.</p>
 
 		<pre>
 			<code>
@@ -1225,7 +1264,7 @@
 	</section>
 	
 	<section>
-		<h2>Indefinido</h2>
+		<h2 id="dt-undefined">Indefinido</h2>
 
 		<p>Uma variável sem valor é considerada "indefinida" e, portanto, tem o tipo <code>undefined</code>. Podemos, também, definir o valor como <code>undefined</code> para esvaziar uma variável.</p>
 
