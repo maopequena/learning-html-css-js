@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<meta charset="utf-8">
-<head>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../../css/style.css">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="description" content="Matemática">
-    <meta name="author" content="Lizandra Silva (@maopequena)">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="description" content="Matemática" />
+    <meta name="author" content="Lizandra Silva (@maopequena)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matemática</title>
-</head>
-<body>
-	<header>
-		<h1>Matemática</h1>
-	</header>
+  </head>
+  <body>
+    <header>
+      <h1>Matemática</h1>
+    </header>
 
-	<section>
-		<p>O objeto Math no JavaScript possibilita realizar cálculos matemáticos com números.</p>
+    <section>
+      <p>
+        O objeto Math no JavaScript possibilita realizar cálculos matemáticos
+        com números.
+      </p>
 
-		<p>Diferente de outros objetos, o objeto Math não tem construtor, isto é, pode ser usado sem criar um objeto de matemática primeiro. Ele é um objeto estático.</p>
-	</section>
+      <p>
+        Diferente de outros objetos, o objeto Math não tem construtor, isto é,
+        pode ser usado sem criar um objeto primeiro. Ele é um objeto estático.
+      </p>
+    </section>
 
-	<section>
-		<h2>Propriedades de matemática (constantes)</h2>
+    <section>
+      <h2>Propriedades de matemática (constantes)</h2>
 
-		<p>A sintaxe de qualquer propriedade é <code>Math.<em>propriedade</em></code>. O JavaScript apresenta 8 constantes matemáticas que podem ser acessadas como propriedades:</p>
+      <p>
+        A sintaxe de qualquer propriedade é
+        <code>Math.<em>propriedade</em></code
+        >. O JavaScript apresenta 8 constantes matemáticas que podem ser
+        acessadas como propriedades:
+      </p>
 
-		<pre>
+      <pre>
 			<code>
 				Math.E        // retorna o número de Euler: 2.718281828459045
 				Math.PI       // retorna PI: 3.141592653589793
@@ -38,18 +49,23 @@
 				Math.LOG10E   // retorna o logaritmo de base 10 de E: 0.4342944819032518
 			</code>
 		</pre>
-	</section>
+    </section>
 
-	<section>
-		<h2>Métodos de matemática</h2>
+    <section>
+      <h2>Métodos de matemática</h2>
 
-		<p>A sintaxe de qualquer método é <code>Math.<em>método(número)</em></code>.</p>
+      <p>
+        A sintaxe de qualquer método é <code>Math.<em>método(número)</em></code
+        >.
+      </p>
 
-			<h3>Math.round()</h3>
+      <h3>Math.round()</h3>
 
-			<p>Arredonda um número para um inteiro. Retorna o inteiro mais próximo:</p>
+      <p>
+        Arredonda um número para um inteiro. Retorna o inteiro mais próximo:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.round(4.6); // 5
 					Math.round(4.5); // 5
@@ -57,11 +73,14 @@
 				</code>
 			</pre>
 
-			<h3>Math.ceil()</h3>
+      <h3>Math.ceil()</h3>
 
-			<p>Arredonda um número para um inteiro. Retorna o valor do número usado como parâmetro arredondado para cima, para o inteiro mais próximo:</p>
+      <p>
+        Arredonda um número para um inteiro. Retorna o valor do número usado
+        como parâmetro arredondado para cima, para o inteiro mais próximo:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.ceil(4.9); // 5
 					Math.ceil(4.7); // 5
@@ -71,11 +90,14 @@
 				</code>
 			</pre>
 
-			<h3>Math.floor()</h3>
+      <h3>Math.floor()</h3>
 
-			<p>Arredonda um número para um inteiro. Retorna o valor do número usado como parâmetro arredondado para baixo, para o inteiro mais próximo:</p>
+      <p>
+        Arredonda um número para um inteiro. Retorna o valor do número usado
+        como parâmetro arredondado para baixo, para o inteiro mais próximo:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.floor(4.9); // 4
 					Math.floor(4.7); // 4
@@ -85,11 +107,14 @@
 				</code>
 			</pre>
 
-			<h3>Math.trunc()</h3>
+      <h3>Math.trunc()</h3>
 
-			<p>Arredonda um número para um inteiro. Retorna a parte do número usado como parâmetro que é o inteiro:</p>
+      <p>
+        Arredonda um número para um inteiro. Retorna a parte do número usado
+        como parâmetro que é o inteiro:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.trunc(4.9); // 4
 					Math.trunc(4.7); // 4
@@ -99,11 +124,13 @@
 				</code>
 			</pre>
 
-			<h3>Math.sign()</h3>
+      <h3>Math.sign()</h3>
 
-			<p>Retorna se o número usado como parâmetro é negativo, nulo ou positivo:</p>
+      <p>
+        Retorna se o número usado como parâmetro é negativo, nulo ou positivo:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.sign(-4); // -1
 					Math.sign(0); // 0
@@ -111,85 +138,117 @@
 				</code>
 			</pre>
 
-			<h3>Math.pow()</h3>
+      <h3>Math.pow()</h3>
 
-			<p>Sintaxe: <code>Math.pow(x, y)</code>. Retorna o valor de <strong>x</strong> elevado à potência de <strong>y</strong>.</p>
+      <p>
+        Sintaxe: <code>Math.pow(x, y)</code>. Retorna o valor de
+        <strong>x</strong> elevado à potência de <strong>y</strong>.
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.pow(8, 2); // 64
 				</code>
 			</pre>
 
-			<h3>Math.sqrt()</h3>
+      <h3>Math.sqrt()</h3>
 
-			<p>Sintaxe: <code>Math.sqrt(x)</code>. Retorna a raiz quadrada de <strong>x</strong>.</p>
+      <p>
+        Sintaxe: <code>Math.sqrt(x)</code>. Retorna a raiz quadrada de
+        <strong>x</strong>.
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.sqrt(64); // 8
 				</code>
 			</pre>
 
-			<h3>Math.abs()</h3>
-			<p>Sintaxe: <code>Math.abs(x)</code>. Retorna o valor absoluto (positivo) de <strong>x</strong>.</p>
+      <h3>Math.abs()</h3>
+      <p>
+        Sintaxe: <code>Math.abs(x)</code>. Retorna o valor absoluto (positivo)
+        de <strong>x</strong>.
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.abs(-4.7); // 4.7
 				</code>
 			</pre>
 
-			<h3>Math.sin()</h3>
+      <h3>Math.sin()</h3>
 
-			<p>Sintaxe: <code>Math.sin(x)</code>. Retorna o seno (um valor entre -1 e 1) do ângulo <strong>x</strong> fornecido em radianos.</p>
+      <p>
+        Sintaxe: <code>Math.sin(x)</code>. Retorna o seno (um valor entre -1 e
+        1) do ângulo <strong>x</strong> fornecido em radianos.
+      </p>
 
-			<p>É possível usar graus ao invés de radianos, mas é preciso converter o valor: <em>ângulo em radianos = ângulo em graus * PI / 180</em>.</p>
+      <p>
+        É possível usar graus ao invés de radianos, mas é preciso converter o
+        valor: <em>ângulo em radianos = ângulo em graus * PI / 180</em>.
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.sin(90 * Math.PI / 180); // retorna 1 (o seno de 90 graus)
 				</code>
 			</pre>
 
-			<h3>Math.cos()</h3>
+      <h3>Math.cos()</h3>
 
-			<p>Sintaxe: <code>Math.cos(x)</code>. Retorna o cosseno (um valor entre -1 e 1) do ângulo <strong>x</strong> fornecido em radianos.</p>
+      <p>
+        Sintaxe: <code>Math.cos(x)</code>. Retorna o cosseno (um valor entre -1
+        e 1) do ângulo <strong>x</strong> fornecido em radianos.
+      </p>
 
-			<p>É possível usar graus ao invés de radianos, mas é preciso converter o valor: <em>ângulo em radianos = ângulo em graus * PI / 180</em>.</p>
+      <p>
+        É possível usar graus ao invés de radianos, mas é preciso converter o
+        valor: <em>ângulo em radianos = ângulo em graus * PI / 180</em>.
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.cos(0 * Math.PI / 180); // retorna 1 (o cosseno de 0 graus)
 				</code>
 			</pre>
 
-			<h3>Math.min() e Math.max()</h3>
+      <h3>Math.min() e Math.max()</h3>
 
-			<p>Estes métodos podem ser usados para encontrar o menor e o maior valor, respectivamente, em uma lista de parâmetros.</p>
+      <p>
+        Estes métodos podem ser usados para encontrar o menor e o maior valor,
+        respectivamente, em uma lista de parâmetros.
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.min(0, 150, 30, 20, -8, -200); // -200
 					Math.max(0, 150, 30, 20, -8, -200); // 150
 				</code>
 			</pre>
 
-			<h3>Math.random()</h3>
+      <h3>Math.random()</h3>
 
-			<p>Retorna um número aleatório entre 0 (inclusive) e 1 (exclusive). Sempre retorna um número menor que 1.</p>
+      <p>
+        Retorna um número aleatório entre 0 (inclusive) e 1 (exclusive). Sempre
+        retorna um número menor que 1.
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.random(); // 0.9880070722302903
 					Math.random(); // 0.14077480138770215
-					Math.random(); // 0333259767720322
+					Math.random(); // 0.333259767720322
 				</code>
 			</pre>
 
-			<p>Você pode usar <code>Math.random()</code> com <code>Math.floor()</code> para obter números inteiros aleatórios. Porém, lembre-se que estamos falando apenas de números sem casas decimais, não números inteiros reais. Vejamos um exemplo:</p>
+      <p>
+        Você pode usar <code>Math.random()</code> com
+        <code>Math.floor()</code> para obter números inteiros aleatórios. Porém,
+        lembre-se que estamos falando apenas de números sem casas decimais, não
+        números inteiros reais. Vejamos um exemplo:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					// Retorna um inteiro aleatório de 0 a 9
 					Math.floor(Math.random() * 10); // 0, 4, 5...
@@ -211,13 +270,18 @@
 				</code>
 			</pre>
 
-				<h4>Uma função verdadeiramente aleatória</h4>
+      <h4>Uma função verdadeiramente aleatória</h4>
 
-				<p>Como podemos ver nos exemplos acima, é uma boa ideia criar uma função verdadeiramente aleatória para lidar com propósitos de inteiros aleatórios. Uma função dessa sempre retorna um número aleatório entre os valores mínimo (inclusive) e máximo (exclusive). Por exemplo:</p>
+      <p>
+        Como podemos ver nos exemplos acima, é uma boa ideia criar uma função
+        verdadeiramente aleatória para lidar com propósitos de inteiros
+        aleatórios. Uma função dessa sempre retorna um número aleatório entre os
+        valores mínimo (inclusive) e máximo (exclusive). Por exemplo:
+      </p>
 
-				<pre>
+      <pre>
 					<code>
-						function getRndInteger(min, max) {
+						function obterIntAleat(min, max) {
 							return Math.floor(Math.random() * (max - min) ) + min;
 						}
 
@@ -225,9 +289,12 @@
 					</code>
 				</pre>
 
-				<p>A função abaixo retorna um número aleatório entre os valores mínimo e máximo (ambos inclusos):</p>
+      <p>
+        A função abaixo retorna um número aleatório entre os valores mínimo e
+        máximo (ambos inclusos):
+      </p>
 
-				<pre>
+      <pre>
 					<code>
 						function getRndInteger(min, max) {
 							return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -237,11 +304,15 @@
 					</code>
 				</pre>
 
-			<h3>Math.log()</h3>
+      <h3>Math.log()</h3>
 
-			<p>Sintaxe: <code>Math.log(x)</code>. Retorna o logaritmo natural de <strong>x</strong>. O logaritmo natural retorna o tempo necessário para atingir um certo valor de crescimento:</p>
+      <p>
+        Sintaxe: <code>Math.log(x)</code>. Retorna o logaritmo natural de
+        <strong>x</strong>. O logaritmo natural retorna o tempo necessário para
+        atingir um certo valor de crescimento:
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.log(1); // 0
 					Math.log(2); // 0.6931471805599453
@@ -249,154 +320,183 @@
 				</code>
 			</pre>
 
-			<p>Math.E e  Math.log() são gêmeos. Por exemplo, quantas vezes precisamos multiplicar <em>Math.E</em> para obter 10?</p>
+      <p>
+        Math.E e Math.log() são gêmeos. Por exemplo, quantas vezes precisamos
+        multiplicar <em>Math.E</em> para obter 10?
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.log(10); // 2.302585092994046
 				</code>
 			</pre>
 
-			<h3>Math.log2()</h3>
+      <h3>Math.log2()</h3>
 
-			<p>Sintaxe: <code>Math.log2(x)</code>. Retorna o logaritmo de base 2 de <strong>x</strong>. Por exemplo, quantas vezes precisamos multiplicar 2 para obter 8?</p>
+      <p>
+        Sintaxe: <code>Math.log2(x)</code>. Retorna o logaritmo de base 2 de
+        <strong>x</strong>. Por exemplo, quantas vezes precisamos multiplicar 2
+        para obter 8?
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.log2(8); // 3
 				</code>
 			</pre>
 
-			<h3>Math.log10()</h3>
+      <h3>Math.log10()</h3>
 
-			<p>Sintaxe: <code>Math.log10(x)</code>. Retorna o logaritmo de base 10 de <strong>x</strong>. Por exemplo, quantas vezes precisamos multiplicar 10 para obter 1000?</p>
+      <p>
+        Sintaxe: <code>Math.log10(x)</code>. Retorna o logaritmo de base 10 de
+        <strong>x</strong>. Por exemplo, quantas vezes precisamos multiplicar 10
+        para obter 1000?
+      </p>
 
-			<pre>
+      <pre>
 				<code>
 					Math.log10(1000); // 3
 				</code>
 			</pre>
 
-			<h3>Todos os métodos de Math</h3>
+      <h3>Todos os métodos de Math</h3>
 
-			<table>
-				<tbody>
-					<tr>
-						<th style="width:20%">Método</th>
-						<th>Descrição</th>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_abs.asp">abs(x)</a></td>
-						<td>Retorna o valor absoluto de x</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_acos.asp">acos(x)</a></td>
-						<td>Retorna o arco cosseno de x em radianos</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_acosh.asp">acosh(x)</a></td>
-						<td>Retorna o arco cosseno hiperbólico de x</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_asin.asp">asin(x)</a></td>
-						<td>Retorna o arco seno de x em radianos</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_asinh.asp">asinh(x)</a></td>
-						<td>Retorna o arco seno hiperbólico de x</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_atan.asp">atan(x)</a></td>
-						<td>Retorna o arco tangente de x como um valor numérico entre -PI/2 e PI/2 radianos</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_atan2.asp">atan2(y, x)</a></td>
-						<td>Retorna o arco tangente do quociente dos parâmetros fornecidos</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_atanh.asp">atanh(x)</a></td>
-						<td>Retorna o arco tangente hiperbólico de  x</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_cbrt.asp">cbrt(x)</a></td>
-						<td>Retorna a raiz cúbica de x</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_ceil.asp">ceil(x)</a></td>
-						<td>Retorna x arredondado para o inteiro mais próximo acima</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_cos.asp">cos(x)</a></td>
-						<td>Retorna o cosseno de x (x deve estar em radianos ou ser convertido)</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_cosh.asp">cosh(x)</a></td>
-						<td>Retorna o cosseno hiperbólico de x</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_exp.asp">exp(x)</a></td>
-						<td>Retorna o valor de E<sup>x</sup></td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_floor.asp">floor(x)</a></td>
-						<td>Retorna x arredondado para o inteiro mais próximo abaixo</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_log.asp">log(x)</a></td>
-						<td>Retorna o logaritmo natural (base E) de x</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_max.asp">max(x, y, z, ..., n)</a></td>
-						<td>Retorna o número com o valor mais alto</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_min.asp">min(x, y, z, ..., n)</a></td>
-						<td>Retorna o número com o valor mais baixo</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_pow.asp">pow(x, y)</a></td>
-						<td>Retorna o valor de x à potência de y</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_random.asp">random()</a></td>
-						<td>Retorna um número aleatório entre 0 e 1</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_round.asp">round(x)</a></td>
-						<td>Arredonda x para o inteiro mais próximo</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_sign.asp">sign(x)</a></td>
-						<td>Retorna se x é negativo, nulo ou positivo (-1, 0, 1)</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_sin.asp">sin(x)</a></td>
-						<td>Retorna o seno de x (x deve estar em radianos ou ser convertido)</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_sinh.asp">sinh(x)</a></td>
-						<td>Retorna o seno hiperbólico de x</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_sqrt.asp">sqrt(x)</a></td>
-						<td>Retorna a raiz quadrada de x</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_tan.asp">tan(x)</a></td>
-						<td>Retorna a tangente de um ângulo</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_tanh.asp">tanh(x)</a></td>
-						<td>Retorna a tangente hiperbólica de um número</td>
-					</tr>
-					<tr>
-						<td><a href="/jsref/jsref_trunc.asp">trunc(x)</a></td>
-						<td>Retorna a parte inteira de um número</td>
-					</tr>
-				</tbody>
-			</table>
+      <table>
+        <tbody>
+          <tr>
+            <th style="width: 20%">Método</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_abs.asp">abs(x)</a></td>
+            <td>Retorna o valor absoluto de x</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_acos.asp">acos(x)</a></td>
+            <td>Retorna o arco cosseno de x em radianos</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_acosh.asp">acosh(x)</a></td>
+            <td>Retorna o arco cosseno hiperbólico de x</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_asin.asp">asin(x)</a></td>
+            <td>Retorna o arco seno de x em radianos</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_asinh.asp">asinh(x)</a></td>
+            <td>Retorna o arco seno hiperbólico de x</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_atan.asp">atan(x)</a></td>
+            <td>
+              Retorna o arco tangente de x como um valor numérico entre -PI/2 e
+              PI/2 radianos
+            </td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_atan2.asp">atan2(y, x)</a></td>
+            <td>
+              Retorna o arco tangente do quociente dos parâmetros fornecidos
+            </td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_atanh.asp">atanh(x)</a></td>
+            <td>Retorna o arco tangente hiperbólico de x</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_cbrt.asp">cbrt(x)</a></td>
+            <td>Retorna a raiz cúbica de x</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_ceil.asp">ceil(x)</a></td>
+            <td>Retorna x arredondado para o inteiro mais próximo acima</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_cos.asp">cos(x)</a></td>
+            <td>
+              Retorna o cosseno de x (x deve estar em radianos ou ser
+              convertido)
+            </td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_cosh.asp">cosh(x)</a></td>
+            <td>Retorna o cosseno hiperbólico de x</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_exp.asp">exp(x)</a></td>
+            <td>Retorna o valor de E<sup>x</sup></td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_floor.asp">floor(x)</a></td>
+            <td>Retorna x arredondado para o inteiro mais próximo abaixo</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_log.asp">log(x)</a></td>
+            <td>Retorna o logaritmo natural (base E) de x</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_max.asp">max(x, y, z, ..., n)</a></td>
+            <td>Retorna o número com o valor mais alto</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_min.asp">min(x, y, z, ..., n)</a></td>
+            <td>Retorna o número com o valor mais baixo</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_pow.asp">pow(x, y)</a></td>
+            <td>Retorna o valor de x à potência de y</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_random.asp">random()</a></td>
+            <td>Retorna um número aleatório entre 0 e 1</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_round.asp">round(x)</a></td>
+            <td>Arredonda x para o inteiro mais próximo</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_sign.asp">sign(x)</a></td>
+            <td>Retorna se x é negativo, nulo ou positivo (-1, 0, 1)</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_sin.asp">sin(x)</a></td>
+            <td>
+              Retorna o seno de x (x deve estar em radianos ou ser convertido)
+            </td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_sinh.asp">sinh(x)</a></td>
+            <td>Retorna o seno hiperbólico de x</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_sqrt.asp">sqrt(x)</a></td>
+            <td>Retorna a raiz quadrada de x</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_tan.asp">tan(x)</a></td>
+            <td>Retorna a tangente de um ângulo</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_tanh.asp">tanh(x)</a></td>
+            <td>Retorna a tangente hiperbólica de um número</td>
+          </tr>
+          <tr>
+            <td><a href="/jsref/jsref_trunc.asp">trunc(x)</a></td>
+            <td>Retorna a parte inteira de um número</td>
+          </tr>
+        </tbody>
+      </table>
 
-			<p>Para saber mais sobre objetos de matemática, consulte a <a href="https://www.w3schools.com/jsref/jsref_obj_math.asp" target="_blank" rel="noopener noreferrer">Referência completa sobre objetos matemáticos</a>.</p>
-	</section>
-</body>
+      <p>
+        Para saber mais sobre objetos de matemática, consulte a
+        <a
+          href="https://www.w3schools.com/jsref/jsref_obj_math.asp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Referência completa sobre objetos matemáticos</a
+        >.
+      </p>
+    </section>
+  </body>
 </html>

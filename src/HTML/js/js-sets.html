@@ -453,7 +453,202 @@
     </section>
 
     <section>
-      <h2>WeakSet</h2>
+      <h2 id="weakset">WeakSet</h2>
+
+      <p>
+        Um WeakSet é uma coleção de valors que devem ser objetos. Um WeakSet tem
+        referências fracas para seus valores. Alguns exemplos:
+      </p>
+
+      <pre>
+				<code>
+					// Criar um WeakSet
+					let meuConjunto = new WeakSet();
+
+					// Criar uym objeto
+					let meuObj = {nome:"John", sobrenome:"Doe"};
+
+					// Adicionar o objeto ao WeakSet
+					meuConjunto.add(meuObj);
+
+					// meuObj está em meuConjunto?
+					let answer = meuConjunto.has(meuObj); // Resultado: true
+
+					OU
+
+					// Criar um WeakSet
+					let meuConjunto = new WeakSet();
+
+					// Criar um objeto
+					let meuObj = {nome:"John", sobrenome:"Doe"};
+
+					// Adicionar o objeto ao WeakSet
+					meuConjunto.add(meuObj);
+
+					// Excluir o objeto do WeakSet
+					meuConjunto.delete(meuObj);
+
+					// meuObj está em meuConjunto?
+					let answer = meuConjunto.has(meuObj); // Resultado: false
+				</code>
+			</pre>
+
+      <h3 id="lixo">Coleta de lixo</h3>
+
+      <p>
+        O JavaScript emprega um mecanismo de gestão de memória conhecido como
+        Garbage Collection ("Coleta de lixo"). Suas funções primárias são:
+      </p>
+
+      <ul class="list-square">
+        <li>Garantir o uso eficaz de recursos de memória</li>
+        <li>
+          Recuperar a memória ocupada por variáveis que já não estão em uso
+        </li>
+        <li>Impedir vazamentos de memória</li>
+      </ul>
+
+      <h3>Referências fracas</h3>
+
+      <p>
+        Diferente de um conjunto comum, um WeakSet não impede que seus valores
+        sejam considerados como "lixo". Se um valor (um objeto) não tiver
+        referências em um programa, ele pode ir para o lixo. Quando o valor é
+        coletado como lixo, é removido do WeakSet. Por exemplo:
+      </p>
+
+      <pre>
+				<code>
+					// Criar um WeakSet
+					let meuConjunto = new WeakSet();
+
+					// Criar um objeto
+					let meuObj = {nome:"John", sobrenome:"Doe"};
+
+					// Adicionar o objeto ao WeakSet
+					meuConjunto.add(meuObj);
+
+					// Remove o objeto da memória
+					meuObj = null;
+
+					// Agora, o meuObj em meuConjunto será coletado como lixo
+				</code>
+			</pre>
+
+      <h3>Os valores <strong>devem</strong> ser objetos</h3>
+
+      <p>
+        Valores primitivos não podem ser inclusos em um WeakSet, porque os
+        valores <strong>devem</strong> ser objetos. Esta restrição está
+        vinculada ao mecanismo de coleta de lixo; primitivos não são coletados
+        como lixo da mesma forma que objetos.
+      </p>
+
+      <h3>Rastreamento de objetos</h3>
+
+      <p>
+        Um WeakSet é similar a um conjunto, mas só armazena objetos, e somente
+        referências fracas a eles. Se não houver outras referências a um objeto,
+        ele será coletado automaticamente como lixo. Isso é útil para rastrear
+        os objetos sem armazenar dados adicionais (como contagens).
+      </p>
+
+      <p>Por exemplo, vejamos como rastrear visitantes:</p>
+
+      <pre>
+				<code>
+					let texto = "";
+
+					// Criar um WeakSet para rastrear pessoas
+					const pessoas = new WeakSet();
+
+					// Objetos dos visitantes
+					const John = {nome:"John", idade:40};
+					const Paul = {nome:"Paul", idade:41};
+					const Ringo = {nome:"Ringo", idade:42};
+					const George = {nome:"George", idade:43};
+
+					// Rastrear visitas
+					track(Paul);
+					track(Ringo);
+					track(Paul);
+
+					// Função para rastrear visitantes
+					function track(visitante) {
+						if (pessoas.has(visitante)) {
+							texto += visitante.nome + " está visitando novamente.<br>";
+						} else {
+							pessoas.add(visitante);
+							texto += visitante.nome + ", idade" + visitante.idade +", está visitando pela primeira vez.<br>";
+						}
+					}
+				</code>
+			</pre>
+
+      <p>
+        Porém, se ainda quiser uma contagem, tente usar um
+        <a
+          href="https://www.w3schools.com/js/js_maps_weak.asp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >WeakMap</a
+        >.
+      </p>
+
+      <h3>Limpeza automática</h3>
+
+      <p>Se remover todas as referências a um objeto de visitante:</p>
+
+      <pre>
+				<code>
+					John = null;
+
+					// A entrada para John agora foi removida do WeakMap (pessoas)
+				</code>
+			</pre>
+
+      <p>
+        WeakSets não são enumeráveis. Não é possível iterar seus valores com
+        loops <code>for</code>, com <code>forEach()</code> ou com
+        <code>values()</code>; não é possível acessar seu tamanho, já que eles
+        não têm essa propriedade.
+      </p>
+
+      <h3>Métodos de um WeakSet</h3>
+
+      <p>
+        Um WeakSet é pequeno, seguro para a memória e criado para rastrear
+        objetos de maneira privada e eficaz. Um WeakSet oferece alguns métodos:
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>new WeakSet()</td>
+            <td>Cria um novo objeto WeakSet</td>
+          </tr>
+          <tr>
+            <td>add(objeto)</td>
+            <td>Adiciona um objeto a um WeakSet</td>
+          </tr>
+          <tr>
+            <td>delete(objeto)</td>
+            <td>Remove um objeto de um WeakSet</td>
+          </tr>
+          <tr>
+            <td>has(objeto)</td>
+            <td>Retorna <code>true</code> se um objeto existe em um WeakSet</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        WeakSets não têm: uma propriedade de tamanho (size), um operador de
+        expansão (...), um método <code>clear()</code>, métodos de lógica
+        (union, difference, intersection, etc.) ou métodos de iteração (forEach,
+        keys, values, etc.). Isso é proposital: os objetos podem desaparecer na
+        coleta de lixo, então não faz sentido iterar sobre eles ou contá-los.
+      </p>
     </section>
   </body>
 </html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <meta charset="utf-8" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="description" content="Controle de fluxo em JavaScript" />
+    <meta name="author" content="Lizandra Silva (@maopequena)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle de fluxo em JavaScript</title>
+  </head>
+  <body>
+    <header>
+      <h1>Controle de fluxo em JavaScript</h1>
+    </header>
+
+    <section>
+      <p>
+        Controle de fluxo é a ordem em que as declarações são executadas em um
+        programa. Por padrão, o JavaScript executa o código de cima para baixo e
+        da esquerda para a direita. Declarações com controle de fluxo
+        possibilitam alterar essa ordem, com base em condições, loops ou
+        palavras-chave.
+      </p>
+
+      <h2>Controle de fluxo condicional</h2>
+
+      <p>
+        Podemos alterar o fluxo usando
+        <a href="js-conditionals.html">condicionais</a>, como if, else ou
+        switch. Por exemplo:
+      </p>
+
+      <pre>
+				<code>
+					let idade = 18;
+					let texto = "Desconhecido";
+
+					if (idade &lt;== 18) {
+						texto = "Adulto";
+					} else {
+						texto = "Menor de idade";
+					}
+				</code>
+			</pre>
+
+      <h2>Controle de fluxo de repetição</h2>
+
+      <p>
+        Podemos alterar o fluxo usando <a href="js-loops.html">loops</a>, como
+        for, while e do/while. Por exemplo:
+      </p>
+
+      <pre>
+				<code>
+					for (let i = 0; i &lt; 5; i++) {
+						texto += "O número é " + i + "<br>";
+					}
+				</code>
+			</pre>
+
+      <h4>Declarações de quebra</h4>
+
+      <p>
+        As declarações de quebra, como <code>break</code>,
+        <code>continue</code>, <code>return</code> e <code>throw</code> também
+        alteram o fluxo:
+      </p>
+
+      <pre>
+				<code>
+					for (let i = 0; i &lt; 10; i++) {
+						if (i === 3) { break; }
+						texto += "O número é " + i + "<br>";
+					}
+				</code>
+			</pre>
+
+      <h2>Controle de fluxo com funções</h2>
+
+      <p>
+        Podemos alterar o fluxo usando <a href="js-functions.html">funções</a>.
+        Por exemplo:
+      </p>
+
+      <pre>
+				<code>
+					function myFunction(p1, p2) {
+						return p1 * p2;
+					}
+				</code>
+			</pre>
+
+      <h2>Fluxo assíncrono</h2>
+
+      <p>
+        Podemos alterar o fluxo usando <strong>Callbacks</strong> (retornos de
+        chamada), <strong>Promises</strong> (promessas) e
+        <strong>async/await</strong> (assincronia/espera) em eventos e chamadas
+        de rede. Por exemplo:
+      </p>
+
+      <pre>
+				<code>
+					async function fetchData() {
+					let dados = await fetch("https://api.example.com/data");
+					// código a executar
+				}
+				</code>
+			</pre>
+
+      <h2>Blocos de código</h2>
+
+      <p>
+        Um bloco de código, ou bloco de declaração, é um grupo de declarações
+        entre chaves (<kbd>{ }</kbd>). Eles são importantes para controlar o
+        fluxo de execução do código e definir o escopo de variáveis em um
+        programa JavaScript.
+      </p>
+
+      <p>
+        O corpo de uma função JavaScript sempre contém um bloco de código. Eles
+        são essenciais para declarações <strong>if</strong> e para outros
+        <strong>loops</strong>.
+      </p>
+
+      <p>
+        Lembre-se que variáveis dentro de um bloco de código têm
+        <a href="js-scope.html">um escopo local</a>.
+      </p>
+
+      <p>
+        Como blocos de código separam o escopo, eles mantêm o código organizado
+        e limpo, gerando variáveis que podem ser de uso temporário e depois
+        descartadas.
+      </p>
+    </section>
+  </body>
+</html>
